@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/quasar@2.1.0/dist/quasar.prod.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.prod.js" defer ></script>
+    <script src="https://cdn.jsdelivr.net/npm/quasar@2.1.0/dist/quasar.umd.prod.js" defer ></script>
+    <script src="drawtext.js" ></script>
+    <link rel="stylesheet" href="drawtext.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.1/howler.min.js" type="text/javascript"></script>
+    <script>
+      let audioPlayer = null;
+      window.addEventListener('message', function (event) {
+        if (event.data.transactionType == "play") {
+          if (audioPlayer != null) { audioPlayer.pause(); }
+          audioPlayer = new Howl({ src: ["./snd/" + event.data.transactionFile + ".ogg"] });
+          audioPlayer.volume(event.data.transactionVolume);
+          audioPlayer.play();
+        }
+        if (event.data.transactionType == "vol") { audioPlayer.volume(event.data.transactionVolume); }
+      });
+    </script>
+  </head>
+  <body style="font-family: 'Poppins', sans-serif">
+    <div id="q-app" style="min-height: 50vh" ></div>
+    <div id="drawtext-container">
+      <div id="text" class="text"></div>
+    </div>
+  </body>
+</html>

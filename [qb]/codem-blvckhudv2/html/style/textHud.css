@@ -1,0 +1,245 @@
+.textHudWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.radialHudDrag {
+  display: flex;
+  align-items: center;
+  transform-origin: top left;
+}
+
+.textHudInner {
+  display: block;
+  width: 2.625rem;
+  height: 2.625rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+}
+
+
+.textHudValue {
+  position: absolute;
+  width: 2rem;
+  height: 0.952rem;
+  left: 50%;
+  bottom: -.1rem;
+  transform: translateX(-50%);
+  font-family: "Montserrat";
+  text-align: center;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.75rem;
+  line-height: 0.938rem;
+  color: #ffffff;
+}
+
+.textHudIcons {
+  position: relative;
+  width: 3.25rem;
+  transform: scale(.8);
+  height: 3.25rem;
+}
+
+.textHudIcons2 {
+  position: relative;
+  width: 3.25rem;
+  transform: scale(.8);
+  height: 3.25rem;
+}
+
+.textHudRadial {
+  width: 3.25rem;
+  height: 3.25rem;
+}
+
+.textHudIcon {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 255;
+}
+
+.textHudMicIcon {
+  position: absolute;
+  left: 50%;
+  top: 65%;
+  transform: translate(-50%, -50%);
+  z-index: 255;
+}
+
+.fillNone {
+  fill: rgba(154, 187, 34, 0);
+}
+
+.textHudMicrophone {
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* dark */
+
+
+  opacity: 0.6;
+  border-radius: 0.375rem;
+  transform: scale(.8);
+}
+
+.textHudTop {
+  position: absolute;
+
+  left: -.5rem;
+  top: -5rem;
+}
+
+.textHudTopWrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.left {
+  background-image: url(../assets/images/left.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  width: 16.038rem;
+  height: 3.25rem;
+  display: flex;
+  padding-left: 0.5rem;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.right {
+  background-image: url(../assets/images/right.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  height: 3.25rem;
+  position: relative;
+  right: 2rem;
+  width: 8.038rem;
+}
+
+
+
+
+.date {
+  margin-left: .5rem;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: .5rem 0;
+  padding-right: .5rem;
+  height: 3.25rem;
+}
+
+.streetDisplay {
+
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 600;
+  font-size: .9rem;
+  line-height: 100%;
+  /* identical to box height, or 16px */
+
+  text-align: left;
+
+  color: #FFFFFF;
+
+  text-shadow: 0rem 0.25rem 0.813rem rgba(0, 0, 0, 0.6);
+}
+
+.compass {
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 0.8rem;
+
+  color: #ffffff98;
+
+  text-shadow: 0rem 0.25rem 0.813rem rgba(0, 0, 0, 0.6);
+}
+
+.compass2 {
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 600;
+  font-size: .8rem;
+  line-height: 100%;
+  /* identical to box height, or 16px */
+  color: #FFFFFF;
+  width: 2rem;
+  margin-right: .45rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 0rem 0.25rem 0.813rem rgba(0, 0, 0, 0.6);
+}
+
+.street {
+  padding: .5rem 0;
+  margin-left: .5rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.streetDisplay2 {
+
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 500;
+  font-size: .9rem;
+  line-height: 100%;
+  /* identical to box height, or 15px */
+  text-align: left;
+
+  color: #FFFFFF;
+
+  text-shadow: 0rem 0.25rem 0.813rem rgba(0, 0, 0, 0.6);
+
+}
+
+.radialHudLeft .streetDisplay {
+  text-align: left;
+}
+
+.radialHudLeft .streetDisplay2 {
+  text-align: left;
+}
+
+.clock {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 600;
+  font-size: .8rem;
+  margin: 0;
+  margin-bottom: .1rem;
+  margin-right: .25rem;
+  line-height: 100%;
+  color: #ffffff;
+  text-shadow: 0rem 0.25rem 0.813rem rgba(0, 0, 0, 0.6);
+}
+
+.dateDisplay {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.83rem;
+  line-height: 100%;
+  color: #ffffff;
+  text-shadow: 0rem 0.25rem 0.813rem rgba(0, 0, 0, 0.6);
+}

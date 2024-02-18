@@ -1,0 +1,537 @@
+<html>
+  <head>
+    <style>
+
+        * {
+          box-sizing: border-box;
+        }
+
+        body {
+          background-color: #1e1e1e;
+          font-family: arial;
+        }
+
+        .off {
+          display: none;
+          visibility: hidden;
+          opacity: 0;
+        }
+
+        .container {
+          position: absolute;
+          top: 50%;
+          left: 25%;
+          width: 300px;
+          background: linear-gradient( to bottom , white 50% , #eaeaea calc( 100% - 70px) , #aa2551 calc( 100% - 70px) );
+          overflow: hidden;
+          border-radius: 10px;
+          transform: scale(1.25) translateY(-50%) translateX(-50%);
+          transform-origin: top left;
+        }
+
+        .banner {
+          height: 70px;
+          box-shadow: 0px 0px 10px #0000008f;
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: cover;
+          background-image: url("banner1.png");
+        }
+
+        .name {
+          margin: 25px auto;
+          text-align: center;
+          font-weight: bold;
+          font-style: italic;
+          text-transform: uppercase;
+          font-family: helvetica;
+          font-size: 18pt;
+          color: #595959;
+          text-shadow: 2px 2px 5px #fff;
+        }
+
+        .closebutton {
+          position: absolute;
+          width: 30px;
+          height: 30px;
+          border: none;
+          cursor: pointer;
+          background-color: black;
+          border-radius: 10px;
+          background-repeat: no-repeat;
+          background-image: url("close.png");
+          background-position: center;
+          background-size: cover;
+          top: 10px;
+          right: 10px;
+        }
+
+        .closebutton:hover {
+          background-color: rgba(50,50,50,1.0);
+          box-shadow: 0 0 5px rgba(0,0,0,0.5);
+        }
+
+        .stats {
+          width: calc( 100% - 50px );
+          margin: 25px auto;
+          background-color: #fff;
+          padding: 20px;
+          border-radius: 5px;
+          box-shadow: 2px 2px 5px #0000004a;
+        }
+
+        .statname {
+          width: 100%;
+          height: 25px;
+          font-weight: bold;
+          padding: 0 10px;
+          text-transform: uppercase;
+          text-align: left;
+          color: #7e7e7e;
+          padding: 5px 10px;
+          font-size: 10pt;
+          font-style: italic;
+          font-family: verdana;
+        }
+
+        .stat {
+          display: flex;
+          flex-direction: row;
+        }
+
+        .stars {
+          height: 25px;
+          min-width: calc( 25px * 5 );
+          max-width: calc( 25px * 5 );
+          display: flex;
+          flex-direction: row;
+        }
+
+        .star {
+          width: 25px;
+          height: 25px;
+          position: relative;
+          top: -2px;
+        }
+
+        .emptystar {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          background-image: url("emptystar.png");
+        }
+
+        .halfstar {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          background-image: url("halfstar.png");
+        }
+
+        .fullstar {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          background-image: url("fullstar.png");
+        }
+
+        .abilities {
+          width: calc( 100% - 50px );
+          margin: 25px auto;
+          border-radius: 5px;
+          text-align: center;
+        }
+
+        .ability {    
+          display: inline-block;
+          border-radius: 5px;
+          background-color: #d92557;
+          color: white;
+          padding: 5px;
+          margin: 5px;
+        }  
+
+        .forwho {
+          width: calc( 100% - 50px );
+          margin: 25px auto;
+          background-color: #fff;
+          padding: 10px;
+          border-radius: 5px;
+          box-shadow: 2px 2px 5px #0000004a;
+          position: relative;
+        }
+
+        .whom {
+          text-align: center;
+          font-weight: bold;
+          text-transform: uppercase;
+          margin: 10px auto;
+          color: #555;
+        }
+        
+        .require {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          background-image: url("require.png");
+          background-position: right 10px center;
+          background-repeat: no-repeat;
+          background-size: 50px;
+          top: 0;
+          left: 0;
+        }
+
+        .pricing {
+          width: calc( 100% - 50px );
+          margin: 25px auto;
+          padding: 20px;
+          border-radius: 5px;
+        }
+
+        .price {
+          text-align: center;
+          font-weight: bold;
+          font-size: 12pt;
+          margin: 25px auto;
+          margin: 0 auto 15px auto;
+          font-size: 30pt;
+          color: #595959;
+          text-shadow: 2px 2px 5px #fff;
+        }
+
+        .buybutton {
+          border: none;
+          cursor: pointer;
+          border-radius: 5px;
+          background-color: #d92557;
+          height: 50px;
+          text-align: center;
+          color: white;
+          font-size: 15pt;
+          font-weight: bold;
+          padding: 13px;
+          width: 100px;
+          box-shadow: 2px 2px 5px #0000003d;
+          margin: 0px auto;
+          text-transform: uppercase;
+        }
+
+        .buybutton:hover {
+          background-color: #b91845;
+        }
+
+        @keyframes flickerAnimation {
+          0%   { opacity:1; }
+          75%  { opacity:0.25; }
+          100% { opacity:1; }
+        }
+        @-o-keyframes flickerAnimation{
+          0%   { opacity:1; }
+          75%  { opacity:0.25; }
+          100% { opacity:1; }
+        }
+        @-moz-keyframes flickerAnimation{
+          0%   { opacity:1; }
+          75%  { opacity:0.25; }
+          100% { opacity:1; }
+        }
+        @-webkit-keyframes flickerAnimation{
+          0%   { opacity:1; }
+          75%  { opacity:0.25; }
+          100% { opacity:1; }
+        }
+        .animate-flicker {
+          -webkit-animation: flickerAnimation 3s infinite;
+          -moz-animation: flickerAnimation 3s infinite;
+          -o-animation: flickerAnimation 3s infinite;
+            animation: flickerAnimation 3s infinite;
+        }     
+
+    </style>
+  </head>
+
+  <body>
+    <div class="container off">
+      <div class="closebutton"></div>
+      <div class="banner"></div>
+      <div class="name">bebop parrot</div>
+      <div class="stats">
+        <div class="stat">
+          <div class="statname">speed</div>
+          <div class="stars">
+            <div class="star">
+            </div>
+            <div class="star">
+            </div>
+            <div class="star">
+            </div>
+            <div class="star">
+            </div>
+            <div class="star">
+            </div>
+          </div>
+        </div>
+        <div class="stat">
+          <div class="statname">agility</div>
+          <div class="stars">
+            <div class="star">
+            </div>
+            <div class="star">
+            </div>
+            <div class="star">
+            </div>
+            <div class="star">
+            </div>
+            <div class="star">
+            </div>
+          </div>
+        </div>
+        <div class="stat">
+          <div class="statname">range</div>
+          <div class="stars">
+            <div class="star">
+            </div>
+            <div class="star">
+            </div>
+            <div class="star">
+            </div>
+            <div class="star">
+            </div>
+            <div class="star">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="abilities">
+        <div class="ability">night vision</div>
+        <div class="ability">infared</div>
+        <div class="ability">boost</div>
+        <div class="ability">tazer</div>
+        <div class="ability">explosive</div>
+      </div>
+      <div class="forwho">
+        <div class="require animate-flicker"></div>
+        <div class="whom">mechanic</div>
+        <div class="whom">police</div>
+      </div>
+      <div class="pricing">
+        <div class="price">1000$</div>
+        <div class="buybutton">buy</div>
+      </div>
+    </div>
+    
+  </body>
+  <script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+  <script>
+
+    var onClose,onBuy
+    var isOpen = false
+
+    document.getElementsByClassName("closebutton")[0].onclick = Close
+    document.getElementsByClassName("buybutton")[0].onclick = Buy
+
+    document.onkeydown = function(evt) {
+      if( isOpen ) {
+        evt = evt || window.event;
+        var isEscape = false;
+
+        if ("key" in evt) {
+            isEscape = (evt.key === "Escape" || evt.key === "Esc");
+        } else {
+            isEscape = (evt.keyCode === 27);
+        }
+
+        if (isEscape) {
+          Close()
+        }
+      }
+    }
+
+    function Buy() {
+      Post(onBuy)
+    }
+
+    function Open(args) {
+      if( args != null ) { 
+        onClose = args.onClose;
+        onBuy   = args.onBuy;
+      }
+
+      document.getElementsByClassName("container")[0].classList.toggle("off",false)
+      document.getElementsByClassName("banner")[0].style.backgroundImage = "url('" + ( args.bannerUrl || "banner1.png") +"')"
+      document.getElementsByClassName("name")[0].innerHTML = args.label
+
+      SetStat(0,args.stats.speed || 0,args.stats.maxSpeed || 1)
+      SetStat(1,args.stats.agility || 0,args.stats.maxAgility || 1)
+      SetStat(2,args.stats.range || 0,args.stats.maxRange || 100)
+
+
+      ClearAbilities()
+
+      if( args.abilities != null ) {
+        for( var i in args.abilities) {
+          var o = args.abilities[i]
+          if( o) {
+            SetAbility(i)
+          }
+        }
+      }
+
+      var maybuy = args.mayBuy || false
+      var canbuy = args.canBuy || false
+
+      if( maybuy && canbuy) {
+        document.getElementsByClassName("forwho")[0].classList.toggle("off",true)
+        document.getElementsByClassName("pricing")[0].classList.toggle("off",false)
+
+        document.getElementsByClassName("price")[0].innerHTML = args.price.toString() + "$"
+      } else {
+
+        document.getElementsByClassName("forwho")[0].classList.toggle("off",false)
+        document.getElementsByClassName("pricing")[0].classList.toggle("off",true)
+
+        ClearRestrictions()
+
+        if( !maybuy) {
+          if( args.restrictions != null ) {
+            for( var i = 0; i < args.restrictions.length; i++) {
+              SetRestriction(args.restrictions[i])
+            }
+          }
+        } else if(!canbuy ) {
+          SetRestriction("can't afford")
+        } 
+        
+
+      }
+
+      isOpen = true
+    }
+
+    function Close() {
+      document.getElementsByClassName("container")[0].classList.toggle("off",true)
+      isOpen = false
+
+      Post(onClose)
+    }
+
+    function SetStat(index,value,max) {
+      var f = (value/max)*5
+      var s = document.getElementsByClassName("stars")[index]
+      var stars = s.getElementsByClassName("star")
+      for( var i = 0; i < 5; i++ ) {
+        if( f > i && f > i+1 ) {
+          //full star
+          stars[i].innerHTML = "<div class='fullstar'></div>"
+        } else if( f > i && f < i+1) {
+          //half star
+          stars[i].innerHTML = "<div class='halfstar'></div>"
+        } else {
+          //no star
+          stars[i].innerHTML = "<div class='emptystar'></div>"
+        }
+      }
+    }
+
+    function ClearAbilities() {
+      document.getElementsByClassName("abilities")[0].innerHTML = ""
+    }
+    function SetAbility(name) {
+      var e = document.createElement("div")
+      e.classList.add("ability")
+      e.innerHTML = name
+      document.getElementsByClassName("abilities")[0].appendChild(e)
+    }
+
+    function ClearRestrictions() {
+      document.getElementsByClassName("forwho")[0].innerHTML = '<div class="require animate-flicker"></div>'
+    }
+    function SetRestriction(name) {
+      var e = document.createElement("div")
+      e.classList.add("whom")
+      e.innerHTML = name
+      document.getElementsByClassName("forwho")[0].appendChild(e)
+    }
+
+
+    var url = new URL(window.location.href);
+    if( url.searchParams.get("debug") != null ) {
+      Open({
+        label:"Lumenier Chief",
+        name:"drone_flyer_6",
+        public:true,
+        price:5000,
+        stats:{
+          speed:0.7,
+          agility:0.8,
+          range:100.0,
+          maxSpeed:2,
+          maxAgility:2,
+          maxRange:200,
+        },
+        abilities:{
+          infared    :false,
+          nightvision:true,
+          boost      :true,
+          tazer      :false,
+          explosive  :false,
+        },
+        restrictions:['police','mechanic'],
+        mayBuy:true,
+        canBuy:true,
+        bannerUrl:"banner3.png",
+        onClose:"none",
+      })
+    } else {
+      console.log = function() {};
+      document.body.style.backgroundColor = "transparent";
+    }
+
+    
+
+    //#region Interface
+    window.addEventListener('message', function(event) {
+      console.log("receive UI mssg",event)
+      if( event.data.func != null ) {
+        //call func
+        var ret = window[event.data.func](event.data.args)
+        if( event.data.ret != null ) {
+          Post(event.data.ret,ret)
+        }
+      } else if( event.data.var != null ) {
+        if( event.data.ret != null ) {
+          //get var
+          Post(event.data.ret,window[event.data.var])
+        } else {
+          //set var
+          window[event.data.var] = event.data.value
+        }
+      }
+    })
+    function GetVars() {
+      var ret = []
+      for(var i in window) {
+        if((typeof window[i]).toString()!="function") {
+          ret.push(window[i].name)
+        }
+      }
+      return ret
+    }
+    function GetFunctions() {
+      var ret = []
+      for(var i in window) {
+        if((typeof window[i]).toString()=="function") {
+          ret.push(window[i].name)
+        }
+      }
+      return ret
+    }
+    function Post(o,v) {
+      if( o == null || typeof(o) != "string" || o.length <= 0 ) { return }
+      if( v == null ) { v = {} }
+      console.log("send UI mssg",o,v)
+      $.post(o,JSON.stringify(v))
+    }
+    //#endregion
+  </script>
+</html>

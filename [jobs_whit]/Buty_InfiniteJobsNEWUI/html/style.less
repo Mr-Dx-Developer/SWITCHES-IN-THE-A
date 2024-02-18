@@ -1,0 +1,296 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+
+@primary: #9b37ff;
+
+* {
+   padding: 0;
+   margin: 0;
+   font-family: "Poppins", sans-serif;
+   color: white;
+}
+
+html {
+   height: 100%;
+}
+
+body {
+   display: flex;
+   justify-content: center;
+   min-height: 100%;
+}
+
+#app {
+   display: flex;
+   justify-content: center;
+   min-height: 100%;
+   overflow: hidden;
+   width: 100%;
+}
+
+.background-img {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   filter: grayscale(0.1);
+   z-index: -1;
+}
+
+.container {
+   position: absolute;
+   top: 0;
+   left: 0;
+   height: calc(100% - 50px);
+   display: flex;
+   flex-flow: column;
+   align-items: center;
+   justify-content: space-between;
+   overflow: hidden;
+   flex-wrap: nowrap;
+   width: calc(100% - 50px);
+   padding: 25px;
+   background-color: rgba(0, 0, 0, 0.6);
+
+   .header {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+
+      .left {
+         display: flex;
+         gap: 20px;
+         align-items: center;
+         border-bottom: 1px solid @primary;
+
+         ion-icon {
+            font-size: 32px;
+            padding-right: 15px;
+            border-right: 1px solid @primary;
+         }
+
+         h1 > span {
+            font-size: 18px;
+            color: #7e7c7c;
+         }
+      }
+      .right {
+         h1 > span {
+            font-size: 18px;
+            color: #7e7c7c;
+         }
+      }
+   }
+   .main {
+      width: 1406px;
+      height: 550px;
+      overflow: hidden;
+      position: relative;
+
+      .arrows {
+         position: absolute;
+         left: 50%;
+         bottom: 85px;
+         width: 400px;
+         transform: translate(-50%, -50%);
+         z-index: 10;
+
+         .arrow-left {
+            position: absolute;
+            left: -25px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            border: 1px solid @primary;
+            backdrop-filter: blur(5px);
+
+            ion-icon {
+               font-size: 24px;
+            }
+         }
+         .arrow-right {
+            position: absolute;
+            right: -25px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            border: 1px solid @primary;
+            backdrop-filter: blur(5px);
+
+            ion-icon {
+               font-size: 24px;
+            }
+         }
+      }
+
+      .slider {
+         position: absolute;
+         left: 0;
+         top: 0;
+         width: 100%;
+         height: 100%;
+         transition: 0.25s;
+
+         .jobs {
+            display: flex;
+            gap: 100px;
+
+            .job {
+               position: relative;
+               display: flex;
+               flex-flow: column;
+               align-items: center;
+               width: 350px;
+               min-width: 350px;
+               padding: 25px;
+               background: rgba(255, 255, 255, 0.05);
+               border-radius: 5px;
+               box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+               backdrop-filter: blur(6.6px);
+               -webkit-backdrop-filter: blur(6.6px);
+               border: 1px solid rgba(255, 255, 255, 0.31);
+               transform: scale(0.9);
+
+               &.active {
+                  transform: scale(1);
+                  &::before {
+                     display: none;
+                  }
+               }
+
+               &::before {
+                  content: "";
+                  position: absolute;
+                  left: -1px;
+                  top: -1px;
+                  width: calc(100% + 2px);
+                  height: calc(100% + 2px);
+                  background-color: rgba(0, 0, 0, 0.7);
+                  border-radius: 5px;
+                  z-index: 10;
+               }
+
+               .top {
+                  display: flex;
+                  position: relative;
+                  width: 100%;
+
+                  img {
+                     width: 100%;
+                  }
+
+                  .job-title {
+                     position: absolute;
+                     left: 50%;
+                     top: 50%;
+                     transform: translate(-50%, -50%);
+                     font-size: 24px;
+                     font-weight: bold;
+                     border-bottom: 1px solid @primary;
+                  }
+
+                  .level {
+                     position: absolute;
+                     left: 50%;
+                     bottom: -15px;
+                     transform: translateX(-50%);
+                     width: 30px;
+                     height: 30px;
+                     border-radius: 50%;
+                     display: flex;
+                     justify-content: center;
+                     align-items: center;
+                     background-color: rgba(0, 0, 0, 0.3);
+                     border: 1px solid @primary;
+                     backdrop-filter: blur(5px);
+                     box-shadow: 0 5px 15px @primary;
+                  }
+               }
+               .level-progress {
+                  position: relative;
+                  margin-top: 50px;
+                  margin-bottom: 50px;
+                  width: 100%;
+                  background-color: transparent;
+                  height: 10px;
+                  border: 1px solid @primary;
+                  border-radius: 2.5px;
+
+                  .level-bar {
+                     position: absolute;
+                     left: 0;
+                     top: 0;
+                     width: 50%;
+                     height: 10px;
+                     background-color: @primary;
+                     opacity: 0.7;
+                  }
+
+                  .next-level {
+                     position: absolute;
+                     right: 0;
+                     bottom: -20px;
+                     font-size: 10px;
+                     color: #c1c1c1;
+                  }
+               }
+
+               .description {
+                  text-align: center;
+                  font-size: 14px;
+               }
+
+               .select-button {
+                  margin-top: 25px;
+                  padding: 10px;
+                  border: 2px solid @primary;
+                  border-radius: 5px;
+                  font-size: 24px;
+                  padding-left: 25px;
+                  padding-right: 25px;
+                  cursor: pointer;
+                  box-shadow: 0 5px 15px @primary;
+                  transition: 0.25s;
+
+                  &:hover {
+                     background-color: @primary;
+                     opacity: 0.9;
+                  }
+               }
+            }
+         }
+      }
+   }
+   .steps {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      padding: 10px;
+      background-color: rgba(0, 0, 0, 0.6);
+      border-radius: 10px;
+
+      .step {
+         width: 100px;
+         height: 10px;
+         border: 2px solid @primary;
+         box-shadow: 0 5px 15px @primary;
+         border-radius: 10px;
+
+         &.active {
+            background-color: @primary;
+         }
+      }
+   }
+}

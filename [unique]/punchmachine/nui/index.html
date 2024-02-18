@@ -1,0 +1,45 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PunchMachine</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"/>
+</head>
+<body>
+    <div class="totalscore">
+        <span id="score">100</span>
+    </div>
+    <div class="minigame">
+        <div id="key" class="animate__animated animate__heartBeat animation__slow animate__repeat-2"></div>
+        <div id="time" style="text-align: right; color:white;"></div>
+        <div id="myProgress">
+            <div id="progressbar" class="animate__animated">
+                <div>
+                    <img src="punch.png">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="scorelist">
+        <h3><i class="fa-solid fa-medal"></i> Liste des scores</h3>
+        <ul>
+          <li>
+              <i class="fas fa-trophy"></i><div id="name0"></div>
+              <span id="score0"></span>
+          </li>
+          <li>
+              <i class="fas fa-trophy"></i> <div id="name1"></div>
+              <span id="score1"></span>
+          </li>
+          <li>
+              <i class="fas fa-trophy"></i> <div id="name2"></div>
+            <span  id="score2"></span>
+          </li>
+        </ul>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

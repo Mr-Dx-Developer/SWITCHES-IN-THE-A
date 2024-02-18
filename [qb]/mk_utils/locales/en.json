@@ -1,0 +1,7 @@
+{
+    "lost_item": "Could not find item.",
+    "cant_carry": "Can't carry this much",
+    "invalid_component": "Component ['%s'] not found",
+    "no_target_resource": "No Target resource found",
+    "unknown_veh_name": "Unknown"
+}

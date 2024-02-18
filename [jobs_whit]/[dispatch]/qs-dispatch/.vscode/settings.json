@@ -1,0 +1,8 @@
+{
+    "Lua.diagnostics.disable": [
+        "undefined-global"
+    ],
+    "lua.targetVersion": "5.1",
+    "Lua.runtime.nonstandardSymbol": ["/**/", "`", "+=", "-=", "*=", "/="],
+    "Lua.runtime.version": "Lua 5.4"
+}

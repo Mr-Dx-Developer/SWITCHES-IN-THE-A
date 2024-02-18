@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<CMapTypes>
+  <extensions/>
+  <archetypes>
+  <Item type="CBaseArchetypeDef">
+  <lodDist value="140.00000000"/>
+  <flags value="549584896"/>
+  <specialAttribute value="0"/>
+  <bbMin x="-10.23982000" y="-0.69671170" z="-0.05486500"/>
+  <bbMax x="0.44809160" y="0.29700000" z="9.46538200"/>
+  <bsCentre x="-4.89586400" y="-0.19985590" z="4.70525900"/>
+  <bsRadius value="7.17380700"/>
+  <hdTextureDist value="10.00000000"/>
+  <name>wasabi_stretcher</name>
+  <textureDictionary>wasabi_stretcher</textureDictionary>
+  <clipDictionary/>
+  <drawableDictionary/>
+  <physicsDictionary>wasabi_stretcher</physicsDictionary>
+  <assetType>ASSET_TYPE_DRAWABLE</assetType>
+  <assetName>wasabi_stretcher</assetName>
+  <extensions/>
+  </Item>
+   </archetypes>
+  <name>0x0AD225D7</name>
+  <dependencies/>
+  <compositeEntityTypes/>
+</CMapTypes>

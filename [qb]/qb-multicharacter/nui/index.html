@@ -1,0 +1,116 @@
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js" integrity="sha256-xH4q8N0pEzrZMaRmd7gQVcTZiFei+HfRTBPJ1OGXC0k=" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script src="https://kit.fontawesome.com/b067deb7c3.js" crossorigin="anonymous"></script>
+        <link rel="preconnect" href="https://fonts.gstatic.com"><link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+        <script src="script.js"></script>
+        <link rel="stylesheet" type="text/css" href="main.css">
+    </head>
+    <body>
+        <div class="deletechar_modal">
+            <div class="deletechar_modal__container">
+                <div class="preloader-wrapper big active" style="display: none;">
+                  <div class="spinner-layer spinner-red-only">
+                    <div class="circle-clipper left">
+                      <div class="circle"></div>
+                    </div><div class="gap-patch">
+                      <div class="circle"></div>
+                    </div><div class="circle-clipper right">
+                      <div class="circle"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div id="data">
+                    <div id="header" class="row red-text">Delete "<span>Shaul Kabokim</span>"</div>
+                    <div id="description" class="row">By doing so - everything will be deleted, the money, vehicles etc...<br>If you're sure you want to delete your character, please write the character name.</div>
+                    <div id="nameinput" class="row">
+                        <div class="input-field col s12">
+                            <input id="deleteplayer_input" type="text" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="container__info row">
+                <div id="playername" class="row">Shaul Kabokim</div>
+                <div id="playerdata" class="row">
+                    <div class="col s3">
+                        <i class="fas fa-fingerprint infoIcon"></i>&ensp;<span id="c-cid">69</span><br>
+                        <i class="fas fa-venus-mars infoIcon"></i>&ensp;<span id="c-gender">Male</span><br>
+                        <i class="fas fa-calendar-alt infoIcon"></i>&ensp;<span id="c-dob">20-01-1991</span><br>
+                        
+                    </div>
+                    <div class="col s3">
+                        <i class="far fa-money-bill-alt infoIcon"></i>&ensp;<span id="c-cash">$54,734</span><br>
+                        <i class="fas fa-money-check infoIcon"></i>&ensp;<span id="c-bank">$54,734</span><br>
+                        <i class="fas fa-briefcase infoIcon"></i>&ensp;<span id="c-job">Unemployed</span><br>
+                    </div>
+                </div>
+                <div id="buttons" class="row">
+                    <div class="col s12">
+                        <a class="waves-effect btn btn-large" id='spawnplayer_button' data-color="success">SPAWN</a>
+                        <a class="waves-effect btn btn-large" id='deleteplayer_button' data-color="failed">DELETE</a>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="container__create row">
+                <div id="playername" class="row">Create Character</div>
+                <div id="playerdata" class="row">
+                    <div class="row">
+                        <div class="input-field col s3 input-length">
+                            <input id="p_firstname" type="text" class="validate" required data-length="12">
+                            <label for="p_firstname">First Name</label>
+                        </div>
+                        <div class="input-field col s3 input-length">
+                            <input id="p_lastname" type="text" class="validate" required data-length="12">
+                            <label for="p_lastname">Last Name</label>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="input-field col s2">
+                            <select>
+                              <option value="1" selected>Male</option>
+                              <option value="2">Female</option>
+                            </select>
+                            <label>Gender</label>
+                        </div>
+                        <div class="input-field col s2">
+                            <input id='p_dob'type="text" class="datepicker" required>
+                            <label for="p_dob">Date of birth</label>
+                        </div>
+                        <div class="input-field col s2 input-length">
+                            <input id="p_nationality" type="text" class="validate" required data-length="12">
+                            <label for="p_nationality">Nationality</label>
+                        </div>
+                    </div>
+    
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <textarea id="p_backstory" class="materialize-textarea overflow"></textarea>
+                            <label for="p_backstory">Backstory</label>
+                        </div>
+                    </div>
+                </div>
+                <div id="buttons" class="row">
+                    <div class="col s12">
+                        <a class="waves-effect btn btn-large" id='createchar_button' data-color="success">CREATE</a>
+                    </div>
+                </div>
+            </div>
+    
+            <div id="slider" class="row">
+                <a class="btn-floating btn-small waves-effect white black-text" id="selectcharacter" data-char='1'>1</a>
+                <a class="btn-floating btn-small waves-effect white black-text" id="selectcharacter" data-char='2'>2</a>
+                <a class="btn-floating btn-small waves-effect white black-text" id="selectcharacter" data-char='create'><i class="fa-solid fa-plus black-text"></i></a>
+            </div>
+        </div>
+    </body>
+</html>

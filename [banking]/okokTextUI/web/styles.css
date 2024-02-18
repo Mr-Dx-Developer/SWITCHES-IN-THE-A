@@ -1,0 +1,268 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&subset=devanagari,latin-ext');
+
+html, body{
+	font-family: 'Poppins', sans-serif;
+	overflow: hidden;
+}
+
+@keyframes showright {
+	0% {
+		transform: translateX(100%);
+	}
+	40% {
+		transform: translateX(0%);
+	}
+	80%, 100% {
+		opacity: 1;
+		transform: translateX(0px);
+	}
+}
+
+.showright {
+	animation: showright 1s ease forwards;
+}
+
+@keyframes hideright {
+	0% {
+		transform: translateX(0px);
+	}
+	40% {
+		transform: translateX(-5%);
+	}
+	80%, 100% {
+		opacity: 0;
+		pointer-events: none;
+	transform: translateX(100%);
+	}
+}
+
+.hideright {
+	animation: hideright 1s ease forwards;
+}
+
+@keyframes showleft {
+	0% {
+		transform: translateX(-100%);
+	}
+	40% {
+		transform: translateX(0%);
+	}
+	80%, 100% {
+		opacity: 1;
+		transform: translateX(0px);
+	}
+}
+
+.showleft {
+	animation: showleft 1s ease forwards;
+}
+
+@keyframes hideleft {
+	0% {
+		transform: translateX(0px);
+	}
+	40% {
+		transform: translateX(5%);
+	}
+	80%, 100% {
+	opacity: 0;
+	pointer-events: none;
+	transform: translateX(-100%);
+	}
+}
+
+.hideleft {
+	animation: hideleft 1s ease forwards;
+}
+
+
+#ui {
+	position: absolute;
+	top: 50%;
+}
+
+#wrapper {
+	height: auto;
+	margin-bottom: 10px;
+	min-width: 275px;
+	margin: 0 0 8px 0;
+	border-radius: 10px;
+}
+
+#main {
+	margin: 12px 16px 12px 56px;
+	position: relative;
+}
+
+#main::before {
+	font-size: 24px;
+	top: calc(50% - 12px);
+	left: -40px;
+	line-height: 24px;
+	position: absolute;
+}
+
+#message {
+	font-size: 16px;
+	font-weight: 600;
+}
+
+/* Light Blue */
+
+.lightblue-icon::before {
+	font-family: "Font Awesome 5 Free";
+	content: "\f05a";
+	color: #234799;
+	font-size: 28px;
+}
+
+.lightblue {
+	background-color: rgba(240, 240, 240, 0.85);
+	color: #234799;
+	padding: 5px 5px 5px 5px;
+	margin-bottom: 5px;
+}
+
+.lightblue-border {
+	border-left: 4px solid #234799;
+}
+
+/* Light Green */
+
+.lightgreen-icon::before {
+	font-family: "Font Awesome 5 Free";
+	content: "\f05a";
+	color: #20ab4d;
+	font-size: 28px;
+}
+
+.lightgreen {
+	background-color: rgba(240, 240, 240, 0.85);
+	color: #20ab4d;
+	padding: 5px 5px 5px 5px;
+	margin-bottom: 5px;
+}
+
+.lightgreen-border {
+	border-left: 4px solid #20ab4d;
+}
+
+/* Light Red */
+
+.lightred-icon::before {
+	font-family: "Font Awesome 5 Free";
+	content: "\f05a";
+	color: #dc3545;
+	font-size: 28px;
+}
+
+.lightred {
+	background-color: rgba(240, 240, 240, 0.85);
+	color: #dc3545;
+	padding: 5px 5px 5px 5px;
+	margin-bottom: 5px;
+}
+
+.lightred-border {
+	border-left: 4px solid #dc3545;
+}
+
+/* Light Grey */
+
+.lightgrey-icon::before {
+	font-family: "Font Awesome 5 Free";
+	content: "\f05a";
+	color: #646464;
+	font-size: 28px;
+}
+
+.lightgrey {
+	background-color: rgba(240, 240, 240, 0.85);
+	color: #646464;
+	padding: 5px 5px 5px 5px;
+	margin-bottom: 5px;
+}
+
+.lightgrey-border {
+	border-left: 4px solid #646464;
+}
+
+/* Dark Blue */
+
+.darkblue-icon::before {
+	font-family: "Font Awesome 5 Free";
+	content: "\f05a";
+	color: #2f83ff;
+	font-size: 28px;
+}
+
+.darkblue {
+	background-color: rgba(20, 20, 20, 0.85);
+	color: #fff;
+	padding: 5px 5px 5px 5px;
+	margin-bottom: 5px;
+}
+
+.darkblue-border {
+	border-left: 4px solid #2f83ff;
+}
+
+/* Dark Green */
+
+.darkgreen-icon::before {
+	font-family: "Font Awesome 5 Free";
+	content: "\f05a";
+	color: #47cf73;
+	font-size: 28px;
+}
+
+.darkgreen {
+	background-color: rgba(20, 20, 20, 0.85);
+	color: #fff;
+	padding: 5px 5px 5px 5px;
+	margin-bottom: 5px;
+}
+
+.darkgreen-border {
+	border-left: 4px solid #47cf73;
+}
+
+/* Dark Red */
+
+.darkred-icon::before {
+	font-family: "Font Awesome 5 Free";
+	content: "\f05a";
+	color: #dc3545;
+	font-size: 28px;
+}
+
+.darkred {
+	background-color: rgba(20, 20, 20, 0.85);
+	color: #fff;
+	padding: 5px 5px 5px 5px;
+	margin-bottom: 5px;
+}
+
+.darkred-border {
+	border-left: 4px solid #dc3545;
+}
+
+/* Dark Grey */
+
+.darkgrey-icon::before {
+	font-family: "Font Awesome 5 Free";
+	content: "\f05a";
+	color: #969696;
+	font-size: 28px;
+}
+
+.darkgrey {
+	background-color: rgba(20, 20, 20, 0.85);
+	color: #fff;
+	padding: 5px 5px 5px 5px;
+	margin-bottom: 5px;
+}
+
+.darkgrey-border {
+	border-left: 4px solid #969696;
+}

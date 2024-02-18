@@ -1,0 +1,374 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  /* background-image: url(./img/bg.png);
+  background-size: cover;
+  background-repeat: no-repeat; */
+  justify-content: center;
+  align-items: center;
+  display: none;
+  width: 100vw;
+  height: 56.25vw;
+  overflow: hidden;
+}
+
+.General {
+  display: flex;
+  flex-direction: column;
+  width: 60vw;
+  height: 34vw;
+  gap: 1vw;
+}
+
+.topArea {
+  padding: 1vw 2.4vw;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 6vw;
+  background: radial-gradient(
+      100% 100% at 50% 0%,
+      rgba(255, 255, 255, 0.08) 2.55%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    rgba(0, 0, 0, 0.55);
+  border: 0.11458333333333334vw solid rgba(255, 255, 255, 0.31);
+}
+
+.topAreaRightBox {
+  display: flex;
+  align-items: center;
+  width: 38.2vw;
+  height: 100%;
+}
+
+.generalTitle {
+  display: flex;
+  align-items: center;
+  font-family: "Oswald";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 2.5vw;
+  line-height: 90%;
+  color: rgba(255, 255, 255, 0.62);
+}
+
+.generalSubTitle {
+  width: 20vw;
+  display: flex;
+  align-items: center;
+  font-family: "Oswald";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2vw;
+  margin-left: 0.5vw;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.generalSubTitle::after {
+  content: "";
+  flex: 1;
+  margin-left: 0.8333333333333334vw;
+  height: 0.052083333333333336vw;
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.lineEffect1 {
+  margin-left: 1vw;
+  width: 11vw;
+  height: 0.1vw;
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.linevector {
+  margin-left: 0.5vw;
+  width: 3.3vw;
+  height: 1.25vw;
+  background-image: url(./img/Vector.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.lineEffect2 {
+  display: flex;
+  align-items: center;
+  margin-left: 0.5vw;
+  width: 7vw;
+  height: 0.1vw;
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.totalPlayersBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: 1vw;
+  width: 7.6vw;
+  height: 3vw;
+  background: linear-gradient(
+    180deg,
+    rgba(71, 125, 95, 0.68) 0%,
+    rgba(98, 108, 102, 0.57) 130.17%
+  );
+  border: 0.1vw solid rgba(0, 0, 0, 0.32);
+  border-radius: 0.3125vw;
+}
+
+.totalPlayersTexts {
+  font-family: "Oswald";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.68vw;
+  line-height: 150%;
+  color: rgba(255, 255, 255, 0.46);
+}
+
+.totalPlayersSay {
+  font-family: "Oswald";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.1vw;
+  line-height: 95%;
+  color: #ffffff;
+}
+
+.bottomArea {
+  gap: 4vw;
+  display: flex;
+  align-items: center;
+  padding: 2.6vw 2.6vw;
+  width: 100%;
+  height: 26.8vw;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    radial-gradient(
+        138.37% 165.81% at 117.74% 201.72%,
+        rgba(117, 221, 165, 0.55) 0%,
+        rgba(117, 221, 165, 0) 100%
+      )
+      /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */,
+    rgba(0, 0, 0, 0.42);
+  border: 0.13vw solid rgba(255, 255, 255, 0.28);
+}
+
+.bottomListBoxs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 12.5vw;
+  height: 100%;
+}
+
+.listTitle {
+  font-family: "Oswald";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.25vw;
+  line-height: 122.2%;
+  color: #ffffff;
+}
+
+.listTitle span {
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.63);
+}
+
+.listButtonBox {
+  gap: 2.4vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1.5vw;
+  width: 100%;
+  height: 17.2vw;
+}
+
+.listButtonBox2 {
+  gap: 1.5vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1.5vw;
+  width: 100%;
+  height: 17.2vw;
+}
+
+.listButton {
+  font-family: "Oswald";
+  font-style: normal;
+  font-weight: 500;
+  transition: 0.5s;
+  font-size: 1.2vw;
+  line-height: 122.2%;
+  color: #ffffff;
+  line-height: 4vw;
+  text-align: center;
+  width: 100%;
+  height: 4.1vw;
+  background: linear-gradient(
+    180deg,
+    #59d893 -27.42%,
+    rgba(89, 216, 147, 0) 140.32%
+  );
+  border: 0.062083333333333336 solid rgba(0, 0, 0, 0.4);
+  filter: drop-shadow(0px 0px 0.46875vw rgba(83, 182, 128, 0.3));
+  border-radius: 0.35vw;
+}
+
+.listButton2 {
+  font-family: "Oswald";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.2vw;
+  line-height: 122.2%;
+  color: #ffffff;
+  line-height: 3vw;
+  text-align: center;
+  width: 100%;
+  transition: 0.7s;
+  height: 3.1vw;
+  background: linear-gradient(
+    180deg,
+    #59d893 -27.42%,
+    rgba(89, 216, 147, 0) 140.32%
+  );
+  border: 0.05729166666666667vw solid rgba(0, 0, 0, 0.4);
+  filter: drop-shadow(0px 0px 0.46875vw rgba(83, 182, 128, 0.3));
+  border-radius: 0.3541666666666667vw;
+}
+
+.listButton span {
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.63);
+}
+
+.bottomListLine {
+  background-image: url(./img/line.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 0.2vw;
+  height: 20vw;
+}
+
+.currentFpsBox {
+  display: flex;
+  flex-direction: column;
+  padding: 1.3vw 1vw;
+  width: 8.8vw;
+  height: 7.9vw;
+  background: linear-gradient(
+    180deg,
+    rgba(71, 125, 95, 0.68) 0%,
+    rgba(98, 108, 102, 0.57) 130.17%
+  );
+  border: 0.10416666666666667vw solid rgba(0, 0, 0, 0.32);
+  border-radius: 0.3125vw;
+}
+
+.listButtonBox3 {
+  gap: 0.8vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1.5vw;
+  width: 100%;
+  height: 17.2vw;
+}
+
+.fpsTitleText {
+  font-family: "Oswald";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.25vw;
+
+  text-align: center;
+
+  color: rgba(255, 255, 255, 0.46);
+}
+
+.fpsTitleSay {
+  font-family: "Oswald";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 2.5vw;
+  text-align: center;
+
+  color: #ffffff;
+}
+
+.RestartButton {
+  text-align: center;
+  width: 100%;
+  height: 4.1vw;
+  transition: 0.7s;
+  background: linear-gradient(
+    180deg,
+    #ff3737 -27.42%,
+    rgba(90, 14, 14, 0) 140.32%
+  );
+  border: 0.057vw solid rgba(0, 0, 0, 0.4);
+  filter: drop-shadow(0px 0px 1.2vw rgba(182, 83, 83, 0.57));
+  border-radius: 0.35vw;
+
+  font-family: "Oswald";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.25vw;
+  line-height: 4vw;
+  color: #ffffff;
+}
+
+.AdBoxs {
+  display: flex;
+  gap: 1.6vw;
+  width: 100%;
+  height: 3.3vw;
+}
+
+.AdButton {
+  display: flex;
+  gap: 0.2vw;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 5.4vw;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    #59d893 -27.42%,
+    rgba(89, 216, 147, 0) 140.32%
+  );
+  border: 0.057vw solid rgba(0, 0, 0, 0.4);
+  filter: drop-shadow(0px 0px 1.2vw rgba(182, 83, 83, 0.57));
+  border-radius: 0.35vw;
+}
+
+.fa-globe,
+.fa-discord {
+  font-size: 1.5vw;
+  color: #fff;
+}
+
+.AdButtonText {
+  font-family: "Oswald";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.67vw;
+  line-height: 122.2%;
+
+  color: #ffffff;
+}
+
+.listButton:hover,
+.listButton2:hover,
+.RestartButton:hover {
+  cursor: pointer;
+  scale: 1.05;
+}

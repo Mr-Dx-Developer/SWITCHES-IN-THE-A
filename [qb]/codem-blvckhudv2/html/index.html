@@ -1,0 +1,1400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <link rel="stylesheet" href="./style/coloris.min.css">
+    <link rel="stylesheet" href="./style/speedometer.css">
+
+    <link rel="stylesheet" href="./style/main.css">
+    <link rel="stylesheet" href="./style/textHud.css">
+    <link rel="stylesheet" href="./style/radialHud.css">
+    <link rel="stylesheet" href="./style/classicHud.css">
+
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+</head>
+
+<body>
+
+    <div id="app">
+        <transition name="fade" mode="out-in">
+            <div class="settings" v-show="settingsOpen">
+                <div class="dynamicStatus">
+
+                    <h1 class="dynamicText">{{locales['dynamic']}}</h1>
+                    <h1 class="dynamicStatusText">{{locales['status']}}</h1>
+                    <div class="dynamicButtons">
+                        <div class="enableButton" @click="SetHideShowBox(true)">{{locales['enable']}}</div>
+                        <div class="disableButton" @click="SetHideShowBox(false)">{{locales['disable']}}</div>
+                    </div>
+
+                    <transition name="slide" mode="out-in">
+                        <div v-if="showHideBox">
+                            <div class="hideBox hideBoxHealth">
+                                <div class="healthBoxIcon">
+                                    <div class="healthBoxIconInner">
+                                    </div>
+                                </div>
+                                <p class="hideAt">{{locales['hide_at']}}</p>
+                                <input v-model="hideBoxDataDisplay.health" @change="SetHideData('health', $event)"
+                                    type="text" class="hideAtInput hideAtInputHealth">
+                                <p class="hideAt"> {{locales['and_above']}}</p>
+                            </div>
+                            <div class="hideBox hideBoxArmor">
+                                <div class="armourhBoxIcon">
+
+                                </div>
+                                <p class="hideAt">{{locales['hide_at']}}</p>
+                                <input v-model="hideBoxDataDisplay.armor" @change="SetHideData('armor', $event)"
+                                    type="text" class="hideAtInput hideAtInputArmor">
+                                <p class="hideAt"> {{locales['and_above']}}</p>
+                            </div>
+                            <div class="hideBox hideBoxThirsty">
+                                <div class="thirstBoxIcon">
+
+                                </div>
+                                <p class="hideAt">{{locales['hide_at']}}</p>
+                                <input v-model="hideBoxDataDisplay.water" @change="SetHideData('water', $event)"
+                                    type="text" class="hideAtInput hideAtInputThirsty">
+                                <p class="hideAt"> {{locales['and_above']}}</p>
+                            </div>
+                            <div class="hideBox hideBoxHunger">
+                                <div class="hungerBoxIcon">
+
+
+                                </div>
+                                <p class="hideAt">{{locales['hide_at']}}</p>
+                                <input v-model="hideBoxDataDisplay.hunger" @change="SetHideData('hunger', $event)"
+                                    type="text" class="hideAtInput hideAtInputHunger">
+                                <p class="hideAt"> {{locales['and_above']}}</p>
+                            </div>
+                            <div class="hideBox hideBoxStress">
+                                <div class="stressBoxIcon">
+                                    <div class="stressBoxIconInner">
+                                    </div>
+                                </div>
+                                <p class="hideAt">{{locales['hide_at']}}</p>
+                                <input v-model="hideBoxDataDisplay.stress" @change="SetHideData('stress', $event)"
+                                    type="text" class="hideAtInput hideAtInputStress">
+                                <p class="hideAt"> {{locales['and_above']}}</p>
+                            </div>
+                            <div class="hideBox hideBoxStamina">
+                                <div class="staminaBoxIcon">
+                                    <div class="staminaBoxIconInner">
+                                    </div>
+                                </div>
+                                <p class="hideAt">{{locales['hide_at']}}</p>
+                                <input v-model="hideBoxDataDisplay.stamina" @change="SetHideData('stamina', $event)"
+                                    type="text" class="hideAtInput hideAtInputStamina">
+                                <p class="hideAt"> {{locales['and_above']}}</p>
+
+                            </div>
+
+                        </div>
+                    </transition>
+                </div>
+                <div class="exitSettings">
+                    <div style="margin-right: .4rem;">
+                        <p class="exitText">{{locales['exit_settings_1']}}</p>
+                        <p class="exitText">{{locales['exit_settings_2']}}</p>
+                    </div>
+                    <div>
+                        <div class="exitButton" @click="ExitSettings">X</div>
+                    </div>
+                </div>
+                <div class="settingsButtons">
+                    <div class="settingButton" @click="ToggleHud">{{hide ? locales['show_hud'] : locales['hide_hud']}}
+                    </div>
+                    <div class="settingButton" @click="ToggleCinematic">{{enableCinematic ?
+                        locales['disable_cinematicmode'] : locales['enable_cinematicmode'] }}</div>
+                    <div class="settingButton" @click="SetShowCompass(showCompass ? false : true)">{{showCompass ?
+                        locales['hide_compass'] : locales['show_compass'] }}</div>
+                    <div class="settingButton" @click="SetEditMode(editModeActive ? false : true)">{{editModeActive ?
+                        locales['disable_edit_mode'] : locales['enable_edit_mode'] }}</div>
+                    <div class="settingButton" @click="SetAllEditMode(editAllModeActive ? false : true)">
+                        {{editAllModeActive ?
+                        locales['disable_edit_mode'] : locales['enable_edit_mode_2'] }}</div>
+                    <div class="settingButton" @click="ResetHudPositions">{{locales['reset_hud_positions']}}</div>
+                </div>
+                <div class="leftBottomMap">
+                    <div class="settingsMap ">
+                        <div class="settingsTop">
+                            <div class="textHudSettingsTop">
+                                <div class="textHudItem top">
+                                    <span style="position: relative; bottom: .1rem;" v-html="GetSvg('gps2')"></span>
+                                    <div class="line"></div>
+                                    <div class="line" style="margin-left: 5.5rem; margin-right: .74rem;"></div>
+
+                                    <svg style="margin-top: .3rem;" width="20" height="20" viewBox="0 0 20 20"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M9.05136 0.0242827C7.18055 0.218845 5.47824 0.886875 3.95823 2.02305C3.4642 2.39237 2.39996 3.45618 2.03645 3.94409C1.07359 5.23655 0.449322 6.64263 0.174716 8.13744C-0.345905 10.9712 0.303434 13.7345 2.03645 16.0607C2.39996 16.5486 3.4642 17.6124 3.95823 17.9817C5.38359 19.0472 6.96305 19.6926 8.77715 19.951C9.23988 20.0169 10.7777 20.0161 11.2608 19.9497C13.5245 19.6384 15.5518 18.6344 17.0937 17.0609C17.585 16.5596 17.7019 16.4263 18.0162 16.0103C19.0308 14.6669 19.6967 13.0233 19.9509 11.2353C20.0164 10.7748 20.0164 9.22978 19.9509 8.76951C19.726 7.18824 19.1679 5.6901 18.3473 4.46418C16.7395 2.06251 14.2677 0.501979 11.3977 0.0767294C10.9179 0.00561317 9.52924 -0.0253852 9.05136 0.0242827ZM10.3748 3.67634C10.4588 3.72237 10.5668 3.82977 10.6193 3.91924L10.7132 4.07967V6.86471V9.64979L12.4328 11.0265C13.7244 12.0605 14.1693 12.4381 14.22 12.5433C14.2571 12.6204 14.2878 12.7753 14.2883 12.8876C14.2899 13.2635 13.9816 13.5641 13.5945 13.5641C13.4898 13.5641 13.3487 13.537 13.2809 13.504C13.1065 13.4189 9.50221 10.515 9.40501 10.3811C9.32585 10.2722 9.32456 10.2267 9.31424 7.1783L9.30375 4.08593L9.39097 3.93063C9.52873 3.68538 9.83932 3.53098 10.107 3.57465C10.1715 3.58522 10.292 3.63098 10.3748 3.67634Z"
+                                            fill="white" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mapText">{{locales['map']}}</div>
+                        <div class="mapButtons">
+                            <span @click="SetSelectedMap(`rectangle`)" v-html="GetRectangleButton"></span>
+                            <span @click="SetSelectedMap(`radial`)" v-html="GetCircleButton"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="settingsSpeedometer">
+                    <div class="settingSpeedometerWrapper">
+
+                        <div class="speedometerInfoBox">
+                            <div class="speedometerInfoBoxWrapper">
+                                <img src="./assets/images/arrow.png">
+                                <p>{{locales['info_text']}}</p>
+                            </div>
+                        </div>
+                        <p class="refreshRate">{{locales['refresh_rate']}}</p>
+                        <input v-model="displayRefreshRate" @change="SetRefreshRate" type="text"
+                            class="refreshRateInput" placeholder="0">
+                        <p class="settingsSpeedometerText">{{locales['speedometer']}}</p>
+                        <div class="speedometerSize">
+                            <div class="speedometerSizeWrapper">
+                                <p>{{locales['speedometer_size']}}</p>
+                                <div class="zero">0.5</div>
+                                <div class="one">1.3</div>
+
+                                <input @change="SetSpeedometerSize" v-model="speedometerSize" min="0.5" step="0.1"
+                                    max="1.3" type="range">
+                            </div>
+                        </div>
+                        <div class="speedometerButtons">
+                            <span @click="SetSelectSpeedUnit(`mph`)" v-html="GetMphButton"></span>
+                            <span @click="SetSelectSpeedUnit(`kmh`)" v-html="GetKmhButton"></span>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="settingsCenter">
+                    <div class="settingsBg" @click="SetCurrentHud('text')">
+                        <div class="settingsMap">
+                            <div class="settingsTop">
+                                <div class="textHudSettingsTop">
+                                    <div class="textHudItem top">
+                                        <span style="position: relative; bottom: .1rem;" v-html="GetSvg('gps2')"></span>
+                                        <div class="line"></div>
+                                        <div class="line" style="margin-left: 5.5rem; margin-right: .74rem;"></div>
+
+                                        <svg style="margin-top: .3rem;" width="20" height="20" viewBox="0 0 20 20"
+                                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M9.05136 0.0242827C7.18055 0.218845 5.47824 0.886875 3.95823 2.02305C3.4642 2.39237 2.39996 3.45618 2.03645 3.94409C1.07359 5.23655 0.449322 6.64263 0.174716 8.13744C-0.345905 10.9712 0.303434 13.7345 2.03645 16.0607C2.39996 16.5486 3.4642 17.6124 3.95823 17.9817C5.38359 19.0472 6.96305 19.6926 8.77715 19.951C9.23988 20.0169 10.7777 20.0161 11.2608 19.9497C13.5245 19.6384 15.5518 18.6344 17.0937 17.0609C17.585 16.5596 17.7019 16.4263 18.0162 16.0103C19.0308 14.6669 19.6967 13.0233 19.9509 11.2353C20.0164 10.7748 20.0164 9.22978 19.9509 8.76951C19.726 7.18824 19.1679 5.6901 18.3473 4.46418C16.7395 2.06251 14.2677 0.501979 11.3977 0.0767294C10.9179 0.00561317 9.52924 -0.0253852 9.05136 0.0242827ZM10.3748 3.67634C10.4588 3.72237 10.5668 3.82977 10.6193 3.91924L10.7132 4.07967V6.86471V9.64979L12.4328 11.0265C13.7244 12.0605 14.1693 12.4381 14.22 12.5433C14.2571 12.6204 14.2878 12.7753 14.2883 12.8876C14.2899 13.2635 13.9816 13.5641 13.5945 13.5641C13.4898 13.5641 13.3487 13.537 13.2809 13.504C13.1065 13.4189 9.50221 10.515 9.40501 10.3811C9.32585 10.2722 9.32456 10.2267 9.31424 7.1783L9.30375 4.08593L9.39097 3.93063C9.52873 3.68538 9.83932 3.53098 10.107 3.57465C10.1715 3.58522 10.292 3.63098 10.3748 3.67634Z"
+                                                fill="white" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="settingsBottom">
+                                <div class="textHudSettings">
+                                    <div class="textHudItem">
+                                        <svg width="16" height="25" viewBox="0 0 16 25" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M16 12.9116C16 12.4116 15.6176 12.0293 15.1176 12.0293C14.6176 12.0293 14.2353 12.4116 14.2353 12.9116C14.2353 16.3528 11.4412 19.1469 8 19.1469C4.55882 19.1469 1.76471 16.3528 1.76471 12.9116C1.76471 12.4116 1.38235 12.0293 0.882353 12.0293C0.382353 12.0293 0 12.4116 0 12.9116C0 16.9999 3.05882 20.4411 7.11765 20.8822V23.2352H3.91176C3.41176 23.2352 3.02941 23.6175 3.02941 24.1175C3.02941 24.6175 3.41176 24.9999 3.91176 24.9999H12.0882C12.5882 24.9999 12.9706 24.6175 12.9706 24.1175C12.9706 23.6175 12.5882 23.2352 12.0882 23.2352H8.88235V20.8822C12.9412 20.4411 16 16.9999 16 12.9116Z"
+                                                fill="white" />
+                                            <path
+                                                d="M8.00014 0C5.29426 0 3.08838 2.20588 3.08838 4.91176V12.8824C3.08838 15.6176 5.29426 17.7941 8.00014 17.8235C10.706 17.8235 12.9119 15.6176 12.9119 12.9118V4.91176C12.9119 2.20588 10.706 0 8.00014 0Z"
+                                                fill="white" />
+                                        </svg>
+                                    </div>
+                                    <div class="textHudItem">
+                                        <svg width="15" height="14" viewBox="0 0 15 14" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M10.9914 0C9.54396 0.000128253 8.20906 0.793371 7.5 2.075C6.79094 0.793371 5.45604 0.000128253 4.00862 0C1.79481 0 0 2.08552 0 4.33392C0 9.98114 7.5 13.9211 7.5 13.9211C7.5 13.9211 15 9.98114 15 4.33392C15 2.08552 13.2052 0 10.9914 0Z"
+                                                fill="white" />
+                                        </svg>
+                                        <p class="percent">100%</p>
+                                    </div>
+                                    <div class="textHudItem">
+                                        <svg width="12" height="15" viewBox="0 0 12 15" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M7.86895 10.8259H11.808C11.9116 10.8259 11.9956 10.7405 11.9956 10.6353V10.2411C11.9956 10.1359 11.9116 10.0506 11.808 10.0506H7.86892C7.64271 10.0506 7.44806 9.87403 7.43744 9.64454C7.42606 9.39953 7.61831 9.19726 7.85707 9.19726H11.808C11.9116 9.19726 11.9956 9.11196 11.9956 9.00672V8.64824C11.9956 8.543 11.9116 8.4577 11.808 8.4577H7.86892C7.64271 8.4577 7.44806 8.28115 7.43744 8.05166C7.42606 7.80665 7.61831 7.60438 7.85707 7.60438H11.808C11.9116 7.60438 11.9956 7.51908 11.9956 7.41384V6.12914L11.9506 6.03856C11.5452 5.22175 11.326 4.30658 11.3168 3.39197C11.3075 2.47737 11.5082 1.55776 11.8969 0.732837C11.9741 0.569293 11.9611 0.379377 11.8616 0.227757C11.7661 0.0821265 11.6005 0 11.4283 0H10.7338C10.6446 0 10.5676 0.0639582 10.5499 0.152841C10.4745 0.531055 10.4649 0.578548 10.4631 0.587121C10.2461 1.59575 9.75242 2.53604 9.07306 3.23476C8.27567 4.05492 7.27823 4.4884 6.18857 4.4884C5.09193 4.4884 4.08538 4.05528 3.27781 3.23586C2.57976 2.52761 2.08038 1.55527 1.90767 0.568186C1.90521 0.554162 1.90177 0.530402 1.85168 0.164509C1.83882 0.0703171 1.75953 0 1.66586 0H0.873246C0.731253 0 0.592364 0.055016 0.495289 0.16025C0.356483 0.310707 0.320761 0.524639 0.3969 0.709417L0.522681 1.01456C1.1489 2.53349 1.13166 4.26825 0.475387 5.77404L0.315702 6.14041V7.4317C0.315702 7.53693 0.399695 7.62224 0.503311 7.62224H4.43435C4.66056 7.62224 4.85521 7.79878 4.86584 8.02827C4.87721 8.27329 4.68496 8.47555 4.4462 8.47555H0.503283C0.399667 8.47555 0.315674 8.56086 0.315674 8.66609V9.02458C0.315674 9.12981 0.399667 9.21512 0.503283 9.21512H4.43432C4.66053 9.21512 4.85519 9.39166 4.86581 9.62115C4.87718 9.86617 4.68493 10.0684 4.44617 10.0684H0.503283C0.399667 10.0684 0.315674 10.1537 0.315674 10.259V10.6532C0.315674 10.7584 0.399667 10.8437 0.503283 10.8437H4.43432C4.66053 10.8437 4.85519 11.0203 4.86581 11.2497C4.87718 11.4948 4.68493 11.697 4.44617 11.697H0.503283C0.399667 11.697 0.315674 11.7823 0.315674 11.8876V12.6854C0.315674 13.1816 0.637058 13.6185 1.10547 13.7593L1.30565 13.8194C2.89225 14.2963 4.5236 14.5346 6.15559 14.5346C7.78714 14.5346 9.4193 14.2962 11.0055 13.8194L11.2057 13.7592C11.6742 13.6185 11.9955 13.1815 11.9955 12.6854V11.8697C11.9955 11.7644 11.9115 11.6791 11.8079 11.6791H7.85707V11.6791C7.61831 11.6791 7.42609 11.4768 7.43744 11.2318C7.44809 11.0024 7.64274 10.8259 7.86895 10.8259Z"
+                                                fill="white" />
+                                        </svg>
+
+                                        <p class="percent">100%</p>
+                                    </div>
+
+                                    <div class="textHudItem">
+                                        <svg width="15" height="15" viewBox="0 0 15 15" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M14.61 12.0894L8.7282 6.51396L1.85633 0H1.31929L1.20963 0.26413C0.920208 0.961293 0.796545 1.67434 0.852063 2.3261C0.915344 3.06903 1.21309 3.71223 1.71316 4.18626L7.07771 9.2714L7.78529 8.60068L12.7448 13.8575C13.2382 14.3252 14.0873 14.353 14.61 13.8575C15.1243 13.37 15.1243 12.5769 14.61 12.0894Z"
+                                                fill="white" />
+                                        </svg>
+
+
+                                        <p class="percent">100%</p>
+                                    </div>
+                                    <div class="textHudItem">
+                                        <svg width="13" height="15" viewBox="0 0 13 15" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M7.44453 1.04706C7.10835 0.667689 6.78818 0.31867 6.50003 0C6.21188 0.333845 5.89171 0.682864 5.55553 1.04706C3.52244 3.26257 0.720947 6.34305 0.720947 8.74066C0.720947 10.2581 1.36129 11.6239 2.41785 12.6102C3.45841 13.5966 4.89918 14.2187 6.50003 14.2187C8.10088 14.2187 9.54165 13.6118 10.5822 12.6102C11.6228 11.6239 12.2791 10.243 12.2791 8.74066C12.2791 6.34305 9.47762 3.27775 7.44453 1.04706Z"
+                                                fill="white" />
+                                        </svg>
+
+                                        <p class="percent">100%</p>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="settingsText">
+                            <p class="settingsTextTop" :class="{'active' : currentHud == 'text'}">
+                                {{locales['text_hud_1']}}</p>
+                            <p class="settingsTextBottom">{{locales['text_hud_2']}}</p>
+                        </div>
+
+                        <div class="settingsBorder " :class="{'active' : currentHud == 'text'}"></div>
+                    </div>
+                    <div class="settingsBg" @click="SetCurrentHud('classic')">
+                        <div class="settingsMap">
+                            <div class="settingsTop">
+                                <div class="textHudSettingsTop">
+                                    <div class="textHudItem top">
+                                        <span style="position: relative; bottom: .1rem;" v-html="GetSvg('gps2')"></span>
+                                        <div class="line"></div>
+                                        <div class="line" style="margin-left: 5.5rem; margin-right: .74rem;"></div>
+
+                                        <svg style="margin-top: .3rem;" width="20" height="20" viewBox="0 0 20 20"
+                                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M9.05136 0.0242827C7.18055 0.218845 5.47824 0.886875 3.95823 2.02305C3.4642 2.39237 2.39996 3.45618 2.03645 3.94409C1.07359 5.23655 0.449322 6.64263 0.174716 8.13744C-0.345905 10.9712 0.303434 13.7345 2.03645 16.0607C2.39996 16.5486 3.4642 17.6124 3.95823 17.9817C5.38359 19.0472 6.96305 19.6926 8.77715 19.951C9.23988 20.0169 10.7777 20.0161 11.2608 19.9497C13.5245 19.6384 15.5518 18.6344 17.0937 17.0609C17.585 16.5596 17.7019 16.4263 18.0162 16.0103C19.0308 14.6669 19.6967 13.0233 19.9509 11.2353C20.0164 10.7748 20.0164 9.22978 19.9509 8.76951C19.726 7.18824 19.1679 5.6901 18.3473 4.46418C16.7395 2.06251 14.2677 0.501979 11.3977 0.0767294C10.9179 0.00561317 9.52924 -0.0253852 9.05136 0.0242827ZM10.3748 3.67634C10.4588 3.72237 10.5668 3.82977 10.6193 3.91924L10.7132 4.07967V6.86471V9.64979L12.4328 11.0265C13.7244 12.0605 14.1693 12.4381 14.22 12.5433C14.2571 12.6204 14.2878 12.7753 14.2883 12.8876C14.2899 13.2635 13.9816 13.5641 13.5945 13.5641C13.4898 13.5641 13.3487 13.537 13.2809 13.504C13.1065 13.4189 9.50221 10.515 9.40501 10.3811C9.32585 10.2722 9.32456 10.2267 9.31424 7.1783L9.30375 4.08593L9.39097 3.93063C9.52873 3.68538 9.83932 3.53098 10.107 3.57465C10.1715 3.58522 10.292 3.63098 10.3748 3.67634Z"
+                                                fill="white" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="settingsBottom">
+                                <div class="textHudSettings">
+                                    <div class="textHudItem classicSettingsText">
+                                        <svg width="15" height="14" viewBox="0 0 16 25" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M16 12.9116C16 12.4116 15.6176 12.0293 15.1176 12.0293C14.6176 12.0293 14.2353 12.4116 14.2353 12.9116C14.2353 16.3528 11.4412 19.1469 8 19.1469C4.55882 19.1469 1.76471 16.3528 1.76471 12.9116C1.76471 12.4116 1.38235 12.0293 0.882353 12.0293C0.382353 12.0293 0 12.4116 0 12.9116C0 16.9999 3.05882 20.4411 7.11765 20.8822V23.2352H3.91176C3.41176 23.2352 3.02941 23.6175 3.02941 24.1175C3.02941 24.6175 3.41176 24.9999 3.91176 24.9999H12.0882C12.5882 24.9999 12.9706 24.6175 12.9706 24.1175C12.9706 23.6175 12.5882 23.2352 12.0882 23.2352H8.88235V20.8822C12.9412 20.4411 16 16.9999 16 12.9116Z"
+                                                fill="white" />
+                                            <path
+                                                d="M8.00014 0C5.29426 0 3.08838 2.20588 3.08838 4.91176V12.8824C3.08838 15.6176 5.29426 17.7941 8.00014 17.8235C10.706 17.8235 12.9119 15.6176 12.9119 12.9118V4.91176C12.9119 2.20588 10.706 0 8.00014 0Z"
+                                                fill="white" />
+                                        </svg>
+                                    </div>
+                                    <div class="textHudItem classicSettingsText">
+                                        <svg width="15" height="14" viewBox="0 0 15 14" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M10.9914 0C9.54396 0.000128253 8.20906 0.793371 7.5 2.075C6.79094 0.793371 5.45604 0.000128253 4.00862 0C1.79481 0 0 2.08552 0 4.33392C0 9.98114 7.5 13.9211 7.5 13.9211C7.5 13.9211 15 9.98114 15 4.33392C15 2.08552 13.2052 0 10.9914 0Z"
+                                                fill="white" />
+                                        </svg>
+                                    </div>
+                                    <div class="textHudItem classicSettingsText">
+                                        <svg width="12" height="15" viewBox="0 0 12 15" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M7.86895 10.8259H11.808C11.9116 10.8259 11.9956 10.7405 11.9956 10.6353V10.2411C11.9956 10.1359 11.9116 10.0506 11.808 10.0506H7.86892C7.64271 10.0506 7.44806 9.87403 7.43744 9.64454C7.42606 9.39953 7.61831 9.19726 7.85707 9.19726H11.808C11.9116 9.19726 11.9956 9.11196 11.9956 9.00672V8.64824C11.9956 8.543 11.9116 8.4577 11.808 8.4577H7.86892C7.64271 8.4577 7.44806 8.28115 7.43744 8.05166C7.42606 7.80665 7.61831 7.60438 7.85707 7.60438H11.808C11.9116 7.60438 11.9956 7.51908 11.9956 7.41384V6.12914L11.9506 6.03856C11.5452 5.22175 11.326 4.30658 11.3168 3.39197C11.3075 2.47737 11.5082 1.55776 11.8969 0.732837C11.9741 0.569293 11.9611 0.379377 11.8616 0.227757C11.7661 0.0821265 11.6005 0 11.4283 0H10.7338C10.6446 0 10.5676 0.0639582 10.5499 0.152841C10.4745 0.531055 10.4649 0.578548 10.4631 0.587121C10.2461 1.59575 9.75242 2.53604 9.07306 3.23476C8.27567 4.05492 7.27823 4.4884 6.18857 4.4884C5.09193 4.4884 4.08538 4.05528 3.27781 3.23586C2.57976 2.52761 2.08038 1.55527 1.90767 0.568186C1.90521 0.554162 1.90177 0.530402 1.85168 0.164509C1.83882 0.0703171 1.75953 0 1.66586 0H0.873246C0.731253 0 0.592364 0.055016 0.495289 0.16025C0.356483 0.310707 0.320761 0.524639 0.3969 0.709417L0.522681 1.01456C1.1489 2.53349 1.13166 4.26825 0.475387 5.77404L0.315702 6.14041V7.4317C0.315702 7.53693 0.399695 7.62224 0.503311 7.62224H4.43435C4.66056 7.62224 4.85521 7.79878 4.86584 8.02827C4.87721 8.27329 4.68496 8.47555 4.4462 8.47555H0.503283C0.399667 8.47555 0.315674 8.56086 0.315674 8.66609V9.02458C0.315674 9.12981 0.399667 9.21512 0.503283 9.21512H4.43432C4.66053 9.21512 4.85519 9.39166 4.86581 9.62115C4.87718 9.86617 4.68493 10.0684 4.44617 10.0684H0.503283C0.399667 10.0684 0.315674 10.1537 0.315674 10.259V10.6532C0.315674 10.7584 0.399667 10.8437 0.503283 10.8437H4.43432C4.66053 10.8437 4.85519 11.0203 4.86581 11.2497C4.87718 11.4948 4.68493 11.697 4.44617 11.697H0.503283C0.399667 11.697 0.315674 11.7823 0.315674 11.8876V12.6854C0.315674 13.1816 0.637058 13.6185 1.10547 13.7593L1.30565 13.8194C2.89225 14.2963 4.5236 14.5346 6.15559 14.5346C7.78714 14.5346 9.4193 14.2962 11.0055 13.8194L11.2057 13.7592C11.6742 13.6185 11.9955 13.1815 11.9955 12.6854V11.8697C11.9955 11.7644 11.9115 11.6791 11.8079 11.6791H7.85707V11.6791C7.61831 11.6791 7.42609 11.4768 7.43744 11.2318C7.44809 11.0024 7.64274 10.8259 7.86895 10.8259Z"
+                                                fill="white" />
+                                        </svg>
+
+                                    </div>
+
+                                    <div class="textHudItem classicSettingsText">
+                                        <svg width="15" height="15" viewBox="0 0 15 15" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M14.61 12.0894L8.7282 6.51396L1.85633 0H1.31929L1.20963 0.26413C0.920208 0.961293 0.796545 1.67434 0.852063 2.3261C0.915344 3.06903 1.21309 3.71223 1.71316 4.18626L7.07771 9.2714L7.78529 8.60068L12.7448 13.8575C13.2382 14.3252 14.0873 14.353 14.61 13.8575C15.1243 13.37 15.1243 12.5769 14.61 12.0894Z"
+                                                fill="white" />
+                                        </svg>
+
+
+                                    </div>
+                                    <div class="textHudItem classicSettingsText">
+                                        <svg width="13" height="15" viewBox="0 0 13 15" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M7.44453 1.04706C7.10835 0.667689 6.78818 0.31867 6.50003 0C6.21188 0.333845 5.89171 0.682864 5.55553 1.04706C3.52244 3.26257 0.720947 6.34305 0.720947 8.74066C0.720947 10.2581 1.36129 11.6239 2.41785 12.6102C3.45841 13.5966 4.89918 14.2187 6.50003 14.2187C8.10088 14.2187 9.54165 13.6118 10.5822 12.6102C11.6228 11.6239 12.2791 10.243 12.2791 8.74066C12.2791 6.34305 9.47762 3.27775 7.44453 1.04706Z"
+                                                fill="white" />
+                                        </svg>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="settingsText ">
+                            <p class="settingsTextTop" :class="{'active' : currentHud == 'classic'}">
+                                {{locales['classic_hud_1']}}</p>
+                            <p class="settingsTextBottom">{{locales['classic_hud_2']}}</p>
+                        </div>
+
+                        <div class="settingsBorder" :class="{'active' : currentHud == 'classic'}"></div>
+
+                    </div>
+                    <div class="settingsBg" @click="SetCurrentHud('radial')">
+                        <div class="settingsMap">
+                            <div class="settingsTop">
+                                <div class="textHudSettingsTop">
+                                    <div class="textHudItem top">
+                                        <span style="position: relative; bottom: .1rem;" v-html="GetSvg('gps2')"></span>
+                                        <div class="line"></div>
+                                        <div class="line" style="margin-left: 5.5rem; margin-right: .74rem;"></div>
+
+                                        <svg style="margin-top: .3rem;" width="20" height="20" viewBox="0 0 20 20"
+                                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M9.05136 0.0242827C7.18055 0.218845 5.47824 0.886875 3.95823 2.02305C3.4642 2.39237 2.39996 3.45618 2.03645 3.94409C1.07359 5.23655 0.449322 6.64263 0.174716 8.13744C-0.345905 10.9712 0.303434 13.7345 2.03645 16.0607C2.39996 16.5486 3.4642 17.6124 3.95823 17.9817C5.38359 19.0472 6.96305 19.6926 8.77715 19.951C9.23988 20.0169 10.7777 20.0161 11.2608 19.9497C13.5245 19.6384 15.5518 18.6344 17.0937 17.0609C17.585 16.5596 17.7019 16.4263 18.0162 16.0103C19.0308 14.6669 19.6967 13.0233 19.9509 11.2353C20.0164 10.7748 20.0164 9.22978 19.9509 8.76951C19.726 7.18824 19.1679 5.6901 18.3473 4.46418C16.7395 2.06251 14.2677 0.501979 11.3977 0.0767294C10.9179 0.00561317 9.52924 -0.0253852 9.05136 0.0242827ZM10.3748 3.67634C10.4588 3.72237 10.5668 3.82977 10.6193 3.91924L10.7132 4.07967V6.86471V9.64979L12.4328 11.0265C13.7244 12.0605 14.1693 12.4381 14.22 12.5433C14.2571 12.6204 14.2878 12.7753 14.2883 12.8876C14.2899 13.2635 13.9816 13.5641 13.5945 13.5641C13.4898 13.5641 13.3487 13.537 13.2809 13.504C13.1065 13.4189 9.50221 10.515 9.40501 10.3811C9.32585 10.2722 9.32456 10.2267 9.31424 7.1783L9.30375 4.08593L9.39097 3.93063C9.52873 3.68538 9.83932 3.53098 10.107 3.57465C10.1715 3.58522 10.292 3.63098 10.3748 3.67634Z"
+                                                fill="white" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="settingsBottom">
+                                <div class="textHudSettings">
+                                    <div class="textHudItem">
+                                        <svg width="31" height="31" viewBox="0 0 31 31" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M31 15.5C31 24.0604 24.0604 31 15.5 31C6.93959 31 0 24.0604 0 15.5C0 6.93959 6.93959 0 15.5 0C24.0604 0 31 6.93959 31 15.5ZM2.39583 15.5C2.39583 22.7372 8.26277 28.6042 15.5 28.6042C22.7372 28.6042 28.6042 22.7372 28.6042 15.5C28.6042 8.26277 22.7372 2.39583 15.5 2.39583C8.26277 2.39583 2.39583 8.26277 2.39583 15.5Z"
+                                                fill="white" fill-opacity="0.43" />
+                                        </svg>
+                                        <svg class="MapIcon" width="12" height="17" viewBox="0 0 12 17" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M11.2399 8.77993C11.2399 8.43993 10.9799 8.17993 10.6399 8.17993C10.2999 8.17993 10.0399 8.43993 10.0399 8.77993C10.0399 11.1199 8.1399 13.02 5.79989 13.02C3.45988 13.02 1.55987 11.1199 1.55987 8.77993C1.55987 8.43993 1.29987 8.17993 0.959866 8.17993C0.619864 8.17993 0.359863 8.43993 0.359863 8.77993C0.359863 11.5599 2.43987 13.9 5.19988 14.2V15.8H3.01988C2.67987 15.8 2.41987 16.06 2.41987 16.4C2.41987 16.74 2.67987 17 3.01988 17H8.5799C8.9199 17 9.1799 16.74 9.1799 16.4C9.1799 16.06 8.9199 15.8 8.5799 15.8H6.39989V14.2C9.1599 13.9 11.2399 11.5599 11.2399 8.77993Z"
+                                                fill="white" />
+                                            <path
+                                                d="M5.79998 0C3.95997 0 2.45996 1.50001 2.45996 3.34001V8.76004C2.45996 10.62 3.95997 12.1001 5.79998 12.1201C7.63999 12.1201 9.13999 10.62 9.13999 8.78004V3.34001C9.13999 1.50001 7.63999 0 5.79998 0Z"
+                                                fill="white" />
+                                        </svg>
+                                    </div>
+                                    <div class="textHudItem">
+                                        <svg width="31" height="31" viewBox="0 0 31 31" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M31 15.5C31 24.0604 24.0604 31 15.5 31C6.93959 31 0 24.0604 0 15.5C0 6.93959 6.93959 0 15.5 0C24.0604 0 31 6.93959 31 15.5ZM2.39583 15.5C2.39583 22.7372 8.26277 28.6042 15.5 28.6042C22.7372 28.6042 28.6042 22.7372 28.6042 15.5C28.6042 8.26277 22.7372 2.39583 15.5 2.39583C8.26277 2.39583 2.39583 8.26277 2.39583 15.5Z"
+                                                fill="white" fill-opacity="0.43" />
+                                        </svg>
+                                        <svg class="MapIcon" width="15" height="14" viewBox="0 0 15 14" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M10.9914 0C9.54396 0.000128253 8.20906 0.793372 7.5 2.075C6.79094 0.793372 5.45604 0.000128253 4.00862 0C1.79481 0 0 2.08552 0 4.33392C0 9.98114 7.5 13.9211 7.5 13.9211C7.5 13.9211 15 9.98114 15 4.33392C15 2.08552 13.2052 0 10.9914 0Z"
+                                                fill="white" />
+                                        </svg>
+
+                                    </div>
+
+                                    <div class="textHudItem">
+                                        <svg width="31" height="31" viewBox="0 0 31 31" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M31 15.5C31 24.0604 24.0604 31 15.5 31C6.93959 31 0 24.0604 0 15.5C0 6.93959 6.93959 0 15.5 0C24.0604 0 31 6.93959 31 15.5ZM2.39583 15.5C2.39583 22.7372 8.26277 28.6042 15.5 28.6042C22.7372 28.6042 28.6042 22.7372 28.6042 15.5C28.6042 8.26277 22.7372 2.39583 15.5 2.39583C8.26277 2.39583 2.39583 8.26277 2.39583 15.5Z"
+                                                fill="white" fill-opacity="0.43" />
+                                        </svg>
+                                        <svg class="MapIcon" width="12" height="15" viewBox="0 0 12 15" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M7.86895 10.8259H11.808C11.9116 10.8259 11.9956 10.7405 11.9956 10.6353V10.2411C11.9956 10.1359 11.9116 10.0506 11.808 10.0506H7.86892C7.64271 10.0506 7.44806 9.87403 7.43744 9.64454C7.42606 9.39953 7.61831 9.19726 7.85707 9.19726H11.808C11.9116 9.19726 11.9956 9.11196 11.9956 9.00672V8.64824C11.9956 8.543 11.9116 8.4577 11.808 8.4577H7.86892C7.64271 8.4577 7.44806 8.28115 7.43744 8.05166C7.42606 7.80665 7.61831 7.60438 7.85707 7.60438H11.808C11.9116 7.60438 11.9956 7.51908 11.9956 7.41384V6.12914L11.9506 6.03856C11.5452 5.22175 11.326 4.30658 11.3168 3.39197C11.3075 2.47737 11.5082 1.55776 11.8969 0.732837C11.9741 0.569293 11.9611 0.379377 11.8616 0.227757C11.7661 0.0821265 11.6005 0 11.4283 0H10.7338C10.6446 0 10.5676 0.0639582 10.5499 0.152841C10.4745 0.531055 10.4649 0.578548 10.4631 0.587121C10.2461 1.59575 9.75242 2.53604 9.07306 3.23476C8.27567 4.05492 7.27823 4.4884 6.18857 4.4884C5.09193 4.4884 4.08538 4.05528 3.27781 3.23586C2.57976 2.52761 2.08038 1.55527 1.90767 0.568186C1.90521 0.554162 1.90177 0.530402 1.85168 0.164509C1.83882 0.0703171 1.75953 0 1.66586 0H0.873246C0.731253 0 0.592364 0.055016 0.495289 0.16025C0.356483 0.310707 0.320761 0.524639 0.3969 0.709417L0.522681 1.01456C1.1489 2.53349 1.13166 4.26825 0.475387 5.77404L0.315702 6.14041V7.4317C0.315702 7.53693 0.399695 7.62224 0.503311 7.62224H4.43435C4.66056 7.62224 4.85521 7.79878 4.86584 8.02827C4.87721 8.27329 4.68496 8.47555 4.4462 8.47555H0.503283C0.399667 8.47555 0.315674 8.56086 0.315674 8.6661V9.02458C0.315674 9.12981 0.399667 9.21512 0.503283 9.21512H4.43432C4.66053 9.21512 4.85519 9.39166 4.86581 9.62115C4.87718 9.86617 4.68493 10.0684 4.44617 10.0684H0.503283C0.399667 10.0684 0.315674 10.1537 0.315674 10.259V10.6532C0.315674 10.7584 0.399667 10.8437 0.503283 10.8437H4.43432C4.66053 10.8437 4.85519 11.0203 4.86581 11.2497C4.87718 11.4948 4.68493 11.697 4.44617 11.697H0.503283C0.399667 11.697 0.315674 11.7823 0.315674 11.8876V12.6854C0.315674 13.1815 0.637058 13.6185 1.10547 13.7593L1.30565 13.8194C2.89225 14.2963 4.5236 14.5346 6.15559 14.5346C7.78714 14.5346 9.4193 14.2962 11.0055 13.8194L11.2057 13.7592C11.6742 13.6185 11.9955 13.1815 11.9955 12.6854V11.8697C11.9955 11.7644 11.9115 11.6791 11.8079 11.6791H7.85707V11.6791C7.61831 11.6791 7.42609 11.4768 7.43744 11.2318C7.44809 11.0024 7.64274 10.8259 7.86895 10.8259Z"
+                                                fill="white" />
+                                        </svg>
+                                    </div>
+                                    <div class="textHudItem">
+                                        <svg width="31" height="31" viewBox="0 0 31 31" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M31 15.5C31 24.0604 24.0604 31 15.5 31C6.93959 31 0 24.0604 0 15.5C0 6.93959 6.93959 0 15.5 0C24.0604 0 31 6.93959 31 15.5ZM2.39583 15.5C2.39583 22.7372 8.26277 28.6042 15.5 28.6042C22.7372 28.6042 28.6042 22.7372 28.6042 15.5C28.6042 8.26277 22.7372 2.39583 15.5 2.39583C8.26277 2.39583 2.39583 8.26277 2.39583 15.5Z"
+                                                fill="white" fill-opacity="0.43" />
+                                        </svg>
+                                        <svg class="MapIcon" width="15" height="14" viewBox="0 0 15 14" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <g clip-path="url(#clip0_111_8699)">
+                                                <path
+                                                    d="M14.6097 11.9034L8.72796 6.41375L1.85609 0H1.31905L1.20939 0.260066C0.919963 0.946504 0.796301 1.64858 0.851819 2.29031C0.9151 3.02181 1.21284 3.65512 1.71291 4.12185L7.07746 9.12877L7.78504 8.46836L12.7446 13.6443C13.2379 14.1048 14.0871 14.1322 14.6097 13.6443C15.124 13.1643 15.124 12.3834 14.6097 11.9034Z"
+                                                    fill="white" />
+                                                <path
+                                                    d="M4.59155 7.96912L0.390059 11.8905C-0.12416 12.3704 -0.12416 13.1514 0.390059 13.6313C0.878555 14.0873 1.72362 14.1275 2.25524 13.6313L6.45677 9.70993L4.59155 7.96912Z"
+                                                    fill="white" />
+                                                <path
+                                                    d="M14.3628 2.33104L11.9794 4.55546L11.3577 3.97517L13.741 1.75073L13.1193 1.17044L10.736 3.39485L10.1142 2.81456L12.4975 0.590149L11.8758 0.0098877L8.76715 2.91133C8.38685 3.26628 8.15977 3.73758 8.12766 4.23846C8.11954 4.36536 8.08872 4.49019 8.0376 4.60891L10.057 6.49369C10.1842 6.44592 10.318 6.41718 10.4539 6.40961C10.9906 6.37972 11.4955 6.16773 11.8758 5.81278L14.9845 2.91136L14.3628 2.33104Z"
+                                                    fill="white" />
+                                            </g>
+                                            <defs>
+                                                <clipPath id="clip0_111_8699">
+                                                    <rect width="15" height="14" fill="white" />
+                                                </clipPath>
+                                            </defs>
+                                        </svg>
+
+                                    </div>
+                                    <div class="textHudItem">
+                                        <svg width="31" height="31" viewBox="0 0 31 31" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M31 15.5C31 24.0604 24.0604 31 15.5 31C6.93959 31 0 24.0604 0 15.5C0 6.93959 6.93959 0 15.5 0C24.0604 0 31 6.93959 31 15.5ZM2.39583 15.5C2.39583 22.7372 8.26277 28.6042 15.5 28.6042C22.7372 28.6042 28.6042 22.7372 28.6042 15.5C28.6042 8.26277 22.7372 2.39583 15.5 2.39583C8.26277 2.39583 2.39583 8.26277 2.39583 15.5Z"
+                                                fill="white" fill-opacity="0.43" />
+                                        </svg>
+                                        <svg class="MapIcon" width="11" height="12" viewBox="0 0 11 12" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M6.31832 0.883671C6.02696 0.563501 5.74948 0.268943 5.49975 0C5.25002 0.28175 4.97253 0.576307 4.68118 0.883671C2.91917 2.75347 0.491211 5.35326 0.491211 7.37673C0.491211 8.65742 1.04617 9.81003 1.96186 10.6425C2.86368 11.4749 4.11234 12 5.49975 12C6.88716 12 8.13582 11.4877 9.03764 10.6425C9.93945 9.81003 10.5083 8.64461 10.5083 7.37673C10.5083 5.35326 8.08032 2.76628 6.31832 0.883671Z"
+                                                fill="white" />
+                                        </svg>
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="settingsText">
+                            <p class="settingsTextTop" :class="{'active' : currentHud == 'radial'}">
+                                {{locales['radial_hud_1']}}</p>
+                            <p class="settingsTextBottom">{{locales['radial_hud_2']}}</p>
+                        </div>
+
+                        <div class="settingsBorder" :class="{'active' : currentHud == 'radial'}"></div>
+
+                    </div>
+                </div>
+                <div class="settings-bottom">
+                    <div class="settings-size">
+                        <p class="status-size-text">{{locales['change_status_size']}}</p>
+                        <img src="./assets/images/heart-size-big.png" class="hud-size-big">
+                        <img src="./assets/images/heart-size-small.png" class="hud-size-small">
+                        <div class="hudSize">
+                            <div class="hudSizeWrapper">
+                                <p>{{locales['hud_size']}}</p>
+                                <div class="zero-hud">0.5</div>
+                                <div class="one-hud">1.3</div>
+                                <input @change="SetHudSize" v-model="hudSize" min="0.5" step="0.1" max="1.3"
+                                    type="range">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="settingsChangeColorContainer">
+                        <p class="settingsChangeColorText">{{locales['change_color']}}</p>
+                        <div class="settingsChangeColors" v-if="hudColors[currentHud]">
+                            <div class="SettingsChangeColor HealthSettingsChangeColor"
+                                :style="{border: '2px solid '+hudColors[currentHud].health }">
+                                <div class="textHudIcons2">
+                                    <span v-html="GetSvg('textHudHealthInner2')"></span>
+                                    <span v-html="GetSvg('textHudHealthRadial2')"></span>
+                                    <span v-html="GetSvg('textHudHeartIcon2')"></span>
+                                </div>
+                                <input type="text" class="colorinput" data-type="health" data-coloris
+                                    @close="OnChangeColor" @input="OnChangeInput" />
+
+                                <p>{{locales['health']}}</p>
+                                <div class="textHudIcons2" @click="ColorInput">
+                                    <span v-html="GetSvg('textHudHealthInner3')"></span>
+                                    <span v-html="GetSvg('textHudHealthRadial3')"></span>
+                                    <span v-html="GetSvg('colorPickerIcon')"></span>
+                                </div>
+                            </div>
+                            <div class="SettingsChangeColor WaterSettingsChangeColor"
+                                :style="{border: '2px solid '+hudColors[currentHud].thirst}">
+                                <div class="textHudIcons2">
+                                    <span v-html="GetSvg('textHudWaterInner2')"></span>
+                                    <span v-html="GetSvg('textHudWaterRadial2')"></span>
+                                    <span v-html="GetSvg('textHudWaterIcon')"></span>
+                                </div>
+                                <input type="text" class="colorinput" data-type="thirst" data-coloris
+                                    @close="OnChangeColor" @input="OnChangeInput" />
+
+                                <p>{{locales['thirst']}}</p>
+                                <div class="textHudIcons2" @click="ColorInput">
+                                    <span v-html="GetSvg('textHudWaterInner3')"></span>
+                                    <span v-html="GetSvg('textHudWaterRadial3')"></span>
+                                    <span v-html="GetSvg('colorPickerIcon')"></span>
+                                </div>
+                            </div>
+                            <div class="SettingsChangeColor StressSettingsChangeColor"
+                                :style="{border: '2px solid '+hudColors[currentHud].stress }">
+                                <div class="textHudIcons2">
+                                    <span v-html="GetSvg('textHudStressInner2')"></span>
+                                    <span v-html="GetSvg('textHudStressRadial2')"></span>
+                                    <span v-html="GetSvg('textHudStressIcon')"></span>
+                                </div>
+                                <input type="text" class="colorinput" data-type="stress" data-coloris
+                                    @close="OnChangeColor" @input="OnChangeInput" />
+
+                                <p>{{locales['stress']}}</p>
+                                <div class="textHudIcons2" @click="ColorInput">
+                                    <span v-html="GetSvg('textHudStressInner3')"></span>
+                                    <span v-html="GetSvg('textHudStressRadial3')"></span>
+                                    <span v-html="GetSvg('colorPickerIcon')"></span>
+                                </div>
+                            </div>
+                            <div class="SettingsChangeColor LungsSettingsChangeColor"
+                                :style="{border: '2px solid '+hudColors[currentHud].oxy }">
+                                <div class="textHudIcons2">
+                                    <span v-html="GetSvg('textHudOxyInner2')"></span>
+                                    <span v-html="GetSvg('textHudOxyRadial2')"></span>
+                                    <span v-html="GetSvg('oxyIcon')"></span>
+                                </div>
+                                <input type="text" class="colorinput" data-type="oxy" data-coloris
+                                    @close="OnChangeColor" @input="OnChangeInput" />
+
+                                <p>{{locales['oxy']}}</p>
+                                <div class="textHudIcons2" @click="ColorInput">
+                                    <span v-html="GetSvg('textHudOxyInner3')"></span>
+                                    <span v-html="GetSvg('textHudOxyRadial3')"></span>
+                                    <span v-html="GetSvg('colorPickerIcon')"></span>
+                                </div>
+                            </div>
+                            <div class="SettingsChangeColor" :style="{'border-color': hudColors[currentHud].armor}">
+                                <div class="textHudIcons2">
+                                    <span v-html="GetSvg('textHudArmorInner2')"></span>
+                                    <span v-html="GetSvg('textHudArmorRadial2')"></span>
+                                    <span v-html="GetSvg('textHudArmorIcon')"></span>
+                                </div>
+                                <input type="text" class="colorinput" data-type="armor" data-coloris
+                                    @close="OnChangeColor" @input="OnChangeInput" />
+
+                                <p>{{locales['armor']}} </p>
+                                <div class="textHudIcons2" @click="ColorInput">
+                                    <span v-html="GetSvg('textHudArmorInner3')"></span>
+                                    <span v-html="GetSvg('textHudArmorRadial3')"></span>
+                                    <span v-html="GetSvg('colorPickerIcon')"></span>
+                                </div>
+                            </div>
+                            <div class="SettingsChangeColor"
+                                :style="{border: '2px solid '+hudColors[currentHud].hunger }">
+                                <div class="textHudIcons2">
+                                    <span v-html="GetSvg('textHudHungerInner2')"></span>
+                                    <span v-html="GetSvg('textHudHungerRadial2')"></span>
+                                    <span v-html="GetSvg('textHudHungerIcon')"></span>
+                                </div>
+                                <input type="text" class="colorinput" data-type="hunger" data-coloris
+                                    @close="OnChangeColor" @input="OnChangeInput" />
+
+                                <p>{{locales['hunger']}}</p>
+                                <div class="textHudIcons2" @click="ColorInput">
+                                    <span v-html="GetSvg('textHudHungerInner3')"></span>
+                                    <span v-html="GetSvg('textHudHungerRadial3')"></span>
+                                    <span v-html="GetSvg('colorPickerIcon')"></span>
+                                </div>
+                            </div>
+                            <div class="SettingsChangeColor"
+                                :style="{border: '2px solid '+hudColors[currentHud].stamina }">
+                                <div class="textHudIcons2">
+                                    <span v-html="GetSvg('textHudStaminaInner2')"></span>
+                                    <span v-html="GetSvg('textHudStaminaRadial2')"></span>
+                                    <span v-html="GetSvg('textHudStaminaIcon')"></span>
+                                </div>
+                                <input type="text" class="colorinput" data-type="stamina" data-coloris
+                                    @close="OnChangeColor" @input="OnChangeInput" />
+
+                                <p>{{locales['stamina']}}</p>
+                                <div class="textHudIcons2" @click="ColorInput">
+                                    <span v-html="GetSvg('textHudStaminaInner3')"></span>
+                                    <span v-html="GetSvg('textHudStaminaRadial3')"></span>
+                                    <span v-html="GetSvg('colorPickerIcon')"></span>
+                                </div>
+                            </div>
+                            <div class="SettingsChangeColor"
+                                :style="{border: '2px solid '+hudColors[currentHud].nitro}">
+                                <div class="textHudIcons2">
+                                    <span v-html="GetSvg('textHudNitroInner2')"></span>
+                                    <span v-html="GetSvg('textHudNitroRadial2')"></span>
+                                    <span v-html="GetSvg('textHudNitroIcon')"></span>
+                                </div>
+                                <input type="text" class="colorinput" data-type="nitro" data-coloris
+                                    @close="OnChangeColor" @input="OnChangeInput" />
+
+                                <p>{{locales['nitro']}}</p>
+                                <div class="textHudIcons2" @click="ColorInput">
+                                    <span v-html="GetSvg('textHudNitroInner3')"></span>
+                                    <span v-html="GetSvg('textHudNitroRadial3')"></span>
+                                    <span v-html="GetSvg('colorPickerIcon')"></span>
+                                </div>
+                            </div>
+                            <div class="SettingsChangeColor"
+                                :style="{border: '2px solid '+hudColors[currentHud].altitude }">
+                                <div class="textHudIcons2">
+                                    <span v-html="GetSvg('textHudAltitudeInner2')"></span>
+                                    <span v-html="GetSvg('textHudAltitudeRadial2')"></span>
+                                    <span v-html="GetSvg('textHudAltitudeIcon')"></span>
+                                </div>
+                                <input type="text" class="colorinput" data-type="altitude" data-coloris
+                                    @close="OnChangeColor" @input="OnChangeInput" />
+
+                                <p>{{locales['Altitude']}}</p>
+                                <div class="textHudIcons2" @click="ColorInput">
+                                    <span v-html="GetSvg('textHudAltitudeInner3')"></span>
+                                    <span v-html="GetSvg('textHudAltitudeRadial3')"></span>
+                                    <span v-html="GetSvg('colorPickerIcon')"></span>
+                                </div>
+                            </div>
+                            <div class="SettingsChangeColor"
+                                :style="{border: '2px solid '+hudColors[currentHud].parachute }">
+                                <div class="textHudIcons2">
+                                    <span v-html="GetSvg('textHudParachuteInner2')"></span>
+                                    <span v-html="GetSvg('textHudParachuteRadial2')"></span>
+                                    <span v-html="GetSvg('textHudParachuteIcon')"></span>
+                                </div>
+                                <input type="text" class="colorinput" data-type="parachute" data-coloris
+                                    @close="OnChangeColor" @input="OnChangeInput" />
+
+                                <p>{{locales['Parachute']}}</p>
+                                <div class="textHudIcons2" @click="ColorInput">
+                                    <span v-html="GetSvg('textHudParachuteInner3')"></span>
+                                    <span v-html="GetSvg('textHudParachuteRadial3')"></span>
+                                    <span v-html="GetSvg('colorPickerIcon')"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </transition>
+        <transition name="fade" mode="out-in">
+            <div class="hud" :class="{'radialHud' : currentHud == 'radial', 'textHud' : currentHud == 'text'}"
+                v-if="hudColors[currentHud]"
+                v-show="enableHud  && !settingsOpen && !hide && !forceHide || ((editModeActive || editAllModeActive) && enableHud) ">
+                <div class="classicHudWrapper" v-show="currentHud == 'classic'">
+                    <div class="textHudTop HudCompassDrag" data-type="classic-compass"
+                        v-show="showCompass || (editModeActive || editAllModeActive)"
+                        :style="positionsData['classic-compass'] ?{...positionsData['classic-compass'] , transform: 'scale('+ hudSize+')'} :{left : '-2rem', top: showSpeedometer || displayOnWalk ? selectedMap == 'rectangle' ? '-19rem' : '-22rem'  : '-5rem', transform: 'scale('+ hudSize+')'}">
+
+
+                        <div class="textHudTopWrapper classicHud">
+                            <div class="left">
+                                <div class="leftCompass">
+                                    <span class="gps" v-html="GetSvg('gps')"></span>
+                                    <div class="compass">{{heading}}</div>
+                                </div>
+                                <div class="street">
+                                    <p class="streetDisplay">{{zone}}</p>
+                                    <p class="streetDisplay2">{{street}}</p>
+                                </div>
+                            </div>
+                            <div class="right">
+                                <div style="display:flex; align-items: center;">
+                                    <p class="clock">{{clock}}</p>
+                                    <span v-html="GetSvg('clock')"></span>
+                                </div>
+                                <div class="date">
+                                    <p class="dateDisplay" v-show="dateDisplay">{{date}}</p>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <div class="classicHudDragContainer"
+                        :style="positionsData['classic-container'] ? {...positionsData['classic-container'], transform: 'scale('+ hudSize+')' } : {transform: 'scale('+ hudSize+')'}"
+                        data-type="classic-container">
+                        <div class="classicHudHealth classicHudDrag"
+                            :style="positionsData['classic-health']  ? {...positionsData['classic-health'], border: '1px solid '+hudColors[currentHud].health+''} : {border: '1px solid '+hudColors[currentHud].health+''}"
+                            data-type="classic-health"
+                            v-show="enableHealth && (!showHideBox || Number(hideBoxData.health)  >  Number(statusData.health)) || (editModeActive || editAllModeActive)">
+                            <span v-html="GetSvg('classichud-health')"></span>
+                            <div class="classicHudHealthInner"
+                                :style="{width : statusData.health+'%', 'background-color':hudColors[currentHud].health}">
+                            </div>
+                        </div>
+                        <div class="classicHudArmor classicHudDrag"
+                            :style="positionsData['classic-armor']  ? {...positionsData['classic-armor'], border: '1px solid '+hudColors[currentHud].armor+''} : {border: '1px solid '+hudColors[currentHud].armor+''}"
+                            data-type="classic-armor"
+                            v-show="enableArmor && (!showHideBox  || Number(hideBoxData.armor)  >  Number(statusData.armour)) || (editModeActive || editAllModeActive)">
+                            <span v-html="GetSvg('classichud-armor')"></span>
+                            <div class="classicHudArmorInner"
+                                :style="{width : statusData.armour+'%', 'background-color':hudColors[currentHud].armor}">
+                            </div>
+                        </div>
+
+
+                        <span :style="positionsData['classic-mic'] || ''" data-type="classic-mic"
+                            v-if="isMuted && (!editModeActive && !editAllModeActive)"
+                            class="classichud-mic classicHudDrag" v-html="GetSvg('muted-classic')"></span>
+                        <span :style="positionsData['classic-mic'] || ''" data-type="classic-mic"
+                            v-if="!statusData.talking && !isMuted  || ((editModeActive || editAllModeActive) && !statusData.talking) "
+                            class="classichud-mic classicHudDrag" v-html="GetSvg('classichud-mic')"></span>
+                        <span :style="positionsData['classic-mic'] || ''" data-type="classic-mic"
+                            v-if="statusData.mic_level == '1' && statusData.talking && !isMuted || ((editModeActive || editAllModeActive) && statusData.mic_level == '1' && statusData.talking) "
+                            class="classichud-mic classicHudDrag" v-html="GetSvg('classichud-mic-low')"></span>
+                        <span :style="positionsData['classic-mic'] || ''" data-type="classic-mic"
+                            v-if="statusData.mic_level == '2' && statusData.talking && !isMuted || ((editModeActive || editAllModeActive) && statusData.mic_level == '2' && statusData.talking)"
+                            class="classichud-mic classicHudDrag" v-html="GetSvg('classichud-mic-mid')"></span>
+                        <span :style="positionsData['classic-mic'] || ''" data-type="classic-mic"
+                            v-if="statusData.mic_level == '3' && statusData.talking && !isMuted || ((editModeActive || editAllModeActive) && statusData.mic_level == '3' && statusData.talking) "
+                            class="classichud-mic classicHudDrag" v-html="GetSvg('classichud-mic-high')"></span>
+
+                        <div class="classicHudHunger classicHudDrag"
+                            :style="positionsData['classic-hunger']  ? {...positionsData['classic-hunger'], border: '1px solid '+hudColors[currentHud].hunger+''} : {border: '1px solid '+hudColors[currentHud].hunger+''}"
+                            data-type="classic-hunger"
+                            v-show="enableHunger && (!showHideBox || Number(hideBoxData.hunger) >  Number(statusData.hunger)) || (editModeActive || editAllModeActive)">
+                            <span v-html="GetSvg('classichud-hunger')"></span>
+
+                            <div class="classicHudHungerInner"
+                                :style="{width : statusData.hunger+'%', 'background-color':hudColors[currentHud].hunger}">
+                            </div>
+                        </div>
+                        <div class="classicHudThirsty classicHudDrag"
+                            :style="positionsData['classic-water']  ? {...positionsData['classic-water'], border: '1px solid '+hudColors[currentHud].thirst+''} : {border: '1px solid '+hudColors[currentHud].thirst+''}"
+                            data-type="classic-water"
+                            v-show="enableThirst && (!showHideBox || Number(hideBoxData.water)  >  Number(statusData.thirst)) || (editModeActive || editAllModeActive)">
+                            <span v-html="GetSvg('classichud-thirsty')"></span>
+
+                            <div class="classicHudThirstyInner"
+                                :style="{width : statusData.thirst+'%', 'background-color':hudColors[currentHud].thirst}">
+                            </div>
+                        </div>
+                        <div class="classicHudStress classicHudDrag"
+                            :style="positionsData['classic-stress']  ? {...positionsData['classic-stress'], border: '1px solid '+hudColors[currentHud].stress+''} : {border: '1px solid '+hudColors[currentHud].stress+''}"
+                            data-type="classic-stress"
+                            v-show="useStress && (!showHideBox || Number(hideBoxData.stress) >  Number(statusData.stress)) || (editModeActive || editAllModeActive)">
+                            <span v-html="GetSvg('classichud-stress')"></span>
+                            <div class="classicHudStressInner"
+                                :style="{width : statusData.stress+'%', 'background-color':hudColors[currentHud].stress}">
+                            </div>
+                        </div>
+                        <div class="classicHudOxy classicHudDrag"
+                            :style="positionsData['classic-oxy']  ? {...positionsData['classic-oxy'], border: '1px solid '+hudColors[currentHud].oxy+''} : {border: '1px solid '+hudColors[currentHud].oxy+''}"
+                            data-type="classic-oxy"
+                            v-show="showOxy && (!showHideBox || Number(hideBoxData.stress) >  Number(statusData.stress)) || (editModeActive || editAllModeActive)">
+                            <span v-html="GetSvg('classichud-oxy')"></span>
+                            <div class="classicHudOxyInner"
+                                :style="{width : statusData.oxy+'%' , 'background-color':hudColors[currentHud].oxy}">
+                            </div>
+                        </div>
+                        <transition name="fade" mode="out-in">
+                            <div class="classicHudStamina classicHudDrag"
+                                :style="positionsData['classic-stamina']  ? {...positionsData['classic-stamina'], border: '1px solid '+hudColors[currentHud].stamina+''} : {border: '1px solid '+hudColors[currentHud].stamina+''}"
+                                data-type="classic-stamina"
+                                v-show="!showSpeedometer && enableStamina && (!showHideBox || Number(hideBoxData.stamina)  > Number(statusData.stamina)) || (editModeActive || editAllModeActive)">
+                                <span v-html="GetSvg('classichud-stamina')"></span>
+                                <div class="classicHudStaminaInner"
+                                    :style="{width : statusData.stamina+'%', 'background-color':hudColors[currentHud].stamina}">
+                                </div>
+                            </div>
+                        </transition>
+                        <transition name="fade" mode="out-in">
+                            <div class="classicHudParachute classicHudDrag"
+                                :style="positionsData['classic-parachute']  ? {...positionsData['classic-parachute'], border: '1px solid '+hudColors[currentHud].parachute+''} : {border: '1px solid '+hudColors[currentHud].parachute+''}"
+                                data-type="classic-parachute"
+                                v-show="showParachute || (editModeActive || editAllModeActive)">
+                                <span v-html="GetSvg('classichud-parachute')"></span>
+                                <div class="classicHudParachuteInner"
+                                    :style="{width : 100-statusData.altitude/2483*100+'%', 'background-color':hudColors[currentHud].parachute}">
+                                </div>
+                            </div>
+                        </transition>
+                        <transition name="fade" mode="out-in">
+
+                            <div class="classicHudNitro classicHudDrag"
+                                :style="positionsData['classic-nitro']  ? {...positionsData['classic-nitro'], border: '1px solid '+hudColors[currentHud].nitro+''} : {border: '1px solid '+hudColors[currentHud].nitro+''}"
+                                data-type="classic-nitro"
+                                v-show="showSpeedometer && useNitro || (editModeActive || editAllModeActive)">
+                                <span v-html="GetSvg('classichud-nitro')"></span>
+                                <div class="classicHudNitroInner"
+                                    :style="{width : statusData.nitro+'%', 'background-color':hudColors[currentHud].nitro}">
+                                </div>
+                            </div>
+                        </transition>
+
+                        <transition name="fade" mode="out-in">
+                            <div class="classicHudAltitude classicHudDrag"
+                                :style="positionsData['classic-Altitude']  ? {...positionsData['classic-Altitude'], border: '1px solid '+hudColors[currentHud].altitude+''} : {border: '1px solid '+hudColors[currentHud].altitude+''}"
+                                data-type="classic-Altitude"
+                                v-show="showAltitude || (editModeActive || editAllModeActive)">
+                                <span v-html="GetSvg('classichud-altitude')"></span>
+                                <div class="classicHudAltitudeInner"
+                                    :style="{width : 100-statusData.altitude/2483*100+'%', 'background-color':hudColors[currentHud].altitude}">
+                                </div>
+                            </div>
+
+                        </transition>
+                    </div>
+
+                </div>
+                <div class="radialHudWrapper" v-show="currentHud == 'text'">
+                    <div class="textHudTop HudCompassDrag" v-show="showCompass || (editModeActive || editAllModeActive)"
+                        data-type="text-compass"
+                        :style="positionsData['text-compass'] || {left : '-1.75rem', top: showSpeedometer || displayOnWalk ? selectedMap == 'rectangle' ? '-16rem' : '-19rem'  : '-5rem'}">
+
+                        <div class="textHudTopWrapper textHud" :style="{transform: 'scale('+ hudSize+')'}">
+                            <div class="left">
+                                <div class="leftCompass">
+                                    <span class="gps" v-html="GetSvg('gps')"></span>
+                                    <div class="compass">{{heading}}</div>
+                                </div>
+                                <div class="street">
+                                    <p class="streetDisplay">{{zone}}</p>
+                                    <p class="streetDisplay2">{{street}}</p>
+                                </div>
+                            </div>
+                            <div class="right">
+                                <div style="display:flex; align-items: center;">
+                                    <p class="clock">{{clock}}</p>
+                                    <span v-html="GetSvg('clock')"></span>
+                                </div>
+                                <div class="date">
+                                    <p class="dateDisplay" v-show="dateDisplay">{{date}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="textHudBgWrapper textHudDrag" data-type="text-main"
+                        :style="{...positionsData['text-main'], transform: 'scale('+ hudSize+')'}"
+                        data-type="text-main">
+                        <div class="textHudContainer">
+
+                            <div class="radialHudIconsWrapper radialHudIcon">
+                                <div class="radialHudIcons">
+
+                                    <span v-html="GetSvg('mic-muted')"
+                                        v-if="isMuted && (!editModeActive && !editAllModeActive)">
+                                    </span>
+                                    <span
+                                        v-if="!isMuted && !statusData.talking || ((editModeActive || editAllModeActive) && !statusData.talking)"
+                                        v-html="GetSvg('textHudMicrophone2')"></span>
+                                    <span
+                                        v-if="!isMuted &&statusData.mic_level == '1' && statusData.talking || ((editModeActive || editAllModeActive) && statusData.talking && statusData.mic_level == '1')"
+                                        v-html="GetSvg('textHudTextMicrophonelow')"></span>
+                                    <span
+                                        v-if="!isMuted &&statusData.mic_level == '2' && statusData.talking || ((editModeActive || editAllModeActive) && statusData.talking && statusData.mic_level == '2')"
+                                        v-html="GetSvg('textHudTextMicrophonemid')"></span>
+                                    <span
+                                        v-if="!isMuted &&statusData.mic_level == '3' && statusData.talking || ((editModeActive || editAllModeActive) && statusData.talking && statusData.mic_level == '3')"
+                                        v-html="GetSvg('textHudTextMicrophonehigh')"></span>
+                                </div>
+                            </div>
+
+                            <div class="radialHudIconsWrapper"
+                                v-show="enableHealth && (!showHideBox || Number(hideBoxData.health)  >  Number(statusData.health)) || (editModeActive || editAllModeActive)">
+                                <div class="radialHudIcons">
+                                    <span v-html="GetSvg('textHudHeartIconText')"></span>
+                                    <p class="textHudValue">{{statusData.health}}%</p>
+                                </div>
+                            </div>
+                            <div class="radialHudIconsWrapper"
+                                v-show="enableArmor && (!showHideBox || Number(hideBoxData.armor) >  Number(statusData.armour)) || (editModeActive || editAllModeActive)">
+                                <div class="radialHudIcons">
+                                    <span v-html="GetSvg('textHudArmorIconText')"></span>
+                                    <p class="textHudValue">{{statusData.armour}}%</p>
+                                </div>
+                            </div>
+                            <div class="radialHudIconsWrapper"
+                                v-show="enableHunger && (!showHideBox || Number(hideBoxData.hunger) >  Number(statusData.hunger)) || (editModeActive || editAllModeActive)">
+                                <div class="radialHudIcons">
+                                    <span v-html="GetSvg('textHudHungerIconText')"></span>
+                                    <p class="textHudValue">{{statusData.hunger}}%</p>
+                                </div>
+                            </div>
+                            <div class="radialHudIconsWrapper"
+                                v-show="enableThirst && (!showHideBox || Number(hideBoxData.water) >  Number(statusData.thirst)) || (editModeActive || editAllModeActive)">
+                                <div class="radialHudIcons">
+                                    <span v-html="GetSvg('textHudWaterIconText')"></span>
+                                    <p class="textHudValue">{{statusData.thirst}}%</p>
+                                </div>
+                            </div>
+                            <div class="radialHudIconsWrapper"
+                                v-show="useStress && (!showHideBox || Number(hideBoxData.stress) >  Number(statusData.stress))|| (editModeActive || editAllModeActive)">
+                                <div class="radialHudIcons">
+                                    <span v-html="GetSvg('textHudStressIconText')"></span>
+                                    <p class="textHudValue">{{statusData.stress}}%</p>
+                                </div>
+                            </div>
+                            <div class="radialHudIconsWrapper"
+                                v-show="showOxy && (!showHideBox || Number(hideBoxData.stress) >  Number(statusData.stress))|| (editModeActive || editAllModeActive)">
+                                <div class="radialHudIcons">
+                                    <span v-html="GetSvg('textHudOxyIconText')"></span>
+                                    <p class="textHudValue">{{statusData.oxy}}%</p>
+                                </div>
+                            </div>
+                            <transition name="fade" mode="out-in">
+                                <div class="radialHudIconsWrapper"
+                                    v-show="!showSpeedometer && enableStamina && (!showHideBox || Number(hideBoxData.stamina) >  Number(statusData.stamina))|| (editModeActive || editAllModeActive)">
+                                    <div class="radialHudIcons">
+                                        <span v-html="GetSvg('textHudStaminaIconText')"></span>
+                                        <p class="textHudValue">{{statusData.stamina}}%</p>
+                                    </div>
+                                </div>
+                            </transition>
+
+                            <transition name="fade" mode="out-in">
+                                <div class="radialHudIconsWrapper"
+                                    v-show="showParachute|| (editModeActive || editAllModeActive)">
+                                    <div class="radialHudIcons">
+                                        <span v-html="GetSvg('textHudParachuteIconText')"></span>
+                                        <p class="textHudValue">{{statusData.altitude}}ft</p>
+                                    </div>
+                                </div>
+                            </transition>
+                            <transition name="fade" mode="out-in">
+                                <div class="radialHudIconsWrapper"
+                                    v-show="showAltitude|| (editModeActive || editAllModeActive)">
+                                    <div class="radialHudIcons">
+                                        <span v-html="GetSvg('textHudAltitudeIconText')"></span>
+                                        <p class="textHudValue">{{statusData.altitude}}ft</p>
+                                    </div>
+                                </div>
+                            </transition>
+                            <transition name="fade" mode="out-in">
+                                <div class="radialHudIconsWrapper"
+                                    v-show="showSpeedometer && useNitro|| (editModeActive || editAllModeActive)">
+                                    <div class="radialHudIcons">
+                                        <span v-html="GetSvg('textHudNitroIconText')"></span>
+                                        <p class="textHudValue">{{statusData.nitro}}%</p>
+                                    </div>
+                                </div>
+                            </transition>
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="textHudWrapper" v-show="currentHud == 'radial'">
+                    <div v-show="showCompass|| (editModeActive || editAllModeActive)" class="textHudTop HudCompassDrag"
+                        data-type="radial-compass"
+                        :style="positionsData['radial-compass'] ? { ...positionsData['radial-compass'] , transform: 'scale('+ hudSize+')'} : {left : '-0.1rem', top: showSpeedometer || displayOnWalk ? selectedMap == 'rectangle' ? '-17rem' : '-20rem'  : '-5rem', transform: 'scale('+ hudSize+')'}">
+
+                        <div class="textHudTopWrapper radialHud">
+                            <div class="left">
+                                <div class="leftCompass">
+                                    <span class="gps" v-html="GetSvg('gps')"></span>
+                                    <div class="compass">{{heading}}</div>
+                                </div>
+                                <div class="street">
+                                    <p class="streetDisplay">{{zone}}</p>
+                                    <p class="streetDisplay2">{{street}}</p>
+                                </div>
+                            </div>
+                            <div class="right">
+                                <div style="display:flex; align-items: center;">
+                                    <p class="clock">{{clock}}</p>
+                                    <span v-html="GetSvg('clock')"></span>
+                                </div>
+                                <div class="date">
+                                    <p class="dateDisplay" v-show="dateDisplay">{{date}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="radialHudDrag"
+                        :style="positionsData['radial-hudall'] ?  {...positionsData['radial-hudall'], transform: 'scale('+ hudSize+')' } : {transform: 'scale('+ hudSize+')'}"
+                        data-type="radial-hudall">
+                        <div :style="positionsData['radial-microphone'] || ''" data-type="radial-microphone"
+                            class="textHudMicrophone" style="margin-left: .4rem;">
+
+                            <span style="position: relative;bottom:.2rem;" v-html="GetSvg('mic-muted')"
+                                v-if="isMuted && (!editModeActive && !editAllModeActive)">
+
+                            </span>
+                            <span
+                                v-if="!isMuted && !statusData.talking || ((editModeActive || editAllModeActive) && !statusData.talking)"
+                                v-html="GetSvg('textHudMicrophone')"></span>
+                            <span
+                                v-if="!isMuted &&statusData.mic_level == '1' && statusData.talking || ((editModeActive || editAllModeActive) && statusData.talking && statusData.mic_level == '1')"
+                                v-html="GetSvg('textHudMicrophonelow')"></span>
+                            <span
+                                v-if="!isMuted &&statusData.mic_level == '2' && statusData.talking || ((editModeActive || editAllModeActive) && statusData.talking && statusData.mic_level == '2')"
+                                v-html="GetSvg('textHudMicrophonemid')"></span>
+                            <span
+                                v-if="!isMuted && statusData.mic_level == '3' && statusData.talking || ((editModeActive || editAllModeActive) && statusData.talking && statusData.mic_level == '3')"
+                                v-html="GetSvg('textHudMicrophonehigh')"></span>
+                        </div>
+
+                        <div :style="positionsData['radial-health'] || ''" data-type="radial-health"
+                            class="textHudIcons" data-type="radial-health"
+                            v-show="enableHealth && (!showHideBox || Number(hideBoxData.health) > Number(statusData.health)) || (editModeActive || editAllModeActive)">
+                            <span v-html="GetSvg('textHudHealthInner')"></span>
+                            <span v-html="GetSvg('textHudHealthRadial')"></span>
+                            <span v-html="GetSvg('textHudHeartIcon')"></span>
+                        </div>
+                        <div :style="positionsData['radial-armor'] || ''" data-type="radial-armor" class="textHudIcons"
+                            data-type="radial-armor"
+                            v-show="enableArmor && (!showHideBox || Number(hideBoxData.armor)  >  Number(statusData.armour)) || (editModeActive || editAllModeActive)">
+                            <span v-html="GetSvg('textHudArmorInner')"></span>
+                            <span v-html="GetSvg('textHudArmorRadial')"></span>
+                            <span v-html="GetSvg('textHudArmorIcon')"></span>
+                        </div>
+                        <div :style="positionsData['radial-hunger'] || ''" data-type="radial-hunger"
+                            class="textHudIcons"
+                            v-show="enableHunger && (!showHideBox || Number(hideBoxData.hunger) > Number(statusData.hunger)) || (editModeActive || editAllModeActive)">
+                            <span v-html="GetSvg('textHudHungerInner')"></span>
+                            <span v-html="GetSvg('textHudHungerRadial')"></span>
+                            <span v-html="GetSvg('textHudHungerIcon')"></span>
+                        </div>
+                        <div :style="positionsData['radial-thirst'] || ''" data-type="radial-thirst"
+                            class="textHudIcons"
+                            v-show="enableThirst && (!showHideBox || Number(hideBoxData.water) >  Number(statusData.thirst)) || (editModeActive || editAllModeActive)">
+                            <span v-html="GetSvg('textHudWaterInner')"></span>
+                            <span v-html="GetSvg('textHudWaterhRadial')"></span>
+                            <span v-html="GetSvg('textHudWaterIcon')"></span>
+                        </div>
+
+
+                        <div class="textHudIcons" :style="positionsData['radial-stress'] || ''"
+                            data-type="radial-stress"
+                            v-show="useStress && (!showHideBox|| Number(hideBoxData.stress) > Number(statusData.stress)) || (editModeActive || editAllModeActive)">
+                            <span v-html="GetSvg('textHudStressInner')"></span>
+                            <span v-html="GetSvg('textHudStressRadial')"></span>
+                            <span v-html="GetSvg('textHudStressIcon')"></span>
+                        </div>
+                        <transition name="fade" mode="out-in">
+                            <div class="textHudIcons" :style="positionsData['radial-oxy'] || ''" data-type="radial-oxy"
+                                v-show="showOxy && (!showHideBox || Number(hideBoxData.stress) >  Number(statusData.stress)) || (editModeActive || editAllModeActive)">
+                                <span v-html="GetSvg('textHudOxyInner')"></span>
+                                <span v-html="GetSvg('textHudOxyRadial')"></span>
+                                <span v-html="GetSvg('oxyIcon')"></span>
+                            </div>
+                        </transition>
+                        <transition name="fade" mode="out-in">
+                            <div :style="positionsData['radial-stamina'] || ''" class="textHudIcons"
+                                data-type="radial-stamina"
+                                v-show="!showSpeedometer && enableStamina && (!showHideBox || Number(hideBoxData.stamina)  >  Number(statusData.stamina)) || (editModeActive || editAllModeActive)">
+                                <span v-html="GetSvg('textHudStaminaInner')"></span>
+                                <span v-html="GetSvg('textHudStaminaRadial')"></span>
+                                <span v-html="GetSvg('textHudStaminaIcon')"></span>
+                            </div>
+                        </transition>
+                        <transition name="fade" mode="out-in">
+                            <div :style="positionsData['radial-parachute'] || ''" data-type="radial-parachute"
+                                class="textHudIcons" v-show="showParachute || (editModeActive || editAllModeActive)">
+                                <span v-html="GetSvg('textHudParachuteInner')"></span>
+                                <span v-html="GetSvg('textHudParachuteRadial')"></span>
+                                <span v-html="GetSvg('textHudParachuteIcon')"></span>
+                            </div>
+                        </transition>
+                        <transition name="fade" mode="out-in">
+                            <div :style="positionsData['radial-nitro'] || ''" data-type="radial-nitro"
+                                class="textHudIcons"
+                                v-show="showSpeedometer && useNitro || (editModeActive || editAllModeActive)">
+                                <span v-html="GetSvg('textHudNitroInner')"></span>
+                                <span v-html="GetSvg('textHudNitroRadial')"></span>
+                                <span v-html="GetSvg('textHudNitroIcon')"></span>
+                            </div>
+                        </transition>
+
+                        <transition name="fade" mode="out-in">
+                            <div :style="positionsData['radial-altitude'] || ''" data-type="radial-altitude"
+                                class="textHudIcons" v-show="showAltitude || (editModeActive || editAllModeActive)">
+                                <span v-html="GetSvg('textHudAltitudeInner')"></span>
+                                <span v-html="GetSvg('textHudAltitudeRadial')"></span>
+                                <span v-html="GetSvg('textHudAltitudeIcon')"></span>
+
+                            </div>
+                        </transition>
+                    </div>
+
+                </div>
+            </div>
+        </transition>
+
+        <transition name="fade" mode="out-in">
+            <div class="hud-topRight" 
+                v-show="!hide  && !forceHide && !settingsOpen && enableWaterMarkHud" :style="positionsData['hudTopRight'] || ''" data-type="hudTopRight">
+                <div class="hud-topRightWrapper" >
+                    <div class="leftTop-hud classicHudDrag" :style="positionsData['hud-id'] || ''" data-type="hud-id"
+                        v-if="enableWaterMarkId">
+                        <div class="id-container">
+                            <p class="id">ID</p>
+                            <p class="idValue">{{playerId}}</p>
+                        </div>
+                    </div>
+                    <div class="rightTop-hud" >
+                        <div v-if="!disableWaterMarkTextAndLogo" class="classicHudDrag"
+                            :style="positionsData['hud-logo'] || ''" data-type="hud-logo">
+                            <template v-if="UseWaterMarkText">
+                                <p class="serverNameDisplay" :style="text1Style">{{text1}}</p>
+                                <p class="serverNameBottom" :style="text2Style">{{text2}}</p>
+                            </template>
+                            <div v-else class="serverLogo" :style="{width:logoWidth, height:logoHeight}">
+                                <img :src="WaterMarkLogo">
+                            </div>
+
+                        </div>
+
+                        <div class="moneyDisplay">
+                            <div class="bank">
+                                <transition name="fade" mode="out-in">
+                                    <div class="bankAdd classicHudDrag" :style="positionsData['hud-bankadd'] || ''"
+                                    data-type="hud-bankadd"
+                                        v-if="addedMoney != null || (editAllModeActive || editModeActive)">
+                                        <p v-if="editAllModeActive || editModeActive" class="bankAddDisplay">
+                                            ${{numberWithSpaces(0)}}
+                                            <span style="margin-left: .2rem;" v-show="moneyType == 'bank'"
+                                                v-html="GetSvg('bank-icon')"></span>
+                                            <span style="margin-left: .2rem; margin-top: .2rem;"
+                                                v-show="moneyType == 'cash'" v-html="GetSvg('money-icon')"></span>
+                                        </p>
+                                        <p v-else class="bankAddDisplay">{{isMinus ? '-' :
+                                            '+'}}${{numberWithSpaces(addedMoney)}}
+                                            <span style="margin-left: .2rem;" v-show="moneyType == 'bank'"
+                                                v-html="GetSvg('bank-icon')"></span>
+                                            <span style="margin-left: .2rem; margin-top: .2rem;"
+                                                v-show="moneyType == 'cash'" v-html="GetSvg('money-icon')"></span>
+                                        </p>
+                                    </div>
+                                </transition>
+                                <p class="bankDisplay classicHudDrag" :style="positionsData['hud-bank'] || ''"
+                                    data-type="hud-bank"
+                                    v-show="enableWaterMarkBank  || (editAllModeActive || editModeActive && enableWaterMarkBank)">${{numberWithSpaces(bankMoney.toFixed(0))}}</p>
+                            </div>
+                            <p class="cashDisplay classicHudDrag" :style="positionsData['hud-cash'] || ''"
+                                data-type="hud-cash"
+                                v-show="enableWaterMarkCash || (editAllModeActive || editModeActive && enableWaterMarkCash)">
+                                ${{numberWithSpaces(cash.toFixed(0))}} </p>
+                            <div class="ammoDisplayContainer classicHudDrag" :style="positionsData['hud-ammo'] || ''"
+                                data-type="hud-ammo"
+                                v-show="displayAmmoHud && enableAmmoHud || (editAllModeActive || editModeActive && enableAmmoHud) ">
+                                <img src="./assets/images/ammo-icon.png">
+                                <p class="ammoDisplay">{{ammo}}</p>
+                                <p class="maxAmmoDisplay">{{max_ammo}}</p>
+                            </div>
+                            <div class="weaponDisplayContainer classicHudDrag"
+                                :style="positionsData['hud-weapon'] || ''" data-type="hud-weapon"
+                                v-show="weaponImage != '' || (editAllModeActive || editModeActive && enableWatermarkWeaponImage) && enableWatermarkWeaponImage">
+                                <img v-if="!editAllModeActive && !editModeActive"
+                                    :src="'./assets/weapons/'+weaponImage+'.png'">
+                                <img v-else src="./assets/weapons/appistol.png">
+                            </div>
+                            <div class="job classicHudDrag" :style="positionsData['hud-job'] || ''" data-type="hud-job"
+                                v-show="enableWatermarkJob || (editAllModeActive || editModeActive && enableWatermarkJob)">
+                                <div class="job_display">
+                                    <p class="job_label">{{joblabel}}</p>
+                                    <p class="grade_label">{{grade_label}}</p>
+                                </div>
+                                <img class="briefCase" src="./assets/images/briefcase_1.png">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </transition>
+        <transition name="fade" mode="out-in">
+            <div class="speedoMeterContainer speedometerDrag" data-type="speedometer"
+                :style="positionsData['speedometer'] || ''"
+                v-show="enableSpeedometer && !settingsOpen && showSpeedometer && !hide && !forceHide || (((editModeActive || editAllModeActive) || editAllModeActive) && enableSpeedometer)">
+                <div class="speedometer" :style="GetSpeedometerSize">
+                    <!--<div class="fuelIcon">
+                        <p class="fuelText">{{fuel}}L </p>
+                        <span v-html="GetSvg('fuel')"></span>
+                    </div>-->
+                    
+                    <span class="indicator" :style="style" v-html="GetSvg('indicator')"></span>
+                    <p class="speedUnit">{{selectSpeedUnit == 'kmh' ? 'KM/H' : 'MPH'}}</p>
+                    <div class="keys">
+                        <div class="keyLeft">
+                            <div class="keyWrapper">
+
+                                <span v-if="lightsOn" v-html="GetSvg('lights-active')"></span>
+                                <span v-else v-html="GetSvg('lights-unactive')"></span>
+
+                            </div>
+                            <div class="keyWrapper" v-show="seatbeltDisplayActive">
+
+                                <span v-if="sealtBeltIsOn" v-html="GetSvg('belt-active')"></span>
+                                <span v-else v-html="GetSvg('belt-unactive')"></span>
+
+                            </div>
+
+
+                        </div>
+                        <div class="keyRight">
+                            <div class="keyWrapper" v-show="cruiseDisplayActive">
+                                <span v-if="cruiseIsOn" v-html="GetSvg('door-active')"></span>
+                                <span v-else v-html="GetSvg('door-unactive')"></span>
+
+                            </div>
+                            <div class="keyWrapper">
+                                <span v-if="engineIsOn && (engineHealth > 800 && engineHealth <= 1000) "
+                                    v-html="GetSvg('engine-active')"></span>
+                                <span v-if="engineIsOn && (engineHealth > 400 && engineHealth <= 800) "
+                                    v-html="GetSvg('engine-middamaged')"></span>
+                                <span v-if="engineIsOn && (engineHealth > 0 && engineHealth <= 400) "
+                                    v-html="GetSvg('engine-damaged')"></span>
+                                <span v-if="engineIsOn && (engineHealth <= 0) "
+                                    v-html="GetSvg('engine-damaged')"></span>
+                                <span v-if="!engineIsOn" v-html="GetSvg('engine-unactive')"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="speedText">
+                        <span v-html="GetSpeed"></span>
+                    </div>
+                    <svg width="213" height="213" viewBox="0 0 213 213" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M213 106.5C213 165.318 165.318 213 106.5 213C47.6817 213 0 165.318 0 106.5C0 47.6817 47.6817 0 106.5 0C165.318 0 213 47.6817 213 106.5ZM35.602 106.5C35.602 145.656 67.3441 177.398 106.5 177.398C145.656 177.398 177.398 145.656 177.398 106.5C177.398 67.3441 145.656 35.602 106.5 35.602C67.3441 35.602 35.602 67.3441 35.602 106.5Z"
+                            fill="url(#paint0_linear_109_15)" fill-opacity="0.6" />
+                        <defs>
+                            <linearGradient id="paint0_linear_109_15" x1="106.5" y1="0" x2="106.5" y2="213"
+                                gradientUnits="userSpaceOnUse">
+                                <stop />
+                                <stop offset="1" stop-opacity="0" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                    <svg class="dots" width="222" height="175" viewBox="0 0 222 175" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M201.283 173.489C212.687 157.013 219.365 137.731 220.593 117.73C221.822 97.7303 217.553 77.7754 208.251 60.0276C198.949 42.2798 184.968 27.4159 167.822 17.0463C150.676 6.6766 131.019 1.19661 110.981 1.19999C90.9435 1.20337 71.2886 6.68998 54.1462 17.0654C37.0037 27.4408 23.0273 42.3095 13.7311 60.0604C4.43497 77.8113 0.173548 97.7677 1.40855 117.767C2.64356 137.767 9.3279 157.048 20.7374 173.52"
+                            stroke="white" stroke-opacity="0.25" stroke-width="1.2" stroke-dasharray="1.2 7.2" />
+                    </svg>
+                    <div class="dot-1">
+
+                    </div>
+                    <div class="dot-2">
+
+                    </div>
+
+                    <div class="dot-3">
+
+                    </div>
+                    <div class="dot-4">
+
+                    </div>
+                    <div class="dot-5">
+
+                    </div>
+                    <div class="dot-6">
+
+                    </div>
+                    <div class="dot-7">
+
+                    </div>
+                    <div class="dot-8">
+
+                    </div>
+                    <div class="dot-9">
+
+                    </div>
+                    <div class="dot-10">
+
+                    </div>
+                    <div class="dot-11">
+
+                    </div>
+                    <div class="dot-12">
+
+                    </div>
+                    <div class="dot-13">
+
+                    </div>
+                    <div class="dot-14">
+
+                    </div>
+                    <div class="dot-15">
+
+                    </div>
+
+                    <div class="twenty0">
+                        0
+                    </div>
+                    <div class="twenty">
+                        20
+                    </div>
+                    <div class="twenty1">
+                        40
+                    </div>
+                    <div class="twenty2">
+                        60
+                    </div>
+                    <div class="twenty3">
+                        80
+                    </div>
+                    <div class="twenty4">
+                        100
+                    </div>
+                    <div class="twenty5">
+                        120
+                    </div>
+                    <div class="twenty8">
+                        140
+                    </div>
+                    <div class="twenty9">
+                        160
+                    </div>
+                    <div class="twenty10">
+                        180
+                    </div>
+                    <div class="twenty11">
+                        200
+                    </div>
+                    <div class="twenty12">
+                        220
+                    </div>
+                    <div class="twenty13">
+                        240
+                    </div>
+                    <div class="twenty14">
+                        260
+                    </div>
+                    <div class="twenty15">
+                        300
+                    </div>
+
+                    <div class="speed-container">
+                        <div class="speed-wrapper">
+
+                            <svg class="speedometer-svg" xmlns="http://www.w3.org/2000/svg" version="1.1" x="0px"
+                                y="0px" viewBox="-10 -5 267 210">
+                                <path id="path-1"
+                                    d="M22.2182 196.14C9.23518 177.382 1.63283 155.429 0.234913 132.66C-1.16301 109.89 3.69681 87.1722 14.2878 66.9672C24.8788 46.7622 40.7971 29.8408 60.318 18.0363C79.8389 6.23182 102.218 -0.0055484 125.03 3.7021e-06C147.843 0.0055558 170.219 6.25381 189.734 18.0678C209.249 29.8818 225.159 46.8109 235.74 67.0211C246.322 87.2312 251.17 109.952 249.761 132.721C248.352 155.49 240.739 177.439 227.747 196.19L219.466 190.452C231.411 173.212 238.41 153.032 239.706 132.098C241.001 111.165 236.543 90.2754 226.815 71.6942C217.086 53.113 202.459 37.5483 184.517 26.6865C166.574 15.8248 146.002 10.0801 125.028 10.075C104.054 10.0699 83.4788 15.8045 65.5313 26.6576C47.5838 37.5106 32.9486 53.0682 23.2112 71.6446C13.4738 90.2211 9.00574 111.108 10.291 132.042C11.5762 152.977 18.5658 173.16 30.5025 190.406L22.2182 196.14Z" />
+                            </svg>
+                            <svg class="speedometer-svg2" xmlns="http://www.w3.org/2000/svg" version="1.1" x="0px"
+                                y="0px" viewBox="-6.4 -7 265 210">
+                                <path id="path-2" fill-opacity="0" stroke-width="12" stroke="#fff"
+                                    d="M22.2182 196.14C9.23518 177.382 1.63283 155.429 0.234913 132.66C-1.16301 109.89 3.69681 87.1722 14.2878 66.9672C24.8788 46.7622 40.7971 29.8408 60.318 18.0363C79.8389 6.23182 102.218 -0.0055484 125.03 3.7021e-06C147.843 0.0055558 170.219 6.25381 189.734 18.0678C209.249 29.8818 225.159 46.8109 235.74 67.0211C246.322 87.2312 251.17 109.952 249.761 132.721C248.352 155.49 240.739 177.439 227.747 196.19L219.466 190.452C231.411 173.212 238.41 153.032 239.706 132.098C241.001 111.165 236.543 90.2754 226.815 71.6942C217.086 53.113 202.459 37.5483 184.517 26.6865C166.574 15.8248 146.002 10.0801 125.028 10.075C104.054 10.0699 83.4788 15.8045 65.5313 26.6576C47.5838 37.5106 32.9486 53.0682 23.2112 71.6446C13.4738 90.2211 9.00574 111.108 10.291 132.042C11.5762 152.977 18.5658 173.16 30.5025 190.406L22.2182 196.14Z" />
+                            </svg>
+
+                            <svg class="speedometer-svg3" xmlns="http://www.w3.org/2000/svg" width="60" height="111"
+                                viewBox="0 0 60 111">
+                                <path stroke-width="1"
+                                    d="M27.7818 91.1401C42.3968 70.0246 50.1537 44.9201 49.9977 19.2406L39.9229 19.3018C40.0663 42.9116 32.9346 65.9926 19.4975 85.4062L27.7818 91.1401Z"
+                                    fill="#F90017" />
+                            </svg>
+
+                            <!--<svg class="fuelmeter" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" width="57.34px" height="190.34px">
+                                <path fill-rule="evenodd" stroke="rgba(252, 255, 255, 0.25)" stroke-width="9.56px"
+                                    stroke-linecap="butt" stroke-linejoin="miter" fill="none"
+                                    d="M33.779,177.779 C17.790,153.93 11.587,136.323 9.780,98.780 C8.700,76.352 20.618,32.635 43.780,8.780 " />
+                                <path :class="{'fuel-red' : fuel <= 30, 'fuel-yellow' : fuel > 30}" id="fuel"
+                                    fill-rule="evenodd" stroke-width="9.56px" stroke-linecap="butt"
+                                    stroke-linejoin="miter" fill="none"
+                                    d="M33.779,177.779 C17.790,153.93 11.587,136.323 9.780,98.780 C8.700,76.352 20.618,32.635 43.780,8.780 " />
+                            </svg>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </transition>
+
+    </div>
+    <audio id="buckle" src="buckle.ogg" preload></audio>
+    <audio id="unbuckle" src="unbuckle.ogg" preload></audio>
+    <script src="./script/coloris.min.js"></script>
+    <script src="./lib/progressbar.js"></script>
+    <script src="./script/svgProvider.js"></script>
+
+    <script src="./script/script.js"></script>
+
+    <script src="./script/hudProgressbar.js"></script>
+</body>
+
+</html>

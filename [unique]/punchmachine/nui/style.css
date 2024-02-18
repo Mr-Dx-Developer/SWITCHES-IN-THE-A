@@ -1,0 +1,122 @@
+  @import 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css';
+ @font-face {
+     font-family: digitalFont;
+     src: url(digital.ttf);
+}
+ body {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     font-family: sans-serif;
+     position: absolute;
+     top: 47%;
+     left: 36%;
+     user-select: none;
+}
+ .totalscore {
+     position: absolute;
+     right: 4vh;
+     bottom: 8vh;
+     background: #000;
+     text-align: center;
+     width: 32vh;
+     height: 15vh;
+     border: 3px solid #808080;
+     padding: 2vh;
+     display: none;
+}
+ .totalscore span {
+     font-family: digitalFont;
+     font-size: 15vh;
+     color: #f31010;
+}
+ .minigame {
+     display: none;
+}
+ #myProgress {
+     width: 41vh;
+     height: 3vh;
+     background-color: #1616161f;
+     padding: 0.8vh;
+     border-radius: 3vh;
+     margin: 2vh;
+}
+ #progressbar {
+     width: 0%;
+     height: 3vh;
+     background-color: #ff3434;
+     color: #fff;
+     border-radius: 3vh;
+}
+ img {
+     width: 6vh;
+}
+ #key {
+     background: #0a0a0a;
+     width: 7vh;
+     height: 7vh;
+     text-align: center;
+     padding: 0.3vh;
+     border-radius: 1.8vh;
+     font-size: 6vh;
+     border: 0.3vh solid;
+     border-color: #4a4a4a;
+     color: fff;
+     margin: 5vh;
+     text-transform: uppercase;
+}
+ #time {
+     text-align: right;
+     color: fff;
+     margin-right: 4vh;
+     font-size: 1.5vh;
+}
+.scorelist {
+      width: 35vh;
+      background: #fff;
+      padding: 1vh;
+      border: 3px solid #a1a1a1;
+      display: none;
+      height: 100%;
+  }
+
+.scorelist  i {
+    background:#424242;
+    color:#ffeb5d;
+    padding:7px;
+    border-radius:7px;
+}
+.scorelist div {
+    width: 14vh;
+    display: inline-block;
+}
+  
+.scorelist  h3 {
+    text-align: center;
+    padding: 15px;
+    border-bottom: 1px solid #00000030;
+    font-weight: 400;
+    margin: 0;
+}
+
+.scorelist  ul {
+    list-style-type: auto;
+    margin: 2vh;
+}
+
+.scorelist  ul  li {
+    padding: 1vh;
+}
+
+.scorelist #name0 {
+  margin-left: 5px;
+}
+
+.scorelist  ul  li span {
+    background: #000;
+    font-family: digitalFont;
+    padding: 0.5vh;
+    font-weight: 700;
+    border: 3px solid #808080;
+    color: #f31010;
+}

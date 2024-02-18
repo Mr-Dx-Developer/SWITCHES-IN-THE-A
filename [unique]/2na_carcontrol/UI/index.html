@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <script src="scripts/jquery.js"></script>
+    <script src="http://www.youtube.com/player_api"></script>
+    <script src="scripts/script.js"></script>
+    <title>2na_carcontrol</title>
+  </head>
+  <body>
+    <div style="display: none" id="player"></div>
+    <div class="container">
+      <div class="sidebar">
+        <div class="sidebar-left">
+          <div class="sidebar-brand">
+            <p class="text-glow">CAR</p>
+            <p>MENU</p>
+          </div>
+          <div class="sidebar-options">
+            <div data-id="home" class="sidebar-option">
+              <img src="img/home.svg" />
+            </div>
+            <div data-id="music" class="sidebar-option">
+              <img src="img/music.svg" />
+            </div>
+            <div
+              data-id="rearcam"
+              data-nopage="1"
+              data-action="showParkCam"
+              class="sidebar-option"
+            >
+              <img src="img/rearcam.svg" />
+            </div>
+          </div>
+        </div>
+        <div class="sidebar-right">
+          <div class="menu-exit"><img src="img/xmark.svg" /></div>
+        </div>
+      </div>
+      <div class="menu-container">
+        <div class="menu-categories">
+          <div class="menu-category menu-home">
+            <div class="menu-home-car-wrapper">
+              <div class="menu-home-car">
+                <img src="img/car.png" alt="Car preview" />
+                <div
+                  data-index="4"
+                  style="left: 70px"
+                  class="menu-home-carinteraction"
+                >
+                  <img src="img/interact.svg" />
+                </div>
+                <div
+                  data-index="1"
+                  style="top: 20px; left: 300px"
+                  class="menu-home-carinteraction"
+                >
+                  <img src="img/interact.svg" />
+                </div>
+                <div
+                  data-index="3"
+                  style="top: 20px; right: 240px"
+                  class="menu-home-carinteraction"
+                >
+                  <img src="img/interact.svg" />
+                </div>
+                <div
+                  data-index="0"
+                  style="bottom: 20px; left: 300px"
+                  class="menu-home-carinteraction"
+                >
+                  <img src="img/interact.svg" />
+                </div>
+                <div
+                  data-index="2"
+                  style="bottom: 20px; right: 240px"
+                  class="menu-home-carinteraction"
+                >
+                  <img src="img/interact.svg" />
+                </div>
+                <div
+                  data-index="5"
+                  style="right: 70px"
+                  class="menu-home-carinteraction"
+                >
+                  <img src="img/interact.svg" />
+                </div>
+              </div>
+              <div class="menu-home-car-details">
+                <div class="menu-home-car-detail">
+                  <div class="menu-home-car-detial-bg">
+                    <img src="img/fuel-wave.svg" />
+                  </div>
+                  <div class="menu-home-car-detail-icon">
+                    <img src="img/fuel.png" />
+                  </div>
+                  <div class="menu-home-car-detail-description">
+                    <p>FUEL</p>
+                    <p id="home-fuel">85%</p>
+                  </div>
+                </div>
+                <div class="menu-home-car-big-detail">
+                  <div class="menu-home-car-big-detail-icon">
+                    <img src="img/thermometer.png" />
+                  </div>
+                  <div class="menu-home-car-big-detail-description">
+                    <p>ENGINE</p>
+                    <p id="home-enginetemp">85°</p>
+                  </div>
+                </div>
+                <div class="menu-home-car-big-detail">
+                  <div class="menu-home-car-big-detail-icon">
+                    <img src="img/speedometer.png" />
+                  </div>
+                  <div class="menu-home-car-big-detail-description">
+                    <p>KM</p>
+                    <p id="home-mileage">0</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="menu-home-carcontrols">
+              <div class="menu-home-carcontrol-section">
+                <div
+                  data-action="toggleInteriorLight"
+                  class="menu-home-carcontrol-section-button"
+                >
+                  Inerior Light
+                </div>
+                <div
+                  data-action="toggleHeadLight"
+                  class="menu-home-carcontrol-section-button"
+                >
+                  Head Light
+                </div>
+              </div>
+              <div class="menu-home-carcontrol-section">
+                <div
+                  data-action="toggleEngine"
+                  class="menu-home-carcontrol-section-button"
+                >
+                  Toggle Engine
+                </div>
+                <div
+                  data-action="toggleNeonLight"
+                  class="menu-home-carcontrol-section-button"
+                >
+                  Neon Light
+                </div>
+              </div>
+              <div class="menu-home-carcontrol-section">
+                <div
+                  data-action="changeSeat"
+                  class="menu-home-carcontrol-section-button"
+                >
+                  Change Seat
+                </div>
+                <div
+                  data-action="lockCar"
+                  class="menu-home-carcontrol-section-button"
+                >
+                  Lock Car
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="menu-category menu-music menu-hidden">
+            <div class="menu-music-preview">
+              <div class="menu-music-preview-background">
+                <div class="menu-music-preview-backgroundeffect"></div>
+                <img id="music-preview-background" />
+              </div>
+              <div class="menu-music-preview-title">
+                <p id="music-preview-title">Nothing to play</p>
+                <p id="music-preview-desc"></p>
+              </div>
+              <div class="menu-music-preview-search">
+                <input
+                  id="music-input"
+                  placeholder="Place a link"
+                  type="text"
+                />
+                <img src="img/search.svg" />
+              </div>
+              <div class="menu-music-preview-progress"></div>
+            </div>
+            <div class="menu-music-controls">
+              <div class="menu-music-audio-control">
+                <div class="menu-music-audio-control-upper">
+                  <img src="img/volume.svg" />
+                  <p>Volume</p>
+                </div>
+                <input id="music-volume" value="100" type="range" />
+              </div>
+              <div class="menu-music-play-controls">
+                <div id="previous-btn" class="menu-music-play-control">
+                  <img style="transform: rotate(180deg)" src="img/skip.svg" />
+                </div>
+                <div id="play-btn" class="menu-music-play-control">
+                  <img src="img/play.svg" />
+                </div>
+                <div id="skip-btn" class="menu-music-play-control">
+                  <img src="img/skip.svg" />
+                </div>
+              </div>
+              <div class="menu-music-details">
+                <div class="menu-music-details-upper">
+                  <img src="img/listening.svg" />
+                  <p>Listening in</p>
+                </div>
+                <p id="car-name">Mitsubshi Lancer EVO</p>
+              </div>
+            </div>
+          </div>
+          <div class="menu-category menu-rearcam menu-hidden"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

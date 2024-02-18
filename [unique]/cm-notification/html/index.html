@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="notification-settings">
+        <picture class="notification-box " data-type="top-left">
+            <img src="./assets/settings/notification-box.png">
+        </picture>
+        <picture data-type="top-center" class="notification-box">
+            <img src="./assets/settings/notification-box.png">
+        </picture>
+        <picture data-type="top-right" class="selected-notification-box notification-box">
+            <img src="./assets/settings/notification-box.png">
+        </picture>
+        <picture class="notification-box" data-type="bottom-left">
+            <img src="./assets/settings/notification-box.png">
+        </picture>
+        <picture class="notification-box" data-type="bottom-center">
+            <img src="./assets/settings/notification-box.png">
+        </picture>
+        <picture class="notification-box" data-type="bottom-right">
+            <img src="./assets/settings/notification-box.png">
+        </picture>
+        <div class="settings-center">
+            <div class="settings-buttons">
+                <div class="settings-button toggle-sound">
+                    Enable Sound
+                </div>
+                <div class="settings-button toggle-visibility">
+                    Hide Notify
+                </div>
+            </div>
+            <p class="settings-text">Please select a position to adjust notification position.</p>
+            <div class="settings-close">
+                <img src="./assets/settings/x.png">
+            </div>
+        </div>
+    </div>
+    <div class="notification-container">
+        <!-- <div class="notification server">
+            <div class="notification-top">
+                <div class="notification-wrapper">
+                    <div class="notification-icon-box">
+                        <img src="./assets/icons/server.png">
+                        <div class="notification-overlay-bottom-left">
+                        </div>
+                        <div class="notification-overlay-top-right">
+                        </div>
+                    </div>
+                    <p class="notification-title">SERVER</p>
+                </div>
+                <div class="notification-progress">
+                </div>
+            </div>
+            <div class="notification-divider">
+            </div>
+            <p class="notification-text">
+                Server will restart in 5 minutes. Please quit server otherwise mRoleplay will not be responsible for the
+                data loss.
+            </p>
+        </div>
+        <div class="notification announcement">
+            <div class="notification-top">
+                <div class="notification-wrapper">
+                    <div class="notification-icon-box">
+                        <img src="./assets/icons/announcement.png">
+                        <div class="notification-overlay-bottom-left">
+                        </div>
+                        <div class="notification-overlay-top-right">
+                        </div>
+                    </div>
+                    <p class="notification-title">ANNOUNCEMENT</p>
+                </div>
+                <div class="notification-progress">
+                </div>
+            </div>
+            <div class="notification-divider">
+            </div>
+            <p class="notification-text">
+                Server will restart in 5 minutes.
+            </p>
+        </div>
+        <div class="notification info">
+            <div class="notification-top">
+                <div class="notification-wrapper">
+                    <div class="notification-icon-box">
+                        <img src="./assets/icons/info.png">
+                        <div class="notification-overlay-bottom-left">
+                        </div>
+                        <div class="notification-overlay-top-right">
+                        </div>
+                    </div>
+                    <p class="notification-title">INFO</p>
+                </div>
+                <div class="notification-progress">
+                </div>
+            </div>
+            <div class="notification-divider">
+            </div>
+            <p class="notification-text">
+                Server will restart in 5 minutes.
+            </p>
+        </div>
+        <div class="notification twitter">
+            <div class="notification-top">
+                <div class="notification-wrapper">
+                    <div class="notification-icon-box">
+                        <img src="./assets/icons/twitter.png">
+                        <div class="notification-overlay-bottom-left">
+                        </div>
+                        <div class="notification-overlay-top-right">
+                        </div>
+                    </div>
+                    <p class="notification-title">TWITTER</p>
+                </div>
+                <div class="notification-progress">
+                </div>
+            </div>
+            <div class="notification-divider">
+            </div>
+            <p class="notification-text">
+                <span style="color: #5DB4F2;">@thac</span>: Hello Twitter!
+            </p>
+        </div>
+        <div class="notification phone">
+            <div class="notification-top">
+                <div class="notification-wrapper">
+                    <div class="notification-icon-box">
+                        <img src="./assets/icons/phone.png">
+                        <div class="notification-overlay-bottom-left">
+                        </div>
+                        <div class="notification-overlay-top-right">
+                        </div>
+                    </div>
+                    <p class="notification-title">NEW CALL</p>
+                </div>
+                <div class="notification-progress">
+                </div>
+            </div>
+            <div class="notification-divider">
+            </div>
+            <p class="notification-text">
+                Enrique Escorpion
+            </p>
+        </div> -->
+        <!-- <div class="notification saved">
+            <div class="notification-top">
+                <div class="notification-wrapper">
+                    <div class="notification-icon-box">
+                        <img src="./assets/icons/saved.png">
+                        <div class="notification-overlay-bottom-left">
+                        </div>
+                        <div class="notification-overlay-top-right">
+                        </div>
+                    </div>
+                    <p class="notification-title">SAVED</p>
+                </div>
+                <div class="notification-progress">
+                </div>
+            </div>
+            <div class="notification-divider">
+            </div>
+            <p class="notification-text">
+                Clothes succesfuly saved.
+            </p>
+        </div>
+        <div class="notification error">
+            <div class="notification-top">
+                <div class="notification-wrapper">
+                    <div class="notification-icon-box">
+                        <img src="./assets/icons/error.png">
+                        <div class="notification-overlay-bottom-left">
+                        </div>
+                        <div class="notification-overlay-top-right">
+                        </div>
+                    </div>
+                    <p class="notification-title">ERROR</p>
+                </div>
+                <div class="notification-progress">
+                </div>
+            </div>
+            <div class="notification-divider">
+            </div>
+            <p class="notification-text">
+                You cant perform this in here!
+            </p>
+        </div>
+        <div class="notification sms">
+            <div class="notification-top">
+                <div class="notification-wrapper">
+                    <div class="notification-icon-box">
+                        <img src="./assets/icons/sms.png">
+                        <div class="notification-overlay-bottom-left">
+                        </div>
+                        <div class="notification-overlay-top-right">
+                        </div>
+                    </div>
+                    <p class="notification-title">NEW SMS</p>
+                </div>
+                <div class="notification-progress">
+                </div>
+            </div>
+            <div class="notification-divider">
+            </div>
+            <p class="notification-text">
+                <span style="color: #F2CA01;">555-1265</span>: Hey are you there ?
+            </p>
+        </div>
+        <div class="notification bank">
+            <div class="notification-top">
+                <div class="notification-wrapper">
+                    <div class="notification-icon-box">
+                        <img src="./assets/icons/bank.png">
+                        <div class="notification-overlay-bottom-left">
+                        </div>
+                        <div class="notification-overlay-top-right">
+                        </div>
+                    </div>
+                    <p class="notification-title">BANK</p>
+                </div>
+                <div class="notification-progress">
+                </div>
+            </div>
+            <div class="notification-divider">
+            </div>
+            <p class="notification-text">
+                Lucid(12) has sent you 1500$. </p>
+        </div>
+        <div class="notification success">
+            <div class="notification-top">
+                <div class="notification-wrapper">
+                    <div class="notification-icon-box">
+                        <img src="./assets/icons/success.png">
+                        <div class="notification-overlay-bottom-left">
+                        </div>
+                        <div class="notification-overlay-top-right">
+                        </div>
+                    </div>
+                    <p class="notification-title">SUCCESS</p>
+                </div>
+                <div class="notification-progress">
+                </div>
+            </div>
+            <div class="notification-divider">
+            </div>
+            <p class="notification-text">
+                You succesfuly made this. </p>
+        </div>
+        <div class="notification lspd">
+            <div class="notification-top">
+                <div class="notification-wrapper">
+                    <div class="notification-icon-box">
+                        <img src="./assets/icons/lspd.png">
+                        <div class="notification-overlay-bottom-left">
+                        </div>
+                        <div class="notification-overlay-top-right">
+                        </div>
+                    </div>
+                    <p class="notification-title">LSPD</p>
+                </div>
+                <div class="notification-progress">
+                </div>
+            </div>
+            <div class="notification-divider">
+            </div>
+            <p class="notification-text">
+                Shots fired! Need EMS.
+            </p>
+        </div>
+        <div class="notification ems">
+            <div class="notification-top">
+                <div class="notification-wrapper">
+                    <div class="notification-icon-box">
+                        <img src="./assets/icons/ems.png">
+                        <div class="notification-overlay-bottom-left">
+                        </div>
+                        <div class="notification-overlay-top-right">
+                        </div>
+                    </div>
+                    <p class="notification-title">EMS</p>
+                </div>
+                <div class="notification-progress">
+                </div>
+            </div>
+            <div class="notification-divider">
+            </div>
+            <p class="notification-text">
+                Shots fired! Need EMS.
+            </p>
+        </div> -->
+    </div>
+</body>
+<script src="./lib/anime.min.js"></script>
+<script src="./lib/progressbar.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"
+    integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+<script src="./index.js"></script>
+
+</html>

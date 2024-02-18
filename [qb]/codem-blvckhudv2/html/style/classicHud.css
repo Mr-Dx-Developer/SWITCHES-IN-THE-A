@@ -1,0 +1,273 @@
+.classicHudWrapper {
+    display: flex;
+    align-items: center;
+}
+
+.classicHudDragContainer {
+    display: flex;
+    align-items: center;
+  transform-origin: top left;
+}
+
+.classicHudHealth {
+    width: 4.125rem;
+    height: 1.563rem;
+    left: 0px;
+    top: 0px;
+    position: relative;
+    background: #9f292900;
+    border: 1px solid #9f2929a2;
+    box-sizing: border-box;
+    border-radius: 0.188rem;
+}
+
+
+
+.classicHudHealthInner {
+    background: #9F2929;
+    border-radius: 0.188rem;
+    height: 100%;
+    width: 50%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.classicHudArmor {
+    width: 4.125rem;
+    height: 1.563rem;
+    margin-left: .5rem;
+    position: relative;
+    background: #9f292900;
+    border-radius: 3px;
+    border: 1px solid #2E3893a2;
+    box-sizing: border-box;
+    box-sizing: border-box;
+
+}
+
+.classicHudArmorInner {
+    background: #2E3893;
+    box-sizing: border-box;
+
+    border-radius: 3px;
+    height: 100%;
+    width: 50%;
+    max-width: 100%;
+}
+
+.classicHudThirsty {
+    width: 1.563rem;
+    height: 1.563rem;
+    margin-left: .5rem;
+    box-sizing: border-box;
+
+    position: relative;
+    background: #9f292900;
+    border: 1px solid #2F549Ca2;
+    box-sizing: border-box;
+    border-radius: 3px;
+}
+
+.classicHudThirstyInner {
+    background: #2F549C;
+    border-radius: 3px;
+    box-sizing: border-box;
+
+    height: 100%;
+    width: 50%;
+    max-width: 100%;
+}
+
+.classicHudHunger {
+    width: 1.563rem;
+    height: 1.563rem;
+    margin-left: .5rem;
+    box-sizing: border-box;
+
+    position: relative;
+    background: #9f292900;
+
+    border: 1px solid #B3743Aa2;
+    box-sizing: border-box;
+    border-radius: 3px;
+}
+
+.classicHudHungerInner {
+    background: #B3743A;
+    box-sizing: border-box;
+
+    border-radius: 3px;
+    height: 100%;
+    width: 50%;
+    max-width: 100%;
+}
+
+.classicHudStress {
+    width: 1.563rem;
+    height: 1.563rem;
+    margin-left: .5rem;
+    box-sizing: border-box;
+
+    position: relative;
+    background: #9f292900;
+
+    border: 1px solid #AA35A6a2;
+    box-sizing: border-box;
+    border-radius: 3px;
+}
+
+.classicHudStressInner {
+    background: #AA35A6;
+    box-sizing: border-box;
+
+    border-radius: 3px;
+    height: 100%;
+    width: 50%;
+    max-width: 100%;
+}
+
+.classicHudOxy {
+    width: 1.563rem;
+    height: 1.563rem;
+    margin-left: .5rem;
+    box-sizing: border-box;
+
+    position: relative;
+    background: rgba(72, 167, 255, 0.54);
+
+    border: 1px solid rgba(72, 167, 255, 1);
+    box-sizing: border-box;
+    border-radius: 3px;
+}
+
+.classicHudOxyInner {
+    background: #48A7FF;
+    box-sizing: border-box;
+
+    border-radius: 3px;
+    height: 100%;
+    width: 50%;
+    max-width: 100%;
+}
+
+
+.classicHudStamina {
+    width: 1.563rem;
+    height: 1.563rem;
+    margin-left: .5rem;
+    box-sizing: border-box;
+
+    position: relative;
+    background: #9f292900;
+    border: 1px solid #c4ff48a2;
+
+    box-sizing: border-box;
+    border-radius: 3px;
+}
+
+
+
+.classicHudStaminaInner {
+    background: #c4ff48;
+    box-sizing: border-box;
+
+    border-radius: 3px;
+    height: 100%;
+    width: 50%;
+    max-width: 100%;
+}
+
+.classicHudParachute {
+    width: 1.563rem;
+    height: 1.563rem;
+    margin-left: .5rem;
+    box-sizing: border-box;
+
+    position: relative;
+    background: #9f292900;
+    border: 1px solid #48ffdea2;
+
+    box-sizing: border-box;
+    border-radius: 3px;
+}
+
+.classicHudParachuteInner {
+
+    background: #48ffde;
+    box-sizing: border-box;
+
+    border-radius: 3px;
+    height: 100%;
+    width: 50%;
+    max-width: 100%;
+}
+
+.classicHudNitro {
+    width: 1.563rem;
+    height: 1.563rem;
+    margin-left: .5rem;
+    box-sizing: border-box;
+
+    position: relative;
+    background: #9f292900;
+    border: 1px solid #8eff48a2;
+
+    box-sizing: border-box;
+    border-radius: 3px;
+}
+
+.classicHudNitroInner {
+
+    background: #8eff48;
+    box-sizing: border-box;
+
+    border-radius: 3px;
+    height: 100%;
+    width: 50%;
+    max-width: 100%;
+}
+
+.classicHudAltitude {
+    width: 1.563rem;
+    height: 1.563rem;
+    margin-left: .5rem;
+    box-sizing: border-box;
+
+    position: relative;
+    background: #9f292900;
+    border: 1px solid #48deffa2;
+
+    box-sizing: border-box;
+    border-radius: 3px;
+}
+
+.classicHudAltitudeInner {
+    background: #48deff;
+    box-sizing: border-box;
+
+    border-radius: 3px;
+    height: 100%;
+    width: 50%;
+    max-width: 100%;
+}
+
+.classicHudIconSmall {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.classicHudIcon {
+    position: absolute;
+    left: .25rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.classichud-mic {
+    position: absolute;
+    left: -2rem;
+    top: 50%;
+    transform: translateY(-50%);
+}

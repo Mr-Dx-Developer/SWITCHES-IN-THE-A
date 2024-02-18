@@ -1,0 +1,1588 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600;700&display=swap");
+
+@font-face {
+  font-family: "Gilroy";
+  src: url(../assets/fonts/Gilroy-Light.otf);
+}
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: "Gilroy-Bold";
+  src: url(../assets/fonts/Gilroy-ExtraBold.otf);
+}
+
+.compass {
+  position: absolute;
+  left: 50%;
+  bottom: .5rem;
+  transform: translateX(-50%);
+}
+
+.leftCompass {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 12%;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding-left: .2rem;
+
+  height: 100%;
+}
+
+
+.gps {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+}
+
+.colorpickerIcon {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 255;
+}
+
+@font-face {
+  font-family: "Joyride";
+  src: url(../assets/fonts/Joyride-Regular.otf);
+}
+
+.fuelmeter .fuel-yellow {
+  filter: drop-shadow(0px 3px 3px #c0ff388c);
+}
+
+.settingsChangeColors {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.SettingsChangeColor {
+  width: 181px;
+  height: 58px;
+  padding: 0 .2rem;
+  border-radius: 13px;
+  display: flex;
+  align-items: center;
+  margin: 0 1rem;
+  margin-bottom: 1rem;
+  justify-content: space-between;
+  border-width: 2px;
+  border-style: solid;
+}
+
+.HealthSettingsChangeColor {
+  border: 2px solid rgba(255, 72, 72, 0.19);
+}
+
+.WaterSettingsChangeColor {
+  border: 2px solid #4886ff30;
+}
+
+.clr-field button {
+  display: none !important;
+}
+
+.colorinput {
+  appearance: none;
+  background-color: transparent !important;
+  outline: none;
+  border: none;
+  pointer-events: none;
+  color: transparent !important;
+  position: absolute;
+}
+
+.StressSettingsChangeColor {
+  border: 2px solid rgba(255, 72, 248, 0.19);
+}
+
+.LungsSettingsChangeColor {
+  border: 2px solid rgba(72, 167, 255, 0.19);
+}
+
+.SettingsChangeColor p {
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 800;
+  font-size: 13px;
+  line-height: 12px;
+  text-align: center;
+
+  color: rgba(255, 255, 255, 1);
+}
+
+.fuelmeter .fuel-red {
+  filter: drop-shadow(0px 3px 3px #F900178c);
+}
+
+
+.speedometer-svg3 path {
+  filter: drop-shadow(0px 3px 3px #F900178c);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.ammoDisplayContainer {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+  justify-content: flex-end;
+}
+
+.weaponDisplayContainer {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+  justify-content: flex-end;
+  width: 70px;
+  height: 70px;
+  background: rgba(20, 27, 31, 0.25);
+  border-radius: 10px;
+}
+
+.weaponDisplayContainer img {
+  width: 56px;
+  height: 34px;
+}
+
+.ammoDisplayContainer img {
+  object-position: 0.65rem 0.25rem;
+}
+
+.ammoDisplay {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 14px;
+  line-height: 100%;
+  /* identical to box height, or 14px */
+  margin: 0 0.4rem;
+  color: #ffffff;
+
+  text-shadow: 0px 4px 13px rgba(0, 0, 0, 0.6);
+}
+
+.dynamicStatus {
+  width: 250px;
+  position: absolute;
+  right: 0;
+  top: 6rem;
+}
+
+.dynamicText {
+  text-align: center;
+  font-family: "Joyride";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 29px;
+  /* identical to box height */
+
+  color: #bfff38;
+
+  text-shadow: 0px 0px 34px rgba(191, 255, 56, 0.55);
+}
+
+.dynamicStatusText {
+  font-family: "Joyride";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  /* identical to box height */
+  text-align: center;
+  color: #ffffff;
+}
+
+.dynamicButtons {
+  display: flex;
+  margin-top: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.enableButton {
+  width: 65px;
+  margin-right: 0.8rem;
+  height: 29px;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  background: rgba(191, 255, 56, 0.08);
+  border: 2px solid #bfff38;
+  border-radius: 13px;
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 10px;
+  line-height: 12px;
+  text-align: center;
+  transition: all 0.1s linear;
+  color: #ffffff;
+}
+
+.hideBox {
+  width: 223px;
+  height: 41px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+  border-radius: 13px;
+}
+
+.hideBoxHealth {
+  border: 2px solid rgba(255, 72, 72, 0.19);
+}
+
+.hideBoxStress {
+  border: 2px solid rgba(255, 72, 248, 0.19);
+}
+
+.hideBoxStamina {
+  border: 2px solid rgba(196, 255, 72, 0.19);
+}
+
+.hideBoxHunger {
+  border: 2px solid rgba(255, 160, 72, 0.19);
+}
+
+.hideBoxThirsty {
+  border: 2px solid rgba(72, 134, 255, 0.19);
+}
+
+.hideBoxArmor {
+  border: 2px solid rgba(255, 255, 255, 0.19);
+}
+
+.hideAt {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 10px;
+  line-height: 12px;
+  margin: 0 0.4rem;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.hideAtInput {
+  appearance: none;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  width: 29px;
+
+  height: 21px;
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 10px;
+  line-height: 12px;
+  text-align: center;
+
+  color: rgba(255, 255, 255, 0.65);
+  border-radius: 5px;
+}
+
+.hideAtInput::placeholder {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 10px;
+  line-height: 12px;
+  text-align: center;
+
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.hideAtInputStamina {
+  border: 2px solid rgba(196, 255, 72, 0.19);
+}
+
+.hideAtInputHealth {
+  border: 2px solid rgba(255, 72, 72, 0.19);
+}
+
+.hideAtInputHunger {
+  border: 2px solid rgba(255, 160, 72, 0.19);
+}
+
+.hideAtInputStress {
+  border: 2px solid rgba(255, 72, 248, 0.19);
+}
+
+.hideAtInputArmor {
+  border: 2px solid rgba(255, 255, 255, 0.19);
+}
+
+.hideAtInputThirsty {
+  border: 2px solid rgba(72, 134, 255, 0.19);
+}
+
+.thirstBoxIcon {
+  width: 26px;
+  margin-left: 0.5rem;
+  height: 26px;
+  background-image: url(../assets/images/thirst.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hungerBoxIcon {
+  width: 26px;
+  margin-left: 0.5rem;
+  height: 26px;
+  background-image: url(../assets/images/hunger.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.staminaBoxIcon {
+  width: 26px;
+  margin-left: 0.5rem;
+  height: 26px;
+  background-image: url(../assets/images/stamina.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stressBoxIcon {
+  width: 26px;
+  margin-left: 0.5rem;
+  height: 26px;
+  background-image: url(../assets/images/stress.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stressBoxIconInner {
+  background-image: url(../assets/images/brain.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  width: 8px;
+  height: 8px;
+}
+
+.staminaBoxIconInner {
+  background-image: url(../assets/images/run.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  width: 8px;
+  height: 8px;
+}
+
+.healthBoxIcon {
+  width: 26px;
+  margin-left: 0.5rem;
+  height: 26px;
+  background-image: url(../assets/images/healthIcon.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.healthBoxIcon .healthBoxIconInner {
+  background-image: url(../assets/images/heart.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  width: 8px;
+  height: 8px;
+}
+
+.armourhBoxIcon {
+  width: 26px;
+  margin-left: 0.5rem;
+  height: 26px;
+  background-image: url(../assets/images/armouricon.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.enableButton:hover {
+  opacity: 0.9;
+  transform: scale(1.05);
+}
+
+.disableButton {
+  width: 65px;
+  height: 29px;
+  display: flex;
+  transition: all 0.1s linear;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 72, 72, 0.08);
+  border: 2px solid #ff4848;
+  border-radius: 13px;
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 10px;
+  line-height: 12px;
+  text-align: center;
+
+  color: #ffffff;
+}
+
+.disableButton:hover {
+  opacity: 0.9;
+  transform: scale(1.05);
+}
+
+.maxAmmoDisplay {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 14px;
+  line-height: 100%;
+  /* identical to box height, or 14px */
+
+  color: rgba(255, 255, 255, 0.31);
+
+  text-shadow: 0px 4px 13px rgba(0, 0, 0, 0.6);
+}
+
+body {
+  background-color: #00000000;
+  width: 100vw;
+  height: 100vh;
+
+  overflow: hidden;
+}
+
+html {
+  font-size: 16px;
+}
+
+@media screen and (width: 2560px) and (height: 1440px) {
+  html {
+    font-size: 21.6px;
+  }
+}
+
+@media screen and (width: 1600px) and (height: 1024px) {
+  html {
+    font-size: 13.5px;
+  }
+
+  .textHudMicrophone span {
+    transform: scale(1);
+  }
+}
+
+@media screen and (width: 1680px) and (height: 1050px) {
+  html {
+    font-size: 15.5px;
+  }
+
+  .textHudMicrophone span {
+    transform: scale(0.98);
+  }
+}
+
+@media screen and (width: 1600px) and (height: 900px) {
+  html {
+    font-size: 13.5px;
+  }
+
+  .textHudMicrophone span {
+    transform: scale(0.9);
+  }
+}
+
+@media screen and (width: 1768px) and (height: 992px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+@media screen and (width: 1366px) and (height: 768px) {
+  html {
+    font-size: 11.4px;
+  }
+
+  .textHudMicrophone span {
+    transform: scale(0.7);
+  }
+}
+
+@media screen and (width: 1280px) and (height: 1024px) {
+  html {
+    font-size: 14.6px;
+  }
+
+  .textHudMicrophone span {
+    transform: scale(0.7);
+  }
+}
+
+@media screen and (width: 1280px) and (height: 720px) {
+  html {
+    font-size: 11.2px;
+  }
+
+  .textHudMicrophone span {
+    transform: scale(0.7);
+  }
+}
+
+@media screen and (width: 1024px) and (height: 768px) {
+  html {
+    font-size: 11.05px;
+  }
+
+  .textHudMicrophone span {
+    transform: scale(0.8);
+  }
+}
+
+@media screen and (width: 832px) and (height: 624px) {
+  html {
+    font-size: 10.05px;
+  }
+
+  .textHudMicrophone span {
+    transform: scale(0.7);
+  }
+}
+
+@media screen and (width: 800px) and (height: 600px) {
+  html {
+    font-size: 8px;
+  }
+
+  .textHudMicrophone span {
+    transform: scale(0.7);
+  }
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.hud-topRight {
+  height: auto;
+  position: absolute;
+  right: .1rem;
+  top: 0rem;
+}
+
+.hud-logo{
+  width: 100%;
+  height: 100%;
+}
+
+.hud-topRightWrapper {
+  width: 240px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.leftTop-hud {
+  position: absolute;
+  top: -1rem;
+  left: -3rem;
+}
+
+.id-container {
+  width: 3.438rem;
+  height: 3.813rem;
+
+  background: rgba(20, 27, 31, 0.25);
+
+  border-bottom-left-radius: 0.75rem;
+  border-bottom-right-radius: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.id {
+  width: 0.75rem;
+  height: 0.75rem;
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.75rem;
+  color: #ffffff;
+  line-height: 100%;
+  text-shadow: 0px 0.25rem 0.813rem rgba(0, 0, 0, 0.6);
+}
+
+.idValue {
+  width: 1.688rem;
+  height: 0.75rem;
+  position: relative;
+  top: 0.25rem;
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.10rem;
+  line-height: 100%;
+  /* identical to box height, or 12px */
+  text-align: center;
+  color: #ffffff;
+  text-shadow: 0px 0.25rem 0.813rem rgba(0, 0, 0, 0.6);
+}
+
+.rightTop-hud {
+  margin-left: .5rem;
+}
+
+.serverLogo {
+  position: relative;
+  left: 2.5rem;
+}
+
+.serverLogo img {
+  width: 100%;
+  height: 100%;
+}
+
+.serverNameDisplay {
+  font-family: "Joyride";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.9rem;
+  line-height: 100%;
+  /* or 30px */
+}
+
+.serverNameBottom {
+  font-family: "Joyride";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.33rem;
+  line-height: 100%;
+  /* or 21px */
+  text-align: right;
+  color: #ffffff;
+}
+
+.bank {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.bankDisplay {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.25rem;
+  line-height: 100%;
+  /* identical to box height, or 20px */
+  color: #ffffff;
+  text-shadow: 0px 0.25rem 0.813rem rgba(0, 0, 0, 0.6);
+}
+
+.briefCase {
+  width: 1.5rem;
+  object-fit: contain;
+  margin-left: 0.65rem;
+  margin-top: 0.75rem;
+}
+
+.job_label {
+  font-family: "Gilroy-Bold";
+
+  font-style: normal;
+  font-weight: 800;
+  font-size: 1rem;
+  line-height: 100%;
+  /* identical to box height, or 16px */
+
+  color: #ffffff;
+
+  text-shadow: 0px 4px 13px rgba(0, 0, 0, 0.6);
+}
+
+.grade_label {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.93rem;
+  line-height: 100%;
+  /* identical to box height, or 15px */
+
+  color: #ffffff;
+
+  text-shadow: 0px 4px 13px rgba(0, 0, 0, 0.6);
+}
+
+.bankAdd {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 0.125rem 0.313rem;
+  font-family: "Gilroy";
+  width: 4.313rem;
+  height: 1.25rem;
+  margin-right: 1rem;
+  background: #afff48;
+  border-radius: 4px;
+}
+
+.moneyDisplay {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+
+
+.bankAddDisplay {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 100%;
+  /* or 14px */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #252525;
+
+  text-shadow: 0px 0.25rem 0.813rem rgba(0, 0, 0, 0.6);
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  margin: 0px 3px;
+}
+
+.cashDisplay {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 100%;
+  /* identical to box height, or 14px */
+  position: relative;
+  top: 0.5rem;
+  color: #ffffff;
+
+  text-shadow: 0px 0.25rem 0.813rem rgba(0, 0, 0, 0.6);
+}
+
+.hud {
+  position: fixed;
+  left: 4rem;
+  bottom: 0.5rem;
+
+}
+
+.textHud {
+  bottom: 0.15rem;
+}
+
+.radialHud {
+  left: 1rem;
+}
+
+.textHud {
+  left: 1.75rem;
+}
+
+.settings {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(../assets/images/bg-black.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  z-index: 300;
+}
+
+.settingsCenter {
+  position: absolute;
+  left: 53%;
+  top: 35%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+}
+
+.settings-bottom {
+  position: absolute;
+  left: 20.75%;
+  bottom: 5%;
+
+  display: flex;
+  align-items: center;
+}
+
+.settingsChangeColorContainer {
+  background-image: url(../assets/images/change-color-container.png);
+  background-repeat: no-repeat;
+  background-position: 100% 100%;
+  width: 45rem;
+  height: 22.563rem;
+  margin-left: 4rem;
+  padding: 2rem;
+  position: relative;
+}
+
+.settingsChangeColorText {
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 800;
+  font-size: 13px;
+  line-height: 16px;
+  /* identical to box height */
+
+  margin-bottom: .75rem;
+  color: #FFFFFF;
+}
+
+.settings-size {
+  background-image: url(../assets/images/change-size-container.png);
+  background-repeat: no-repeat;
+  background-position: 100% 100%;
+  width: 21.875rem;
+  position: relative;
+  padding: 1.5rem;
+  height: 22.563rem;
+}
+
+.hud-size-big {
+  position: absolute;
+  left: 1rem;
+  top: 4rem;
+}
+
+.hud-size-small {
+  position: absolute;
+  left: 6.5rem;
+  top: 7.5rem;
+}
+
+.status-size-text {
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 800;
+  font-size: 0.813rem;
+  line-height: 1rem;
+  /* identical to box height */
+  color: #FFFFFF;
+}
+
+.settingsBg {
+  background-image: url(../assets/images/settingsBg.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 21.875rem;
+  height: 34.563rem;
+  position: relative;
+  margin-right: 4rem;
+  cursor: pointer;
+  transition: transform 0.2s linear;
+}
+
+.settingsBg:hover {
+  transform: translateY(-5px);
+}
+
+.settingsMap {
+  background-image: url(../assets/images/settingsMap.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 18rem;
+  margin: 2rem auto;
+  margin-top: 5rem;
+  position: relative;
+  height: 15.25rem;
+}
+
+.leftBottomMap {
+  position: absolute;
+  left: 1rem;
+  bottom: -1.5rem;
+}
+
+.exitSettings {
+  display: flex;
+  position: absolute;
+  right: 2rem;
+  top: 2rem;
+}
+
+.exitButton {
+  width: 1.563rem;
+  height: 1.563rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  color: white;
+  font-family: "Gilroy";
+  border-radius: 50%;
+  background: #ff3a3a;
+  cursor: pointer;
+}
+
+.exitText {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 99.5%;
+  /* or 14px */
+  color: white;
+  text-align: right;
+  letter-spacing: 0.075em;
+}
+
+.mapText {
+  position: relative;
+  top: 7rem;
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 2rem;
+  line-height: 2.375rem;
+  /* identical to box height */
+
+  text-align: center;
+
+  color: #ffffff;
+}
+
+.settingsBottom {
+  background-image: url(../assets/images/mapBottom.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 18rem;
+  height: 2rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.settingsTop {
+  background-image: url(../assets/images/mapTop.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 18rem;
+  height: 2rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.textHudSettings {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.textHudSettingsTop {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.line {
+  width: 3.5rem;
+  height: 0.438rem;
+  margin-top: 0.8rem;
+  background: #ffffff;
+}
+
+.textHudItem {
+  position: relative;
+}
+
+.textHudItem.top {
+  display: flex;
+}
+
+.settingsText {
+  margin-top: 7rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.classicSettingsText {
+  border: 1px solid white;
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.25rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.settingsBorder {
+  background: #ffffff;
+  position: absolute;
+  width: 100%;
+  height: 0.625rem;
+  left: 0;
+  bottom: 0;
+}
+
+.settingsBorder.active {
+  background: #bfff38;
+  box-shadow: 0px 0px 2.125rem rgba(191, 255, 56, 0.55);
+}
+
+.settingsTextTop {
+  font-family: "Joyride";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2.5rem;
+  line-height: 2.438rem;
+  /* identical to box height */
+  text-shadow: 0px 0px 2.125rem rgba(255, 255, 255, 0.55);
+  color: white;
+}
+
+.MapIcon {
+  position: absolute;
+  left: 50%;
+  top: 45%;
+  transform: translate(-50%, -50%);
+}
+
+.settingsTextTop.active {
+  color: #bfff38;
+  text-shadow: 0px 0px 2.125rem rgba(191, 255, 56, 0.55);
+}
+
+.settingsTextBottom {
+  font-family: "Joyride";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.25rem;
+  line-height: 1.188rem;
+
+  color: #ffffff;
+}
+
+.percent {
+  position: absolute;
+  left: 50%;
+  bottom: -0.86rem;
+  transform: translateX(-50%);
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.75rem;
+  line-height: 0.875rem;
+  text-align: center;
+
+  color: #ffffff;
+}
+
+.speedometerInfoBox {
+  position: absolute;
+  left: 50%;
+  top: -3.5rem;
+  width: 14.938rem;
+  z-index: 20000000;
+  height: 2.563rem;
+  background-image: url(../assets/images/infoBox.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  transform: translateX(-50%);
+  padding: 0 1.5rem;
+}
+
+.refreshRate {
+  text-align: center;
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 12px;
+  line-height: 15px;
+  /* identical to box height */
+
+  text-align: center;
+
+  color: #ffffff;
+}
+
+.refreshRateInput {
+  appearance: none;
+  border: none;
+  outline: none;
+  font-family: "Gilroy";
+  margin: 0.5rem auto;
+  background-color: transparent;
+  color: white;
+  width: 43px;
+  text-align: center;
+  height: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.19);
+  border-radius: 7px;
+}
+
+.refreshRateInput::placeholder {
+  color: white;
+  font-family: "Gilroy";
+}
+
+.speedometerInfoBoxWrapper {
+  position: relative;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 10px;
+  line-height: 12px;
+
+  color: rgba(255, 255, 255, 0.19);
+  justify-content: center;
+  height: 100%;
+}
+
+.speedometerInfoBoxWrapper img {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -0.8rem;
+}
+
+.settingsSpeedometer {
+  background-image: url(../assets/images/speedometer.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 17.813rem;
+  height: 17.813rem;
+  position: absolute;
+  right: 3rem;
+  bottom: 1rem;
+  z-index: 200000000;
+}
+
+.settingSpeedometerWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.settingsSpeedometerText {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 3.55rem;
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 1.75rem;
+  text-align: center;
+
+  color: #ffffff;
+}
+
+.refreshRateInput {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 1.3rem;
+}
+
+.speedometerSize {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 5.5rem;
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.9rem;
+  line-height: 1.75rem;
+  text-align: center;
+
+  color: #ffffff;
+}
+
+.hudSize {
+  position: absolute;
+  left: 65%;
+  transform: translateX(-50%);
+  top: 3.75rem;
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.9rem;
+  line-height: 1.75rem;
+  text-align: center;
+
+  color: #ffffff;
+}
+
+.hudSizeWrapper input {
+  appearance: none;
+  margin-top: 1rem;
+  border: none;
+  outline: none;
+  width: 9rem;
+  height: 0.4rem;
+  background-color: rgba(255, 255, 255, 0.22);
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.hudSizeWrapper input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background: #ffffff;
+  box-shadow: -1px 0px 4px rgba(0, 0, 0, 0.25);
+  width: 10px;
+  border-radius: 10px;
+  height: 10px;
+}
+
+.speedometerSizeWrapper input {
+  appearance: none;
+  margin-top: 1rem;
+  border: none;
+  outline: none;
+  width: 5rem;
+  height: 0.4rem;
+  background-color: rgba(255, 255, 255, 0.22);
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.speedometerSizeWrapper input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background: #ffffff;
+  box-shadow: -1px 0px 4px rgba(0, 0, 0, 0.25);
+  width: 10px;
+  border-radius: 10px;
+  height: 10px;
+}
+
+.zero {
+  position: absolute;
+  left: -0.5rem;
+}
+
+.one {
+  position: absolute;
+  right: -0.5rem;
+}
+
+.zero-hud {
+  position: absolute;
+  left: -1.5rem;
+}
+
+.one-hud {
+  position: absolute;
+  right: -1.5rem;
+}
+
+.speedometerSizeWrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.hudSizeWrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.speedometerButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.813rem;
+  line-height: 0.938rem;
+  text-align: center;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.65);
+  border: 2px solid rgba(255, 255, 255, 0.19);
+  box-sizing: border-box;
+  border-radius: 0.813rem;
+  margin: 1rem 0;
+
+  width: 4.813rem;
+  height: 2.563rem;
+}
+
+.speedometerButtons {
+  position: absolute;
+  left: 50%;
+  top: 74%;
+  transform: translate(-50%, -50%);
+}
+
+.settingsButtons {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.job {
+  background-image: url(../assets/images/right.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  height: 3.25rem;
+  margin-top: 1rem;
+  width: 13.038rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.settingButton {
+  position: relative;
+  right: 2rem;
+  border: 2px solid rgba(255, 255, 255, 0.19);
+  box-sizing: border-box;
+  border-radius: 0.813rem;
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.813rem;
+  line-height: 0.938rem;
+  text-align: center;
+  width: 13.938rem;
+  height: 2.563rem;
+  margin-bottom: 0.7rem;
+  color: rgba(255, 255, 255, 0.65);
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s linear;
+}
+
+.settingButton:hover {
+  color: rgba(255, 255, 255, 1);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.speedometerButtonActive {
+  width: 4.813rem;
+  height: 2.563rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Gilroy";
+  background-image: url(../assets/images/activeSpeedunit.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.813rem;
+  line-height: 0.938rem;
+  text-align: center;
+  color: rgba(255, 255, 255, 1);
+  margin: 1rem 0;
+  cursor: pointer;
+  transition: background 0.1s linear;
+}
+
+.rectangleButtonActive {
+  background-image: url(../assets/images/activeRectangle.png);
+  background-size: 100% 100%;
+  width: 4.813rem;
+  height: 2.563rem;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.813rem;
+  line-height: 0.938rem;
+  text-align: center;
+  color: rgba(255, 255, 255, 1);
+  margin: 0 1rem;
+  transition: background 0.1s linear;
+  cursor: pointer;
+}
+
+.rectangleButtonDisabled {
+  background-image: url(../assets/images/disabledRectangle.png);
+  background-size: 100% 100%;
+  width: 4.813rem;
+  height: 2.563rem;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.813rem;
+  line-height: 0.938rem;
+  text-align: center;
+  color: rgba(255, 255, 255, 1);
+  margin: 0 1rem;
+  transition: background 0.1s linear;
+  cursor: pointer;
+}
+
+.circleButtonActive {
+  background-image: url(../assets/images/activeCircle.png);
+  background-size: 100% 100%;
+  width: 42px;
+  height: 41px;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.813rem;
+  line-height: 0.938rem;
+  text-align: center;
+  color: rgba(255, 255, 255, 1);
+  margin: 0 1rem;
+  transition: background 0.1s linear;
+  cursor: pointer;
+}
+
+.circleButtonDisabled {
+  background-image: url(../assets/images/disabledCircle.png);
+  background-size: 100% 100%;
+  width: 42px;
+  height: 41px;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.813rem;
+  line-height: 0.938rem;
+  text-align: center;
+  color: rgba(255, 255, 255, 1);
+  margin: 0 1rem;
+  transition: background 0.1s linear;
+  cursor: pointer;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+
+.fade-enter,
+.fade-leave-to
+
+/* .fade-leave-active below version 2.1.8 */
+  {
+  opacity: 0;
+}
+
+.slide-enter-active,
+.slide-leave-active {
+  transition: all 1s;
+}
+
+.slide-leave-active {
+  transform: translateX(250px);
+}
+
+.slide-enter {
+  transform: translateX(250px);
+  transition: all 1s;
+}
+
+.slide-enter-to {
+  transform: translateX(0px);
+}
+
+.textFt {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+
+  color: #ffffff;
+}
+
+.textHudBgWrapper {
+  background-image: url(../assets/images/textHudWrapper.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  transform-origin: top left;
+}
+
+.textHudContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-bottom: 1rem;
+  padding-left: 0.5rem;
+  box-sizing: border-box;
+  padding-right: 0.5rem;
+}
+
+.textHudContainer .radialHudIconsWrapper {
+  flex: 1;
+}
+
+
+.mapButtons {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  transform: translateX(-50%);
+}

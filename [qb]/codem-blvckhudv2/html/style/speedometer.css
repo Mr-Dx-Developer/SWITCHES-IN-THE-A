@@ -1,0 +1,596 @@
+.dots {
+    position: absolute;
+    left:-4px;
+    top: -4px;
+}
+
+.speedoMeterContainer {
+    position: absolute;
+    right: 76px;
+    bottom: 8px;
+    width: 210px;
+    height: 220px;
+
+}
+
+.keys {
+    display: flex;
+    position: absolute;
+    left: 50%;
+    top:83%;
+    transform: translate(-50%, -50%);
+}
+
+
+
+.key {
+    width: 21.55px;
+    height: 21.55px;
+
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2.58621px;
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12.069px;
+    line-height: 15px;
+    /* identical to box height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+}
+
+.keyWrapper{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.keyLeft{
+    margin-right: 10.4px;
+}
+
+.icon{
+    margin-right: 6.4px;
+}
+
+.fuelIcon {
+    position: absolute;
+    left: -80px;
+    bottom:28.8px;
+    display: flex;
+    align-items: center;
+}
+
+.activeSpeed {
+
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 58px;
+    color: rgba(255, 255, 255, 1.0);
+}
+
+.speedUnit {
+    font-family: "Gilroy-Bold";
+
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+    text-align: right;
+    /* identical to box height */
+    position: absolute;
+    color: rgba(255, 255, 255, 0.5);
+    left: 60%;
+    top: 35%;
+    transform: translate(-50%, -50%);
+}
+
+.speedText {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.lightSpeed {
+
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 58px;
+    color: rgba(255, 255, 255, 0.25);
+}
+
+.indicator {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    /*80 max -80 min */
+    transform: translate(-50%, -95%) rotate(0);
+    transition: transform .15s linear;
+}
+
+.fuel-yellow{
+    stroke: #BFFF38;
+}
+
+.fuel-red{
+    stroke: #F90017;
+}
+
+.fuelText {
+    position: relative;
+    top: 4.8px;
+    width: 19px;
+    height: 15px;
+    font-family: "Gilroy-Bold";
+
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+    /* identical to box height */
+
+
+    color: #FFFFFF;
+}
+
+.speedometer {
+    position: relative;
+    transform: scale(1.2);
+    
+}
+
+.speed-container {
+    position: absolute;
+    left: 39.2px;
+    top: -40px;
+    width: 300px;
+    height: 300px;
+}
+
+.speed-wrapper {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    transform: scale(1.65);
+}
+
+.speedometer-svg {
+    position: absolute;
+    width: 160px;
+    transform: scale(1.05);
+    bottom:104px;
+    left: 19.2px;
+
+}
+
+.speedometer-svg2 {
+    position: absolute;
+    width: 160px;
+    transform: scale(1.0);
+    bottom: 104px;
+    left: 20.8px;
+    z-index: 2;
+}
+
+.speedometer-svg3 {
+    position: absolute;
+    width: 40.48px;
+    transform: rotate(1deg);
+    bottom: 72px;
+    left:145.44px;
+    z-index: 1;
+}
+
+
+.fuelmeter {
+    position: absolute;
+    bottom: 60px;
+    left: -5.6px;
+    transform: scale(.6);
+}
+
+.dot-1 {
+    position: absolute;
+    width: 6.7px;
+    height: 1.93px;
+    left: -1.6px;
+    bottom: 83.2px;
+    background: #FFFFFF;
+    transform: rotate(-17.83deg);
+}
+
+.dot-2 {
+    position: absolute;
+    width: 6.7px;
+    height: 1.93px;
+
+    left: -3.2px;
+    bottom: 116px;
+
+    background: #FFFFFF;
+    opacity: 0.55;
+    transform: rotate(-0.35deg);
+}
+
+.dot-3 {
+    position: absolute;
+    width: 6.7px;
+    height: 1.93px;
+    left: 2.72px;
+    bottom: 148.8px;
+    background: #FFFFFF;
+    transform: rotate(20deg);
+}
+
+.dot-4 {
+    position: absolute;
+    width: 6.7px;
+    height: 1.93px;
+    left: 19.2px;
+    bottom: 177.6px;
+    opacity: 0.55;
+    background: #FFFFFF;
+    transform: rotate(35deg);
+}
+
+.dot-5 {
+    position: absolute;
+    width: 6.7px;
+    height: 1.93px;
+    left: 44px;
+    bottom: 201.12px;
+
+    background: #FFFFFF;
+    transform: rotate(55deg);
+}
+
+.dot-6 {
+    position: absolute;
+    width: 6.7px;
+    height: 1.93px;
+    left: 72px;
+    bottom: 213.6px;
+    opacity: 0.55;
+    background: #FFFFFF;
+    transform: rotate(70deg);
+}
+
+.dot-7 {
+    position: absolute;
+    width: 6.7px;
+    height: 1.93px;
+    left: 105.6px;
+    bottom: 218.4px;
+
+    background: #FFFFFF;
+    transform: rotate(90deg);
+}
+
+.dot-8 {
+    position: absolute;
+    width: 6.7px;
+    height: 1.93px;
+    left: 139.2px;
+    bottom: 211.2px;
+    opacity: 0.55;
+    background: #FFFFFF;
+    transform: rotate(110deg);
+}
+
+.dot-9 {
+    position: absolute;
+    width: 6.7px;
+    height: 1.93px;
+    left: 168px;
+    bottom: 196.8px;
+
+    background: #FFFFFF;
+    transform: rotate(120deg);
+}
+
+.dot-10 {
+    position: absolute;
+    width: 6.7px;
+    height: 1.93px;
+    left: 190.4px;
+    bottom: 172.8px;
+    opacity: 0.55;
+    background: #FFFFFF;
+    transform: rotate(140deg);
+}
+
+.dot-11 {
+    position: absolute;
+    width: 6.7px;
+    height: 1.93px;
+    left: 206.4px;
+    bottom: 143.2px;
+
+    background: #FFFFFF;
+    transform: rotate(160deg);
+}
+
+.dot-12 {
+    position: absolute;
+    width: 6.7px;
+    height: 1.93px;
+    left: 211.2px;
+    bottom: 110.4px;
+    opacity: 0.55;
+    background: #FFFFFF;
+    transform: rotate(180deg);
+}
+
+.dot-13 {
+    position: absolute;
+    width: 6.7px;
+    height: 1.93px;
+    left: 206.4px;
+    bottom: 76.8px;
+
+    background: #FFFFFF;
+    transform: rotate(200deg);
+}
+
+
+.twenty {
+    position: absolute;
+    width: 14px;
+    height: 15px;
+    left: 11.2px;
+    bottom:80px;
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+    color: #FFFFFF;
+
+}
+
+.twenty1 {
+    position: absolute;
+    width: 14px;
+    height: 15px;
+
+    left: 8px;
+    bottom: 108.16px;
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+    transform: rotate(-3deg);
+    color: #ffffff5e;
+
+}
+
+.twenty2 {
+    position: absolute;
+    width: 14px;
+    height: 15px;
+
+    left: 14.4px;
+    bottom: 139.2px;
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+
+    color: #FFFFFF;
+
+}
+
+.twenty3 {
+    position: absolute;
+    width: 14px;
+    height: 15px;
+
+    left: 28.8px;
+    bottom: 163.2px;
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+
+    color: #ffffff5e;
+
+}
+
+.twenty4 {
+    position: absolute;
+    width: 14px;
+    height: 15px;
+
+    left: 46.4px;
+    bottom: 180.8px;
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+    transform: rotate(-5deg);
+    color: #ffffff;
+
+}
+
+.twenty5 {
+    position: absolute;
+    width: 14px;
+    height: 15px;
+
+    left: 70.4px;
+    bottom: 192.8px;
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+    transform: rotate(-5deg);
+    color: #ffffff5e;
+
+}
+
+.twenty8 {
+    position: absolute;
+    width: 14px;
+    height: 15px;
+
+    left: 99.2px!important;
+    bottom:195.2px;
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+
+    color: #FFFFFF;
+
+}
+
+.twenty9 {
+    position: absolute;
+    width: 14px;
+    height: 15px;
+    transform: rotate(1deg);
+    left:131.2px;
+    bottom: 187.2px;
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+
+    color: #ffffff5e;
+
+}
+
+.twenty10 {
+    position: absolute;
+    width: 14px;
+    height: 15px;
+
+    left:155.2px;
+    bottom: 172.8px;
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+
+    color: #FFFFFF;
+
+}
+
+.twenty11 {
+    position: absolute;
+    width: 14px;
+    height: 15px;
+
+    left: 174.4px;
+    bottom: 152px;
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+    transform: rotate(-1deg);
+    color: #ffffff5e;
+
+}
+
+.twenty12 {
+    position: absolute;
+    width: 14px;
+    height: 15px;
+
+    left: 184px;
+    bottom: 124.8px;
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+    transform: rotate(-3deg);
+    color: #FFFFFF;
+
+}
+
+.twenty13 {
+    position: absolute;
+    width: 14px;
+    height: 15px;
+
+    left: 184px;
+    bottom: 99.2px;
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+    transform: rotate(-3deg);
+    color: #ffffff5c;
+
+}
+
+.twenty14 {
+    position: absolute;
+    width: 14px;
+    height: 15px;
+
+
+    left: 179.2px;
+    bottom: 72px;
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+    transform: rotate(1deg);
+    color: #FFFFFF;
+
+}
+
+.twenty15 {
+    position: absolute;
+    width: 14px;
+    height: 15px;
+
+    left: 169.6px;
+    bottom: 41.6px;
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+    transform: rotate(-3deg);
+    color: #ffffff5c;
+
+}
+
+.twenty0 {
+    position: absolute;
+    width: 14px;
+    height: 15px;
+
+    left: 20.8px;
+    bottom: 44.8px;
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+    transform: rotate(-3deg);
+    color: #ffffff5c;
+
+}

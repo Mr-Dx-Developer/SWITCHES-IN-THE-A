@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.min.js" type="text/javascript"></script>
+   <link rel="stylesheet" href="style.css">
+   <script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+   
+   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+   <div id="app" v-show="display">
+      <img class="background-img" src="./background/PURPLE.png" alt="">
+      <div class="container">
+         <div class="header">
+            <div class="left">
+               <ion-icon name="briefcase-outline"></ion-icon>
+               <h1 class="title">JOBS <span>CENTRE</span></h1>
+            </div>
+            <div class="right">
+               <h1>ESC <span>EXIT</span></h1>
+            </div>
+         </div>
+         
+         <div class="main">
+            <div class="arrows">
+               <div class="arrow-left" @click="onLeftClick()">
+                  <ion-icon name="chevron-back-outline"></ion-icon>
+               </div>
+               <div class="arrow-right" @click="onRightClick()">
+                  <ion-icon name="chevron-forward-outline"></ion-icon>
+               </div>
+            </div>
+            <div class="slider">
+               <div class="jobs">
+                  <div class="job" v-for="(job, index) in jobs" :class="{ active: selectedJobIndex == index }">
+                     <div class="top">
+                        <img :src="job.data.img">
+                        <div class="job-title">{{ job.data.jobs }}</div>
+                        <div class="level"><div class="level-value">{{ Math.floor(job.data.level) ? Math.floor(job.data.level) : 0 }}</div></div>
+                     </div>
+                     <div class="level-progress">
+                        <div class="level-bar" :style="'width:'+(job.data.xp / (job.data.xp > 1000 ? 1000 + job.data.xp : 1000) ) * 100+'%'" v-if="job.data.xp > 0"></div>
+                        <div class="level-bar"style="width:0%" v-else></div>
+                        <div class="next-level">Points for the next level: <span class="next-level-value">{{ job.data.xp ? job.data.xp : 0 }}/{{ job.data.xp > 1000 ? 1000 + job.data.xp : 1000 }}</span></div>
+                     </div>
+                     <div class="description">{{ job.data.info }}</div>
+                     <div class="select-button" @click="selectJOB(index+1)">SELECT</div>
+                  </div>
+               </div>
+               </div>
+            </div>
+            <div class="steps">
+
+            </div>
+         </div>
+      </div>
+   </div>
+
+
+   <script src="script.js" defer></script>
+</body>
+</html>
