@@ -68,5 +68,6 @@
     "dispatch_alert_message": "Vehicle Theft Attempt",
     "dispatch_alert_blip_text": "Vehicle Theft",
     "not_auth_fly": "Citizen is not authorized to fly this vehicle",
-    "hotwire_keybind_text": "Hotwire Vehicle"
+    "hotwire_keybind_text": "Hotwire Vehicle",
+    "exitvehicle_keybind_text": "Exit Vehicle"
 }

@@ -401,6 +401,11 @@ Config.DisableAutoStartEngine = false --TRUE = ENGINE WILL NOT START WHEN YOU SI
 Config.DisableAccelerateVehicleStart = true --TRUE = ENGINE WILL NOT START WHEN YOU ACCELERATE IF YOU HAVE KEYS / FALSE = ENGINE STARTS WHEN YOU PRESS ACCELERATE KEY IF YOU HAVE KEYS TO THE VEHICLE
 ------------------------------------------------------------------------------------------------------------------------------
 
+------------------------------------------------------VEHICLE EXITING---------------------------------------------------------
+Config.LeaveDoorOpen = true --TRUE = HOLDING DOWN 'F' KEY WILL EXIT THE VEHICLE AND LEAVE THE DRIVER DOOR OPEN / FALSE = WILL ALWAYS SHUT DOOR
+Config.LeaveEngineRunning = false --TRUE = LEAVE ENGINE RUNNING AFTER VEHICLE EXIT IF IT WAS ON / FALSE = ALWAYS SHUT OFF ENGINE ON EXIT (VEHICLE WILL SHUT OFF IF A PLAYER WITHOUT KEYS ENTERS THE DRIVER SEAT)
+------------------------------------------------------------------------------------------------------------------------------
+
 ------------------------------------------------------QB-VEHICLEKEYS SNIPPET--------------------------------------------------
 RegisterNetEvent('vehiclekeys:client:SetOwner', function(vehiclePlate)
     local plate = utils:removeTrailSpaces(vehiclePlate)
