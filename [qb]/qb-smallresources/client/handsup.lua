@@ -11,7 +11,8 @@ RegisterCommand(Config.HandsUp.command, function()
         end
     end
     handsup = not handsup
-   if exports.wasabi_police:IsHandcuffed() then return end
+   --[[ if exports.wasabi_police:IsHandcuffed() then return end ]]
+   if exports['qb-policejob']:IsHandcuffed() then return end
    handsup = not handsup
     if handsup then
         TaskPlayAnim(ped, animDict, anim, 8.0, 8.0, -1, 50, 0, false, false, false)
