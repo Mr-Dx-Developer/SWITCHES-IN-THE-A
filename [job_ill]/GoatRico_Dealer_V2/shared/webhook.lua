@@ -2,5 +2,5 @@ Webhook = {}
 
 -- Discord webhook links here for logs
 Webhook.Links = {
-    drugsale = 'https://discord.com/api/webhooks/949329341714677821/REDrj-uIAPkPdShikHfiYWwBmZypkGnbbauwkahvdJ0XZzn_hhobZlWRp_4iKitID4AR',
+    drugsale = 'https://discord.com/api/webhooks/1183456741132861501/E7T1Dvib1GeB95N7aPvejfcoOsqg6SUkpUwz0bPoISQHCaQ7n_Yr70fORDbpXsTaan3W',
 }

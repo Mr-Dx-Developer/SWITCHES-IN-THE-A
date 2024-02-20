@@ -3,10 +3,33 @@ Config = {
 
     npcFightOnReject = false,
 
-    account = 'black_money', --Options 'money', 'bank' or 'black_money'
+    account = 'money', --Options 'money', 'bank' or 'black_money'
 
     drugs = {
-        ['weed'] = math.random(525, 800),
+        ['weed_pooch'] = math.random(85, 370),
+        ['molly_pooch'] = math.random(155, 400),
+        ['spice_pooch'] = math.random(57, 100),
+        ['opium_pooch'] = math.random(58, 200),
+        ['shroom_pooch'] = math.random(50, 350),
+        ['heroin_shot'] = math.random(52, 350),
+        ['coke_pooch'] = math.random(50, 385),
+        ['crack_pooch'] = math.random(98, 300),
+        ['meth_pooch'] = math.random(50, 350),
+        ['perc_pooch'] = math.random(170, 670),
+        ['ketamine'] = math.random(100, 250),
+        ['blacktar'] = math.random(100, 250),
+        ['speedball'] = math.random(100, 250),
+        ['flakka'] = math.random(100, 250),
+        ['blonde_bundlesbox'] = math.random(148, 415),
+        ['red_bodywavebox'] = math.random(148, 550),
+        ['pinkremy_box'] = math.random(145, 355),
+        ['lean_bottle'] = math.random(26, 300),
+        ['double_cup'] = math.random(165, 430),
+        ['xanax'] = math.random(187, 660),
+        ['yerk30'] = math.random(50, 300),
+        ['fentanyl'] = math.random(50, 200),
+        ['ecstasy'] = math.random(50, 210),
+        ['Famgoon_Dogfood'] = math.random(150, 450),
         -- ... add as many drugs as needed ...
     },
 
@@ -14,7 +37,7 @@ Config = {
     salecommand2 = 'trap',
 
     mincounttosell = 3,  -- Minimum count of drugs required to sell
-    maxcounttosell = 3,  -- Maximum count of drugs that can be sold at once
+    maxcounttosell = 5,  -- Maximum count of drugs that can be sold at once
 
     cityPoint = vec3(-34.556587219238, -1096.8443603516, 27.274396896362), --Set to false to disable
 
@@ -22,23 +45,8 @@ Config = {
         PolyZone1 = { --BMF Block
             points = {
                 vec3(-304.0, -1507.0, 30.0),
-                vec3(-298.0, -1516.0, 30.0),
-                vec3(-355.0, -1627.0, 30.0),
-                vec3(-373.0, -1521.0, 30.0),
-                vec3(-362.0, -1509.0, 30.0),
-                vec3(-362.0, -1501.0, 30.0),
             },
-            thickness = 21.0
-        },
-        PolyZone2 = { --Baby Insane Block
-            points = {
-                vec3(-191.0, -1283.0, 31.0),
-                vec3(-117.0, -1282.0, 31.0),
-                vec3(-121.0, -1348.0, 31.0),
-                vec3(-168.0, -1382.0, 31.0),
-                vec3(-186.0, -1349.0, 31.0),
-            },
-            thickness = 20.0
+            thickness = 0.0
         },
         -- ... add as many zones as needed ...
     },
@@ -49,13 +57,13 @@ Config = {
         cooldown = 'Please wait some time',
         toofar = 'You\'re too far from the city',
         cops = 'There\'s no cops in the city',
-        searching = 'On phone with buyer for ',
+        searching = 'On phone with fein for ',
         abort = 'Buyer has resigned from the order',
         notfound = 'There\'s no nearby buyess',
-        approach = 'Your buyer is approaching',
+        approach = 'Your fein is approaching',
         found = 'You\'ve found buyer on ',
         press = 'Press [E] to make the sale.',
-        reject = 'This stuff is shitty!',
+        reject = 'What da fuck you selling !',
         vehicle = 'You\'ve to leave vehicle to sell',
         sold = 'You\'ve sold x%s of %s for %s$',
         client = 'Your buyer ~n~~r~want\'s to buy x%s %s',
@@ -72,12 +80,12 @@ Config = {
         'I Think Someone\'s Following Me, I\'ll Come Back Later.',
         'Sorry, but I\'m not interested. I\'ve had better quality before.',
         "I appreciate the offer, but I'm looking for something stronger.",
-        "No offense, but I don't trust the source. I'll find another dealer.",
+        "No offense, but I don't trust the source. I'll find rylo or frank .",
         "I'm not feeling it today. Maybe next time.",
-        "I've heard rumors about this batch. I'll stay away for now.",
+        "I've heard rumors about this batch rico told me . I'll stay away for now.",
         "Thanks, but I'm holding out for a higher-grade product.",
         "I don't think this is worth the price. I'll save my money.",
-        "I've already got a reliable supplier. Thanks anyway.",
+        "I've already got a reliable supplier 101 where it's at . Thanks anyway.",
         "I'm not interested in taking any risks right now. Maybe another time.",
         "I'm trying to lay low for a while. I'll pass on this one.",
         "This doesn't meet my expectations. I'll keep searching.",
