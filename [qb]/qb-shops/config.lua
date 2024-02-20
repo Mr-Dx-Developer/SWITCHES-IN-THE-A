@@ -9,7 +9,7 @@ Config.SellCasinoChips = {
     ped = 's_m_y_casino_01'
 }
 Config.Products = {
-    ["fishing"] = {
+ --[[    ["fishing"] = {
         [1] = {
             name = 'fishingrod',
             price = 100,
@@ -26,7 +26,7 @@ Config.Products = {
             type = 'item',
             slot = 2,
         }
-    },
+    }, ]]
     ["normal"] = {
         [1] = {
             name = "tosti",
@@ -1702,7 +1702,7 @@ Config.Locations = {
         ["blipcolor"] = 46,
         ["delivery"] = vector4(-674.5170, 5837.8423, 17.3401, 129.6320)
     },
-    -- My Fishing Shop
+   --[[  -- My Fishing Shop
     ["fishingshop"] = {
         ["label"] = "The Fish Shop",
         ["coords"] = vector4(-1597.9, 5201.15, 4.39, 69.79),
@@ -1717,7 +1717,7 @@ Config.Locations = {
         ["blipscale"] = 0.8,
         ["blipcolor"] = 38,
         ["delivery"] = vector4(-1597.9, 5201.15, 4.39, 69.79)
-    },
+    }, ]]
     ["skateboardshop"] = {
         ["label"] = "The Skateboard Shop",
         ["coords"] = vector4(-1369.9000, -522.7589, 30.4695, 35.6665),
