@@ -26,10 +26,10 @@ Config = {
         ['lean_bottle'] = math.random(26, 300),
         ['double_cup'] = math.random(165, 430),
         ['xanax'] = math.random(187, 660),
-        ['yerk30'] = math.random(50, 300),
+      --  ['yerk30'] = math.random(50, 300),
         ['fentanyl'] = math.random(50, 200),
         ['ecstasy'] = math.random(50, 210),
-        ['Famgoon_Dogfood'] = math.random(150, 450),
+      --  ['Famgoon_Dogfood'] = math.random(150, 450),
         -- ... add as many drugs as needed ...
     },
 
