@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Inter', sans-serif;
+  color: #e3e6ec;
+  font-weight: bold;
+}
+
+body {
+  user-select: none;
+  white-space: nowrap;
+  margin: 0;
+  user-select: none;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+#prompt {
+  margin-top: 335px;
+  margin-left: 335px;
+  position: absolute;
+  display: flex;
+  opacity: 1.0;
+  transition: opacity 0.1s;
+  overflow: visible;
+}
+
+.hidden {
+  opacity: 0.0 !important;
+  transition: all 0.2s;
+}
+
+#keybind {
+  background-color: rgba(60, 60, 88, 1.0);
+  outline: 2px solid rgb(109, 124, 163);
+  font-size: 24px;
+  border-radius: 5px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+#options {
+  transition: margin-top 0.4s;
+}
+
+i {
+  margin-right: 7px;
+  font-size: 16px;
+}
+
+.option {
+  display: block;
+  background: linear-gradient(
+    90deg,
+    rgb(60, 60, 88) 0%,
+    rgba(38, 38, 56, 0.9) 66%
+  );
+  color: #cfd2d7bb;
+  list-style-type: none;
+  font-size: 16px;
+  text-align: left;
+  padding: 8px 12px;
+  height: 35px;
+  margin: 0px 8px 4px 8px;
+  border-radius: 5px;
+  transition: all 0.4s;
+}
+
+.selected {
+  font-size: 18px;
+  padding: 10px 12px;
+  height: 40px;
+  transition: all 0.4s;
+  color: #cfd2da;
+}
