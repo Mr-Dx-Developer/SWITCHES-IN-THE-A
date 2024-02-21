@@ -1094,7 +1094,7 @@ local function OpenInventory(name, id, other, origin)
 			secondInv.label = "Glovebox-"..id
 			secondInv.maxweight = 10000
 			secondInv.inventory = {}
-			secondInv.slots = 8
+			secondInv.slots = 5
 			if Gloveboxes[id] and Gloveboxes[id].isOpen then
 				secondInv.name = "none-inv"
 				secondInv.label = "Glovebox-None"
@@ -1465,7 +1465,7 @@ RegisterNetEvent('inventory:server:OpenInventory', function(name, id, other)
 				secondInv.label = "Glovebox-"..id
 				secondInv.maxweight = 10000
 				secondInv.inventory = {}
-				secondInv.slots = 8
+				secondInv.slots = 5
 				if Gloveboxes[id] and Gloveboxes[id].isOpen then
 					secondInv.name = "none-inv"
 					secondInv.label = "Glovebox-None"
@@ -2406,13 +2406,14 @@ QBCore.Commands.Add("giveitem", "Give An Item (Admin Only)", {{name="id", help="
 					info.quality = 100
 				elseif itemData["name"] == "harness" then
 					info.uses = 20
+				elseif itemData["name"] == "markedbills" then
+					info.worth = math.random(5000, 10000)
+				
 				elseif itemData["name"] == "bmx" then
 					info.prim = math.random(0, 100)
 					info.sec = math.random(0, 100)
 					info.per = math.random(0, 100)
 					info.plate = "Spawned"
-				elseif itemData["name"] == "markedbills" then
-					info.worth = math.random(5000, 10000)
 				elseif itemData["name"] == "labkey" then
 					info.lab = exports["qb-methlab"]:GenerateRandomLab()
 				elseif itemData["name"] == "printerdocument" then

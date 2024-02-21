@@ -20,18 +20,6 @@ ui_page {
 	'html/ui.html'
 }
 
---[[ files {
-	'html/ui.html',
-	'html/css/main.css',
-	'html/js/app.js',
-	'html/inventory_images/body.png',
-	'html/images/*.svg',
-	'html/images/*.png',
-	'html/images/*.jpg',
-	'html/ammo_images/*.png',
-	'html/attachment_images/*.png',
-	'html/*.ttf'
-} ]]
 files {
 	'html/ui.html',
 	'html/css/main.css',
@@ -44,5 +32,6 @@ files {
 	'html/fonts/MoldeCondensedBold.ttf',
 }
 
-
 lua54 'yes'
+
+dependency 'qb-weapons'
