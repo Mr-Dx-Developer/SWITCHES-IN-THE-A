@@ -1,32 +1,39 @@
-name "qb-multicharacter"
-author "Mr_Dx#0879"
-version "v6.0"
-description "Made By Dx-Born"
-fx_version "cerulean"
-game "gta5"
-lua54 'yes'
+fx_version 'cerulean'
+game 'gta5'
 
+description 'QB-Multicharacter Rework'
+version '1.2.0'
 
-client_script {
-    'core.lua',
-    'client/main.lua',
+shared_scripts {
+    '@qb-core/shared/locale.lua',
+    'locales/en.lua',
+    'locales/*.lua',
+    'config.lua'
 }
-server_script {
+
+client_scripts {
+    'client/main.lua'
+}
+
+server_scripts  {
     '@oxmysql/lib/MySQL.lua',
-    'core.lua',
-    'server/config.lua',
-    'server/functions.lua',
+    '@qb-apartments/config.lua',
     'server/main.lua'
 }
 
-ui_page "nui/index.html"
-files { 'nui/**/*' }
+ui_page 'html/index.html'
 
-escrow_ignore {
-    'core.lua',
-    'server/config.lua',
-    'server/functions.lua',
-    'client/**',
-    'nui/**',
+files {
+    'html/index.html',
+    'html/style.css',
+    'html/reset.css',
+    'html/vue.js',
+    'html/swal2.js',
+    'html/profanity.js',
 }
-dependency '/assetpacks'
+
+dependencies {
+    'qb-core',
+}
+
+lua54 'yes'

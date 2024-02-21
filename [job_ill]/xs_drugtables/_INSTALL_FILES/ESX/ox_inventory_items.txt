@@ -1,0 +1,111 @@
+	['plastic_table_heroine'] = {
+		label = 'Heroin Table',
+		weight = 1250,
+		stack = false,
+		close = true,
+	},
+
+	['plastic_table_cocaine'] = {
+		label = 'Cocaine Table',
+		weight = 1250,
+		stack = false,
+		close = true,
+	},
+
+	['plastic_table_ecstasy'] = {
+		label = 'Ecstasy Table',
+		weight = 1250,
+		stack = false,
+		close = true,
+	},
+
+	['plastic_table_meth'] = {
+		label = 'Meth Table',
+		weight = 1250,
+		stack = false,
+		close = true,
+	},
+
+	['plastic_table_mushrooms'] = {
+		label = 'Mushroom Table',
+		weight = 1250,
+		stack = false,
+		close = true,
+	},
+
+	['plastic_table_weed'] = {
+		label = 'Weed Table',
+		weight = 1250,
+		stack = false,
+		close = true,
+	},
+
+	['plastic_table_fentanyl'] = {
+		label = 'Fentanyl Table',
+		weight = 1250,
+		stack = false,
+		close = true,
+	},
+
+    ['poppy'] = {
+		label = 'Poppy',
+		weight = 20,
+		stack = true,
+		close = true,
+	},
+
+    ['plastic_baggy'] = {
+		label = 'Plastic Baggy',
+		weight = 12,
+		stack = true,
+		close = true,
+	},
+
+	['heroin_shot'] = {
+		label = 'Heroin Shot',
+		weight = 15,
+		stack = true,
+		close = true,
+	},
+
+	['cocaine'] = {
+		label = 'Cocaine',
+		weight = 15,
+		stack = true,
+		close = true,
+	},
+
+	['ogkushkush'] = {
+		label = 'OG Kush',
+		weight = 15,
+		stack = true,
+		close = true,
+	},
+
+	['meth'] = {
+		label = 'Meth',
+		weight = 15,
+		stack = true,
+		close = true,
+	},
+
+	['fentanyl'] = {
+		label = 'Fentanyl',
+		weight = 15,
+		stack = true,
+		close = true,
+	},
+
+	['shrooms'] = {
+		label = 'Shrooms',
+		weight = 15,
+		stack = true,
+		close = true,
+	},
+
+	['ecstasy'] = {
+		label = 'Ecstasy',
+		weight = 15,
+		stack = true,
+		close = true,
+	},
