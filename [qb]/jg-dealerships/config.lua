@@ -30,9 +30,9 @@ Config.SellVehicleKeyBind = 38
 Config.FinancePayments = 12
 Config.FinanceDownPayment = 0.1 -- 0.1 means 10%
 Config.FinanceInterest = 0.1 -- 0.1 means 10%
-Config.FinancePaymentInterval = 12 -- in hours
+Config.FinancePaymentInterval = 1 -- in hours
 Config.FinancePaymentFailedHoursUntilRepo = 1 -- in hours
-Config.MaxFinancedVehiclesPerPlayer = 5
+Config.MaxFinancedVehiclesPerPlayer = 3
 
 Config.TestDrivePlate = "TESTER"
 Config.TestDriveTimeSeconds = 120
