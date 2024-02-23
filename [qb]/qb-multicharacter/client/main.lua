@@ -2,12 +2,6 @@ local cam = nil
 local charPed = nil
 local loadScreenCheckState = false
 local QBCore = exports['qb-core']:GetCoreObject()
-local cached_player_skins = {}
-
-local randommodels = { -- models possible to load when choosing empty slot
-    'mp_m_freemode_01',
-    'mp_f_freemode_01',
-}
 
 -- Main Thread
 
@@ -20,34 +14,6 @@ CreateThread(function()
 		end
 	end
 end)
-
--- Functions
-
-local function loadModel(model)
-    RequestModel(model)
-    while not HasModelLoaded(model) do
-        Wait(0)
-    end
-end
-
-
-local function initializePedModel(model, data)
-    CreateThread(function()
-        if not model then
-            model = joaat(randommodels[math.random(#randommodels)])
-        end
-        loadModel(model)
-        charPed = CreatePed(2, model, Config.PedCoords.x, Config.PedCoords.y, Config.PedCoords.z - 0.98, Config.PedCoords.w, false, true)
-        SetPedComponentVariation(charPed, 0, 0, 0, 2)
-        FreezeEntityPosition(charPed, false)
-        SetEntityInvincible(charPed, true)
-        PlaceObjectOnGroundProperly(charPed)
-        SetBlockingOfNonTemporaryEvents(charPed, true)
-        if data then
-            TriggerEvent('qb-clothing:client:loadPlayerClothing', data, charPed)
-        end
-    end)
-end
 
 local function skyCam(bool)
     TriggerEvent('qb-weathersync:client:DisableSync')
@@ -99,6 +65,10 @@ RegisterNetEvent('qb-multicharacter:client:closeNUIdefault', function() -- This 
     DeleteEntity(charPed)
     SetNuiFocus(false, false)
     DoScreenFadeOut(500)
+
+    TriggerEvent('nethush-entryscene:client:openairscence')
+    Wait(25000 + 10)
+    
     Wait(2000)
     SetEntityCoords(PlayerPedId(), Config.DefaultSpawn.x, Config.DefaultSpawn.y, Config.DefaultSpawn.z)
     TriggerServerEvent('QBCore:Server:OnPlayerLoaded')
@@ -136,53 +106,10 @@ RegisterNetEvent('qb-multicharacter:client:chooseChar', function()
     openCharMenu(true)
 end)
 
-RegisterNetEvent('qb-multicharacter:client:spawnLastLocation', function(coords, cData)
-    QBCore.Functions.TriggerCallback('apartments:GetOwnedApartment', function(result)
-        if result then
-            TriggerEvent("apartments:client:SetHomeBlip", result.type)
-            local ped = PlayerPedId()
-            SetEntityCoords(ped, coords.x, coords.y, coords.z)
-            SetEntityHeading(ped, coords.w)
-            FreezeEntityPosition(ped, false)
-            SetEntityVisible(ped, true)
-            local PlayerData = QBCore.Functions.GetPlayerData()
-            local insideMeta = PlayerData.metadata["inside"]
-            DoScreenFadeOut(500)
-
-            if insideMeta.house then
-                TriggerEvent('qb-houses:client:LastLocationHouse', insideMeta.house)
-            elseif insideMeta.apartment.apartmentType and insideMeta.apartment.apartmentId then
-                TriggerEvent('qb-apartments:client:LastLocationHouse', insideMeta.apartment.apartmentType, insideMeta.apartment.apartmentId)
-            else
-                SetEntityCoords(ped, coords.x, coords.y, coords.z)
-                SetEntityHeading(ped, coords.w)
-                FreezeEntityPosition(ped, false)
-                SetEntityVisible(ped, true)
-            end
-
-            TriggerServerEvent('QBCore:Server:OnPlayerLoaded')
-            TriggerEvent('QBCore:Client:OnPlayerLoaded')
-            Wait(2000)
-            DoScreenFadeIn(250)
-        end
-    end, cData.citizenid)
-end)
-
 -- NUI Callbacks
 
 RegisterNUICallback('closeUI', function(_, cb)
-    local cData = data.cData
-    DoScreenFadeOut(10)
-    TriggerServerEvent('qb-multicharacter:server:loadUserData', cData)
     openCharMenu(false)
-    SetEntityAsMissionEntity(charPed, true, true)
-    DeleteEntity(charPed)
-    if Config.SkipSelection then
-        SetNuiFocus(false, false)
-        skyCam(false)
-    else
-        openCharMenu(false)
-    end
     cb("ok")
 end)
 
@@ -203,46 +130,94 @@ RegisterNUICallback('selectCharacter', function(data, cb)
     cb("ok")
 end)
 
+
 RegisterNUICallback('cDataPed', function(nData, cb)
     local cData = nData.cData
     SetEntityAsMissionEntity(charPed, true, true)
     DeleteEntity(charPed)
     if cData ~= nil then
-        if not cached_player_skins[cData.citizenid] then
-            local temp_model = promise.new()
-            local temp_data = promise.new()
+        QBCore.Functions.TriggerCallback('qb-multicharacter:server:getSkin', function(model, data)
+            model = model ~= nil and tonumber(model) or false
+            if model ~= nil then
+                CreateThread(function()
+                    RequestModel(model)
+                    while not HasModelLoaded(model) do
+                        Wait(0)
+                    end
+                    charPed = CreatePed(2, model, Config.PedCoords.x, Config.PedCoords.y, Config.PedCoords.z - 0.98, Config.PedCoords.w, false, true)
+                    loadAnimDict("anim@mp_player_intcelebrationmale@karate_chops")
+                    TaskPlayAnim(charPed, "anim@mp_player_intcelebrationmale@karate_chops", "karate_chops", 2.0, 2.0, -1, 2, 0, false, false, false)
 
-            QBCore.Functions.TriggerCallback('qb-multicharacter:server:getSkin', function(model, data)
-                temp_model:resolve(model)
-                temp_data:resolve(data)
-            end, cData.citizenid)
+                    SetPedComponentVariation(charPed, 0, 0, 0, 2)
+                    FreezeEntityPosition(charPed, false)
+                    SetEntityInvincible(charPed, true)
+                    PlaceObjectOnGroundProperly(charPed)
+                    SetBlockingOfNonTemporaryEvents(charPed, true)
+                    data = json.decode(data)
+                    TriggerEvent('qb-clothing:client:loadPlayerClothing', data, charPed)
+                    loadAnimDict("missheist_jewelleadinout")
+                    Wait(GetAnimDuration("anim@mp_player_intcelebrationmale@karate_chops", 'karate_chops')*1000)
+                    TaskPlayAnim(charPed, "missheist_jewelleadinout", "jh_int_outro_loop_a", 2.0, 2.0, -1, 49, 0, false, false, false)
+                end)
+            else
+                CreateThread(function()
+                    local randommodels = {
+                        "mp_m_freemode_01",
+                        "mp_f_freemode_01",
+                    }
+                    model = joaat(randommodels[math.random(1, #randommodels)])
+                    RequestModel(model)
+                    while not HasModelLoaded(model) do
+                        Wait(0)
+                    end
+                    charPed = CreatePed(2, model, Config.PedCoords.x, Config.PedCoords.y, Config.PedCoords.z - 0.98, Config.PedCoords.w, false, true)
+                    loadAnimDict("anim@mp_player_intcelebrationmale@karate_chops")
+                    TaskPlayAnim(charPed, "anim@mp_player_intcelebrationmale@karate_chops", "karate_chops", 2.0, 2.0, -1, 2, 0, false, false, false)
 
-            local resolved_model = Citizen.Await(temp_model)
-            local resolved_data = Citizen.Await(temp_data)
+                    SetPedComponentVariation(charPed, 0, 0, 0, 2)
+                    FreezeEntityPosition(charPed, false)
+                    SetEntityInvincible(charPed, true)
+                    PlaceObjectOnGroundProperly(charPed)
+                    SetBlockingOfNonTemporaryEvents(charPed, true)
 
-            cached_player_skins[cData.citizenid] = {model = resolved_model, data = resolved_data}
-        end
-
-        local model = cached_player_skins[cData.citizenid].model
-        local data = cached_player_skins[cData.citizenid].data
-
-        model = model ~= nil and tonumber(model) or false
-
-        if model ~= nil then
-            initializePedModel(model, json.decode(data))
-        else
-            initializePedModel()
-        end
-        cb("ok")
+                    loadAnimDict("missheist_jewelleadinout")
+                    Wait(GetAnimDuration("anim@mp_player_intcelebrationmale@karate_chops", 'karate_chops')*1000)
+                    TaskPlayAnim(charPed, "missheist_jewelleadinout", "jh_int_outro_loop_a", 2.0, 2.0, -1, 49, 0, false, false, false)
+                end)
+            end
+            cb("ok")
+        end, cData.citizenid)
     else
-        initializePedModel()
+        CreateThread(function()
+            local randommodels = {
+                "mp_m_freemode_01",
+                "mp_f_freemode_01",
+            }
+            local model = joaat(randommodels[math.random(1, #randommodels)])
+            RequestModel(model)
+            while not HasModelLoaded(model) do
+                Wait(0)
+            end
+            charPed = CreatePed(2, model, Config.PedCoords.x, Config.PedCoords.y, Config.PedCoords.z - 0.98, Config.PedCoords.w, false, true)
+            loadAnimDict("anim@mp_player_intcelebrationmale@karate_chops")
+            TaskPlayAnim(charPed, "anim@mp_player_intcelebrationmale@karate_chops", "karate_chops", 2.0, 2.0, -1, 2, 0, false, false, false)
+            SetPedComponentVariation(charPed, 0, 0, 0, 2)
+            FreezeEntityPosition(charPed, false)
+            SetEntityInvincible(charPed, true)
+            PlaceObjectOnGroundProperly(charPed)
+            SetBlockingOfNonTemporaryEvents(charPed, true)
+
+            loadAnimDict("missheist_jewelleadinout")
+            Wait(GetAnimDuration("anim@mp_player_intcelebrationmale@karate_chops", 'karate_chops')*1000)
+            TaskPlayAnim(charPed, "missheist_jewelleadinout", "jh_int_outro_loop_a", 2.0, 2.0, -1, 49, 0, false, false, false)
+
+        end)
         cb("ok")
     end
 end)
 
 RegisterNUICallback('setupCharacters', function(_, cb)
     QBCore.Functions.TriggerCallback("qb-multicharacter:server:setupCharacters", function(result)
-	cached_player_skins = {}
         SendNUIMessage({
             action = "setupCharacters",
             characters = result
@@ -275,3 +250,10 @@ RegisterNUICallback('removeCharacter', function(data, cb)
     TriggerEvent('qb-multicharacter:client:chooseChar')
     cb("ok")
 end)
+
+function loadAnimDict(dict)
+    while (not HasAnimDictLoaded(dict)) do
+        RequestAnimDict(dict)
+        Wait(5)
+    end
+end 

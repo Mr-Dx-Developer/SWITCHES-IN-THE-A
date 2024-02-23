@@ -2,10 +2,10 @@ Config = {}
 
 Config.Debug = false
 
-Config.ClothingCost = 2000
-Config.BarberCost = 1000
-Config.TattooCost = 5000
-Config.SurgeonCost = 15000
+Config.ClothingCost = 100
+Config.BarberCost = 100
+Config.TattooCost = 100
+Config.SurgeonCost = 100
 
 Config.ChargePerTattoo = true -- Charge players per tattoo. Config.TattooCost will become the cost of 1 tattoo. The cost can be overridden by adding `cost` key in shared/tattoos.lua for specific tattoos
 
@@ -38,8 +38,8 @@ Config.PedMenuGroup = "group.admin"
 
 Config.EnableJobOutfitsCommand = false -- Enables /joboutfits and /gangoutfits commands
 
-Config.ShowNearestShopOnly = true
-Config.HideRadar = true -- Hides the minimap while the appearance menu is open
+Config.ShowNearestShopOnly = false
+Config.HideRadar = false -- Hides the minimap while the appearance menu is open
 Config.NearestShopBlipUpdateDelay = 10000
 
 Config.InvincibleDuringCustomization = true
@@ -62,12 +62,12 @@ Config.NewCharacterSections = {
 
 Config.GenderBasedOnPed = true
 
-Config.AlwaysKeepProps = true
+Config.AlwaysKeepProps = false
 
 Config.PersistUniforms = false -- Keeps Job / Gang Outfits on player reconnects / logout
 Config.OnDutyOnlyClothingRooms = false -- Set to `true` to make the clothing rooms accessible only to players who are On Duty
 
-Config.BossManagedOutfits = true -- Allows Job / Gang bosses to manage their own job / gang outfits
+Config.BossManagedOutfits = false -- Allows Job / Gang bosses to manage their own job / gang outfits
 
 Config.ReloadSkinCooldown = 5000
 
@@ -102,8 +102,8 @@ Config.DisableProps = {
 Config.Blips = {
     ["clothing"] = {
         Show = true,
-        Sprite = 73,
-        Color = 3,
+        Sprite = 366,
+        Color = 47,
         Scale = 0.7,
         Name = "Clothing Store",
     },
@@ -543,66 +543,24 @@ Config.Stores = {
             vector3(-294.1501159668, 6203.2700195312, 31.49)
         }
     },
-    -- {
-    --     type = "surgeon",
-    --     coords = vector4(298.78, -572.81, 43.26, 114.27),
-    --     size = vector3(6, 6, 6),
-    --     rotation = 45,
-    --     usePoly = false,
-    --     points = {
-    --         vector3(298.84417724609, -572.92205810547, 43.26),
-    --         vector3(296.39556884766, -575.65942382812, 43.26),
-    --         vector3(293.56317138672, -572.60675048828, 43.26),
-    --         vector3(296.28656005859, -570.330078125, 43.26)
-    --     }
-    -- },
     {
-        type = "clothing",---police
-        coords = vector4(482.12362670898, -1012.8847045898, 30.6891040802, 54.76944732666),
+        type = "surgeon",
+        coords = vector4(298.78, -572.81, 43.26, 114.27),
         size = vector3(6, 6, 6),
         rotation = 45,
         usePoly = false,
-        showBlip = false,
         points = {
-            vector3(477.75134277344, -1010.6712646484, 30.689113616943),
-            vector3(483.36303710938, -1010.5427246094, 30.689109802246),
-            vector3(483.35766601563, -1014.9784545898, 30.689109802246),
-            vector3(478.09509277344, -1014.9733886719, 30.689130783081),
+            vector3(298.84417724609, -572.92205810547, 43.26),
+            vector3(296.39556884766, -575.65942382812, 43.26),
+            vector3(293.56317138672, -572.60675048828, 43.26),
+            vector3(296.28656005859, -570.330078125, 43.26)
         }
-    },
-    {
-        type = "clothing",---Police
-        coords = vector4(482.12362670898, -1012.8847045898, 30.6891040802, 54.76944732666),
-        size = vector3(6, 6, 6),
-        rotation = 45,
-        usePoly = false,
-        showBlip = false,
-        points = {
-            vector3(477.79614257813, -994.72454833984, 30.689102172852),
-            vector3(472.07275390625, -994.73822021484, 30.689130783081),
-            vector3(472.02734375, -991.15673828125, 30.689130783081),
-            vector3(477.78204345703, -991.09484863281, 30.689130783081),
-        }
-    },
-    {
-        type = "clothing",  ----EMS
-        coords = vector4(-443.3801574707, -311.28530883789, 34.910503387451, 199.26866149902),
-        size = vector3(6, 6, 6),
-        rotation = 45,
-        usePoly = false,
-        showBlip = false,
-        points = {
-            vector3(-444.97665405273, -310.34732055664, 34.910507202148),
-            vector3(-442.51690673828, -309.34545898438, 34.910507202148),
-            vector3(-440.94131469727, -313.22994995117, 34.910507202148),
-            vector3(-443.43380737305, -314.1067199707, 34.910514831543),
-        }
-    },
+    }
 }
 
 
 Config.ClothingRooms = {
-    --[[ {
+    {
         job = "police",
         coords = vector4(454.91, -990.89, 30.69, 193.4),
         size = vector3(6, 6, 6),
@@ -618,7 +576,7 @@ Config.ClothingRooms = {
             vector3(454.35513305664, -988.46459960938, 30.69),
             vector3(460.4231262207, -987.94573974609, 30.69)
         }
-    } ]]
+    }
 }
 
 

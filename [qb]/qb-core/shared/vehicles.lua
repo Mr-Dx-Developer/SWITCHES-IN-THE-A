@@ -176,7 +176,7 @@ local Vehicles = {
     { model = 'buzzard',       name = 'Buzzard Attack Chopper',        brand = 'Nagasaki',        price = 52000,   category = 'helicopters',    type = 'heli',       shop = 'none' },
     { model = 'buzzard2',      name = 'Buzzard',                       brand = 'Nagasaki',        price = 52000,   category = 'helicopters',    type = 'heli',       shop = 'none' },
     --- Planes (16)
-    { model = 'streamer216',   name = 'Streamer216',                   brand = 'Mammoth',         price = 45000,   category = 'planes',         type = 'plane',      shop = 'none' },
+    --[[ { model = 'streamer216',   name = 'Streamer216',                   brand = 'Mammoth',         price = 45000,   category = 'planes',         type = 'plane',      shop = 'none' },
     { model = 'raiju',         name = 'F-160 Raiju',                   brand = 'Mammoth',         price = 45000,   category = 'planes',         type = 'plane',      shop = 'none' },
     { model = 'alkonost',      name = 'RO-86 Alkonost',                brand = 'Unknown',         price = 45000,   category = 'planes',         type = 'plane',      shop = 'none' },
     { model = 'strikeforce',   name = 'B-11 Strikeforce',              brand = 'Unknown',         price = 45000,   category = 'planes',         type = 'plane',      shop = 'none' },
@@ -216,7 +216,7 @@ local Vehicles = {
     { model = 'jet',           name = 'Jet',                           brand = 'Unknown',         price = 45000,   category = 'planes',         type = 'plane',      shop = 'none' },
     { model = 'duster',        name = 'Duster',                        brand = 'Western Company', price = 45000,   category = 'planes',         type = 'plane',      shop = 'air' },
     { model = 'cuban800',      name = 'Cuban 800',                     brand = 'Western Company', price = 45000,   category = 'planes',         type = 'plane',      shop = 'air' },
-    { model = 'blimp',         name = 'Atomic Blimp',                  brand = 'Unknown',         price = 45000,   category = 'planes',         type = 'plane',      shop = 'none' },
+    { model = 'blimp',         name = 'Atomic Blimp',                  brand = 'Unknown',         price = 45000,   category = 'planes',         type = 'plane',      shop = 'none' }, ]]
     --- Service (17)
     { model = 'brickade',      name = 'Brickade',                      brand = 'MTL',             price = 100000,  category = 'service',        type = 'automobile', shop = 'none' },
     { model = 'brickade2',     name = 'Brickade 6x6',                  brand = 'MTL',             price = 100000,  category = 'service',        type = 'automobile', shop = 'none' },

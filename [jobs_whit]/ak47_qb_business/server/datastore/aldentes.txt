@@ -1,8 +1,4 @@
 {
-    "fried_calamari": {
-        "stock": 350,
-        "price": 500
-    },
     "buffalo_chicken_strips": {
         "stock": 350,
         "price": 500
@@ -11,11 +7,15 @@
         "stock": 350,
         "price": 500
     },
-    "vodka": {
+    "meatball": {
         "stock": 350,
         "price": 500
     },
-    "meatball": {
+    "fried_calamari": {
+        "stock": 350,
+        "price": 500
+    },
+    "vodka": {
         "stock": 350,
         "price": 500
     },
