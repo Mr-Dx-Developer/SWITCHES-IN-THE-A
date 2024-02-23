@@ -1,0 +1,266 @@
+
+.drift-hud {
+    position: absolute;
+    left: 12vw;
+    bottom: 1.5vw;
+    width: 15.6667vw;
+    height: 12.6979vw;
+}
+
+.drift-hud p{
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.drift-hud svg{
+    display: unset;
+    vertical-align: unset;
+    transition: all .2s ease;
+
+}
+
+.drift-hud svg path{
+    display: unset;
+    transition: all .2s ease;
+    vertical-align: unset;
+}
+
+.drift-speed {
+    position: absolute;
+    width: 4.5vw;
+    text-align: center;
+    font-family: 'Digital Numbers';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 3vw;
+    margin-block-start: 2.75rem!important;
+    margin-block-end: 2.75rem!important;
+    color: #3CB9FF;
+    text-shadow: 0px 0px 53px #3CB9FF;
+}
+
+.drift-brake {
+    position: absolute;
+    top: 1.7vw;
+    left: 6.8vw;
+    font-family: 'Digital Numbers';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.3vw;
+    color: #FF3131;
+    transition: all .2s ease;
+
+}
+
+.drift-abs {
+    position: absolute;
+    top: 3.2vw;
+    left: 6.8vw;
+    font-family: 'Digital Numbers';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.3vw;
+    color: rgba(255, 255, 255, 0.47);
+    transition: all .2s ease;
+}
+
+.drift-dash-icons {
+    position: absolute;
+    top: 3.4vw;
+    left: 5vw;
+    width: 1vw;
+    height: 3vw;
+}
+
+.drift-icons {
+    position: relative;
+    top: 0vw;
+    margin-bottom: 0.5vw;
+    left: 0vw;
+    width: 1vw;
+    height: .7771vw;
+}
+
+.drift-speed-type {
+    position: absolute;
+    top: 4.8vw;
+    left: 3vw;
+    font-family: 'Digital Numbers';
+    font-style: normal;
+    font-weight: 400;
+    font-size: .9208vw;
+    color: #FFFFFF;
+    
+}
+
+.drift-lim {
+    position: absolute;
+    top: 6.15vw;
+    left: 1.8vw;
+    width: .9375vw;
+    height: .4688vw;
+}
+
+.drift-nos {
+    position: absolute;
+    top: 7.5vw;
+    width: 6.9375vw;
+    height: 1.2083vw;
+}
+
+.d-nos {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    transition: all 1s;
+}
+
+.drift-nos-bar {
+    position: absolute;
+    width: 6.9375vw;
+    height: 1.2083vw;
+}
+
+.drift-nos-back {
+    position: absolute;
+    width: 6.9375vw;
+    
+    height: 1.2083vw;
+}
+
+
+/*  */
+
+.drift-fuel {
+    position: absolute;
+    top: 8.8vw;
+    left: 6.5vw;
+    width: 6.9375vw;
+    height: 1.2083vw;
+}
+
+.d-fuel {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+
+    transition: all 1s;
+}
+
+.drift-fuel-bar {
+    position: absolute;
+    width: 6.9375vw;
+    height: 1.2083vw;
+
+}
+
+.drift-fuel-back {
+    position: absolute;
+    width: 6.9375vw;
+    height: 1.2083vw;
+
+}
+
+.d-nos-text {
+    position: absolute;
+    top: -0.9vw;
+    font-family: "Gilroy Extrabold";
+    font-style: normal;
+    font-weight: 800;
+    font-size: 0.55vw;
+    color: #FFFFFF;
+    display: block;
+
+}
+
+.d-fuel-icon {
+    position: absolute;
+    top: -0.3vw;
+    left: 6.4vw;
+    width: .625vw;
+    height: .5208vw;
+}
+
+.drift-rpm {
+    position: absolute;
+    width: 13.5vw;
+    height: 2vw;
+    top: 10vw;
+}
+
+.rpm-bar-back {
+    position: absolute;
+    top: 1.5vw;
+    width: 13.5vw;
+    height: 0.3vw;
+    background: rgba(255, 255, 255, 0.27);
+    transform: matrix(1, 0, 0, -1, 0, 0);
+}
+
+.rpm-bar {
+    position: absolute;
+    width: 30%;
+    height: 100%;
+    overflow: hidden;
+    transition: all 1s;
+    background-color: #fff;
+}
+
+.max-rpm-bar {
+    position: absolute;
+    left: 85%;
+    width: 15%;
+    height: 100%;
+    background: #FF0000;
+    box-shadow: 0px 0px 10px rgba(255, 0, 0, 0.4);
+}
+
+.d-rpm {
+    position: absolute;
+    top: -0.75vw;
+    font-family: 'Digital Numbers';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1vw;
+    color: #FFFFFF;
+
+    text-shadow: 0px 0px 10px #FFFFFF;
+}
+
+.d-rpmx {
+    position: absolute;
+    top: -0.5vw;
+    left: 9.7vw;
+    font-family: 'Digital Numbers';
+    font-style: normal;
+    font-weight: 400;
+
+    font-size: 0.9vw;
+    color: rgba(255, 255, 255, 0.47);
+}
+
+.d-signals {
+    position: absolute;
+    left: 8.7vw;
+    top: 4.9vw;
+    width: 3vw;
+}
+
+.drift-signal {
+    position: relative;
+    margin-left: 0.85vw;
+    left: 0vw;
+    width: .6167vw;
+    height: .6125vw;
+    transition: all .2s ease;
+}
+
+.drift-signal path{
+    transition: all .2s ease;
+
+}

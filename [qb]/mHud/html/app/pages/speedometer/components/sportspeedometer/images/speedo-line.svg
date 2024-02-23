@@ -1,0 +1,9 @@
+<svg id="speedo-line" width="197" height="184" viewBox="0 0 197 184" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M123.746 6.74219L24.8328 56.2901C8.22372 64.6099 3.09124 85.8712 14.0755 100.852L60.1338 163.669C65.785 171.376 74.7702 175.929 84.3273 175.929H167.694C174.598 175.929 181.292 173.548 186.644 169.187L191.964 164.852" stroke="url(#paint0_linear_864_374)" stroke-width="15"/>
+<defs>
+<linearGradient id="paint0_linear_864_374" x1="-0.889239" y1="78.244" x2="183.908" y2="78.244" gradientUnits="userSpaceOnUse">
+<stop/>
+<stop offset="1" stop-opacity="0"/>
+</linearGradient>
+</defs>
+</svg>

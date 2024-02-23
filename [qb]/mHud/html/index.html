@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./app/vue.global.js"></script>
+    <script src="./app/vuex.global.js"></script>
+    <link rel="stylesheet" href="./css/reset-inputs.css">
+    <link rel="stylesheet" href="./css/responsive.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./app/pages/hud/index.css">
+    <link rel="stylesheet" href="./app/pages/info/index.css">
+    <link rel="stylesheet" href="./app/pages/settings/index.css">
+
+
+    <link rel="stylesheet" href="./app/pages/hud/components/media/index.css">
+    <link rel="stylesheet" href="./app/pages/hud/components/media/components/play/index.css">
+    <link rel="stylesheet" href="./app/pages/hud/components/media/components/search/index.css">
+    <link rel="stylesheet" href="./app/pages/hud/components/media/components/myplaylist/index.css">
+    <link rel="stylesheet" href="./app/pages/hud/components/media/components/account/index.css">
+    <link rel="stylesheet" href="./app/pages/hud/components/media/components/playlistview/index.css">
+    <link rel="stylesheet" href="./app/pages/hud/components/media/components/playlists/index.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/mdbassit/Coloris@latest/dist/coloris.min.css" />
+    <script src="https://cdn.jsdelivr.net/gh/mdbassit/Coloris@latest/dist/coloris.min.js"></script>
+
+
+
+
+    <link rel="stylesheet" href="./app/pages/hud/components/quick/index.css">
+    <link rel="stylesheet" href="./app/pages/hud/components/vehicle/index.css">
+    <link rel="stylesheet" href="./app/pages/hud/components/settings/index.css">
+
+
+    <link rel="stylesheet" href="./app/pages/speedometer/index.css">
+    <link rel="stylesheet" href="./app/pages/speedometer/components/oldschoolhud/index.css">
+    <link rel="stylesheet" href="./app/pages/speedometer/components/superspeedometer/index.css">
+    <link rel="stylesheet" href="./app/pages/speedometer/components/sportspeedometer/index.css">
+    <link rel="stylesheet" href="./app/pages/speedometer/components/driftspeedometer/index.css">
+
+
+
+    <link rel="stylesheet" href="./app/pages/speedometer/loading-bar.min.css">
+
+    <link rel="stylesheet" href="./app/pages/info/index.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <script src="./app/utils/progressbar.js"></script>
+    <script src="./app/utils/animatedNumber.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+</head>
+
+<body>
+    <div id="app">
+        <transition name="custom-classes" enter-active-class="animate__animated  animate__fadeIn"
+            leave-active-class="animate__animated  animate__fadeOut">
+            <settings v-if="showHudSettings"></settings>
+        </transition>
+        <transition name="custom-classes" enter-active-class="animate__animated  animate__fadeIn"
+            leave-active-class="animate__animated  animate__fadeOut">
+            <div class="safezone-notify" v-if="(showSafezoneNotify && enableSafezoneNotify && !hudSettings.hideSafezoneNotify) || (showHudSettings && enableSafezoneNotify && !hudSettings.hideSafezoneNotify)">
+                <img class="safezone-icon" src="./assets/images/safezone-icon.png">
+                <p v-html="locales.SAFEZONE"></p>
+            </div>
+        </transition>
+        <div class="wrapper" v-show="!hudSettings.hideHud && hudLoaded">
+            <div :style="getGiftContainerStyle" class="gift-container" v-if="giftInformations.enable && giftTime">
+                <div  v-html="giftInformations.text.format(giftTime)"></div>
+                <img class="weapon-img" src="./assets/images/gift.png">
+            </div>
+            <hud></hud>
+            <speedometer v-show="inVehicle || showHudSettings"></speedometer>
+            <info></info>
+            <div v-if="!hudSettings.hideKeysWidget && hudSettings.showWidgets && enableUIKeys" class="keys screen-keys"
+                :style="getScreenKeysStyle"
+                :class="{hovered:hoveredSettingsElement == 'helper-widgets' || selectedSettingsElement == 'helper-widgets'}">
+
+                <div class="key" v-for="key in keys">
+                    {{key.desc}}
+                    <div class="key-right">
+                        {{key.key}}
+                    </div>
+                </div>
+            </div>
+            <div :class="{hovered:hoveredSettingsElement == 'helper-widgets' || selectedSettingsElement == 'helper-widgets'}"
+                class="weapon weapon-widget" :style="getWeaponStyle"
+                v-if="(weaponImg && !hudSettings.hideWeaponWidget && hudSettings.showWidgets) || (showHudSettings && !hudSettings.hideWeaponWidget && hudSettings.showWidgets)">
+
+                <div class="weapon-wrapper">
+                    <img class="weapon-img" v-if="showHudSettings" src="./assets/weapons/advancedrifle.png">
+                    <img v-else class="weapon-img" :src="'./assets/weapons/'+weaponImg+'.png'">
+                    <div class="ammo-info" v-if="showHudSettings">
+                        <p>0</p>
+                        <p>0</p>
+                    </div>
+                    <div class="ammo-info" v-else>
+                        <p>{{ammoInfo.ammo}}</p>
+                        <p>{{ammoInfo.maxAmmo}}</p>
+                    </div>
+                    <img class="ammo-img" src="./assets/images/ammo.png">
+                    <div class="weapon-border"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://cdn.tailwindcss.com"></script>
+
+<script src="./app/pages/speedometer/loading-bar.min.js"></script>
+<script type="module" src="./app/utils/importTemplate.js"></script>
+<script type="module" src="./app/index.js"></script>
+
+</html>

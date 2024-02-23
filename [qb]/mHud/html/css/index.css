@@ -1,0 +1,284 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fenix&display=swap");
+@font-face {
+  font-family: "Proxima Nova";
+  src: url(../assets/fonts/Proxima-Nova.otf);
+}
+@font-face {
+  font-family: "SF Compact Display";
+  src: url(../assets/fonts/sf-compact.woff);
+}
+@font-face {
+  font-family: "Gilroy-SemiBold";
+  src: url(../assets/fonts/GILROY-SEMIBOLD.TTF);
+}
+@font-face {
+  font-family: "Gilroy-Black";
+  src: url(../assets/fonts/GILROY-BLACK.TTF);
+}
+@font-face {
+  font-family: "Gilroy Extrabold";
+  src: url(../assets/fonts/Gilroy-ExtraBold.ttf);
+}
+@font-face {
+  font-family: "Gilroy Light";
+  src: url(../assets/fonts/Gilroy-Medium.ttf);
+}
+@font-face {
+  font-family: "Gilroy";
+  src: url(../assets/fonts/Gilroy-Regular.ttf);
+}
+@font-face {
+  font-family: "Gilroy-SemiBold";
+  src: url(../assets/fonts/GILROY-SEMIBOLD.TTF);
+}
+@font-face {
+  font-family: "Digital Numbers";
+  src: url(../assets/fonts/digital-7.TTF);
+}
+@font-face {
+  font-family: "Enigma";
+  src: url(../assets/fonts/Enigma__2.TTF);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  font-family: "Proxima Nova";
+  position: relative;
+}
+
+.disabled {
+  pointer-events: none;
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+}
+#app .safezone-notify {
+  background-image: url(../assets/images/safezone-notify.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -moz-column-gap: 1rem;
+       column-gap: 1rem;
+  width: 22.875rem;
+  height: 2.875rem;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  z-index: -1;
+}
+#app .safezone-notify .safezone-icon {
+  width: 1.4725rem;
+  height: 1.7531rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#app .safezone-notify p {
+  font-family: "Proxima Nova";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.75rem;
+  line-height: 99.5%;
+  leading-trim: both;
+  text-edge: cap;
+  color: #FFFFFF;
+}
+#app .safezone-notify p span {
+  color: #ff9090;
+}
+#app .wrapper {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#app .wrapper .gift-container {
+  position: absolute;
+  right: 58vh;
+  bottom: 0;
+  background-image: url(../assets/images/gift-container.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 0.375rem;
+  width: 8.25rem;
+  height: 7.375rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.6rem 0;
+  align-items: center;
+}
+#app .wrapper .gift-container img {
+  width: 3.5rem;
+  height: 3.5rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#app .wrapper .gift-container div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 0.25rem;
+}
+#app .wrapper .gift-container p {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.625rem;
+  line-height: 99.5%;
+  leading-trim: both;
+  text-edge: cap;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: rgba(255, 255, 255, 0.4);
+}
+#app .wrapper .gift-container span {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.625rem;
+  line-height: 99.5%;
+  leading-trim: both;
+  text-edge: cap;
+  text-align: center;
+  display: block;
+  letter-spacing: 0.03em;
+  color: rgb(255, 255, 255);
+}
+#app .wrapper > .weapon.hovered {
+  border: 0.125rem solid white;
+}
+#app .wrapper > .weapon {
+  position: absolute;
+  right: 1rem;
+  top: 14rem;
+  width: 5.85rem;
+  height: 5.85rem;
+  border-radius: 0.375rem;
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 0.375rem;
+  font-family: "Gilroy";
+}
+#app .wrapper > .weapon .weapon-wrapper {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding-bottom: 1.1rem;
+  row-gap: 0.9rem;
+}
+#app .wrapper > .weapon .weapon-wrapper .weapon-border {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  height: 0.125rem;
+  transform: translateX(-50%);
+  width: 50%;
+  background-color: #ffffff;
+  box-shadow: 0rem 0rem 0.5rem #ffffff;
+}
+#app .wrapper > .weapon .weapon-wrapper .ammo-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -moz-column-gap: 0.25rem;
+       column-gap: 0.25rem;
+}
+#app .wrapper > .weapon .weapon-wrapper .ammo-info p {
+  font-style: normal;
+  font-weight: 800;
+  font-size: 0.75rem;
+  line-height: 100%;
+  leading-trim: both;
+  text-edge: cap;
+  color: #ffffff;
+  text-shadow: 0rem 0.25rem 0.8125rem rgba(0, 0, 0, 0.6);
+}
+#app .wrapper > .weapon .weapon-wrapper .ammo-info p:last-child {
+  color: rgba(255, 255, 255, 0.31);
+  text-shadow: 0rem 0.25rem 0.8125rem rgba(0, 0, 0, 0.6);
+}
+#app .wrapper > .weapon .weapon-wrapper .weapon-img {
+  width: 3.75rem;
+  height: auto;
+  position: absolute;
+  left: 50%;
+  top: 38%;
+  transform: translate(-50%, -50%);
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#app .wrapper > .weapon .weapon-wrapper .ammo-img {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -0.2rem;
+}
+#app .wrapper > .keys.hovered::after {
+  content: "";
+  position: absolute;
+  width: 145%;
+  height: 100%;
+  border: 0.125rem solid white;
+}
+#app .wrapper > .keys {
+  position: absolute;
+  right: 3.5rem;
+  top: 22rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  transform-origin: bottom;
+}
+#app .wrapper > .keys .key {
+  position: relative;
+  width: 100%;
+  height: 2.35rem;
+  display: flex;
+  align-items: center;
+  padding: 0 1.5rem;
+  justify-content: center;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.75rem;
+  line-height: 99.5%;
+  leading-trim: both;
+  text-edge: cap;
+  color: #ffffff;
+  white-space: nowrap;
+  background: rgba(0, 0, 0, 0.33);
+  border-radius: 0.5rem 0rem 0rem 0.5rem;
+}
+#app .wrapper > .keys .key .key-right {
+  height: 100%;
+  width: 2.5rem;
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.33);
+  border-radius: 0rem 0.5rem 0.5rem 0rem;
+  position: absolute;
+  right: -2.7rem;
+  top: 50%;
+  transform: translateY(-50%);
+}

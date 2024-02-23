@@ -1,0 +1,91 @@
+.search {
+  width: 100%;
+  flex: 1;
+  position: relative;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+.search .listed-items {
+  height: 50% !important;
+  width: 100%;
+  overflow: auto;
+}
+.search .listed-items::-webkit-scrollbar {
+  display: none;
+}
+.search .listed-items .listed-item {
+  margin-bottom: 0.5rem;
+  width: 100%;
+  height: 2rem;
+  background: rgba(217, 217, 217, 0.12);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.search .listed-items .listed-item:hover {
+  opacity: 0.8;
+}
+.search .listed-items .listed-item p {
+  font-family: "Proxima Nova";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 99.5%;
+  width: 90%;
+  leading-trim: both;
+  text-edge: cap;
+  color: rgba(255, 255, 255, 0.25);
+}
+.search .listed-items .listed-item img {
+  width: 0.625rem;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.search .listed-items .listed-item::last-child {
+  margin-bottom: 0;
+}
+.search .selected {
+  border: 0.125rem solid white;
+}
+.search .search-input {
+  width: 100%;
+  background: rgba(217, 217, 217, 0.12);
+  border-radius: 0.3125rem;
+  height: 1.7rem;
+  position: relative;
+}
+.search .search-input img {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0.8125rem;
+  height: 0.8125rem;
+}
+.search .search-input input {
+  background: transparent;
+  width: 100%;
+  height: 100%;
+  font-family: "Proxima Nova";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.75rem;
+  line-height: 99.5%;
+  padding: 0 0.5rem;
+  leading-trim: both;
+  text-edge: cap;
+  color: rgb(255, 255, 255);
+}
+.search .search-input input::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.27);
+}
+.search .search-input input::placeholder {
+  color: rgba(255, 255, 255, 0.27);
+}

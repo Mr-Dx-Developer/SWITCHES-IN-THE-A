@@ -1,0 +1,59 @@
+<div :style="{width:getMaxWidth+'px'}" v-if="hudSettings.showWatermark" class="info"
+    :class="{hovered:hoveredSettingsElement == 'info' || selectedSettingsElement == 'info'}">
+    <div class="info-wrapper">
+
+        <div class="server-info" :style="getServerInfoBoxStyle" v-if="!hudSettings.hideServerInfo">
+            <div class="player-name-container">
+                <h1>{{waterMarkInformations.discordlink}}</h1>
+                <p>{{formattedDate}}</p>
+            </div>
+            <div class="line"></div>
+            <div class="server-name-container">
+                <h1>{{waterMarkInformations.servername}}</h1>
+                <p>Online - {{playersAmount}}</p>
+            </div>
+            <div class="line"></div>
+            <div class="server-logo-container">
+                <img class="logo" :src="waterMarkInformations.logo">
+                <img class="blur-img" :src="waterMarkInformations.logo">
+            </div>
+        </div>
+        <div class="name-box" :style="getNameBoxStyle" v-if="!hudSettings.hideCharacterInfo">
+            <h1>{{player_name}} - {{ hudSettings.streamerMode && !hudSettings.showMyPlayerId ? '**' : id}}</h1>
+            <div id="timer"></div>
+            <p>{{FormatJob}}</p>
+        </div>
+        <div class="money-container">
+            <div :class="{moneyAdd:moneyChange['bank'].amount}"  class="money-box bank bank-box" :style="getBankBoxStyle" v-if="!hudSettings.hideBankMoney && forceAccountsVisibility.bank">
+                <inlinesvg :fill="moneyChange['bank'].amount ? '#424242' : 'white'" src="./app/pages/info/images/bank-icon.svg"></inlinesvg>
+                <p>${{numberWithSpaces(accounts.bank.toFixed(0))}}</p>
+                <div class="moneyAddIcon" v-if="moneyChange['bank'].amount">{{moneyChange['bank'].minus ? '-' : '+' }}</div>
+            </div>
+            <div :class="{moneyAdd:moneyChange['cash'].amount}" class="money-box cash cash-box" :style="getCashBoxStyle" v-if="!hudSettings.hideCashMoney && forceAccountsVisibility.cash">
+                <inlinesvg :fill="moneyChange['cash'].amount ? '#38502C' : '#B4FF90'" src="./app/pages/info/images/cash-icon.svg"></inlinesvg>
+                <p>${{numberWithSpaces(accounts.cash.toFixed(0))}}</p>
+                <div class="moneyAddIcon" v-if="moneyChange['cash'].amount">{{moneyChange['cash'].minus ? '-' : '+' }}</div>
+
+            </div>
+            <div :class="{moneyAdd:moneyChange['boss_money'].amount}" class="money-box boss-money-box" :style="getBossMoneyBoxStyle" v-if="!hudSettings.hideSocietyMoney && forceAccountsVisibility.boss_money">
+                <inlinesvg :fill="moneyChange['boss_money'].amount ? '#674263' : '#FF90F4'"  src="./app/pages/info/images/boss-money.svg"></inlinesvg>
+                <p>${{numberWithSpaces(accounts.boss_money.toFixed(0))}}</p>
+                <div class="moneyAddIcon" v-if="moneyChange['boss_money'].amount">{{moneyChange['boss_money'].minus ? '-' : '+' }}</div>
+
+            </div>
+            <div :class="{moneyAdd:moneyChange['black_money'].amount}" class="money-box black-money-box" :style="getBlackMoneyBoxStyle" v-if="!hudSettings.hideBlackMoney && forceAccountsVisibility.black_money">
+                <inlinesvg   src="./app/pages/info/images/black_money.svg"></inlinesvg>
+                <p>${{numberWithSpaces(accounts.black_money.toFixed(0))}}</p>
+                <div class="moneyAddIcon" v-if="moneyChange['black_money'].amount">{{moneyChange['black_money'].minus ? '-' : '+' }}</div>
+            
+            </div>
+            <div class="vip-money-box" :style="getVipMoneyBoxStyle" v-if="!hudSettings.hideVipCoinMoney && forceAccountsVisibility.vip_money">
+                <inlinesvg fill="#FFE090" src="./app/pages/info/images/vip-money.svg"></inlinesvg>
+    
+                <p>${{numberWithSpaces(accounts.vip_money.toFixed(0))}}</p>
+            </div>
+        </div>
+    </div>
+
+
+</div>

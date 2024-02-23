@@ -1,0 +1,61 @@
+<div class="myplaylist">
+     <div v-if="myPlaylistPage == 'main'" @click="SetMyPlayListPage('create');PlayClick()" class="playlist active">
+          <p>{{locales.CREATE_PLAYLIST}}</p>
+          <img src="./app/pages/hud/components/media/components/myplaylist/images/playlist.png">
+     </div>
+     
+     <div class="playlists" v-if="myPlaylistPage=='main'">
+          <div class="playlist" v-for="(playlist, index) in getComputedPlaylists" @click="OpenPlaylist(playlist);PlayClick()" :key="index">
+               <p>{{playlist.name}}<span> &#x2022; {{playlist.creatorname}}</span></p>
+               <img src="./app/pages/hud/components/media/components/myplaylist/images/playlist-open.png">
+          </div>
+     </div>
+     <div class="create-playlist" v-if="myPlaylistPage == 'create'">
+          <div class="top-create-playlist top-create-playlist-2">
+               <div class="cover-img">
+                    <img v-if="!coverUrl && !playlistName"
+                         src="./app/pages/hud/components/media/components/myplaylist/images/cam-icon.png">
+                    <p v-if="!coverUrl && playlistName">{{playlistName.substring(0,1).toUpperCase()}}</p>
+                    <img class="cover" v-if="coverUrl" :src="coverUrl">
+
+               </div>
+               <div class="create-playlist-inputs">
+                    <div class="create-playlist-input">
+                         <input v-model="playlistName" type="text" :placeholder="locales.PLAYLIST_NAME">
+                         <div class="create" @click="CreatePlaylist();PlayClick()">
+                              <img src="./app/pages/hud/components/media/components/myplaylist/images/check.png">
+                         </div>
+                         <div class="back" @click="SetMyPlayListPage('main');PlayClick()">
+                              <img src="./app/pages/hud/components/media/components/myplaylist/images/back.png">
+                         </div>
+                    </div>
+                    <div class="create-playlist-input">
+                         <input v-model="coverUrl" type="text" :placeholder="locales.COVER_URL">
+                    </div>
+               </div>
+          </div>
+          <div class="playlist active" @click="SetMyPlayListPage('add-songs');PlayClick()">
+               <p>{{locales.ADD_SONGS}}</p>
+               <img src="./app/pages/hud/components/media/components/myplaylist/images/add.png">
+          </div>
+          <div class="songs">
+               <div @click="DeleteSongFromAddList(index)" class="playlist " v-for="(song, index) in songs">
+                    <p>{{song.name}}</p>
+               </div>
+          </div>
+     </div>
+     <div class="create-playlist" v-if="myPlaylistPage == 'add-songs'">
+          <div class="create-playlist-inputs">
+               <div class="create-playlist-input">
+                    <input v-model="addSongUrl" type="text" :placeholder="locales.SONG_URL">
+                    <div class="back" @click="SetMyPlayListPage('create');PlayClick()">
+                         <img src="./app/pages/hud/components/media/components/myplaylist/images/back.png">
+                    </div>
+               </div>
+          </div>
+          <div class="playlist active" @click="AddSong();PlayClick()">
+               <p>{{locales.ADD_SONG}}</p>
+               <img src="./app/pages/hud/components/media/components/myplaylist/images/add.png">
+          </div>
+     </div>
+</div>

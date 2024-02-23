@@ -1,0 +1,16 @@
+<div class="settings">
+     <div class="settings-button sport" @click="setVehicleMode('sport');PlayClick()"
+          :class="{active:vehicleMode=='sport'}">
+
+          {{locales.SPORT_MODE}}
+     </div>
+     <div class="settings-button normal" @click="setVehicleMode('default');PlayClick()"
+          :class="{active:vehicleMode=='default'}">
+
+          {{locales.NORMAL_MODE}}
+     </div>
+     <div class="settings-button drift" @click="setVehicleMode('drift');PlayClick()"
+          :class="{ active:vehicleMode=='drift'}">
+          {{locales.DRIFT_MODE}}
+     </div>
+</div>

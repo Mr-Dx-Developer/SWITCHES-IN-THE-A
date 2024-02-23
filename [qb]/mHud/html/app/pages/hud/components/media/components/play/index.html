@@ -1,0 +1,60 @@
+<div class="play">
+
+     <p v-if="currentMediaPlayPage == 'play' && !currentSongInformations.name" class="no-song">{{locales.PLAY_INFO}}</p>
+     <div v-if="currentMediaPlayPage == 'play' && currentSongInformations.name" class="play-actions">
+          <img @click="PrevMusic();PlayClick()" src="./assets/images/prev-song.png">
+          <img @click="ToggleMusic();PlayClick()" v-if="currentSongInformations.isPaused"
+               src="./assets/images/play.png">
+          <img @click="ToggleMusic();PlayClick()" v-else src="./assets/images/pause.png">
+          <img @click="NextMusic();PlayClick()" src="./assets/images/next-song.png">
+     </div>
+     <div v-if="currentMediaPlayPage == 'play' && currentSongInformations.name" class="song-name">
+          <h1>{{currentSongInformations.name}}</h1>
+          <p>{{locales.NOW_PLAYING}}</p>
+     </div>
+     <div v-if="currentMediaPlayPage == 'quick-play'" class="quick-play-container">
+          <input v-model="musicUrl" :placeholder="locales.SONG_URL" type="text" />
+          <div @click="PlayMusic();PlayClick()" class="play-button"> {{locales.PLAY}}</div>
+     </div>
+     <div v-if="currentMediaPlayPage == 'quick-play' || currentMediaPlayPage == 'play'" class="volume-control">
+          <img @click="VolumeUp();PlayClick()"
+               src="./app/pages/hud/components/media/components/play/images/volume-up.png">
+          <div class="volume-level">
+               <div :style="{height:Math.round((currentSongInformations.volume / 1) * 100)+'%'}"
+                    class="volume-level-inner">
+               </div>
+          </div>
+          <img @click="VolumeDown();PlayClick()"
+               src="./app/pages/hud/components/media/components/play/images/volume-down.png">
+     </div>
+     <div class="actions" v-if="currentMediaPlayPage == 'quick-play' || currentMediaPlayPage == 'play'">
+          <img @click="setCurrentMediaPlayPage('quick-play');PlayClick()" v-if="currentMediaPlayPage == 'play'"
+               src="./app/pages/hud/components/media/components/play/images/quick-play.png">
+          <div @click="setCurrentMediaPlayPage('play');PlayClick()" v-else-if="currentMediaPlayPage == 'quick-play'">
+               <img src="./app/pages/hud/components/media/components/play/images/back-icon.png">
+          </div>
+          <img @click="setCurrentMediaPlayPage('add-playlist');PlayClick()"
+               v-if="currentMediaPlayPage == 'play' && currentSongInformations.name"
+               src="./app/pages/hud/components/media/components/play/images/add-playlist.png">
+     </div>
+     <div class="music-progress-container"
+          v-if="currentMediaPlayPage == 'quick-play' || currentMediaPlayPage == 'play'">
+          <p class="music-progress-time">{{toMMSS(musicTime.timeStamp)}}</p>
+          <div class="music-progress" ref="musicbar" @click="SetTimeStamp($event);PlayClick()">
+               <div :style="{width:Math.round((musicTime.timeStamp / musicTime.maxDuration) * 100)+'%'}"
+                    class="music-progress-inner"></div>
+          </div>
+          <p class="music-progress-time">{{toMMSS(musicTime.maxDuration)}}</p>
+     </div>
+     <div class="add-playlist" v-if="currentMediaPlayPage == 'add-playlist'">
+          <div @click="setCurrentMediaPlayPage('play');PlayClick()" class="back-play"></div>
+          <div class="playlists">
+               <div class="playlist" v-for="(playlist, index) in myPlaylists"
+                    @click="AddToPlaylist(playlist.id);PlayClick()" :key="index">
+                    <p>{{playlist.name}}<span> &#x2022; {{playlist.creatorname}}</span></p>
+                    <img src="./app/pages/hud/components/media/components/play/images/add.png">
+
+               </div>
+          </div>
+     </div>
+</div>

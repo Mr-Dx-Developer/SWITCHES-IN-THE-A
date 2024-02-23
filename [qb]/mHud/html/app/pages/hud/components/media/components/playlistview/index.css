@@ -1,0 +1,315 @@
+.playlistview {
+  width: 100%;
+  flex: 1;
+  position: relative;
+  padding: 0.5rem;
+  display: flex;
+  row-gap: 0.5rem;
+  flex-direction: column;
+}
+.playlistview .delete-modal {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  -webkit-backdrop-filter: blur(0.6125rem);
+          backdrop-filter: blur(0.6125rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  row-gap: 0.85rem;
+}
+.playlistview .delete-modal .delete-modal-buttons {
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 0.75rem;
+       column-gap: 0.75rem;
+}
+.playlistview .delete-modal .delete-modal-buttons div {
+  cursor: pointer;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 99.5%;
+  width: 4.5rem;
+  height: 1.625rem;
+  leading-trim: both;
+  text-edge: cap;
+  border-radius: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  transition: all 0.2 ease;
+}
+.playlistview .delete-modal .delete-modal-buttons div:hover {
+  opacity: 0.8;
+}
+.playlistview .delete-modal .delete-modal-buttons .confirm-modal-button {
+  background: #ff4848;
+}
+.playlistview .delete-modal .delete-modal-buttons .cancel-modal-button {
+  background: #d9d9d9;
+}
+.playlistview .delete-modal h1 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.75rem;
+  line-height: 99.5%;
+  leading-trim: both;
+  text-edge: cap;
+  color: #ffffff;
+}
+.playlistview .delete-modal p {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.75rem;
+  line-height: 99.5%;
+  leading-trim: both;
+  text-edge: cap;
+  color: #ffffff;
+}
+.playlistview .playlist-details {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.playlistview .playlist-details .playlist-details-left {
+  display: flex;
+  -moz-column-gap: 0.5rem;
+       column-gap: 0.5rem;
+  align-items: center;
+}
+.playlistview .playlist-details .playlist-details-left .cover-img {
+  width: 3.6875rem;
+  height: 3.6875rem;
+  background: #505050;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.playlistview .playlist-details .playlist-details-left .cover-img p {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.75rem;
+  line-height: 99.5%;
+  leading-trim: both;
+  text-edge: cap;
+  color: rgba(255, 255, 255, 0.79);
+}
+.playlistview .playlist-details .playlist-details-left .cover-img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.5rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.playlistview .playlist-details .playlist-details-left .cover-img .cover {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.5rem;
+}
+.playlistview .playlist-details .playlist-details-left .playlist-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  row-gap: 0.5rem;
+}
+.playlistview .playlist-details .playlist-details-left .playlist-info .playlist-name-container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.3rem;
+}
+.playlistview .playlist-details .playlist-details-left .playlist-info .playlist-name {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.75rem;
+  line-height: 99.5%;
+  leading-trim: both;
+  text-edge: cap;
+  color: #ffffff;
+}
+.playlistview .playlist-details .playlist-details-left .playlist-info .playlist-creator {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.75rem;
+  line-height: 99.5%;
+  leading-trim: both;
+  text-edge: cap;
+  color: rgba(255, 255, 255, 0.32);
+}
+.playlistview .playlist-details .playlist-details-left .playlist-info .playlist-like {
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 0.3rem;
+       column-gap: 0.3rem;
+}
+.playlistview .playlist-details .playlist-details-left .playlist-info .playlist-like p {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.625rem;
+  line-height: 99.5%;
+  leading-trim: both;
+  text-edge: cap;
+  text-align: center;
+  color: #ffffff;
+}
+.playlistview .playlist-details .playlist-details-left .playlist-info .playlist-like img {
+  width: 0.75rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: auto;
+  cursor: pointer;
+}
+.playlistview .playlist-details .playlist-details-left .playlist-info .playlist-likes {
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 0.3rem;
+       column-gap: 0.3rem;
+}
+.playlistview .playlist-details .playlist-details-left .playlist-info .playlist-likes p {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.625rem;
+  line-height: 99.5%;
+  leading-trim: both;
+  text-edge: cap;
+  text-align: center;
+  color: #ffffff;
+}
+.playlistview .playlist-details .playlist-details-left .playlist-info .playlist-likes img {
+  width: 0.75rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: auto;
+}
+.playlistview .playlist-details .playlist-details-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 0.25rem;
+}
+.playlistview .playlist-details .playlist-details-right .playlist-details-delete {
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 0.3rem;
+       column-gap: 0.3rem;
+}
+.playlistview .playlist-details .playlist-details-right .playlist-details-delete .delete-button {
+  width: 0.875rem;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.playlistview .playlist-details .playlist-details-right .playlist-details-delete .delete-button:hover {
+  opacity: 0.7;
+}
+.playlistview .playlist-details .playlist-details-right .playlist-details-delete .edit-button {
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 3.1875rem;
+  height: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.625rem;
+  line-height: 99.5%;
+  leading-trim: both;
+  text-edge: cap;
+  color: #ffffff;
+  background: #262626;
+  border-radius: 0.1875rem;
+}
+.playlistview .playlist-details .playlist-details-right .playlist-details-delete .edit-button:hover {
+  opacity: 0.7;
+}
+.playlistview .playlist-details .playlist-details-right .playlist-likes {
+  display: flex;
+  -moz-column-gap: 0.3rem;
+       column-gap: 0.3rem;
+  align-items: center;
+}
+.playlistview .playlist-details .playlist-details-right .playlist-likes div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.playlistview .playlist-details .playlist-details-right .playlist-likes div p {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.625rem;
+  line-height: 99.5%;
+  leading-trim: both;
+  text-edge: cap;
+  color: #ffffff;
+}
+.playlistview .playlist-details .playlist-details-right .play-button {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: #262626;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.playlistview .playlist-details .playlist-details-right .play-button:hover {
+  opacity: 0.7;
+}
+.playlistview .playlist-details .playlist-details-right .play-button img {
+  width: 0.75rem;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.playlistview .songs {
+  flex: 1 1 0;
+  width: 100%;
+  overflow: auto;
+}
+.playlistview .songs::-webkit-scrollbar {
+  display: none;
+}
+.playlistview .songs .song {
+  width: 100%;
+  height: 2rem;
+  margin-bottom: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0.75rem;
+  background: rgba(217, 217, 217, 0.12);
+  border-radius: 0.3125rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.playlistview .songs .song p {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.75rem;
+  line-height: 99.5%;
+  leading-trim: both;
+  text-edge: cap;
+  color: rgba(255, 255, 255, 0.79);
+}
+.playlistview .songs .song img {
+  width: 0.5rem;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.playlistview .songs .song:hover {
+  opacity: 0.8;
+}
+.playlistview .songs .song:last-child {
+  margin-bottom: 0;
+}

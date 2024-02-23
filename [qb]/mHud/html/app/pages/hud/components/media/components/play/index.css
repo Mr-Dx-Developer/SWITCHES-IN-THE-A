@@ -1,0 +1,293 @@
+.play {
+  width: 100%;
+  flex: 1;
+  position: relative;
+}
+.play .selected {
+  outline: 0.125rem solid white;
+}
+.play .add-playlist {
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  position: relative;
+  z-index: 22;
+}
+.play .add-playlist .back-play {
+  width: 5.25rem;
+  height: 0.25rem;
+  cursor: pointer;
+  margin: 0 auto;
+  background: #393939;
+  border-radius: 0.875rem;
+  margin-bottom: 0.4rem;
+}
+.play .add-playlist .playlists {
+  flex: 1 1 0;
+  overflow: auto;
+  width: 100%;
+}
+.play .add-playlist .playlists::-webkit-scrollbar {
+  display: none;
+}
+.play .add-playlist .playlist {
+  margin-bottom: 0.35rem;
+  width: 100%;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0.75rem;
+  background: rgba(217, 217, 217, 0.12);
+  border-radius: 0.3125rem;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+.play .add-playlist .playlist p {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.75rem;
+  line-height: 99.5%;
+  leading-trim: both;
+  text-edge: cap;
+  color: rgba(255, 255, 255, 0.79);
+}
+.play .add-playlist .playlist span {
+  color: rgba(255, 255, 255, 0.25);
+}
+.play .add-playlist .playlist img {
+  width: 1.0625rem;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.play .add-playlist .playlist:hover {
+  opacity: 0.7;
+}
+.play .add-playlist .playlist:last-child {
+  margin-bottom: 0;
+}
+.play .add-playlist .playlist.active {
+  background: rgba(66, 255, 0, 0.12);
+}
+.play .add-playlist .playlist.active p {
+  color: #ffffff;
+}
+.play .no-song {
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%, -50%);
+  font-family: "SF Compact Display";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.7rem;
+  line-height: 99.5%;
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  leading-trim: both;
+  text-edge: cap;
+  color: #ffffff;
+}
+.play .play-actions {
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.play .play-actions img {
+  cursor: pointer;
+  width: 1rem;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.play .song-name {
+  position: absolute;
+  left: 50%;
+  bottom: 1.25rem;
+  transform: translateX(-50%);
+  width: 70%;
+  display: flex;
+  align-items: center;
+  row-gap: 0.25rem;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.play .song-name h1 {
+  font-family: "SF Compact Display";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.75rem;
+  line-height: 99.5%;
+  leading-trim: both;
+  text-edge: cap;
+  text-align: center;
+  color: #ffffff;
+}
+.play .song-name p {
+  font-family: "SF Compact Display";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.625rem;
+  line-height: 99.5%;
+  text-align: center;
+  leading-trim: both;
+  text-edge: cap;
+  color: rgba(255, 255, 255, 0.42);
+}
+.play .quick-play-container {
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.75rem;
+  width: 10.75rem;
+}
+.play .quick-play-container input {
+  background: rgba(217, 217, 217, 0.12);
+  border-radius: 0.3125rem;
+  width: 100%;
+  height: 1.5rem;
+  text-align: center;
+  font-family: "SF Compact Display";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.625rem;
+  line-height: 99.5%;
+  leading-trim: both;
+  text-edge: cap;
+  color: white;
+}
+.play .quick-play-container input::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.42);
+}
+.play .quick-play-container input::placeholder {
+  color: rgba(255, 255, 255, 0.42);
+}
+.play .quick-play-container .play-button {
+  width: 100%;
+  height: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #42ff00;
+  border-radius: 0.3125rem;
+  font-family: "Proxima Nova";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.75rem;
+  line-height: 99.5%;
+  leading-trim: both;
+  text-edge: cap;
+  color: #196000;
+}
+.play .actions {
+  position: absolute;
+  right: 0.75rem;
+  top: 40%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 100%;
+}
+.play .actions div {
+  width: 1.4625rem;
+  height: 1.4625rem;
+  background: rgba(217, 217, 217, 0.18);
+  border-radius: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.play .actions div img {
+  width: 0.35rem;
+}
+.play .actions img {
+  width: 0.875rem;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  cursor: pointer;
+}
+.play .volume-control {
+  position: absolute;
+  left: 0.75rem;
+  top: 40%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 0.8rem;
+}
+.play .volume-control img {
+  width: 0.9375rem;
+  height: 0.75rem;
+  cursor: pointer;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.play .volume-control .volume-level {
+  width: 0.25rem;
+  height: 3.8125rem;
+  position: relative;
+  right: 0.1rem;
+  display: flex;
+  align-items: flex-end;
+  background: rgba(217, 217, 217, 0.26);
+  border-radius: 0.75rem;
+}
+.play .volume-control .volume-level .volume-level-inner {
+  transition: all 0.2s ease;
+  width: 100%;
+  border-radius: 0.75rem;
+  background: #d9d9d9;
+  height: 20%;
+}
+.play .music-progress-container {
+  position: absolute;
+  bottom: 0.5rem;
+  left: 50%;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -moz-column-gap: 0.6rem;
+       column-gap: 0.6rem;
+  transform: translateX(-50%);
+}
+.play .music-progress-container .music-progress {
+  background: rgba(217, 217, 217, 0.26);
+  flex: 1;
+  height: 0.3125rem;
+  border-radius: 0.75rem;
+  cursor: pointer;
+}
+.play .music-progress-container .music-progress .music-progress-inner {
+  transition: all 0.2s ease;
+  height: 100%;
+  border-radius: 0.75rem;
+  background: #d9d9d9;
+  width: 20%;
+}
+.play .music-progress-container .music-progress-time {
+  font-family: "SF Compact Display";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.5rem;
+  line-height: 99.5%;
+  leading-trim: both;
+  text-edge: cap;
+  color: #737373;
+}

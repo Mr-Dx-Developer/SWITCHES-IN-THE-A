@@ -1,0 +1,63 @@
+.account {
+    width: 100%;
+    flex: 1;
+    position: relative;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 0.4rem;
+    .pp {
+        width: 3.6875rem;
+        height: 3.6875rem;
+        object-fit: cover;
+        border-radius: 0.5rem;
+    }
+    .player-name {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 0.75rem;
+        line-height: 99.5%;
+
+        leading-trim: both;
+        text-edge: cap;
+
+        color: rgba(255, 255, 255, 0.42);
+    }
+    .informations {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: 0.75rem;
+        p {
+            font-style: normal;
+            font-weight: 700;
+            font-size: 0.75rem;
+            line-height: 99.5%;
+
+            leading-trim: both;
+            text-edge: cap;
+
+            color: rgba(255, 255, 255, 0.42);
+        }
+    }
+    .button {
+        width: 90%;
+        height: 1.875rem;
+        background: rgba(217, 217, 217, 0.09);
+        border-radius: 0.375rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 0.625rem;
+        line-height: 99.5%;
+
+        leading-trim: both;
+        text-edge: cap;
+        cursor: pointer;
+        color: #ffffff;
+    }
+}

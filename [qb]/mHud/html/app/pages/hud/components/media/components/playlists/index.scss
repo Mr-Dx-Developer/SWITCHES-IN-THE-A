@@ -1,0 +1,130 @@
+.playlists-list {
+    width: 100%;
+    flex: 1;
+    position: relative;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.4rem;
+    .player-name {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 0.75rem;
+        line-height: 99.5%;
+
+        leading-trim: both;
+        text-edge: cap;
+
+        color: #ffffff;
+    }
+    .player-desc {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 0.75rem;
+        line-height: 99.5%;
+
+        leading-trim: both;
+        text-edge: cap;
+
+        color: rgba(255, 255, 255, 0.32);
+    }
+    .playlists {
+        width: 100%;
+        flex: 1 1 0;
+        display: flex;
+        flex-wrap: wrap;
+        overflow: auto;
+        column-gap: .65rem;
+        row-gap: 0.8rem;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+        .playlist {
+            width: 30%;
+            height: 5.75rem;
+            position: relative;
+            padding: 0.5rem;
+            display: flex;
+            flex-direction: column;
+            row-gap: 0.35rem;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border-radius: 0.5rem;
+
+            &:hover {
+                opacity: 0.8;
+            }
+            .img-blur {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 0.5rem;
+
+                filter: blur(2.25px);
+                background-color: rgba(0, 0, 0, 0.126);
+                left: 0;
+            }
+
+            .playlist-top {
+                display: flex;
+                align-items: center;
+                column-gap: 0.6rem;
+                position: relative;
+                z-index: 3;
+
+                img.playlist-img {
+                    width: 3.4375rem;
+                    height: 3.4375rem;
+                    object-fit: cover;
+                    border-radius: 0.5rem;
+                }
+                p.playlist-img {
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 1.75rem;
+                    line-height: 99.5%;
+
+                    leading-trim: both;
+                    text-edge: cap;
+                    color: rgba(255, 255, 255, 0.79);
+                }
+                .playlist-likes {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    row-gap: 0.35rem;
+                    img {
+                        width: 0.5375rem;
+                        height: auto;
+                        object-fit: cover;
+                    }
+                    p {
+                        font-style: normal;
+                        font-weight: 700;
+                        font-size: 0.725rem;
+                        line-height: 99.5%;
+
+                        leading-trim: both;
+                        text-edge: cap;
+
+                        color: #ffffff;
+                    }
+                }
+            }
+            .playlist-name {
+                font-style: normal;
+                font-weight: 700;
+                font-size: 0.775rem;
+                line-height: 99.5%;
+                position: relative;
+                z-index: 3;
+                leading-trim: both;
+                text-edge: cap;
+
+                color: #ffffff;
+            }
+        }
+    }
+}

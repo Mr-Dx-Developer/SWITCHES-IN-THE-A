@@ -1,0 +1,217 @@
+.myplaylist {
+    width: 100%;
+    flex: 1;
+    position: relative;
+    padding: 0.7rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+
+    .playlists {
+        flex: 1 1 0;
+        overflow: auto;
+        width: 100%;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+    .playlist {
+        margin-bottom: 0.35rem;
+        width: 100%;
+        height: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 0.75rem;
+        background: rgba(217, 217, 217, 0.12);
+        border-radius: 0.3125rem;
+        transition: all 0.2s ease;
+        cursor: pointer;
+        p {
+            font-style: normal;
+            font-weight: 700;
+            font-size: 0.75rem;
+            line-height: 99.5%;
+
+            leading-trim: both;
+            text-edge: cap;
+            color: rgba(255, 255, 255, 0.79);
+        }
+        span {
+            color: rgba(255, 255, 255, 0.25);
+        }
+        img {
+            width: 1.0625rem;
+            height: auto;
+            object-fit: cover;
+        }
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+    .playlist:last-child {
+        margin-bottom: 0;
+    }
+    .playlist.active {
+        background: rgba(66, 255, 0, 0.12);
+        p {
+            color: #ffffff;
+        }
+    }
+}
+
+.create-playlist {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.75rem;
+    .songs {
+        height: 25%;
+        overflow: auto;
+
+        div {
+            margin-bottom: 0.15rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        div::last-child {
+            margin-bottom: 0;
+        }
+        div:hover {
+            background: rgba(255, 0, 0, 0.12);
+        }
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+    .create-playlist-inputs {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        row-gap: 0.5rem;
+        .create-playlist-input {
+            display: flex;
+            align-items: center;
+            column-gap: 0.5rem;
+
+            .back {
+                width: 1.8625rem;
+                height: 1.5625rem;
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+                justify-content: center;
+                background: rgba(217, 217, 217, 0.18);
+                border-radius: 0.25rem;
+                transition: all 0.2s ease;
+
+                img {
+                    width: 0.5rem;
+                    height: auto;
+                    object-fit: cover;
+                }
+                &:hover {
+                    opacity: 0.7;
+                }
+            }
+            .create {
+                width: 1.8625rem;
+                height: 1.5625rem;
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+                justify-content: center;
+                background: rgba(66, 255, 0, 0.18);
+                border-radius: 0.25rem;
+                transition: all 0.2s ease;
+                img {
+                    width: 0.5rem;
+                    height: auto;
+                    object-fit: cover;
+                }
+                &:hover {
+                    opacity: 0.7;
+                }
+            }
+            input {
+                width: 100%;
+                height: 1.5625rem;
+                background: rgba(217, 217, 217, 0.18);
+                border-radius: 0.25rem;
+                font-style: normal;
+                font-weight: 700;
+                font-size: 0.625rem;
+                line-height: 99.5%;
+                padding: 0 0.35rem;
+                leading-trim: both;
+                text-edge: cap;
+
+                color: rgba(255, 255, 255, 1);
+            }
+            input::placeholder {
+                font-family: "Proxima Nova";
+
+                font-style: normal;
+                font-weight: 700;
+                font-size: 0.625rem;
+                line-height: 99.5%;
+
+                leading-trim: both;
+                text-edge: cap;
+                color: rgba(255, 255, 255, 1);
+            }
+        }
+    }
+    .top-create-playlist {
+        display: flex;
+        align-items: center;
+        column-gap: 0.4rem;
+        .cover-img {
+            width: 3.6875rem;
+            height: 3.6875rem;
+            background: #505050;
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            p {
+                font-style: normal;
+                font-weight: 700;
+                font-size: 1.75rem;
+                line-height: 99.5%;
+
+                leading-trim: both;
+                text-edge: cap;
+                color: rgba(255, 255, 255, 0.79);
+            }
+            img {
+                width: 100%;
+                height: 100%;
+                border-radius: 0.5rem;
+
+                object-fit: cover;
+            }
+            .cover {
+                width: 100%;
+                height: 100%;
+
+                border-radius: 0.5rem;
+            }
+        }
+   
+    }
+    .top-create-playlist-2{
+        .cover-img {
+   
+      
+            img {
+                width: 55%;
+                height: auto;
+                border-radius: 0.5rem;
+
+                object-fit: cover;
+            }
+        }
+    }
+}

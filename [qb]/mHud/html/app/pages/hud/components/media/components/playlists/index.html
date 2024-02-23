@@ -1,0 +1,24 @@
+<div class="playlists-list">
+     <p class="player-name">
+          {{locales.HELLO.format(player_name)}}
+     </p>
+     <p class="player-desc">
+          {{locales.PLAYLIST_INFO}}
+     </p>
+     <div class="playlists">
+          <div :style="{backgroundColor:playlist.cover == 'default' && '#505050'}" @click="OpenPlaylist(playlist);PlayClick()" class="playlist"  v-for="(playlist, index) in getTopPlaylists" :key="index">
+               <img class="img-blur"  :src="playlist.cover" v-if="playlist.cover != 'default'"> 
+               <div class="playlist-top">
+                    <img v-if="playlist.cover != 'default'" class="playlist-img"  :src="playlist.cover">
+                    <p class="playlist-img" v-else>
+                         {{playlist.name.substring(0,1).toUpperCase()}}
+                    </p>
+                    <div class="playlist-likes">
+                         <img src="./assets/images/user-icon-black.png">
+                         <p>{{playlist.likes.length}}</p>
+                    </div>
+               </div>
+               <p class="playlist-name">{{playlist.name}}</p>
+          </div>
+     </div>
+</div>

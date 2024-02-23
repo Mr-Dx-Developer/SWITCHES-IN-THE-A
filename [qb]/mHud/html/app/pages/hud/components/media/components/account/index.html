@@ -1,0 +1,12 @@
+<div class="account">
+     <img class="pp" :src="pp">
+     <p class="player-name">{{player_name}}</p>
+     <div class="informations">
+          <p>{{locales.PLAYLIST_AMOUNT.format(myPlaylists.length)}}</p>
+          <p>&#x2022;</p>
+          <p>{{locales.LIKES.format(getComputedLikes)}}</p>
+     </div>
+     <div class="button" @click="setEnableTopWidget(!enableTopWidget);PlayClick()">
+          {{enableTopWidget ? locales.DISABLE_TOP_WIDGET: locales.ENABLE_TOP_WIDGET}}
+     </div>
+</div>

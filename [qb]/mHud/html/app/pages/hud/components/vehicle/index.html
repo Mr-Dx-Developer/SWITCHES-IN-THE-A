@@ -1,0 +1,126 @@
+<div class="vehicle">
+   <div class="left-menu">
+      <div @click="setActiveVehicleMenu('doors');PlayClick()" class="left-menu-button"
+         :class="{selected : activeVehicleMenu == 'doors'}">
+         <inlinesvg :fill=" activeVehicleMenu == 'doors' ? '#ffffff' : 'rgba(255, 255, 255, 0.5)'"
+            src="./app/pages/hud/components/vehicle/images/door-icon.svg"></inlinesvg>
+      </div>
+      <div @click="setActiveVehicleMenu('windows');PlayClick()" class="left-menu-button"
+         :class="{selected : activeVehicleMenu == 'windows'}">
+         <inlinesvg :fill=" activeVehicleMenu == 'windows' ? '#ffffff' : 'rgba(255, 255, 255, 0.5)'"
+            src="./app/pages/hud/components/vehicle/images/window-icon.svg"></inlinesvg>
+      </div>
+      <div @click="setActiveVehicleMenu('lights');PlayClick()" class="left-menu-button"
+         :class="{selected :activeVehicleMenu == 'lights'}">
+         <inlinesvg :fill=" activeVehicleMenu == 'lights' ? '#ffffff' : 'rgba(255, 255, 255, 0.5)'"
+            src="./app/pages/hud/components/vehicle/images/light.svg"></inlinesvg>
+      </div>
+      <div @click="setActiveVehicleMenu('seat');PlayClick()" class="left-menu-button"
+      :class="{selected :activeVehicleMenu == 'seat'}">
+      <inlinesvg :fill=" activeVehicleMenu == 'seat' ? '#ffffff' : 'rgba(255, 255, 255, 0.5)'"
+         src="./app/pages/hud/components/vehicle/images/seat.svg"></inlinesvg>
+   </div>
+   </div>
+   <div class="windows" v-if="activeVehicleMenu == 'windows'">
+      <p>WINDOWS</p>
+      <div class="window-buttons">
+         <div @click="ToggleWindow(0, 0);PlayClick()" class="vehicle-button">
+            {{locales.FRONT_LEFT}}
+         </div>
+         <div @click="ToggleWindow(1, 1);PlayClick()" class="vehicle-button">
+            {{locales.FRONT_RIGHT}}
+         </div>
+         <div @click="ToggleWindow(2, 3);PlayClick()" class="vehicle-button">
+            {{locales.REAR_LEFT}}
+         </div>
+         <div @click="ToggleWindow(3, 2);PlayClick()" class="vehicle-button">
+            {{locales.REAR_RIGHT}}
+         </div>
+   
+      </div>
+   </div>
+   <div class="doors" v-if="activeVehicleMenu == 'doors'">
+      <div class="vehicle-buttons">
+
+         <div @click="vehicleDoors(4);PlayClick()" class="vehicle-button">
+            {{locales.BONNET}}
+         </div>
+         <div @click="vehicleDoors(0);PlayClick()" class="vehicle-button">
+            {{locales.SEAT_1}}
+         </div>
+         <div @click="vehicleDoors(1);PlayClick()" class="vehicle-button">
+            {{locales.SEAT_2}}
+         </div>
+         <div @click="vehicleDoors(2);PlayClick()" class="vehicle-button">
+            {{locales.SEAT_3}}
+         </div>
+         <div @click="vehicleDoors(3);PlayClick()" class="vehicle-button">
+            {{locales.SEAT_4}}
+         </div>
+         <div @click="vehicleDoors(5);PlayClick()" class="vehicle-button">
+            {{locales.TRUNK}}
+         </div>
+      </div>
+      <img class="vehicle-door-img" :src="'./app/pages/hud/components/vehicle/images/'+vehicleImg">
+      <div class="doors-label">
+         <p v-for="v in locales.DOORS">{{v}}</p>
+      </div>
+   </div>
+   <div class="lights" v-if="activeVehicleMenu == 'lights'">
+      <div class="vehicle-buttons">
+
+         <div @click="ToggleNeon('all');PlayClick()" class="vehicle-button">
+            {{locales.ALL}}
+         </div>
+         <div @click="ToggleNeon('neon', 2);PlayClick()" class="vehicle-button">
+            {{locales.FRONT}}
+
+         </div>
+         <div @click="ToggleNeon('neon', 0);PlayClick()" class="vehicle-button">
+            {{locales.LEFT}}
+
+         </div>
+         <div @click="ToggleNeon('neon', 1);PlayClick()" class="vehicle-button">
+            {{locales.RIGHT}}
+         </div>
+         <div @click="ToggleNeon('neon', 3);PlayClick()" class="vehicle-button">
+            {{locales.REAR}}
+
+         </div>
+         <div @click="ToggleNeon('party');PlayClick()" class="vehicle-button">
+            {{locales.PARTY}}
+
+         </div>
+      </div>
+      <div class="vehicle-img">
+         <img class="vehicle-door-img" :src="'./app/pages/hud/components/vehicle/images/'+vehicleImg">
+         <div :style="{background:computedRGB}" v-if="neons.front" class="front-neon"></div>
+         <div :style="{background:computedRGB}" v-if="neons.left" class="left-neon"></div>
+         <div :style="{background:computedRGB}" v-if="neons.right" class="right-neon"></div>
+         <div :style="{background:computedRGB}" v-if="neons.back" class="rear-neon"></div>
+      </div>
+      <div class="doors-label">
+         <p v-for="v in locales.NEONS">{{v}}</p>
+      </div>
+   </div>
+   <div class="neon-effect" v-if="activeVehicleMenu == 'lights'">
+      <inlinesvg src="./app/pages/hud/components/vehicle/images/neon-effect.svg" :fill="computedRGB"></inlinesvg>
+   </div>
+   <div class="windows" v-if="activeVehicleMenu == 'seat'">
+      <p>SEATS </p>
+      <div class="window-buttons">
+         <div @click="ChangeSeat(-1);PlayClick()"  class="vehicle-button">
+            {{locales.SEAT1}}
+         </div>
+         <div @click="ChangeSeat(0);PlayClick()"  class="vehicle-button">
+            {{locales.SEAT2}}
+         </div>
+         <div @click="ChangeSeat(1);PlayClick()"  class="vehicle-button">
+            {{locales.SEAT3}}
+         </div>
+         <div @click="ChangeSeat(2);PlayClick()"  class="vehicle-button">
+            {{locales.SEAT4}}
+         </div>
+      </div>
+   </div>
+</div>

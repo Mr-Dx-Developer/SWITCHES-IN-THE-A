@@ -1,0 +1,12 @@
+<div class="search">
+     <div class="search-input" >
+          <input :placeholder="locales.SEARCH" v-model="name"  type="text">
+          <img src="./app/pages/hud/components/media/components/search/images/search-icon.png">
+     </div>
+     <div class="listed-items">
+          <div @click="OpenPlaylist(playlist);PlayClick()" class="listed-item" v-for="(playlist, index) in getFilteredPlaylists">
+               <p>{{playlist.name}}</p>
+               <img src="./app/pages/hud/components/media/components/search/images/play.png">               
+          </div>
+     </div>
+</div>

@@ -1,0 +1,131 @@
+<div class="relative flex items-center justify-start  oldschoolhud">
+   <div v-show="!hudSettings.hideNOS && nitroValue > 0" class="w-full h-full  absolute flex items-start justify-end">
+      <div class="w-[30%] h-[35%]   flex items-center justify-center " style="margin-right: 1vw;">
+         <div class="w-full h-full"
+            style="border-radius: 5vw; margin-top: -5vw; background-image: url('./app/pages/speedometer/components/oldschoolhud/images/nitrohud.png'); background-size: 100% 100%; ">
+            <div  class="w-full h-full  flex items-center justify-center" style="border-radius: 5vw;">
+               <div class="oldschool-nos" style="width:4.3vw; height: 4.3vw;"></div>
+               <div class="w-full h-[15%]  flex items-center justify-center">
+                  <div class="w-[12%] h-[85%] " style="border-radius: 7vw; background-color: #1E191D;"></div>
+                  <div class="w-[10%] h-[1%]   absolute flex items-center justify-start " :style="NitroIndicator"
+                     style="margin-right: 2.3vw;">
+                     <div class="w-[80%] h-full "
+                        style="background-image: url('./app/pages/speedometer/components/oldschoolhud/images/igne.png'); background-size: 100% 100%;">
+                     </div>
+                  </div>
+               </div>
+
+            </div>
+         </div>
+      </div>
+   </div>
+
+   <div class="w-[70%]  h-[89%] flex items-end justify-end " style="margin-left: 2vw;">
+      <div class="w-full h-[95%] relative"
+         style=" background-image: url('./app/pages/speedometer/components/oldschoolhud/images/speedometer.png'); background-size: 100% 100%;">
+         <div class="w-full flex items-center justify-center h-full   flex items-center justify-start">
+
+            <div class="w-[90%] h-[80%]   flex items-center justify-center">
+               <div class="w-full h-[15%] flex items-center justify-center  absolute ">
+                  <div class="w-[12%] h-[85%] " style="border-radius: 7vw; background-color: #1E191D;"></div>
+                  <div class="w-[35%] h-[15%]  absolute flex items-center justify-start " :style="SpeedometerIndicator"
+                     style="margin-right: 5.6vw;">
+                     <div class="w-[83%] h-full "
+                        style="background-image: url('./app/pages/speedometer/components/oldschoolhud/images/igne.png'); background-size: 100% 100%;">
+                     </div>
+                  </div>
+                  <!-- <img class="w-[90%] h-[80%] absolute  " style="margin-left: 1.8vw; margin-top: 0.28vw;" src="./images/igne.png" alt=""> -->
+               </div>
+            </div>
+            <div class="w-[90%] h-[80%] absolute  flex items-center justify-center">
+               <div class="w-[50%] h-[3%]  flex items-center justify-end absolute" :style="RpmIndicator"
+                  style="  margin-right: 6.8vw;">
+                  <div class="w-[58%] h-full flex items-center justify-start ">
+                     <div class="w-[10%] h-[20%]" style="background-color: red;"></div>
+                  </div>
+               </div>
+            </div>
+            <div class="w-[90%] h-[80%]  absolute  flex items-start justify-center">
+               <div class="w-full h-[41%]  flex items-end justify-center absolute ">
+                  <div class="w-[21%] h-[31%]  flex items-center justify-center">
+                     <h2 class=" oldschool-speed" v-html="FormatSpeed"></h2>
+                  </div>
+               </div>
+            </div>
+            <svg style="transform: rotate(180deg);" class="absolute left-28 top-4/12 transform -translate-y-1/2"
+               width="8" height="6" viewBox="0 0 8 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <g filter="url(#filter0_i_238_692)">
+                  <path
+                     d="M0.476242 1.50061H4.4549V0.500745C4.45475 0.405666 4.48043 0.312514 4.52893 0.232217C4.57744 0.151919 4.64675 0.0878057 4.72873 0.0473971C4.81072 0.00698845 4.90198 -0.00803975 4.99182 0.00407543C5.08166 0.0161906 5.16634 0.0549468 5.23593 0.115798L7.65524 2.23051C7.7631 2.32433 7.84992 2.44197 7.90951 2.57505C7.9691 2.70812 8 2.85336 8 3.0004C8 3.14745 7.9691 3.29268 7.90951 3.42576C7.84992 3.55884 7.7631 3.67648 7.65524 3.7703L5.23593 5.88501C5.15025 5.95954 5.04241 6.00022 4.93114 5.99999C4.86215 6.00038 4.7939 5.98503 4.73112 5.955C4.64845 5.91484 4.57849 5.85063 4.52953 5.77C4.48057 5.68936 4.45467 5.59568 4.4549 5.50006V4.5002H0.476242C0.349935 4.5002 0.2288 4.44753 0.139487 4.35377C0.0501742 4.26002 0 4.13286 0 4.00027V2.00054C0 1.86795 0.0501742 1.74079 0.139487 1.64703C0.2288 1.55328 0.349935 1.50061 0.476242 1.50061Z"
+                     :fill="vehicleSignals.leftindicatorstatus || vehicleSignals.hazardlightstatus ? '#FFF500' : '#747474'" />
+               </g>
+               <defs>
+                  <filter id="filter0_i_238_692" x="0" y="0" width="8" height="7" filterUnits="userSpaceOnUse"
+                     color-interpolation-filters="sRGB">
+                     <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                     <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+                     <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                        result="hardAlpha" />
+                     <feOffset dy="1" />
+                     <feGaussianBlur stdDeviation="2" />
+                     <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1" />
+                     <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.99 0" />
+                     <feBlend mode="normal" in2="shape" result="effect1_innerShadow_238_692" />
+                  </filter>
+               </defs>
+            </svg>
+
+            <svg class="absolute right-28 top-4/12 transform -translate-y-1/2" width="8" height="6" viewBox="0 0 8 6"
+               fill="none" xmlns="http://www.w3.org/2000/svg">
+               <g filter="url(#filter0_i_238_692)">
+                  <path
+                     d="M0.476242 1.50061H4.4549V0.500745C4.45475 0.405666 4.48043 0.312514 4.52893 0.232217C4.57744 0.151919 4.64675 0.0878057 4.72873 0.0473971C4.81072 0.00698845 4.90198 -0.00803975 4.99182 0.00407543C5.08166 0.0161906 5.16634 0.0549468 5.23593 0.115798L7.65524 2.23051C7.7631 2.32433 7.84992 2.44197 7.90951 2.57505C7.9691 2.70812 8 2.85336 8 3.0004C8 3.14745 7.9691 3.29268 7.90951 3.42576C7.84992 3.55884 7.7631 3.67648 7.65524 3.7703L5.23593 5.88501C5.15025 5.95954 5.04241 6.00022 4.93114 5.99999C4.86215 6.00038 4.7939 5.98503 4.73112 5.955C4.64845 5.91484 4.57849 5.85063 4.52953 5.77C4.48057 5.68936 4.45467 5.59568 4.4549 5.50006V4.5002H0.476242C0.349935 4.5002 0.2288 4.44753 0.139487 4.35377C0.0501742 4.26002 0 4.13286 0 4.00027V2.00054C0 1.86795 0.0501742 1.74079 0.139487 1.64703C0.2288 1.55328 0.349935 1.50061 0.476242 1.50061Z"
+                     :fill="vehicleSignals.rightindicatorstatus || vehicleSignals.hazardlightstatus ? '#FFF500' : '#747474'" />
+               </g>
+               <defs>
+                  <filter id="filter0_i_238_692" x="0" y="0" width="8" height="7" filterUnits="userSpaceOnUse"
+                     color-interpolation-filters="sRGB">
+                     <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                     <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+                     <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                        result="hardAlpha" />
+                     <feOffset dy="1" />
+                     <feGaussianBlur stdDeviation="2" />
+                     <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1" />
+                     <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.99 0" />
+                     <feBlend mode="normal" in2="shape" result="effect1_innerShadow_238_692" />
+                  </filter>
+               </defs>
+            </svg>
+            <img class="absolute bottom-24 left-1/2 transform -translate-x-1/2" v-if="cruise.enabled"
+               src="./app/pages/speedometer/components/oldschoolhud/images/LIM-active.png">
+            <img class="absolute bottom-24 left-1/2 transform -translate-x-1/2" v-else
+               src="./app/pages/speedometer/components/oldschoolhud/images/LIM.png">
+            <div class="w-[90%] h-[80%]  absolute  flex items-end justify-center">
+               <div class="w-full h-[41%]   flex items-start justify-center absolute ">
+                  <div class="w-[35%] h-[27%] " style="margin-left: 0.1vw;">
+                     <div class="w-full h-full  flex flex-wrap items-center justify-around">
+                        <div class="w-[20%] h-full  flex items-center justify-center" v-for="data in vehicle">
+                           <span v-html="data.svg(this[data.name] ? data.activeColor : data.disabledColor)"></span>
+                           <!-- <img class="w-[50%] h-[40%] flex" style="object-fit: contain;"
+                              :src="'./app/pages/speedometer/components/oldschoolhud/images/'+data.name+'.png'" alt=""> -->
+                        </div>
+
+
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="w-[90%]  h-[80%] absolute  flex items-center justify-center">
+               <div class="w-[50%] h-[3%]   flex items-center justify-end absolute" :style="FuelIndicator"
+                  style="  margin-right: 6.8vw;">
+                  <div class="w-[93%] h-full flex items-center justify-start ">
+                     <div class="w-[10%] h-[20%]" style="background-color: red;"></div>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+      </div>
+   </div>
+</div>

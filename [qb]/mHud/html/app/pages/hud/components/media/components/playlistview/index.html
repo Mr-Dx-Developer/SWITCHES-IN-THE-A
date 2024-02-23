@@ -1,0 +1,100 @@
+<div class="playlistview">
+     <div v-if="showDeleteModal" class="delete-modal"> 
+          <h1>{{locales.DELETE_PLAYLIST_CONFIRM}}</h1>
+          <p>{{currentPlaylist.data.name}}</p>
+          <div class="delete-modal-buttons">
+               <div @click="DeletePlaylist();PlayClick()" class="confirm-modal-button">{{locales.YES}}</div>
+               <div @click="ToggleDeleteModal(false);PlayClick()" class="cancel-modal-button">{{locales.NO}}</div>
+          </div>
+     </div>
+     <template v-if="!editMode">
+          <div class="playlist-details" >
+               <div class="playlist-details-left">
+                    <div class="cover-img">
+                         <img v-if="currentPlaylist.data.cover != 'default'" :src="currentPlaylist.data.cover">
+                         <p v-else>
+                              {{currentPlaylist.data.name.substring(0,1).toUpperCase()}}
+                         </p>
+                    </div>
+                    <div class="playlist-info">
+                         <div class="playlist-name-container">
+                              <p class="playlist-name">{{currentPlaylist.data.name}}</p>
+                              <p class="playlist-creator">{{currentPlaylist.data.creatorname}}</p>
+                         </div>
+                         <div v-if="currentPlaylist.isMyPlaylist" class="playlist-likes">
+                              <img src="./assets/images/user-icon.png">
+                              <p>{{locales.LIKES.format(currentPlaylist.data.likes.length)}}</p>
+                         </div>
+                         <div v-else class="playlist-like">
+                              <img v-if="!currentPlaylist.data.likes.includes(identifier)"
+                                   @click="LikePlaylist();PlayClick()"
+                                   src="./app/pages/hud/components/media/components/playlistview/images/like.png">
+                              <img v-else @click="UnLikePlaylist();PlayClick()"
+                                   src="./app/pages/hud/components/media/components/playlistview/images/unlike.png">
+
+                              <p>{{locales.LIKE_PLAYLIST}}</p>
+                         </div>
+                    </div>
+               </div>
+               <div class="playlist-details-right">
+                    <div class="playlist-details-delete" v-if="currentPlaylist.isMyPlaylist">
+                         <div @click="SetEditMode(true);PlayClick()" class="edit-button">{{locales.EDIT}}</div>
+                         <img  @click="ToggleDeleteModal(true);PlayClick()"
+                              
+                              src="./app/pages/hud/components/media/components/playlistview/images/delete.png"
+                              class="delete-button">                  
+                    </div>
+     
+                    <div v-else class="playlist-likes">
+                         <div>
+                              <p>{{currentPlaylist.data.likes.length}}</p>
+                              <p>{{locales.LIKES_2}}</p>
+                         </div>
+                         <img src="./assets/images/user-icon.png">
+                    </div>
+                    <div @click="PlayRandom();PlayClick()" class="play-button">
+                         <img src="./app/pages/hud/components/media/components/playlistview/images/play.png">
+                    </div>
+               </div>
+          </div>
+          <div class="songs">
+               <div @click="PlayMusic(song, index);PlayClick()" class="song"
+                    v-for="(song, index) in currentPlaylist.data.musics" :key="index">
+                    <p>{{song.name}}</p>
+                    <img src="./assets/images/play.png">
+               </div>
+          </div>
+     </template>
+     <div v-else class="create-playlist" >
+          <div class="top-create-playlist">
+               <div class="cover-img">
+                    <img v-if="currentPlaylist.data.cover != 'default'" :src="currentPlaylist.data.cover">
+                    <p v-else>
+                         {{currentPlaylist.data.name.substring(0,1).toUpperCase()}}
+                    </p>
+               </div>
+               <div class="create-playlist-inputs">
+                    <div class="create-playlist-input">
+                         <input v-model="newName" type="text" :placeholder="locales.PLAYLIST_NAME">
+                         <div class="create" @click="SaveEdit();PlayClick()">
+                              <img src="./app/pages/hud/components/media/components/myplaylist/images/check.png">
+                         </div>
+                         <div class="back" @click="SetEditMode(false);PlayClick()">
+                              <img src="./app/pages/hud/components/media/components/myplaylist/images/back.png">
+                         </div>
+                    </div>
+                    <div class="create-playlist-input">
+                         <input v-model="newCover" type="text" :placeholder="locales.COVER_URL">
+                    </div>
+               </div>
+          </div>
+   
+          <div class="songs">
+               <div @click="DeleteMusic(song.id);PlayClick()" class="song"
+                    v-for="(song, index) in currentPlaylist.data.musics" :key="index">
+                    <p>{{song.name}}</p>
+                    <img  src="./app/pages/hud/components/media/components/playlistview/images/delete.png">
+               </div>
+          </div>
+     </div>
+</div>

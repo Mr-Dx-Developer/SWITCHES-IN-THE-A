@@ -1,0 +1,72 @@
+.scaleupoldschool-enter-active {
+  animation: scaleactiveoldschool 1s ease-in-out;
+}
+
+.scaleupoldschool-leave-active {
+  animation: scaledeactiveoldschool 1s ease-in-out;
+}
+
+.oldschool-nos {
+
+  position: absolute !important;
+
+}
+
+.ldBar-label {
+  display: none !important;
+}
+
+.oldschool-speed {
+  font-family: 'Digital Numbers';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 0.9375rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: .2rem;
+  color: #FF0000;
+}
+
+.oldschool-speed span{
+  color: rgba(255, 255, 255, 0.24);
+
+
+}
+
+.oldschoolhud {
+  position: absolute;
+  left: 4vw;
+  bottom: .5vw;
+  width: 23.2813vw;
+  height: 20.2813vw;
+}
+
+@keyframes scaleactiveoldschool {
+  0% {
+    transform: scale(0);
+    margin-right: -30vw;
+  }
+
+
+  100% {
+    transform: scale(1);
+    margin-right: 0;
+  }
+}
+
+@keyframes scaledeactiveoldschool {
+  0% {
+    transform: scale(1);
+    margin-right: 0vw;
+  }
+
+
+
+  100% {
+    transform: scale(0);
+    margin-right: -30vw;
+  }
+
+}

@@ -1,0 +1,448 @@
+<!--  -->
+<div class="speedometer-wrapper">
+    <div class="speedometer-relative-wrapper" v-show="hudSettings.showAllSpeedometer"
+        :class="{hovered:hoveredSettingsElement == 'speedometer' || selectedSettingsElement == 'speedometer' || selectedSettingsElement == 'speedometer-display' || selectedSettingsElement == 'customize-nitro-gauge' || selectedSettingsElement == 'speedo-color-customization' || selectedSettingsElement == 'customize-rpm-gauge' || selectedSettingsElement == 'customize-speedometer'}">
+
+        <div :style="getSpeedemoterStyle" class="first-speedometer"
+            v-if="(vehicleType == 'vehicle' || vehicleType == 'plane' || vehicleType == 'boat') && !hudSettings.hideSpeedometer || showHudSettings">
+            <svg class="speedo-svg" width="255" height="255" viewBox="0 0 255 255" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M250.546 127.5C250.546 195.456 195.456 250.546 127.5 250.546C59.5437 250.546 4.45415 195.456 4.45415 127.5C4.45415 59.5437 59.5437 4.45416 127.5 4.45416C195.456 4.45416 250.546 59.5437 250.546 127.5ZM36.0241 127.5C36.0241 178.021 76.9793 218.976 127.5 218.976C178.021 218.976 218.976 178.021 218.976 127.5C218.976 76.9793 178.021 36.0241 127.5 36.0241C76.9793 36.0241 36.0241 76.9793 36.0241 127.5Z"
+                    fill="url(#paint0_linear_109_4)" fill-opacity="0.6" />
+                <path
+                    d="M250.546 127.5C250.546 195.456 195.456 250.546 127.5 250.546C59.5436 250.546 4.4541 195.456 4.4541 127.5C4.4541 59.5437 59.5436 4.45416 127.5 4.45416C195.456 4.45416 250.546 59.5437 250.546 127.5ZM36.024 127.5C36.024 178.021 76.9792 218.976 127.5 218.976C178.021 218.976 218.976 178.021 218.976 127.5C218.976 76.9793 178.021 36.0241 127.5 36.0241C76.9792 36.0241 36.024 76.9793 36.024 127.5Z"
+                    fill="url(#paint1_linear_109_4)" fill-opacity="0.6" />
+                <circle cx="127.5" cy="127.5" r="88.5262" fill="url(#paint2_linear_109_4)" fill-opacity="0.6" />
+                <path
+                    d="M255 127.5C255 197.916 197.916 255 127.5 255C57.0837 255 0 197.916 0 127.5C0 57.0837 57.0837 0 127.5 0C197.916 0 255 57.0837 255 127.5ZM3.83912 127.5C3.83912 195.796 59.204 251.161 127.5 251.161C195.796 251.161 251.161 195.796 251.161 127.5C251.161 59.204 195.796 3.83912 127.5 3.83912C59.204 3.83912 3.83912 59.204 3.83912 127.5Z"
+                    :fill="getSpeedoColors('speedoOuterCircleColor')" />
+                <path
+                    d="M228.535 197.602C241.226 179.266 248.658 157.806 250.025 135.547C251.392 113.289 246.642 91.0805 236.29 71.3287C225.937 51.5769 210.377 35.0346 191.295 23.4941C172.213 11.9535 150.337 5.85474 128.036 5.8585C105.736 5.86226 83.8616 11.9684 64.7835 23.5154C45.7053 35.0624 30.1507 51.6099 19.8049 71.3652C9.45904 91.1205 4.71643 113.33 6.09089 135.588C7.46535 157.846 14.9045 179.304 27.6023 197.636"
+                    :stroke="getSpeedoColors('innerSmallSpeedoLineColor')" stroke-opacity="0.3" stroke-width="1.2"
+                    stroke-dasharray="1.2 7.2" />
+                <rect x="9.25122" y="162.211" width="7.45922" height="2.15135"
+                    transform="rotate(-17.8345 9.25122 162.211)"
+                    :fill="getSpeedoColors('highlightedSpeedIndicatorsColor')" />
+                <rect opacity="0.55" x="3.78076" y="124.575" width="7.45922" height="2.15135"
+                    transform="rotate(-0.351556 3.78076 124.575)"
+                    :fill="getSpeedoColors('nonHighlightedSpeedIndicatorsColor')" />
+                <rect x="11.4797" y="86.9703" width="7.25946" height="2.14488"
+                    transform="rotate(19.3099 11.4797 86.9703)"
+                    :fill="getSpeedoColors('highlightedSpeedIndicatorsColor')" />
+                <rect opacity="0.55" x="29.7161" y="53.187" width="6.86244" height="2.15135"
+                    transform="rotate(36.4221 29.7161 53.187)"
+                    :fill="getSpeedoColors('nonHighlightedSpeedIndicatorsColor')" />
+                <rect x="57.3521" y="26.6525" width="7.25977" height="2.15135"
+                    transform="rotate(53.5513 57.3521 26.6525)"
+                    :fill="getSpeedoColors('highlightedSpeedIndicatorsColor')" />
+                <rect opacity="0.55" x="90.8833" y="10.1801" width="7.14361" height="2.15135"
+                    transform="rotate(71.7033 90.8833 10.1801)"
+                    :fill="getSpeedoColors('nonHighlightedSpeedIndicatorsColor')" />
+                <path d="M128.725 4.45416L128.725 11.7191L126.574 11.7191L126.574 4.45416L128.725 4.45416Z"
+                    :fill="getSpeedoColors('highlightedSpeedIndicatorsColor')" />
+                <path d="M200.837 27.8052L197.542 33.1834L195.819 31.8947L199.34 27.0209L200.837 27.8052Z"
+                    :fill="getSpeedoColors('highlightedSpeedIndicatorsColor')" />
+                <path opacity="0.55" d="M228.348 55.3578L222.93 59.9083L221.593 57.904L226.938 53.8953L228.348 55.3578Z"
+                    :fill="getSpeedoColors('nonHighlightedSpeedIndicatorsColor')" />
+                <path d="M245.67 89.4075L239.633 91.3101L239.058 89.6946L245.096 87.792L245.67 89.4075Z"
+                    :fill="getSpeedoColors('highlightedSpeedIndicatorsColor')" />
+                <path opacity="0.55" d="M251.657 127.429L244.491 127.389L244.48 125.59L251.645 125.631L251.657 127.429Z"
+                    :fill="getSpeedoColors('nonHighlightedSpeedIndicatorsColor')" />
+                <path d="M246.295 164.855L239.068 162.401L239.59 160.758L246.855 163.127L246.295 164.855Z"
+                    :fill="getSpeedoColors('highlightedSpeedIndicatorsColor')" />
+                <path opacity="0.55" d="M166.808 10.4674L164.791 16.4762L162.857 15.612L164.73 9.89822L166.808 10.4674Z"
+                    :fill="getSpeedoColors('nonHighlightedSpeedIndicatorsColor')" />
+                <defs>
+                    <linearGradient id="paint0_linear_109_4" x1="127.5" y1="4.45416" x2="127.5" y2="250.546"
+                        gradientUnits="userSpaceOnUse">
+                        <stop />
+                        <stop offset="1" stop-opacity="0" />
+                    </linearGradient>
+                    <linearGradient id="paint1_linear_109_4" x1="127.5" y1="4.45416" x2="127.5" y2="250.546"
+                        gradientUnits="userSpaceOnUse">
+                        <stop />
+                        <stop offset="1" stop-opacity="0" />
+                    </linearGradient>
+                    <linearGradient id="paint2_linear_109_4" x1="127.5" y1="38.9738" x2="127.5" y2="216.026"
+                        gradientUnits="userSpaceOnUse">
+                        <stop />
+                        <stop offset="1" stop-opacity="0" />
+                    </linearGradient>
+                </defs>
+            </svg>
+
+            <div class="first-dashboard-speeds">
+                <p class="first-dashboard-speed-1">0</p>
+                <p class="first-dashboard-speed-2">20</p>
+                <p class="first-dashboard-speed-3">40</p>
+                <p class="first-dashboard-speed-4">60</p>
+                <p class="first-dashboard-speed-5">80</p>
+                <p class="first-dashboard-speed-6">100</p>
+                <p class="first-dashboard-speed-7">120</p>
+                <p class="first-dashboard-speed-8">140</p>
+                <p class="first-dashboard-speed-9">160</p>
+                <p class="first-dashboard-speed-10">180</p>
+                <p class="first-dashboard-speed-11">200</p>
+                <p class="first-dashboard-speed-12">220</p>
+                <p class="first-dashboard-speed-13">240</p>
+                <p class="first-dashboard-speed-14">260</p>
+                <p class="first-dashboard-speed-15">300</p>
+            </div>
+            <svg v-if="vehicleType == 'vehicle' || showHudSettings" class="first-signal" viewBox="0 0 18 14" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M8.85566 0.554596C5.35746 0.554596 2.51144 3.40061 2.51144 6.89889C2.51144 10.3971 5.35746 13.243 8.85566 13.243C12.3539 13.243 15.1999 10.3971 15.1999 6.89889C15.2 3.40068 12.3539 0.554596 8.85566 0.554596ZM8.85566 12.1433C5.9639 12.1433 3.61125 9.79073 3.61125 6.89896C3.61125 4.00712 5.9639 1.65448 8.85566 1.65448C11.7474 1.65448 14.1001 4.00712 14.1001 6.89896C14.1001 9.79066 11.7475 12.1433 8.85566 12.1433Z"
+                    :fill="handbrake ? '#FF0000': 'white'" fill-opacity="0.8" />
+                <path
+                    d="M3.55385 1.59723C3.76861 1.38247 3.76861 1.03427 3.55385 0.819514C3.33902 0.604758 2.9909 0.604758 2.77614 0.819514C-0.575934 4.17166 -0.575934 9.62613 2.77614 12.9784C2.88356 13.0858 3.02426 13.1394 3.16503 13.1394C3.30574 13.1394 3.44651 13.0858 3.55385 12.9784C3.76868 12.7636 3.76868 12.4155 3.55393 12.2007C0.630558 9.27728 0.630558 4.5206 3.55385 1.59723Z"
+                    :fill="handbrake ? '#FF0000': 'white'" fill-opacity="0.8" />
+                <path
+                    d="M14.9349 0.819514C14.7201 0.604758 14.372 0.604758 14.1572 0.819514C13.9425 1.03427 13.9425 1.38247 14.1572 1.59723C17.0807 4.5206 17.0807 9.27728 14.1572 12.2007C13.9425 12.4155 13.9425 12.7637 14.1572 12.9784C14.2646 13.0857 14.4054 13.1394 14.5461 13.1394C14.6868 13.1394 14.8276 13.0858 14.935 12.9784C18.2872 9.62606 18.2872 4.17166 14.9349 0.819514Z"
+                    :fill="handbrake ? '#FF0000': 'white'" fill-opacity="0.8" />
+                <path
+                    d="M8.85548 8.58539C9.15925 8.58539 9.40538 8.33917 9.40538 8.03548V3.35175C9.40538 3.04806 9.15925 2.80185 8.85548 2.80185C8.55171 2.80185 8.30557 3.04806 8.30557 3.35175V8.03548C8.30557 8.33917 8.55178 8.58539 8.85548 8.58539Z"
+                    :fill="handbrake ? '#FF0000': 'white'" fill-opacity="0.8" />
+                <path
+                    d="M8.85558 10.446C9.23335 10.446 9.53959 10.1398 9.53959 9.76201C9.53959 9.38424 9.23335 9.078 8.85558 9.078C8.47781 9.078 8.17157 9.38424 8.17157 9.76201C8.17157 10.1398 8.47781 10.446 8.85558 10.446Z"
+                    :fill="handbrake ? '#FF0000': 'white'" fill-opacity="0.8" />
+            </svg>
+            <svg v-if="vehicleType == 'vehicle' || showHudSettings" class="first-right-signal" viewBox="0 0 8 6"
+                fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M0.476242 1.50061H4.4549V0.500745C4.45475 0.405666 4.48043 0.312514 4.52893 0.232217C4.57744 0.151919 4.64675 0.0878057 4.72873 0.0473971C4.81072 0.00698845 4.90198 -0.00803975 4.99182 0.00407543C5.08166 0.0161906 5.16634 0.0549468 5.23593 0.115798L7.65524 2.23051C7.7631 2.32433 7.84992 2.44197 7.90951 2.57505C7.9691 2.70812 8 2.85336 8 3.0004C8 3.14745 7.9691 3.29268 7.90951 3.42576C7.84992 3.55884 7.7631 3.67648 7.65524 3.7703L5.23593 5.88501C5.15025 5.95954 5.04241 6.00022 4.93114 5.99999C4.86215 6.00038 4.7939 5.98503 4.73112 5.955C4.64845 5.91484 4.57849 5.85063 4.52953 5.77C4.48057 5.68936 4.45467 5.59568 4.4549 5.50006V4.5002H0.476242C0.349935 4.5002 0.2288 4.44753 0.139487 4.35377C0.0501742 4.26002 0 4.13286 0 4.00027V2.00054C0 1.86795 0.0501742 1.74079 0.139487 1.64703C0.2288 1.55328 0.349935 1.50061 0.476242 1.50061Z"
+                    fill="white"
+                    :fill-opacity="vehicleSignalStatus.rightindicatorstatus || vehicleSignalStatus.hazardlightstatus ? '0.8' : '0.16'" />
+            </svg>
+            <svg v-if="vehicleType == 'vehicle' || showHudSettings" class="first-left-signal" viewBox="0 0 8 6"
+                fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M7.52376 1.50061H3.5451V0.500745C3.54525 0.405666 3.51957 0.312514 3.47107 0.232217C3.42256 0.151919 3.35325 0.0878057 3.27127 0.0473971C3.18928 0.00698845 3.09802 -0.00803975 3.00818 0.00407543C2.91834 0.0161906 2.83366 0.0549468 2.76407 0.115798L0.344757 2.23051C0.236898 2.32433 0.150079 2.44197 0.0904876 2.57505C0.0308964 2.70812 0 2.85336 0 3.0004C0 3.14745 0.0308964 3.29268 0.0904876 3.42576C0.150079 3.55884 0.236898 3.67648 0.344757 3.7703L2.76407 5.88501C2.84975 5.95954 2.95759 6.00022 3.06886 5.99999C3.13785 6.00038 3.2061 5.98503 3.26888 5.955C3.35155 5.91484 3.42151 5.85063 3.47047 5.77C3.51943 5.68936 3.54533 5.59568 3.5451 5.50006V4.5002H7.52376C7.65007 4.5002 7.7712 4.44753 7.86051 4.35377C7.94983 4.26002 8 4.13286 8 4.00027V2.00054C8 1.86795 7.94983 1.74079 7.86051 1.64703C7.7712 1.55328 7.65007 1.50061 7.52376 1.50061Z"
+                    fill="white"
+                    :fill-opacity="vehicleSignalStatus.leftindicatorstatus || vehicleSignalStatus.hazardlightstatus ? '0.8' : '0.16'" />
+            </svg>
+            <svg class="first-seatbelt" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M19.7694 15.3848C18.5424 14.354 17.1811 13.562 15.7522 12.9811C15.5102 11.068 14.961 9.3737 14.1889 8.05832L18.1527 4.09459C18.479 3.76826 18.479 3.24075 18.1527 2.91441C17.8263 2.58808 17.2988 2.58808 16.9725 2.91441L13.184 6.70204C12.9119 6.40991 12.6257 6.14868 12.3244 5.93584C12.9754 5.3257 13.3894 4.46521 13.3894 3.50452C13.3894 1.66331 11.892 0.165955 10.0508 0.165955C8.20959 0.165955 6.71223 1.66331 6.71223 3.50452C6.71223 4.46521 7.12621 5.3257 7.77723 5.93584C6.04951 7.15444 4.7675 9.73932 4.35435 12.9485C2.90958 13.5328 1.54243 14.3382 0.323838 15.3932C-0.0250303 15.6945 -0.06345 16.222 0.238704 16.5701C0.539176 16.9189 1.06751 16.9573 1.41555 16.6552C2.27773 15.9098 3.22257 15.3031 4.21914 14.8231C4.21663 14.9458 4.2083 15.0652 4.2083 15.1895C4.2083 16.7244 4.40361 18.2034 4.79004 19.5873C4.89019 19.9478 5.21903 20.1974 5.5938 20.1974H8.3815C8.84222 20.1974 9.21613 19.8235 9.21613 19.3628L9.20944 16.3764C9.67349 15.9132 10.4289 15.9132 10.8854 16.3597V19.3627C10.8854 19.8234 11.2593 20.1974 11.72 20.1974H14.5077C14.8825 20.1974 15.2113 19.9478 15.3115 19.5872C15.6979 18.2034 15.8932 16.7244 15.8932 15.1895C15.8932 15.0768 15.8857 14.9683 15.884 14.8565C16.8756 15.3339 17.8238 15.9306 18.6943 16.6635C18.8512 16.7945 19.0415 16.8588 19.2318 16.8588C19.4697 16.8588 19.705 16.7578 19.8711 16.5616C20.1675 16.2086 20.1216 15.682 19.7694 15.3848ZM7.88318 12.0037C7.29808 12.0855 6.71552 12.1898 6.14376 12.34C6.74052 9.17089 8.28713 6.84309 10.0507 6.84309C10.7577 6.84309 11.4296 7.21617 12.0196 7.86637L7.88318 12.0037ZM10.3863 11.861L12.9653 9.28192C13.4035 10.1483 13.7466 11.2033 13.9636 12.3693C12.7917 12.0554 11.5898 11.891 10.3863 11.861Z"
+                    :fill="seatbeltEnabled ? 'white': '#FF0000'" fill-opacity="0.8" />
+            </svg>
+            <svg class="first-fuel" viewBox="0 0 15 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M14.3973 3.08794L13.1491 1.85581C13.1011 1.80842 13.0441 1.77083 12.9814 1.74518C12.9186 1.71953 12.8514 1.70634 12.7835 1.70634C12.7156 1.70634 12.6484 1.71955 12.5857 1.7452C12.5229 1.77085 12.4659 1.80845 12.4179 1.85584C12.3699 1.90324 12.3318 1.9595 12.3059 2.02143C12.2799 2.08335 12.2665 2.14972 12.2665 2.21674C12.2665 2.28377 12.2799 2.35014 12.3059 2.41206C12.3319 2.47398 12.3699 2.53024 12.418 2.57763L13.6661 3.8097C13.7142 3.85698 13.7524 3.91323 13.7784 3.97518C13.8044 4.03713 13.8177 4.10355 13.8175 4.17061V9.36192C13.8175 9.49728 13.7631 9.62709 13.6661 9.72281C13.5691 9.81852 13.4376 9.87229 13.3005 9.87229C13.1634 9.87229 13.0319 9.81852 12.935 9.72281C12.838 9.62709 12.7835 9.49728 12.7835 9.36192V6.81006C12.7831 6.40413 12.6195 6.01495 12.3287 5.72791C12.038 5.44088 11.6437 5.27941 11.2325 5.27895H10.1985V2.21672C10.1981 1.81079 10.0345 1.42161 9.74374 1.13457C9.45297 0.847535 9.05874 0.686072 8.64754 0.685608H3.47754C3.06634 0.686072 2.67211 0.847535 2.38134 1.13457C2.09058 1.42161 1.92702 1.81079 1.92655 2.21672V11.9138H0.892549C0.755432 11.9138 0.623931 11.9675 0.526975 12.0633C0.430019 12.159 0.375549 12.2888 0.375549 12.4241C0.375549 12.5595 0.430019 12.6893 0.526975 12.785C0.623931 12.8807 0.755432 12.9345 0.892549 12.9345H11.2325C11.3696 12.9345 11.5012 12.8807 11.5981 12.785C11.6951 12.6893 11.7495 12.5595 11.7495 12.4241C11.7495 12.2888 11.6951 12.159 11.5981 12.0633C11.5012 11.9675 11.3696 11.9138 11.2325 11.9138H10.1985V6.29969H11.2325C11.3696 6.29985 11.501 6.35367 11.5979 6.44935C11.6949 6.54503 11.7494 6.67475 11.7495 6.81006V9.36192C11.7495 9.76799 11.9129 10.1574 12.2038 10.4446C12.4947 10.7317 12.8892 10.893 13.3005 10.893C13.7119 10.893 14.1064 10.7317 14.3973 10.4446C14.6881 10.1574 14.8515 9.76799 14.8515 9.36192V4.17061C14.8521 3.96946 14.8122 3.7702 14.7342 3.58436C14.6563 3.39852 14.5417 3.22979 14.3973 3.08794ZM8.13054 6.29969H3.99454C3.85743 6.29969 3.72593 6.24592 3.62897 6.15021C3.53201 6.05449 3.47754 5.92468 3.47754 5.78932C3.47754 5.65396 3.53201 5.52415 3.62897 5.42843C3.72593 5.33272 3.85743 5.27895 3.99454 5.27895H8.13054C8.26765 5.27895 8.39915 5.33272 8.49611 5.42843C8.59307 5.52415 8.64754 5.65396 8.64754 5.78932C8.64754 5.92468 8.59307 6.05449 8.49611 6.15021C8.39915 6.24592 8.26765 6.29969 8.13054 6.29969Z"
+                    :fill="getFuelColor" />
+            </svg>
+            <svg class="first-fuel-bar" :style="{'stroke-dasharray': ''+fuel+' 110', stroke:getFuelColor}"
+                viewBox="0 0 107 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 4.5C22.5 18 75.5 22.5 102 4.5" stroke-width="9" stroke-linecap="round" />
+            </svg>
+            <svg class="first-fuel-back" viewBox="0 0 107 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 4.5C22.5 18 75.5 22.5 102 4.5" stroke-width="9" stroke-linecap="round" />
+            </svg>
+            <svg class="first-engine" viewBox="0 0 19 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M12.9695 3.69843L11.9325 2.77887H10.2176V1.94245H10.7692V0.711792H6.39716V1.94245H6.94879V2.77887H5.16333L4.12627 3.69843H2.49193V4.31378V6.75498H1.26123V5.18432H0.0305634V9.55637H1.26123V7.98564H2.49193V10.4268V11.0422H5.16333L7.32712 12.9607H14.603V3.69843H12.9695Z"
+                    fill="white" :fill-opacity="engineStatus ? '0.8' : '0.24'" />
+                <path
+                    d="M18.2494 4.65438L18.0704 4.35471H15.8338V12.2649H18.0704L18.2494 11.9652C18.3161 11.8537 18.901 10.8029 18.901 8.30981C18.901 5.81671 18.3161 4.76598 18.2494 4.65438Z"
+                    fill="white" :fill-opacity="engineStatus ? '0.8' : '0.24'" />
+            </svg>
+            <svg class="first-lights" viewBox="0 0 17 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M10.9128 9.24353H16.5153V10.4941H10.7211C10.7915 10.1099 10.8576 9.69062 10.9128 9.24353ZM11.0651 6.83625C11.0651 7.0474 11.0613 7.25586 11.0544 7.46151H16.5153V6.21098H11.0544C11.0613 6.41651 11.0651 6.6251 11.0651 6.83625ZM10.7037 3.08464C10.7756 3.46737 10.8437 3.88674 10.901 4.33517H16.5153V3.08464H10.7037ZM8.96817 12.5157C9.00409 12.4115 9.84713 9.92803 9.84713 6.83625C9.84713 3.74447 9.00409 1.26086 8.96817 1.15669L8.81498 0.711792L8.35635 0.741101C8.28213 0.745864 6.51804 0.865911 4.72884 1.63663C2.24089 2.70813 0.925781 4.50614 0.925781 6.83625C0.925781 9.16623 2.24089 10.9642 4.72884 12.0359C6.51804 12.8065 8.28201 12.9266 8.35623 12.9314L8.81498 12.9607L8.96817 12.5157ZM8.6292 6.83625C8.6292 8.953 8.19269 10.7991 7.96088 11.6304C7.3562 11.5466 6.25625 11.3418 5.17427 10.8717C3.16337 9.99751 2.14371 8.63988 2.14371 6.83625C2.14371 5.03262 3.16337 3.67486 5.17427 2.80082C6.25661 2.33041 7.35703 2.12561 7.96136 2.04195C8.19341 2.87141 8.6292 4.71253 8.6292 6.83625Z"
+                    fill="white" :fill-opacity="vehicleLights ? '0.8' : '0.24'" />
+                <path
+                    d="M8.6292 6.83625C8.6292 8.953 8.19269 10.7991 7.96088 11.6304C7.3562 11.5466 6.25625 11.3418 5.17427 10.8717C3.16337 9.99751 2.14371 8.63988 2.14371 6.83625C2.14371 5.03262 3.16337 3.67486 5.17427 2.80082C6.25661 2.33041 7.35703 2.12561 7.96136 2.04195C8.19341 2.87141 8.6292 4.71253 8.6292 6.83625Z"
+                    fill="white" :fill-opacity="vehicleLights ? '0.8' : '0.24'" />
+            </svg>
+            <p class="cruise" v-if="cruise.enabled">LIM</p>
+            <p :style="{color:getSpeedoColors('speedIndicatorColor')}" class="first-speedometer-speed">
+                {{speed.current.toFixed(0)}}</p>
+            <p class="first-speedometer-speed-type">{{hudSettings.speedType == 'kmh' ? 'KM/H' : 'MP/H'}} </p>
+            <div v-if="vehicleType == 'vehicle' || showHudSettings || vehicleType == 'boat'"
+                class="first-needle-wrapper" :style="getNeedleLocation">
+                <svg class="first-needle" viewBox="0 0 10 101" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M0.982443 91.1878C0.95861 96.0801 2.93346 100.056 5.39339 100.068C7.85331 100.08 9.8668 96.1235 9.89063 91.2312C9.91447 86.3388 8.33609 0.976247 5.87617 0.964264C3.41624 0.95228 1.00628 86.2954 0.982443 91.1878Z"
+                        :fill="getSpeedoColors('needleColor')" />
+                </svg>
+            </div>
+            <div v-if="vehicleType == 'vehicle' || showHudSettings || vehicleType == 'boat'"
+                :style="{background:getSpeedoColors('needleCircleColor')}" class="first-needle-circle"></div>
+        </div>
+        <div class="nos-speedometer" :style="getNOSGaugeStyle"
+            v-show="(vehicleType == 'vehicle' || showHudSettings) && !hudSettings.hideNOS && (nitroValue > 0 || showHudSettings) ">
+            <svg class="nos-speedometer-svg" width="81" height="81" viewBox="0 0 81 81" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M77 40.5C77 60.6584 60.6584 77 40.5 77C20.3416 77 4 60.6584 4 40.5C4 20.3416 20.3416 4 40.5 4C60.6584 4 77 20.3416 77 40.5ZM13.3648 40.5C13.3648 55.4863 25.5137 67.6352 40.5 67.6352C55.4863 67.6352 67.6352 55.4863 67.6352 40.5C67.6352 25.5137 55.4863 13.3648 40.5 13.3648C25.5137 13.3648 13.3648 25.5137 13.3648 40.5Z"
+                    fill="url(#paint0_linear_1_71)" fill-opacity="0.6" />
+                <path
+                    d="M81 40.5C81 62.8675 62.8675 81 40.5 81C18.1325 81 0 62.8675 0 40.5C0 18.1325 18.1325 0 40.5 0C62.8675 0 81 18.1325 81 40.5ZM2.75297 40.5C2.75297 61.3471 19.6529 78.247 40.5 78.247C61.3471 78.247 78.247 61.3471 78.247 40.5C78.247 19.6529 61.3471 2.75297 40.5 2.75297C19.6529 2.75297 2.75297 19.6529 2.75297 40.5Z"
+                    :fill="getNitroColors('nosOuterCircle')" />
+                <path
+                    d="M70.1834 62.0453C73.9327 56.6282 76.1283 50.2885 76.5321 43.7128C76.9359 37.1372 75.5327 30.5764 72.4743 24.7413C69.416 18.9062 64.8191 14.0193 59.1819 10.6099C53.5447 7.2006 47.0819 5.39889 40.4939 5.4C33.9059 5.40111 27.4438 7.205 21.8077 10.6162C16.1716 14.0275 11.5764 18.916 8.52004 24.7521C5.46366 30.5882 4.06259 37.1495 4.46863 43.725C4.87468 50.3005 7.07235 56.6395 10.8236 62.0553"
+                    :stroke="getNitroColors('nonHighlitedGaugeLines')" stroke-opacity="0.25" stroke-width="1.2"
+                    stroke-dasharray="1.2 7.2" />
+                <path
+                    d="M70.1834 62.0453C73.9327 56.6282 76.1283 50.2885 76.5321 43.7128C76.9359 37.1372 75.5327 30.5764 72.4743 24.7413C69.416 18.9062 64.8191 14.0193 59.1819 10.6099C53.5447 7.2006 47.0819 5.39889 40.4939 5.4C33.9059 5.40111 27.4438 7.205 21.8077 10.6162C16.1716 14.0275 11.5764 18.916 8.52004 24.7521C5.46366 30.5882 4.06259 37.1495 4.46863 43.725C4.87468 50.3005 7.07235 56.6395 10.8236 62.0553"
+                    :stroke="getNitroColors('highlitedGaugeLines')" stroke-width="1.2" stroke-dasharray="1.2 14" />
+                <defs>
+                    <linearGradient id="paint0_linear_1_71" x1="40.5" y1="4" x2="40.5" y2="77"
+                        gradientUnits="userSpaceOnUse">
+                        <stop />
+                        <stop offset="1" stop-opacity="0" />
+                    </linearGradient>
+                </defs>
+            </svg>
+
+            <div class="nos" style="width:4.3vw; height: 4.3vw;"></div>
+            <p :style="{color:getNitroColors('nitroTextColor')}" class="nos-text">N₂O</p>
+            <div class="nos-needle-wrapper" :style="getNitroNeedleLocation">
+                <svg class="nos-needle" viewBox="0 0 10 101" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M0.982443 91.1878C0.95861 96.0801 2.93346 100.056 5.39339 100.068C7.85331 100.08 9.8668 96.1235 9.89063 91.2312C9.91447 86.3388 8.33609 0.976247 5.87617 0.964264C3.41624 0.95228 1.00628 86.2954 0.982443 91.1878Z"
+                        :fill="getNitroColors('nitroNeedleColor')" />
+                </svg>
+            </div>
+            <div :style="{background:getNitroColors('nitroNeedleCircleColor')}" class="nos-needle-circle"></div>
+        </div>
+        <div class="rpm-speedometer" :style="getRPMGaugeStyle"
+            v-show="(vehicleType == 'vehicle' || showHudSettings) && !hudSettings.hideRPM ">
+            <svg class="svg-rpm-speedometer" width="81" height="81" viewBox="0 0 81 81" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M77 40.5C77 60.6584 60.6584 77 40.5 77C20.3416 77 4 60.6584 4 40.5C4 20.3416 20.3416 4 40.5 4C60.6584 4 77 20.3416 77 40.5ZM13.3648 40.5C13.3648 55.4863 25.5137 67.6352 40.5 67.6352C55.4863 67.6352 67.6352 55.4863 67.6352 40.5C67.6352 25.5137 55.4863 13.3648 40.5 13.3648C25.5137 13.3648 13.3648 25.5137 13.3648 40.5Z"
+                    fill="url(#paint0_linear_1_82)" fill-opacity="0.6" />
+                <path
+                    d="M70.2706 61.6178C74.2149 56.0574 76.5231 49.5035 76.9337 42.6986C77.3444 35.8936 75.841 29.1097 72.594 23.1153L64.3596 27.5757C66.7735 32.0321 67.8912 37.0755 67.5859 42.1345C67.2806 47.1935 65.5646 52.0658 62.6323 56.1996L70.2706 61.6178Z"
+                    fill="url(#paint1_linear_1_82)" fill-opacity="0.6" />
+                <circle cx="40.5" cy="40.5" r="26.5" fill="url(#paint2_linear_1_82)" fill-opacity="0.6" />
+                <path
+                    d="M81 40.5C81 62.8675 62.8675 81 40.5 81C18.1325 81 0 62.8675 0 40.5C0 18.1325 18.1325 0 40.5 0C62.8675 0 81 18.1325 81 40.5ZM2.75297 40.5C2.75297 61.3471 19.6529 78.247 40.5 78.247C61.3471 78.247 78.247 61.3471 78.247 40.5C78.247 19.6529 61.3471 2.75297 40.5 2.75297C19.6529 2.75297 2.75297 19.6529 2.75297 40.5Z"
+                    :fill="getRPMColors('rpmOuterCircle')" />
+                <path
+                    d="M70.1834 62.0453C73.9327 56.6282 76.1283 50.2885 76.5321 43.7128C76.9359 37.1372 75.5327 30.5764 72.4743 24.7413C69.416 18.9062 64.8191 14.0193 59.1819 10.6099C53.5447 7.2006 47.0819 5.39889 40.4939 5.4C33.9059 5.40111 27.4438 7.205 21.8077 10.6162C16.1716 14.0275 11.5764 18.916 8.52004 24.7521C5.46366 30.5882 4.06259 37.1495 4.46863 43.725C4.87468 50.3005 7.07235 56.6395 10.8236 62.0553"
+                    :stroke="getRPMColors('innerSmallRPMLines')" stroke-opacity="0.25" stroke-width="1.2"
+                    stroke-dasharray="1.2 7.2" />
+                <path
+                    d="M70.1834 62.0453C73.9327 56.6282 76.1283 50.2885 76.5321 43.7128C76.9359 37.1372 75.5327 30.5764 72.4743 24.7413C69.416 18.9062 64.8191 14.0193 59.1819 10.6099C53.5447 7.2006 47.0819 5.39889 40.4939 5.4C33.9059 5.40111 27.4438 7.205 21.8077 10.6162C16.1716 14.0275 11.5764 18.916 8.52004 24.7521C5.46366 30.5882 4.06259 37.1495 4.46863 43.725C4.87468 50.3005 7.07235 56.6395 10.8236 62.0553"
+                    :stroke="getRPMColors('highlightedRPMIndicators')" stroke-width="1.2" stroke-dasharray="1.2 14" />
+                <path
+                    d="M16.52 62.112C17.968 62.112 18.8 60.928 18.8 59.2C18.8 57.472 17.968 56.288 16.52 56.288C15.072 56.288 14.24 57.472 14.24 59.2C14.24 60.928 15.072 62.112 16.52 62.112ZM16.52 60.864C15.848 60.864 15.52 60.28 15.52 59.2C15.52 58.12 15.848 57.536 16.52 57.536C17.192 57.536 17.52 58.12 17.52 59.2C17.52 60.28 17.192 60.864 16.52 60.864Z"
+                    :fill="getRPMColors('rpmTextColor')" />
+                <path d="M9.544 40.4L8.08 40.928L8.392 42.024L9.384 41.752V46H10.664V40.4H9.544Z"
+                    :fill="getRPMColors('rpmTextColor')" />
+                <path
+                    d="M12.176 31H15.984V29.768H14.104L15.032 28.832C15.544 28.32 15.904 27.744 15.904 27.072C15.904 25.944 15.008 25.288 14.008 25.288C13.232 25.288 12.48 25.68 12.12 26.512L13.2 27.144C13.352 26.792 13.632 26.536 14.024 26.536C14.4 26.536 14.624 26.776 14.624 27.128C14.624 27.456 14.384 27.784 14.056 28.12L12.176 30.072V31Z"
+                    :fill="getRPMColors('rpmTextColor')" />
+                <path
+                    d="M25.968 16.672L26.936 15.44V14.4H23.336V15.6H25.384L24.368 16.888L24.856 17.616H25.12C25.648 17.616 25.88 17.896 25.88 18.24C25.88 18.584 25.648 18.864 25.12 18.864C24.632 18.864 24.392 18.64 24.264 18.272L23.16 18.912C23.504 19.736 24.272 20.112 25.12 20.112C26.2 20.112 27.16 19.472 27.16 18.24C27.16 17.464 26.656 16.912 25.968 16.672Z"
+                    :fill="getRPMColors('rpmTextColor')" />
+                <path
+                    d="M42.56 12.92H42V11.72H40.704V12.92H39.536L41.32 9.4H39.944L38.16 12.92V14.104H40.704V15H42V14.104H42.56V12.92Z"
+                    :fill="getRPMColors('rpmTextColor')" />
+                <path
+                    d="M55.28 14.368H54.824L54.88 13.6H56.92V12.4H53.68L53.448 15.616H55.2C55.688 15.616 55.92 15.896 55.92 16.24C55.92 16.584 55.688 16.864 55.16 16.864C54.632 16.864 54.392 16.64 54.264 16.272L53.16 16.912C53.504 17.736 54.272 18.112 55.16 18.112C56.24 18.112 57.2 17.472 57.2 16.24C57.2 15.008 56.32 14.368 55.28 14.368Z"
+                    :fill="getRPMColors('rpmTextColor')" />
+                <path
+                    d="M66.456 25.168L67.672 23.4H66.2L64.488 26C64.28 26.312 64.16 26.704 64.16 27.136C64.16 28.296 65 29.112 66.24 29.112C67.472 29.112 68.32 28.296 68.32 27.136C68.32 26.048 67.568 25.256 66.456 25.168ZM66.24 27.912C65.808 27.912 65.44 27.632 65.44 27.136C65.44 26.64 65.808 26.36 66.24 26.36C66.664 26.36 67.04 26.648 67.04 27.136C67.04 27.624 66.664 27.912 66.24 27.912Z"
+                    :fill="getRPMColors('rpmTextColor')" />
+                <path d="M67.08 40.4V41.632H69.336L67.576 46H68.936L70.76 41.472V40.4H67.08Z"
+                    :fill="getRPMColors('rpmTextColor')" />
+                <path
+                    d="M67.624 57.08C67.952 56.824 68.16 56.456 68.16 55.952C68.16 54.864 67.328 54.288 66.296 54.288C65.264 54.288 64.432 54.864 64.432 55.952C64.432 56.456 64.64 56.824 64.968 57.08C64.496 57.384 64.24 57.872 64.24 58.424C64.24 59.448 64.976 60.112 66.296 60.112C67.616 60.112 68.352 59.448 68.352 58.424C68.352 57.872 68.096 57.384 67.624 57.08ZM66.296 55.488C66.656 55.488 66.88 55.72 66.88 56.032C66.88 56.344 66.656 56.576 66.296 56.576C65.936 56.576 65.712 56.344 65.712 56.032C65.712 55.72 65.936 55.488 66.296 55.488ZM66.296 58.912C65.848 58.912 65.52 58.664 65.52 58.24C65.52 57.816 65.848 57.568 66.296 57.568C66.744 57.568 67.072 57.816 67.072 58.24C67.072 58.664 66.744 58.912 66.296 58.912Z"
+                    :fill="getRPMColors('rpmTextColor')" />
+                <defs>
+                    <linearGradient id="paint0_linear_1_82" x1="40.5" y1="4" x2="40.5" y2="77"
+                        gradientUnits="userSpaceOnUse">
+                        <stop />
+                        <stop offset="1" stop-opacity="0" />
+                    </linearGradient>
+                    <linearGradient id="paint1_linear_1_82" x1="40.5" y1="4" x2="40.5" y2="77"
+                        gradientUnits="userSpaceOnUse">
+                        <stop :stop-color="getRPMColors('burnOutWarnColor')" />
+                        <stop offset="1" :stop-color="getRPMColors('burnOutWarnColor')" stop-opacity="0" />
+                    </linearGradient>
+                    <linearGradient id="paint2_linear_1_82" x1="40.5" y1="14" x2="40.5" y2="67"
+                        gradientUnits="userSpaceOnUse">
+                        <stop />
+                        <stop offset="1" stop-opacity="0" />
+                    </linearGradient>
+                </defs>
+            </svg>
+
+            <div class="rpm-needle-wrapper" :style="getRpmNeedleLocation">
+                <svg class="rpm-needle" viewBox="0 0 10 101" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M0.982443 91.1878C0.95861 96.0801 2.93346 100.056 5.39339 100.068C7.85331 100.08 9.8668 96.1235 9.89063 91.2312C9.91447 86.3388 8.33609 0.976247 5.87617 0.964264C3.41624 0.95228 1.00628 86.2954 0.982443 91.1878Z"
+                        :fill="getRPMColors('rpmNeedle')" />
+                </svg>
+            </div>
+            <div class="rpm-needle-circle" :style="{background:getRPMColors('rpmNeedleCircle')}"></div>
+            <div class="first-speedo-rpm-text">x1000 rpm</div>
+        </div>
+        <transition name="scaleupoldschool">
+            <oldschoolhud :cruise="cruise" :vehicleSignals="vehicleSignalStatus" :fuel="fuel" :nitroneedle="nitroNeedle"
+                :handbrake="handbrake" :engineStatus="engineStatus" :vehicleLights="vehicleLights"
+                :seatbeltEnabled="seatbeltEnabled" :speed="speed" v-if="vehicleType == 'muscle' && !showHudSettings">
+            </oldschoolhud>
+        </transition>
+        <transition name="scaleupoldschool">
+            <driftspeedo :abs="abs" :cruise="cruise" :vehicleSignals="vehicleSignalStatus" :fuel="fuel"
+                :nitroneedle="nitroNeedle" :handbrake="handbrake" :engineStatus="engineStatus"
+                :vehicleLights="vehicleLights" :seatbeltEnabled="seatbeltEnabled" :speed="speed"
+                v-if="vehicleType == 'driftmode' && !showHudSettings"></driftspeedo>
+        </transition>
+        <transition name="scaleupoldschool">
+            <sportspeedo :cruise="cruise" :vehicleSignals="vehicleSignalStatus" :fuel="fuel" :nitroneedle="nitroNeedle"
+                :handbrake="handbrake" :engineStatus="engineStatus" :vehicleLights="vehicleLights"
+                :seatbeltEnabled="seatbeltEnabled" :speed="speed" v-if="vehicleType == 'sportmode' && !showHudSettings">
+            </sportspeedo>
+        </transition>
+
+
+        <transition name="scaleupoldschool">
+            <superspeedometer :cruise="cruise" :vehicleSignals="vehicleSignalStatus" :fuel="fuel"
+                :nitroneedle="nitroNeedle" :handbrake="handbrake" :engineStatus="engineStatus"
+                :vehicleLights="vehicleLights" :seatbeltEnabled="seatbeltEnabled" :speed="speed"
+                v-if="vehicleType == 'super' && !showHudSettings"></superspeedometer>
+        </transition>
+        <div class="helicopter-wrapper" :style="getHeliSpeedoStyle" v-if="vehicleType == 'plane' && !showHudSettings">
+            <div class="helicopter-center" :style="getHeliNeedleLocation">
+                <div class="helicopter-balance"></div>
+            </div>
+            <svg class="helicopter-bar" :style="getHeliSpeedo" viewBox="0 0 247 194" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <mask id="path-1-inside-1_1_335" fill="white">
+                    <path
+                        d="M22.3386 193.547C9.56373 175.098 2.07739 153.507 0.689621 131.109C-0.698148 108.712 4.0655 86.3615 14.4651 66.4764C24.8647 46.5913 40.5043 29.9287 59.6915 18.2917C78.8788 6.65475 100.883 0.486428 123.323 0.454228C145.764 0.422028 167.786 6.52717 187.006 18.1091C206.227 29.6909 221.914 46.3085 232.371 66.1637C242.827 86.0189 247.655 108.356 246.332 130.757C245.008 153.158 237.584 174.771 224.862 193.257L198.855 175.359C208.313 161.616 213.833 145.549 214.817 128.895C215.801 112.241 212.211 95.6355 204.438 80.8745C196.664 66.1136 185.001 53.7596 170.712 45.1493C156.423 36.5389 140.052 32.0002 123.369 32.0241C106.686 32.0481 90.3273 36.6338 76.0629 45.2851C61.7985 53.9364 50.1716 66.3238 42.4402 81.107C34.7089 95.8902 31.1674 112.506 32.1991 129.157C33.2308 145.808 38.7964 161.86 48.2936 175.575L22.3386 193.547Z" />
+                </mask>
+                <path
+                    d="M22.3386 193.547C9.56373 175.098 2.07739 153.507 0.689621 131.109C-0.698148 108.712 4.0655 86.3615 14.4651 66.4764C24.8647 46.5913 40.5043 29.9287 59.6915 18.2917C78.8788 6.65475 100.883 0.486428 123.323 0.454228C145.764 0.422028 167.786 6.52717 187.006 18.1091C206.227 29.6909 221.914 46.3085 232.371 66.1637C242.827 86.0189 247.655 108.356 246.332 130.757C245.008 153.158 237.584 174.771 224.862 193.257L198.855 175.359C208.313 161.616 213.833 145.549 214.817 128.895C215.801 112.241 212.211 95.6355 204.438 80.8745C196.664 66.1136 185.001 53.7596 170.712 45.1493C156.423 36.5389 140.052 32.0002 123.369 32.0241C106.686 32.0481 90.3273 36.6338 76.0629 45.2851C61.7985 53.9364 50.1716 66.3238 42.4402 81.107C34.7089 95.8902 31.1674 112.506 32.1991 129.157C33.2308 145.808 38.7964 161.86 48.2936 175.575L22.3386 193.547Z"
+                    stroke="url(#paint0_linear_1_335)" stroke-width="100" mask="url(#path-1-inside-1_1_335)" />
+                <defs>
+                    <linearGradient id="paint0_linear_1_335" x1="123.5" y1="0.454102" x2="123.5" y2="246.546"
+                        gradientUnits="userSpaceOnUse">
+                        <stop stop-color="white" />
+                        <stop offset="0.895849" stop-opacity="0" />
+                    </linearGradient>
+                </defs>
+            </svg>
+        </div>
+        <div class="boat-wrapper" v-if="vehicleType == 'boat'  && !showHudSettings">
+            <div class="compass-speedometer">
+                <div class="compass-needle-wrapper" :style="getCompassNeedleLocation">
+                    <svg class="compass-needle" viewBox="0 0 10 101" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+                        <path
+                            d="M0.982443 91.1878C0.95861 96.0801 2.93346 100.056 5.39339 100.068C7.85331 100.08 9.8668 96.1235 9.89063 91.2312C9.91447 86.3388 8.33609 0.976247 5.87617 0.964264C3.41624 0.95228 1.00628 86.2954 0.982443 91.1878Z"
+                            fill="#FF4848" />
+                    </svg>
+                </div>
+                <div class="compass-needle-circle">{{speed.headingValue.toFixed(0)}}°</div>
+            </div>
+            <div class="wind-speedometer">
+                <div class="wind" style="width:4.3vw; height: 4.3vw;"></div>
+                <p class="wind-text-1">0</p>
+                <p class="wind-text-2">1</p>
+                <p class="wind-text-3">2</p>
+                <p class="wind-text-4">3</p>
+                <p class="wind-text-5">4</p>
+                <p class="wind-text-6">5</p>
+                <p class="wind-text-7">6</p>
+                <p class="wind-text-8">7</p>
+                <p class="wind-text-9">8</p>
+                <p class="wind-text-10">9</p>
+                <p class="wind-text-11">10</p>
+
+                <div class="wind-needle-wrapper" :style="getWindNeedleLocation">
+                    <svg class="wind-needle" viewBox="0 0 10 101" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M0.982443 91.1878C0.95861 96.0801 2.93346 100.056 5.39339 100.068C7.85331 100.08 9.8668 96.1235 9.89063 91.2312C9.91447 86.3388 8.33609 0.976247 5.87617 0.964264C3.41624 0.95228 1.00628 86.2954 0.982443 91.1878Z"
+                            fill="#FF4848" />
+                    </svg>
+                </div>
+                <div class="wind-needle-circle"></div>
+            </div>
+        </div>
+        <div :style="getSirenStyle" class="police-wrapper"
+            v-if="lightData.inPoliceVehicle && lightData.sirenOn && vehicleType == 'vehicle'">
+            <div class="p-left-siren-wrapper">
+                <div class="p-left-siren-1"></div>
+                <div class="p-left-siren-2"></div>
+            </div>
+            <div class="p-right-siren-wrapper">
+                <div class="p-right-siren-1"></div>
+                <div class="p-right-siren-2"></div>
+            </div>
+            <div class="p-top-siren-wrapper">
+                <div class="p-top-siren-1"></div>
+                <div class="p-top-siren-2"></div>
+            </div>
+            <div class="p-bottom-siren-wrapper">
+                <div class="p-bottom-siren-1"></div>
+                <div class="p-bottom-siren-2"></div>
+            </div>
+        </div>
+        <div  :style="getSirenStyle" class="ambulance-wrapper" v-if="lightData.inAmbulanceVehicle && lightData.sirenOn && vehicleType == 'vehicle'">
+            <div class="a-left-siren-wrapper">
+                <div class="a-left-siren-1"></div>
+                <div class="a-left-siren-2"></div>
+            </div>
+            <div class="a-right-siren-wrapper">
+                <div class="a-right-siren-1"></div>
+                <div class="a-right-siren-2"></div>
+            </div>
+            <div class="a-top-siren-wrapper">
+                <div class="a-top-siren-1"></div>
+                <div class="a-top-siren-2"></div>
+            </div>
+            <div class="a-bottom-siren-wrapper">
+                <div class="a-bottom-siren-1"></div>
+                <div class="a-bottom-siren-2"></div>
+            </div>
+        </div>
+        <div class="bike-wrapper" v-if="vehicleType == 'bike'  && !showHudSettings">
+            <img src="./app/pages/speedometer/images/bike-icon.svg" class="bike-icon">
+            <svg class="bike-bar-front" :style="{'stroke-dasharray': ''+getBikeSpeedometerProgress+' 700'}"
+                viewBox="0 0 138 118" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <mask id="path-1-inside-1_1_412" fill="white">
+                    <path
+                        d="M20.2096 117.79C10.5598 108.141 3.9882 95.8459 1.32582 82.4612C-1.33656 69.0765 0.0298657 55.2029 5.25231 42.5948C10.4748 29.9867 19.3187 19.2104 30.6657 11.6286C42.0126 4.04678 55.3531 -1.62738e-07 69 0C82.6469 1.62738e-07 95.9874 4.04678 107.334 11.6286C118.681 19.2104 127.525 29.9867 132.748 42.5948C137.97 55.2029 139.337 69.0765 136.674 82.4612C134.012 95.8459 127.44 108.141 117.79 117.79L110.785 110.785C119.049 102.521 124.677 91.9914 126.957 80.5285C129.238 69.0656 128.067 57.1839 123.595 46.3861C119.122 35.5883 111.548 26.3592 101.83 19.866C92.1125 13.3728 80.6875 9.90707 69 9.90707C57.3125 9.90707 45.8875 13.3728 36.1697 19.866C26.4519 26.3592 18.8779 35.5883 14.4052 46.3861C9.93264 57.1839 8.76241 69.0656 11.0425 80.5285C13.3226 91.9914 18.9507 102.521 27.215 110.785L20.2096 117.79Z"
+                        stroke-linecap="round" />
+                </mask>
+                <path
+                    d="M20.2096 117.79C10.5598 108.141 3.9882 95.8459 1.32582 82.4612C-1.33656 69.0765 0.0298657 55.2029 5.25231 42.5948C10.4748 29.9867 19.3187 19.2104 30.6657 11.6286C42.0126 4.04678 55.3531 -1.62738e-07 69 0C82.6469 1.62738e-07 95.9874 4.04678 107.334 11.6286C118.681 19.2104 127.525 29.9867 132.748 42.5948C137.97 55.2029 139.337 69.0765 136.674 82.4612C134.012 95.8459 127.44 108.141 117.79 117.79L110.785 110.785C119.049 102.521 124.677 91.9914 126.957 80.5285C129.238 69.0656 128.067 57.1839 123.595 46.3861C119.122 35.5883 111.548 26.3592 101.83 19.866C92.1125 13.3728 80.6875 9.90707 69 9.90707C57.3125 9.90707 45.8875 13.3728 36.1697 19.866C26.4519 26.3592 18.8779 35.5883 14.4052 46.3861C9.93264 57.1839 8.76241 69.0656 11.0425 80.5285C13.3226 91.9914 18.9507 102.521 27.215 110.785L20.2096 117.79Z"
+                    stroke="#7FFF00" stroke-width="100" stroke-linecap="round" mask="url(#path-1-inside-1_1_412)" />
+            </svg>
+            <svg class="bike-bar-back" viewBox="0 0 138 118" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <mask id="path-1-inside-1_1_412" fill="white">
+                    <path
+                        d="M20.2096 117.79C10.5598 108.141 3.9882 95.8459 1.32582 82.4612C-1.33656 69.0765 0.0298657 55.2029 5.25231 42.5948C10.4748 29.9867 19.3187 19.2104 30.6657 11.6286C42.0126 4.04678 55.3531 -1.62738e-07 69 0C82.6469 1.62738e-07 95.9874 4.04678 107.334 11.6286C118.681 19.2104 127.525 29.9867 132.748 42.5948C137.97 55.2029 139.337 69.0765 136.674 82.4612C134.012 95.8459 127.44 108.141 117.79 117.79L110.785 110.785C119.049 102.521 124.677 91.9914 126.957 80.5285C129.238 69.0656 128.067 57.1839 123.595 46.3861C119.122 35.5883 111.548 26.3592 101.83 19.866C92.1125 13.3728 80.6875 9.90707 69 9.90707C57.3125 9.90707 45.8875 13.3728 36.1697 19.866C26.4519 26.3592 18.8779 35.5883 14.4052 46.3861C9.93264 57.1839 8.76241 69.0656 11.0425 80.5285C13.3226 91.9914 18.9507 102.521 27.215 110.785L20.2096 117.79Z"
+                        stroke-linecap="round" />
+                </mask>
+                <path
+                    d="M20.2096 117.79C10.5598 108.141 3.9882 95.8459 1.32582 82.4612C-1.33656 69.0765 0.0298657 55.2029 5.25231 42.5948C10.4748 29.9867 19.3187 19.2104 30.6657 11.6286C42.0126 4.04678 55.3531 -1.62738e-07 69 0C82.6469 1.62738e-07 95.9874 4.04678 107.334 11.6286C118.681 19.2104 127.525 29.9867 132.748 42.5948C137.97 55.2029 139.337 69.0765 136.674 82.4612C134.012 95.8459 127.44 108.141 117.79 117.79L110.785 110.785C119.049 102.521 124.677 91.9914 126.957 80.5285C129.238 69.0656 128.067 57.1839 123.595 46.3861C119.122 35.5883 111.548 26.3592 101.83 19.866C92.1125 13.3728 80.6875 9.90707 69 9.90707C57.3125 9.90707 45.8875 13.3728 36.1697 19.866C26.4519 26.3592 18.8779 35.5883 14.4052 46.3861C9.93264 57.1839 8.76241 69.0656 11.0425 80.5285C13.3226 91.9914 18.9507 102.521 27.215 110.785L20.2096 117.79Z"
+                    stroke="#7FFF0014" stroke-width="100" stroke-linecap="round" mask="url(#path-1-inside-1_1_412)" />
+            </svg>
+            <p class="bike-watch">{{clock.hours}}:{{clock.minutes}}</p>
+            <p class="bike-speed">{{speed.current.toFixed(0)}}</p>
+            <p class="bike-speed-type">{{hudSettings.speedType == 'kmh' ? 'kmh' : 'mph'}}</p>
+            <!-- <svg class="kcal-bar-front" viewBox="0 0 138 118" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <mask id="path-1-inside-1_1_412" fill="white">
+                <path d="M20.2096 117.79C10.5598 108.141 3.9882 95.8459 1.32582 82.4612C-1.33656 69.0765 0.0298657 55.2029 5.25231 42.5948C10.4748 29.9867 19.3187 19.2104 30.6657 11.6286C42.0126 4.04678 55.3531 -1.62738e-07 69 0C82.6469 1.62738e-07 95.9874 4.04678 107.334 11.6286C118.681 19.2104 127.525 29.9867 132.748 42.5948C137.97 55.2029 139.337 69.0765 136.674 82.4612C134.012 95.8459 127.44 108.141 117.79 117.79L110.785 110.785C119.049 102.521 124.677 91.9914 126.957 80.5285C129.238 69.0656 128.067 57.1839 123.595 46.3861C119.122 35.5883 111.548 26.3592 101.83 19.866C92.1125 13.3728 80.6875 9.90707 69 9.90707C57.3125 9.90707 45.8875 13.3728 36.1697 19.866C26.4519 26.3592 18.8779 35.5883 14.4052 46.3861C9.93264 57.1839 8.76241 69.0656 11.0425 80.5285C13.3226 91.9914 18.9507 102.521 27.215 110.785L20.2096 117.79Z" stroke-linecap="round"/>
+                </mask>
+                <path d="M20.2096 117.79C10.5598 108.141 3.9882 95.8459 1.32582 82.4612C-1.33656 69.0765 0.0298657 55.2029 5.25231 42.5948C10.4748 29.9867 19.3187 19.2104 30.6657 11.6286C42.0126 4.04678 55.3531 -1.62738e-07 69 0C82.6469 1.62738e-07 95.9874 4.04678 107.334 11.6286C118.681 19.2104 127.525 29.9867 132.748 42.5948C137.97 55.2029 139.337 69.0765 136.674 82.4612C134.012 95.8459 127.44 108.141 117.79 117.79L110.785 110.785C119.049 102.521 124.677 91.9914 126.957 80.5285C129.238 69.0656 128.067 57.1839 123.595 46.3861C119.122 35.5883 111.548 26.3592 101.83 19.866C92.1125 13.3728 80.6875 9.90707 69 9.90707C57.3125 9.90707 45.8875 13.3728 36.1697 19.866C26.4519 26.3592 18.8779 35.5883 14.4052 46.3861C9.93264 57.1839 8.76241 69.0656 11.0425 80.5285C13.3226 91.9914 18.9507 102.521 27.215 110.785L20.2096 117.79Z" stroke="#7FFF00" stroke-width="100" stroke-linecap="round" mask="url(#path-1-inside-1_1_412)"/>
+            </svg>
+            <svg class="kcal-bar-back" viewBox="0 0 138 118" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <mask id="path-1-inside-1_1_412" fill="white">
+                <path d="M20.2096 117.79C10.5598 108.141 3.9882 95.8459 1.32582 82.4612C-1.33656 69.0765 0.0298657 55.2029 5.25231 42.5948C10.4748 29.9867 19.3187 19.2104 30.6657 11.6286C42.0126 4.04678 55.3531 -1.62738e-07 69 0C82.6469 1.62738e-07 95.9874 4.04678 107.334 11.6286C118.681 19.2104 127.525 29.9867 132.748 42.5948C137.97 55.2029 139.337 69.0765 136.674 82.4612C134.012 95.8459 127.44 108.141 117.79 117.79L110.785 110.785C119.049 102.521 124.677 91.9914 126.957 80.5285C129.238 69.0656 128.067 57.1839 123.595 46.3861C119.122 35.5883 111.548 26.3592 101.83 19.866C92.1125 13.3728 80.6875 9.90707 69 9.90707C57.3125 9.90707 45.8875 13.3728 36.1697 19.866C26.4519 26.3592 18.8779 35.5883 14.4052 46.3861C9.93264 57.1839 8.76241 69.0656 11.0425 80.5285C13.3226 91.9914 18.9507 102.521 27.215 110.785L20.2096 117.79Z" stroke-linecap="round"/>
+                </mask>
+                <path d="M20.2096 117.79C10.5598 108.141 3.9882 95.8459 1.32582 82.4612C-1.33656 69.0765 0.0298657 55.2029 5.25231 42.5948C10.4748 29.9867 19.3187 19.2104 30.6657 11.6286C42.0126 4.04678 55.3531 -1.62738e-07 69 0C82.6469 1.62738e-07 95.9874 4.04678 107.334 11.6286C118.681 19.2104 127.525 29.9867 132.748 42.5948C137.97 55.2029 139.337 69.0765 136.674 82.4612C134.012 95.8459 127.44 108.141 117.79 117.79L110.785 110.785C119.049 102.521 124.677 91.9914 126.957 80.5285C129.238 69.0656 128.067 57.1839 123.595 46.3861C119.122 35.5883 111.548 26.3592 101.83 19.866C92.1125 13.3728 80.6875 9.90707 69 9.90707C57.3125 9.90707 45.8875 13.3728 36.1697 19.866C26.4519 26.3592 18.8779 35.5883 14.4052 46.3861C9.93264 57.1839 8.76241 69.0656 11.0425 80.5285C13.3226 91.9914 18.9507 102.521 27.215 110.785L20.2096 117.79Z" stroke="#7FFF0014" stroke-width="100" stroke-linecap="round" mask="url(#path-1-inside-1_1_412)"/>
+            </svg>
+            <p class="kcal">850</p>
+            <p class="kcal-type">kcal</p> -->
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,1321 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+
+.speedometer-wrapper {
+    position: absolute;
+    /* border: 0.0625rem solid red; */
+    bottom: 0;
+    left: 71vw;
+    display: block !important;
+
+}
+
+.speedometer-relative-wrapper {
+    position: relative;
+
+}
+
+.speedometer-relative-wrapper.hovered::after {
+    content: "";
+    width: 34.75rem;
+    height: 26rem;
+    border: 0.125rem solid white;
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+
+}
+
+.first-speedometer {
+    position: absolute;
+    left: 7vw;
+    bottom: 1.5vw;
+    width: 15.2813vw;
+    height: 15.2813vw;
+    /* background: url("./images/speedometer.svg"); */
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform-origin: center;
+    /* border: 0.0625rem solid blue; */
+}
+
+.first-speedometer .speedo-svg {
+    left: 7vw;
+    bottom: 1.5vw;
+    width: 100%;
+    height: 100%;
+    /* background: url("./images/speedometer.svg"); */
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform-origin: bottom;
+    /* border: 0.0625rem solid blue; */
+}
+
+.first-needle-wrapper {
+    position: absolute;
+    left: 6.84vw;
+    top: 1.4vw;
+    width: 1.5208vw;
+    height: 6.2604vw;
+    transform: rotate(-124deg);
+    transform-origin: bottom;
+    transition: all 0.2s linear 0s;
+}
+
+.first-needle {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+@-webkit-keyframes move {
+    0% {
+        transform: rotate(-124deg);
+    }
+
+    100% {
+        transform: rotate(124deg);
+    }
+}
+
+.first-needle-circle {
+    position: absolute;
+    width: 1.5177vw;
+    height: 1.5177vw;
+    background: #FF4848;
+    box-shadow: 0rem 0rem 0.4375rem #000000;
+    transform: matrix(-0.36, 0.93, 0.93, 0.36, 0, 0);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.first-speedometer-speed {
+    position: absolute;
+    width: 2vw;
+    text-align: center;
+    font-family: "Gilroy";
+    font-style: normal;
+    font-weight: 800;
+    font-size: 1.1458vw;
+    color: #FFFFFF;
+    top: 29%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+}
+
+.cruise {
+    position: absolute;
+    width: 2vw;
+    text-align: center;
+    font-family: "Gilroy";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 0.7vw;
+    color: #42FF00;
+    top: 21%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+}
+
+.first-dashboard-speeds {
+    position: absolute;
+    z-index: 12321;
+    top: .525vw;
+}
+
+.first-speedometer-speed-type {
+    position: absolute;
+    font-family: "Gilroy";
+
+    width: 2vw;
+    text-align: center;
+    font-weight: 800;
+    font-size: .4646vw;
+    color: rgba(255, 255, 255, 0.5);
+    top: 36.5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+}
+
+.first-dashboard-speed-1 {
+    position: absolute;
+    left: 2vw;
+    top: 10.5vw;
+    font-family: "Gilroy";
+    font-style: normal;
+    font-weight: 800;
+    font-size: .725vw;
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.first-dashboard-speed-2 {
+    position: absolute;
+    left: 1.4vw;
+    top: 8.45vw;
+    font-family: "Gilroy";
+    font-style: normal;
+    font-weight: 800;
+    font-size: .725vw;
+    color: rgb(255, 255, 255);
+}
+
+.first-dashboard-speed-3 {
+    position: absolute;
+    left: 1vw;
+    top: 6.5vw;
+    font-family: "Gilroy";
+    font-style: normal;
+    font-weight: 800;
+    font-size: .725vw;
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.first-dashboard-speed-4 {
+    position: absolute;
+    left: 1.4vw;
+    top: 4.6vw;
+    font-family: "Gilroy";
+    font-style: normal;
+    font-weight: 800;
+    font-size: .725vw;
+    color: rgb(255, 255, 255);
+}
+
+.first-dashboard-speed-5 {
+    position: absolute;
+    left: 2.35vw;
+    top: 3vw;
+    font-family: "Gilroy";
+    font-style: normal;
+    font-weight: 800;
+    font-size: .725vw;
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.first-dashboard-speed-6 {
+    position: absolute;
+    left: 3.7vw;
+    top: 1.6vw;
+    font-family: "Gilroy";
+    font-style: normal;
+    font-weight: 800;
+    font-size: .725vw;
+    color: rgb(255, 255, 255);
+}
+
+.first-dashboard-speed-7 {
+    position: absolute;
+    left: 5.25vw;
+    top: .75vw;
+    font-family: "Gilroy";
+    font-style: normal;
+    font-weight: 800;
+    font-size: .725vw;
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.first-dashboard-speed-8 {
+    position: absolute;
+    left: 7.1vw;
+    top: 0.5vw;
+    font-family: "Gilroy";
+    font-style: normal;
+    font-weight: 800;
+    font-size: .725vw;
+    color: rgb(255, 255, 255);
+}
+
+.first-dashboard-speed-9 {
+    position: absolute;
+    left: 8.9vw;
+    top: .7vw;
+    font-family: "Gilroy";
+    font-style: normal;
+    font-weight: 800;
+    font-size: .725vw;
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.first-dashboard-speed-10 {
+    position: absolute;
+    left: 10.6vw;
+    top: 1.5vw;
+    font-family: "Gilroy";
+    font-style: normal;
+    font-weight: 800;
+    font-size: .725vw;
+    color: rgb(255, 255, 255);
+}
+
+.first-dashboard-speed-11 {
+    position: absolute;
+    left: 11.7vw;
+    top: 2.9vw;
+    font-family: "Gilroy";
+    font-style: normal;
+    font-weight: 800;
+    font-size: .725vw;
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.first-dashboard-speed-12 {
+    position: absolute;
+    left: 12.6vw;
+    top: 4.75vw;
+    font-family: "Gilroy";
+    font-style: normal;
+    font-weight: 800;
+    font-size: .725vw;
+    color: rgb(255, 255, 255);
+}
+
+.first-dashboard-speed-13 {
+    position: absolute;
+    left: 12.9vw;
+    top: 6.7vw;
+    font-family: "Gilroy";
+    font-style: normal;
+    font-weight: 800;
+    font-size: .725vw;
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.first-dashboard-speed-14 {
+    position: absolute;
+    left: 12.8vw;
+    top: 8.55vw;
+    font-family: "Gilroy";
+    font-style: normal;
+    font-weight: 800;
+    font-size: .725vw;
+    color: rgb(255, 255, 255);
+}
+
+.first-dashboard-speed-15 {
+    position: absolute;
+    left: 12.15vw;
+    top: 10.5vw;
+    font-family: "Gilroy";
+    font-style: normal;
+    font-weight: 800;
+    font-size: .725vw;
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.first-signal {
+    position: absolute;
+    width: 1.375vw;
+    height: .8292vw;
+    top: 60%;
+    transition: all .2s ease;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.first-signal path {
+    transition: all .2s ease;
+
+}
+
+.first-right-signal {
+    position: absolute;
+    width: .5167vw;
+    height: .4125vw;
+    top: 60%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    transition: all .2s ease;
+
+}
+
+.first-right-signal path {
+    transition: all .2s ease;
+
+}
+
+.first-left-signal {
+    position: absolute;
+    width: .5167vw;
+    height: .4125vw;
+    top: 60%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    transition: all .2s ease;
+}
+
+.first-left-signal path {
+    transition: all .2s ease;
+}
+
+.first-seatbelt {
+    position: absolute;
+    position: absolute;
+    width: 1.3938vw;
+    height: 1.3938vw;
+    top: 72%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all .2s ease;
+
+}
+
+.first-seatbelt path {
+    transition: all .2s ease;
+}
+
+.first-fuel {
+    position: absolute;
+    width: 1.813vw;
+    height: .9771vw;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.first-fuel-bar {
+    position: absolute;
+    width: 5.5729vw;
+    height: 1.0938vw;
+    top: 91%;
+    left: 50%;
+    stroke-dasharray: 0 110;
+    stroke: #FF4848;
+    transform: translate(-50%, -50%);
+    transition: all .2s ease;
+}
+
+.first-fuel-back {
+    position: absolute;
+    width: 5.5729vw;
+    height: 1.0938vw;
+    top: 91%;
+    left: 50%;
+    stroke: #D9D9D91A;
+    transform: translate(-50%, -50%);
+}
+
+.first-engine {
+    position: absolute;
+    width: .9896vw;
+    height: .6771vw;
+    top: 72%;
+    left: 65%;
+    transform: translate(-50%, -50%);
+}
+
+.first-lights {
+    position: absolute;
+    width: .8854vw;
+    height: .6771vw;
+    top: 72%;
+    left: 35%;
+    transform: translate(-50%, -50%);
+    transition: all .2s ease;
+
+}
+
+.first-lights path {
+    transition: all .2s ease;
+}
+
+.nos-speedometer {
+    position: absolute;
+    width: 5.9188vw;
+    height: 5.9188vw;
+    /* background: url("./images/nos-circle.svg?a"); */
+    background-size: contain;
+    background-repeat: no-repeat;
+    bottom: 1vw;
+    left: 1vw;
+    transform-origin: bottom;
+}
+
+.nos-speedometer-svg {
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    transform-origin: bottom;
+}
+
+.nos {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    stroke-linecap: round;
+    font-size: 0vw;
+}
+
+.nos-text {
+    position: absolute;
+    text-align: center;
+    width: 5.9188vw;
+    font-family: "Gilroy";
+    font-style: normal;
+    font-weight: 800;
+    font-size: .525vw;
+    top: 2.7vw;
+    color: rgb(255, 255, 255);
+}
+
+.nos-needle-wrapper {
+    position: absolute;
+    left: 2.2vw;
+    top: 0.7vw;
+    width: 1.5208vw;
+    height: 2.2604vw;
+    /* -webkit-animation: move 5s infinite;
+    transform: rotate(-124deg); */
+    transform-origin: bottom;
+    transition: all 0.2s linear 0s;
+}
+
+.nos-needle {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.nos-needle-circle {
+    position: absolute;
+    width: .5177vw;
+    height: .5177vw;
+    background: #FF4848;
+    box-shadow: 0rem 0rem 0.4375rem #000000;
+    transform: matrix(-0.36, 0.93, 0.93, 0.36, 0, 0);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+/*  */
+
+.rpm-speedometer {
+    position: absolute;
+    width: 5.9188vw;
+    height: 5.9188vw;
+    background-size: contain;
+    background-repeat: no-repeat;
+    bottom: 13.2vw;
+    left: 21vw;
+    transform-origin: bottom;
+
+}
+
+.rpm-speedometer .svg-rpm-speedometer {
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    transform-origin: bottom;
+
+}
+
+
+
+.rpm-text {
+    position: absolute;
+    text-align: center;
+    width: 5.9188vw;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: .525vw;
+    top: 2.9vw;
+    color: rgb(255, 255, 255);
+}
+
+.rpm-needle-wrapper {
+    position: absolute;
+    left: 2.2vw;
+    top: 0.7vw;
+    width: 1.5208vw;
+    height: 2.2604vw;
+    transform: rotate(-124deg);
+    transition: all 0.2s ;
+    transform-origin: bottom;
+}
+
+.rpm-needle {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.rpm-needle-circle {
+    position: absolute;
+    width: .5177vw;
+    height: .5177vw;
+    background: #FF4848;
+    box-shadow: 0rem 0rem 0.4375rem #000000;
+    transform: matrix(-0.36, 0.93, 0.93, 0.36, 0, 0);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.helicopter-wrapper {
+    position: absolute;
+    bottom: 3.35vw;
+    left: 7.25vw;
+    width: 14.8172vw;
+    height: 14.8172vw;
+}
+
+.helicopter-bar {
+    position: absolute;
+    width: 14.8172vw;
+    height: 14.8172vw;
+    stroke-dasharray: 50 990;
+    /* -webkit-animation: heli 3s infinite; */
+    transition: all 0.2s linear 0s;
+
+}
+
+@-webkit-keyframes heli {
+    0% {
+        stroke-dasharray: 0 990;
+    }
+
+    100% {
+        stroke-dasharray: 70 990;
+    }
+}
+
+.helicopter-center {
+    position: absolute;
+    width: 15.2813vw;
+    top: 1.43vw;
+    transition: all 0.2s linear 0s;
+
+    left: -0.1vw;
+    height: 15.2813vw;
+}
+
+.helicopter-balance {
+    position: absolute;
+    width: 10.63vw;
+    height: 10.63vw;
+    background-image: url("./images/helicopter-balance.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* YORUM : Burada transform kullandığımız için transform rotate kullanamıyoruz ve bu svgnin arkasında ekstra siya bir yuvarlak var ek olarak normal rotate kullanırsak eksen merkez olmuyor*/
+    -webkit-animation: balance 3s infinite;
+}
+
+.boat-wrapper {
+    position: absolute;
+}
+
+.compass-speedometer {
+    position: absolute;
+    width: 5.9188vw;
+    height: 5.9188vw;
+    background: url("./images/compass-circle.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    bottom: 13.2vw;
+    left: 21vw;
+
+}
+
+.compass-text {
+    position: absolute;
+    text-align: center;
+    width: 5.9188vw;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: .525vw;
+    top: 2.9vw;
+    color: rgb(255, 255, 255);
+}
+
+.compass-needle-wrapper {
+    position: absolute;
+    left: 2.2vw;
+    top: 0.7vw;
+    width: 1.5208vw;
+    height: 2.2604vw;
+
+    transform-origin: bottom;
+
+
+}
+
+.compass-needle {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.compass-needle-circle {
+    position: absolute;
+    width: .5177vw;
+    height: .5177vw;
+    transform: matrix(-0.36, 0.93, 0.93, 0.36, 0, 0);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-style: normal;
+    font-weight: 700;
+    font-size: 0.625rem;
+    line-height: 99.5%;
+
+    leading-trim: both;
+    text-edge: cap;
+
+    color: #FFFFFF;
+
+    text-shadow: 0rem 0rem 0.25rem #000000;
+}
+
+.wind-speedometer {
+    position: absolute;
+    width: 5.9188vw;
+    height: 5.9188vw;
+    background: url("./images/wind-circle.svg?a");
+    background-size: contain;
+    background-repeat: no-repeat;
+    bottom: 1vw;
+    left: 1vw;
+    transform-origin: bottom;
+}
+
+.wind {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    stroke-linecap: round;
+    font-size: 0vw;
+}
+
+.wind-text-1 {
+    position: absolute;
+    text-align: center;
+    font-family: "Gilroy";
+    font-style: normal;
+    font-weight: 800;
+    font-size: 0.55rem;
+    left: .8vw;
+    bottom: 1.6vw;
+    color: rgb(255, 255, 255);
+}
+
+.wind-text-2 {
+    position: absolute;
+    text-align: center;
+    font-family: "Gilroy";
+    font-style: normal;
+    font-weight: 800;
+    font-size: 0.55rem;
+    left: .65vw;
+    bottom: 2.5vw;
+    color: rgb(255, 255, 255);
+}
+
+.wind-text-3 {
+    position: absolute;
+    text-align: center;
+    font-family: "Gilroy";
+    font-style: normal;
+    font-weight: 800;
+    font-size: 0.55rem;
+    left: .7vw;
+    bottom: 3.5vw;
+    color: rgb(255, 255, 255);
+}
+
+.wind-text-4 {
+    position: absolute;
+    text-align: center;
+    font-family: "Gilroy";
+    font-style: normal;
+    font-weight: 800;
+    font-size: 0.55rem;
+    left: 1.3vw;
+    bottom: 4.35vw;
+    color: rgb(255, 255, 255);
+}
+
+.wind-text-5 {
+    position: absolute;
+    text-align: center;
+    font-family: "Gilroy";
+    font-style: normal;
+    font-weight: 800;
+    font-size: 0.55rem;
+    left: 2vw;
+    bottom: 4.85vw;
+    color: rgb(255, 255, 255);
+}
+
+.wind-text-6 {
+    position: absolute;
+    text-align: center;
+    font-family: "Gilroy";
+    font-style: normal;
+    font-weight: 800;
+    font-size: 0.55rem;
+    left: 3vw;
+    bottom: 4.95vw;
+    color: rgb(255, 255, 255);
+}
+
+.wind-text-7 {
+    position: absolute;
+    text-align: center;
+    font-family: "Gilroy";
+    font-style: normal;
+    font-weight: 800;
+    font-size: 0.55rem;
+    left: 4vw;
+    bottom: 4.65vw;
+    color: rgb(255, 255, 255);
+}
+
+.wind-text-8 {
+    position: absolute;
+    text-align: center;
+    font-family: "Gilroy";
+    font-style: normal;
+    font-weight: 800;
+    font-size: 0.55rem;
+    left: 4.7vw;
+    bottom: 4vw;
+    color: rgb(255, 255, 255);
+}
+
+.wind-text-9 {
+    position: absolute;
+    text-align: center;
+    font-family: "Gilroy";
+    font-style: normal;
+    font-weight: 800;
+    font-size: 0.55rem;
+    left: 5.05vw;
+    bottom: 3.2vw;
+    color: rgb(255, 255, 255);
+}
+
+.wind-text-10 {
+    position: absolute;
+    text-align: center;
+    font-family: "Gilroy";
+    font-style: normal;
+    font-weight: 800;
+    font-size: 0.55rem;
+    left: 5.1vw;
+    bottom: 2.3vw;
+    color: rgb(255, 255, 255);
+}
+
+.wind-text-11 {
+    position: absolute;
+    text-align: center;
+    font-family: "Gilroy";
+    font-style: normal;
+    font-weight: 800;
+    font-size: 0.55rem;
+    left: 4.6vw;
+    bottom: 1.3vw;
+    color: rgb(255, 255, 255);
+}
+
+.wind-needle-wrapper {
+    position: absolute;
+    left: 2.2vw;
+    top: 0.7vw;
+    width: 1.5208vw;
+    height: 2.2604vw;
+    transition: all 0.2s linear 0s;
+
+    /* -webkit-animation: move 5s infinite;  */
+    transform-origin: bottom;
+}
+
+.wind-needle {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.wind-needle-circle {
+    position: absolute;
+    width: .5177vw;
+    height: .5177vw;
+    background: #FF4848;
+    box-shadow: 0rem 0rem 0.4375rem #000000;
+    transform: matrix(-0.36, 0.93, 0.93, 0.36, 0, 0);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.p-right-siren-wrapper {
+    position: absolute;
+    width: 4.0521vw;
+    height: 15.0521vw;
+    top: 50%;
+    left: 106%;
+    transform: translate(-50%, -50%);
+}
+
+.p-right-siren-1 {
+    position: absolute;
+    width: 1.6146vw;
+    height: 8.3854vw;
+    top: 50%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+    background-image: url("./images/police-red.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.p-right-siren-2 {
+    position: absolute;
+    width: 1.5625vw;
+    height: 8.8021vw;
+    top: 50%;
+    left: 37%;
+    transform: translate(-50%, -50%);
+    background-image: url("./images/police-red2.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity: 23%;
+}
+
+.p-left-siren-wrapper {
+    position: absolute;
+    width: 4.0521vw;
+    height: 15.0521vw;
+    top: 50%;
+    left: -4%;
+    transform: translate(-50%, -50%);
+}
+
+.p-left-siren-1 {
+    position: absolute;
+    width: 1.6146vw;
+    height: 8.3854vw;
+    top: 50%;
+    left: 67%;
+    transform: translate(-50%, -50%);
+    background-image: url("./images/lef-red3.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.p-left-siren-2 {
+    position: absolute;
+    width: 1.5625vw;
+    height: 8.8021vw;
+    top: 50%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+    background-image: url("./images/left-red2.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity: 23%;
+}
+
+.p-top-siren-wrapper {
+    position: absolute;
+    height: 4.0521vw;
+    width: 15.0521vw;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.p-top-siren-1 {
+    position: absolute;
+    width: 8.2292vw;
+    height: 1.5625vw;
+    top: 50.5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-image: url("./images/top-blue1.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.p-top-siren-2 {
+    position: absolute;
+    width: 8.2292vw;
+    height: 1.5625vw;
+    top: 38.5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-image: url("./images/top-blue2.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity: 23%;
+}
+
+.p-bottom-siren-wrapper {
+    position: absolute;
+    height: 4.0521vw;
+    width: 15.0521vw;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.p-bottom-siren-1 {
+    position: absolute;
+    width: 8.2292vw;
+    height: 1.5625vw;
+    top: 50.5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-image: url("./images/bottom-blue1.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.p-bottom-siren-2 {
+    position: absolute;
+    width: 8.2292vw;
+    height: 1.5625vw;
+    top: 62.5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-image: url("./images/bottom-blue2.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity: 23%;
+}
+
+.police-wrapper {
+    position: absolute;
+    /* left: 7vw;
+    bottom: 1.5vw; */
+    width: 15.2813vw;
+    height: 15.2813vw;
+    transform-origin: center;
+    -webkit-animation: siren 5s infinite;
+}
+
+@-webkit-keyframes siren {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.a-right-siren-wrapper {
+    position: absolute;
+    width: 4.0521vw;
+    height: 15.0521vw;
+    top: 50%;
+    left: 106%;
+    transform: translate(-50%, -50%);
+}
+
+.a-right-siren-1 {
+    position: absolute;
+    width: 1.6146vw;
+    height: 8.3854vw;
+    top: 50%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+    background-image: url("./images/police-red.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.a-right-siren-2 {
+    position: absolute;
+    width: 1.5625vw;
+    height: 8.8021vw;
+    top: 50%;
+    left: 37%;
+    transform: translate(-50%, -50%);
+    background-image: url("./images/police-red2.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity: 23%;
+}
+
+.a-left-siren-wrapper {
+    position: absolute;
+    width: 4.0521vw;
+    height: 15.0521vw;
+    top: 50%;
+    left: -4%;
+    transform: translate(-50%, -50%);
+}
+
+.a-left-siren-1 {
+    position: absolute;
+    width: 1.6146vw;
+    height: 8.3854vw;
+    top: 50%;
+    left: 67%;
+    transform: translate(-50%, -50%);
+    background-image: url("./images/lef-red3.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.a-left-siren-2 {
+    position: absolute;
+    width: 1.5625vw;
+    height: 8.8021vw;
+    top: 50%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+    background-image: url("./images/left-red2.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity: 23%;
+}
+
+.a-top-siren-wrapper {
+    position: absolute;
+    height: 4.0521vw;
+    width: 15.0521vw;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.a-top-siren-1 {
+    position: absolute;
+    width: 8.2292vw;
+    height: 1.5625vw;
+    top: 50.5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-image: url("./images/top-white1.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.a-top-siren-2 {
+    position: absolute;
+    width: 8.2292vw;
+    height: 1.5625vw;
+    top: 38.5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-image: url("./images/top-white2.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity: 23%;
+}
+
+.a-bottom-siren-wrapper {
+    position: absolute;
+    height: 4.0521vw;
+    width: 15.0521vw;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.a-bottom-siren-1 {
+    position: absolute;
+    width: 8.2292vw;
+    height: 1.5625vw;
+    top: 50.5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-image: url("./images/bottom-white1.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.a-bottom-siren-2 {
+    position: absolute;
+    width: 8.2292vw;
+    height: 1.5625vw;
+    top: 62.5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-image: url("./images/bottom-white2.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity: 23%;
+}
+
+.ambulance-wrapper {
+    position: absolute;
+    /* left: 7vw;
+    bottom: 1.5vw; */
+    width: 15.2813vw;
+    height: 15.2813vw;
+    transform-origin: center;
+    -webkit-animation: siren 5s infinite;
+}
+
+.first-speedo-rpm-text {
+    position: absolute;
+    left: 50%;
+    bottom: 3vh;
+    transform: translateX(-50%);
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 0.5125rem;
+    line-height: 99.5%;
+
+    leading-trim: both;
+    text-edge: cap;
+
+    color: #FFFFFF;
+
+}
+
+.bike-wrapper {
+    position: absolute;
+    width: 9.7396vw;
+    height: 10.5208vw;
+    left: 17.8vw;
+    bottom: 1vw;
+    background-image: url("./images/bike-box.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.bike-bar-back {
+    position: absolute;
+    width: 7.1875vw;
+    height: 6.0417vw;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    stroke-linecap: round;
+}
+
+.bike-bar-front {
+    position: absolute;
+    width: 7.1875vw;
+    height: 6.0417vw;
+    top: 55%;
+    left: 50%;
+    stroke-dasharray: 50 700;
+    transition: all 0.2s linear 0s;
+    transform: translate(-50%, -50%);
+    stroke-linecap: round;
+}
+
+.bike-icon {
+    position: absolute;
+    width: 1.5104vw;
+    height: .9375vw;
+    top: 1vw;
+    left: 1vw;
+}
+
+.bike-watch {
+    position: absolute;
+    width: 1.3542vw;
+    font-family: 'Proxima Nova';
+    font-size: .6208vw;
+    text-align: center;
+    letter-spacing: 0.03em;
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #FFFFFF;
+}
+
+.bike-speed {
+    position: absolute;
+    width: 3.98vw;
+    text-align: center;
+    font-family: 'Proxima Nova';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2.5vw;
+    color: #fff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.bike-speed-type {
+    position: absolute;
+    width: 2vw;
+    text-align: center;
+    font-family: 'Proxima Nova';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 0.8vw;
+    color: rgba(255, 255, 255, 0.64);
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.kcal-bar-back {
+    position: absolute;
+    width: 2.2917vw;
+    height: 2.2917vw;
+    top: 17%;
+    left: 82%;
+    transform: translate(-50%, -50%);
+    stroke-linecap: round;
+}
+
+.kcal-bar-front {
+    position: absolute;
+    width: 2.2917vw;
+    height: 2.2917vw;
+    top: 17%;
+    left: 82%;
+    stroke-dasharray: 200 700;
+    transform: translate(-50%, -50%);
+    stroke-linecap: round;
+}
+
+.kcal {
+    position: absolute;
+    width: 2.8vw;
+    text-align: center;
+    font-family: 'Proxima Nova';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 0.7vw;
+    color: #fff;
+    top: 15.5%;
+    left: 82%;
+    transform: translate(-50%, -50%);
+}
+
+.kcal-type {
+    position: absolute;
+    width: 2vw;
+    text-align: center;
+    font-family: 'Proxima Nova';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 0.4vw;
+    color: rgba(255, 255, 255, 0.64);
+    top: 20%;
+    left: 82%;
+    transform: translate(-50%, -50%);
+}

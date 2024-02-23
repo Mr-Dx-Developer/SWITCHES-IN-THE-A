@@ -1,0 +1,188 @@
+
+.modern-speedometer {
+
+    position: absolute;
+    left: 0vw;
+    bottom: 1.5vw;
+    width: 31.5234vw;
+    height: 15.2083vw;
+
+}
+
+.modern-speedometer-2{
+    background-image: url("./images/modern.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.modern-speedometer-numbers{
+    background-image: url("./images/lines-numbers.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    left: 49%;
+    top: 72%;
+    z-index: 22;
+    transform: translate(-50%, -50%) scale(0.69);
+    position: absolute;
+}
+
+.modern-needle-container-1 {
+    position: absolute;
+    left: 6.2vw;
+    top: 7.7vw;
+    width: 4.2vw;
+    height: 2.3203vw;
+}
+
+
+
+
+.modern-needle-wrapper-2 {
+    position: absolute;
+    left: 16vw;
+    top: 7.7vw;
+    width: 4.2vw;
+    height: 2.3203vw;
+}
+
+.modern-needle-circle {
+    position: absolute;
+    left: 4vw;
+    top: 2vw;
+    width: .8333vw;
+    height: .8333vw;
+    background: #FF3E01;
+    /* box-shadow: -3px 0px 4px #000000; */
+    border-radius: 50%;
+}
+
+
+
+.modern-needle {
+    position: absolute;
+    top: -1.8vw;
+    left: 4.3vw;
+    width: .1927vw;
+    height: 4.2479vw;
+    transform: rotate(-12deg);
+    transform-origin: bottom;
+    transition: all .2s ease;
+}
+
+.modern-needle2 {
+    position: absolute;
+    top: -1.8vw;
+    left: 4.3vw;
+    width: .1927vw;
+    height: 4.2479vw;
+    transform: rotate(9deg);
+    /* 207deg */
+    transform-origin: bottom;
+    transition: all .2s ease;
+}
+
+.modern-speed {
+    position: absolute;
+    width: 31.5234vw;
+    text-align: center;
+    font-family: "Enigma";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2.5vw;
+    letter-spacing: 0.155em;
+    color: #FFFFFF;
+    
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+
+.modern-speed-type {
+    position: absolute;
+    top: 4.7vw;
+    width: 31.5234vw;
+    text-align: center;
+    font-family: "Enigma";
+    font-style: normal;
+    font-weight: 700;
+    font-size: .5208vw;
+    letter-spacing: 0.155em;
+    color: #FFFFFF;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.modern-dash-icons {
+    position: absolute;
+    width: 20vw;
+    height: 2vw;
+    left: 50%;
+    top: 80%;
+    transform: translate(-50%, -50%);
+}
+
+.modern-icons {
+    position: relative;
+    top: 0.5vw;
+    margin-left: 0.5vw;
+    left: 2.5vw;
+    display: inline-block;
+    width: 1vw;
+    height: .7771vw;
+}
+
+.modern-icons2 {
+    position: relative;
+    top: 0.5vw;
+    margin-left: 0.5vw;
+    left: 10.5vw;
+    width: 1vw;
+    height: .7771vw;
+    display: inline-block;
+
+}
+
+.modern-belt {
+    position: absolute;
+    left: 49.6%;
+    top: 120%;
+    transform: translate(-50%, -50%);
+    width: 1vw;
+    display: inline-block;
+
+    height: 1vw;
+}
+
+.signals {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 20vw;
+    display: inline-block;
+
+    height: 1vw;
+}
+
+.modern-signal {
+    position: relative;
+    margin-left: 7vw;
+    display: inline-block;
+
+    left: -5.5%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: .6167vw;
+    height: .6125vw;
+}

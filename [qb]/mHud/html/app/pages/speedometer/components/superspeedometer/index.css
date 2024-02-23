@@ -1,0 +1,49 @@
+.scaleupoldschool-enter-active {
+  animation: scaleactiveoldschool 1s ease-in-out;
+}
+
+.scaleupoldschool-leave-active {
+  animation: scaledeactiveoldschool 1s ease-in-out;
+}
+
+
+
+
+.superspeedometer {
+  position: absolute;
+  left: 4vw;
+  bottom: .5vw;
+  width: 23.2813vw;
+  height: 20.2813vw;
+}
+
+.superspeedometer svg{
+  transition: all .2s ease;
+}
+
+.superspeedometer svg path{
+  transition: all .2s ease;
+}
+
+.superspeedo-nos {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute !important;
+}
+
+.superspeedo-fuel {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute !important;
+
+}
+
+.superspeedometer svg {
+  transition: all .2s ease;
+}
+
+.superspeedometer svg path{
+  transition: all .2s ease;
+}

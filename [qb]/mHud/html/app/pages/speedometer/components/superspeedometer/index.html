@@ -1,0 +1,271 @@
+<div class=" superspeedometer flex items-end relative justify-end ">
+   <div v-show="!hudSettings.hideNOS && nitroValue > 0" class="w-full h-full  absolute flex items-start justify-end">
+      <div class="w-[25%] h-[30%] relative"
+         style="border-radius: 4vw; margin-top: -1vw; background-image: url('./app/pages/speedometer/components/superspeedometer/images/nitrohud.png'); background-size: 100% 100%;">
+         <div class="superspeedo-nos" style="width:4.3vw; height: 4.3vw;"></div>
+      </div>
+   </div>
+   <div class="w-full h-full  absolute flex items-end justify-start">
+      <div class="w-[25%] h-[30%] relative"
+         style="border-radius: 4vw; margin-left: 1.5vw; background-image: url('./app/pages/speedometer/components/superspeedometer/images/fuelhud.png'); background-size: 100% 100%;">
+         <div class="superspeedo-fuel" style="width:4.3vw; height: 4.3vw;"></div>
+      </div>
+   </div>
+   <div class="w-[70%] h-[80%] ">
+      <div class="w-full h-full relative">
+
+         <div class="w-[90%] h-[90%] absolute   flex items-center justify-center" style="margin-top: -1vw; margin-left: -1vw; border-radius: 7vw; background-image: url('./app/pages/speedometer/components/superspeedometer/images/out-radius.png'); 
+             background-size: 100% 100%;">
+            <div class="w-[90%] h-[90%]   flex items-center justify-center " style="border-radius: 7vw;">
+               <svg xmlns="http://www.w3.org/2000/svg" width="230" height="229" viewBox="0 0 230 229" fill="none"
+                  class="w-full h-full">
+
+                  <path
+                     d="M21.5927 178.869C4.44537 154.204 -2.15839 123.768 3.23467 94.2555C8.62772 64.7432 25.5756 38.5733 50.3489 21.5024C75.1222 4.43151 105.692 -2.14235 135.333 3.22643C164.974 8.59522 191.26 25.4671 208.407 50.1314C225.555 74.7959 232.158 105.232 226.765 134.744C221.372 164.257 204.424 190.427 179.651 207.498C154.878 224.568 124.308 231.142 94.6669 225.774C65.0256 220.405 38.7399 203.533 21.5927 178.869L21.5927 178.869Z"
+                     :stroke="handbrake ? '#FF4848' : '#4870FF'" stroke-width="1.2" stroke-dasharray="1 5" />
+                  <path opacity="0.3"
+                     d="M28.9922 174.53C13.2039 151.719 7.1237 123.571 12.0892 96.2774C17.0548 68.9838 32.6593 44.7806 55.47 28.9922C78.2807 13.2039 106.429 7.1237 133.723 12.0892C161.016 17.0548 185.219 32.6593 201.008 55.47C216.796 78.2807 222.876 106.429 217.911 133.723C212.945 161.016 197.341 185.219 174.53 201.008C151.719 216.796 123.571 222.876 96.2774 217.911C68.9838 212.945 44.7806 197.341 28.9922 174.53L28.9922 174.53Z"
+                     :stroke="handbrake ? '#FF4848' : '#4870FF'" stroke-width="1.2" stroke-dasharray="1 5" />
+                  <path opacity="0.2"
+                     d="M36.5563 168.858C29.3803 158.61 24.3035 147.057 21.616 134.857C18.9285 122.658 18.6829 110.051 20.8933 97.757C23.1036 85.463 27.7266 73.7225 34.4982 63.206C41.2697 52.6895 50.0571 43.6029 60.3586 36.4649C70.6601 29.3269 82.2738 24.2773 94.5369 21.6042C106.8 18.931 119.472 18.6868 131.83 20.8853C144.188 23.0838 155.99 27.682 166.561 34.4176C177.133 41.1533 186.268 49.8943 193.444 60.1419C200.62 70.3896 205.696 81.943 208.384 94.1426C211.071 106.342 211.317 118.949 209.107 131.243C206.896 143.537 202.273 155.277 195.502 165.794C188.73 176.311 179.943 185.397 169.641 192.535C159.34 199.673 147.726 204.723 135.463 207.396C123.2 210.069 110.528 210.313 98.17 208.115C85.8122 205.916 74.0104 201.318 63.4387 194.582C52.867 187.847 43.7323 179.106 36.5563 168.858L36.5563 168.858Z"
+                     :stroke="handbrake ? '#FF4848' : '#4870FF'" stroke-width="1.2" stroke-dasharray="1 5" />
+                  <path opacity="0.1"
+                     d="M41.6967 161.112C29.5675 141.83 25.5237 118.546 30.4414 96.304C35.3591 74.0619 48.8424 54.6531 67.9699 42.2825C87.0974 29.9119 110.329 25.5758 132.631 30.2136C154.933 34.8514 174.51 48.0896 187.12 67.0601C199.73 86.0307 204.357 109.206 200 131.564C195.643 153.923 182.652 173.665 163.841 186.512C145.031 199.359 121.916 204.278 99.5043 200.202C77.0926 196.126 57.1893 183.384 44.1065 164.737"
+                     :stroke="handbrake ? '#FF4848' : '#4870FF'" stroke-width="1.2" stroke-dasharray="1 5" />
+                  <path opacity="0.05"
+                     d="M50.3719 158.95C38.5073 141.918 33.9378 120.9 37.6695 100.52C41.4011 80.14 53.1279 62.0688 70.2686 50.2809C87.4092 38.4932 108.56 33.954 129.068 37.6612C149.576 41.3683 167.764 53.0185 179.628 70.0502C191.493 87.082 196.062 108.1 192.331 128.48C188.599 148.86 176.872 166.931 159.731 178.719C142.591 190.507 121.44 195.046 100.932 191.339C80.4236 187.632 62.2364 175.982 50.3719 158.95L50.3719 158.95Z"
+                     :stroke="handbrake ? '#FF4848' : '#4870FF'" stroke-width="1.2" stroke-dasharray="1 5" />
+               </svg>
+            </div>
+            <div class="w-full h-full  absolute flex items-center justify-center">
+               <div class="w-[20%] h-[20%]  relative flex items-center justify-center" style="margin-right: 0.1vw;">
+                  <h2 class="text-white" style="font-size: 2vw;">{{speed.current.toFixed(0)}}</h2>
+                  <div class="w-full h-full  flex items-end justify-center absolute" style="margin-top: 2vw;">
+                     <h2 class="text-white" style="font-size: 0.7vw;">{{hudSettings.speedType == 'kmh' ? 'KM/H' :
+                        'MP/H'}}</h2>
+                  </div>
+               </div>
+            </div>
+
+            <div class="w-full h-full  absolute flex items-end justify-center">
+               <div class="w-[45%] h-[25%]  flex items-center justify-start" style="margin-right: 0.1vw;">
+                  <div class="w-[33%] h-full flex items-start justify-center ">
+                     <div class="w-[40%] h-[40%]  flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11 9" fill="none" class="w-full h-full">
+                           <path
+                              d="M7.04688 6.26877H11V7.18762H6.91159C6.96127 6.90532 7.00793 6.59728 7.04688 6.26877ZM7.1543 4.5C7.1543 4.65514 7.15161 4.80832 7.14674 4.95942H11V4.04058H7.14674C7.15161 4.1916 7.1543 4.34486 7.1543 4.5ZM6.89934 1.74347C6.95003 2.02469 6.99812 2.33282 7.03857 2.66231H11V1.74347H6.89934ZM5.67473 8.67302C5.70007 8.59648 6.29492 6.77171 6.29492 4.5C6.29492 2.22829 5.70007 0.40343 5.67473 0.326889L5.56664 0L5.24303 0.0215354C5.19066 0.0250349 3.94591 0.11324 2.68345 0.679531C0.92794 1.46683 0 2.78794 0 4.5C0 6.21197 0.92794 7.53308 2.68345 8.32047C3.94591 8.88667 5.19057 8.97497 5.24294 8.97847L5.56664 9L5.67473 8.67302ZM5.43555 4.5C5.43555 6.0553 5.12755 7.41176 4.96398 8.02256C4.53732 7.96101 3.76119 7.81053 2.99774 7.46507C1.57885 6.82277 0.859375 5.82523 0.859375 4.5C0.859375 3.17477 1.57885 2.17714 2.99774 1.53494C3.76144 1.18929 4.5379 1.03881 4.96432 0.977348C5.12805 1.5868 5.43555 2.93958 5.43555 4.5Z"
+                              fill="white" :fill-opacity="vehicleLights ? '1.0' : '0.24'" />
+                           <path
+                              d="M5.43555 4.5C5.43555 6.0553 5.12755 7.41176 4.96398 8.02256C4.53732 7.96101 3.76119 7.81053 2.99774 7.46507C1.57885 6.82277 0.859375 5.82523 0.859375 4.5C0.859375 3.17477 1.57885 2.17714 2.99774 1.53494C3.76144 1.18929 4.5379 1.03881 4.96432 0.977348C5.12805 1.5868 5.43555 2.93958 5.43555 4.5Z"
+                              fill="white" :fill-opacity="vehicleLights ? '1.0' : '0.24'" />
+                        </svg>
+                     </div>
+
+                  </div>
+                  <div class="w-[33%] h-full flex items-start justify-center ">
+                     <div class="w-[35%] h-[35%]  flex items-center justify-center" style="margin-top: 0.8vw;">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-full h-full" viewBox="0 0 12 13" fill="none">
+                           <path
+                              d="M11.8219 9.87674C11.0869 9.20778 10.2714 8.69374 9.41546 8.31674C9.27046 7.07524 8.94147 5.97564 8.47898 5.12198L10.8535 2.5496C11.0489 2.33782 11.0489 1.99548 10.8535 1.78369C10.658 1.57191 10.342 1.57191 10.1465 1.78369L7.87699 4.24179C7.71399 4.0522 7.54249 3.88267 7.362 3.74454C7.752 3.34857 7.99999 2.79013 7.99999 2.16666C7.99999 0.971752 7.103 0 6.00002 0C4.89704 0 4.00004 0.971752 4.00004 2.16666C4.00004 2.79013 4.24803 3.34857 4.63803 3.74454C3.60304 4.53538 2.83505 6.21292 2.58755 8.29564C1.72206 8.6748 0.903064 9.19752 0.173063 9.88218C-0.0359269 10.0777 -0.0589423 10.4201 0.122064 10.6459C0.302062 10.8723 0.618559 10.8973 0.827057 10.7012C1.34354 10.2175 1.90956 9.82368 2.50655 9.51221C2.50505 9.59184 2.50006 9.6693 2.50006 9.74999C2.50006 10.7461 2.61706 11.706 2.84855 12.604C2.90855 12.838 3.10554 13 3.33004 13H5.00002C5.27602 13 5.50001 12.7573 5.50001 12.4583L5.496 10.5202C5.77399 10.2196 6.22649 10.2196 6.49998 10.5094V12.4583C6.49998 12.7573 6.72397 13 6.99997 13H8.66995C8.89445 13 9.09144 12.838 9.15144 12.604C9.38293 11.7059 9.49993 10.7461 9.49993 9.74997C9.49993 9.67684 9.49543 9.60643 9.49442 9.53384C10.0884 9.84369 10.6564 10.231 11.1779 10.7066C11.2719 10.7916 11.3859 10.8333 11.4999 10.8333C11.6424 10.8333 11.7834 10.7678 11.8829 10.6405C12.0604 10.4114 12.0329 10.0696 11.8219 9.87674ZM4.7015 7.68246C4.35099 7.73555 4.00201 7.80324 3.6595 7.90074C4.01699 5.84402 4.94349 4.33332 5.99997 4.33332C6.42346 4.33332 6.82597 4.57545 7.17945 4.99742L4.7015 7.68246ZM6.20099 7.58983L7.74598 5.91608C8.00848 6.47833 8.21397 7.16299 8.34398 7.91971C7.64196 7.71602 6.92197 7.60933 6.20099 7.58983Z"
+                              :fill="seatbeltEnabled ?'#FFFFFF' : '#FF0000'" />
+                        </svg>
+                     </div>
+                  </div>
+                  <div class="w-[33%] h-full flex items-start justify-center ">
+                     <div class="w-[40%] h-[40%]  flex items-center justify-center">
+                   
+                        <svg  width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg"
+                           xmlns:xlink="http://www.w3.org/1999/xlink">
+                           <rect width="13" height="13" fill="url(#pattern0)" :fill-opacity="engineStatus ? '1.0' : '0.5'" />
+                           <defs>
+                              <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                 <use xlink:href="#image0_833_441" transform="scale(0.00444444)" />
+                              </pattern>
+                              <image id="image0_833_441" width="225" height="225"
+                                 xlink:href="data:image/png;base64,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" />
+                           </defs>
+                        </svg>
+
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+            <div class="absolute w-[68%] h-[68%] " style="margin-top: 0.2vw;">
+
+               <svg xmlns="http://www.w3.org/2000/svg" width="177" height="143" viewBox="0 0 177 143" fill="none"
+                  class="w-full h-full">
+                  <g filter="url(#filter0_f_203_51)">
+                     <mask id="path-1-inside-1_203_51" fill="white">
+                        <path
+                           d="M46.3941 116.688C40.2046 111.046 35.2124 104.217 31.7139 96.6072C28.2154 88.9976 26.282 80.7625 26.0286 72.391C25.7752 64.0196 27.2069 55.6825 30.2388 47.8753C33.2706 40.068 37.8407 32.9497 43.6775 26.9432L45.8801 29.0836C40.3301 34.7949 35.9846 41.5634 33.1017 48.987C30.2189 56.4107 28.8575 64.338 29.0985 72.2981C29.3394 80.2582 31.1778 88.0886 34.5044 95.3243C37.8309 102.56 42.5779 109.053 48.4631 114.418L46.3941 116.688Z" />
+                     </mask>
+                     <path
+                        d="M46.3941 116.688C40.2046 111.046 35.2124 104.217 31.7139 96.6072C28.2154 88.9976 26.282 80.7625 26.0286 72.391C25.7752 64.0196 27.2069 55.6825 30.2388 47.8753C33.2706 40.068 37.8407 32.9497 43.6775 26.9432L45.8801 29.0836C40.3301 34.7949 35.9846 41.5634 33.1017 48.987C30.2189 56.4107 28.8575 64.338 29.0985 72.2981C29.3394 80.2582 31.1778 88.0886 34.5044 95.3243C37.8309 102.56 42.5779 109.053 48.4631 114.418L46.3941 116.688Z"
+                        fill="#100F14" />
+                     <path
+                        d="M46.3941 116.688C40.2046 111.046 35.2124 104.217 31.7139 96.6072C28.2154 88.9976 26.282 80.7625 26.0286 72.391C25.7752 64.0196 27.2069 55.6825 30.2388 47.8753C33.2706 40.068 37.8407 32.9497 43.6775 26.9432L45.8801 29.0836C40.3301 34.7949 35.9846 41.5634 33.1017 48.987C30.2189 56.4107 28.8575 64.338 29.0985 72.2981C29.3394 80.2582 31.1778 88.0886 34.5044 95.3243C37.8309 102.56 42.5779 109.053 48.4631 114.418L46.3941 116.688Z"
+                        stroke="url(#paint0_linear_203_51)" stroke-width="6" mask="url(#path-1-inside-1_203_51)" />
+                  </g>
+                  <mask id="path-2-inside-2_203_51" fill="white">
+                     <path
+                        d="M46.3941 116.688C40.2046 111.046 35.2124 104.217 31.7139 96.6072C28.2154 88.9976 26.282 80.7625 26.0286 72.391C25.7752 64.0196 27.2069 55.6825 30.2388 47.8753C33.2706 40.068 37.8407 32.9497 43.6775 26.9432L45.8801 29.0836C40.3301 34.7949 35.9846 41.5634 33.1017 48.987C30.2189 56.4107 28.8575 64.338 29.0985 72.2981C29.3394 80.2582 31.1778 88.0886 34.5044 95.3243C37.8309 102.56 42.5779 109.053 48.4631 114.418L46.3941 116.688Z" />
+                  </mask>
+                  <path v-if="vehicleSignals.leftindicatorstatus || vehicleSignals.hazardlightstatus"
+                     d="M46.3941 116.688C40.2046 111.046 35.2124 104.217 31.7139 96.6072C28.2154 88.9976 26.282 80.7625 26.0286 72.391C25.7752 64.0196 27.2069 55.6825 30.2388 47.8753C33.2706 40.068 37.8407 32.9497 43.6775 26.9432L45.8801 29.0836C40.3301 34.7949 35.9846 41.5634 33.1017 48.987C30.2189 56.4107 28.8575 64.338 29.0985 72.2981C29.3394 80.2582 31.1778 88.0886 34.5044 95.3243C37.8309 102.56 42.5779 109.053 48.4631 114.418L46.3941 116.688Z"
+                     fill="#100F14" stroke="url(#paint1_linear_203_51)" stroke-width="6"
+                     mask="url(#path-2-inside-2_203_51)" />
+                  <mask id="path-3-inside-3_203_51" fill="white">
+                     <path
+                        d="M132.694 26.3058C138.616 32.2281 143.288 39.2802 146.431 47.0432C149.575 54.8063 151.126 63.1219 150.992 71.4962C150.859 79.8704 149.043 88.1324 145.654 95.7913C142.265 103.45 137.371 110.35 131.263 116.08L129.162 113.841C134.97 108.392 139.623 101.831 142.846 94.5485C146.068 87.266 147.794 79.41 147.921 71.4472C148.048 63.4845 146.573 55.5775 143.585 48.1959C140.596 40.8143 136.154 34.1087 130.522 28.4775L132.694 26.3058Z" />
+                  </mask>
+                  <path v-if="vehicleSignals.rightindicatorstatus || vehicleSignals.hazardlightstatus"
+                     d="M132.694 26.3058C138.616 32.2281 143.288 39.2802 146.431 47.0432C149.575 54.8063 151.126 63.1219 150.992 71.4962C150.859 79.8704 149.043 88.1324 145.654 95.7913C142.265 103.45 137.371 110.35 131.263 116.08L129.162 113.841C134.97 108.392 139.623 101.831 142.846 94.5485C146.068 87.266 147.794 79.41 147.921 71.4472C148.048 63.4845 146.573 55.5775 143.585 48.1959C140.596 40.8143 136.154 34.1087 130.522 28.4775L132.694 26.3058Z"
+                     fill="#100F14" stroke="url(#paint2_linear_203_51)" stroke-width="6"
+                     mask="url(#path-3-inside-3_203_51)" />
+                  <g filter="url(#filter1_f_203_51)">
+                     <mask id="path-4-inside-4_203_51" fill="white">
+                        <path
+                           d="M132.694 26.3058C138.616 32.228 143.288 39.2802 146.431 47.0432C149.575 54.8063 151.126 63.1219 150.992 71.4962C150.859 79.8704 149.043 88.1324 145.654 95.7913C142.265 103.45 137.371 110.35 131.263 116.08L129.162 113.841C134.97 108.392 139.623 101.831 142.846 94.5485C146.068 87.2659 147.794 79.4099 147.921 71.4472C148.048 63.4845 146.573 55.5775 143.585 48.1959C140.596 40.8143 136.154 34.1087 130.522 28.4775L132.694 26.3058Z" />
+                     </mask>
+                     <path
+                        d="M132.694 26.3058C138.616 32.228 143.288 39.2802 146.431 47.0432C149.575 54.8063 151.126 63.1219 150.992 71.4962C150.859 79.8704 149.043 88.1324 145.654 95.7913C142.265 103.45 137.371 110.35 131.263 116.08L129.162 113.841C134.97 108.392 139.623 101.831 142.846 94.5485C146.068 87.2659 147.794 79.4099 147.921 71.4472C148.048 63.4845 146.573 55.5775 143.585 48.1959C140.596 40.8143 136.154 34.1087 130.522 28.4775L132.694 26.3058Z"
+                        fill="#100F14" />
+                     <path
+                        d="M132.694 26.3058C138.616 32.228 143.288 39.2802 146.431 47.0432C149.575 54.8063 151.126 63.1219 150.992 71.4962C150.859 79.8704 149.043 88.1324 145.654 95.7913C142.265 103.45 137.371 110.35 131.263 116.08L129.162 113.841C134.97 108.392 139.623 101.831 142.846 94.5485C146.068 87.2659 147.794 79.4099 147.921 71.4472C148.048 63.4845 146.573 55.5775 143.585 48.1959C140.596 40.8143 136.154 34.1087 130.522 28.4775L132.694 26.3058Z"
+                        stroke="url(#paint3_linear_203_51)" stroke-width="6" mask="url(#path-4-inside-4_203_51)" />
+                  </g>
+                  <defs>
+                     <filter id="filter0_f_203_51" x="0" y="0.943359" width="74.4629" height="141.745"
+                        filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                        <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+                        <feGaussianBlur stdDeviation="13" result="effect1_foregroundBlur_203_51" />
+                     </filter>
+                     <filter id="filter1_f_203_51" x="103.162" y="0.305664" width="73.8379" height="141.774"
+                        filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                        <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+                        <feGaussianBlur stdDeviation="13" result="effect1_foregroundBlur_203_51" />
+                     </filter>
+                     <linearGradient v-if="vehicleSignals.leftindicatorstatus || vehicleSignals.hazardlightstatus"
+                        id="paint0_linear_203_51" x1="88.5" y1="8" x2="88.5" y2="133" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#FFD600" />
+                        <stop offset="0.182292" stop-color="#FFD600" />
+                        <stop offset="0.546875" stop-color="#FFD600" />
+                        <stop offset="0.708333" stop-color="#FFD600" />
+                        <stop offset="0.916667" stop-color="#FFD600" />
+                        <stop offset="1" stop-color="white" />
+                     </linearGradient>
+                     <linearGradient v-if="vehicleSignals.leftindicatorstatus || vehicleSignals.hazardlightstatus"
+                        id="paint1_linear_203_51" x1="88.5" y1="8" x2="88.5" y2="133" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#FFD600" />
+                        <stop offset="0.182292" stop-color="#FFD600" />
+                        <stop offset="0.546875" stop-color="#FFD600" />
+                        <stop offset="0.708333" stop-color="#FFD600" />
+                        <stop offset="0.916667" stop-color="#FFD600" />
+                        <stop offset="1" stop-color="white" />
+                     </linearGradient>
+                     <linearGradient v-if="vehicleSignals.rightindicatorstatus || vehicleSignals.hazardlightstatus"
+                        id="paint2_linear_203_51" x1="88.5" y1="8" x2="88.5" y2="133" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#FFD600" />
+                        <stop offset="0.182292" stop-color="#FFD600" />
+                        <stop offset="0.546875" stop-color="#FFD600" />
+                        <stop offset="0.708333" stop-color="#FFD600" />
+                        <stop offset="0.916667" stop-color="#FFD600" />
+                        <stop offset="1" stop-color="white" />
+                     </linearGradient>
+                     <linearGradient v-if="vehicleSignals.rightindicatorstatus || vehicleSignals.hazardlightstatus"
+                        id="paint3_linear_203_51" x1="88.5" y1="8" x2="88.5" y2="133" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#FFD600" />
+                        <stop offset="0.182292" stop-color="#FFD600" />
+                        <stop offset="0.546875" stop-color="#FFD600" />
+                        <stop offset="0.708333" stop-color="#FFD600" />
+                        <stop offset="0.916667" stop-color="#FFD600" />
+                        <stop offset="1" stop-color="white" />
+                     </linearGradient>
+                  </defs>
+               </svg>
+            </div>
+
+
+            <div class="w-full h-[15%]  flex items-center justify-center  absolute  ">
+
+               <div class="w-[45%] h-[15%]   absolute  " :style="SpeedometerIndicator" style="margin-right: 6.3vw;">
+                  <div class="w-[47%] h-full flex items-center justify-start " style="transform: rotate(40deg);">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="253" height="229" viewBox="0 0 53 52" fill="none">
+                        <path d="M8 44L45 8" stroke="url(#paint0_linear_201_30804)" />
+                        <g filter="url(#filter0_f_201_30804)">
+                           <path d="M8 44L45 8" stroke="url(#paint1_linear_201_30804)" />
+                        </g>
+                        <g filter="url(#filter1_f_201_30804)">
+                           <path d="M8 44L45 8" stroke="url(#paint2_linear_201_30804)" />
+                        </g>
+                        <g filter="url(#filter2_f_201_30804)">
+                           <path d="M8 44L45 8" stroke="url(#paint3_linear_201_30804)" />
+                        </g>
+                        <g filter="url(#filter3_f_201_30804)">
+                           <path d="M8 44L45 8" stroke="url(#paint4_linear_201_30804)" />
+                        </g>
+                        <defs>
+                           <filter id="filter0_f_201_30804" x="0.651367" y="0.641602" width="51.6973" height="50.7168"
+                              filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                              <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                              <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+                              <feGaussianBlur stdDeviation="3.5" result="effect1_foregroundBlur_201_30804" />
+                           </filter>
+                           <filter id="filter1_f_201_30804" x="0.651367" y="0.641602" width="51.6973" height="50.7168"
+                              filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                              <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                              <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+                              <feGaussianBlur stdDeviation="3.5" result="effect1_foregroundBlur_201_30804" />
+                           </filter>
+                           <filter id="filter2_f_201_30804" x="0.651367" y="0.641602" width="51.6973" height="50.7168"
+                              filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                              <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                              <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+                              <feGaussianBlur stdDeviation="3.5" result="effect1_foregroundBlur_201_30804" />
+                           </filter>
+                           <filter id="filter3_f_201_30804" x="0.651367" y="0.641602" width="51.6973" height="50.7168"
+                              filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                              <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                              <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+                              <feGaussianBlur stdDeviation="3.5" result="effect1_foregroundBlur_201_30804" />
+                           </filter>
+
+
+                           <linearGradient id="paint0_linear_201_30804" x1="26.5" y1="8" x2="-18.4327" y2="60.4684"
+                              gradientUnits="userSpaceOnUse">
+                              <stop :stop-color="handbrake ? '#FC0707' : '#0795FC'" />
+                              <stop offset="1" :stop-color="handbrake ? '#FF0000' : '#0094FF'" stop-opacity="0" />
+                           </linearGradient>
+                           <linearGradient id="paint1_linear_201_30804" x1="26.5" y1="8" x2="-18.4327" y2="60.4684"
+                              gradientUnits="userSpaceOnUse">
+                              <stop :stop-color="handbrake ? '#FC0707' : '#0795FC'" />
+                              <stop offset="1" :stop-color="handbrake ? '#FF0000' : '#0094FF'" stop-opacity="0" />
+                           </linearGradient>
+                           <linearGradient id="paint2_linear_201_30804" x1="26.5" y1="8" x2="-18.4327" y2="60.4684"
+                              gradientUnits="userSpaceOnUse">
+                              <stop :stop-color="handbrake ? '#FC0707' : '#0795FC'" />
+                              <stop offset="1" :stop-color="handbrake ? '#FF0000' : '#0094FF'" stop-opacity="0" />
+                           </linearGradient>
+                           <linearGradient id="paint3_linear_201_30804" x1="26.5" y1="8" x2="-18.4327" y2="60.4684"
+                              gradientUnits="userSpaceOnUse">
+                              <stop :stop-color="handbrake ? '#FC0707' : '#0795FC'" />
+                              <stop offset="1" :stop-color="handbrake ? '#FF0000' : '#0094FF'" stop-opacity="0" />
+                           </linearGradient>
+                           <linearGradient id="paint4_linear_201_30804" x1="26.5" y1="8" x2="-18.4327" y2="60.4684"
+                              gradientUnits="userSpaceOnUse">
+                              <stop :stop-color="handbrake ? '#FC0707' : '#0795FC'" />
+                              <stop offset="1" :stop-color="handbrake ? '#FF0000' : '#0094FF'" stop-opacity="0" />
+                           </linearGradient>
+                        </defs>
+                     </svg>
+                  </div>
+               </div>
+               <!-- <img class="w-[90%] h-[80%] absolute  " style="margin-left: 1.8vw; margin-top: 0.28vw;" src="./images/igne.png" alt=""> -->
+            </div>
+         </div>
+      </div>
+   </div>
+</div>

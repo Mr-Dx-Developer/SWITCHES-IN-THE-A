@@ -1,0 +1,138 @@
+.quick {
+  width: 100%;
+  height: 75%;
+  display: flex;
+  flex-direction: column;
+}
+.quick .nav {
+  width: 100%;
+  padding: 0.4rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -moz-column-gap: 1.2rem;
+       column-gap: 1.2rem;
+  background: #101010;
+  border-bottom-left-radius: 1.5rem;
+  border-bottom-right-radius: 1.5rem;
+  position: relative;
+  z-index: 2;
+}
+.quick .nav .nav-item {
+  width: 1.75rem;
+  height: 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 149, 72, 0.2);
+  border-radius: 0.4375rem;
+  transition: background 0.2s ease;
+  cursor: pointer;
+}
+.quick .nav .nav-item.bank {
+  background: rgba(0, 240, 255, 0.2);
+}
+.quick .nav .nav-item.bank.selected {
+  border: 0.125rem solid #00f0ff;
+}
+.quick .nav .nav-item.bank:hover {
+  border: 0.125rem solid #00f0ff;
+}
+.quick .nav .nav-item.fuel {
+  background: rgba(255, 149, 72, 0.2);
+}
+.quick .nav .nav-item.fuel.selected {
+  border: 0.125rem solid rgb(255, 149, 72);
+}
+.quick .nav .nav-item.fuel:hover {
+  border: 0.125rem solid rgb(255, 149, 72);
+}
+.quick .nav .nav-item.shop {
+  background: rgba(255, 0, 184, 0.2);
+}
+.quick .nav .nav-item.shop.selected {
+  border: 0.125rem solid rgb(255, 0, 184);
+}
+.quick .nav .nav-item.shop:hover {
+  border: 0.125rem solid rgb(255, 0, 184);
+}
+.quick .nav .nav-item.clothing {
+  background: rgba(0, 255, 133, 0.2);
+}
+.quick .nav .nav-item.clothing.selected {
+  border: 0.125rem solid rgb(0, 255, 133);
+}
+.quick .nav .nav-item.clothing:hover {
+  border: 0.125rem solid rgb(0, 255, 133);
+}
+.quick .nav .nav-item.barber {
+  background: rgba(255, 138, 0, 0.2);
+}
+.quick .nav .nav-item.barber.selected {
+  border: 0.125rem solid rgb(255, 138, 0);
+}
+.quick .nav .nav-item.barber:hover {
+  border: 0.125rem solid rgb(255, 138, 0);
+}
+.quick .nav .nav-item.tattoo {
+  background: rgba(255, 0, 61, 0.2);
+}
+.quick .nav .nav-item.tattoo.selected {
+  border: 0.125rem solid rgb(255, 0, 61);
+}
+.quick .nav .nav-item.tattoo:hover {
+  border: 0.125rem solid rgb(255, 0, 61);
+}
+.quick .nav .nav-item img {
+  width: 0.875rem;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.quick .waypointDesc {
+  flex: 1;
+  position: relative;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  animation: fadeIn 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  row-gap: 0.65rem;
+}
+.quick .waypointDesc h1 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 99.5%;
+  leading-trim: both;
+  text-edge: cap;
+}
+.quick .waypointDesc p {
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 0.45rem;
+       column-gap: 0.45rem;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.75rem;
+  line-height: 99.5%;
+  opacity: 0.65;
+  leading-trim: both;
+  text-edge: cap;
+}
+.quick .waypointDesc svg {
+  fill: inherit;
+}
+.quick .waypointDesc svg path {
+  fill: inherit;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

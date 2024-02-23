@@ -1,0 +1,737 @@
+.hud-container {
+  position: absolute;
+  bottom: 0rem;
+  display: flex;
+  -moz-column-gap: 0.8rem;
+       column-gap: 0.8rem;
+  z-index: 2;
+  align-items: flex-end;
+  transition: bottom 0.2s ease;
+}
+.hud-container .animate_enter {
+  animation: enter 0.55s;
+  z-index: -1;
+}
+.hud-container .animate_leave {
+  animation: enter 0.55s reverse;
+  z-index: -1;
+}
+@keyframes enter {
+  0% {
+    transform: translateY(1000%);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+.hud-container .hud {
+  width: 32.7vh;
+  position: relative;
+}
+.hud-container .hud .effect {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -0.5rem;
+  width: 85%;
+  background-repeat: no-repeat;
+  z-index: -1;
+  height: 5rem;
+}
+.hud-container .hud .widget {
+  width: 100%;
+  height: 4.875rem;
+  display: flex;
+  align-items: center;
+  padding: 0.8rem;
+  justify-content: space-between;
+  background: rgba(0, 0, 0, 0.65);
+  border-radius: 1.375rem;
+  font-family: "SF Compact Display";
+  margin-bottom: 0.4rem;
+}
+.hud-container .hud .widget .widget-info {
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 1rem;
+       column-gap: 1rem;
+}
+.hud-container .hud .widget .widget-info img {
+  width: 3.25rem;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.hud-container .hud .widget .widget-info div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 0.25rem;
+}
+.hud-container .hud .widget .widget-info div h1 {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.9375rem;
+  line-height: 99.5%;
+  leading-trim: both;
+  text-edge: cap;
+  color: #ffffff;
+}
+.hud-container .hud .widget .widget-info div p {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.9375rem;
+  leading-trim: both;
+  text-edge: cap;
+  color: rgba(255, 255, 255, 0.42);
+}
+.hud-container .hud .widget .widget-controls {
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 0.6rem;
+       column-gap: 0.6rem;
+}
+.hud-container .hud .widget .widget-controls img {
+  cursor: pointer;
+  width: 1.125rem;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: all 0.2s ease;
+  padding: 0.1rem;
+}
+.hud-container .hud .widget .widget-controls img:hover {
+  opacity: 0.8;
+}
+.hud-container .hud .widget .widget-controls img.selected {
+  border: 0.125rem solid white;
+}
+.hud-container .hud > .nav {
+  width: 100%;
+  height: 1.875rem;
+  border-top-left-radius: 0.375rem;
+  border-top-right-radius: 0.375rem;
+  display: flex;
+  margin-bottom: 0.2rem;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.25);
+}
+.hud-container .hud > .nav .nav-item {
+  font-family: "Proxima Nova";
+  font-style: normal;
+  height: 100%;
+  font-weight: 700;
+  font-size: 0.75rem;
+  line-height: 99.5%;
+  letter-spacing: 0.03em;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  flex: 1;
+  transition: background 0.2s ease;
+}
+.hud-container .hud > .nav .nav-item.selected {
+  background: rgba(255, 255, 255, 0.09);
+  border-bottom: 0.125rem solid white;
+}
+.hud-container .hud > .nav .nav-item.selected:first-child {
+  border-top-left-radius: 0.375rem;
+}
+.hud-container .hud > .nav .nav-item.selected:last-child {
+  border-top-right-radius: 0.375rem;
+}
+.hud-container .hud > .nav .nav-item:hover {
+  background: rgba(255, 255, 255, 0.09);
+  border-bottom: 0.125rem solid white;
+}
+.hud-container .hud > .nav .nav-item:hover:first-child {
+  border-top-left-radius: 0.375rem;
+}
+.hud-container .hud > .nav .nav-item:hover:last-child {
+  border-top-right-radius: 0.375rem;
+}
+.hud-container .hud .location {
+  width: 100%;
+  height: 2.875rem;
+  display: flex;
+  margin-bottom: 0.2rem;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.55rem;
+  background: rgba(0, 0, 0, 0.35);
+}
+.hud-container .hud .location .location-left {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  -moz-column-gap: 0.625rem;
+       column-gap: 0.625rem;
+}
+.hud-container .hud .location .location-left .compass {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.9375rem;
+  line-height: 99.5%;
+  min-width: 1.5rem;
+  leading-trim: both;
+  text-edge: cap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+}
+.hud-container .hud .location .location-left .line {
+  width: 0.125rem;
+  height: 100%;
+  background-color: white;
+}
+.hud-container .hud .location .location-left .street {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 0.35rem;
+}
+.hud-container .hud .location .location-left .street .street-name {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.75rem;
+  line-height: 99.5%;
+  leading-trim: both;
+  text-edge: cap;
+  color: #ffffff;
+}
+.hud-container .hud .location .location-left .street .street-label {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.75rem;
+  line-height: 99.5%;
+  leading-trim: both;
+  text-edge: cap;
+  color: #ffffff;
+  opacity: 0.42;
+}
+.hud-container .hud .location .clock {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.75rem;
+  line-height: 99.5%;
+  leading-trim: both;
+  text-edge: cap;
+  color: #ffffff;
+}
+.hud-container .hud .location.hovered {
+  border: 0.125rem solid white;
+}
+.hud-container .hud .menu {
+  width: 100%;
+  height: 27.5vh;
+  background-image: url(../../../assets/images/hud-overlay.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  transition: all 0.35s linear;
+}
+.hud-container .hud .menu .hud-status {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  min-height: 3.5rem;
+  padding-bottom: 0.35rem;
+  padding-top: 0.4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  row-gap: 0.2rem;
+}
+.hud-container .hud .menu .hud-status .hud-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -moz-column-gap: 0.7rem;
+       column-gap: 0.7rem;
+  min-height: 2rem;
+  width: 100%;
+}
+.hud-container .hud .menu .hud-status .hud-top svg {
+  fill: inherit;
+  width: 1.45rem;
+  height: 1.45rem;
+  transition: all 0.1s ease;
+}
+.hud-container .hud .menu .hud-status .hud-top svg * {
+  fill: inherit;
+  transition: all 0.1s ease;
+}
+.hud-container .hud .menu .hud-status .hud-top .health {
+  width: 35%;
+  height: 0.3125rem;
+  background: rgba(255, 72, 72, 0.17);
+  border-radius: 0.3125rem;
+  position: relative;
+}
+.hud-container .hud .menu .hud-status .hud-top .health .health-inner {
+  transition: all 0.2s ease;
+  height: 100%;
+  width: 30%;
+  background: #ff4848;
+  border-radius: 0.3125rem;
+}
+.hud-container .hud .menu .hud-status .hud-top .health p {
+  position: absolute;
+  right: 0;
+  top: -0.75rem;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.625rem;
+  leading-trim: both;
+  text-edge: cap;
+}
+.hud-container .hud .menu .hud-status .hud-top .armor {
+  width: 35%;
+  height: 0.3125rem;
+  background: rgba(72, 112, 255, 0.17);
+  border-radius: 0.3125rem;
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+}
+.hud-container .hud .menu .hud-status .hud-top .armor .armor-inner {
+  transition: all 0.2s ease;
+  height: 100%;
+  width: 30%;
+  background: #4870ff;
+  border-radius: 0.3125rem;
+}
+.hud-container .hud .menu .hud-status .hud-top .armor p {
+  position: absolute;
+  left: 0;
+  top: -0.75rem;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.625rem;
+  leading-trim: both;
+  text-edge: cap;
+}
+.hud-container .hud .menu .hud-status .hud-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -moz-column-gap: 1.25rem;
+       column-gap: 1.25rem;
+  width: 100%;
+  min-height: 1.5rem;
+  transform-origin: bottom;
+}
+.hud-container .hud .menu .hud-status .hud-bottom svg {
+  fill: inherit;
+}
+.hud-container .hud .menu .hud-status .hud-bottom svg path {
+  fill: inherit;
+}
+.hud-container .hud .menu .hud-status .hud-bottom .mic-level {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.25rem;
+}
+.hud-container .hud .menu .hud-status .hud-bottom .mic-level .mic-level-left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  -moz-column-gap: 0.2rem;
+  column-gap: 0.2rem;
+}
+.hud-container .hud .menu .hud-status .hud-bottom .mic-level .mic-level-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  -moz-column-gap: 0.2rem;
+  column-gap: 0.2rem;
+  rotate: -180deg;
+  position: relative;
+  left: 0.165rem;
+}
+.hud-container .hud .menu .hud-status .hud-bottom .mic-level .mic-bar {
+  width: 0.23rem;
+  background: rgba(255, 255, 255, 0.32);
+  border-radius: 0.3125rem;
+  transition: all 0.2s ease;
+}
+.hud-container .hud .menu .hud-status .hud-bottom .mic-level .mic-bar.active {
+  background: rgb(255, 255, 255);
+}
+.hud-container .hud .menu .hud-status .hud-bottom .mic-level .mic-bar.talking {
+  background: #b2ff75;
+}
+.hud-container .hud .menu .hud-status .hud-bottom .mic-level .mic-bar.muted {
+  background: rgba(255, 72, 72, 0.32);
+}
+.hud-container .hud .menu .hud-status .hud-bottom .mic-level .mic-bar.mutedActive {
+  background-color: #ff4848;
+}
+.hud-container .hud .menu .hud-status .hud-bottom .health-drag {
+  width: 2.1rem;
+  height: 2.1rem;
+}
+.hud-container .hud .menu .hud-status .hud-bottom .health-drag #health {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.hud-container .hud .menu .hud-status .hud-bottom .health-drag #health > div {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 0.75rem;
+  height: 0.75rem;
+  transform: translate(-50%, -50%);
+}
+.hud-container .hud .menu .hud-status .hud-bottom .health-drag #health > div svg {
+  width: 100%;
+  height: 100%;
+}
+.hud-container .hud .menu .hud-status .hud-bottom .health-drag #health > svg {
+  width: 100%;
+  height: 100%;
+}
+.hud-container .hud  .hud-status .hud-bottom .health-drag #health p {
+  position: absolute;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 10px;
+  left: 50%;
+  bottom: -0.9rem;
+  transform: translateX(-50%);
+  leading-trim: both;
+  text-edge: cap;
+}
+.hud-container .hud .menu .hud-status .hud-bottom .armor-drag {
+  width: 2.1rem;
+  height: 2.1rem;
+}
+.hud-container .hud .menu .hud-status .hud-bottom .armor-drag #armor {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.hud-container .hud .menu .hud-status .hud-bottom .armor-drag #armor > div {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 0.75rem;
+  height: 0.75rem;
+  transform: translate(-50%, -50%);
+}
+.hud-container .hud .menu .hud-status .hud-bottom .armor-drag #armor > div svg {
+  width: 100%;
+  height: 100%;
+}
+.hud-container .hud .menu .hud-status .hud-bottom .armor-drag #armor > svg {
+  width: 100%;
+  height: 100%;
+}
+.hud-container .hud .menu .hud-status .hud-bottom .armor-drag #armor p {
+  position: absolute;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 10px;
+  left: 50%;
+  bottom: -0.9rem;
+  transform: translateX(-50%);
+  leading-trim: both;
+  text-edge: cap;
+}
+.hud-container .hud .menu .hud-status .hud-bottom .hunger-drag {
+  width: 2.1rem;
+  height: 2.1rem;
+}
+.hud-container .hud .menu .hud-status .hud-bottom .hunger-drag #hunger {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.hud-container .hud .menu .hud-status .hud-bottom .hunger-drag #hunger > div {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 0.75rem;
+  height: 0.75rem;
+  transform: translate(-50%, -50%);
+}
+.hud-container .hud .menu .hud-status .hud-bottom .hunger-drag #hunger > div svg {
+  width: 100%;
+  height: 100%;
+}
+.hud-container .hud .menu .hud-status .hud-bottom .hunger-drag #hunger > svg {
+  width: 100%;
+  height: 100%;
+}
+.hud-container .hud .menu .hud-status .hud-bottom .hunger-drag #hunger p {
+  position: absolute;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 10px;
+  left: 50%;
+  bottom: -0.9rem;
+  transform: translateX(-50%);
+  leading-trim: both;
+  text-edge: cap;
+}
+.hud-container .hud .menu .hud-status .hud-bottom .thirst-drag {
+  width: 2.1rem;
+  height: 2.1rem;
+}
+.hud-container .hud .menu .hud-status .hud-bottom .thirst-drag #thirst, .hud-container .hud .menu .hud-status .hud-bottom .thirst-drag #thirst-2 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.hud-container .hud .menu .hud-status .hud-bottom .thirst-drag #thirst > div, .hud-container .hud .menu .hud-status .hud-bottom .thirst-drag #thirst-2 > div {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 0.75rem;
+  height: 0.75rem;
+  transform: translate(-50%, -50%);
+}
+.hud-container .hud .menu .hud-status .hud-bottom .thirst-drag #thirst > div svg, .hud-container .hud .menu .hud-status .hud-bottom .thirst-drag #thirst-2 > div svg {
+  width: 100%;
+  height: 100%;
+}
+.hud-container .hud .menu .hud-status .hud-bottom .thirst-drag #thirst > svg, .hud-container .hud .menu .hud-status .hud-bottom .thirst-drag #thirst-2 > svg {
+  width: 100%;
+  height: 100%;
+}
+.hud-container .hud .menu .hud-status .hud-bottom .thirst-drag #thirst p, .hud-container .hud .menu .hud-status .hud-bottom .thirst-drag #thirst-2 p {
+  position: absolute;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 10px;
+  left: 50%;
+  bottom: -0.9rem;
+  transform: translateX(-50%);
+  leading-trim: both;
+  text-edge: cap;
+}
+.hud-container .hud .menu .hud-status .hud-bottom .stress-drag {
+  width: 2.1rem;
+  height: 2.1rem;
+  position: relative;
+}
+.hud-container .hud .menu .hud-status .hud-bottom .stress-drag #stress {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.hud-container .hud .menu .hud-status .hud-bottom .stress-drag #stress > div {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 0.75rem;
+  height: 0.75rem;
+  transform: translate(-50%, -50%);
+}
+.hud-container .hud .menu .hud-status .hud-bottom .stress-drag #stress > div svg {
+  width: 100%;
+  height: 100%;
+}
+.hud-container .hud .menu .hud-status .hud-bottom .stress-drag #stress > svg {
+  width: 100%;
+  height: 100%;
+}
+.hud-container .hud .menu .hud-status .hud-bottom .stress-drag #stress p {
+  position: absolute;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 10px;
+  left: 50%;
+  bottom: -0.9rem;
+  transform: translateX(-50%);
+  leading-trim: both;
+  text-edge: cap;
+}
+.hud-container .hud .menu .hud-status .hud-bottom .stamina-drag {
+  width: 2.1rem;
+  height: 2.1rem;
+}
+.hud-container .hud .menu .hud-status .hud-bottom .stamina-drag #stamina {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.hud-container .hud .menu .hud-status .hud-bottom .stamina-drag #stamina > div {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 0.75rem;
+  height: 0.75rem;
+  transform: translate(-50%, -50%);
+}
+.hud-container .hud .menu .hud-status .hud-bottom .stamina-drag #stamina > div svg {
+  width: 100%;
+  height: 100%;
+}
+.hud-container .hud .menu .hud-status .hud-bottom .stamina-drag #stamina > svg {
+  width: 100%;
+  height: 100%;
+}
+.hud-container .hud .menu .hud-status .hud-bottom .stamina-drag #stamina p {
+  position: absolute;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 10px;
+  left: 50%;
+  bottom: -0.9rem;
+  transform: translateX(-50%);
+  leading-trim: both;
+  text-edge: cap;
+}
+.hud-container .hud .menu .hud-status .hud-bottom .oxygen-drag {
+  width: 2.1rem;
+  height: 2.1rem;
+}
+.hud-container .hud .menu .hud-status .hud-bottom .oxygen-drag #oxygen {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.hud-container .hud .menu .hud-status .hud-bottom .oxygen-drag #oxygen > div {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 0.9375rem;
+  height: 0.9375rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate(-50%, -50%);
+}
+.hud-container .hud .menu .hud-status .hud-bottom .oxygen-drag #oxygen > div svg {
+  width: 100%;
+  height: 100%;
+}
+.hud-container .hud .menu .hud-status .hud-bottom .oxygen-drag #oxygen > svg {
+  width: 100%;
+  height: 100%;
+}
+.hud-container .hud .menu .hud-status .hud-bottom .oxygen-drag #oxygen p {
+  position: absolute;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 10px;
+  left: 50%;
+  bottom: -0.9rem;
+  transform: translateX(-50%);
+  leading-trim: both;
+  text-edge: cap;
+}
+.hud-container .hud .menu .hud-status .hud-bottom .altitude-drag {
+  width: 2.1rem;
+  height: 2.1rem;
+}
+.hud-container .hud .menu .hud-status .hud-bottom .altitude-drag #altitude {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0rem 0rem 0.625rem rgba(72, 255, 156, 0.8));
+  position: relative;
+}
+.hud-container .hud .menu .hud-status .hud-bottom .altitude-drag #altitude > div {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 0.75rem;
+  height: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate(-50%, -50%);
+}
+.hud-container .hud .menu .hud-status .hud-bottom .altitude-drag #altitude > div svg {
+  width: 100%;
+  height: 100%;
+}
+.hud-container .hud .menu .hud-status .hud-bottom .altitude-drag #altitude > svg {
+  width: 100%;
+  height: 100%;
+}
+.hud-container .hud .menu .hud-status .hud-bottom .altitude-drag #altitude p {
+  position: absolute;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 10px;
+  left: 50%;
+  bottom: -0.9rem;
+  transform: translateX(-50%);
+  leading-trim: both;
+  text-edge: cap;
+}
+.hud-container .hud .menu .hud-status.hovered {
+  border: 0.125rem solid white;
+}
+.hud-container .keys {
+  width: 6.3125rem;
+}
+.hud-container .keys .key-border {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.45rem;
+}
+.hud-container .keys .key-border.hovered::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 2px solid white;
+}
+.hud-container .keys .key {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 0.15rem;
+       column-gap: 0.15rem;
+  height: 2.35rem;
+}
+.hud-container .keys .key .key-left {
+  height: 100%;
+  flex: 2;
+  font-family: "Proxima Nova";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.75rem;
+  line-height: 99.5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  leading-trim: both;
+  text-edge: cap;
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.33);
+  border-radius: 0.5rem 0rem 0rem 0.5rem;
+}
+.hud-container .keys .key .key-right {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  background: rgba(0, 0, 0, 0.33);
+  border-radius: 0rem 0.5rem 0.5rem 0rem;
+}
+.hud-container .keys .key .key-right img {
+  width: 0.75rem;
+  height: 0.75rem;
+  -o-object-fit: contain;
+     object-fit: contain;
+}

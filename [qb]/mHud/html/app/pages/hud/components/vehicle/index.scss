@@ -1,0 +1,255 @@
+.vehicle {
+    width: 100%;
+    height: 75%;
+    display: flex;
+    column-gap: 1.2rem;
+    position: relative;
+    background-image: url(./images/overlay.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    .vehicle-door-img {
+    }
+    svg {
+        fill: inherit;
+        path {
+            fill: inherit;
+        }
+    }
+    .left-menu {
+        height: 100%;
+        width: 3.125rem;
+        background-image: url(./images/leftmenu.png);
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        z-index: 1;
+        align-items: center;
+        justify-content: space-evenly;
+        .left-menu-button {
+            width: 2.5rem;
+            height: 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+        .left-menu-button.selected {
+            background: rgba(217, 217, 217, 0.18);
+            border-radius: 0.4375rem;
+        }
+        .left-menu-button:hover {
+            background: rgba(217, 217, 217, 0.18);
+            border-radius: 0.4375rem;
+        }
+    }
+    .lights {
+        flex: 1;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem 0;
+        padding-right: 0.75rem;
+        position: relative;
+        z-index: 1;
+    }
+    .doors {
+        flex: 1;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem 0;
+        padding-right: 0.75rem;
+        position: relative;
+        z-index: 1;
+    }
+
+    .windows {
+        flex: 1;
+        height: 100%;
+
+        padding: 1.5rem 0;
+        padding-right: 2rem;
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 1.5rem;
+        p {
+            font-family: "Proxima Nova";
+            font-size: 0.75rem;
+            font-weight: 700;
+            line-height: 0.75rem;
+            letter-spacing: 0em;
+            text-align: center;
+            color: #FFFFFF;
+
+        }
+        .window-buttons{
+            display: flex;
+            width: 90%;
+            flex: 1;
+            flex-wrap: wrap;
+            row-gap: 1rem;
+            align-content: flex-start;
+            align-items: center;
+            justify-content: center;
+            column-gap: 1rem;
+            .vehicle-button{
+                width: 45%;
+                height: 1.7rem;
+                flex: unset!important;
+            }
+         
+        }   
+    }
+    .doors-label {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        height: 100%;
+        row-gap: 0.2rem;
+        p {
+            font-style: normal;
+            font-weight: 700;
+            font-size: 0.75rem;
+            line-height: 99.5%;
+            leading-trim: both;
+            text-edge: cap;
+            text-align: center;
+
+            color: #ffffff;
+        }
+        img {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 0.875rem;
+            height: 0.6875rem;
+            object-fit: cover;
+        }
+    }
+    .neon-effect {
+        position: absolute;
+        left: 0;
+        bottom: -5.5%;
+        width: 100%;
+        height: 100%;
+        div {
+            width: 100%;
+            height: 100%;
+        }
+        svg {
+            fill: inherit;
+            width: 100%;
+            height: 100%;
+            ellipse {
+                fill: inherit;
+            }
+            path {
+                fill: inherit;
+            }
+        }
+    }
+    .vehicle-img {
+        width: 4.875rem;
+        height: 10.375rem;
+        position: relative;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: relative;
+            z-index: 2;
+        }
+        .front-neon {
+            position: absolute;
+            top: 0rem;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #ff48f8;
+            filter: blur(0.3125rem);
+            border-radius: 0.3125rem;
+            width: 60%;
+            height: 0.5625rem;
+        }
+        .rear-neon {
+            position: absolute;
+            bottom: 0rem;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #ff48f8;
+            filter: blur(0.3125rem);
+            border-radius: 0.3125rem;
+            width: 60%;
+            height: 0.5625rem;
+        }
+        .left-neon {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 0.2rem;
+            background: #ff48f8;
+            filter: blur(0.3125rem);
+            border-radius: 0.3125rem;
+            width: 0.5625rem;
+            height: 60%;
+        }
+        .right-neon {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 0.2rem;
+            background: #ff48f8;
+            filter: blur(0.3125rem);
+            border-radius: 0.3125rem;
+            width: 0.5625rem;
+            height: 60%;
+        }
+    }
+    .vehicle-buttons {
+        display: flex;
+        flex-direction: column;
+        row-gap: 0.4rem;
+        height: 100%;
+   
+    }
+    .vehicle-button {
+        width: 5.375rem;
+        cursor: pointer;
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 0.75rem;
+        line-height: 99.5%;
+
+        leading-trim: both;
+        text-edge: cap;
+
+        color: rgba(255, 255, 255, 0.2);
+
+        background: rgba(217, 217, 217, 0.04);
+        border-radius: 0.3125rem;
+        transition: all 0.2s ease;
+    }
+    .vehicle-button.selected {
+        color: rgba(255, 255, 255, 0.6);
+        outline: 0.0625rem solid #ffffff;
+        -moz-outline-radius: 0.3125rem;
+    }
+    .vehicle-button:hover {
+        color: rgba(255, 255, 255, 0.6);
+        outline: 0.0625rem solid #ffffff;
+        -moz-outline-radius: 0.3125rem;
+    }
+}

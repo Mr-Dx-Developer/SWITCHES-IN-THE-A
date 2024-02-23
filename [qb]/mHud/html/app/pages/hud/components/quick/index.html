@@ -1,0 +1,36 @@
+<div class="quick  divSearchResults AutocompleteSearchResults cfn_ui_search_searchResults">
+    <div class="nav ">
+        <div @click="Waypoint('bank');PlayClick()" @mouseover="setActiveQuickMenu(1)" @mouseleave="setActiveQuickMenu(false)" class="nav-item bank"
+            :class="{selected :  activeQuickMenu == 1 ? true : false }">
+            <img src="./app/pages/hud/components/quick/images/bank.png">
+        </div>
+        <div @click="Waypoint('gas_stations');PlayClick()" @mouseover="setActiveQuickMenu(2)" @mouseleave="setActiveQuickMenu(false)" class="nav-item fuel"
+            :class="{selected :  activeQuickMenu == 2 ? true : false }">
+            <img src="./app/pages/hud/components/quick/images/fuel.png">
+
+        </div>
+        <div @click="Waypoint('shops');PlayClick()" @mouseover="setActiveQuickMenu(3)" @mouseleave="setActiveQuickMenu(false)" class="nav-item shop"
+            :class="{selected :  activeQuickMenu == 3 ? true : false }">
+            <img src="./app/pages/hud/components/quick/images/shop.png">
+
+        </div>
+        <div @click="Waypoint('clothing_shops');PlayClick()" @mouseover="setActiveQuickMenu(4)" @mouseleave="setActiveQuickMenu(false)" class="nav-item clothing"
+            :class="{selected :  activeQuickMenu == 4 ? true : false }">
+            <img src="./app/pages/hud/components/quick/images/clothing.png">
+
+        </div>
+        <div @click="Waypoint('barber_shops');PlayClick()" @mouseover="setActiveQuickMenu(5)" @mouseleave="setActiveQuickMenu(false)" class="nav-item barber"
+            :class="{selected :  activeQuickMenu == 5 ? true : false }">
+            <img src="./app/pages/hud/components/quick/images/barber.png">
+
+        </div>
+        <div @click="Waypoint('tattoo_shops');PlayClick()" @mouseover="setActiveQuickMenu(6)" @mouseleave="setActiveQuickMenu(false)" class="nav-item tattoo"
+            :class="{selected :  activeQuickMenu == 6 ? true : false }">
+            <img src="./app/pages/hud/components/quick/images/tattoo.png">
+        </div>
+    </div>
+    <div :style="{ backgroundImage: 'url(' + WaypointDesc[1] + ')' }" class="waypointDesc" v-if="WaypointDesc">
+        <h1 :style="{color:WaypointDesc[2]}">{{WaypointDesc[0]}}</h1>
+        <p :style="{color:WaypointDesc[2]}">{{locales.SET_WAYPOINT}}</p>
+    </div>
+</div>

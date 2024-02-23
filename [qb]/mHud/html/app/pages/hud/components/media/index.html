@@ -1,0 +1,27 @@
+<div class="media">
+     <div class="nav ">
+          <div @click="setActiveMediaMenu('playlists');PlayClick()" class="nav-item button" :class="{selected : activeMediaMenu == 'playlists'}">
+               <inlinesvg :fill="activeMediaMenu == 'playlists' ? '#42FF00': 'white'"
+                    src="./app/pages/hud/components/media/images/playlists-icon.svg"></inlinesvg>
+          </div>
+          <div @click="setActiveMediaMenu('search');PlayClick()" class="nav-item button" :class="{selected :  activeMediaMenu == 'search'}">
+               <inlinesvg :fill=" activeMediaMenu == 'search' ? '#42FF00': '#828282'"
+                    src="./app/pages/hud/components/media/images/search-icon.svg"></inlinesvg>
+          </div>
+          <div @click="setActiveMediaMenu('play');PlayClick()" class="nav-item play" :class="{selected : activeMediaMenu == 'play'}">
+
+               <inlinesvg v-if=" activeMediaMenu == 'play'" fill="#42FF00"
+                    src="./app/pages/hud/components/media/images/play-icon-active.svg"></inlinesvg>
+               <inlinesvg v-else fill="#AEAEAE" src="./app/pages/hud/components/media/images/play-icon.svg"></inlinesvg>
+          </div>
+          <div @click="setActiveMediaMenu('myplaylist');PlayClick()" class="nav-item button" :class="{selected : activeMediaMenu == 'myplaylist'}">
+               <inlinesvg :fill=" activeMediaMenu == 'myplaylist' ? '#42FF00': '#AEAEAE'"
+                    src="./app/pages/hud/components/media/images/myplaylist-icon.svg"></inlinesvg>
+          </div>
+          <div @click="setActiveMediaMenu('account');PlayClick()" class="nav-item button" :class="{selected :  activeMediaMenu == 'account'}">
+               <inlinesvg :fill=" activeMediaMenu == 'account' ? '#42FF00': '#AEAEAE'"
+                    src="./app/pages/hud/components/media/images/account-icon.svg"></inlinesvg>
+          </div>
+     </div>
+     <component v-if="activeMediaMenu" :is="activeMediaMenu"></component>
+</div>

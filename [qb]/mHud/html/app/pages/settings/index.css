@@ -1,0 +1,490 @@
+.general-settings {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.82);
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.5rem;
+  align-items: center;
+}
+.general-settings .settings-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 0;
+  border-bottom: 0.0625rem solid rgba(255, 255, 255, 0.27);
+  position: relative;
+}
+.general-settings .settings-header h1 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.75rem;
+  line-height: 99.5%;
+  letter-spacing: 0.11em;
+  color: #ffffff;
+  text-shadow: 0rem 0rem 2.1875rem rgba(255, 255, 255, 0.45);
+}
+.general-settings .settings-header::after {
+  content: "";
+  height: 0.125rem;
+  width: 26.625rem;
+  position: absolute;
+  background-color: white;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+}
+.general-settings .settings-wrapper {
+  height: 91%;
+  width: 26.625rem;
+  position: relative;
+}
+.general-settings .settings-wrapper .restore {
+  width: 22.875rem;
+  height: 3.625rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 5rem;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 99.5%;
+  cursor: pointer;
+  leading-trim: both;
+  text-edge: cap;
+  color: #ffffff;
+  transition: all 0.2s ease;
+  background: #00a3ff;
+  border-radius: 0.5625rem;
+}
+.general-settings .settings-wrapper .restore:hover {
+  opacity: 0.8;
+}
+.general-settings .settings-wrapper .freeform-edit {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 100%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  row-gap: 1rem;
+}
+.general-settings .settings-wrapper .freeform-edit h1 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.9375rem;
+  line-height: 99.5%;
+  leading-trim: both;
+  text-edge: cap;
+  color: #ffffff;
+}
+.general-settings .settings-wrapper .freeform-edit p {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.625rem;
+  line-height: 99.5%;
+  leading-trim: both;
+  text-edge: cap;
+  color: #ffffff;
+}
+.general-settings .settings-wrapper .settings-container {
+  background: rgba(255, 255, 255, 0.11);
+  border-radius: 0.625rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 0.75rem;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: all 0.2s ease;
+}
+.general-settings .settings-wrapper .settings-container .mode-img {
+  width: 21.4375rem;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin: 0.75rem 0;
+}
+.general-settings .settings-wrapper .settings-container input[type=checkbox] {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+.general-settings .settings-wrapper .settings-container label {
+  cursor: pointer;
+  text-indent: -624.9375rem;
+  width: 3.1875rem;
+  height: 1.9375rem;
+  background: rgba(120, 120, 128, 0.16);
+  display: block;
+  border-radius: 6.25rem;
+  position: relative;
+}
+.general-settings .settings-wrapper .settings-container label:after {
+  content: "";
+  position: absolute;
+  top: 0.125rem;
+  left: 0.125rem;
+  width: 1.6875rem;
+  height: 1.6875rem;
+  background: #fff;
+  border-radius: 1.6875rem;
+  transition: 0.3s;
+}
+.general-settings .settings-wrapper .settings-container input:checked + label {
+  background: #34c759;
+}
+.general-settings .settings-wrapper .settings-container input:checked + label:after {
+  left: 100%;
+  transform: translateX(-100%);
+}
+.general-settings .settings-wrapper .settings-container h1 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.75rem;
+  line-height: 99.5%;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -moz-column-gap: 0.85rem;
+       column-gap: 0.85rem;
+  margin-bottom: 1.5rem;
+}
+.general-settings .settings-wrapper .settings-container h1 span {
+  font-size: 0.9rem;
+}
+.general-settings .settings-wrapper .settings-container .desc {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.9375rem;
+  line-height: 99.5%;
+  margin: 0.5rem 0;
+  leading-trim: both;
+  text-edge: cap;
+  padding: 0 0.2rem;
+  text-align: center;
+  color: #ffffff;
+}
+.general-settings .settings-wrapper .settings-container .desc span {
+  color: #007aff;
+}
+.general-settings .settings-wrapper .settings-container .speedometer-line {
+  width: 100%;
+  height: 0.0625rem;
+  background: rgba(217, 217, 217, 0.38);
+  margin: 0.75rem auto;
+}
+.general-settings .settings-wrapper .settings-container .close {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.625rem;
+  line-height: 99.5%;
+  margin: 1rem 0;
+  leading-trim: both;
+  text-edge: cap;
+  color: #ffffff;
+  position: absolute;
+  bottom: 4.8rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.general-settings .settings-wrapper .settings-container .close-bottom {
+  bottom: 0rem;
+}
+.general-settings .settings-wrapper .settings-container .settings-button.extra-margin {
+  margin-top: 1.5rem;
+}
+.general-settings .settings-wrapper .settings-container .default-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 2rem;
+  -moz-column-gap: 1.2rem;
+       column-gap: 1.2rem;
+  width: 100%;
+  min-height: 3.5rem;
+  cursor: pointer;
+  background: #00a3ff;
+  border-radius: 0.5625rem;
+  transition: all 0.2s ease;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 99.5%;
+  leading-trim: both;
+  text-edge: cap;
+  color: #ffffff;
+}
+.general-settings .settings-wrapper .settings-container .default-button:hover {
+  opacity: 0.8;
+}
+.general-settings .settings-wrapper .settings-container .back-button {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  width: 80%;
+  transform: translateX(-50%);
+}
+.general-settings .settings-wrapper .settings-container .streamer-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -moz-column-gap: 1.2rem;
+       column-gap: 1.2rem;
+  width: 100%;
+  min-height: 3.5rem;
+  cursor: pointer;
+  background: #8f00ff;
+  border-radius: 0.5625rem;
+  transition: all 0.2s ease;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 99.5%;
+  leading-trim: both;
+  text-edge: cap;
+  color: #ffffff;
+}
+.general-settings .settings-wrapper .settings-container .streamer-button:hover {
+  opacity: 0.8;
+}
+.general-settings .settings-wrapper .settings-container .settings-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  -moz-column-gap: 1.2rem;
+       column-gap: 1.2rem;
+  width: 100%;
+  min-height: 3.5rem;
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.44);
+  border-radius: 0.5625rem;
+  transition: all 0.2s ease;
+}
+.general-settings .settings-wrapper .settings-container .settings-button .settings-button-header {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+.general-settings .settings-wrapper .settings-container .settings-button .settings-button-header h2 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.9375rem;
+  line-height: 99.5%;
+  leading-trim: both;
+  text-edge: cap;
+  color: #ffffff;
+}
+.general-settings .settings-wrapper .settings-container .settings-button .settings-button-header p {
+  font-family: "SF Compact Display";
+  font-style: normal;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 500;
+  font-size: 0.9375rem;
+  text-align: right;
+  letter-spacing: -0.0255rem;
+  font-feature-settings: "case" on;
+  color: #007aff;
+}
+.general-settings .settings-wrapper .settings-container .settings-button .settings-button-header p:hover {
+  opacity: 0.8;
+}
+.general-settings .settings-wrapper .settings-container .settings-button input[type=range] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 100%;
+  margin: 0 auto;
+  height: 0.25rem;
+  border-radius: 0.875rem;
+  background: rgba(120, 120, 128, 0.2);
+}
+.general-settings .settings-wrapper .settings-container .settings-button input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 1.2rem;
+  width: 1.2rem;
+  border-radius: 50%;
+  cursor: ew-resize;
+  background: #ffffff;
+}
+.general-settings .settings-wrapper .settings-container .settings-button .settings-list-options {
+  position: relative;
+  width: 8.0625rem;
+  height: 1.875rem;
+  z-index: 5;
+  background: rgba(255, 255, 255, 0.32);
+  border-radius: 0.3125rem;
+}
+.general-settings .settings-wrapper .settings-container .settings-button .settings-list-options .settings-list-option {
+  position: absolute;
+  left: 0;
+  top: 2.5rem;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  box-shadow: 0rem 0.25rem 1.25rem rgba(0, 0, 0, 0.3);
+  /* Note: backdrop-filter has minimal browser support */
+  border-radius: 0.3125rem;
+}
+.general-settings .settings-wrapper .settings-container .settings-button .settings-list-options .settings-list-option div.selected {
+  background: rgba(217, 217, 217, 0.24);
+}
+.general-settings .settings-wrapper .settings-container .settings-button .settings-list-options .settings-list-option div {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.9375rem;
+  line-height: 99.5%;
+  leading-trim: both;
+  text-edge: cap;
+  width: 100%;
+  color: #ffffff;
+  transition: all 0.2s ease;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  border-radius: 0.3125rem;
+  padding: 0 1rem;
+}
+.general-settings .settings-wrapper .settings-container .settings-button .settings-list-options .settings-list-option div:hover {
+  background: rgba(217, 217, 217, 0.24);
+}
+.general-settings .settings-wrapper .settings-container .settings-button .settings-list-options .setting-list-option-selected {
+  display: flex;
+  align-items: center;
+  padding: 0 0.5rem;
+  width: 100%;
+  height: 100%;
+}
+.general-settings .settings-wrapper .settings-container .settings-button .settings-list-options .setting-list-option-selected p {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.9375rem;
+  line-height: 99.5%;
+  leading-trim: both;
+  text-edge: cap;
+  color: #ffffff;
+}
+.general-settings .settings-wrapper .settings-container .settings-button .settings-options {
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 0.5rem;
+       column-gap: 0.5rem;
+}
+.general-settings .settings-wrapper .settings-container .settings-button .settings-options .settings-option {
+  width: 3.75rem;
+  height: 1.875rem;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.9375rem;
+  line-height: 99.5%;
+  leading-trim: both;
+  text-edge: cap;
+  color: rgba(255, 255, 255, 0.42);
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 0.3125rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.general-settings .settings-wrapper .settings-container .settings-button .settings-options .settings-option.active {
+  background: rgba(255, 255, 255, 0.32);
+  color: #ffffff;
+}
+.general-settings .settings-wrapper .settings-container .settings-button .settings-button-wrapper {
+  width: 100%;
+  padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+}
+.general-settings .settings-wrapper .settings-container .settings-button .settings-button-wrapper .settings-button-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.general-settings .settings-wrapper .settings-container .settings-button .settings-button-wrapper .settings-button-bottom {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.75rem;
+}
+.general-settings .settings-wrapper .settings-container .settings-button .settings-button-wrapper .settings-button-bottom .line {
+  width: 100%;
+  background: rgba(217, 217, 217, 0.38);
+  height: 0.0625rem;
+}
+.general-settings .settings-wrapper .settings-container .settings-button .settings-button-wrapper .settings-button-bottom p {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.625rem;
+  line-height: 99.5%;
+  leading-trim: both;
+  text-edge: cap;
+  color: #ffffff;
+}
+.general-settings .settings-wrapper .settings-container .settings-button p {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.9375rem;
+  line-height: 99.5%;
+  leading-trim: both;
+  text-edge: cap;
+  color: #ffffff;
+}
+.general-settings .settings-wrapper .settings-container .settings-button img {
+  width: 0.5625rem;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.general-settings .settings-wrapper .settings-container .settings-button:hover {
+  background: rgba(255, 255, 255, 0.44);
+}
+.general-settings .settings-wrapper .settings-container .settings-color {
+  width: 2.25rem;
+  height: 2.25rem;
+  border: 0.0625rem solid #ffffff;
+  border-radius: 0.5625rem;
+  padding: 0.13rem;
+  position: relative;
+}
+.general-settings .settings-wrapper .settings-container .settings-color input {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  color: rgba(255, 255, 255, 0);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  cursor: pointer;
+}
+.general-settings .settings-wrapper .settings-container .settings-color .settings-color-inner {
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  border-radius: 0.4375rem;
+}
+.general-settings .settings-wrapper .settings-container.streamer {
+  background: rgba(143, 0, 255, 0.11);
+}

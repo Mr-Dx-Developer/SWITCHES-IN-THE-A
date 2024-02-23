@@ -1,0 +1,871 @@
+<div class="general-settings">
+    <div class="settings-header">
+        <h1>{{locales.HUD_SETTINGS}}</h1>
+    </div>
+    <div class="settings-wrapper" v-show="freeformEdit">
+        <div class="freeform-edit">
+            <h1>{{locales.DRAG_DROP}}</h1>
+            <p>{{locales.CLOSE}}</p>
+        </div>
+        <div class="restore" @click="RestoreFreemode();PlayClick()">
+            {{locales.RESTORE}}
+        </div>
+    </div>
+
+    <div class="settings-wrapper" v-show="!freeformEdit">
+        <div class="settings-container" v-if="selectedSettingsElement == ''">
+            <h1>{{locales.CHANGE_SETTINGS}}</h1>
+            <div @mouseover="setHoveredSettingsElement('location')" @mouseleave="setHoveredSettingsElement('')"
+                @click="setSelectedSettingsElement('location');PlayClick()" class="settings-button">
+                <p>{{locales.COMPASS_LOCATION_INGAME}}</p>
+                <img src="./assets/images/right.png">
+            </div>
+            <div class="settings-button" @mouseover="setHoveredSettingsElement('status')"
+                @mouseleave="setHoveredSettingsElement('')" @click="setSelectedSettingsElement('status');PlayClick()">
+                <p>{{locales.STATUS_HUD}}</p>
+                <img src="./assets/images/right.png">
+            </div>
+            <div class="settings-button" @mouseover="setHoveredSettingsElement('info')"
+                @mouseleave="setHoveredSettingsElement('')" @click="setSelectedSettingsElement('info');PlayClick()">
+                <p>{{locales.INFO_MONEY_COIN}}</p>
+                <img src="./assets/images/right.png">
+            </div>
+            <div class="settings-button" @mouseover="setHoveredSettingsElement('helper-widgets')"
+                @mouseleave="setHoveredSettingsElement('')"
+                @click="setSelectedSettingsElement('helper-widgets');PlayClick()">
+                <p>{{locales.HELPER_WIDGETS}}</p>
+                <img src="./assets/images/right.png">
+            </div>
+            <div class="settings-button" @mouseover="setHoveredSettingsElement('speedometer')"
+                @mouseleave="setHoveredSettingsElement('')"
+                @click="setSelectedSettingsElement('speedometer');PlayClick()">
+                <p>{{locales.SPEEDOMETER}}</p>
+                <img src="./assets/images/right.png">
+            </div>
+            <div @click="EnableFreeMode();PlayClick()" class="settings-button">
+                <p>{{locales.FREEFORM_EDIT}}</p>
+                <img src="./assets/images/right.png">
+            </div>
+            <div class="settings-button extra-margin">
+                <p>{{locales.HIDE_HUD}}</p>
+                <input @click="PlayClick()" v-model="hudSettings['hideHud']" type="checkbox" id="hide-hud" /><label
+                    for="hide-hud">Toggle</label>
+            </div>
+            <div class="settings-button">
+                <p>{{locales.CINEMATIC_MODE}}</p>
+                <input @click="PlayClick()" v-model="hudSettings['cinematicMode']" type="checkbox"
+                    id="cinematic-mode" /><label for="cinematic-mode">Toggle</label>
+            </div>
+            <p class="close close-bottom">{{locales.CLOSE}}</p>
+            <div @click="setSelectedSettingsElement('streamer-mode');PlayClick()" class="streamer-button">
+                {{locales.STREAMER_MODE}}
+            </div>
+            <div class="default-button" @click="restoreToDefaultAllHud();PlayClick()">
+                {{locales.RESTORE}}
+            </div>
+        </div>
+        <div class="settings-container streamer" v-else-if="selectedSettingsElement == 'streamer-mode'">
+            <h1>{{locales.STREAMER_MODE}}</h1>
+            <div class="settings-button">
+                <p>{{locales.ENABLE_STREAMER_MODE}}</p>
+
+                <input @click="PlayClick()" v-model="hudSettings['streamerMode']" type="checkbox"
+                    id="streamer-mode" /><label for="streamer-mode">Toggle</label>
+            </div>
+            <div class="speedometer-line"></div>
+            <p class="desc">
+                {{locales.STREAMER_MODE_DESC}}
+            </p>
+            <div class="speedometer-line"></div>
+
+            <div class="settings-button">
+                <p>{{locales.PLAY_MEDIA_SONGS}}</p>
+                <input @click="PlayClick()" v-model="hudSettings['playMediaSongs']" type="checkbox"
+                    id="play-media-songs" /><label for="play-media-songs">Toggle</label>
+            </div>
+            <div class="settings-button">
+                <p>{{locales.SHOW_MY_ID}}</p>
+                <input @click="PlayClick()" v-model="hudSettings['showMyPlayerId']" type="checkbox"
+                    id="show-player-id" /><label for="show-player-id">Toggle</label>
+            </div>
+            <p class="close">{{locales.CLOSE}}</p>
+            <div class="default-button back-button" @click="setSelectedSettingsElement('');PlayClick()">
+                {{locales.GO_BACK}}
+            </div>
+        </div>
+        <div class="settings-container" v-else-if="selectedSettingsElement == 'status'">
+            <h1>{{locales.STATUS_HUD}}</h1>
+            <div class="settings-button" @click="setSelectedSettingsElement('display');PlayClick()">
+                <p>{{locales.DISPLAY_SETTINGS}}</p>
+                <img src="./assets/images/right.png">
+            </div>
+            <div class="settings-button" @click="setSelectedSettingsElement('customization');PlayClick()">
+                <p>{{locales.CUSTOMIZATION}}</p>
+                <img src="./assets/images/right.png">
+            </div>
+            <div class="settings-button" @click="setSelectedSettingsElement('display-modes');PlayClick()">
+                <p>{{locales.DISPLAY_MODES}}</p>
+                <img src="./assets/images/right.png">
+            </div>
+            <p class="close">{{locales.CLOSE}}</p>
+
+            <div class="default-button back-button" @click="setSelectedSettingsElement('');PlayClick()">
+                {{locales.GO_BACK}}
+            </div>
+        </div>
+        <div class="settings-container" v-else-if="selectedSettingsElement == 'display-modes'">
+            <h1>{{locales.DISPLAY_MODES}}</h1>
+            <div class="settings-button">
+                <p>{{locales.ORIGINAL_MODE}}</p>
+
+                <input @click="PlayClick()" @change="ChangeHUDMode('original')"
+                    :checked="hudSettings['hudMode'] == 'original'" type="checkbox" id="original-mode" /><label
+                    for="original-mode">Toggle</label>
+            </div>
+            <img class="mode-img" src="./app/pages/settings/images/original-mode.png">
+            <div class="settings-button">
+                <p>{{locales.TEXT_MODE}}</p>
+
+                <input @click="PlayClick()" @change="ChangeHUDMode('text')" :checked="hudSettings['hudMode'] == 'text'"
+                    type="checkbox" id="text-mode" /><label for="text-mode">Toggle</label>
+            </div>
+            <img class="mode-img" src="./app/pages/settings/images/text-mode.png">
+            <div class="settings-button">
+                <p>{{locales.CIRCLE_HEALTH_ARMOR}}</p>
+
+                <input @click="PlayClick()" v-model="hudSettings['circleHealthAndArmor']" type="checkbox"
+                    id="circle-armor-health-mode" /><label for="circle-armor-health-mode">Toggle</label>
+            </div>
+            <img class="mode-img" src="./app/pages/settings/images/circle-armor-health.png">
+            <p class="close">{{locales.CLOSE}} </p>
+            <div class="default-button back-button" @click="setSelectedSettingsElement('status');PlayClick()">
+                {{locales.GO_BACK}}
+            </div>
+        </div>
+        <div class="settings-container" v-else-if="selectedSettingsElement == 'display'">
+            <h1>{{locales.DISPLAY_SETTINGS}}</h1>
+            <div class="settings-button">
+                <p>{{locales.DISPLAY_ALL}}</p>
+                <input @click="PlayClick()" v-model="hudSettings['showHudBars']" type="checkbox"
+                    id="display-hud-bars" /><label for="display-hud-bars">Toggle</label>
+            </div>
+            <div class="settings-button">
+                <p>{{locales.HIDE_MAP_OVERLAY}}</p>
+                <input @click="PlayClick()" v-model="hudSettings['hideMapOverlay']" type="checkbox"
+                    id="hide-map-overlay" /><label for="hide-map-overlay">Toggle</label>
+            </div>
+            <div class="settings-button">
+                <p>{{locales.HIDE_HEALTH}}</p>
+                <input @click="PlayClick()" v-model="hudSettings['hideHealth']" type="checkbox"
+                    id="display-health" /><label for="display-health">Toggle</label>
+            </div>
+            <div class="settings-button">
+                <p>{{locales.HIDE_ARMOR}}</p>
+                <input @click="PlayClick()" v-model="hudSettings['hideArmor']" type="checkbox"
+                    id="display-armor" /><label for="display-armor">Toggle</label>
+            </div>
+            <div class="settings-button">
+                <p>{{locales.HIDE_HUNGER}}</p>
+                <input @click="PlayClick()" v-model="hudSettings['hideHunger']" type="checkbox"
+                    id="display-hunger" /><label for="display-hunger">Toggle</label>
+            </div>
+            <div class="settings-button">
+                <p>{{locales.HIDE_THIRST}}</p>
+                <input @click="PlayClick()" v-model="hudSettings['hideThirst']" type="checkbox"
+                    id="display-thirst" /><label for="display-thirst">Toggle</label>
+            </div>
+            <div class="settings-button">
+                <p>{{locales.HIDE_STRESS}}</p>
+                <input @click="PlayClick()" v-model="hudSettings['hideStress']" type="checkbox"
+                    id="display-stress" /><label for="display-stress">Toggle</label>
+            </div>
+            <div class="settings-button">
+                <div class="settings-button-wrapper">
+                    <div class="settings-button-top">
+
+                        <p>{{locales.HIDE_DYNAMIC_STATUS}}</p>
+                        <input @click="PlayClick()" v-model="hudSettings['hideDynamicStatus']" type="checkbox"
+                            id="display-dynamicstatus" /><label for="display-dynamicstatus">Toggle</label>
+                    </div>
+                    <div class="settings-button-bottom">
+
+                        <div class="line"></div>
+                        <p>{{locales.DYNAMIC_HUD_INFO}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="settings-button">
+                <p>{{locales.HIDE_MIC}}</p>
+                <input @click="PlayClick()" v-model="hudSettings['hideMic']" type="checkbox" id="display-mic" /><label
+                    for="display-mic">Toggle</label>
+            </div>
+            <p class="close">{{locales.CLOSE}}</p>
+            <div class="default-button back-button" @click="setSelectedSettingsElement('status');PlayClick()">
+                {{locales.GO_BACK}}
+            </div>
+        </div>
+
+        <div class="settings-container" v-else-if="selectedSettingsElement == 'location'">
+            <h1>{{locales.COMPASS_LOCATION_INGAME}}</h1>
+            <div class="settings-button">
+                <p>{{locales.DISPLAY_ALL}}</p>
+                <input @click="PlayClick()" v-model="hudSettings['showAllLocation']" type="checkbox"
+                    id="display-all" /><label for="display-all">Toggle</label>
+            </div>
+            <div class="settings-button">
+                <p>{{locales.HIDE_COMPASS}}</p>
+                <input @click="PlayClick()" v-model="hudSettings['hideCompass']" type="checkbox"
+                    id="hide-compass" /><label for="hide-compass">Toggle</label>
+            </div>
+            <div class="settings-button">
+                <p>{{locales.HIDE_LOCATION}}</p>
+                <input @click="PlayClick()" v-model="hudSettings['hideLocation']" type="checkbox"
+                    id="hide-location" /><label for="hide-location">Toggle</label>
+            </div>
+            <div class="settings-button">
+                <p> {{locales.HIDE_IG_TIME}}</p>
+                <input @click="PlayClick()" v-model="hudSettings['hideIGTime']" type="checkbox"
+                    id="hide-igtime" /><label for="hide-igtime">Toggle</label>
+            </div>
+            <div class="settings-button" @click="setSelectedSettingsElement('compass');PlayClick()">
+                <p>{{locales.COMPASS_BEHAVIOUR}}</p>
+                <img src="./assets/images/right.png">
+            </div>
+            <div class="settings-button">
+                <p>{{locales.COMPASS_COLOR}}</p>
+                <div class="settings-color" :style="{border : '0.0625rem solid '+hudSettings.compassColor+''}">
+                    <div class="settings-color-inner" :style="{background : hudSettings.compassColor}"></div>
+                    <input @click="PlayClick()" :value="hudSettings.compassColor"
+                        @close="saveColor('compassColor', $event)" @input="changeColor('compassColor', $event)"
+                        type="text" data-coloris />
+                </div>
+            </div>
+            <div class="settings-button">
+                <p>{{locales.LOCATION_TEXT_COLOR}}</p>
+                <div class="settings-color" :style="{border : '0.0625rem solid '+hudSettings.locationTextColor+''}">
+                    <div class="settings-color-inner" :style="{background : hudSettings.locationTextColor}"></div>
+                    <input @click="PlayClick()" :value="hudSettings.locationTextColor"
+                        @close="saveColor('locationTextColor', $event)"
+                        @input="changeColor('locationTextColor', $event)" type="text" data-coloris />
+                </div>
+
+            </div>
+            <div class="settings-button">
+                <p>{{locales.IG_TIME_TEXT_COLOR}}</p>
+                <div class="settings-color" :style="{border : '0.0625rem solid '+hudSettings.igTimeTextColor+''}">
+                    <div class="settings-color-inner" :style="{background : hudSettings.igTimeTextColor}"></div>
+                    <input @click="PlayClick()" :value="hudSettings.igTimeTextColor"
+                        @close="saveColor('igTimeTextColor', $event)" @input="changeColor('igTimeTextColor', $event)"
+                        type="text" data-coloris />
+
+                </div>
+            </div>
+            <p class="close">{{locales.CLOSE}} </p>
+
+            <div class="default-button back-button" @click="setSelectedSettingsElement('');PlayClick()">
+                {{locales.GO_BACK}}
+            </div>
+        </div>
+        <div class="settings-container" v-else-if="selectedSettingsElement == 'speedometer-display'">
+            <h1>{{locales.DISPLAY_SETTINGS}} </h1>
+            <div class="settings-button">
+                <p>{{locales.DISPLAY_ALL}}</p>
+                <input @click="PlayClick()" v-model="hudSettings['showAllSpeedometer']" type="checkbox"
+                    id="show-all-speedo" /><label for="show-all-speedo">Toggle</label>
+            </div>
+            <div class="settings-button">
+                <p>{{locales.HIDE_SPEEDOMETER}}</p>
+                <input @click="PlayClick()" v-model="hudSettings['hideSpeedometer']" type="checkbox"
+                    id="hide-speedo" /><label for="hide-speedo">Toggle</label>
+            </div>
+            <div class="settings-button">
+                <p>{{locales.HIDE_RPM}}</p>
+                <input @click="PlayClick()" v-model="hudSettings['hideRPM']" type="checkbox" id="hide-rpm" /><label
+                    for="hide-rpm">Toggle</label>
+            </div>
+            <div class="settings-button">
+                <p>{{locales.HIDE_NITRO}}</p>
+                <input @click="PlayClick()" v-model="hudSettings['hideNOS']" type="checkbox" id="hide-nitro" /><label
+                    for="hide-nitro">Toggle</label>
+            </div>
+            <p class="close"> {{locales.CLOSE}}</p>
+            <div class="default-button back-button" @click="setSelectedSettingsElement('speedometer');PlayClick()">
+                {{locales.GO_BACK}}
+            </div>
+        </div>
+        <div class="settings-container" v-else-if="selectedSettingsElement == 'customize-nitro-gauge'">
+            <h1>{{locales.CUSTOMIZATION}} > <span>{{locales.NITRO}}</span></h1>
+            <div class="settings-button">
+                <p>{{locales.MONOCHROME_COLOR}}</p>
+                <div class="settings-color" :style="{border : '0.0625rem solid '+getNOSMonochromeColor+''}">
+                    <div class="settings-color-inner" :style="{background : getNOSMonochromeColor}"></div>
+                    <input @click="PlayClick()" :value="hudSettings.nosMonoChromeColor"
+                        @close="saveColor('nosMonoChromeColor', $event)"
+                        @input="changeColor('nosMonoChromeColor', $event)" type="text" data-coloris />
+                </div>
+            </div>
+            <p class="desc">{{locales.COLOR_DESC}}</p>
+            <div class="settings-button">
+                <p>{{locales.OUTER_CIRCLE}}</p>
+                <div class="settings-color" :style="{border : '0.0625rem solid '+hudSettings.nosOuterCircle+''}">
+                    <div class="settings-color-inner" :style="{background : hudSettings.nosOuterCircle}"></div>
+                    <input @click="PlayClick()" :value="hudSettings.nosOuterCircle"
+                        @close="saveColor('nosOuterCircle', $event)" @input="changeColor('nosOuterCircle', $event)"
+                        type="text" data-coloris />
+                </div>
+            </div>
+            <div class="settings-button">
+                <p>{{locales.NON_HIGHLIGHTED_GAUGE_LINES}}</p>
+                <div class="settings-color"
+                    :style="{border : '0.0625rem solid '+hudSettings.nonHighlitedGaugeLines+''}">
+                    <div class="settings-color-inner" :style="{background : hudSettings.nonHighlitedGaugeLines}"></div>
+                    <input @click="PlayClick()" :value="hudSettings.nonHighlitedGaugeLines"
+                        @close="saveColor('nonHighlitedGaugeLines', $event)"
+                        @input="changeColor('nonHighlitedGaugeLines', $event)" type="text" data-coloris />
+                </div>
+            </div>
+            <div class="settings-button">
+                <p>{{locales.HIGHLIGHTED_GAUGE_LINES}}</p>
+                <div class="settings-color" :style="{border : '0.0625rem solid '+hudSettings.highlitedGaugeLines+''}">
+                    <div class="settings-color-inner" :style="{background : hudSettings.highlitedGaugeLines}"></div>
+                    <input @click="PlayClick()" :value="hudSettings.highlitedGaugeLines"
+                        @close="saveColor('highlitedGaugeLines', $event)"
+                        @input="changeColor('highlitedGaugeLines', $event)" type="text" data-coloris />
+                </div>
+            </div>
+            <div class="settings-button">
+                <p>{{locales.NITRO_STATUS}}</p>
+                <div class="settings-color" :style="{border : '0.0625rem solid '+hudSettings.nitroStatusColor+''}">
+                    <div class="settings-color-inner" :style="{background : hudSettings.nitroStatusColor}"></div>
+                    <input @click="PlayClick()" :value="hudSettings.nitroStatusColor"
+                        @close="saveColor('nitroStatusColor', $event)" @input="changeColor('nitroStatusColor', $event)"
+                        type="text" data-coloris />
+                </div>
+            </div>
+            <div class="settings-button">
+                <p>{{locales.NITRO_TEXT}}</p>
+                <div class="settings-color" :style="{border : '0.0625rem solid '+hudSettings.nitroTextColor+''}">
+                    <div class="settings-color-inner" :style="{background : hudSettings.nitroTextColor}"></div>
+                    <input @click="PlayClick()" :value="hudSettings.nitroTextColor"
+                        @close="saveColor('nitroTextColor', $event)" @input="changeColor('nitroTextColor', $event)"
+                        type="text" data-coloris />
+                </div>
+            </div>
+            <div class="settings-button">
+                <p>{{locales.NEEDLE}}</p>
+                <div class="settings-color" :style="{border : '0.0625rem solid '+hudSettings.nitroNeedleColor+''}">
+                    <div class="settings-color-inner" :style="{background : hudSettings.nitroNeedleColor}"></div>
+                    <input @click="PlayClick()" :value="hudSettings.nitroNeedleColor"
+                        @close="saveColor('nitroNeedleColor', $event)" @input="changeColor('nitroNeedleColor', $event)"
+                        type="text" data-coloris />
+                </div>
+            </div>
+            <div class="settings-button">
+                <p>{{locales.NEEDLE_CIRCLE}}</p>
+                <div class="settings-color"
+                    :style="{border : '0.0625rem solid '+hudSettings.nitroNeedleCircleColor+''}">
+                    <div class="settings-color-inner" :style="{background : hudSettings.nitroNeedleCircleColor}"></div>
+                    <input @click="PlayClick()" :value="hudSettings.nitroNeedleCircleColor"
+                        @close="saveColor('nitroNeedleCircleColor', $event)"
+                        @input="changeColor('nitroNeedleCircleColor', $event)" type="text" data-coloris />
+                </div>
+            </div>
+            <p class="close close-bottom">{{locales.CLOSE}}</p>
+            <div class="default-button" @click="restoreNitroColors();PlayClick()">
+                {{locales.RESTORE}}
+            </div>
+            <div class="default-button" @click="setSelectedSettingsElement('speedo-color-customization');PlayClick()">
+                {{locales.GO_BACK}}
+            </div>
+        </div>
+        <div class="settings-container" v-else-if="selectedSettingsElement == 'customize-rpm-gauge'">
+            <h1>{{locales.CUSTOMIZATION}} > <span>{{locales.RPM}}</span></h1>
+            <div class="settings-button">
+                <p>{{locales.MONOCHROME_COLOR}}</p>
+                <div class="settings-color" :style="{border : '0.0625rem solid '+getRPMMonochromeColor+''}">
+                    <div class="settings-color-inner" :style="{background : getRPMMonochromeColor}"></div>
+                    <input @click="PlayClick()" :value="hudSettings.rpmMonochromeColor"
+                        @close="saveColor('rpmMonochromeColor', $event)"
+                        @input="changeColor('rpmMonochromeColor', $event)" type="text" data-coloris />
+                </div>
+            </div>
+            <p class="desc">{{locales.COLOR_DESC}}</p>
+            <div class="settings-button">
+                <p>{{locales.OUTER_CIRCLE}}</p>
+                <div class="settings-color" :style="{border : '0.0625rem solid '+hudSettings.rpmOuterCircle+''}">
+                    <div class="settings-color-inner" :style="{background : hudSettings.rpmOuterCircle}"></div>
+                    <input @click="PlayClick()" :value="hudSettings.rpmOuterCircle"
+                        @close="saveColor('rpmOuterCircle', $event)" @input="changeColor('rpmOuterCircle', $event)"
+                        type="text" data-coloris />
+                </div>
+            </div>
+            <div class="settings-button">
+                <p>{{locales.INNER_SMALL_RPM_LINES}}</p>
+                <div class="settings-color" :style="{border : '0.0625rem solid '+hudSettings.innerSmallRPMLines+''}">
+                    <div class="settings-color-inner" :style="{background : hudSettings.innerSmallRPMLines}"></div>
+                    <input @click="PlayClick()" :value="hudSettings.innerSmallRPMLines"
+                        @close="saveColor('innerSmallRPMLines', $event)"
+                        @input="changeColor('innerSmallRPMLines', $event)" type="text" data-coloris />
+                </div>
+            </div>
+            <div class="settings-button">
+                <p>{{locales.HIGHLIGHTED_RPM_INDICATORS}}</p>
+                <div class="settings-color"
+                    :style="{border : '0.0625rem solid '+hudSettings.highlightedRPMIndicators+''}">
+                    <div class="settings-color-inner" :style="{background : hudSettings.highlightedRPMIndicators}">
+                    </div>
+                    <input @click="PlayClick()" :value="hudSettings.highlightedRPMIndicators"
+                        @close="saveColor('highlightedRPMIndicators', $event)"
+                        @input="changeColor('highlightedRPMIndicators', $event)" type="text" data-coloris />
+                </div>
+            </div>
+            <div class="settings-button">
+                <p>{{locales.BURNOUT_WARN}}</p>
+                <div class="settings-color" :style="{border : '0.0625rem solid '+hudSettings.burnOutWarnColor+''}">
+                    <div class="settings-color-inner" :style="{background : hudSettings.burnOutWarnColor}">
+                    </div>
+                    <input @click="PlayClick()" :value="hudSettings.burnOutWarnColor"
+                        @close="saveColor('burnOutWarnColor', $event)" @input="changeColor('burnOutWarnColor', $event)"
+                        type="text" data-coloris />
+                </div>
+            </div>
+            <div class="settings-button">
+                <p>{{locales.RPM_TEXT}}</p>
+                <div class="settings-color" :style="{border : '0.0625rem solid '+hudSettings.rpmTextColor+''}">
+                    <div class="settings-color-inner" :style="{background : hudSettings.rpmTextColor}">
+                    </div>
+                    <input @click="PlayClick()" :value="hudSettings.rpmTextColor"
+                        @close="saveColor('rpmTextColor', $event)" @input="changeColor('rpmTextColor', $event)"
+                        type="text" data-coloris />
+                </div>
+            </div>
+            <div class="settings-button">
+                <p>{{locales.NEEDLE}}</p>
+                <div class="settings-color" :style="{border : '0.0625rem solid '+hudSettings.rpmNeedle+''}">
+                    <div class="settings-color-inner" :style="{background : hudSettings.rpmNeedle}">
+                    </div>
+                    <input @click="PlayClick()" :value="hudSettings.rpmNeedle" @close="saveColor('rpmNeedle', $event)"
+                        @input="changeColor('rpmNeedle', $event)" type="text" data-coloris />
+                </div>
+            </div>
+            <div class="settings-button">
+                <p>{{locales.NEEDLE_CIRCLE}}</p>
+                <div class="settings-color" :style="{border : '0.0625rem solid '+hudSettings.rpmNeedleCircle+''}">
+                    <div class="settings-color-inner" :style="{background : hudSettings.rpmNeedleCircle}">
+                    </div>
+                    <input @click="PlayClick()" :value="hudSettings.rpmNeedleCircle"
+                        @close="saveColor('rpmNeedleCircle', $event)" @input="changeColor('rpmNeedleCircle', $event)"
+                        type="text" data-coloris />
+                </div>
+            </div>
+            <p class="close close-bottom">{{locales.CLOSE}}</p>
+            <div class="default-button" @click="restoreRPMGaugeColors();PlayClick()">
+                {{locales.RESTORE}}
+            </div>
+            <div class="default-button" @click="setSelectedSettingsElement('speedo-color-customization');PlayClick()">
+                {{locales.GO_BACK}}
+            </div>
+        </div>
+
+
+        <div class="settings-container" v-else-if="selectedSettingsElement == 'customize-speedometer'">
+            <h1>{{locales.CUSTOMIZATION}} > <span>{{locales.SPEEDOMETER}} </span></h1>
+            <div class="settings-button">
+                <p>{{locales.MONOCHROME_COLOR}}</p>
+                <div class="settings-color" :style="{border : '0.0625rem solid '+getSpeedoMonochromeColor+''}">
+                    <div class="settings-color-inner" :style="{background : getSpeedoMonochromeColor}"></div>
+                    <input @click="PlayClick()" :value="hudSettings.speedoMonochromeColor"
+                        @close="saveColor('speedoMonochromeColor', $event)"
+                        @input="changeColor('speedoMonochromeColor', $event)" type="text" data-coloris />
+                </div>
+            </div>
+            <p class="desc">{{locales.COLOR_DESC}} </p>
+            <div class="settings-button">
+                <p>{{locales.OUTER_CIRCLE}}</p>
+                <div class="settings-color"
+                    :style="{border : '0.0625rem solid '+hudSettings.speedoOuterCircleColor+''}">
+                    <div class="settings-color-inner" :style="{background : hudSettings.speedoOuterCircleColor}"></div>
+                    <input @click="PlayClick()" :value="hudSettings.speedoOuterCircleColor"
+                        @close="saveColor('speedoOuterCircleColor', $event)"
+                        @input="changeColor('speedoOuterCircleColor', $event)" type="text" data-coloris />
+                </div>
+            </div>
+            <div class="settings-button">
+                <p>{{locales.INNER_SMALL_SPEEDO_LINES}}</p>
+                <div class="settings-color"
+                    :style="{border : '0.0625rem solid '+hudSettings.innerSmallSpeedoLineColor+''}">
+                    <div class="settings-color-inner" :style="{background : hudSettings.innerSmallSpeedoLineColor}">
+                    </div>
+                    <input @click="PlayClick()" :value="hudSettings.innerSmallSpeedoLineColor"
+                        @close="saveColor('innerSmallSpeedoLineColor', $event)"
+                        @input="changeColor('innerSmallSpeedoLineColor', $event)" type="text" data-coloris />
+                </div>
+            </div>
+            <div class="settings-button">
+                <p>{{locales.NON_HIGHLIGHTED_SPEED_INDICATORS}}</p>
+                <div class="settings-color"
+                    :style="{border : '0.0625rem solid '+hudSettings.nonHighlightedSpeedIndicatorsColor+''}">
+                    <div class="settings-color-inner"
+                        :style="{background : hudSettings.nonHighlightedSpeedIndicatorsColor}"></div>
+                    <input @click="PlayClick()" :value="hudSettings.nonHighlightedSpeedIndicatorsColor"
+                        @close="saveColor('nonHighlightedSpeedIndicatorsColor', $event)"
+                        @input="changeColor('nonHighlightedSpeedIndicatorsColor', $event)" type="text" data-coloris />
+                </div>
+            </div>
+            <div class="settings-button">
+                <p>{{locales.HIGHLIGHTED_SPEED_INDICATORS}}</p>
+                <div class="settings-color"
+                    :style="{border : '0.0625rem solid '+hudSettings.highlightedSpeedIndicatorsColor+''}">
+                    <div class="settings-color-inner"
+                        :style="{background : hudSettings.highlightedSpeedIndicatorsColor}">
+                    </div>
+                    <input @click="PlayClick()" :value="hudSettings.highlightedSpeedIndicatorsColor"
+                        @close="saveColor('highlightedSpeedIndicatorsColor', $event)"
+                        @input="changeColor('highlightedSpeedIndicatorsColor', $event)" type="text" data-coloris />
+                </div>
+            </div>
+            <div class="settings-button">
+                <p>{{locales.SPEED_INDICATOR}}</p>
+                <div class="settings-color" :style="{border : '0.0625rem solid '+hudSettings.speedIndicatorColor+''}">
+                    <div class="settings-color-inner" :style="{background : hudSettings.speedIndicatorColor}"></div>
+                    <input @click="PlayClick()" :value="hudSettings.speedIndicatorColor"
+                        @close="saveColor('speedIndicatorColor', $event)"
+                        @input="changeColor('speedIndicatorColor', $event)" type="text" data-coloris />
+                </div>
+            </div>
+            <div class="settings-button">
+                <p>{{locales.NEEDLE}}</p>
+                <div class="settings-color" :style="{border : '0.0625rem solid '+hudSettings.needleColor+''}">
+                    <div class="settings-color-inner" :style="{background : hudSettings.needleColor}"></div>
+                    <input @click="PlayClick()" :value="hudSettings.needleColor"
+                        @close="saveColor('needleColor', $event)" @input="changeColor('needleColor', $event)"
+                        type="text" data-coloris />
+                </div>
+            </div>
+            <div class="settings-button">
+                <p>{{locales.NEEDLE_CIRCLE}}</p>
+                <div class="settings-color" :style="{border : '0.0625rem solid '+hudSettings.needleCircleColor+''}">
+                    <div class="settings-color-inner" :style="{background : hudSettings.needleCircleColor}"></div>
+                    <input @click="PlayClick()" :value="hudSettings.needleCircleColor"
+                        @close="saveColor('needleCircleColor', $event)"
+                        @input="changeColor('needleCircleColor', $event)" type="text" data-coloris />
+                </div>
+            </div>
+            <p class="close close-bottom">{{locales.CLOSE}}</p>
+            <div class="default-button" @click="restoreSpeedoColors();PlayClick()">
+                {{locales.RESTORE}}
+            </div>
+            <div class="default-button" @click="setSelectedSettingsElement('speedo-color-customization');PlayClick()">
+                {{locales.GO_BACK}}
+            </div>
+        </div>
+        <div class="settings-container" v-else-if="selectedSettingsElement == 'speedo-color-customization'">
+            <h1>{{locales.CUSTOMIZATION}}</h1>
+            <div class="settings-button" @click="setSelectedSettingsElement('customize-speedometer');PlayClick()">
+                <p>{{locales.SPEEDOMETER}}</p>
+                <img src="./assets/images/right.png">
+            </div>
+            <div class="settings-button" @click="setSelectedSettingsElement('customize-rpm-gauge');PlayClick()">
+                <p>{{locales.RPM}}</p>
+                <img src="./assets/images/right.png">
+            </div>
+            <div class="settings-button" @click="setSelectedSettingsElement('customize-nitro-gauge');PlayClick()">
+                <p>{{locales.NITRO}}</p>
+                <img src="./assets/images/right.png">
+            </div>
+            <div class="speedometer-line"></div>
+            <p class="desc" v-html="locales.DEFAULT_SPEEDOMETER_INFO"></p>
+
+            <p class="close">{{locales.CLOSE}}</p>
+            <div class="default-button back-button" @click="setSelectedSettingsElement('speedometer');PlayClick()">
+                {{locales.GO_BACK}}
+            </div>
+        </div>
+        <div class="settings-container" v-else-if="selectedSettingsElement == 'speedometer-size'">
+            <h1>{{locales.SIZE_SETTINGS}}</h1>
+            <div class="settings-button">
+                <div class="settings-button-wrapper">
+                    <div class="settings-button-header">
+                        <h2>{{locales.SPEEDOMETER_SIZE}}</h2>
+                        <p @click="SetSpeedometerSizeToDefault('speedometerSize');PlayClick()">{{locales.REVERT}}</p>
+                    </div>
+                    <div class="speedometer-line"></div>
+                    <input @click="PlayClick()" type="range" v-model="hudSettings.speedometerSize" class="e-range"
+                        step="0.1" min="0.5" max="1.5">
+                </div>
+            </div>
+            <div class="settings-button">
+                <div class="settings-button-wrapper">
+                    <div class="settings-button-header">
+                        <h2>{{locales.RPM_GAUGE_SIZE}}</h2>
+                        <p @click="SetSpeedometerSizeToDefault('rpmSize');PlayClick()">{{locales.REVERT}}</p>
+                    </div>
+                    <div class="speedometer-line"></div>
+                    <input @click="PlayClick()" type="range" v-model="hudSettings.rpmSize" class="e-range" step="0.1"
+                        min="0.5" max="1.5">
+                </div>
+            </div>
+            <div class="settings-button">
+                <div class="settings-button-wrapper">
+                    <div class="settings-button-header">
+                        <h2>{{locales.NITRO_GAUGE_SIZE}}</h2>
+                        <p @click="SetSpeedometerSizeToDefault('nosSize');PlayClick()">{{locales.REVERT}}</p>
+                    </div>
+                    <div class="speedometer-line"></div>
+                    <input @click="PlayClick()" type="range" v-model="hudSettings.nosSize" class="e-range" step="0.1"
+                        min="0.5" max="1.5">
+                </div>
+            </div>
+            <div class="speedometer-line"></div>
+            <p class="desc" v-html="locales.SIZE_DESC"></p>
+            <p class="close">{{locales.CLOSE}}</p>
+            <div class="default-button back-button" @click="setSelectedSettingsElement('speedometer');PlayClick()">
+                {{locales.GO_BACK}}
+            </div>
+        </div>
+        <div class="settings-container" v-else-if="selectedSettingsElement == 'speedometer'">
+            <h1>{{locales.SPEEDOMETER}}</h1>
+            <div class="settings-button" @click="setSelectedSettingsElement('speedometer-display');PlayClick()">
+                <p>{{locales.DISPLAY_SETTINGS}}</p>
+                <img src="./assets/images/right.png">
+            </div>
+            <div class="settings-button" @click="setSelectedSettingsElement('speedometer-size');PlayClick()">
+                <p>{{locales.SIZE_SETTINGS}}</p>
+                <img src="./assets/images/right.png">
+            </div>
+            <div class="settings-button" @click="setSelectedSettingsElement('speedo-color-customization');PlayClick()">
+                <p>{{locales.CUSTOMIZATION}}</p>
+                <img src="./assets/images/right.png">
+            </div>
+            <div class="settings-button">
+                <p>{{locales.SPEED_CALCULATOR}}</p>
+                <div class="settings-options">
+                    <div @click="setSpeedType('kmh');PlayClick()" :class="{active:hudSettings.speedType == 'kmh'}"
+                        class="settings-option">KMH</div>
+                    <div @click="setSpeedType('mph');PlayClick()" :class="{active:hudSettings.speedType == 'mph'}"
+                        class="settings-option">MPH</div>
+                </div>
+            </div>
+            <div class="settings-button ">
+                <p>{{locales.REFRESH_RATE}}</p>
+                <div class="settings-list-options">
+                    <div @click="showRefreshRateList=!showRefreshRateList;PlayClick()"
+                        class="setting-list-option-selected">
+                        <p>{{getSpeedoRefreshRateLabel}}</p>
+                    </div>
+                    <div class="settings-list-option" v-show="showRefreshRateList">
+                        <div @click="setRefreshRate('low');PlayClick()"
+                            :class="{selected:hudSettings.speedoRefreshRate == 'low'}">
+                            {{locales.LOW}}
+                        </div>
+                        <div @click="setRefreshRate('medium');PlayClick()"
+                            :class="{selected:hudSettings.speedoRefreshRate == 'medium'}">{{locales.MEDIUM}}</div>
+                        <div @click="setRefreshRate('high');PlayClick()"
+                            :class="{selected:hudSettings.speedoRefreshRate == 'high'}">
+                            {{locales.HIGH}}</div>
+                        <div @click="setRefreshRate('realtime');PlayClick()"
+                            :class="{selected:hudSettings.speedoRefreshRate == 'realtime'}">{{locales.REAL_TIME}}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="speedometer-line"></div>
+            <p class="desc" v-html="locales.REFRESH_RATE_DESC"></p>
+
+            <p class="close">{{locales.CLOSE}} </p>
+            <div class="default-button back-button" @click="setSelectedSettingsElement('');PlayClick()">
+                {{locales.GO_BACK}}
+            </div>
+        </div>
+        <div class="settings-container" v-else-if="selectedSettingsElement == 'customization'">
+            <h1>{{locales.CUSTOMIZATION}}</h1>
+
+            <div class="settings-button">
+                <p>{{locales.MONOCHROME_COLOR}}</p>
+                <div class="settings-color" :style="{border : '0.0625rem solid '+getMonochromeColor+''}">
+                    <div class="settings-color-inner" :style="{background : getMonochromeColor}"></div>
+                    <input @click="PlayClick()" :value="hudSettings.monochromeColor"
+                        @close="saveColor('monochromeColor', $event)" @input="changeColor('monochromeColor', $event)"
+                        type="text" data-coloris />
+                </div>
+            </div>
+            <p class="desc">{{locales.HUD_COLOR_DESC}} </p>
+
+            <div class="settings-button">
+                <p>{{locales.HEALTH_COLOR}}</p>
+                <div class="settings-color" :style="{border : '0.0625rem solid '+hudSettings.healthColor+''}">
+                    <div class="settings-color-inner" :style="{background : hudSettings.healthColor}"></div>
+                    <input @click="PlayClick()" :value="hudSettings.healthColor"
+                        @close="saveColor('healthColor', $event)" @input="changeColor('healthColor', $event)"
+                        type="text" data-coloris />
+                </div>
+            </div>
+            <div class="settings-button">
+                <p>{{locales.ARMOR_COLOR}}</p>
+                <div class="settings-color" :style="{border : '0.0625rem solid '+hudSettings.armorColor+''}">
+                    <div class="settings-color-inner" :style="{background : hudSettings.armorColor}"></div>
+                    <input @click="PlayClick()" :value="hudSettings.armorColor" @close="saveColor('armorColor', $event)"
+                        @input="changeColor('armorColor', $event)" type="text" data-coloris />
+                </div>
+            </div>
+            <div class="settings-button">
+                <p>{{locales.HUNGER_COLOR}}</p>
+                <div class="settings-color" :style="{border : '0.0625rem solid '+hudSettings.hungerColor+''}">
+                    <div class="settings-color-inner" :style="{background : hudSettings.hungerColor}"></div>
+                    <input @click="PlayClick()" :value="hudSettings.hungerColor"
+                        @close="saveColor('hungerColor', $event)" @input="changeColor('hungerColor', $event)"
+                        type="text" data-coloris />
+                </div>
+            </div>
+            <div class="settings-button">
+                <p>{{locales.THIRST_COLOR}}</p>
+                <div class="settings-color" :style="{border : '0.0625rem solid '+hudSettings.thirstColor+''}">
+                    <div class="settings-color-inner" :style="{background : hudSettings.thirstColor}"></div>
+                    <input @click="PlayClick()" :value="hudSettings.thirstColor"
+                        @close="saveColor('thirstColor', $event)" @input="changeColor('thirstColor', $event)"
+                        type="text" data-coloris />
+                </div>
+            </div>
+            <div class="settings-button">
+                <p>{{locales.STRESS_COLOR}}</p>
+                <div class="settings-color" :style="{border : '0.0625rem solid '+hudSettings.stressColor+''}">
+                    <div class="settings-color-inner" :style="{background : hudSettings.stressColor}"></div>
+                    <input @click="PlayClick()" :value="hudSettings.stressColor"
+                        @close="saveColor('stressColor', $event)" @input="changeColor('stressColor', $event)"
+                        type="text" data-coloris />
+                </div>
+            </div>
+            <div class="settings-button">
+                <p>{{locales.STAMINA_COLOR}}</p>
+                <div class="settings-color" :style="{border : '0.0625rem solid '+hudSettings.staminaColor+''}">
+                    <div class="settings-color-inner" :style="{background : hudSettings.staminaColor}"></div>
+                    <input @click="PlayClick()" :value="hudSettings.staminaColor"
+                        @close="saveColor('staminaColor', $event)" @input="changeColor('staminaColor', $event)"
+                        type="text" data-coloris />
+                </div>
+            </div>
+            <div class="settings-button">
+                <p>{{locales.OXYGEN_COLOR}}</p>
+                <div class="settings-color" :style="{border : '0.0625rem solid '+hudSettings.oxygenColor+''}">
+                    <div class="settings-color-inner" :style="{background : hudSettings.oxygenColor}"></div>
+                    <input @click="PlayClick()" :value="hudSettings.oxygenColor"
+                        @close="saveColor('oxygenColor', $event)" @input="changeColor('oxygenColor', $event)"
+                        type="text" data-coloris />
+                </div>
+            </div>
+            <div class="settings-button">
+                <p>{{locales.ALTITUDE_COLOR}}</p>
+                <div class="settings-color" :style="{border : '0.0625rem solid '+hudSettings.altitudeColor+''}">
+                    <div class="settings-color-inner" :style="{background : hudSettings.altitudeColor}"></div>
+                    <input @click="PlayClick()" :value="hudSettings.altitudeColor"
+                        @close="saveColor('altitudeColor', $event)" @input="changeColor('altitudeColor', $event)"
+                        type="text" data-coloris />
+                </div>
+            </div>
+            <div class="default-button back-button" @click="setSelectedSettingsElement('status');PlayClick()">
+                {{locales.GO_BACK}}
+            </div>
+            <p class="close"> {{locales.CLOSE}}</p>
+        </div>
+        <div class="settings-container" v-else-if="selectedSettingsElement == 'compass'">
+            <h1>{{locales.COMPASS_BEHAVIOUR}} </h1>
+            <div class="settings-button">
+                <p>{{locales.MOUSE_MOVEMENT}}</p>
+                <input @click="PlayClick()" @change="ChangeCompass('mouselook')"
+                    :checked="hudSettings['compassBehaviour'] == 'mouselook'" type="checkbox"
+                    id="mousemovement" /><label for="mousemovement">Toggle</label>
+            </div>
+            <p class="desc"> {{locales.COMPASS_BEHAVIOUR_DESC}}</p>
+            <div class="settings-button">
+                <p>{{locales.PLAYER_LOOK}}</p>
+                <input @click="PlayClick()" @change="ChangeCompass('playerlook')"
+                    :checked="hudSettings['compassBehaviour'] == 'playerlook'" type="checkbox"
+                    id="playermovement" /><label for="playermovement">Toggle</label>
+            </div>
+            <p class="close">{{locales.CLOSE}} </p>
+            <div class="default-button back-button" @click="setSelectedSettingsElement('location');PlayClick()">
+                {{locales.GO_BACK}}
+            </div>
+        </div>
+        <div class="settings-container" v-else-if="selectedSettingsElement == 'helper-widgets'">
+            <h1>{{locales.HELPER_WIDGETS}}</h1>
+            <div class="settings-button">
+                <p>{{locales.DISPLAY_ALL}}</p>
+                <input @click="PlayClick()" v-model="hudSettings['showWidgets']" type="checkbox"
+                    id="show-widgets" /><label for="show-widgets">Toggle</label>
+            </div>
+            <div class="settings-button">
+                <p>{{locales.HIDE_WEAPON_WIDGET}}</p>
+                <input @click="PlayClick()" v-model="hudSettings['hideWeaponWidget']" type="checkbox"
+                    id="show-weapon-widget" /><label for="show-weapon-widget">Toggle</label>
+            </div>
+            <div class="settings-button">
+                <p>{{locales.HIDE_M_DRIVE_CONTROLS_WIDGET}}</p>
+                <input @click="PlayClick()" v-model="hudSettings['hideMDriveWidget']" type="checkbox"
+                    id="show-mdrive-widget" /><label for="show-mdrive-widget">Toggle</label>
+            </div>
+            <div class="settings-button" v-if="enableUIKeys">
+                <p>{{locales.HIDE_ACTION_KEYS_WIDGET}}</p>
+                <input @click="PlayClick()" v-model="hudSettings['hideKeysWidget']" type="checkbox"
+                    id="show-action-keys" /><label for="show-action-keys">Toggle</label>
+            </div>
+            <div class="settings-button" v-if="enableSafezoneNotify">
+                <p>{{locales.HIDE_SAFEZONE_NOTIFY}}</p>
+                <input @click="PlayClick()" v-model="hudSettings['hideSafezoneNotify']" type="checkbox"
+                    id="show-safezone" /><label for="show-safezone">Toggle</label>
+            </div>
+            <p class="close">{{locales.CLOSE}} </p>
+            <div class="default-button back-button" @click="setSelectedSettingsElement('');PlayClick()">
+                {{locales.GO_BACK}}
+            </div>
+        </div>
+
+        <div class="settings-container" v-else-if="selectedSettingsElement == 'info'">
+            <h1>{{locales.INFO_MONEY_COIN}}</h1>
+            <div class="settings-button">
+                <p>{{locales.DISPLAY_ALL}}</p>
+                <input @click="PlayClick()" v-model="hudSettings['showWatermark']" type="checkbox"
+                    id="show-watermark" /><label for="show-watermark">Toggle</label>
+            </div>
+
+            <div class="settings-button">
+                <p>{{locales.HIDE_SERVER_INFO}}</p>
+                <input @click="PlayClick()" v-model="hudSettings['hideServerInfo']" type="checkbox"
+                    id="hide-server-info" /><label for="hide-server-info">Toggle</label>
+            </div>
+            <div class="settings-button">
+                <p>{{locales.HIDE_CHARACTER_INFO}}</p>
+                <input @click="PlayClick()" v-model="hudSettings['hideCharacterInfo']" type="checkbox"
+                    id="hide-character-info" /><label for="hide-character-info">Toggle</label>
+            </div>
+            <div class="settings-button" v-if="forceAccountsVisibility.bank">
+                <p>{{locales.HIDE_BANK_MONEY}}</p>
+                <input @click="PlayClick()" v-model="hudSettings['hideBankMoney']" type="checkbox"
+                    id="hide-bank-money" /><label for="hide-bank-money">Toggle</label>
+            </div>
+            <div class="settings-button" v-if="forceAccountsVisibility.cash">
+                <p>{{locales.HIDE_CASH_MONEY}}</p>
+                <input @click="PlayClick()" v-model="hudSettings['hideCashMoney']" type="checkbox"
+                    id="hide-cash-money" /><label for="hide-cash-money">Toggle</label>
+            </div>
+            <div class="settings-button" v-if="forceAccountsVisibility.boss_money">
+                <p>{{locales.HIDE_SOCIETY_MONEY}}</p>
+                <input @click="PlayClick()" v-model="hudSettings['hideSocietyMoney']" type="checkbox"
+                    id="hide-society-money" /><label for="hide-society-money">Toggle</label>
+            </div>
+            <div class="settings-button" v-if="forceAccountsVisibility.black_money">
+                <p>{{locales.HIDE_BLACK_MONEY}}</p>
+                <input @click="PlayClick()" v-model="hudSettings['hideBlackMoney']" type="checkbox"
+                    id="hide-black-money" /><label for="hide-black-money">Toggle</label>
+            </div>
+            <div class="settings-button" v-if="forceAccountsVisibility.vip_money">
+                <p>{{locales.HIDE_COIN}}</p>
+                <input @click="PlayClick()" v-model="hudSettings['hideVipCoinMoney']" type="checkbox"
+                    id="hide-vip-coin" /><label for="hide-vip-coin">Toggle</label>
+            </div>
+            <p class="close">{{locales.CLOSE}}</p>
+            <div class="default-button back-button" @click="setSelectedSettingsElement('');PlayClick()">
+                {{locales.GO_BACK}}
+            </div>
+        </div>
+    </div>
+</div>

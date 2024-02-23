@@ -1,0 +1,243 @@
+<div class="hud-container" :class="{disabled:inPassengerSide}" :style="{left:remCalc(pos.left), bottom :hudSettings.showHudBars ? '0' : '6.75vh'}">
+    <div class="hud">
+        <svg class="effect" v-show="hudSettings.showHudBars" width="366" viewBox="0 0 366 80" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <mask id="mask0_64_492" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="366"
+                height="100%">
+                <path d="M0 0H366V80H0V0Z" fill="black" />
+            </mask>
+            <g mask="url(#mask0_64_492)">
+                <g filter="url(#filter0_f_64_492)">
+                    <rect x="23" y="77" width="320" height="3" fill="url(#paint0_linear_64_492)" />
+                </g>
+            </g>
+            <defs>
+                <filter id="filter0_f_64_492" x="0" y="54" width="366" height="49" filterUnits="userSpaceOnUse"
+                    color-interpolation-filters="sRGB">
+                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                    <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+                    <feGaussianBlur stdDeviation="11.5" result="effect1_foregroundBlur_64_492" />
+                </filter>
+                <linearGradient id="paint0_linear_64_492" x1="23" y1="79.9995" x2="343" y2="79.9995"
+                    gradientUnits="userSpaceOnUse">
+                    <stop offset="0.0541291" :stop-color="getHudColors('hungerColor')" />
+                    <stop offset="0.224924" :stop-color="getHudColors('thirstColor')" />
+                    <stop offset="0.501196" stop-color="#FF4848" />
+                    <stop offset="0.768602" :stop-color="getHudColors('stressColor')" />
+                    <stop offset="0.938335" v-show="barVisibility.stamina" :stop-color="getHudColors('staminaColor')" />
+                    <stop offset="0.938335" v-show="barVisibility.oxygen" :stop-color="getHudColors('oxygenColor')" />
+                    <stop offset="0.938335" v-show="barVisibility.altitude"
+                        :stop-color="getHudColors('altitudeColor')" />
+                </linearGradient>
+            </defs>
+        </svg>
+
+        <transition-group name="custom-classes" enter-active-class="animate_enter" leave-active-class="animate_leave">
+            <div key="widget" v-if="inVehicle && currentSongInformations.name && enableTopWidget" class="widget">
+                <div class="widget-info">
+                    <div>
+                        <h1>{{currentSongInformations.name}}</h1>
+                        <p>{{locales.NOW_PLAYING}}</p>
+                    </div>
+                </div>
+                <div class="widget-controls">
+                    <img @click="PrevMusic();PlayClick()" src="./assets/images/prev-song.png">
+                    <img @click="ToggleMusic();PlayClick()" v-if="currentSongInformations.isPaused"
+                        src="./assets/images/play.png">
+                    <img @click="ToggleMusic();PlayClick()" v-else src="./assets/images/pause.png">
+                    <img @click="NextMusic();PlayClick()" src="./assets/images/next-song.png">
+                </div>
+
+            </div>
+            <div key="menu" v-if="inVehicle || showHudSettings" class="nav">
+                <div v-if="menu.quick" @click="setActiveMenu('quick');PlayClick()" class="nav-item"
+                    :class="{selected: activeMenu == 'quick'}" data-action="changeMenu" data-val="quick">
+                    {{locales.QUICK}}</div>
+                <div v-if="menu.vehicle" @click="setActiveMenu('vehicle');PlayClick()" class="nav-item"
+                    :class="{selected: activeMenu == 'vehicle'}" data-action="changeMenu" data-val="vehicle">
+                    {{locales.VEHICLE}}
+                </div>
+                <div @click="setActiveMenu('map');PlayClick()" class="nav-item" :class="{selected: activeMenu == 'map'}"
+                    data-action="changeMenu" data-val="map">{{locales.MAP}}</div>
+                <div v-if="menu.media" @click="setActiveMenu('media');PlayClick()" class="nav-item"
+                    :class="{selected: activeMenu == 'media'}" data-action="changeMenu" data-val="media">
+                    {{locales.MEDIA}}</div>
+                <div v-if="enableVehicleModes" @click="setActiveMenu('settings');PlayClick()" class="nav-item"
+                    :class="{selected: activeMenu == 'settings'}" data-action="changeMenu" data-val="settings">
+                    {{locales.SETTINGS}}
+                </div>
+            </div>
+        </transition-group>
+
+        <div v-show="hudSettings.showAllLocation" class="location"
+            :class="{hovered:hoveredSettingsElement == 'location' || selectedSettingsElement == 'location' || selectedSettingsElement == 'compass'}">
+            <div class="location-left">
+                <p :style="{color:hudSettings.compassColor}" v-show="!hudSettings.hideCompass" class="compass">
+                    {{location.heading}}</p>
+                <div v-show="!hudSettings.hideCompass" class="line"></div>
+                <div v-show="!hudSettings.hideLocation" class="street">
+                    <p :style="{color:hudSettings.locationTextColor}" class="street-name">{{location.zone}}</p>
+                    <p :style="{color:hudSettings.locationTextColor}" class="street-label">{{location.street}}</p>
+                </div>
+            </div>
+            <p :style="{color:hudSettings.igTimeTextColor}" v-show="!hudSettings.hideIGTime" class="clock">
+                {{clock}}</p>
+        </div>
+        <div class="menu" :style="{height: getMenuHeight, backgroundImage: getMenuOverlay}">
+            <component :style="!hudSettings.showHudBars && {height:'100%'}" :is="activeMenu"
+                v-if="activeMenu && inVehicle"></component>
+            <div v-show="hudSettings.showHudBars"
+                :style="{ paddingBottom:hudSettings.hudMode == 'text' ? '1rem': '0.35rem'}" class="hud-status"
+                :class="{hovered:hoveredSettingsElement == 'status' || selectedSettingsElement == 'display' || selectedSettingsElement == 'display-modes' || selectedSettingsElement == 'customization' || selectedSettingsElement == 'status'}">
+                <div class="hud-top">
+                    <div class="health" :style="healthHudStyle"
+                        v-show="!hudSettings.hideHealth && !hudSettings.circleHealthAndArmor">
+                        <div class="health-inner"
+                            :style="{width:status.health+'%', background:getHudColors('healthColor')}"></div>
+                        <p :style="{color:getHudColors('healthColor')}" v-if="hudSettings.hudMode == 'text'">
+                            {{status.health.toFixed(0)}}
+                        </p>
+                    </div>
+                    <template v-if="!hudSettings['hideMic']">
+                        <inlinesvg class="mic-icon" :style="getMicStyle" v-if="micSettings.isMuted" :fill="getMicColor"
+                            src="./assets/images/muted-mic.svg">
+                        </inlinesvg>
+                        <inlinesvg v-else :style="getMicStyle" class="mic-icon" :fill="getMicColor"
+                            src="./assets/images/mic.svg"></inlinesvg>
+                    </template>
+
+                    <div class="armor" :style="armorHudStyle"
+                        v-show="!hudSettings.hideArmor && !hudSettings.circleHealthAndArmor">
+                        <div class="armor-inner"
+                            :style="{width:status.armor+'%', background:getHudColors('armorColor')}">
+                        </div>
+                        <p :style="{color:getHudColors('armorColor')}" v-if="hudSettings.hudMode == 'text'">
+                            {{status.armor.toFixed(0)}}
+                        </p>
+                    </div>
+                </div>
+                <div class="hud-bottom">
+                    <div class="health-drag" :style="getHealthBarStyle"
+                        v-show="!hudSettings['hideHealth'] && hudSettings.circleHealthAndArmor">
+                        <div class="health-hud" id="health">
+                            <inlinesvg :fill="getHudColors('healthColor')" src="./assets/images/health.svg">
+                            </inlinesvg>
+                            <p :style="{color:getHudColors('healthColor')}" v-if="hudSettings.hudMode == 'text'">
+                                {{status.health}}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="armor-drag" :style="getArmorBarStyle"
+                        v-show="!hudSettings['hideArmor'] && hudSettings.circleHealthAndArmor">
+                        <div class="armor-hud" id="armor">
+                            <inlinesvg :fill="getHudColors('armorColor')" src="./assets/images/armor.svg">
+                            </inlinesvg>
+                            <p :style="{color:getHudColors('armorColor')}" v-if="hudSettings.hudMode == 'text'">
+                                {{status.armor}}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="hunger-drag" :style="getHungerHUDStyle"
+                        v-show="barVisibility.hunger && !hudSettings['hideHunger']">
+                        <div class="hunger-hud" id="hunger">
+                            <inlinesvg :fill="getHudColors('hungerColor')" src="./assets/images/hunger-icon.svg">
+                            </inlinesvg>
+                            <p :style="{color:getHudColors('hungerColor')}" v-if="hudSettings.hudMode == 'text'">
+                                {{status.hunger.toFixed(0)}}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="thirst-drag" :style="getThirstHUDStyle"
+                        v-show="barVisibility.thirst && !hudSettings['hideThirst'] && !hudSettings.circleHealthAndArmor">
+                        <div class="thirst-hud" id="thirst">
+                            <inlinesvg :fill="getHudColors('thirstColor')" src="./assets/images/thirst-icon.svg">
+                            </inlinesvg>
+                            <p :style="{color:getHudColors('thirstColor')}" v-if="hudSettings.hudMode == 'text'">
+                                {{status.thirst.toFixed(0)}}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="mic-level" :style="getMicLevelStyle" v-show="!hudSettings['hideMic']">
+
+                        <div class="mic-level-left">
+                            <div :class="{active: micSettings.mic_level >= n, talking:micSettings.mic_level >= n && micSettings.isTalking,  muted:micSettings.isMuted, mutedActive:micSettings.mic_level >= n && micSettings.isMuted}"
+                                class="mic-bar " :style="{height: remCalc(5 + (n * 6)) }" v-for="n in maxVoiceRange ">
+                            </div>
+                        </div>
+                        <div class="mic-level-right">
+                            <div :class="{active: micSettings.mic_level >= n, talking:micSettings.mic_level >= n && micSettings.isTalking,  muted:micSettings.isMuted, mutedActive:micSettings.mic_level >= n && micSettings.isMuted}"
+                                class="mic-bar " :style="{height: remCalc(5 + (n * 6)) }" v-for="n in maxVoiceRange ">
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="thirst-drag" :style="getThirstHUDStyle"
+                        v-show="barVisibility.thirst && !hudSettings['hideThirst'] && hudSettings.circleHealthAndArmor">
+                        <div class="thirst-hud" id="thirst-2">
+                            <inlinesvg :fill="getHudColors('thirstColor')" src="./assets/images/thirst-icon.svg">
+                            </inlinesvg>
+                            <p :style="{color:getHudColors('thirstColor')}" v-if="hudSettings.hudMode == 'text'">
+                                {{status.thirst.toFixed(0)}}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="stress-drag" :style="getStressHudStyle"
+                        v-show="barVisibility.stress && !hudSettings['hideStress']">
+                        <div class="stress-box" id="stress">
+                            <inlinesvg :fill="getHudColors('stressColor')" src="./assets/images/stress-icon.svg">
+                            </inlinesvg>
+                            <p :style="{color:getHudColors('stressColor')}" v-if="hudSettings.hudMode == 'text'">
+                                {{status.stress.toFixed(0)}}
+
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="stamina-drag" :style="getDynamicHudStyle('staminaColor')"
+                        v-show="barVisibility.stamina && !hudSettings['hideDynamicStatus']">
+                        <div id="stamina">
+                            <inlinesvg :fill="getHudColors('staminaColor')" src="./assets/images/stamina-icon.svg">
+                            </inlinesvg>
+                            <p :style="{color:getHudColors('staminaColor')}" v-if="hudSettings.hudMode == 'text'">
+                                {{status.stamina.toFixed(0)}}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="oxygen-drag" v-show="barVisibility.oxygen && !hudSettings['hideDynamicStatus']"
+                        :style="getDynamicHudStyle('oxygenColor')">
+                        <div id="oxygen"
+                            :style="{filter: 'drop-shadow(0rem 0rem 0.625rem '+hexToRGB(getHudColors('oxygenColor'), 0.8)+')'}">
+                            <inlinesvg :fill="getHudColors('oxygenColor')" src="./assets/images/oxygen-icon.svg">
+                            </inlinesvg>
+                            <p :style="{color:getHudColors('oxygenColor')}" v-if="hudSettings.hudMode == 'text'">
+                                {{status.oxygen.toFixed(0)}}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="altitude-drag" :style="getDynamicHudStyle('altitudeColor')"
+                        v-show="barVisibility.altitude && !hudSettings['hideDynamicStatus']">
+                        <div id="altitude">
+                            <inlinesvg :fill="getHudColors('altitudeColor')" src="./assets/images/altitude-icon.svg">
+                            </inlinesvg>
+                            <p :style="{color:getHudColors('altitudeColor')}" v-if="hudSettings.hudMode == 'text'">
+                                {{status.altitude.toFixed(0)}}
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="keys" v-if="(inVehicle || showHudSettings) && !hudSettings.hideMDriveWidget && hudSettings.showWidgets">
+        <div class="key-border"
+            :class="{hovered:hoveredSettingsElement == 'helper-widgets' || selectedSettingsElement == 'helper-widgets'}">
+            <div class="key">
+                <div class="key-left">{{mouseCursorKeyLabel}}</div>
+                <div class="key-right">
+                    <img src="./assets/images/cursor.png">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
