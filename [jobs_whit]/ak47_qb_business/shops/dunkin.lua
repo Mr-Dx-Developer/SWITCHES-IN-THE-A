@@ -1,5 +1,5 @@
 Config.Shop['dunkin'] = { -- job name
-	blip = {enable = true, name = 'Dunkin Donuts', sprite = 538, color = 1, size = 1.2, radius = 0.0, radius_color = 4},
+	blip = {enable = false, name = 'Dunkin Donutes', sprite = 385, color = 0, size = 1.2, radius = 0.0, radius_color = 4},
 	boss_action = vector3(-584.77, -883.61, 25.95),
 	management = vector3(-580.51, -883.58, 25.95),
 	managementRankFor = {
@@ -245,14 +245,14 @@ Config.Shop['dunkin'] = { -- job name
                 price = 10,                                     -- price of the item. set it 0 if you don't want to buy with society money
                 slots = 20,                                     -- container size
                 available = 20,                                 -- available in stock
-                regeneration = 60,                              -- in second
+                regeneration = 1,                              -- in minute
             },
             packaged_tea = {
                 name = 'Packaged Tea',                        		-- item name
                 price = 10,                                     -- price of the item. set it 0 if you don't want to buy with society money
                 slots = 20,                                     -- container size
                 available = 20,                                 -- available in stock
-                regeneration = 60,                              -- in second
+                regeneration = 1,                              -- in minute
             },
             
 		}

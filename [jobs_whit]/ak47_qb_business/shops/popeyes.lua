@@ -1,7 +1,7 @@
 Config.Shop['popeyes'] = { -- job name
-	blip = {enable = true, name = 'Popeyes', sprite = 267, color = 47, size = 1.0, radius = 0.0, radius_color = 4},
-	boss_action = vector3(179.1, -1456.12, 29.13),
-	management = vector3(178.95, -1450.43, 29.13),
+	blip = {enable = true, name = 'Popeyes', sprite = 384, color = 0, size = 0.7, radius = 0.0, radius_color = 4},
+	boss_action = vector3(1305.2201, -748.1941, 65.8030),
+	management = vector3(1305.0616, -752.1465, 65.8030),
 	managementRankFor = {
 		price = 2,
 		stock = 2,
@@ -13,7 +13,7 @@ Config.Shop['popeyes'] = { -- job name
 	    add = 10,                -- add 1 item to the stock
 	},
 	crafting = {
-		menu = vector3(185.24, -1448.15, 29.13),
+		menu = vector3(1306.7278, -749.7940, 65.8030),
 		data = {
 			classic_chicken_sandwich = { 										-- reward item name
 				reward = 1,										-- reward item amount
@@ -21,8 +21,8 @@ Config.Shop['popeyes'] = { -- job name
 					
 				},
 				steps = {
-					{pos = vector4(187.71, -1449.27, 29.13, 228.56),  delay = 20, msg = 'Working...'},	-- x, y, z, heading, second, message
-					{pos = vector4(185.28, -1452.33, 29.13, 229.69),  delay = 30, msg = 'Working...'},	-- x, y, z, heading, second, message
+					{pos = vector4(1308.8262, -751.1982, 65.8030, 248.4864),  delay = 20, msg = 'Working...'},	-- x, y, z, heading, second, message
+					{pos = vector4(1309.1637, -749.1093, 65.8030, 66.7182),  delay = 30, msg = 'Working...'},	-- x, y, z, heading, second, message
 				}
 			},
 			homestyle_mac_cheese = { 										-- reward item name
@@ -31,8 +31,8 @@ Config.Shop['popeyes'] = { -- job name
 					
 				},
 				steps = {
-					{pos = vector4(187.71, -1449.27, 29.13, 228.56),  delay = 20, msg = 'Working...'},	-- x, y, z, heading, second, message
-					{pos = vector4(185.28, -1452.33, 29.13, 229.69),  delay = 30, msg = 'Working...'},	-- x, y, z, heading, second, message
+					{pos = vector4(1308.8262, -751.1982, 65.8030, 248.4864),  delay = 20, msg = 'Working...'},	-- x, y, z, heading, second, message
+					{pos = vector4(1309.1637, -749.1093, 65.8030, 66.7182),  delay = 30, msg = 'Working...'},	-- x, y, z, heading, second, message
 				}
 			},
 			mashed_potatoes = { 										-- reward item name
@@ -41,8 +41,8 @@ Config.Shop['popeyes'] = { -- job name
 					
 				},
 				steps = {
-					{pos = vector4(187.71, -1449.27, 29.13, 228.56),  delay = 20, msg = 'Working...'},	-- x, y, z, heading, second, message
-					{pos = vector4(185.28, -1452.33, 29.13, 229.69),  delay = 30, msg = 'Working...'},	-- x, y, z, heading, second, message
+					{pos = vector4(1308.8262, -751.1982, 65.8030, 248.4864),  delay = 20, msg = 'Working...'},	-- x, y, z, heading, second, message
+					{pos = vector4(1309.1637, -749.1093, 65.8030, 66.7182),  delay = 30, msg = 'Working...'},	-- x, y, z, heading, second, message
 				}
 			},
 			mild_tenders_box = { 										-- reward item name
@@ -51,8 +51,8 @@ Config.Shop['popeyes'] = { -- job name
 					
 				},
 				steps = {
-					{pos = vector4(187.71, -1449.27, 29.13, 228.56),  delay = 20, msg = 'Working...'},	-- x, y, z, heading, second, message
-					{pos = vector4(185.28, -1452.33, 29.13, 229.69),  delay = 30, msg = 'Working...'},	-- x, y, z, heading, second, message
+					{pos = vector4(1308.8262, -751.1982, 65.8030, 248.4864),  delay = 20, msg = 'Working...'},	-- x, y, z, heading, second, message
+					{pos = vector4(1309.1637, -749.1093, 65.8030, 66.7182),  delay = 30, msg = 'Working...'},	-- x, y, z, heading, second, message
 				}
 			},
 			red_beans_rice = { 										-- reward item name
@@ -61,8 +61,8 @@ Config.Shop['popeyes'] = { -- job name
 					
 				},
 				steps = {
-					{pos = vector4(187.71, -1449.27, 29.13, 228.56),  delay = 20, msg = 'Working...'},	-- x, y, z, heading, second, message
-					{pos = vector4(185.28, -1452.33, 29.13, 229.69),  delay = 30, msg = 'Working...'},	-- x, y, z, heading, second, message
+					{pos = vector4(1308.8262, -751.1982, 65.8030, 248.4864),  delay = 20, msg = 'Working...'},	-- x, y, z, heading, second, message
+					{pos = vector4(1309.1637, -749.1093, 65.8030, 66.7182),  delay = 30, msg = 'Working...'},	-- x, y, z, heading, second, message
 				}
 			},
 			regular_cajun_rice = { 										-- reward item name
@@ -71,8 +71,8 @@ Config.Shop['popeyes'] = { -- job name
 					
 				},
 				steps = {
-					{pos = vector4(187.71, -1449.27, 29.13, 228.56),  delay = 20, msg = 'Working...'},	-- x, y, z, heading, second, message
-					{pos = vector4(185.28, -1452.33, 29.13, 229.69),  delay = 30, msg = 'Working...'},	-- x, y, z, heading, second, message
+					{pos = vector4(1308.8262, -751.1982, 65.8030, 248.4864),  delay = 20, msg = 'Working...'},	-- x, y, z, heading, second, message
+					{pos = vector4(1309.1637, -749.1093, 65.8030, 66.7182),  delay = 30, msg = 'Working...'},	-- x, y, z, heading, second, message
 				}
 			},
 			regular_coleslaw = { 										-- reward item name
@@ -81,8 +81,8 @@ Config.Shop['popeyes'] = { -- job name
 					
 				},
 				steps = {
-					{pos = vector4(187.71, -1449.27, 29.13, 228.56),  delay = 20, msg = 'Working...'},	-- x, y, z, heading, second, message
-					{pos = vector4(185.28, -1452.33, 29.13, 229.69),  delay = 30, msg = 'Working...'},	-- x, y, z, heading, second, message
+					{pos = vector4(1308.8262, -751.1982, 65.8030, 248.4864),  delay = 20, msg = 'Working...'},	-- x, y, z, heading, second, message
+					{pos = vector4(1309.1637, -749.1093, 65.8030, 66.7182),  delay = 30, msg = 'Working...'},	-- x, y, z, heading, second, message
 				}
 			},
 			strawberry_cheesecake_pie = { 										-- reward item name
@@ -91,8 +91,8 @@ Config.Shop['popeyes'] = { -- job name
 					
 				},
 				steps = {
-					{pos = vector4(187.71, -1449.27, 29.13, 228.56),  delay = 20, msg = 'Working...'},	-- x, y, z, heading, second, message
-					{pos = vector4(185.28, -1452.33, 29.13, 229.69),  delay = 30, msg = 'Working...'},	-- x, y, z, heading, second, message
+					{pos = vector4(1308.8262, -751.1982, 65.8030, 248.4864),  delay = 20, msg = 'Working...'},	-- x, y, z, heading, second, message
+					{pos = vector4(1309.1637, -749.1093, 65.8030, 66.7182),  delay = 30, msg = 'Working...'},	-- x, y, z, heading, second, message
 				}
 			},
 			signature_chicken_box = { 										-- reward item name
@@ -101,8 +101,8 @@ Config.Shop['popeyes'] = { -- job name
 					
 				},
 				steps = {
-					{pos = vector4(187.71, -1449.27, 29.13, 228.56),  delay = 20, msg = 'Working...'},	-- x, y, z, heading, second, message
-					{pos = vector4(185.28, -1452.33, 29.13, 229.69),  delay = 30, msg = 'Working...'},	-- x, y, z, heading, second, message
+					{pos = vector4(1308.8262, -751.1982, 65.8030, 248.4864),  delay = 20, msg = 'Working...'},	-- x, y, z, heading, second, message
+					{pos = vector4(1309.1637, -749.1093, 65.8030, 66.7182),  delay = 30, msg = 'Working...'},	-- x, y, z, heading, second, message
 				}
 			},
 			cajun_fries = { 										-- reward item name
@@ -111,8 +111,8 @@ Config.Shop['popeyes'] = { -- job name
 					
 				},
 				steps = {
-					{pos = vector4(187.71, -1449.27, 29.13, 228.56),  delay = 20, msg = 'Working...'},	-- x, y, z, heading, second, message
-					{pos = vector4(185.28, -1452.33, 29.13, 229.69),  delay = 30, msg = 'Working...'},	-- x, y, z, heading, second, message
+					{pos = vector4(1308.8262, -751.1982, 65.8030, 248.4864),  delay = 20, msg = 'Working...'},	-- x, y, z, heading, second, message
+					{pos = vector4(1309.1637, -749.1093, 65.8030, 66.7182),  delay = 30, msg = 'Working...'},	-- x, y, z, heading, second, message
 				}
 			},
 			carte_biscuit = { 										-- reward item name
@@ -121,8 +121,8 @@ Config.Shop['popeyes'] = { -- job name
 					
 				},
 				steps = {
-					{pos = vector4(187.71, -1449.27, 29.13, 228.56),  delay = 20, msg = 'Working...'},	-- x, y, z, heading, second, message
-					{pos = vector4(185.28, -1452.33, 29.13, 229.69),  delay = 30, msg = 'Working...'},	-- x, y, z, heading, second, message
+					{pos = vector4(1308.8262, -751.1982, 65.8030, 248.4864),  delay = 20, msg = 'Working...'},	-- x, y, z, heading, second, message
+					{pos = vector4(1309.1637, -749.1093, 65.8030, 66.7182),  delay = 30, msg = 'Working...'},	-- x, y, z, heading, second, message
 				}
 			},
 			cinnamon_apple_pie = { 										-- reward item name
@@ -131,8 +131,8 @@ Config.Shop['popeyes'] = { -- job name
 					
 				},
 				steps = {
-					{pos = vector4(187.71, -1449.27, 29.13, 228.56),  delay = 20, msg = 'Working...'},	-- x, y, z, heading, second, message
-					{pos = vector4(185.28, -1452.33, 29.13, 229.69),  delay = 30, msg = 'Working...'},	-- x, y, z, heading, second, message
+					{pos = vector4(1308.8262, -751.1982, 65.8030, 248.4864),  delay = 20, msg = 'Working...'},	-- x, y, z, heading, second, message
+					{pos = vector4(1309.1637, -749.1093, 65.8030, 66.7182),  delay = 30, msg = 'Working...'},	-- x, y, z, heading, second, message
 				}
 			},
 			bigger_family_feast = { 										-- reward item name
@@ -141,8 +141,8 @@ Config.Shop['popeyes'] = { -- job name
 					
 				},
 				steps = {
-					{pos = vector4(187.71, -1449.27, 29.13, 228.56),  delay = 20, msg = 'Working...'},	-- x, y, z, heading, second, message
-					{pos = vector4(185.28, -1452.33, 29.13, 229.69),  delay = 30, msg = 'Working...'},	-- x, y, z, heading, second, message
+					{pos = vector4(1308.8262, -751.1982, 65.8030, 248.4864),  delay = 20, msg = 'Working...'},	-- x, y, z, heading, second, message
+					{pos = vector4(1309.1637, -749.1093, 65.8030, 66.7182),  delay = 30, msg = 'Working...'},	-- x, y, z, heading, second, message
 				}
 			},
 			chicken_bundle = { 										-- reward item name
@@ -151,8 +151,8 @@ Config.Shop['popeyes'] = { -- job name
 					
 				},
 				steps = {
-					{pos = vector4(187.71, -1449.27, 29.13, 228.56),  delay = 20, msg = 'Working...'},	-- x, y, z, heading, second, message
-					{pos = vector4(185.28, -1452.33, 29.13, 229.69),  delay = 30, msg = 'Working...'},	-- x, y, z, heading, second, message
+					{pos = vector4(1308.8262, -751.1982, 65.8030, 248.4864),  delay = 20, msg = 'Working...'},	-- x, y, z, heading, second, message
+					{pos = vector4(1309.1637, -749.1093, 65.8030, 66.7182),  delay = 30, msg = 'Working...'},	-- x, y, z, heading, second, message
 				}
 			},
 			chicken_family_meal = { 										-- reward item name
@@ -161,8 +161,8 @@ Config.Shop['popeyes'] = { -- job name
 					
 				},
 				steps = {
-					{pos = vector4(187.71, -1449.27, 29.13, 228.56),  delay = 20, msg = 'Working...'},	-- x, y, z, heading, second, message
-					{pos = vector4(185.28, -1452.33, 29.13, 229.69),  delay = 30, msg = 'Working...'},	-- x, y, z, heading, second, message
+					{pos = vector4(1308.8262, -751.1982, 65.8030, 248.4864),  delay = 20, msg = 'Working...'},	-- x, y, z, heading, second, message
+					{pos = vector4(1309.1637, -749.1093, 65.8030, 66.7182),  delay = 30, msg = 'Working...'},	-- x, y, z, heading, second, message
 				}
 			},
 			mac_cheese_meal = { 										-- reward item name
@@ -171,8 +171,8 @@ Config.Shop['popeyes'] = { -- job name
 					
 				},
 				steps = {
-					{pos = vector4(187.71, -1449.27, 29.13, 228.56),  delay = 20, msg = 'Working...'},	-- x, y, z, heading, second, message
-					{pos = vector4(185.28, -1452.33, 29.13, 229.69),  delay = 30, msg = 'Working...'},	-- x, y, z, heading, second, message
+					{pos = vector4(1308.8262, -751.1982, 65.8030, 248.4864),  delay = 20, msg = 'Working...'},	-- x, y, z, heading, second, message
+					{pos = vector4(1309.1637, -749.1093, 65.8030, 66.7182),  delay = 30, msg = 'Working...'},	-- x, y, z, heading, second, message
 				}
 			},
 			mild_tenders_box = { 										-- reward item name
@@ -181,8 +181,8 @@ Config.Shop['popeyes'] = { -- job name
 					
 				},
 				steps = {
-					{pos = vector4(187.71, -1449.27, 29.13, 228.56),  delay = 20, msg = 'Working...'},	-- x, y, z, heading, second, message
-					{pos = vector4(185.28, -1452.33, 29.13, 229.69),  delay = 30, msg = 'Working...'},	-- x, y, z, heading, second, message
+					{pos = vector4(1308.8262, -751.1982, 65.8030, 248.4864),  delay = 20, msg = 'Working...'},	-- x, y, z, heading, second, message
+					{pos = vector4(1309.1637, -749.1093, 65.8030, 66.7182),  delay = 30, msg = 'Working...'},	-- x, y, z, heading, second, message
 				}
 			},
 			mild_tenders_bundle = { 										-- reward item name
@@ -191,8 +191,8 @@ Config.Shop['popeyes'] = { -- job name
 					
 				},
 				steps = {
-					{pos = vector4(187.71, -1449.27, 29.13, 228.56),  delay = 20, msg = 'Working...'},	-- x, y, z, heading, second, message
-					{pos = vector4(185.28, -1452.33, 29.13, 229.69),  delay = 30, msg = 'Working...'},	-- x, y, z, heading, second, message
+					{pos = vector4(1308.8262, -751.1982, 65.8030, 248.4864),  delay = 20, msg = 'Working...'},	-- x, y, z, heading, second, message
+					{pos = vector4(1309.1637, -749.1093, 65.8030, 66.7182),  delay = 30, msg = 'Working...'},	-- x, y, z, heading, second, message
 				}
 			},
 			nuggets_kids_meal = { 										-- reward item name
@@ -201,8 +201,8 @@ Config.Shop['popeyes'] = { -- job name
 					
 				},
 				steps = {
-					{pos = vector4(187.71, -1449.27, 29.13, 228.56),  delay = 20, msg = 'Working...'},	-- x, y, z, heading, second, message
-					{pos = vector4(185.28, -1452.33, 29.13, 229.69),  delay = 30, msg = 'Working...'},	-- x, y, z, heading, second, message
+					{pos = vector4(1308.8262, -751.1982, 65.8030, 248.4864),  delay = 20, msg = 'Working...'},	-- x, y, z, heading, second, message
+					{pos = vector4(1309.1637, -749.1093, 65.8030, 66.7182),  delay = 30, msg = 'Working...'},	-- x, y, z, heading, second, message
 				}
 			},
 			nuggets_la_carte = { 										-- reward item name
@@ -211,8 +211,8 @@ Config.Shop['popeyes'] = { -- job name
 					
 				},
 				steps = {
-					{pos = vector4(187.71, -1449.27, 29.13, 228.56),  delay = 20, msg = 'Working...'},	-- x, y, z, heading, second, message
-					{pos = vector4(185.28, -1452.33, 29.13, 229.69),  delay = 30, msg = 'Working...'},	-- x, y, z, heading, second, message
+					{pos = vector4(1308.8262, -751.1982, 65.8030, 248.4864),  delay = 20, msg = 'Working...'},	-- x, y, z, heading, second, message
+					{pos = vector4(1309.1637, -749.1093, 65.8030, 66.7182),  delay = 30, msg = 'Working...'},	-- x, y, z, heading, second, message
 				}
 			},
 			nuggets_medium_combo = { 										-- reward item name
@@ -221,8 +221,8 @@ Config.Shop['popeyes'] = { -- job name
 					
 				},
 				steps = {
-					{pos = vector4(187.71, -1449.27, 29.13, 228.56),  delay = 20, msg = 'Working...'},	-- x, y, z, heading, second, message
-					{pos = vector4(185.28, -1452.33, 29.13, 229.69),  delay = 30, msg = 'Working...'},	-- x, y, z, heading, second, message
+					{pos = vector4(1308.8262, -751.1982, 65.8030, 248.4864),  delay = 20, msg = 'Working...'},	-- x, y, z, heading, second, message
+					{pos = vector4(1309.1637, -749.1093, 65.8030, 66.7182),  delay = 30, msg = 'Working...'},	-- x, y, z, heading, second, message
 				}
 			},
 			popcorn_shrimp = { 										-- reward item name
@@ -231,8 +231,8 @@ Config.Shop['popeyes'] = { -- job name
 					
 				},
 				steps = {
-					{pos = vector4(187.71, -1449.27, 29.13, 228.56),  delay = 20, msg = 'Working...'},	-- x, y, z, heading, second, message
-					{pos = vector4(185.28, -1452.33, 29.13, 229.69),  delay = 30, msg = 'Working...'},	-- x, y, z, heading, second, message
+					{pos = vector4(1308.8262, -751.1982, 65.8030, 248.4864),  delay = 20, msg = 'Working...'},	-- x, y, z, heading, second, message
+					{pos = vector4(1309.1637, -749.1093, 65.8030, 66.7182),  delay = 30, msg = 'Working...'},	-- x, y, z, heading, second, message
 				}
 			},
 			surf_turf_combo = { 										-- reward item name
@@ -241,8 +241,8 @@ Config.Shop['popeyes'] = { -- job name
 					
 				},
 				steps = {
-					{pos = vector4(187.71, -1449.27, 29.13, 228.56),  delay = 20, msg = 'Working...'},	-- x, y, z, heading, second, message
-					{pos = vector4(185.28, -1452.33, 29.13, 229.69),  delay = 30, msg = 'Working...'},	-- x, y, z, heading, second, message
+					{pos = vector4(1308.8262, -751.1982, 65.8030, 248.4864),  delay = 20, msg = 'Working...'},	-- x, y, z, heading, second, message
+					{pos = vector4(1309.1637, -749.1093, 65.8030, 66.7182),  delay = 30, msg = 'Working...'},	-- x, y, z, heading, second, message
 				}
 			},
 			tenders_family_meal = { 										-- reward item name
@@ -251,8 +251,8 @@ Config.Shop['popeyes'] = { -- job name
 					
 				},
 				steps = {
-					{pos = vector4(187.71, -1449.27, 29.13, 228.56),  delay = 20, msg = 'Working...'},	-- x, y, z, heading, second, message
-					{pos = vector4(185.28, -1452.33, 29.13, 229.69),  delay = 30, msg = 'Working...'},	-- x, y, z, heading, second, message
+					{pos = vector4(1308.8262, -751.1982, 65.8030, 248.4864),  delay = 20, msg = 'Working...'},	-- x, y, z, heading, second, message
+					{pos = vector4(1309.1637, -749.1093, 65.8030, 66.7182),  delay = 30, msg = 'Working...'},	-- x, y, z, heading, second, message
 				}
 			},
 			tenders_medium_combo = { 										-- reward item name
@@ -261,8 +261,8 @@ Config.Shop['popeyes'] = { -- job name
 					
 				},
 				steps = {
-					{pos = vector4(187.71, -1449.27, 29.13, 228.56),  delay = 20, msg = 'Working...'},	-- x, y, z, heading, second, message
-					{pos = vector4(185.28, -1452.33, 29.13, 229.69),  delay = 30, msg = 'Working...'},	-- x, y, z, heading, second, message
+					{pos = vector4(1308.8262, -751.1982, 65.8030, 248.4864),  delay = 20, msg = 'Working...'},	-- x, y, z, heading, second, message
+					{pos = vector4(1309.1637, -749.1093, 65.8030, 66.7182),  delay = 30, msg = 'Working...'},	-- x, y, z, heading, second, message
 				}
 			},
 			
@@ -273,7 +273,7 @@ Config.Shop['popeyes'] = { -- job name
 					
 				},
 				steps = {
-					{pos = vector4(183.03, -1448.99, 29.13, 226.48),  delay = 20, msg = 'Working...'},	-- x, y, z, heading, second, message
+					{pos = vector4(1312.6794, -750.1871, 65.8031, 340.0194),  delay = 20, msg = 'Working...'},	-- x, y, z, heading, second, message
 				}
 			},
 			md_ginger_ale = { 										-- reward item name
@@ -282,7 +282,7 @@ Config.Shop['popeyes'] = { -- job name
 					
 				},
 				steps = {
-					{pos = vector4(183.03, -1448.99, 29.13, 226.48),  delay = 20, msg = 'Working...'},	-- x, y, z, heading, second, message
+					{pos = vector4(1312.6794, -750.1871, 65.8031, 340.0194),  delay = 20, msg = 'Working...'},	-- x, y, z, heading, second, message
 				}
 			},
 			md_seltzer_water = { 										-- reward item name
@@ -291,7 +291,7 @@ Config.Shop['popeyes'] = { -- job name
 					
 				},
 				steps = {
-					{pos = vector4(183.03, -1448.99, 29.13, 226.48),  delay = 20, msg = 'Working...'},	-- x, y, z, heading, second, message
+					{pos = vector4(1312.6794, -750.1871, 65.8031, 340.0194),  delay = 20, msg = 'Working...'},	-- x, y, z, heading, second, message
 				}
 			},
 			medium_coca_cola = { 										-- reward item name
@@ -300,7 +300,7 @@ Config.Shop['popeyes'] = { -- job name
 					
 				},
 				steps = {
-					{pos = vector4(183.03, -1448.99, 29.13, 226.48),  delay = 20, msg = 'Working...'},	-- x, y, z, heading, second, message
+					{pos = vector4(1312.6794, -750.1871, 65.8031, 340.0194),  delay = 20, msg = 'Working...'},	-- x, y, z, heading, second, message
 				}
 			},
 			medium_diet_coke = { 										-- reward item name
@@ -309,7 +309,7 @@ Config.Shop['popeyes'] = { -- job name
 					
 				},
 				steps = {
-					{pos = vector4(183.03, -1448.99, 29.13, 226.48),  delay = 20, msg = 'Working...'},	-- x, y, z, heading, second, message
+					{pos = vector4(1312.6794, -750.1871, 65.8031, 340.0194),  delay = 20, msg = 'Working...'},	-- x, y, z, heading, second, message
 				}
 			},
 			medium_fanta_orange = { 										-- reward item name
@@ -318,7 +318,7 @@ Config.Shop['popeyes'] = { -- job name
 					
 				},
 				steps = {
-					{pos = vector4(183.03, -1448.99, 29.13, 226.48),  delay = 20, msg = 'Working...'},	-- x, y, z, heading, second, message
+					{pos = vector4(1312.6794, -750.1871, 65.8031, 340.0194),  delay = 20, msg = 'Working...'},	-- x, y, z, heading, second, message
 				}
 			},
 			medium_fanta_strawberry = { 										-- reward item name
@@ -327,7 +327,7 @@ Config.Shop['popeyes'] = { -- job name
 					
 				},
 				steps = {
-					{pos = vector4(183.03, -1448.99, 29.13, 226.48),  delay = 20, msg = 'Working...'},	-- x, y, z, heading, second, message
+					{pos = vector4(1312.6794, -750.1871, 65.8031, 340.0194),  delay = 20, msg = 'Working...'},	-- x, y, z, heading, second, message
 				}
 			},
 			medium_hawaiian_punch = { 										-- reward item name
@@ -336,7 +336,7 @@ Config.Shop['popeyes'] = { -- job name
 					
 				},
 				steps = {
-					{pos = vector4(183.03, -1448.99, 29.13, 226.48),  delay = 20, msg = 'Working...'},	-- x, y, z, heading, second, message
+					{pos = vector4(1312.6794, -750.1871, 65.8031, 340.0194),  delay = 20, msg = 'Working...'},	-- x, y, z, heading, second, message
 				}
 			},
 			medium_sprite = { 										-- reward item name
@@ -345,7 +345,7 @@ Config.Shop['popeyes'] = { -- job name
 					
 				},
 				steps = {
-					{pos = vector4(183.03, -1448.99, 29.13, 226.48),  delay = 20, msg = 'Working...'},	-- x, y, z, heading, second, message
+					{pos = vector4(1312.6794, -750.1871, 65.8031, 340.0194),  delay = 20, msg = 'Working...'},	-- x, y, z, heading, second, message
 				}
 			},
 			medium_sweet_tea = { 										-- reward item name
@@ -354,7 +354,7 @@ Config.Shop['popeyes'] = { -- job name
 					
 				},
 				steps = {
-					{pos = vector4(183.03, -1448.99, 29.13, 226.48),  delay = 20, msg = 'Working...'},	-- x, y, z, heading, second, message
+					{pos = vector4(1312.6794, -750.1871, 65.8031, 340.0194),  delay = 20, msg = 'Working...'},	-- x, y, z, heading, second, message
 				}
 			},
 			medium_tropicana_lemonade = { 										-- reward item name
@@ -363,7 +363,7 @@ Config.Shop['popeyes'] = { -- job name
 					
 				},
 				steps = {
-					{pos = vector4(183.03, -1448.99, 29.13, 226.48),  delay = 20, msg = 'Working...'},	-- x, y, z, heading, second, message
+					{pos = vector4(1312.6794, -750.1871, 65.8031, 340.0194),  delay = 20, msg = 'Working...'},	-- x, y, z, heading, second, message
 				}
 			},
 			strawberry_lemonade = { 										-- reward item name
@@ -372,22 +372,22 @@ Config.Shop['popeyes'] = { -- job name
 					
 				},
 				steps = {
-					{pos = vector4(183.03, -1448.99, 29.13, 226.48),  delay = 20, msg = 'Working...'},	-- x, y, z, heading, second, message
+					{pos = vector4(1312.6794, -750.1871, 65.8031, 340.0194),  delay = 20, msg = 'Working...'},	-- x, y, z, heading, second, message
 				}
 			},
 		}
 	},
 	storage = {
-		pos = vector4(182.66, -1455.16, 29.13, 0.0), 		-- x, y, z, heading
+		pos = vector4(1312.6096, -751.4229, 65.8030, 164.4639), 		-- x, y, z, heading
 		prop = nil,
 		items = {
             
 		}
 	},
 	sell_coords = {											-- The coordinates where customes will buy things on this store (coordinates composed of x, y, z)
-		vector3(172.48, -1448.52, 29.13),
-		vector3(174.57, -1446.16, 29.13),
-		vector3(176.49, -1443.86, 29.13)
+		vector3(1302.4680, -750.7112, 65.8030),
+		vector3(1303.2443, -749.2151, 65.8030),
+		vector3(1304.2212, -747.7680, 65.8030)
 	},
 	data = {
 		market_items = {					-- Here you configure the items definitions

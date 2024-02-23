@@ -1,5 +1,5 @@
 Config.Shop['wingstop'] = { -- job name
-	blip = {enable = true, name = 'Wingstop', sprite = 365, color = 25, size = 1.2, radius = 0.0, radius_color = 4},
+	blip = {enable = false, name = 'Wingstop', sprite = 382, color = 0, size = 1.3, radius = 0.0, radius_color = 4},
 	boss_action = vector3(1244.08, -352.53, 69.18),
 	management = vector3(1249.18, -358.74, 69.18),
 	managementRankFor = {
@@ -381,42 +381,42 @@ Config.Shop['wingstop'] = { -- job name
                 price = 10,                                     -- price of the item. set it 0 if you don't want to buy with society money
                 slots = 20,                                     -- container size
                 available = 20,                                 -- available in stock
-                regeneration = 60,                              -- in second
+                regeneration = 1,                              -- in minute
             },
             chocolate_chunk_brownie = {
                 name = 'Chocolate Chunk Brownie',                        		-- item name
                 price = 10,                                     -- price of the item. set it 0 if you don't want to buy with society money
                 slots = 20,                                     -- container size
                 available = 20,                                 -- available in stock
-                regeneration = 60,                              -- in second
+                regeneration = 1,                              -- in minute
             },
             fresh_baked_rolls = {
                 name = 'Fresh Baked Rolls',                        		-- item name
                 price = 10,                                     -- price of the item. set it 0 if you don't want to buy with society money
                 slots = 20,                                     -- container size
                 available = 20,                                 -- available in stock
-                regeneration = 60,                              -- in second
+                regeneration = 1,                              -- in minute
             },
             side_of_flavor = {
                 name = 'Side of Flavor',                        		-- item name
                 price = 10,                                     -- price of the item. set it 0 if you don't want to buy with society money
                 slots = 20,                                     -- container size
                 available = 20,                                 -- available in stock
-                regeneration = 60,                              -- in second
+                regeneration = 1,                              -- in minute
             },
             veggie_sticks = {
                 name = 'Veggie Sticks',                        		-- item name
                 price = 10,                                     -- price of the item. set it 0 if you don't want to buy with society money
                 slots = 20,                                     -- container size
                 available = 20,                                 -- available in stock
-                regeneration = 60,                              -- in second
+                regeneration = 1,                              -- in minute
             },
             wingstop_dips = {
                 name = 'Wingstop Dips',                        		-- item name
                 price = 10,                                     -- price of the item. set it 0 if you don't want to buy with society money
                 slots = 20,                                     -- container size
                 available = 20,                                 -- available in stock
-                regeneration = 60,                              -- in second
+                regeneration = 1,                              -- in minute
             },
             
 		}

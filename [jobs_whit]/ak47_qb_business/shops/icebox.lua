@@ -1,5 +1,5 @@
 Config.Shop['icebox'] = { -- job name
-	blip = {enable = true, name = 'IceBox', sprite = 617, color = 3, size = 1.0, radius = 0.0, radius_color = 4},
+	blip = {enable = false, name = 'IceBox', sprite = 617, color = 3, size = 1.0, radius = 0.0, radius_color = 4},
 	boss_action = vector3(-1258.61, -805.02, 17.09),
 	management = vector3(-1256.39, -811.44, 17.84),
 	managementRankFor = {
@@ -450,56 +450,56 @@ Config.Shop['icebox'] = { -- job name
                 price = 10,                                     -- price of the item. set it 0 if you don't want to buy with society money
                 slots = 20,                                     -- container size
                 available = 20,                                 -- available in stock
-                regeneration = 60,                              -- in second
+                regeneration = 1,                              -- in minute
             },
             gold_bar = {
                 name = 'Gold Bar',                        		-- item name
                 price = 10,                                     -- price of the item. set it 0 if you don't want to buy with society money
                 slots = 20,                                     -- container size
                 available = 20,                                 -- available in stock
-                regeneration = 60,                              -- in second
+                regeneration = 1,                              -- in minute
             },
             platinum_bar = {
                 name = 'platinum Bar',                        	-- item name
                 price = 10,                                     -- price of the item. set it 0 if you don't want to buy with society money
                 slots = 20,                                     -- container size
                 available = 20,                                 -- available in stock
-                regeneration = 60,                              -- in second
+                regeneration = 1,                              -- in minute
             },
             watch_material = {
                 name = 'Watch Material',                        -- item name
                 price = 10,                                     -- price of the item. set it 0 if you don't want to buy with society money
                 slots = 20,                                     -- container size
                 available = 20,                                 -- available in stock
-                regeneration = 60,                              -- in second
+                regeneration = 1,                              -- in minute
             },
             blue_stone = {
                 name = 'Blue Stone',                        	-- item name
                 price = 10,                                     -- price of the item. set it 0 if you don't want to buy with society money
                 slots = 20,                                     -- container size
                 available = 20,                                 -- available in stock
-                regeneration = 60,                              -- in second
+                regeneration = 1,                              -- in minute
             },
             green_stone = {
                 name = 'Green Stone',                        	-- item name
                 price = 10,                                     -- price of the item. set it 0 if you don't want to buy with society money
                 slots = 20,                                     -- container size
                 available = 20,                                 -- available in stock
-                regeneration = 60,                              -- in second
+                regeneration = 1,                              -- in minute
             },
             red_stone = {
                 name = 'Red Stone',                        	-- item name
                 price = 10,                                     -- price of the item. set it 0 if you don't want to buy with society money
                 slots = 20,                                     -- container size
                 available = 20,                                 -- available in stock
-                regeneration = 60,                              -- in second
+                regeneration = 1,                              -- in minute
             },
             white_stone = {
                 name = 'White Stone',                        	-- item name
                 price = 10,                                     -- price of the item. set it 0 if you don't want to buy with society money
                 slots = 20,                                     -- container size
                 available = 20,                                 -- available in stock
-                regeneration = 60,                              -- in second
+                regeneration = 1,                              -- in minute
             },
 		}
 	},

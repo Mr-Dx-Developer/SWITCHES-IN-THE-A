@@ -1,5 +1,5 @@
 Config.Shop['pearls'] = { -- job name
-	blip = {enable = true, name = 'Pearls', sprite = 267, color = 0, size = 1.2, radius = 0.0, radius_color = 4},
+	blip = {enable = true, name = 'Pearls', sprite = 381, color = 0, size = 0.6, radius = 0.0, radius_color = 4},
 	boss_action = vector3(-1837.34, -1178.89, 19.22),
 	management = vector3(-1846.01, -1198.96, 14.33),
 	managementRankFor = {
@@ -16,17 +16,6 @@ Config.Shop['pearls'] = { -- job name
 		menu = vector3(-1839.68, -1186.24, 14.32),
 		data = {
 			gourmet_double_burger = { 										-- reward item name
-				reward = 1,										-- reward item amount
-				required = {									-- required items for crafting
-					
-				},
-				steps = {
-					{pos = vector4(-1842.67, -1186.23, 14.33, 60.38),  delay = 30, msg = 'Working...'},	-- x, y, z, heading, second, message
-					{pos = vector4(-1843.48, -1187.88, 14.33, 60.73),  delay = 20, msg = 'Working...'},	-- x, y, z, heading, second, message
-					{pos = vector4(-1841.13, -1183.6, 14.33, 57.1),  delay = 60, msg = 'Working...'},	-- x, y, z, heading, second, message
-				}
-			},
-			catfish = { 										-- reward item name
 				reward = 1,										-- reward item amount
 				required = {									-- required items for crafting
 					
@@ -396,11 +385,6 @@ Config.Shop['pearls'] = { -- job name
 
 			gourmet_double_burger = {				-- The item ID
 				name = "Gourmet Double Burger",	-- The item display name
-				page = 0,					-- Set on which page this item will appear
-				process = true
-			},
-			catfish = {				-- The item ID
-				name = "Catfish",	-- The item display name
 				page = 0,					-- Set on which page this item will appear
 				process = true
 			},

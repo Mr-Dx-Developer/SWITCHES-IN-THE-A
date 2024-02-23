@@ -1,5 +1,5 @@
-Config.Shop['chickfila'] = { -- job name
-	blip = {enable = true, name = 'Chick-Fil-A', sprite = 537, color = 1, size = 1.2, radius = 0.0, radius_color = 4},
+Config.Shop['chick-fil-a'] = { -- job name
+	blip = {enable = false, name = 'Chick-Fil-A', sprite = 383, color = 0, size = 0.6, radius = 0.0, radius_color = 4},
 	boss_action = vector3(-1035.65, -1371.11, 5.52),
 	management = vector3(-1036.91, -1375.43, 5.52),
 	managementRankFor = {
@@ -440,35 +440,35 @@ Config.Shop['chickfila'] = { -- job name
                 price = 10,                                     -- price of the item. set it 0 if you don't want to buy with society money
                 slots = 20,                                     -- container size
                 available = 20,                                 -- available in stock
-                regeneration = 60,                              -- in second
+                regeneration = 1,                              -- in minute
             },
             chocolate_milk = {
                 name = 'Chocolate Milk',                        		-- item name
                 price = 10,                                     -- price of the item. set it 0 if you don't want to buy with society money
                 slots = 20,                                     -- container size
                 available = 20,                                 -- available in stock
-                regeneration = 60,                              -- in second
+                regeneration = 1,                              -- in minute
             },
             simply_orange = {
                 name = 'Simply Orange',                        		-- item name
                 price = 10,                                     -- price of the item. set it 0 if you don't want to buy with society money
                 slots = 20,                                     -- container size
                 available = 20,                                 -- available in stock
-                regeneration = 60,                              -- in second
+                regeneration = 1,                              -- in minute
             },
             apple_sauce = {
                 name = 'Apple Sauce',                        		-- item name
                 price = 10,                                     -- price of the item. set it 0 if you don't want to buy with society money
                 slots = 20,                                     -- container size
                 available = 20,                                 -- available in stock
-                regeneration = 60,                              -- in second
+                regeneration = 1,                              -- in minute
             },
             waffle_potato_chips = {
                 name = 'Waffle Potato Chips',                        		-- item name
                 price = 10,                                     -- price of the item. set it 0 if you don't want to buy with society money
                 slots = 20,                                     -- container size
                 available = 20,                                 -- available in stock
-                regeneration = 60,                              -- in second
+                regeneration = 1,                              -- in minute
             },
             
 		}

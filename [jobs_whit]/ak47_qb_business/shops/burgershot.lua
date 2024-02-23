@@ -1,5 +1,5 @@
 Config.Shop['burgershot'] = { -- job name
-	blip = {enable = true, name = 'Burgershot', sprite = 536, color = 1, size = 1.0, radius = 0.0, radius_color = 4},
+	blip = {enable = true, name = 'Burgershot', sprite = 386, color = 0, size = 0.6, radius = 0.0, radius_color = 4},
 	boss_action = vector3(-1196.71, -891.91, 14.0),
 	management = vector3(-1194.04, -895.66, 14.0),
 	managementRankFor = {
@@ -603,21 +603,21 @@ Config.Shop['burgershot'] = { -- job name
                 price = 10,                                     -- price of the item. set it 0 if you don't want to buy with society money
                 slots = 20,                                     -- container size
                 available = 20,                                 -- available in stock
-                regeneration = 60,                              -- in second
+                regeneration = 1,                              -- in minute
             },
             bs_orange_juice = {
                 name = 'Orange Juice',                        		-- item name
                 price = 10,                                     -- price of the item. set it 0 if you don't want to buy with society money
                 slots = 20,                                     -- container size
                 available = 20,                                 -- available in stock
-                regeneration = 60,                              -- in second
+                regeneration = 1,                              -- in minute
             },
             sun_apple_juice = {
                 name = 'Orange Juice',                        		-- item name
                 price = 10,                                     -- price of the item. set it 0 if you don't want to buy with society money
                 slots = 20,                                     -- container size
                 available = 20,                                 -- available in stock
-                regeneration = 60,                              -- in second
+                regeneration = 1,                              -- in minute
             },
 		}
 	},

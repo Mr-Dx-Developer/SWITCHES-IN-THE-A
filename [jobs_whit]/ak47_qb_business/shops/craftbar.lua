@@ -1,5 +1,5 @@
 Config.Shop['craftbar'] = { -- job name
-	blip = {enable = true, name = 'Craft Bar', sprite = 93, color = 21, size = 1.0, radius = 0.0, radius_color = 4},
+	blip = {enable = false, name = 'Craft Bar', sprite = 93, color = 21, size = 0.6, radius = 0.0, radius_color = 4},
 	boss_action = vector3(119.04, -1045.56, 29.31),
 	management = vector3(119.89, -1043.09, 29.31),
 	managementRankFor = {
