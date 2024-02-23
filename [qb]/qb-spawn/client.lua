@@ -6,9 +6,7 @@ local pointCamCoords2 = 0
 local cam1Time = 500
 local cam2Time = 1000
 local choosingSpawn = false
-local Houses = {}
-local cam = nil
-local cam2 = nil
+local cam, cam2 = nil, nil
 
 -- Functions
 
@@ -38,7 +36,7 @@ RegisterNetEvent('qb-spawn:client:openUI', function(value)
 end)
 
 RegisterNetEvent('qb-houses:client:setHouseConfig', function(houseConfig)
-    Houses = houseConfig
+    Config.Houses = houseConfig
 end)
 
 RegisterNetEvent('qb-spawn:client:setupSpawns', function(cData, new, apps)
@@ -49,7 +47,7 @@ RegisterNetEvent('qb-spawn:client:setupSpawns', function(cData, new, apps)
                 for i = 1, (#houses), 1 do
                     myHouses[#myHouses+1] = {
                         house = houses[i].house,
-                        label = Houses[houses[i].house].adress,
+                        label = Config.Houses[houses[i].house].adress,
                     }
                 end
             end
@@ -71,15 +69,17 @@ end)
 
 -- NUI Callbacks
 
-RegisterNUICallback("exit", function(_, cb)
+RegisterNUICallback("exit", function(data)
     SetNuiFocus(false, false)
     SendNUIMessage({
         type = "ui",
         status = false
     })
     choosingSpawn = false
-    cb("ok")
 end)
+
+local cam = nil
+local cam2 = nil
 
 local function SetCam(campos)
     cam2 = CreateCamWithParams("DEFAULT_SCRIPTED_CAMERA", campos.x, campos.y, campos.z + camZPlus1, 300.00,0.00,0.00, 110.00, false, 0)
@@ -96,30 +96,36 @@ local function SetCam(campos)
     SetEntityCoords(PlayerPedId(), campos.x, campos.y, campos.z)
 end
 
-RegisterNUICallback('setCam', function(data, cb)
+RegisterNUICallback('setCam', function(data)
     local location = tostring(data.posname)
     local type = tostring(data.type)
+
     DoScreenFadeOut(200)
     Wait(500)
     DoScreenFadeIn(200)
-    if DoesCamExist(cam) then DestroyCam(cam, true) end
-    if DoesCamExist(cam2) then DestroyCam(cam2, true) end
+
+    if DoesCamExist(cam) then
+        DestroyCam(cam, true)
+    end
+
+    if DoesCamExist(cam2) then
+        DestroyCam(cam2, true)
+    end
+
     if type == "current" then
         QBCore.Functions.GetPlayerData(function(PlayerData)
             SetCam(PlayerData.position)
         end)
     elseif type == "house" then
-        SetCam(Houses[location].coords.enter)
+        SetCam(Config.Houses[location].coords.enter)
     elseif type == "normal" then
         SetCam(QB.Spawns[location].coords)
     elseif type == "appartment" then
         SetCam(Apartments.Locations[location].coords.enter)
     end
-    cb('ok')
 end)
 
-RegisterNUICallback('chooseAppa', function(data, cb)
-    local ped = PlayerPedId()
+RegisterNUICallback('chooseAppa', function(data)
     local appaYeet = data.appType
     SetDisplay(false)
     DoScreenFadeOut(500)
@@ -133,8 +139,7 @@ RegisterNUICallback('chooseAppa', function(data, cb)
     DestroyCam(cam, true)
     SetCamActive(cam2, false)
     DestroyCam(cam2, true)
-    SetEntityVisible(ped, true)
-    cb('ok')
+    SetEntityVisible(PlayerPedId(), true)
 end)
 
 local function PreSpawnPlayer()
@@ -153,22 +158,21 @@ local function PostSpawnPlayer(ped)
     SetEntityVisible(PlayerPedId(), true)
     Wait(500)
     DoScreenFadeIn(250)
-    TriggerEvent("backitems:start")
 end
 
-RegisterNUICallback('spawnplayer', function(data, cb)
+RegisterNUICallback('spawnplayer', function(data)
     local location = tostring(data.spawnloc)
     local type = tostring(data.typeLoc)
     local ped = PlayerPedId()
     local PlayerData = QBCore.Functions.GetPlayerData()
     local insideMeta = PlayerData.metadata["inside"]
+
     if type == "current" then
         PreSpawnPlayer()
-        QBCore.Functions.GetPlayerData(function(pd)
-            ped = PlayerPedId()
-            SetEntityCoords(ped, pd.position.x, pd.position.y, pd.position.z)
-            SetEntityHeading(ped, pd.position.a)
-            FreezeEntityPosition(ped, false)
+        QBCore.Functions.GetPlayerData(function(PlayerData)
+            SetEntityCoords(PlayerPedId(), PlayerData.position.x, PlayerData.position.y, PlayerData.position.z)
+            SetEntityHeading(PlayerPedId(), PlayerData.position.a)
+            FreezeEntityPosition(PlayerPedId(), false)
         end)
 
         if insideMeta.house ~= nil then
@@ -203,7 +207,6 @@ RegisterNUICallback('spawnplayer', function(data, cb)
         SetEntityHeading(ped, pos.w)
         PostSpawnPlayer()
     end
-    cb('ok')
 end)
 
 -- Threads

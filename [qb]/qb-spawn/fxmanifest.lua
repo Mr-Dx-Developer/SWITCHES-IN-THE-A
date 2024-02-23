@@ -6,14 +6,12 @@ version '1.0.0'
 
 shared_scripts {
 	'config.lua',
+	'@qb-houses/config.lua',
 	'@qb-apartments/config.lua'
 }
 
 client_script 'client.lua'
-server_scripts {
-	'@oxmysql/lib/MySQL.lua',
-	'server.lua'
-}
+server_script 'server.lua'
 
 ui_page 'html/index.html'
 
