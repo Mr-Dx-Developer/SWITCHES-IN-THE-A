@@ -313,8 +313,8 @@ Config.Heroin = {
 }
 
 Config.Selling = {
-	Command = 'dealer', -- You can set this to nil and use the event 'lunar_drugs:dealer' in some other script
-	MinPolice = 0,
+	Command = 'rrrr', -- You can set this to nil and use the event 'lunar_drugs:dealer' in some other script
+	MinPolice = 5,
 	Zones = {
 		{
 			Coords = vector3(224.5, -1668.5, 29.0),
@@ -364,7 +364,7 @@ Config.Selling = {
 			Name = 'weed_bag',
 			Account = 'money',
 			Price = { min = 240, max = 1350 },
-			Count = { min = 1, max = 5 }
+			Count = { min = 5, max = 10 }
 		},
 		{
 			Name = 'coke_pooch',

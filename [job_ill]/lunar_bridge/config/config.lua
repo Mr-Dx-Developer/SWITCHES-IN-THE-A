@@ -1,5 +1,5 @@
 Config = {}
-Config.Target = false -- Whether to use target or text UI.
+Config.Target = true -- Whether to use target or text UI.
 
 -- You can ignore this if you use target.
 -- This cannot be changed on clients that already cached this.
@@ -9,7 +9,7 @@ Config.Keybinds = {
 
 Config.Dispatch = {
     Enable = true, -- Enable dispatch
-    Type = 'cd_dispatch', --['normal'/'cd_dispatch'/'qs-dispatch'/'ps-dispatch']
+    Type = 'qs-dispatch', --['normal'/'cd_dispatch'/'qs-dispatch'/'ps-dispatch']
 	Jobs = {
 		'police',
 		'sheriff'

@@ -1,0 +1,1 @@
+ALTER TABLE `players` ADD COLUMN `drugssold` INT(11) NULL DEFAULT '0';

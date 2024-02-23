@@ -1,0 +1,12 @@
+Requirements:
+1. OxMysql or Mysql-Async
+2. Ox_Lib
+
+Features:
+1. Configure individual drugs, set prices and deny chance.
+2. Configurable menu to select drug (optional)
+3. Ranks, the more a user sells the more they can unlock and can be configured in the config
+4. Discord Roles, set certain discord roles to have certain features. (allows donors to get a % increase)
+5. Blacklist certain coords and jobs.
+6. Built in police alerting system.
+7. Optimized & Protected from modders.
