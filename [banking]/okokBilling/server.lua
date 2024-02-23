@@ -2,7 +2,7 @@ QBCore = nil
 
 QBCore = exports['qb-core']:GetCoreObject()
 
-local Webhook = ''
+local Webhook = 'https://discordapp.com/api/webhooks/1210728023175864460/-cMj2n3PgIboa2zAsF2n9RgJL9suIXm_2QK-DCjP_vTTAaxsOJsjplfRTB2PBaxuPLMu'
 local limiteTimeHours = Config.LimitDateDays*24
 local hoursToPay = limiteTimeHours
 local whenToAddFees = {}

@@ -10,7 +10,7 @@ end)
 
 -------------------------- VARS
 
-local Webhook = 'https://discord.com/api/webhooks/1142520376342106133/s1K6DF3MFNod-Q71kl9qrXtfKCsmzfsP3tCMLoYAG1wsJv1ZaHcWdvQ6ncTTuSack_Sm'
+local Webhook = 'https://discordapp.com/api/webhooks/1210728143602847824/A8S9EjqQqptcXx3QFJO6jNYP-8gkIMAuOuDEI0WFm9cRxurC-1rQMstDBUbzSKRtH6Qn'
 local staffs = {}
 local FeedbackTable = {}
 

@@ -4,8 +4,8 @@ elseif Config.Framework == "esx" then
     ESX = exports.es_extended:getSharedObject()
 end
 
-local PoliceWebhook = "https://discord.com/api/webhooks/1142520376342106133/s1K6DF3MFNod-Q71kl9qrXtfKCsmzfsP3tCMLoYAG1wsJv1ZaHcWdvQ6ncTTuSack_Sm"
-local AmbulanceWebhook = "https://discord.com/api/webhooks/1142520376342106133/s1K6DF3MFNod-Q71kl9qrXtfKCsmzfsP3tCMLoYAG1wsJv1ZaHcWdvQ6ncTTuSack_Sm"
+local PoliceWebhook = "https://discordapp.com/api/webhooks/1210732202833223741/RFWKafHxTDntA2aUbBXj57gFl3_Yv4iZXOZRSHgS1TVgHVeelFHgZQSyRZUc_WRr0vZt"
+local AmbulanceWebhook = "https://discordapp.com/api/webhooks/1210732352855085077/FNjhe_43fr-0WXTqLydYflvf--eXksxVWF5jYpedU6AWLl7Cm14iAuCv1nd3oUDNnfXu"
 
 RegisterServerEvent('m-JobForms:Server:ApplyPoliceForm')
 AddEventHandler('m-JobForms:Server:ApplyPoliceForm', function(name, age, number, aboutyou, weapons, emergencyjob)

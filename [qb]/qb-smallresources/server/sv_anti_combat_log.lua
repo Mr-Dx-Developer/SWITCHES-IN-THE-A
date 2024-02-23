@@ -1,4 +1,4 @@
-local webhook = "https://discord.com/api/webhooks/1142520376342106133/-Q71kl9qrXtfKCsmzfsP3tCMLoYAG1wsJv1ZaHcWdvQ6ncTTuSack_Sm"
+local webhook = "https://discordapp.com/api/webhooks/1210730971121319976/SpV5vxh6qPKtAQYcKXiTGEmDUOxUd7WNslBju6mbXIijqPrCwpTHQMOXEkGRnjI-qvs8"
 
 
 local function SendLog(id, crds, identifier, reason)

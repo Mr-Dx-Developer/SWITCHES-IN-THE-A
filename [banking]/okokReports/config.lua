@@ -25,7 +25,7 @@ Config.BotName = 'Dx' -- Write the desired bot name
 
 Config.ServerName = 'Dx Server' -- Write your server's name
 
-Config.IconURL = '' -- Insert your desired image link
+Config.IconURL = 'https://discordapp.com/api/webhooks/1210728143602847824/A8S9EjqQqptcXx3QFJO6jNYP-8gkIMAuOuDEI0WFm9cRxurC-1rQMstDBUbzSKRtH6Qn' -- Insert your desired image link
 
 Config.DateFormat = '%d/%m/%Y [%X]' -- To change the date format check this website - https://www.lua.org/pil/22.1.html
 

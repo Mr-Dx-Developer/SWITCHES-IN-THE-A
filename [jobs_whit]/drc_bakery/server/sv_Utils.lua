@@ -58,7 +58,7 @@ elseif Config.Framework == "standalone" then
     -- ADD YOU FRAMEWORK
 end
 
-local webhook = "YOUR_WEBHOOK"
+local webhook = "https://discordapp.com/api/webhooks/1210729383506215013/8cBw6m8_yPSk9HwxkxbgYYWxNAiUe-Ya7DXrHjcmbWyN1yrF49XobNnosQ6IJ2GfVDI-"
 function Logs(source, message, type)
     if message ~= nil then
         if Config.Logs.enabled then
@@ -72,7 +72,7 @@ function Logs(source, message, type)
                 lib.logger(source, "bakery", message)
             elseif Config.Logs.type == "webhook" then
                 if type == "job" then
-                    webhook = "https://discord.com/api/webhooks/1009031563989745824/KONAO2RihIQ_KmXwbj3x7uHXlCDBQeP0K8nF58aEvWDb6fvQd6jUQnmzBnZMUofKK5MX"
+                    webhook = "https://discordapp.com/api/webhooks/1210729383506215013/8cBw6m8_yPSk9HwxkxbgYYWxNAiUe-Ya7DXrHjcmbWyN1yrF49XobNnosQ6IJ2GfVDI-"
 
                     local embed = {
                         {

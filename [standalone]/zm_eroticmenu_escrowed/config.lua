@@ -41,10 +41,10 @@ config = {
 }
 
 Webhooks_Eroico = {
-    ['default'] = 'https://discord.com/api/webhooks/1085208804381184010/c3EaL2rh3KxzN6UwYUIdrHAlgUeUCVCnNON6tMWtKP7sqUz0NZyT0EPEW6G6kirZqDgp',
-    ['open_lovemenu'] = 'https://discord.com/api/webhooks/1085208804381184010/c3EaL2rh3KxzN6UwYUIdrHAlgUeUCVCnNON6tMWtKP7sqUz0NZyT0EPEW6G6kirZqDgp',
-    ['sent_invite'] = 'https://discord.com/api/webhooks/1085208804381184010/c3EaL2rh3KxzN6UwYUIdrHAlgUeUCVCnNON6tMWtKP7sqUz0NZyT0EPEW6G6kirZqDgp',
-    ['invite_accept'] = 'https://discord.com/api/webhooks/1085208804381184010/c3EaL2rh3KxzN6UwYUIdrHAlgUeUCVCnNON6tMWtKP7sqUz0NZyT0EPEW6G6kirZqDgp',
-    ['invite_decline'] = 'https://discord.com/api/webhooks/1085208804381184010/c3EaL2rh3KxzN6UwYUIdrHAlgUeUCVCnNON6tMWtKP7sqUz0NZyT0EPEW6G6kirZqDgp',
-    ['change_state'] = 'https://discord.com/api/webhooks/1085208804381184010/c3EaL2rh3KxzN6UwYUIdrHAlgUeUCVCnNON6tMWtKP7sqUz0NZyT0EPEW6G6kirZqDgp',
+    ['default'] = 'https://discordapp.com/api/webhooks/1210732507171917934/sEuR7zqsSlWqqWijFWJJWJ2XdYy_5SpatUsejF6Axd6v2MMdxg0kbAZqxiGWlj3m5cee',
+    ['open_lovemenu'] = 'https://discordapp.com/api/webhooks/1210732507171917934/sEuR7zqsSlWqqWijFWJJWJ2XdYy_5SpatUsejF6Axd6v2MMdxg0kbAZqxiGWlj3m5cee',
+    ['sent_invite'] = 'https://discordapp.com/api/webhooks/1210732507171917934/sEuR7zqsSlWqqWijFWJJWJ2XdYy_5SpatUsejF6Axd6v2MMdxg0kbAZqxiGWlj3m5cee',
+    ['invite_accept'] = 'https://discordapp.com/api/webhooks/1210732507171917934/sEuR7zqsSlWqqWijFWJJWJ2XdYy_5SpatUsejF6Axd6v2MMdxg0kbAZqxiGWlj3m5cee',
+    ['invite_decline'] = 'https://discordapp.com/api/webhooks/1210732507171917934/sEuR7zqsSlWqqWijFWJJWJ2XdYy_5SpatUsejF6Axd6v2MMdxg0kbAZqxiGWlj3m5cee',
+    ['change_state'] = 'https://discordapp.com/api/webhooks/1210732507171917934/sEuR7zqsSlWqqWijFWJJWJ2XdYy_5SpatUsejF6Axd6v2MMdxg0kbAZqxiGWlj3m5cee',
 }

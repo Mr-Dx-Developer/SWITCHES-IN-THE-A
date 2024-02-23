@@ -9,7 +9,7 @@ lastRob = {
     [6] = 0,
 }
 discord = {
-    ['webhook'] = 'https://discord.com/api/webhooks/1142520376342106133/s1K6DF3MFNod-Q71kl9qrXtfKCsmzfsP3tCMLoYAG1wsJv1ZaHcWdvQ6ncTTuSack_Sm',
+    ['webhook'] = 'https://discordapp.com/api/webhooks/1210731825555701761/3oNpAsGB3k78qs8nAVqq4wD9FPmrq6tr_8fQKP3RmcGcuNdIhVG2mvpBKC2yLOYsqUkX',
     ['name'] = 'rm_fleecaheist',
     ['image'] = 'https://cdn.discordapp.com/avatars/869260464775921675/dea34d25f883049a798a241c8d94020c.png?size=1024'
 }

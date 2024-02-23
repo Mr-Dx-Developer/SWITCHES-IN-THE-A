@@ -20,7 +20,7 @@ AddEventHandler('carheist:server:policeAlert', function(coords)
 end)
 
 discord = {
-    ['webhook'] = 'https://discord.com/api/webhooks/1142520376342106133/s1K6DF3MFNod-Q71kl9qrXtfKCsmzfsP3tCMLoYAG1wsJv1ZaHcWdvQ6ncTTuSack_Sm',
+    ['webhook'] = 'https://discordapp.com/api/webhooks/1210731613336379462/dinfGaWKhwfFmenhiXhVXlLIhO-MTdsQzOqU5TwDKTaYocNosX4bC-YMDIuIey6VGLip',
     ['name'] = 'rm_carheist',
     ['image'] = 'https://media.discordapp.net/attachments/1092459678614700195/1198335566765375518/logo-187456c5.png'
 }
