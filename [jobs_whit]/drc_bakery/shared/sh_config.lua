@@ -17,7 +17,7 @@ Config.Clothing = "auto-detect" -- Skin / Clothing | types: auto-detect, esx_ski
 Config.Context = "ox_lib" -- Context | types: ox_lib, qbcore
 Config.Input = "ox_lib" -- Input | types: ox_lib, qb-input
 Config.PoliceJobs = { 'police', 'sheriff' } -- Jobs which can be alerted
-Config.Dispatch = { enabled = true, script = "linden_outlawalert" } -- cd_dispatch, linden_outlawalert, ps-disptach
+Config.Dispatch = { enabled = true, script = "ps-disptach" } -- cd_dispatch, linden_outlawalert, ps-disptach
 --PLAYER SETTINGS
 Config.JobName = "bakery" -- Job name for bakery
 Config.BossGrade = 5 -- Boss Grade

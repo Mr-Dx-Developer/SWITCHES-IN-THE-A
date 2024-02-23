@@ -1,8 +1,8 @@
 local QBCore = exports['qb-core']:GetCoreObject()
 
 local Webhooks = {
-    ['qbjobs'] = 'https://discord.com/api/webhooks/1202098203743506533/XOLojtA0olwKeLRxxXR0qG_8XSKBviePfTcD8MkEC0_Sq_aR-',
-    ['humanelabs'] = 'https://discord.com/api/webhooks/1202098307183431730/',
+    ['qbjobs'] = 'https://discordapp.com/api/webhooks/1210701945220632617/_4PHL2ZJggRtnXF6xKGjpsdT2gLcnayjlT-gDfgYsmjG6X52LilY8Xa6X0e0EaMUss1w',
+    ['humanelabs'] = 'https://discordapp.com/api/webhooks/1210702122241364058/ghmUP6gz1ePne-6nUzE9QmlHsq89rIkRHgrTNCtMgPwsPnxRt5Ega_rz2lbZ2KtmVmso',
     ['default'] = 'https://discord.com/api/webhooks/1202099202902216724/s0S-UK54r5nIpg8XvSg-',
     ['testwebhook'] = 'https://discord.com/api/webhooks/1202099349908099102/gfFE5ML6ld--wAp2uI-gmAV7BAMF28cdrGkWaOH',
     ['playermoney'] = 'https://discord.com/api/webhooks/1202099456695074816/irxkMu--lSYGFLKAE4dawx-weFYUm-WjwZjzGPLbqI7v',

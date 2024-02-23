@@ -12,7 +12,7 @@ Config.Framework = 'autodetect' -- esx, oldesx, qb, oldqb or autodetect
 Config.Voice = "pma" -- mumble, saltychat, pma
 Config.MaxVoiceRanges = 3
 Config.SQL = "oxmysql" -- oxmysql, ghmattimysql, mysql-async
-Config.ShowMapWhileWalking = false -- true : display the map when walking || false : display the map only in vehicle
+Config.ShowMapWhileWalking = true -- true : display the map when walking || false : display the map only in vehicle
 Config.HudSettingsCommand = "hudsettings" 
 Config.HudSettingsEvent = "mHud:OpenHudSettings"
 Config.DefaultSpeedType = "kmh" -- kmh or mph NOTE : Players can change speed type from hud settings this option only effect new players
@@ -112,7 +112,7 @@ Config.MouseCursorKeyLabel = "["
 
 Config.WaterMarkInformations = { -- informations displayed in the upper right watermark
     logo = "https://media.discordapp.net/attachments/1179152362900832316/1208672022842970143/Watermark.png?ex=65e4228a&is=65d1ad8a&hm=e60d3d1076fa307b70de2fb043e97c25e4815ed8535cf765fe69cf44b32e322c&=&format=webp&quality=lossless&width=1193&height=671",
-    servername = "ODM ATL V3",
+    servername = "",
     discordlink = "discord.gg/odmatlantav3"
 }
 

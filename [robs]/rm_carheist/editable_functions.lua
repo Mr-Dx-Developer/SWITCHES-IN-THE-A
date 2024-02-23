@@ -23,5 +23,5 @@ end)
 --This event send to all police players
 RegisterNetEvent('carheist:client:policeAlert')
 AddEventHandler('carheist:client:policeAlert', function(targetCoords)
-    exports['ps-dispatch']:CarHeist()
+    exports['qs-dispatch']:CarHeist()
 end)

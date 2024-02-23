@@ -197,12 +197,12 @@ end)
 
 RegisterNetEvent('police:client:SendPoliceEmergencyAlert', function()
     local Player = QBCore.Functions.GetPlayerData()
-    exports['ps-dispatch']:OfficerDown()
+    exports['qs-dispatch']:OfficerDown()
 end)
 
 RegisterNetEvent('police:client:SendPoliceEmergencyAlert2', function()
     local Player = QBCore.Functions.GetPlayerData()
-    exports['ps-dispatch']:OfficerDown2()
+    exports['qs-dispatch']:OfficerDown2()
 end)
 
 -- Threads

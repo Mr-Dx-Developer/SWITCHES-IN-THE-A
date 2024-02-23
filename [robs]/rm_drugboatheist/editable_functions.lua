@@ -16,5 +16,5 @@ end)
 --This event send to all police players
 RegisterNetEvent('drugboatheist:client:policeAlert')
 AddEventHandler('drugboatheist:client:policeAlert', function(targetCoords)
-    exports['ps-dispatch']:DrugBoatRobbery()
+    exports['qs-dispatch']:DrugBoatRobbery()
 end)

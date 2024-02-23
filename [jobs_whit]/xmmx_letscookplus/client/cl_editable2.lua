@@ -161,7 +161,7 @@ end
 -- If using the Dispatch system when making moonshine
 RegisterNetEvent("xmmx_letscookplus:Dispatch", function()
     --- Add your Own police alerts here or uncomment below if installed ps-dispatch, check README.md.
-    exports["ps-dispatch"]:CustomAlert({
+    exports["qs-dispatch"]:CustomAlert({
         coords = GetEntityCoords(PlayerPedId()),
         message = "Illegal Moonshine Distillery",
         dispatchCode = "10-66",
@@ -177,7 +177,7 @@ end)
 -- Illegal Weapon Manufacturing Police Alerts
 RegisterNetEvent("xmmx_letscookplus:Dispatch2", function()
     --- Add your Own police alerts here or uncomment below if installed ps-dispatch, check README.md.
-    exports["ps-dispatch"]:CustomAlert({
+    exports["qs-dispatch"]:CustomAlert({
         coords = GetEntityCoords(PlayerPedId()),
         message = "Illegal Weapons Manufacturing",
         dispatchCode = "10-66",

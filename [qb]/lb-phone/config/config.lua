@@ -522,9 +522,9 @@ Config.UploadMethod = {}
 -- A video tutorial for how to set up Fivemanage can be found here: https://www.youtube.com/watch?v=y3bCaHS6Moc
 -- If you want to host uploads yourself, you can use LBUpload: https://github.com/lbphone/lb-upload
 -- We STRONGLY discourage using Discord as an upload method, as uploaded files may become inaccessible after a while.
-Config.UploadMethod.Video = "Imgur" -- "Fivemanage" or "Discord" or "LBUpload" or "Imgur" or "Custom"
-Config.UploadMethod.Image = "Imgur" -- "Fivemanage" or "Discord" or "LBUpload" or "Imgur" or "Custom
-Config.UploadMethod.Audio = "Custom" -- "Fivemanage" or "Discord" or "LBUpload" or "Custom"
+Config.UploadMethod.Video = "Fivemanage" -- "Fivemanage" or "Discord" or "LBUpload" or "Imgur" or "Custom"
+Config.UploadMethod.Image = "Fivemanage" -- "Fivemanage" or "Discord" or "LBUpload" or "Imgur" or "Custom
+Config.UploadMethod.Audio = "Fivemanage" -- "Fivemanage" or "Discord" or "LBUpload" or "Custom"
 
 Config.Video = {}
 Config.Video.Bitrate = 400 -- video bitrate (kbps), increase to improve quality, at the cost of file size

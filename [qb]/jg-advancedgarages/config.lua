@@ -236,7 +236,7 @@ Config.JobGarageSetVehicleCommand = "setjobvehicle" -- admin only
 Config.JobGarageRemoveVehicleCommand = "removejobvehicle" -- admin only
 Config.JobGarageUniqueBlips = false
 Config.JobGarageLocations = { -- IMPORTANT - Every garage name must be unique
-  ['Mechanic'] = {
+  --[[ ['Mechanic'] = {
     coords = vector3(157.86, -3005.9, 7.03),
     spawn = vector4(165.26, -3014.94, 5.9, 268.8),
     distance = 15,
@@ -250,7 +250,7 @@ Config.JobGarageLocations = { -- IMPORTANT - Every garage name must be unique
     hideMarkers = true,
     markers = { id = 21, size = { x = 0.3, y = 0.3, z = 0.3 }, color = { r = 255, g = 255, b = 255, a = 120 }, bobUpAndDown = 0, faceCamera = 0, rotate = 1, drawOnEnts = 0 },
     vehiclesType = "owned", -- Use owned vehicles that can anyone in this society can access - more details: https://docs.jgscripts.com/advanced-garages/job-and-gang-garages
-  },
+  }, ]]
   ['Police'] = {
     coords = vector3(434.48, -1016.97, 28.83),
     spawn = vector4(434.55, -1014.54, 28.49, 91.56),

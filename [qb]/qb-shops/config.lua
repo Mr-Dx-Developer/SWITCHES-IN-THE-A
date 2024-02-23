@@ -1242,7 +1242,7 @@ Config.Locations = {
     -- LTD Gasoline Locations
     ["ltdgasoline"] = {
         ["label"] = "LTD Gasoline",
-        ["coords"] = vector4(-47.02, -1758.23, 29.42, 45.05),
+        ["coords"] = vector4(-41.91, -1784.46, 29.13, 321.85),
         ["ped"] = 'mp_m_shopkeep_01',
         ["scenario"] = "WORLD_HUMAN_STAND_MOBILE",
         ["radius"] = 1.5,
@@ -1253,7 +1253,7 @@ Config.Locations = {
         ["blipsprite"] = 52,
         ["blipscale"] = 0.6,
         ["blipcolor"] = 0,
-        ["delivery"] = vector4(-40.51, -1747.45, 29.29, 326.39)
+        ["delivery"] = vector4(-41.91, -1784.46, 29.13, 321.85)
     },
 
     ["ltdgasoline2"] = {
