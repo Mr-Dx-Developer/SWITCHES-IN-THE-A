@@ -1,0 +1,75 @@
+QBMeta = QBMeta or {}
+
+QBMeta = {
+    -- Here you will add all edible and drinkable items and the amount of hunger or thirst to fill.
+    EatsMeta = {
+        lclemonlobster   = math.random(30, 40), -- default "qb" values, can be adjusted. If using QB use math.random(20, 30), or adjust to your standards.
+        lccheeseburger   = math.random(30, 40),
+        lcsausagedog     = math.random(30, 40),
+        lcgumbo          = math.random(30, 40),
+        lcoxtails        = math.random(30, 40),
+        lcmaccheesy      = math.random(30, 40),
+        lchotcakes       = math.random(30, 40),
+        lcricebowl       = math.random(30, 40),
+        lcramennoodle    = math.random(30, 40),
+        lcquickpizza     = math.random(30, 40),
+        lcribs           = math.random(30, 40),
+        lclegquarter     = math.random(30, 40),
+        lcsteak          = math.random(30, 40),
+        lcgrillcorn      = math.random(30, 40),
+        lcgrillveggies   = math.random(30, 40),
+        lctoast          = math.random(30, 40),
+        lcpoptart        = math.random(30, 40),
+        lcwaffle         = math.random(30, 40),
+        lctoasti         = math.random(30, 40),
+        lchamtoastie     = math.random(30, 40),
+        lcfriedchicken   = math.random(30, 40),
+        lccheesesticks   = math.random(30, 40),
+        lcfrenchfries    = math.random(30, 40),
+        lclambchops      = math.random(30, 40),
+        lcfriedfish      = math.random(30, 40),
+        lcsalmon         = math.random(30, 40),
+        lcbstirfry       = math.random(30, 40),
+        lcchickensand    = math.random(30, 40),
+        lcbffriedrice    = math.random(30, 40),
+        lcckfriedrice    = math.random(30, 40),
+        lcapplesauce     = math.random(30, 40),
+        lcnanacream      = math.random(30, 40),
+        lcberrycream     = math.random(30, 40),
+        lcchoccream      = math.random(30, 40),
+        lcbpudding       = math.random(30, 40),
+        lcmshine_melon   = math.random(30, 40),
+
+        -- Hobo Stove Items:
+        lceggsandwich    = math.random(30, 40),
+        lcbakedbeans     = math.random(30, 40),
+        lcsoupbowl       = math.random(30, 40),
+
+        -- New Items:
+        lcpepshrimp      = math.random(30, 40),
+        lccurrgoat       = math.random(30, 40),
+        lcricepeas       = math.random(30, 40),
+        lcyellrice       = math.random(30, 40),
+
+    },    
+    DrinksMeta = {
+        lcgrapejuice      = math.random(30, 40),
+        lcapplejuice      = math.random(30, 40),
+        lcorangejuice     = math.random(30, 40),
+        lcnanasmoothie    = math.random(30, 40),
+        lcberrysmoothie   = math.random(30, 40),
+        lccuptea          = math.random(30, 40),
+        lccupcoffee       = math.random(30, 40),
+        lchotcocoa        = math.random(30, 40),
+        lcgreentea        = math.random(30, 40),
+        lccappucino       = math.random(30, 40), 
+        lcmshine_melon    = math.random(30, 40),   
+    },
+    AlcoholMeta = { 
+        lcwhite_lighting    = math.random(30, 40),
+        lcsour_watermelon   = math.random(30, 40),
+        lcmountain_java     = math.random(30, 40),
+        lcstrawberry_shine  = math.random(30, 40),
+        lcblkberry_shine    = math.random(30, 40),        
+    },
+}
