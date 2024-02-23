@@ -1,0 +1,102 @@
+{
+    "iced_matcha_latte": {
+        "stock": 350,
+        "price": 500
+    },
+    "bagel_cream_cheese": {
+        "stock": 350,
+        "price": 500
+    },
+    "dunkin_tea": {
+        "stock": 350,
+        "price": 500
+    },
+    "snackin_bacon": {
+        "stock": 350,
+        "price": 500
+    },
+    "dunkin_hash_browns": {
+        "stock": 350,
+        "price": 500
+    },
+    "dunkin_refresher": {
+        "stock": 350,
+        "price": 500
+    },
+    "iced_signaturea_latte": {
+        "stock": 350,
+        "price": 500
+    },
+    "dunkin_bacon_egg_cheese": {
+        "stock": 350,
+        "price": 500
+    },
+    "dunkin_americano": {
+        "stock": 350,
+        "price": 500
+    },
+    "packaged_tea": {
+        "stock": 350,
+        "price": 500
+    },
+    "signature_latte": {
+        "stock": 350,
+        "price": 500
+    },
+    "sourdough_breakfast_sandwich": {
+        "stock": 350,
+        "price": 500
+    },
+    "wake_up_wrap": {
+        "stock": 350,
+        "price": 500
+    },
+    "dunkin_latte": {
+        "stock": 350,
+        "price": 500
+    },
+    "dunkin_donuts": {
+        "stock": 350,
+        "price": 500
+    },
+    "dunkin_macchiato": {
+        "stock": 350,
+        "price": 500
+    },
+    "iced_cappuccino": {
+        "stock": 350,
+        "price": 500
+    },
+    "dunkin_croissant": {
+        "stock": 350,
+        "price": 500
+    },
+    "dunkin_coffee": {
+        "stock": 350,
+        "price": 500
+    },
+    "cold_brew": {
+        "stock": 350,
+        "price": 500
+    },
+    "munchkins_donut_hole": {
+        "stock": 350,
+        "price": 500
+    },
+    "stuffed_bagel_minis": {
+        "stock": 350,
+        "price": 500
+    },
+    "dunkin_muffins": {
+        "stock": 350,
+        "price": 500
+    },
+    "packaged_coffee": {
+        "stock": 350,
+        "price": 500
+    },
+    "iced_macchiatto": {
+        "stock": 350,
+        "price": 500
+    }
+}

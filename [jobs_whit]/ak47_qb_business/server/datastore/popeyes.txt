@@ -1,0 +1,146 @@
+{
+    "regular_cajun_rice": {
+        "stock": 350,
+        "price": 500
+    },
+    "tenders_medium_combo": {
+        "stock": 350,
+        "price": 500
+    },
+    "cinnamon_apple_pie": {
+        "stock": 350,
+        "price": 500
+    },
+    "chicken_family_meal": {
+        "stock": 350,
+        "price": 500
+    },
+    "medium_tropicana_lemonade": {
+        "stock": 350,
+        "price": 500
+    },
+    "mac_cheese_meal": {
+        "stock": 350,
+        "price": 500
+    },
+    "medium_fanta_orange": {
+        "stock": 350,
+        "price": 500
+    },
+    "medium_coca_cola": {
+        "stock": 350,
+        "price": 500
+    },
+    "nuggets_la_carte": {
+        "stock": 350,
+        "price": 500
+    },
+    "medium_fanta_strawberry": {
+        "stock": 350,
+        "price": 500
+    },
+    "red_beans_rice": {
+        "stock": 350,
+        "price": 500
+    },
+    "mild_tenders_bundle": {
+        "stock": 350,
+        "price": 500
+    },
+    "nuggets_medium_combo": {
+        "stock": 350,
+        "price": 500
+    },
+    "mild_tenders_box": {
+        "stock": 350,
+        "price": 500
+    },
+    "carte_biscuit": {
+        "stock": 350,
+        "price": 500
+    },
+    "homestyle_mac_cheese": {
+        "stock": 350,
+        "price": 500
+    },
+    "chilled_premium_lemonade": {
+        "stock": 350,
+        "price": 500
+    },
+    "md_ginger_ale": {
+        "stock": 350,
+        "price": 500
+    },
+    "strawberry_cheesecake_pie": {
+        "stock": 350,
+        "price": 500
+    },
+    "nuggets_kids_meal": {
+        "stock": 350,
+        "price": 500
+    },
+    "medium_sprite": {
+        "stock": 350,
+        "price": 500
+    },
+    "strawberry_lemonade": {
+        "stock": 350,
+        "price": 500
+    },
+    "chicken_bundle": {
+        "stock": 350,
+        "price": 500
+    },
+    "surf_turf_combo": {
+        "stock": 350,
+        "price": 500
+    },
+    "medium_hawaiian_punch": {
+        "stock": 350,
+        "price": 500
+    },
+    "popcorn_shrimp": {
+        "stock": 350,
+        "price": 500
+    },
+    "mashed_potatoes": {
+        "stock": 350,
+        "price": 500
+    },
+    "regular_coleslaw": {
+        "stock": 350,
+        "price": 500
+    },
+    "md_seltzer_water": {
+        "stock": 350,
+        "price": 500
+    },
+    "signature_chicken_box": {
+        "stock": 350,
+        "price": 500
+    },
+    "medium_diet_coke": {
+        "stock": 350,
+        "price": 500
+    },
+    "bigger_family_feast": {
+        "stock": 350,
+        "price": 500
+    },
+    "classic_chicken_sandwich": {
+        "stock": 350,
+        "price": 500
+    },
+    "tenders_family_meal": {
+        "stock": 350,
+        "price": 500
+    },
+    "medium_sweet_tea": {
+        "stock": 350,
+        "price": 500
+    },
+    "cajun_fries": {
+        "stock": 350,
+        "price": 500
+    }
+}

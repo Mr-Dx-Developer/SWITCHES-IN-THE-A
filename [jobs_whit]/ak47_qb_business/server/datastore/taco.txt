@@ -1,0 +1,122 @@
+{
+    "crunchwrap_supreme": {
+        "stock": 350,
+        "price": 500
+    },
+    "crunchwrap_supreme_meal": {
+        "stock": 350,
+        "price": 500
+    },
+    "cheese_quesadilla": {
+        "stock": 350,
+        "price": 500
+    },
+    "volcano_burrito_meal": {
+        "stock": 350,
+        "price": 500
+    },
+    "t_tango_apple": {
+        "stock": 350,
+        "price": 500
+    },
+    "crunchy_taco_supreme": {
+        "stock": 350,
+        "price": 500
+    },
+    "churros_dip": {
+        "stock": 350,
+        "price": 500
+    },
+    "quesadilla": {
+        "stock": 350,
+        "price": 500
+    },
+    "two_taco_supreme": {
+        "stock": 350,
+        "price": 500
+    },
+    "t_tango_orange": {
+        "stock": 350,
+        "price": 500
+    },
+    "fishtaco": {
+        "stock": 350,
+        "price": 500
+    },
+    "quesadilla_cravings": {
+        "stock": 350,
+        "price": 500
+    },
+    "tacomeet": {
+        "stock": 350,
+        "price": 500
+    },
+    "t_diet_pepsi": {
+        "stock": 350,
+        "price": 500
+    },
+    "soft_taco_supreme": {
+        "stock": 350,
+        "price": 500
+    },
+    "cheesy_black_bean": {
+        "stock": 350,
+        "price": 500
+    },
+    "soft_taco": {
+        "stock": 350,
+        "price": 500
+    },
+    "fries_grande": {
+        "stock": 350,
+        "price": 500
+    },
+    "cheesy_gordita_crunch": {
+        "stock": 350,
+        "price": 500
+    },
+    "crunchytaco": {
+        "stock": 350,
+        "price": 500
+    },
+    "spicy_chicken_burrito": {
+        "stock": 350,
+        "price": 500
+    },
+    "chicken_burrito": {
+        "stock": 350,
+        "price": 500
+    },
+    "beefy_nacho": {
+        "stock": 350,
+        "price": 500
+    },
+    "t_seven_up": {
+        "stock": 350,
+        "price": 500
+    },
+    "t_pepsi_max": {
+        "stock": 350,
+        "price": 500
+    },
+    "crispy_chicken_staco": {
+        "stock": 350,
+        "price": 500
+    },
+    "cinnamon_twists": {
+        "stock": 350,
+        "price": 500
+    },
+    "volcano_burrito": {
+        "stock": 350,
+        "price": 500
+    },
+    "taco_regular": {
+        "stock": 350,
+        "price": 500
+    },
+    "chalupa_supreme": {
+        "stock": 350,
+        "price": 500
+    }
+}
