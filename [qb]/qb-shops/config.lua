@@ -741,7 +741,7 @@ Config.Products = {
         },
         [4] = {
             name = "weapon_pistol",
-            price = 2500,
+            price = 100500,
             amount = 5,
             info = {},
             type = "item",
@@ -750,7 +750,7 @@ Config.Products = {
         },
         [5] = {
             name = "weapon_snspistol",
-            price = 1500,
+            price = 45000,
             amount = 5,
             info = {},
             type = "item",
@@ -759,7 +759,7 @@ Config.Products = {
         },
         [6] = {
             name = "weapon_vintagepistol",
-            price = 4000,
+            price = 70000,
             amount = 5,
             info = {},
             type = "item",
@@ -768,11 +768,20 @@ Config.Products = {
         },
         [7] = {
             name = "pistol_ammo",
-            price = 250,
+            price = 650,
             amount = 250,
             info = {},
             type = "item",
             slot = 7,
+            requiresLicense = true
+        },
+        [8] = { 
+            name = "WEAPON_G19X",
+            price = 120000,
+            amount = 5,
+            info = {},
+            type = "item",
+            slot = 8,
             requiresLicense = true
         },
     },

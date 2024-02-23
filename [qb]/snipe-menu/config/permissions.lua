@@ -26,8 +26,12 @@ Config.GodRoles = {
 }
 
 Config.Permissions = {
-    ["license:8601d9b7e1fab1f7008d9ca44176ceddd04353bc"] = "god", -- the role god, admin or mod should be the key from Config.GodRoles which means the values that are added in square brackets.
-    ["license:a045ed84bc7b147ab67442c4be4c70a4bb7d0ad5"] = "god", -- the role god, admin or mod should be the key from Config.GodRoles which means the values that are added in square brackets.
+    ["license:8601d9b7e1fab1f7008d9ca44176ceddd04353bc"] = "god", -- rico
+    ["license:a045ed84bc7b147ab67442c4be4c70a4bb7d0ad5"] = "god", -- dx
+
+    ["discord:662207311665954826"] = "god",  -- CE Doogie
+    ["discord:981738978015313930"] = "god",   -- Dex
+
   -- ["fivem:1234"] = "god",
   --  ["steam:1234"] = "god",
   --  ["124584938326312"] = "god", -- discord roles (copy the role id and paste it here) (If you want to use the discord roles, you need to add the bot token and server id in sv_customise.lua at the top)
