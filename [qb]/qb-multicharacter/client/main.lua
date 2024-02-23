@@ -15,6 +15,8 @@ CreateThread(function()
 	end
 end)
 
+-- Functions
+
 local function skyCam(bool)
     TriggerEvent('qb-weathersync:client:DisableSync')
     if bool then
@@ -65,10 +67,6 @@ RegisterNetEvent('qb-multicharacter:client:closeNUIdefault', function() -- This 
     DeleteEntity(charPed)
     SetNuiFocus(false, false)
     DoScreenFadeOut(500)
-
-    TriggerEvent('nethush-entryscene:client:openairscence')
-    Wait(25000 + 10)
-    
     Wait(2000)
     SetEntityCoords(PlayerPedId(), Config.DefaultSpawn.x, Config.DefaultSpawn.y, Config.DefaultSpawn.z)
     TriggerServerEvent('QBCore:Server:OnPlayerLoaded')
@@ -110,6 +108,9 @@ end)
 
 RegisterNUICallback('closeUI', function(_, cb)
     openCharMenu(false)
+    SendNUIMessage({
+        action = "stopMusic"
+    })
     cb("ok")
 end)
 
@@ -123,13 +124,16 @@ end)
 RegisterNUICallback('selectCharacter', function(data, cb)
     local cData = data.cData
     DoScreenFadeOut(10)
+    cData.isNew = false
     TriggerServerEvent('qb-multicharacter:server:loadUserData', cData)
     openCharMenu(false)
+    SendNUIMessage({
+        action = "stopMusic"
+    })
     SetEntityAsMissionEntity(charPed, true, true)
     DeleteEntity(charPed)
     cb("ok")
 end)
-
 
 RegisterNUICallback('cDataPed', function(nData, cb)
     local cData = nData.cData
@@ -145,9 +149,29 @@ RegisterNUICallback('cDataPed', function(nData, cb)
                         Wait(0)
                     end
                     charPed = CreatePed(2, model, Config.PedCoords.x, Config.PedCoords.y, Config.PedCoords.z - 0.98, Config.PedCoords.w, false, true)
-                    loadAnimDict("anim@mp_player_intcelebrationmale@karate_chops")
-                    TaskPlayAnim(charPed, "anim@mp_player_intcelebrationmale@karate_chops", "karate_chops", 2.0, 2.0, -1, 2, 0, false, false, false)
 
+                    local RandomAnims = {
+                        "WORLD_HUMAN_HANG_OUT_STREET", 
+                        "WORLD HUMAN STAND IMPATIENT", 
+                        "WORLD_HUMAN_STAND_MOBILE", 
+                        "WORLD_HUMAN_SMOKING_POT", 
+                        "WORLD_HUMAN_LEANING", 
+                        "WORLD_HUMAN_DRUG DEALER_HARD", 
+                        "WORLD_HUMAN_SUPERHERO", 
+                        "WORLD_HUMAN_TOURIST_MAP", 
+                        "WORLD_HUMAN YOGA", 
+                        "WORLD_HUMAN_BINOCULARS", 
+                        "WORLD HUMAN BUM WASH", 
+                        "WORLD_HUMAN_CONST_DRILL", 
+                        "WORLD_HUMAN_MOBILE_FILM_SHOCKING", 
+                        "WORLD HUMAN MUSCLE FLEX", 
+                        "WORLD_HUMAN_MUSICIAN", 
+                        "WORLD_HUMAN_PAPARAZZI", 
+                        "WORLD_HUMAN_PARTYING",
+                    }
+                    local PlayAnim = RandomAnims[math.random(#RandomAnims)] 
+                    SetPedCanPlayAmbientAnims(charPed, true) 
+                    TaskStartScenarioInPlace(charPed, PlayAnim, 0, true)
                     SetPedComponentVariation(charPed, 0, 0, 0, 2)
                     FreezeEntityPosition(charPed, false)
                     SetEntityInvincible(charPed, true)
@@ -155,9 +179,6 @@ RegisterNUICallback('cDataPed', function(nData, cb)
                     SetBlockingOfNonTemporaryEvents(charPed, true)
                     data = json.decode(data)
                     TriggerEvent('qb-clothing:client:loadPlayerClothing', data, charPed)
-                    loadAnimDict("missheist_jewelleadinout")
-                    Wait(GetAnimDuration("anim@mp_player_intcelebrationmale@karate_chops", 'karate_chops')*1000)
-                    TaskPlayAnim(charPed, "missheist_jewelleadinout", "jh_int_outro_loop_a", 2.0, 2.0, -1, 49, 0, false, false, false)
                 end)
             else
                 CreateThread(function()
@@ -171,18 +192,11 @@ RegisterNUICallback('cDataPed', function(nData, cb)
                         Wait(0)
                     end
                     charPed = CreatePed(2, model, Config.PedCoords.x, Config.PedCoords.y, Config.PedCoords.z - 0.98, Config.PedCoords.w, false, true)
-                    loadAnimDict("anim@mp_player_intcelebrationmale@karate_chops")
-                    TaskPlayAnim(charPed, "anim@mp_player_intcelebrationmale@karate_chops", "karate_chops", 2.0, 2.0, -1, 2, 0, false, false, false)
-
                     SetPedComponentVariation(charPed, 0, 0, 0, 2)
                     FreezeEntityPosition(charPed, false)
                     SetEntityInvincible(charPed, true)
                     PlaceObjectOnGroundProperly(charPed)
                     SetBlockingOfNonTemporaryEvents(charPed, true)
-
-                    loadAnimDict("missheist_jewelleadinout")
-                    Wait(GetAnimDuration("anim@mp_player_intcelebrationmale@karate_chops", 'karate_chops')*1000)
-                    TaskPlayAnim(charPed, "missheist_jewelleadinout", "jh_int_outro_loop_a", 2.0, 2.0, -1, 49, 0, false, false, false)
                 end)
             end
             cb("ok")
@@ -199,18 +213,11 @@ RegisterNUICallback('cDataPed', function(nData, cb)
                 Wait(0)
             end
             charPed = CreatePed(2, model, Config.PedCoords.x, Config.PedCoords.y, Config.PedCoords.z - 0.98, Config.PedCoords.w, false, true)
-            loadAnimDict("anim@mp_player_intcelebrationmale@karate_chops")
-            TaskPlayAnim(charPed, "anim@mp_player_intcelebrationmale@karate_chops", "karate_chops", 2.0, 2.0, -1, 2, 0, false, false, false)
             SetPedComponentVariation(charPed, 0, 0, 0, 2)
             FreezeEntityPosition(charPed, false)
             SetEntityInvincible(charPed, true)
             PlaceObjectOnGroundProperly(charPed)
             SetBlockingOfNonTemporaryEvents(charPed, true)
-
-            loadAnimDict("missheist_jewelleadinout")
-            Wait(GetAnimDuration("anim@mp_player_intcelebrationmale@karate_chops", 'karate_chops')*1000)
-            TaskPlayAnim(charPed, "missheist_jewelleadinout", "jh_int_outro_loop_a", 2.0, 2.0, -1, 49, 0, false, false, false)
-
         end)
         cb("ok")
     end
@@ -239,7 +246,11 @@ RegisterNUICallback('createNewCharacter', function(data, cb)
     elseif cData.gender == Lang:t("ui.female") then
         cData.gender = 1
     end
+    cData.isNew = true
     TriggerServerEvent('qb-multicharacter:server:createCharacter', cData)
+    SendNUIMessage({
+        action = "stopMusic"
+    })
     Wait(500)
     cb("ok")
 end)
@@ -250,10 +261,3 @@ RegisterNUICallback('removeCharacter', function(data, cb)
     TriggerEvent('qb-multicharacter:client:chooseChar')
     cb("ok")
 end)
-
-function loadAnimDict(dict)
-    while (not HasAnimDictLoaded(dict)) do
-        RequestAnimDict(dict)
-        Wait(5)
-    end
-end 
