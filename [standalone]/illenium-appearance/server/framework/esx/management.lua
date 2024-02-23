@@ -1,5 +1,3 @@
-if not Framework.ESX() then return end
-
 if Config.BossManagedOutfits then
     function isBoss(grades, grade)
         local highestGrade = grades[1].grade
