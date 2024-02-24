@@ -29,8 +29,17 @@ Config.Permissions = {
     ["license:8601d9b7e1fab1f7008d9ca44176ceddd04353bc"] = "god", -- rico
     ["license:a045ed84bc7b147ab67442c4be4c70a4bb7d0ad5"] = "god", -- dx
 
-    ["discord:662207311665954826"] = "god",  -- CE Doogie
-    ["discord:981738978015313930"] = "god",   -- Dex
+   
+
+
+
+    ["discord:1144911208303034440"] = "god",  -- Vroy
+    ["discord:981738978015313930"] = "god", -- Dex
+    ["discord:1164653509443059732"] = "god", -- Ishh
+    ["discord:662207311665954826"] = "god",  -- Ace
+    ["discord:1012094569321615401"] = "god", -- Jack
+    ["discord:1051260760992522320"] = "god", -- Shawnii
+    ["discord:1110069724143951923"] = "god", -- Stormii
 
   -- ["fivem:1234"] = "god",
   --  ["steam:1234"] = "god",
