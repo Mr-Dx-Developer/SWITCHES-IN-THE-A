@@ -62,18 +62,22 @@ Config.EnableWantedLevel = false
 -- To Set This Up visit https://forum.cfx.re/t/how-to-updated-discord-rich-presence-custom-image/157686
 Config.Discord = {
     ["IsEnabled"] = true, -- If set to true, then discord rich presence will be enabled
-    ["ApplicationId"] = '1205868627774144623', -- The discord application id
+    ["ApplicationId"] = '1210744457381806110', -- The discord application id
     ["IconLarge"] = 'logo', -- The name of the large icon
-    ["IconLargeHoverText"] = 'NoPixel Inspired', -- The hover text of the large icon
+    ["IconLargeHoverText"] = '𝐎𝐔𝐓 𝐃𝐀 𝐌𝐔𝐃 𝐀𝐓𝐋 𝐑𝐏', -- The hover text of the large icon
     ["IconSmall"] = 'verified', -- The name of the small icon
     ["IconSmallHoverText"] = 'Buy Now', -- The hover text of the small icon
     ["UpdateRate"] = 60000, -- How often the player count should be updated
     ["ShowPlayerCount"] = true, -- If set to true the player count will be displayed in the rich presence
-    ["MaxPlayers"] = 2048, -- Maximum amount of players
+    ["MaxPlayers"] = 64, -- Maximum amount of players
     ["Buttons"] = {
         {
+            text = 'JOIN',
+            url = 'fivem://connect/cfx.re/join/4v33yo'
+        },
+        {
             text = 'Discord',
-            url = 'https://discord.gg/RgbBztr5XJ'
+            url = 'https://discord.gg/odmatlantav3'
         },
     }
 }
