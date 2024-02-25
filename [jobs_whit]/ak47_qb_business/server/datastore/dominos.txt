@@ -1,33 +1,9 @@
 {
-    "memphis_bbq_chicken": {
-        "stock": 500,
-        "price": 500
-    },
-    "spinach_feta": {
-        "stock": 500,
-        "price": 500
-    },
-    "italian_sausage_marinara": {
-        "stock": 500,
-        "price": 500
-    },
-    "philly_cheese_steak": {
-        "stock": 500,
-        "price": 500
-    },
-    "d_dr_pepper": {
-        "stock": 500,
-        "price": 500
-    },
-    "chicken_habanero": {
-        "stock": 500,
-        "price": 500
-    },
-    "buffalo_chicken": {
-        "stock": 500,
-        "price": 500
-    },
     "extra_vagan_zza": {
+        "stock": 500,
+        "price": 500
+    },
+    "pizza_deluxe": {
         "stock": 500,
         "price": 500
     },
@@ -35,11 +11,15 @@
         "stock": 500,
         "price": 500
     },
-    "pacific_veggie": {
+    "d_fanta_orange": {
         "stock": 500,
         "price": 500
     },
-    "philly_cheese_sandwich": {
+    "chicken_habanero": {
+        "stock": 500,
+        "price": 500
+    },
+    "honolulu_hawaiian": {
         "stock": 500,
         "price": 500
     },
@@ -47,15 +27,63 @@
         "stock": 500,
         "price": 500
     },
+    "pasta_primavera": {
+        "stock": 500,
+        "price": 500
+    },
+    "ultimate_pepperoni": {
+        "stock": 500,
+        "price": 500
+    },
+    "memphis_bbq_chicken": {
+        "stock": 500,
+        "price": 500
+    },
+    "pacific_veggie": {
+        "stock": 500,
+        "price": 500
+    },
+    "cali_chicken_bacon": {
+        "stock": 500,
+        "price": 500
+    },
+    "wisconsin_cheese": {
+        "stock": 500,
+        "price": 500
+    },
+    "chicken_bacon_ranch": {
+        "stock": 500,
+        "price": 500
+    },
     "meat_zza": {
         "stock": 500,
         "price": 500
     },
-    "d_fanta_orange": {
+    "philly_cheese_steak": {
         "stock": 500,
         "price": 500
     },
     "chicken_carbonara": {
+        "stock": 500,
+        "price": 500
+    },
+    "d_dr_pepper": {
+        "stock": 500,
+        "price": 500
+    },
+    "mediterranean_veggie": {
+        "stock": 500,
+        "price": 500
+    },
+    "p_chicken_alfredo": {
+        "stock": 500,
+        "price": 500
+    },
+    "philly_cheese_sandwich": {
+        "stock": 500,
+        "price": 500
+    },
+    "italian_sausage_marinara": {
         "stock": 500,
         "price": 500
     },
@@ -67,39 +95,11 @@
         "stock": 500,
         "price": 500
     },
-    "pizza_deluxe": {
+    "buffalo_chicken": {
         "stock": 500,
         "price": 500
     },
-    "chicken_bacon_ranch": {
-        "stock": 500,
-        "price": 500
-    },
-    "pasta_primavera": {
-        "stock": 500,
-        "price": 500
-    },
-    "mediterranean_veggie": {
-        "stock": 500,
-        "price": 500
-    },
-    "honolulu_hawaiian": {
-        "stock": 500,
-        "price": 500
-    },
-    "p_chicken_alfredo": {
-        "stock": 500,
-        "price": 500
-    },
-    "wisconsin_cheese": {
-        "stock": 500,
-        "price": 500
-    },
-    "cali_chicken_bacon": {
-        "stock": 500,
-        "price": 500
-    },
-    "ultimate_pepperoni": {
+    "spinach_feta": {
         "stock": 500,
         "price": 500
     }

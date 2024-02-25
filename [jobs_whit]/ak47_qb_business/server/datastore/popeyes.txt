@@ -1,93 +1,5 @@
 {
-    "signature_chicken_box": {
-        "stock": 500,
-        "price": 500
-    },
-    "classic_chicken_sandwich": {
-        "stock": 500,
-        "price": 500
-    },
-    "cinnamon_apple_pie": {
-        "stock": 500,
-        "price": 500
-    },
-    "homestyle_mac_cheese": {
-        "stock": 500,
-        "price": 500
-    },
-    "mild_tenders_box": {
-        "stock": 500,
-        "price": 500
-    },
-    "md_ginger_ale": {
-        "stock": 500,
-        "price": 500
-    },
-    "medium_hawaiian_punch": {
-        "stock": 500,
-        "price": 500
-    },
-    "regular_cajun_rice": {
-        "stock": 500,
-        "price": 500
-    },
-    "nuggets_kids_meal": {
-        "stock": 500,
-        "price": 500
-    },
-    "strawberry_cheesecake_pie": {
-        "stock": 500,
-        "price": 500
-    },
-    "medium_coca_cola": {
-        "stock": 500,
-        "price": 500
-    },
-    "tenders_family_meal": {
-        "stock": 500,
-        "price": 500
-    },
-    "bigger_family_feast": {
-        "stock": 500,
-        "price": 500
-    },
     "chilled_premium_lemonade": {
-        "stock": 500,
-        "price": 500
-    },
-    "strawberry_lemonade": {
-        "stock": 500,
-        "price": 500
-    },
-    "red_beans_rice": {
-        "stock": 500,
-        "price": 500
-    },
-    "nuggets_medium_combo": {
-        "stock": 500,
-        "price": 500
-    },
-    "regular_coleslaw": {
-        "stock": 500,
-        "price": 500
-    },
-    "nuggets_la_carte": {
-        "stock": 500,
-        "price": 500
-    },
-    "medium_sprite": {
-        "stock": 500,
-        "price": 500
-    },
-    "chicken_family_meal": {
-        "stock": 500,
-        "price": 500
-    },
-    "mac_cheese_meal": {
-        "stock": 500,
-        "price": 500
-    },
-    "mild_tenders_bundle": {
         "stock": 500,
         "price": 500
     },
@@ -95,15 +7,55 @@
         "stock": 500,
         "price": 500
     },
-    "mashed_potatoes": {
+    "regular_coleslaw": {
         "stock": 500,
         "price": 500
     },
-    "chicken_bundle": {
+    "bigger_family_feast": {
+        "stock": 500,
+        "price": 500
+    },
+    "homestyle_mac_cheese": {
+        "stock": 500,
+        "price": 500
+    },
+    "regular_cajun_rice": {
+        "stock": 500,
+        "price": 500
+    },
+    "mild_tenders_box": {
+        "stock": 500,
+        "price": 500
+    },
+    "nuggets_medium_combo": {
+        "stock": 500,
+        "price": 500
+    },
+    "classic_chicken_sandwich": {
+        "stock": 500,
+        "price": 500
+    },
+    "nuggets_kids_meal": {
         "stock": 500,
         "price": 500
     },
     "tenders_medium_combo": {
+        "stock": 500,
+        "price": 500
+    },
+    "signature_chicken_box": {
+        "stock": 500,
+        "price": 500
+    },
+    "medium_hawaiian_punch": {
+        "stock": 500,
+        "price": 500
+    },
+    "mac_cheese_meal": {
+        "stock": 500,
+        "price": 500
+    },
+    "cinnamon_apple_pie": {
         "stock": 500,
         "price": 500
     },
@@ -115,15 +67,31 @@
         "stock": 500,
         "price": 500
     },
-    "medium_tropicana_lemonade": {
+    "medium_diet_coke": {
         "stock": 500,
         "price": 500
     },
-    "medium_sweet_tea": {
+    "chicken_family_meal": {
+        "stock": 500,
+        "price": 500
+    },
+    "mashed_potatoes": {
+        "stock": 500,
+        "price": 500
+    },
+    "chicken_bundle": {
+        "stock": 500,
+        "price": 500
+    },
+    "mild_tenders_bundle": {
         "stock": 500,
         "price": 500
     },
     "cajun_fries": {
+        "stock": 500,
+        "price": 500
+    },
+    "strawberry_cheesecake_pie": {
         "stock": 500,
         "price": 500
     },
@@ -139,7 +107,39 @@
         "stock": 500,
         "price": 500
     },
-    "medium_diet_coke": {
+    "medium_tropicana_lemonade": {
+        "stock": 500,
+        "price": 500
+    },
+    "red_beans_rice": {
+        "stock": 500,
+        "price": 500
+    },
+    "tenders_family_meal": {
+        "stock": 500,
+        "price": 500
+    },
+    "medium_sprite": {
+        "stock": 500,
+        "price": 500
+    },
+    "medium_sweet_tea": {
+        "stock": 500,
+        "price": 500
+    },
+    "md_ginger_ale": {
+        "stock": 500,
+        "price": 500
+    },
+    "strawberry_lemonade": {
+        "stock": 500,
+        "price": 500
+    },
+    "medium_coca_cola": {
+        "stock": 500,
+        "price": 500
+    },
+    "nuggets_la_carte": {
         "stock": 500,
         "price": 500
     }

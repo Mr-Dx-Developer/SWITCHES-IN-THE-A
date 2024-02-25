@@ -3,10 +3,6 @@
         "stock": 500,
         "price": 500
     },
-    "meatball": {
-        "stock": 500,
-        "price": 500
-    },
     "vodka": {
         "stock": 500,
         "price": 500
@@ -16,6 +12,10 @@
         "price": 500
     },
     "fries": {
+        "stock": 500,
+        "price": 500
+    },
+    "meatball": {
         "stock": 500,
         "price": 500
     },

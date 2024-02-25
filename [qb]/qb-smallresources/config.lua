@@ -64,7 +64,7 @@ Config.Discord = {
     ["IsEnabled"] = true, -- If set to true, then discord rich presence will be enabled
     ["ApplicationId"] = '1210744457381806110', -- The discord application id
     ["IconLarge"] = 'logo', -- The name of the large icon
-    ["IconLargeHoverText"] = '𝐎𝐔𝐓 𝐃𝐀 𝐌𝐔𝐃 𝐀𝐓𝐋 𝐑𝐏', -- The hover text of the large icon
+    ["IconLargeHoverText"] = '𝐎𝐃𝐌 𝐀𝐓𝐋 𝐑𝐏', -- The hover text of the large icon
     ["IconSmall"] = 'verified', -- The name of the small icon
     ["IconSmallHoverText"] = 'Buy Now', -- The hover text of the small icon
     ["UpdateRate"] = 60000, -- How often the player count should be updated
@@ -487,7 +487,7 @@ Config.Background = "background_projectsloth"
 Config.Opacity = 60
 Config.Header = {
     -- LEFT MENU CONFIG
-    ["TITLE"] = "VLife v4",
+    ["TITLE"] = "ODM ATL v3",
     ["SUBTITLE"] = "Life where everything is vartual",
 
     ["MAP"] = "Map",
@@ -502,9 +502,9 @@ Config.Header = {
     ["EDITOR"] = "Rockstar Editor",
 
     -- RIGHT MENU CONFIG
-    ["SERVER_NAME"] = "VLife v4",
-    ["SERVER_TEXT"] = "VLIFE ROLEPLAY",
-    ["SERVER_DISCORD"] = "vlife"
+    ["SERVER_NAME"] = "ODM ATL v3",
+    ["SERVER_TEXT"] = "ODM ATL V3 ROLEPLAY",
+    ["SERVER_DISCORD"] = "ODM ATL V3"
 }
 
 --- Evevators
