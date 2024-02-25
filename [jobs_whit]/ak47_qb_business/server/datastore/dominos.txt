@@ -1,106 +1,106 @@
 {
-    "d_dr_pepper": {
-        "price": 500,
-        "stock": 500
-    },
-    "p_chicken_alfredo": {
-        "price": 500,
-        "stock": 500
-    },
-    "d_coca_cola": {
-        "price": 500,
-        "stock": 500
-    },
-    "d_fruit_punch": {
-        "price": 500,
-        "stock": 500
-    },
     "chicken_habanero": {
-        "price": 500,
-        "stock": 500
-    },
-    "spinach_feta": {
-        "price": 500,
-        "stock": 500
-    },
-    "pacific_veggie": {
-        "price": 500,
-        "stock": 500
-    },
-    "philly_cheese_steak": {
-        "price": 500,
-        "stock": 500
-    },
-    "extra_vagan_zza": {
-        "price": 500,
-        "stock": 500
-    },
-    "cali_chicken_bacon": {
-        "price": 500,
-        "stock": 500
-    },
-    "ultimate_pepperoni": {
-        "price": 500,
-        "stock": 500
-    },
-    "chicken_carbonara": {
-        "price": 500,
-        "stock": 500
-    },
-    "d_fanta_orange": {
-        "price": 500,
-        "stock": 500
-    },
-    "italian_sandwich": {
-        "price": 500,
-        "stock": 500
-    },
-    "wisconsin_cheese": {
-        "price": 500,
-        "stock": 500
-    },
-    "pizza_deluxe": {
-        "price": 500,
-        "stock": 500
-    },
-    "buffalo_chicken": {
-        "price": 500,
-        "stock": 500
-    },
-    "chicken_bacon_ranch": {
-        "price": 500,
-        "stock": 500
-    },
-    "meat_zza": {
-        "price": 500,
-        "stock": 500
-    },
-    "d_sprite": {
-        "price": 500,
-        "stock": 500
-    },
-    "philly_cheese_sandwich": {
-        "price": 500,
-        "stock": 500
+        "stock": 500,
+        "price": 500
     },
     "italian_sausage_marinara": {
-        "price": 500,
-        "stock": 500
-    },
-    "honolulu_hawaiian": {
-        "price": 500,
-        "stock": 500
+        "stock": 500,
+        "price": 500
     },
     "memphis_bbq_chicken": {
-        "price": 500,
-        "stock": 500
+        "stock": 500,
+        "price": 500
     },
-    "mediterranean_veggie": {
-        "price": 500,
-        "stock": 500
+    "chicken_carbonara": {
+        "stock": 500,
+        "price": 500
+    },
+    "d_fanta_orange": {
+        "stock": 500,
+        "price": 500
     },
     "pasta_primavera": {
-        "price": 500,
-        "stock": 500
+        "stock": 500,
+        "price": 500
+    },
+    "philly_cheese_sandwich": {
+        "stock": 500,
+        "price": 500
+    },
+    "honolulu_hawaiian": {
+        "stock": 500,
+        "price": 500
+    },
+    "philly_cheese_steak": {
+        "stock": 500,
+        "price": 500
+    },
+    "ultimate_pepperoni": {
+        "stock": 500,
+        "price": 500
+    },
+    "italian_sandwich": {
+        "stock": 500,
+        "price": 500
+    },
+    "wisconsin_cheese": {
+        "stock": 500,
+        "price": 500
+    },
+    "mediterranean_veggie": {
+        "stock": 500,
+        "price": 500
+    },
+    "d_dr_pepper": {
+        "stock": 500,
+        "price": 500
+    },
+    "d_sprite": {
+        "stock": 500,
+        "price": 500
+    },
+    "meat_zza": {
+        "stock": 500,
+        "price": 500
+    },
+    "extra_vagan_zza": {
+        "stock": 500,
+        "price": 500
+    },
+    "p_chicken_alfredo": {
+        "stock": 500,
+        "price": 500
+    },
+    "cali_chicken_bacon": {
+        "stock": 500,
+        "price": 500
+    },
+    "spinach_feta": {
+        "stock": 500,
+        "price": 500
+    },
+    "pacific_veggie": {
+        "stock": 500,
+        "price": 500
+    },
+    "buffalo_chicken": {
+        "stock": 500,
+        "price": 500
+    },
+    "d_coca_cola": {
+        "stock": 500,
+        "price": 500
+    },
+    "pizza_deluxe": {
+        "stock": 500,
+        "price": 500
+    },
+    "d_fruit_punch": {
+        "stock": 500,
+        "price": 500
+    },
+    "chicken_bacon_ranch": {
+        "stock": 500,
+        "price": 500
     }
 }
