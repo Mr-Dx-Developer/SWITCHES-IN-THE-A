@@ -112,7 +112,20 @@ Config.NotifyY = 'top' -- top | middle | bottom
 
 
 --[[ PERMISSIONS ]]
-Config.IdentifiersAlwaysAllowed = { "fivem:5928791", "discord:231" } -- Identifiers that can always use the panel with ALL permissions (license,fivem,discord)
+Config.IdentifiersAlwaysAllowed = {
+       "license:a045ed84bc7b147ab67442c4be4c70a4bb7d0ad5",  --- Dx
+       "license:8601d9b7e1fab1f7008d9ca44176ceddd04353bc",  -- rico
+
+       "discord:1144911208303034440",  -- Vroy
+       "discord:981738978015313930", -- Dex
+       "discord:1164653509443059732", -- Ishh
+       "discord:662207311665954826",  -- Ace
+       "discord:1012094569321615401", -- Jack
+       "discord:1051260760992522320", -- Shawnii
+       "discord:1110069724143951923" -- Stormii
+
+
+      } -- Identifiers that can always use the panel with ALL permissions (license,fivem,discord)
 
 -- All the ace groups in your server
 
@@ -124,7 +137,7 @@ Config.TeleportEffect = {
 }
 
 Config.AdminClothing = {
-      enable = true,
+      enable = false,
       props = {
             [0] = {
                   enabled = false, -- If set to false, the prop will not be changed

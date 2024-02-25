@@ -1,13 +1,29 @@
 {
+    "mc_strawberry_shake": {
+        "stock": 500,
+        "price": 500
+    },
     "big_mac": {
         "stock": 500,
         "price": 500
     },
-    "quarter_pounder": {
+    "sausage_biscuit": {
         "stock": 500,
         "price": 500
     },
-    "tropical_mango_slushie": {
+    "mc_flurry_candies": {
+        "stock": 500,
+        "price": 500
+    },
+    "double_quarter_combo": {
+        "stock": 500,
+        "price": 500
+    },
+    "spicy_crispy_chicken_sandwich": {
+        "stock": 500,
+        "price": 500
+    },
+    "mc_iced_coffee": {
         "stock": 500,
         "price": 500
     },
@@ -15,27 +31,11 @@
         "stock": 500,
         "price": 500
     },
-    "mc_iced_tea": {
+    "deluxe_crispy_sandwich_combo": {
         "stock": 500,
         "price": 500
     },
-    "big_mac_combo": {
-        "stock": 500,
-        "price": 500
-    },
-    "quarter_pounder_cheese": {
-        "stock": 500,
-        "price": 500
-    },
-    "mc_hot_chocolate": {
-        "stock": 500,
-        "price": 500
-    },
-    "world_famous_fries": {
-        "stock": 500,
-        "price": 500
-    },
-    "spicy_chicken_sandwich_combo": {
+    "mc_diet_coke": {
         "stock": 500,
         "price": 500
     },
@@ -43,31 +43,7 @@
         "stock": 500,
         "price": 500
     },
-    "mc_strawberry_shake": {
-        "stock": 500,
-        "price": 500
-    },
-    "mc_nuggets_happy_meal": {
-        "stock": 500,
-        "price": 500
-    },
-    "mc_vanilla_shake": {
-        "stock": 500,
-        "price": 500
-    },
-    "egg_cheese_biscuit": {
-        "stock": 500,
-        "price": 500
-    },
-    "mc_fruit_punch": {
-        "stock": 500,
-        "price": 500
-    },
-    "double_quarter_pounder": {
-        "stock": 500,
-        "price": 500
-    },
-    "mc_dr_pepper": {
+    "mc_cappuccino": {
         "stock": 500,
         "price": 500
     },
@@ -75,9 +51,53 @@
         "stock": 500,
         "price": 500
     },
-    "sausage_burrito": {
+    "mc_vanilla_shake": {
         "stock": 500,
         "price": 500
+    },
+    "world_famous_fries": {
+        "stock": 500,
+        "price": 500
+    },
+    "mc_fruit_punch": {
+        "stock": 500,
+        "price": 500
+    },
+    "quarter_pounder": {
+        "stock": 500,
+        "price": 500
+    },
+    "mc_hot_chocolate": {
+        "stock": 500,
+        "price": 500
+    },
+    "tropical_mango_slushie": {
+        "stock": 500,
+        "price": 500
+    },
+    "mc_coca_cola": {
+        "stock": 500,
+        "price": 500
+    },
+    "chicken_mcnuggets": {
+        "stock": 500,
+        "price": 500
+    },
+    "mc_flurry_cookies": {
+        "stock": 500,
+        "price": 500
+    },
+    "mc_nuggets_happy_meal": {
+        "stock": 500,
+        "price": 500
+    },
+    "double_quarter_pounder": {
+        "stock": 500,
+        "price": 500
+    },
+    "crispy_chicken_sandwich": {
+        "stock": 500,
+        "price": 20
     },
     "egg_mcmuffin": {
         "stock": 500,
@@ -91,7 +111,11 @@
         "stock": 500,
         "price": 500
     },
-    "hot_fudge_sundae": {
+    "quarter_pounder_cheese": {
+        "stock": 500,
+        "price": 500
+    },
+    "egg_cheese_biscuit": {
         "stock": 500,
         "price": 500
     },
@@ -99,35 +123,23 @@
         "stock": 500,
         "price": 500
     },
-    "mc_diet_coke": {
+    "mc_iced_tea": {
         "stock": 500,
         "price": 500
     },
-    "mc_coca_cola": {
+    "spicy_chicken_sandwich_combo": {
         "stock": 500,
         "price": 500
     },
-    "deluxe_crispy_sandwich_combo": {
+    "mc_dr_pepper": {
         "stock": 500,
         "price": 500
     },
-    "chicken_mcnuggets": {
+    "sausage_burrito": {
         "stock": 500,
         "price": 500
     },
-    "mc_cappuccino": {
-        "stock": 500,
-        "price": 500
-    },
-    "spicy_crispy_chicken_sandwich": {
-        "stock": 500,
-        "price": 500
-    },
-    "mc_iced_coffee": {
-        "stock": 500,
-        "price": 500
-    },
-    "mc_flurry_candies": {
+    "big_mac_combo": {
         "stock": 500,
         "price": 500
     },
@@ -135,19 +147,7 @@
         "stock": 500,
         "price": 500
     },
-    "crispy_chicken_sandwich": {
-        "stock": 500,
-        "price": 20
-    },
-    "sausage_biscuit": {
-        "stock": 500,
-        "price": 500
-    },
-    "double_quarter_combo": {
-        "stock": 500,
-        "price": 500
-    },
-    "mc_flurry_cookies": {
+    "hot_fudge_sundae": {
         "stock": 500,
         "price": 500
     }
