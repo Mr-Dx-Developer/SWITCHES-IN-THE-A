@@ -36,7 +36,7 @@ Config.LuxuDiscordBot = false
 
 --[[ Notify ]]
 Config.Notify = {
-      ['ox'] = true,
+      ['ox'] = false,
       ['okok'] = false,
       ['default'] = true -- Default Framework Notify
 }
