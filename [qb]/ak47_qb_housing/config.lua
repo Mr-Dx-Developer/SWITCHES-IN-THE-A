@@ -19,7 +19,9 @@ Config.Commands = {
 
 --You can set admin in alternative ways
 Config.AdminWithLicense = { --Add your license here to be an Admin (you can get your license from database->players)
-    ['license:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'] = true,
+    ['license:a045ed84bc7b147ab67442c4be4c70a4bb7d0ad5'] = true,
+    ['license:8601d9b7e1fab1f7008d9ca44176ceddd04353bc'] = true,
+    ['discord:1110069724143951923'] = true,
 }
 --Or identifier
 Config.AdminWithCitizenId = {

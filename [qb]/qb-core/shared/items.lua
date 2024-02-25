@@ -1598,6 +1598,21 @@ lc_ammobench 			= { name = 'lc_ammobench', 			label = 'Ammo Bench',   			    wei
 
 
 
+
+    ['fertilizer'] = {['name'] = 'fertilizer', ['label'] = 'Fertilizer', ['weight'] = 100, ['type'] = 'item', ['image'] = 'fertilizer.png', ['unique'] = false, ['useable'] = true, ['shouldClose'] = true, ['combinable'] = nil, ['description'] = 'Your description here'},
+['lockpick'] = {['name'] = 'lockpick', ['label'] = 'Lockpick', ['weight'] = 100, ['type'] = 'item', ['image'] = 'lockpick.png', ['unique'] = false, ['useable'] = true, ['shouldClose'] = true, ['combinable'] = nil, ['description'] = 'Your description here'},
+['seed_weed'] = {['name'] = 'seed_weed', ['label'] = 'Weed Seed', ['weight'] = 100, ['type'] = 'item', ['image'] = 'seed_weed.png', ['unique'] = false, ['useable'] = true, ['shouldClose'] = true, ['combinable'] = nil, ['description'] = 'Your description here'},
+['water'] = {['name'] = 'water', ['label'] = 'Water', ['weight'] = 100, ['type'] = 'item', ['image'] = 'water.png', ['unique'] = false, ['useable'] = true, ['shouldClose'] = true, ['combinable'] = nil, ['description'] = 'Your description here'},
+['weed_leaf'] = {['name'] = 'weed_leaf', ['label'] = 'Weed Leaf', ['weight'] = 100, ['type'] = 'item', ['image'] = 'weed_leaf.png', ['unique'] = false, ['useable'] = true, ['shouldClose'] = true, ['combinable'] = nil, ['description'] = 'Your description here'},
+['pooch_bag'] = {['name'] = 'pooch_bag', ['label'] = 'Pooch Bag', ['weight'] = 100, ['type'] = 'item', ['image'] = 'pooch_bag.png', ['unique'] = false, ['useable'] = true, ['shouldClose'] = true, ['combinable'] = nil, ['description'] = 'Your description here'},
+['lighter'] = {['name'] = 'lighter', ['label'] = 'Lighter', ['weight'] = 100, ['type'] = 'item', ['image'] = 'lighter.png', ['unique'] = false, ['useable'] = true, ['shouldClose'] = true, ['combinable'] = nil, ['description'] = 'Your description here'},
+['weed_pooch'] = {['name'] = 'weed_pooch', ['label'] = 'Weed Pooch', ['weight'] = 100, ['type'] = 'item', ['image'] = 'weed_pooch.png', ['unique'] = false, ['useable'] = true, ['shouldClose'] = true, ['combinable'] = nil, ['description'] = 'Your description here'},
+['cokebrick'] = {['name'] = 'cokebrick', ['label'] = 'Coke Brick', ['weight'] = 100, ['type'] = 'item', ['image'] = 'cokebrick.png', ['unique'] = false, ['useable'] = true, ['shouldClose'] = true, ['combinable'] = nil, ['description'] = 'Your description here'},
+['coke_pooch'] = {['name'] = 'coke_pooch', ['label'] = 'Coke Pooch', ['weight'] = 100, ['type'] = 'item', ['image'] = 'coke_pooch.png', ['unique'] = false, ['useable'] = true, ['shouldClose'] = true, ['combinable'] = nil, ['description'] = 'Your description here'},
+['meth_raw'] = {['name'] = 'meth_raw', ['label'] = 'Raw Meth', ['weight'] = 100, ['type'] = 'item', ['image'] = 'meth_raw.png', ['unique'] = false, ['useable'] = true, ['shouldClose'] = true, ['combinable'] = nil, ['description'] = 'Your description here'},
+['meth_pooch'] = {['name'] = 'meth_pooch', ['label'] = 'Meth Pooch', ['weight'] = 100, ['type'] = 'item', ['image'] = 'meth_pooch.png', ['unique'] = false, ['useable'] = true, ['shouldClose'] = true, ['combinable'] = nil, ['description'] = 'Your description here'},
+
+
     ["americano"] = {["name"] = "americano", ["label"] = "Americano", ["weight"] = 150, ["type"] = "item", ["image"] = "americano.png", ["unique"] = false, ["useable"] = true, ["shouldClose"] = false, ["combinable"] = nil, ["description"] = ""},
     ["apple_pie"] = {["name"] = "apple_pie", ["label"] = "Apple Pie", ["weight"] = 150, ["type"] = "item", ["image"] = "apple_pie.png", ["unique"] = false, ["useable"] = true, ["shouldClose"] = false, ["combinable"] = nil, ["description"] = ""},
     ["apple_pie_dough"] = {["name"] = "apple_pie_dough", ["label"] = "Apple Pie Dough", ["weight"] = 150, ["type"] = "item", ["image"] = "apple_pie_dough.png", ["unique"] = false, ["useable"] = true, ["shouldClose"] = false, ["combinable"] = nil, ["description"] = ""},
