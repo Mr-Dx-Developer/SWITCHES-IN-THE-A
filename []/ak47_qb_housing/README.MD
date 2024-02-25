@@ -1,0 +1,1 @@
+#Documentation: https://docs.menanak47.com/qbcore/ak47_qb_housing
