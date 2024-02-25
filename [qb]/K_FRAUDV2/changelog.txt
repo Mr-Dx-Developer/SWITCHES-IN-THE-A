@@ -1,0 +1,54 @@
+Version '1.0.5' update logs:
+================================================================
+
+Update to support esx imports
+minor bug fixes/improvements 
+
+Version '1.0.4' update logs:
+================================================================
+
+Added extra add item event checks
+
+Version '1.0.3' update logs:
+================================================================
+
+Multiple bug fixes from discord!
+
+Version '1.0.2' update logs:
+================================================================
+Updated to support ESX imports/support for same old versions 
+SH_CONFIG settings added:
+{
+    KonfigSH.UsingNewESX = true -- set to false if using old
+    KonfigSH.ESXSharedObject = 'esx:getSharedObject'
+} -- Aswell is a function at the bottom for more modification support 
+
+Added InfFuel toggle in CL_CONFIG
+
+Removed Useless code, updated with better/updated versions
+
+Added "Scammer" Job (You can now add job requirement in sv_config, Supports multiple jobs) 
+
+Updated Shops for easier price changing (K_FRAUDSHOPS/sh_config.lua)
+
+Bug fixes:
+
+Datacrack Minigame for Laptop can now be disabled correctly (issue with skimmer/infousb)
+
+Raycasts now ignore the player no more wonky placement snaps onto player
+
+Discord Identifier bug making picking up items/adding items not work, fixed (No longer logs Discord Identifier only license)
+
+================================================================
+
+What's planed for next update?
+
+More advanced ATM's/Banker
+
+More support for Police Alerts
+
+I will hopefully be updating the QB version to have the same features as ESX (Possibly combined into the same script as ESX) 
+
+------------------------------------------------------------------
+
+Thank you for your continuous support, it really does mean alot <3

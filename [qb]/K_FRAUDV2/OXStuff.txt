@@ -1,0 +1,81 @@
+add to items.lua in ox_inventory! you can edit these to your liking
+    
+    ['blankcard'] = {
+		label = 'blank card',
+		weight = 10,
+		stack = true,
+		close = true,
+		description = nil
+	},
+
+	['infousb'] = {
+		label = 'info usb',
+		weight = 10,
+		stack = true,
+		close = true,
+		description = nil
+	},
+    
+    ['clonedcard'] = {
+		label = 'cloned card',
+		weight = 10,
+		stack = true,
+		close = true,
+		description = nil
+	},
+
+    ['stolencard'] = {
+		label = 'stolencard',
+		weight = 10,
+		stack = true,
+		close = true,
+		description = nil
+	},
+
+    ['generator'] = {
+		label = 'generator',
+		weight = 1,
+		stack = true,
+		close = true,
+		description = nil
+	},
+
+    ['laptop2'] = {
+		label = 'laptop #2',
+		weight = 1,
+		stack = true,
+		close = true,
+		description = nil
+	},
+
+    ['printer'] = {
+		label = 'printer',
+		weight = 1,
+		stack = true,
+		close = true,
+		description = nil
+	},
+
+	['skimmer'] = {
+		label = 'skimmer',
+		weight = 1,
+		stack = true,
+		close = true,
+		description = nil
+	},
+
+    ['whiteslip'] = {
+		label = 'white slip',
+		weight = 10,
+		stack = true,
+		close = true,
+		description = nil
+	},
+
+    ['forgedcheck'] = {
+		label = 'forged check',
+		weight = 10,
+		stack = true,
+		close = true,
+		description = nil
+	},
