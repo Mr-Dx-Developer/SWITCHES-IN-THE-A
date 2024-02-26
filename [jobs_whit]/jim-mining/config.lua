@@ -277,9 +277,9 @@ Config = {
 	Items = {
 		label = "Mining Store",  slots = 9,
 		items = {
-			{ name = "water_bottle", price = 0, amount = 100, info = {}, type = "item", slot = 1, },
-			{ name = "sandwich", price = 0, amount = 250, info = {}, type = "item", slot = 2, },
-			{ name = "bandage", price = 0, amount = 100, info = {}, type = "item", slot = 3, },
+			{ name = "water_bottle", price = 3, amount = 100, info = {}, type = "item", slot = 1, },
+			{ name = "sandwich", price = 4, amount = 250, info = {}, type = "item", slot = 2, },
+			{ name = "bandage", price = 5, amount = 100, info = {}, type = "item", slot = 3, },
 			{ name = "weapon_flashlight", price = 0, amount = 100, info = {}, type = "item", slot = 4, },
 			{ name = "goldpan", price = 0, amount = 100, info = {}, type = "item", slot = 5, },
 			{ name = "pickaxe",	price = 100, amount = 100, info = {}, type = "item", slot = 6, },
