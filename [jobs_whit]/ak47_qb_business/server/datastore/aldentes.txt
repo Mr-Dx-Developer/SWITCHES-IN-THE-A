@@ -1,26 +1,26 @@
 {
-    "fried_calamari": {
-        "price": 500,
-        "stock": 500
-    },
-    "vodka": {
-        "price": 500,
-        "stock": 500
-    },
-    "fries": {
-        "price": 500,
-        "stock": 500
-    },
     "buffalo_chicken_strips": {
-        "price": 500,
-        "stock": 500
+        "stock": 500,
+        "price": 500
     },
     "mozzarella_sticks": {
-        "price": 500,
-        "stock": 500
+        "stock": 500,
+        "price": 500
+    },
+    "vodka": {
+        "stock": 500,
+        "price": 500
+    },
+    "fried_calamari": {
+        "stock": 500,
+        "price": 500
+    },
+    "fries": {
+        "stock": 500,
+        "price": 500
     },
     "meatball": {
-        "price": 500,
-        "stock": 500
+        "stock": 500,
+        "price": 500
     }
 }
