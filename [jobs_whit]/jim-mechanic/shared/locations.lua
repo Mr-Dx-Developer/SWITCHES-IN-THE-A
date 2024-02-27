@@ -135,7 +135,7 @@ Config.Locations[#Config.Locations+1] = {
 
 Config.Locations[#Config.Locations+1] = { 
 	Enabled = true,
-	job = "mechanic",
+	job = "ricocustom",
 	zones = {
 		vec2(250.674, -208.138),
 		vec2(276.85, -219.85),
@@ -199,7 +199,7 @@ Config.Locations[#Config.Locations+1] = {
 
 Config.Locations[#Config.Locations+1] = { 
 	Enabled = true,
-	job = "mechanic",
+	job = "bigvroycustoms",
 	zones = {
 		vec2(-242.57, -1157.14),
 		vec2(-195.25, -1154.97),
