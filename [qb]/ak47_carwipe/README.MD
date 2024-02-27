@@ -1,0 +1,1 @@
+##This script will only remove car that is not touched by any player
