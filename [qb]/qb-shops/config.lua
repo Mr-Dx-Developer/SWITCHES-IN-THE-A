@@ -38,7 +38,7 @@ Config.Products = {
         },
         [2] = {
             name = "water_bottle",
-            price = 2,
+            price = 3,
             amount = 50,
             info = {},
             type = "item",
@@ -70,7 +70,7 @@ Config.Products = {
         },
         [6] = {
             name = "sandwich",
-            price = 2,
+            price = 4,
             amount = 50,
             info = {},
             type = "item",
@@ -102,7 +102,7 @@ Config.Products = {
         },
         [10] = {
             name = "bandage",
-            price = 100,
+            price = 5,
             amount = 50,
             info = {},
             type = "item",
