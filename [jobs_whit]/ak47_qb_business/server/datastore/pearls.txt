@@ -1,110 +1,110 @@
 {
-    "glazed_salmon": {
-        "stock": 500,
-        "price": 500
-    },
-    "dom_perignon": {
-        "stock": 500,
-        "price": 500
-    },
-    "chicken_caesar_salad": {
-        "stock": 500,
-        "price": 500
-    },
     "pearls_coffee": {
-        "stock": 500,
-        "price": 500
-    },
-    "crab_cakes": {
-        "stock": 500,
-        "price": 500
-    },
-    "shells_clam_chowder": {
-        "stock": 500,
-        "price": 500
-    },
-    "shrimp_pasta": {
-        "stock": 500,
-        "price": 500
-    },
-    "crab_legs_meal": {
-        "stock": 500,
-        "price": 500
-    },
-    "ps_dr_pepper": {
-        "stock": 500,
-        "price": 500
-    },
-    "patron_margarita": {
-        "stock": 500,
-        "price": 500
-    },
-    "oysters_half_shell": {
-        "stock": 500,
-        "price": 500
-    },
-    "fried_scallops": {
-        "stock": 500,
-        "price": 500
-    },
-    "shrimp_and_crab_dip": {
-        "stock": 500,
-        "price": 500
-    },
-    "hennessy_shot": {
-        "stock": 500,
-        "price": 500
-    },
-    "upeel_shrimp": {
-        "stock": 500,
-        "price": 500
-    },
-    "lobster_bisque": {
-        "stock": 500,
-        "price": 500
-    },
-    "gourmet_double_burger": {
-        "stock": 500,
-        "price": 500
-    },
-    "side_caesar_salad": {
-        "stock": 500,
-        "price": 500
-    },
-    "ps_coca_cola": {
-        "stock": 500,
-        "price": 500
-    },
-    "steak_and_lobster_meal": {
-        "stock": 500,
-        "price": 500
+        "price": 500,
+        "stock": 500
     },
     "shrimp_alfredo": {
-        "stock": 500,
-        "price": 500
+        "price": 500,
+        "stock": 500
     },
-    "salmon_caesar_salad": {
-        "stock": 500,
-        "price": 500
-    },
-    "tropical_chicken_salad": {
-        "stock": 500,
-        "price": 500
-    },
-    "tilapia_fish_meal": {
-        "stock": 500,
-        "price": 500
-    },
-    "baby_lobster_pasta": {
-        "stock": 500,
-        "price": 500
+    "shrimp_and_crab_dip": {
+        "price": 500,
+        "stock": 500
     },
     "fried_mushrooms": {
-        "stock": 500,
-        "price": 500
+        "price": 500,
+        "stock": 500
     },
     "ps_sprite": {
-        "stock": 500,
-        "price": 500
+        "price": 500,
+        "stock": 500
+    },
+    "tropical_chicken_salad": {
+        "price": 500,
+        "stock": 500
+    },
+    "ps_dr_pepper": {
+        "price": 500,
+        "stock": 500
+    },
+    "oysters_half_shell": {
+        "price": 500,
+        "stock": 500
+    },
+    "chicken_caesar_salad": {
+        "price": 500,
+        "stock": 500
+    },
+    "glazed_salmon": {
+        "price": 500,
+        "stock": 500
+    },
+    "salmon_caesar_salad": {
+        "price": 500,
+        "stock": 500
+    },
+    "tilapia_fish_meal": {
+        "price": 500,
+        "stock": 500
+    },
+    "patron_margarita": {
+        "price": 500,
+        "stock": 500
+    },
+    "ps_coca_cola": {
+        "price": 500,
+        "stock": 500
+    },
+    "upeel_shrimp": {
+        "price": 500,
+        "stock": 500
+    },
+    "shells_clam_chowder": {
+        "price": 500,
+        "stock": 500
+    },
+    "side_caesar_salad": {
+        "price": 500,
+        "stock": 500
+    },
+    "hennessy_shot": {
+        "price": 500,
+        "stock": 500
+    },
+    "steak_and_lobster_meal": {
+        "price": 500,
+        "stock": 500
+    },
+    "lobster_bisque": {
+        "price": 500,
+        "stock": 500
+    },
+    "crab_legs_meal": {
+        "price": 500,
+        "stock": 500
+    },
+    "crab_cakes": {
+        "price": 500,
+        "stock": 500
+    },
+    "dom_perignon": {
+        "price": 500,
+        "stock": 500
+    },
+    "gourmet_double_burger": {
+        "price": 500,
+        "stock": 500
+    },
+    "baby_lobster_pasta": {
+        "price": 500,
+        "stock": 500
+    },
+    "shrimp_pasta": {
+        "price": 500,
+        "stock": 500
+    },
+    "fried_scallops": {
+        "price": 500,
+        "stock": 500
     }
 }

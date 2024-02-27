@@ -1,74 +1,74 @@
 {
-    "shrimp_and_grits": {
-        "stock": 500,
-        "price": 500
-    },
-    "hot_chicken_wrap": {
-        "stock": 500,
-        "price": 500
-    },
-    "water": {
-        "stock": 500,
-        "price": 500
-    },
-    "red_wine_sangria": {
-        "stock": 500,
-        "price": 500
-    },
-    "omlet": {
-        "stock": 500,
-        "price": 500
-    },
-    "vodka_tonic": {
-        "stock": 500,
-        "price": 500
-    },
-    "bacon_egg_cheese": {
-        "stock": 500,
-        "price": 500
-    },
     "breakfast_meal": {
-        "stock": 500,
-        "price": 500
+        "price": 500,
+        "stock": 500
+    },
+    "shrimp_and_grits": {
+        "price": 500,
+        "stock": 500
     },
     "sangria_lemonade": {
-        "stock": 500,
-        "price": 500
-    },
-    "chicken_and_waffles": {
-        "stock": 500,
-        "price": 500
-    },
-    "roseymary_gin_fizz": {
-        "stock": 500,
-        "price": 500
+        "price": 500,
+        "stock": 500
     },
     "latte": {
-        "stock": 500,
-        "price": 500
+        "price": 500,
+        "stock": 500
     },
-    "strawberry_banana_crepes": {
-        "stock": 500,
-        "price": 500
+    "omlet": {
+        "price": 500,
+        "stock": 500
     },
-    "sweat_tea_sangria": {
-        "stock": 500,
-        "price": 500
+    "water": {
+        "price": 500,
+        "stock": 500
+    },
+    "chicken_and_waffles": {
+        "price": 500,
+        "stock": 500
     },
     "biscuits_gravy": {
-        "stock": 500,
-        "price": 500
-    },
-    "mimosa": {
-        "stock": 500,
-        "price": 500
-    },
-    "strawberry_nutella_waffles": {
-        "stock": 500,
-        "price": 500
+        "price": 500,
+        "stock": 500
     },
     "pomegranate_mimosa": {
-        "stock": 500,
-        "price": 500
+        "price": 500,
+        "stock": 500
+    },
+    "sweat_tea_sangria": {
+        "price": 500,
+        "stock": 500
+    },
+    "strawberry_banana_crepes": {
+        "price": 500,
+        "stock": 500
+    },
+    "roseymary_gin_fizz": {
+        "price": 500,
+        "stock": 500
+    },
+    "vodka_tonic": {
+        "price": 500,
+        "stock": 500
+    },
+    "bacon_egg_cheese": {
+        "price": 500,
+        "stock": 500
+    },
+    "strawberry_nutella_waffles": {
+        "price": 500,
+        "stock": 500
+    },
+    "mimosa": {
+        "price": 500,
+        "stock": 500
+    },
+    "hot_chicken_wrap": {
+        "price": 500,
+        "stock": 500
+    },
+    "red_wine_sangria": {
+        "price": 500,
+        "stock": 500
     }
 }
