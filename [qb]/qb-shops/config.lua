@@ -746,7 +746,7 @@ Config.Products = {
             info = {},
             type = "item",
             slot = 4,
-            requiresLicense = true
+            requiresLicense = false
         },
         [5] = {
             name = "weapon_snspistol",
@@ -755,7 +755,7 @@ Config.Products = {
             info = {},
             type = "item",
             slot = 5,
-            requiresLicense = true
+            requiresLicense = false
         },
         [6] = {
             name = "weapon_vintagepistol",
@@ -764,7 +764,7 @@ Config.Products = {
             info = {},
             type = "item",
             slot = 6,
-            requiresLicense = true
+            requiresLicense = false
         },
         [7] = {
             name = "pistol_ammo",
@@ -773,16 +773,16 @@ Config.Products = {
             info = {},
             type = "item",
             slot = 7,
-            requiresLicense = true
+          --  requiresLicense = false
         },
         [8] = { 
-            name = "WEAPON_G19X",
+            name = "weapon_g26",
             price = 120000,
             amount = 5,
             info = {},
             type = "item",
             slot = 8,
-            requiresLicense = true
+          --  requiresLicense = false
         },
     },
     ["casino"] = {
@@ -1054,7 +1054,7 @@ Config.Products = {
             info = {},
             type = 'weapon',
             slot = 1,
-            requiresLicense = true
+            requiresLicense = false
         },
         [2] = {
             name = 'snp_ammo',
@@ -1063,7 +1063,7 @@ Config.Products = {
             info = {},
             type = 'item',
             slot = 2,
-            requiresLicense = true
+            requiresLicense = false
         },
         [3] = {
             name = 'huntingbait',
@@ -1470,7 +1470,7 @@ Config.Locations = {
     ["ammunation2"] = {
         ["label"] = "Ammunation",
         ["type"] = "weapon",
-        ["coords"] = vector4(809.68, -2159.13, 29.62, 1.43),
+        ["coords"] = vector4(826.7077026367188, -2152.892333984375, 28.926025390625, 85.03936767578125),
         ["ped"] = 's_m_y_ammucity_01',
         ["scenario"] = "WORLD_HUMAN_COP_IDLES",
         ["radius"] = 1.5,
@@ -1534,7 +1534,7 @@ Config.Locations = {
     ["ammunation6"] = {
         ["label"] = "Ammunation",
         ["type"] = "weapon",
-        ["coords"] = vector4(23.0, -1105.67, 29.8, 162.91),
+        ["coords"] = vector4(4.958241939544678,-1105.6614990234375,29.094482421875,249.44882202148438),
         ["ped"] = 's_m_y_ammucity_01',
         ["scenario"] = "WORLD_HUMAN_COP_IDLES",
         ["radius"] = 1.5,
