@@ -1,5 +1,121 @@
 {
-    "spicy_southwest_salad": {
+    "chicken_egg_cheese": {
+        "stock": 500,
+        "price": 500
+    },
+    "cobb_salad": {
+        "stock": 500,
+        "price": 500
+    },
+    "fruit_cup": {
+        "stock": 500,
+        "price": 500
+    },
+    "chicken_biscuit": {
+        "stock": 500,
+        "price": 500
+    },
+    "brown_scramble_bowl": {
+        "stock": 500,
+        "price": 500
+    },
+    "egg_cheese_muffin": {
+        "stock": 500,
+        "price": 500
+    },
+    "buttered_biscuit": {
+        "stock": 500,
+        "price": 500
+    },
+    "vanilla_milkshake": {
+        "stock": 500,
+        "price": 500
+    },
+    "apple_juice": {
+        "stock": 500,
+        "price": 500
+    },
+    "cool_wrap": {
+        "stock": 500,
+        "price": 500
+    },
+    "chocolate_chunk_cookie": {
+        "stock": 500,
+        "price": 500
+    },
+    "mac_cheese": {
+        "stock": 500,
+        "price": 500
+    },
+    "sweet_tea": {
+        "stock": 500,
+        "price": 500
+    },
+    "peach_milkshake": {
+        "stock": 500,
+        "price": 500
+    },
+    "deluxe_sandwich": {
+        "stock": 500,
+        "price": 500
+    },
+    "side_salad": {
+        "stock": 500,
+        "price": 500
+    },
+    "coffee": {
+        "stock": 500,
+        "price": 500
+    },
+    "icedream_cone": {
+        "stock": 500,
+        "price": 500
+    },
+    "chicken_club_sandwich": {
+        "stock": 500,
+        "price": 500
+    },
+    "chocolate_milk": {
+        "stock": 500,
+        "price": 500
+    },
+    "hash_browns": {
+        "stock": 500,
+        "price": 500
+    },
+    "brewed_iced_tea": {
+        "stock": 500,
+        "price": 500
+    },
+    "simply_orange": {
+        "stock": 500,
+        "price": 500
+    },
+    "kale_crunch_side": {
+        "stock": 500,
+        "price": 500
+    },
+    "chick_n_strips": {
+        "stock": 500,
+        "price": 500
+    },
+    "chick_n_minis": {
+        "stock": 500,
+        "price": 500
+    },
+    "frosted_coffee": {
+        "stock": 500,
+        "price": 500
+    },
+    "chocolate_milkshake": {
+        "stock": 500,
+        "price": 500
+    },
+    "frosted_lemonade": {
+        "stock": 500,
+        "price": 500
+    },
+    "chicken_sandwich": {
         "stock": 500,
         "price": 500
     },
@@ -11,111 +127,7 @@
         "stock": 500,
         "price": 500
     },
-    "mac_cheese": {
-        "stock": 500,
-        "price": 500
-    },
-    "fruit_cup": {
-        "stock": 500,
-        "price": 500
-    },
-    "buttered_biscuit": {
-        "stock": 500,
-        "price": 500
-    },
-    "sweet_tea": {
-        "stock": 500,
-        "price": 500
-    },
-    "icedream_cup": {
-        "stock": 500,
-        "price": 500
-    },
-    "side_salad": {
-        "stock": 500,
-        "price": 500
-    },
-    "egg_cheese_muffin": {
-        "stock": 500,
-        "price": 500
-    },
-    "cool_wrap": {
-        "stock": 500,
-        "price": 500
-    },
-    "deluxe_sandwich": {
-        "stock": 500,
-        "price": 500
-    },
-    "simply_orange": {
-        "stock": 500,
-        "price": 500
-    },
-    "frosted_lemonade": {
-        "stock": 500,
-        "price": 500
-    },
-    "chocolate_fudge_brownie": {
-        "stock": 500,
-        "price": 500
-    },
-    "peach_milkshake": {
-        "stock": 500,
-        "price": 500
-    },
-    "frosted_coffee": {
-        "stock": 500,
-        "price": 500
-    },
-    "chocolate_chunk_cookie": {
-        "stock": 500,
-        "price": 500
-    },
-    "chicken_biscuit": {
-        "stock": 500,
-        "price": 500
-    },
-    "cobb_salad": {
-        "stock": 500,
-        "price": 500
-    },
-    "chicken_sandwich": {
-        "stock": 500,
-        "price": 500
-    },
-    "chicken_egg_cheese": {
-        "stock": 500,
-        "price": 500
-    },
-    "sausage_egg_cheese": {
-        "stock": 500,
-        "price": 500
-    },
-    "chick_n_minis": {
-        "stock": 500,
-        "price": 500
-    },
-    "apple_juice": {
-        "stock": 500,
-        "price": 500
-    },
     "strawberry_milkshake": {
-        "stock": 500,
-        "price": 500
-    },
-    "chick_fil_a_nuggets": {
-        "stock": 500,
-        "price": 500
-    },
-    "chick_n_strips": {
-        "stock": 500,
-        "price": 500
-    },
-    "coffee": {
-        "stock": 500,
-        "price": 500
-    },
-    "grilled_nuggets": {
         "stock": 500,
         "price": 500
     },
@@ -123,27 +135,15 @@
         "stock": 500,
         "price": 500
     },
-    "waffle_potato_fries": {
-        "stock": 500,
-        "price": 500
-    },
-    "cookies_cream_milkshake": {
-        "stock": 500,
-        "price": 500
-    },
-    "chicken_club_sandwich": {
-        "stock": 500,
-        "price": 500
-    },
-    "icedream_cone": {
-        "stock": 500,
-        "price": 500
-    },
-    "apple_sauce": {
-        "stock": 500,
-        "price": 500
-    },
     "brown_scramble_burrito": {
+        "stock": 500,
+        "price": 500
+    },
+    "spicy_southwest_salad": {
+        "stock": 500,
+        "price": 500
+    },
+    "sausage_egg_cheese": {
         "stock": 500,
         "price": 500
     },
@@ -151,27 +151,27 @@
         "stock": 500,
         "price": 500
     },
+    "chick_fil_a_nuggets": {
+        "stock": 500,
+        "price": 500
+    },
+    "cookies_cream_milkshake": {
+        "stock": 500,
+        "price": 500
+    },
     "egg_white_grill": {
         "stock": 500,
         "price": 500
     },
-    "kale_crunch_side": {
+    "waffle_potato_fries": {
         "stock": 500,
         "price": 500
     },
-    "hash_browns": {
+    "grilled_nuggets": {
         "stock": 500,
         "price": 500
     },
-    "brown_scramble_bowl": {
-        "stock": 500,
-        "price": 500
-    },
-    "chocolate_milk": {
-        "stock": 500,
-        "price": 500
-    },
-    "vanilla_milkshake": {
+    "chocolate_fudge_brownie": {
         "stock": 500,
         "price": 500
     },
@@ -179,15 +179,15 @@
         "stock": 500,
         "price": 500
     },
-    "brewed_iced_tea": {
+    "apple_sauce": {
+        "stock": 500,
+        "price": 500
+    },
+    "icedream_cup": {
         "stock": 500,
         "price": 500
     },
     "chick_fil_a_lemonade": {
-        "stock": 500,
-        "price": 500
-    },
-    "chocolate_milkshake": {
         "stock": 500,
         "price": 500
     }

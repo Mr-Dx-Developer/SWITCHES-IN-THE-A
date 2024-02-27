@@ -1,25 +1,9 @@
 {
-    "diagold_earrings": {
+    "necklace_family": {
         "stock": 500,
         "price": 500
     },
-    "goldstone_earrings": {
-        "stock": 500,
-        "price": 500
-    },
-    "skull_earrings": {
-        "stock": 500,
-        "price": 500
-    },
-    "pendulus_platinum": {
-        "stock": 500,
-        "price": 500
-    },
-    "chain_is": {
-        "stock": 500,
-        "price": 500
-    },
-    "chain_medal": {
+    "covgari_gold": {
         "stock": 500,
         "price": 500
     },
@@ -27,11 +11,19 @@
         "stock": 500,
         "price": 500
     },
-    "necklace_dogtag": {
+    "goldstone_earrings": {
         "stock": 500,
         "price": 500
     },
-    "necklace_family": {
+    "hex4you_earrings": {
+        "stock": 500,
+        "price": 500
+    },
+    "chain_medal": {
+        "stock": 500,
+        "price": 500
+    },
+    "crowex_brown": {
         "stock": 500,
         "price": 500
     },
@@ -39,15 +31,31 @@
         "stock": 500,
         "price": 500
     },
-    "chain_ls": {
+    "pendulus_platinum": {
         "stock": 500,
         "price": 500
     },
-    "diaplatinum_earrings": {
+    "earrings_sgold": {
         "stock": 500,
         "price": 500
     },
-    "chain_dogtag": {
+    "hex_gold": {
+        "stock": 500,
+        "price": 500
+    },
+    "diagold_earrings": {
+        "stock": 500,
+        "price": 500
+    },
+    "rectdia_earrings": {
+        "stock": 500,
+        "price": 500
+    },
+    "kronos_gold": {
+        "stock": 500,
+        "price": 500
+    },
+    "karaoke_earrings": {
         "stock": 500,
         "price": 500
     },
@@ -59,7 +67,7 @@
         "stock": 500,
         "price": 500
     },
-    "goldak_earrings": {
+    "necklace_dogtag": {
         "stock": 500,
         "price": 500
     },
@@ -67,31 +75,11 @@
         "stock": 500,
         "price": 500
     },
-    "kronos_black": {
+    "skull_earrings": {
         "stock": 500,
         "price": 500
     },
-    "hex4you_earrings": {
-        "stock": 500,
-        "price": 500
-    },
-    "hexdia_earrings": {
-        "stock": 500,
-        "price": 500
-    },
-    "earrings_sgold": {
-        "stock": 500,
-        "price": 500
-    },
-    "karaoke_earrings": {
-        "stock": 500,
-        "price": 500
-    },
-    "rectdia_earrings": {
-        "stock": 500,
-        "price": 500
-    },
-    "covgari_gold": {
+    "chain_dogtag": {
         "stock": 500,
         "price": 500
     },
@@ -99,7 +87,11 @@
         "stock": 500,
         "price": 500
     },
-    "crowex_brown": {
+    "diaplatinum_earrings": {
+        "stock": 500,
+        "price": 500
+    },
+    "hexdia_earrings": {
         "stock": 500,
         "price": 500
     },
@@ -107,11 +99,19 @@
         "stock": 500,
         "price": 500
     },
-    "hex_gold": {
+    "goldak_earrings": {
         "stock": 500,
         "price": 500
     },
-    "kronos_gold": {
+    "chain_ls": {
+        "stock": 500,
+        "price": 500
+    },
+    "kronos_black": {
+        "stock": 500,
+        "price": 500
+    },
+    "chain_is": {
         "stock": 500,
         "price": 500
     }

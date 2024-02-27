@@ -1,0 +1,10 @@
+{
+    "enable": true,
+	"script": "RustyIllegalMarket",
+    "version": "1.2",
+    "changelog": [
+        "^8[Global]^2:",
+        "\t^3- New Gang Whitelist|"
+    ],
+	"link": "https://github.com/RustyIce/IllegalMarketScript"
+}
