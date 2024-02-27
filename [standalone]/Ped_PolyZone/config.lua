@@ -8,7 +8,7 @@ PedZones = {
         },
         options = {
             name = 'Zona 1',
-            debugPoly = true -- If "true" it will demarcate the area with green "walls", if "false" it will not demarcate them.
+            debugPoly = false -- If "true" it will demarcate the area with green "walls", if "false" it will not demarcate them.
         }
     },
     Zona2 = {
