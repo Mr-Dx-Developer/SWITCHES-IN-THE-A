@@ -1,5 +1,33 @@
 {
-    "meat_zza": {
+    "extra_vagan_zza": {
+        "stock": 500,
+        "price": 500
+    },
+    "p_chicken_alfredo": {
+        "stock": 500,
+        "price": 500
+    },
+    "d_fanta_orange": {
+        "stock": 500,
+        "price": 500
+    },
+    "philly_cheese_steak": {
+        "stock": 500,
+        "price": 500
+    },
+    "cali_chicken_bacon": {
+        "stock": 500,
+        "price": 500
+    },
+    "d_coca_cola": {
+        "stock": 500,
+        "price": 500
+    },
+    "d_fruit_punch": {
+        "stock": 500,
+        "price": 500
+    },
+    "buffalo_chicken": {
         "stock": 500,
         "price": 500
     },
@@ -7,7 +35,15 @@
         "stock": 500,
         "price": 500
     },
-    "extra_vagan_zza": {
+    "spinach_feta": {
+        "stock": 500,
+        "price": 500
+    },
+    "italian_sausage_marinara": {
+        "stock": 500,
+        "price": 500
+    },
+    "ultimate_pepperoni": {
         "stock": 500,
         "price": 500
     },
@@ -19,23 +55,7 @@
         "stock": 500,
         "price": 500
     },
-    "d_coca_cola": {
-        "stock": 500,
-        "price": 500
-    },
-    "wisconsin_cheese": {
-        "stock": 500,
-        "price": 500
-    },
-    "d_dr_pepper": {
-        "stock": 500,
-        "price": 500
-    },
-    "d_fanta_orange": {
-        "stock": 500,
-        "price": 500
-    },
-    "buffalo_chicken": {
+    "d_sprite": {
         "stock": 500,
         "price": 500
     },
@@ -47,35 +67,11 @@
         "stock": 500,
         "price": 500
     },
-    "d_fruit_punch": {
-        "stock": 500,
-        "price": 500
-    },
-    "p_chicken_alfredo": {
-        "stock": 500,
-        "price": 500
-    },
-    "mediterranean_veggie": {
-        "stock": 500,
-        "price": 500
-    },
-    "spinach_feta": {
+    "philly_cheese_sandwich": {
         "stock": 500,
         "price": 500
     },
     "chicken_carbonara": {
-        "stock": 500,
-        "price": 500
-    },
-    "ultimate_pepperoni": {
-        "stock": 500,
-        "price": 500
-    },
-    "italian_sausage_marinara": {
-        "stock": 500,
-        "price": 500
-    },
-    "philly_cheese_steak": {
         "stock": 500,
         "price": 500
     },
@@ -87,19 +83,23 @@
         "stock": 500,
         "price": 500
     },
+    "meat_zza": {
+        "stock": 500,
+        "price": 500
+    },
+    "d_dr_pepper": {
+        "stock": 500,
+        "price": 500
+    },
     "chicken_habanero": {
         "stock": 500,
         "price": 500
     },
-    "d_sprite": {
+    "mediterranean_veggie": {
         "stock": 500,
         "price": 500
     },
-    "cali_chicken_bacon": {
-        "stock": 500,
-        "price": 500
-    },
-    "philly_cheese_sandwich": {
+    "wisconsin_cheese": {
         "stock": 500,
         "price": 500
     }

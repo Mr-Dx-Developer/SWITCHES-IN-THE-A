@@ -1,9 +1,9 @@
 {
-    "sangria_lemonade": {
+    "pomegranate_mimosa": {
         "stock": 500,
         "price": 500
     },
-    "biscuits_gravy": {
+    "roseymary_gin_fizz": {
         "stock": 500,
         "price": 500
     },
@@ -11,27 +11,11 @@
         "stock": 500,
         "price": 500
     },
-    "latte": {
-        "stock": 500,
-        "price": 500
-    },
-    "chicken_and_waffles": {
-        "stock": 500,
-        "price": 500
-    },
-    "mimosa": {
-        "stock": 500,
-        "price": 500
-    },
     "water": {
         "stock": 500,
         "price": 500
     },
-    "pomegranate_mimosa": {
-        "stock": 500,
-        "price": 500
-    },
-    "hot_chicken_wrap": {
+    "omlet": {
         "stock": 500,
         "price": 500
     },
@@ -39,19 +23,11 @@
         "stock": 500,
         "price": 500
     },
-    "red_wine_sangria": {
+    "sangria_lemonade": {
         "stock": 500,
         "price": 500
     },
-    "strawberry_nutella_waffles": {
-        "stock": 500,
-        "price": 500
-    },
-    "breakfast_meal": {
-        "stock": 500,
-        "price": 500
-    },
-    "strawberry_banana_crepes": {
+    "chicken_and_waffles": {
         "stock": 500,
         "price": 500
     },
@@ -63,11 +39,35 @@
         "stock": 500,
         "price": 500
     },
-    "omlet": {
+    "mimosa": {
         "stock": 500,
         "price": 500
     },
-    "roseymary_gin_fizz": {
+    "red_wine_sangria": {
+        "stock": 500,
+        "price": 500
+    },
+    "latte": {
+        "stock": 500,
+        "price": 500
+    },
+    "biscuits_gravy": {
+        "stock": 500,
+        "price": 500
+    },
+    "breakfast_meal": {
+        "stock": 500,
+        "price": 500
+    },
+    "strawberry_banana_crepes": {
+        "stock": 500,
+        "price": 500
+    },
+    "strawberry_nutella_waffles": {
+        "stock": 500,
+        "price": 500
+    },
+    "hot_chicken_wrap": {
         "stock": 500,
         "price": 500
     }
