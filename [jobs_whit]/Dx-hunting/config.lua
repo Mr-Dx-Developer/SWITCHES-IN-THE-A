@@ -46,7 +46,7 @@ Config.AnimalBlip = {
 Config.callPoliceChance = { 25, 75 }
 
 Config.llegalHuntingNotification = function(animalCoord)
-    exports['qs-dispatch']:Hunting()
+    exports['ps-dispatch']:Hunting()
 end
 
 -- loot Multiplier settings

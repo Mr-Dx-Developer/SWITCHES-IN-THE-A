@@ -24,7 +24,7 @@ Config.Inventory = 1
 -- 3 = Core Dispatch (core_dispatch)
 -- 4 = Quasar Dispatch (qs-dispatch)
 -- 5 = RCore Dispatch (rcore_dispatch)
-Config.Dispatch = 4
+Config.Dispatch = 2
 
 -- Do not edit these values unless you know what you're doing
 Config.FrameworkTriggers = {

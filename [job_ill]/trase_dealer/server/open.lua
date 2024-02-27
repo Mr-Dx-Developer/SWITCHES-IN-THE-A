@@ -2,8 +2,8 @@
 
 -- This function is used to alert the police after a denied drug sale.
 function AlertPolice(coords)
-    if GetResourceState("qs-dispatch") == "started" then
-        TriggerEvent("qs-dispatch:server:CreateDispatchCall", {
+    if GetResourceState("ps-dispatch") == "started" then
+        TriggerEvent("ps-dispatch:server:CreateDispatchCall", {
             job = Config.Police.Jobs,
             callLocation = coords,
             callCode = {
