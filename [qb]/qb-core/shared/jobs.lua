@@ -345,8 +345,8 @@ QBShared.Jobs = {
 			['4'] = { name = 'Manager', isboss = true, payment = 1400 },
 		},
 	},
-	--[[ mechanic2 = {
-		label = 'LS Customs',
+	ricocustom = {
+		label = 'Rico Custom',
 		type = 'mechanic',
 		defaultDuty = true,
 		offDutyPay = false,
@@ -358,8 +358,8 @@ QBShared.Jobs = {
 			['4'] = { name = 'Manager', isboss = true, payment = 150 },
 		},
 	},
-	mechanic3 = {
-		label = 'LS Customs',
+	bigvroycustoms = {
+		label = 'Big Vroy Customs',
 		type = 'mechanic',
 		defaultDuty = true,
 		offDutyPay = false,
@@ -370,7 +370,8 @@ QBShared.Jobs = {
 			['3'] = { name = 'Advanced', payment = 125 },
 			['4'] = { name = 'Manager', isboss = true, payment = 150 },
 		},
-	}, ]]
+	},
+	
 	beeker = {
 		label = 'Beeker\'s Garage',
 		type = 'mechanic',
