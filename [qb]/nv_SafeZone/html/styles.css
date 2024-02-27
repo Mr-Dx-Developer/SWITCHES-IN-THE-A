@@ -1,0 +1,198 @@
+body {
+    display: none;
+}
+
+#main-container {
+    background-color: var(--body);
+    width: 850px;
+    height: 500px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: 0;
+    margin-top: -250px;
+    margin-left: -425px;
+    text-align: center;
+    border: 1px solid var(--border);
+    user-select: none;
+}
+
+#main-container h1 {
+    font-size: 25px;
+    margin-bottom: -5px;
+}
+
+#add-zone {
+    position: absolute;
+    height: 20px;
+    width: auto;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+}
+
+.table-container {
+    display: inline-block;
+    margin: 0;
+    margin-top: 20px;
+    max-height: 600px;
+    height: 600px;
+}
+
+.table-row-scroll {
+    max-height: 325px;
+    height: 325px;
+}
+
+.preview-img {
+    height: 65px;
+    width: 115.55px;
+    margin: 0;
+}
+
+.table-row {
+    align-items: center;
+    height: 85px;
+}
+
+.item-table.img {
+    height: 75%;
+}
+
+.item-table.status {
+    /* color: #55f360; */
+    cursor: pointer;
+}
+
+.item-table.actions {
+    height: 55px;
+}
+
+
+
+#main-popup {
+    display: none;
+    text-align: center;
+    position: absolute;
+    width: 600px;
+    height: 425px;
+    top: 50%;
+    left: 50%;
+    margin-top: -212.5px;
+    margin-left: -300px;
+    border: 1px solid var(--border);
+    background-color: var(--body);
+}
+
+#close-popup {
+    position: absolute;
+    height: 25px;
+    width: auto;
+    right: 0;
+    top: 0;
+    transform: rotate(45deg);
+    cursor: pointer;
+}
+
+#save-popup {
+    position: absolute;
+    height: 25px;
+    width: auto;
+    right: 35px;
+    top: 0;
+    cursor: pointer;
+}
+
+#trash-popup {
+    position: absolute;
+    height: 25px;
+    width: auto;
+    right: 70px;
+    top: 0;
+    cursor: pointer;
+}
+
+#popup-preview {
+    height: 150px;
+    width: auto;
+    margin-bottom: 0;
+}
+
+#main-popup input {
+    width: 200px;
+}
+
+#veh-damage {
+    width: 200px;
+}
+
+#update-img {
+    color: #44b7fa;
+    width: 200px;
+    margin-bottom: 0;
+}
+
+#coordsx {
+    max-width: 150px;
+}
+
+#coordsy {
+    max-width: 150px;
+}
+
+#coordsz {
+    max-width: 150px;
+}
+
+
+
+
+
+
+#create-popup {
+    display: none;
+    text-align: center;
+    position: absolute;
+    width: 600px;
+    height: 425px;
+    top: 50%;
+    left: 50%;
+    margin-top: -212.5px;
+    margin-left: -300px;
+    border: 1px solid var(--border);
+    background-color: var(--body);
+}
+
+#popup-preview2 {
+    height: 150px;
+    width: auto;
+    margin-bottom: 0;
+}
+
+#zone-tit {
+    width: 200px;
+}
+
+#zone-rad2 {
+    width: 200px;
+}
+
+#zone-vel2 {
+    width: 200px;
+}
+
+#veh-damage2 {
+    width: 200px;
+}
+
+#update-img2 {
+    color: #44b7fa;
+    width: 200px;
+    margin-bottom: 0;
+}
+
+#search-finder {
+    margin: 0;
+    margin-top: 15px;
+    margin-left: 25px;
+}
