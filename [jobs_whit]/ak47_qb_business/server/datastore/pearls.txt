@@ -1,9 +1,5 @@
 {
-    "fried_mushrooms": {
-        "stock": 500,
-        "price": 500
-    },
-    "fried_scallops": {
+    "dom_perignon": {
         "stock": 500,
         "price": 500
     },
@@ -11,15 +7,7 @@
         "stock": 500,
         "price": 500
     },
-    "dom_perignon": {
-        "stock": 500,
-        "price": 500
-    },
-    "hennessy_shot": {
-        "stock": 500,
-        "price": 500
-    },
-    "patron_margarita": {
+    "fried_mushrooms": {
         "stock": 500,
         "price": 500
     },
@@ -27,39 +15,11 @@
         "stock": 500,
         "price": 500
     },
-    "steak_and_lobster_meal": {
+    "ps_dr_pepper": {
         "stock": 500,
         "price": 500
     },
-    "ps_sprite": {
-        "stock": 500,
-        "price": 500
-    },
-    "shells_clam_chowder": {
-        "stock": 500,
-        "price": 500
-    },
-    "tilapia_fish_meal": {
-        "stock": 500,
-        "price": 500
-    },
-    "chicken_caesar_salad": {
-        "stock": 500,
-        "price": 500
-    },
-    "tropical_chicken_salad": {
-        "stock": 500,
-        "price": 500
-    },
-    "lobster_bisque": {
-        "stock": 500,
-        "price": 500
-    },
-    "salmon_caesar_salad": {
-        "stock": 500,
-        "price": 500
-    },
-    "shrimp_alfredo": {
+    "fried_scallops": {
         "stock": 500,
         "price": 500
     },
@@ -67,7 +27,7 @@
         "stock": 500,
         "price": 500
     },
-    "glazed_salmon": {
+    "hennessy_shot": {
         "stock": 500,
         "price": 500
     },
@@ -75,23 +35,19 @@
         "stock": 500,
         "price": 500
     },
-    "pearls_coffee": {
-        "stock": 500,
-        "price": 500
-    },
-    "crab_cakes": {
-        "stock": 500,
-        "price": 500
-    },
-    "side_caesar_salad": {
-        "stock": 500,
-        "price": 500
-    },
-    "ps_dr_pepper": {
-        "stock": 500,
-        "price": 500
-    },
     "shrimp_pasta": {
+        "stock": 500,
+        "price": 500
+    },
+    "shrimp_alfredo": {
+        "stock": 500,
+        "price": 500
+    },
+    "lobster_bisque": {
+        "stock": 500,
+        "price": 500
+    },
+    "patron_margarita": {
         "stock": 500,
         "price": 500
     },
@@ -99,11 +55,55 @@
         "stock": 500,
         "price": 500
     },
-    "baby_lobster_pasta": {
+    "tilapia_fish_meal": {
+        "stock": 500,
+        "price": 500
+    },
+    "pearls_coffee": {
+        "stock": 500,
+        "price": 500
+    },
+    "salmon_caesar_salad": {
         "stock": 500,
         "price": 500
     },
     "shrimp_and_crab_dip": {
+        "stock": 500,
+        "price": 500
+    },
+    "chicken_caesar_salad": {
+        "stock": 500,
+        "price": 500
+    },
+    "crab_cakes": {
+        "stock": 500,
+        "price": 500
+    },
+    "steak_and_lobster_meal": {
+        "stock": 500,
+        "price": 500
+    },
+    "tropical_chicken_salad": {
+        "stock": 500,
+        "price": 500
+    },
+    "baby_lobster_pasta": {
+        "stock": 500,
+        "price": 500
+    },
+    "glazed_salmon": {
+        "stock": 500,
+        "price": 500
+    },
+    "shells_clam_chowder": {
+        "stock": 500,
+        "price": 500
+    },
+    "side_caesar_salad": {
+        "stock": 500,
+        "price": 500
+    },
+    "ps_sprite": {
         "stock": 500,
         "price": 500
     }

@@ -1,45 +1,9 @@
 {
-    "homestyle_mac_cheese": {
-        "stock": 500,
-        "price": 500
-    },
     "chicken_bundle": {
         "stock": 500,
         "price": 500
     },
-    "classic_chicken_sandwich": {
-        "stock": 500,
-        "price": 500
-    },
-    "nuggets_medium_combo": {
-        "stock": 500,
-        "price": 500
-    },
-    "signature_chicken_box": {
-        "stock": 500,
-        "price": 500
-    },
-    "medium_hawaiian_punch": {
-        "stock": 500,
-        "price": 500
-    },
-    "nuggets_la_carte": {
-        "stock": 500,
-        "price": 500
-    },
-    "medium_fanta_orange": {
-        "stock": 500,
-        "price": 500
-    },
-    "regular_cajun_rice": {
-        "stock": 500,
-        "price": 500
-    },
-    "surf_turf_combo": {
-        "stock": 500,
-        "price": 500
-    },
-    "medium_diet_coke": {
+    "chicken_family_meal": {
         "stock": 500,
         "price": 500
     },
@@ -51,11 +15,11 @@
         "stock": 500,
         "price": 500
     },
-    "mild_tenders_box": {
+    "strawberry_cheesecake_pie": {
         "stock": 500,
         "price": 500
     },
-    "mild_tenders_bundle": {
+    "medium_diet_coke": {
         "stock": 500,
         "price": 500
     },
@@ -63,15 +27,47 @@
         "stock": 500,
         "price": 500
     },
-    "bigger_family_feast": {
+    "red_beans_rice": {
         "stock": 500,
         "price": 500
     },
-    "tenders_medium_combo": {
+    "classic_chicken_sandwich": {
         "stock": 500,
         "price": 500
     },
-    "cajun_fries": {
+    "surf_turf_combo": {
+        "stock": 500,
+        "price": 500
+    },
+    "md_seltzer_water": {
+        "stock": 500,
+        "price": 500
+    },
+    "mac_cheese_meal": {
+        "stock": 500,
+        "price": 500
+    },
+    "homestyle_mac_cheese": {
+        "stock": 500,
+        "price": 500
+    },
+    "medium_fanta_orange": {
+        "stock": 500,
+        "price": 500
+    },
+    "strawberry_lemonade": {
+        "stock": 500,
+        "price": 500
+    },
+    "tenders_family_meal": {
+        "stock": 500,
+        "price": 500
+    },
+    "mild_tenders_box": {
+        "stock": 500,
+        "price": 500
+    },
+    "cinnamon_apple_pie": {
         "stock": 500,
         "price": 500
     },
@@ -83,15 +79,11 @@
         "stock": 500,
         "price": 500
     },
-    "red_beans_rice": {
+    "md_ginger_ale": {
         "stock": 500,
         "price": 500
     },
-    "strawberry_lemonade": {
-        "stock": 500,
-        "price": 500
-    },
-    "medium_tropicana_lemonade": {
+    "mild_tenders_bundle": {
         "stock": 500,
         "price": 500
     },
@@ -99,31 +91,11 @@
         "stock": 500,
         "price": 500
     },
-    "cinnamon_apple_pie": {
+    "nuggets_la_carte": {
         "stock": 500,
         "price": 500
     },
-    "mac_cheese_meal": {
-        "stock": 500,
-        "price": 500
-    },
-    "medium_sprite": {
-        "stock": 500,
-        "price": 500
-    },
-    "md_seltzer_water": {
-        "stock": 500,
-        "price": 500
-    },
-    "popcorn_shrimp": {
-        "stock": 500,
-        "price": 500
-    },
-    "md_ginger_ale": {
-        "stock": 500,
-        "price": 500
-    },
-    "strawberry_cheesecake_pie": {
+    "carte_biscuit": {
         "stock": 500,
         "price": 500
     },
@@ -131,15 +103,43 @@
         "stock": 500,
         "price": 500
     },
-    "tenders_family_meal": {
+    "cajun_fries": {
         "stock": 500,
         "price": 500
     },
-    "chicken_family_meal": {
+    "signature_chicken_box": {
         "stock": 500,
         "price": 500
     },
-    "carte_biscuit": {
+    "bigger_family_feast": {
+        "stock": 500,
+        "price": 500
+    },
+    "tenders_medium_combo": {
+        "stock": 500,
+        "price": 500
+    },
+    "medium_sprite": {
+        "stock": 500,
+        "price": 500
+    },
+    "medium_hawaiian_punch": {
+        "stock": 500,
+        "price": 500
+    },
+    "medium_tropicana_lemonade": {
+        "stock": 500,
+        "price": 500
+    },
+    "regular_cajun_rice": {
+        "stock": 500,
+        "price": 500
+    },
+    "nuggets_medium_combo": {
+        "stock": 500,
+        "price": 500
+    },
+    "popcorn_shrimp": {
         "stock": 500,
         "price": 500
     }
