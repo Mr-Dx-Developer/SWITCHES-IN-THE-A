@@ -1,89 +1,5 @@
 {
-    "rodeo_burger": {
-        "stock": 500,
-        "price": 500
-    },
-    "soft_serve_cone": {
-        "stock": 500,
-        "price": 500
-    },
-    "loaded_croissanwich_meal": {
-        "stock": 500,
-        "price": 500
-    },
-    "bs_mozzarella_sticks": {
-        "stock": 500,
-        "price": 500
-    },
-    "family_bundle_classic": {
-        "stock": 500,
-        "price": 500
-    },
-    "double_sausage_biscuit": {
-        "stock": 500,
-        "price": 500
-    },
-    "strawberry_shake": {
-        "stock": 500,
-        "price": 500
-    },
-    "spicy_deluxe_sandwich": {
-        "stock": 500,
-        "price": 500
-    },
-    "sun_apple_juice": {
-        "stock": 500,
-        "price": 500
-    },
-    "bs_cafe_decaf": {
-        "stock": 500,
-        "price": 500
-    },
-    "original_chicken_sandwich": {
-        "stock": 500,
-        "price": 500
-    },
-    "pink_lemonade": {
-        "stock": 500,
-        "price": 500
-    },
-    "whopper_with_cheese": {
-        "stock": 500,
-        "price": 500
-    },
-    "ham_egg_cheese": {
-        "stock": 500,
-        "price": 500
-    },
-    "soft_serve_cup": {
-        "stock": 500,
-        "price": 500
-    },
-    "bacon_ham_sausage": {
-        "stock": 500,
-        "price": 500
-    },
-    "buttermilk_biscuit": {
-        "stock": 500,
-        "price": 500
-    },
-    "hamburger_king_jr": {
-        "stock": 500,
-        "price": 500
-    },
-    "cheesy_tots": {
-        "stock": 500,
-        "price": 500
-    },
-    "double_cheeseburger": {
-        "stock": 500,
-        "price": 500
-    },
-    "plain_iced_coffee": {
-        "stock": 500,
-        "price": 500
-    },
-    "pancake_sausage_platter": {
+    "bacon_double_cheeseburger": {
         "stock": 500,
         "price": 500
     },
@@ -91,111 +7,7 @@
         "stock": 500,
         "price": 500
     },
-    "double_sausage_croissanwich": {
-        "stock": 500,
-        "price": 500
-    },
-    "bs_sprite_zero": {
-        "stock": 500,
-        "price": 500
-    },
-    "french_toast_sticks": {
-        "stock": 500,
-        "price": 500
-    },
-    "small_hash_browns": {
-        "stock": 500,
-        "price": 500
-    },
-    "sundae_pie": {
-        "stock": 500,
-        "price": 500
-    },
-    "jalapeno_cheddar_bites": {
-        "stock": 500,
-        "price": 500
-    },
-    "bs_fruit_punch": {
-        "stock": 500,
-        "price": 500
-    },
-    "small_classic_fries": {
-        "stock": 500,
-        "price": 500
-    },
-    "chicken_nuggets": {
-        "stock": 500,
-        "price": 500
-    },
-    "sausage_croissanwich": {
-        "stock": 500,
-        "price": 500
-    },
-    "big_fish": {
-        "stock": 500,
-        "price": 500
-    },
-    "small_onion_rings": {
-        "stock": 500,
-        "price": 500
-    },
-    "deluxe_chicken_sandwich": {
-        "stock": 500,
-        "price": 500
-    },
-    "barqs_diet_beer": {
-        "stock": 500,
-        "price": 500
-    },
-    "chicken_fries": {
-        "stock": 500,
-        "price": 500
-    },
-    "bs_diet_coke": {
-        "stock": 500,
-        "price": 500
-    },
-    "cheeseburger_king_jr": {
-        "stock": 500,
-        "price": 500
-    },
-    "bs_sprite": {
-        "stock": 500,
-        "price": 500
-    },
-    "bs_chicken_jr": {
-        "stock": 500,
-        "price": 500
-    },
-    "texas_double_whopper": {
-        "stock": 500,
-        "price": 500
-    },
-    "bs_coca_cola": {
-        "stock": 500,
-        "price": 500
-    },
-    "bs_yello_mello": {
-        "stock": 500,
-        "price": 500
-    },
-    "bs_dr_pepper": {
-        "stock": 500,
-        "price": 500
-    },
-    "bs_barqs_beer": {
-        "stock": 500,
-        "price": 500
-    },
-    "bs_hamburger": {
-        "stock": 500,
-        "price": 500
-    },
-    "cookie_shake": {
-        "stock": 500,
-        "price": 500
-    },
-    "croissanwich_meal": {
+    "bs_mozzarella_sticks": {
         "stock": 500,
         "price": 500
     },
@@ -203,7 +15,19 @@
         "stock": 500,
         "price": 500
     },
-    "vanilla_shake": {
+    "nuggets_king_jr": {
+        "stock": 500,
+        "price": 500
+    },
+    "bs_yello_mello": {
+        "stock": 500,
+        "price": 500
+    },
+    "cheesy_tots": {
+        "stock": 500,
+        "price": 500
+    },
+    "texas_double_whopper": {
         "stock": 500,
         "price": 500
     },
@@ -211,19 +35,167 @@
         "stock": 500,
         "price": 500
     },
+    "ham_egg_cheese": {
+        "stock": 500,
+        "price": 500
+    },
+    "chicken_nuggets": {
+        "stock": 500,
+        "price": 500
+    },
+    "french_toast_sticks": {
+        "stock": 500,
+        "price": 500
+    },
+    "double_sausage_croissanwich": {
+        "stock": 500,
+        "price": 500
+    },
+    "croissanwich_meal": {
+        "stock": 500,
+        "price": 500
+    },
+    "family_bundle_classic": {
+        "stock": 500,
+        "price": 500
+    },
     "bottle_diet_coke": {
         "stock": 500,
         "price": 500
     },
-    "nuggets_king_jr": {
+    "strawberry_shake": {
         "stock": 500,
         "price": 500
     },
-    "bacon_double_cheeseburger": {
+    "bs_hamburger": {
         "stock": 500,
         "price": 500
     },
-    "chocolate_cookie_shake": {
+    "plain_iced_coffee": {
+        "stock": 500,
+        "price": 500
+    },
+    "bs_fruit_punch": {
+        "stock": 500,
+        "price": 500
+    },
+    "pancake_sausage_platter": {
+        "stock": 500,
+        "price": 500
+    },
+    "sundae_pie": {
+        "stock": 500,
+        "price": 500
+    },
+    "barqs_diet_beer": {
+        "stock": 500,
+        "price": 500
+    },
+    "deluxe_chicken_sandwich": {
+        "stock": 500,
+        "price": 500
+    },
+    "bacon_ham_sausage": {
+        "stock": 500,
+        "price": 500
+    },
+    "sausage_croissanwich": {
+        "stock": 500,
+        "price": 500
+    },
+    "loaded_croissanwich_meal": {
+        "stock": 500,
+        "price": 500
+    },
+    "bs_coca_cola": {
+        "stock": 500,
+        "price": 500
+    },
+    "soft_serve_cone": {
+        "stock": 500,
+        "price": 500
+    },
+    "pink_lemonade": {
+        "stock": 500,
+        "price": 500
+    },
+    "bs_barqs_beer": {
+        "stock": 500,
+        "price": 500
+    },
+    "jalapeno_cheddar_bites": {
+        "stock": 500,
+        "price": 500
+    },
+    "soft_serve_cup": {
+        "stock": 500,
+        "price": 500
+    },
+    "cheeseburger_king_jr": {
+        "stock": 500,
+        "price": 500
+    },
+    "bs_sprite_zero": {
+        "stock": 500,
+        "price": 500
+    },
+    "bs_chicken_jr": {
+        "stock": 500,
+        "price": 500
+    },
+    "double_sausage_biscuit": {
+        "stock": 500,
+        "price": 500
+    },
+    "buttermilk_biscuit": {
+        "stock": 500,
+        "price": 500
+    },
+    "big_fish": {
+        "stock": 500,
+        "price": 500
+    },
+    "spicy_deluxe_sandwich": {
+        "stock": 500,
+        "price": 500
+    },
+    "bs_dr_pepper": {
+        "stock": 500,
+        "price": 500
+    },
+    "cookie_shake": {
+        "stock": 500,
+        "price": 500
+    },
+    "small_classic_fries": {
+        "stock": 500,
+        "price": 500
+    },
+    "bs_orange_juice": {
+        "stock": 500,
+        "price": 500
+    },
+    "double_cheeseburger": {
+        "stock": 500,
+        "price": 500
+    },
+    "sun_apple_juice": {
+        "stock": 500,
+        "price": 500
+    },
+    "bs_diet_coke": {
+        "stock": 500,
+        "price": 500
+    },
+    "original_chicken_sandwich": {
+        "stock": 500,
+        "price": 500
+    },
+    "bs_cafe_decaf": {
+        "stock": 500,
+        "price": 500
+    },
+    "hamburger_king_jr": {
         "stock": 500,
         "price": 500
     },
@@ -231,7 +203,35 @@
         "stock": 500,
         "price": 500
     },
-    "bs_orange_juice": {
+    "chicken_fries": {
+        "stock": 500,
+        "price": 500
+    },
+    "chocolate_cookie_shake": {
+        "stock": 500,
+        "price": 500
+    },
+    "rodeo_burger": {
+        "stock": 500,
+        "price": 500
+    },
+    "small_hash_browns": {
+        "stock": 500,
+        "price": 500
+    },
+    "vanilla_shake": {
+        "stock": 500,
+        "price": 500
+    },
+    "bs_sprite": {
+        "stock": 500,
+        "price": 500
+    },
+    "whopper_with_cheese": {
+        "stock": 500,
+        "price": 500
+    },
+    "small_onion_rings": {
         "stock": 500,
         "price": 500
     }

@@ -1,13 +1,17 @@
 {
-    "crunchwrap_supreme_meal": {
-        "stock": 500,
-        "price": 500
-    },
-    "fries_grande": {
-        "stock": 500,
-        "price": 500
-    },
     "churros_dip": {
+        "stock": 500,
+        "price": 500
+    },
+    "t_seven_up": {
+        "stock": 500,
+        "price": 500
+    },
+    "beefy_nacho": {
+        "stock": 500,
+        "price": 500
+    },
+    "cinnamon_twists": {
         "stock": 500,
         "price": 500
     },
@@ -15,31 +19,11 @@
         "stock": 500,
         "price": 500
     },
-    "two_taco_supreme": {
+    "cheese_quesadilla": {
         "stock": 500,
         "price": 500
     },
-    "crispy_chicken_staco": {
-        "stock": 500,
-        "price": 500
-    },
-    "chicken_burrito": {
-        "stock": 500,
-        "price": 500
-    },
-    "crunchwrap_supreme": {
-        "stock": 500,
-        "price": 500
-    },
-    "t_tango_orange": {
-        "stock": 500,
-        "price": 500
-    },
-    "spicy_chicken_burrito": {
-        "stock": 500,
-        "price": 500
-    },
-    "soft_taco_supreme": {
+    "soft_taco": {
         "stock": 500,
         "price": 500
     },
@@ -47,7 +31,31 @@
         "stock": 500,
         "price": 500
     },
+    "quesadilla": {
+        "stock": 500,
+        "price": 500
+    },
     "t_tango_apple": {
+        "stock": 500,
+        "price": 500
+    },
+    "t_tango_orange": {
+        "stock": 500,
+        "price": 500
+    },
+    "crunchy_taco_supreme": {
+        "stock": 500,
+        "price": 500
+    },
+    "tacomeet": {
+        "stock": 500,
+        "price": 500
+    },
+    "taco_regular": {
+        "stock": 500,
+        "price": 500
+    },
+    "fries_grande": {
         "stock": 500,
         "price": 500
     },
@@ -55,7 +63,15 @@
         "stock": 500,
         "price": 500
     },
-    "quesadilla": {
+    "fishtaco": {
+        "stock": 500,
+        "price": 500
+    },
+    "spicy_chicken_burrito": {
+        "stock": 500,
+        "price": 500
+    },
+    "crunchwrap_supreme_meal": {
         "stock": 500,
         "price": 500
     },
@@ -63,11 +79,19 @@
         "stock": 500,
         "price": 500
     },
-    "volcano_burrito": {
+    "chicken_burrito": {
         "stock": 500,
         "price": 500
     },
-    "cinnamon_twists": {
+    "volcano_burrito_meal": {
+        "stock": 500,
+        "price": 500
+    },
+    "crispy_chicken_staco": {
+        "stock": 500,
+        "price": 500
+    },
+    "crunchwrap_supreme": {
         "stock": 500,
         "price": 500
     },
@@ -79,43 +103,19 @@
         "stock": 500,
         "price": 500
     },
-    "fishtaco": {
-        "stock": 500,
-        "price": 500
-    },
-    "taco_regular": {
-        "stock": 500,
-        "price": 500
-    },
-    "volcano_burrito_meal": {
-        "stock": 500,
-        "price": 500
-    },
     "cheesy_black_bean": {
         "stock": 500,
         "price": 500
     },
-    "t_seven_up": {
+    "volcano_burrito": {
         "stock": 500,
         "price": 500
     },
-    "tacomeet": {
+    "two_taco_supreme": {
         "stock": 500,
         "price": 500
     },
-    "cheese_quesadilla": {
-        "stock": 500,
-        "price": 500
-    },
-    "crunchy_taco_supreme": {
-        "stock": 500,
-        "price": 500
-    },
-    "beefy_nacho": {
-        "stock": 500,
-        "price": 500
-    },
-    "soft_taco": {
+    "soft_taco_supreme": {
         "stock": 500,
         "price": 500
     }
