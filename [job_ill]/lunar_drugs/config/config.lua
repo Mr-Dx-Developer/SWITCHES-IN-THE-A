@@ -11,8 +11,8 @@ Config.Weed = {
 		Items = {
 			{ name = 'weed_seed', price = 50, account = 'money', icon = 'seedling' },
 			{ name = 'plastic_bag', price = 10, account = 'money', icon = 'sheet-plastic' },
-			{ name = 'plastic_table_cocaine', price = 30000, account = 'money', icon = 'plastic_table_cocaine' },
-			{ name = 'plastic_table_mushrooms', price = 30000, account = 'money', icon = 'plastic_table_mushrooms' },
+			--{ name = 'plastic_table_cocaine', price = 30000, account = 'money', icon = 'plastic_table_cocaine' },
+			--{ name = 'plastic_table_mushrooms', price = 30000, account = 'money', icon = 'plastic_table_mushrooms' },
 			--{ name = 'meth_table', price = 50000, account = 'money', icon = 'flask-vial' },
 		}
 	},
