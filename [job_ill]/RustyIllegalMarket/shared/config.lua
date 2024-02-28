@@ -24,7 +24,7 @@ Config.CitizenIDS = { -- Put the whitelisted user(s) citizenid here.
 
 
 -----------------------------------------------
-Config.DrugPed = vector4(-594.66, 225.93, 74.15, 178.09)
+Config.DrugPed = vector4(705.7846069335938,-966.6197509765625,30.4088134765625,342.99212646484375)
 Config.WeaponsPed = vector4(-597.31, 223.69, 74.15, 267.74)
 Config.AmmoPed = vector4(-594.11, 219.45, 74.15, 9.34)
 Config.GunPaintsPed = vector4(-593.25, 216.73, 74.15, 86.3)
