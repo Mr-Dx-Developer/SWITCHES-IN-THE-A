@@ -1,13 +1,5 @@
 {
-    "original_hot_wings": {
-        "stock": 500,
-        "price": 500
-    },
-    "garlic_parm_wings": {
-        "stock": 500,
-        "price": 500
-    },
-    "lemon_pepper_wings": {
+    "rotisserie_wings": {
         "stock": 500,
         "price": 500
     },
@@ -15,7 +7,7 @@
         "stock": 500,
         "price": 500
     },
-    "fries": {
+    "lemon_pepper_wings": {
         "stock": 500,
         "price": 500
     },
@@ -23,11 +15,11 @@
         "stock": 500,
         "price": 500
     },
-    "rotisserie_wings": {
+    "atomic_wings": {
         "stock": 500,
         "price": 500
     },
-    "atomic_wings": {
+    "garlic_parm_wings": {
         "stock": 500,
         "price": 500
     },
@@ -35,11 +27,19 @@
         "stock": 500,
         "price": 500
     },
-    "bbq_wings": {
+    "original_hot_wings": {
+        "stock": 500,
+        "price": 500
+    },
+    "fries": {
         "stock": 500,
         "price": 500
     },
     "water": {
+        "stock": 500,
+        "price": 500
+    },
+    "bbq_wings": {
         "stock": 500,
         "price": 500
     }

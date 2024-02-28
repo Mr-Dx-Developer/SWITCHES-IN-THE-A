@@ -1,8 +1,4 @@
 {
-    "fries": {
-        "stock": 500,
-        "price": 500
-    },
     "buffalo_chicken_strips": {
         "stock": 500,
         "price": 500
@@ -11,11 +7,15 @@
         "stock": 500,
         "price": 500
     },
+    "mozzarella_sticks": {
+        "stock": 500,
+        "price": 500
+    },
     "fried_calamari": {
         "stock": 500,
         "price": 500
     },
-    "mozzarella_sticks": {
+    "fries": {
         "stock": 500,
         "price": 500
     },
