@@ -1,0 +1,140 @@
+<html>
+
+<head>
+    <title>TrenchWorld RP Loading Screen</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://officialyu.me/fontawesome/css/all.min.css" />
+
+    <img id="cursor" src="img/cursor.png" />
+    <style>
+        #cursor {
+            width: 25px;
+            height: 25px;
+            position: fixed;
+            z-index: 10000;
+        }
+    </style>
+</head>
+<script>
+
+window.onload = function() {
+    document.body.addEventListener("mousemove", function(event) {
+        var x = event.pageX - 1 + "px"
+        var y = event.pageY + 1 + "px"
+        document.getElementById("cursor").style.left = x;
+        document.getElementById("cursor").style.top = y;
+    })
+};
+</script>
+<body style="overflow: hidden;cursor:none">
+
+    <a id="bgndVideo" class="player" data-property="{videoURL:'https://www.youtube.com/watch?v=G39fOPCDRqo',containment:'body',autoPlay:true, mute:false, startAt:17, stopAt:300, opacity:1}"></a>
+    <div id="loading">
+        <div id="preloader">
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <div class="global-overlay">
+        <div class="overlay">
+            <div class="overlay-dash"></div>
+        </div>
+    </div>
+    <section id="home-wrap">
+        <div id='stars'></div>
+        <div id='stars2'></div>
+        <div id='stars3'></div>
+        <div class="content">
+            <img src="img/logo.png" alt="" class="brand-logo text-intro opacity-0" />
+            <h1 class="text-intro opacity-0"><span class="polyfy-title">𝐎𝐔𝐓 𝐃𝐀 𝐌𝐔𝐃 𝐀𝐓𝐋 𝐑𝐏</span></h1>
+            <p class="text-intro opacity-0">https://discord.gg/odmatlantav3</p>
+            <p class="text-intro opacity-0">Song - Kenzo Balla x Rayy Balla x TG Crippy - " Touch The Ground " </p>
+            <a href="#" id="open-more-info" data-target="info-wrap" class="light-btn text-intro opacity-0">More Information</a>
+        </div>
+    </section>
+    <nav id="player-nav">
+        <ul>
+            <li data-toggle="tooltip" data-placement="top" data-title="Play" data-trigger="hover">
+                <a onclick="$('#bgndVideo').playYTP()"><i class="fa fa-play"></i></a>
+            </li>
+            <li data-toggle="tooltip" data-placement="top" data-title="Pause" data-trigger="hover">
+                <a onclick="$('#bgndVideo').pauseYTP()"><i class="fa fa-pause"></i></a>
+            </li>
+            <li class="full-play" data-toggle="tooltip" data-placement="top" data-title="Fullscreen" data-trigger="hover">
+                <a class="expand-player"><i class="fa fa-expand"></i></a>
+            </li>
+            <li class="comp-play display-none" data-toggle="tooltip" data-placement="top" data-title="Reduce" data-trigger="hover">
+                <a class="compress-player"><i class="fa fa-compress"></i></a>
+            </li>
+        </ul>
+    </nav>
+
+    <section id="info-wrap">
+        <div class="hero">
+            <div class="center-text">
+                <h3 class="darky">Have Fun!</h3>
+                <p>RULES- <strong></strong> 
+				No RDM or VDM,
+ Do not interrupt on going rp scenes,
+ No sexism or any form of discrimination,
+ Hacks, cheats, and exploits are highly forbidden and will be a permanent ban,
+ No exploits,
+ Do not say any racial slurs.
+For the rest of the server rules visit the discord (discord.gg/odmatlantav3)
+and checkout the rules channel.</p>
+            </div>
+        </div>
+        <div class="content"></div>
+        <div class="dark-hero">
+            <div class="center-text">
+                <h3 class="lighty">OUR TEAM!</h3>
+                <div class="info-contact row">
+                    <div class="col-xs-12 col-sm-4 col-lg-4 item-map">
+                        <div class="contact-item"><i class="fab fa-discord"></i>
+                            <p><strong>Owner</strong>
+                                <br>RicoHaiti</p>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-4 col-lg-4 item-map">
+                        <div class="contact-item"><i class="fab fa-discord"></i>
+                            <p><strong>Owner</strong>
+                                <br>𝕸𝖗.101</p>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-4 col-lg-4 item-map">
+                        <div class="contact-item"><i class="fab fa-discord"></i>
+                            <p><strong>Developer</strong>
+                                <br>Mr_Dx</p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-xs-12 col-sm-4 col-lg-4 item-map">
+                        <div class="contact-item"><i class="fab fa-discord"></i>
+                            <p><strong>Management</strong>
+                                <br>Dex</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <br>
+        </div>
+        <footer>
+            <p>𝐎𝐔𝐓 𝐃𝐀 𝐌𝐔𝐃 𝐀𝐓𝐋 𝐑𝐏</p>
+        </footer>
+    </section>
+
+
+    <div class="command-info-wrap"><button class="to-close"><i class="icon ion-close-round"></i></button></div>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/jquery.easings.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/velocity.min.js"></script>
+	<script src="js/velocity.ui.min.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/main-youtube.js"></script>
+	<script src="js/jquery.mb.YTPlayer.js"></script>
+	<script src="js/photoswipe-ui-default.js"></script>
+</body>
+
+</html>
