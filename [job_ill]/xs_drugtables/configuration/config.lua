@@ -63,9 +63,9 @@ Config.DrugTables = {
                 },
 
                 requirements = { -- Requirements for this drug to show on menu for craft
-                    ['coca_leaf'] = { label = 'coke_leaf', quantity = 3 }, -- Replace with your own ingredients
+                    ['bakingsoda'] = { label = 'bakingsoda', quantity = 3 }, -- Replace with your own ingredients
                     ['plastic_baggy'] = { label = 'Plastic Baggy', quantity = 1 }, -- -- Replace with your own ingredients
-                    ['water_can'] = { label = 'water_can', quantity = 1 }
+                    ['water_bottle'] = { label = 'water_bottle', quantity = 1 }
                     -- Add more required items to craft specific drug if desired, ['ITEM_NAME_NEEDED'] = { label = LABEL, quantity = QUANTITY }
                 },
 
