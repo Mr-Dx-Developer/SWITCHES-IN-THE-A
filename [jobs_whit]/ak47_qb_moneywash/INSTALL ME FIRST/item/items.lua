@@ -1,0 +1,1 @@
+['laundrycard'] = {['name'] = 'laundrycard', ['label'] = 'Laundry Card', ['weight'] = 100, ['type'] = 'item', ['image'] = 'laundrycard.png', ['unique'] = false, ['useable'] = false, ['shouldClose'] = true, ['combinable'] = nil, ['description'] = 'Your description here'},
