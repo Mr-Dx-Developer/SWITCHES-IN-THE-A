@@ -1,0 +1,30 @@
+Permissions = {
+    ['group.god'] = {
+        Prison.Commands.stopZone,
+        Prison.Commands.cleanZone,
+        Prison.Commands.Dashboard,
+        Prison.Commands.Jail,
+        Prison.Commands.Unjail,
+        Prison.Commands.cancelcs,
+        Prison.Commands.startcs,
+        'fetchCb',
+    },
+    ['group.superadmin'] = {
+        Prison.Commands.stopZone,
+        Prison.Commands.cleanZone,
+        Prison.Commands.Dashboard,
+        Prison.Commands.Jail,
+        Prison.Commands.Unjail,
+        Prison.Commands.cancelcs,
+        Prison.Commands.startcs,
+        'fetchCb',
+    },
+    ['group.admin'] = {
+        Prison.Commands.Dashboard,
+        Prison.Commands.Jail,
+        Prison.Commands.Unjail,
+        Prison.Commands.cancelcs,
+        Prison.Commands.startcs,
+        'fetchCb',
+    },
+}

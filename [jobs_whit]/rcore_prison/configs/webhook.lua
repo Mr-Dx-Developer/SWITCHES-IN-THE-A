@@ -1,0 +1,4 @@
+Logs = {
+    Type = 'discord',
+    Hook = ''
+}

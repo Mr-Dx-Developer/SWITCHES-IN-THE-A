@@ -218,7 +218,7 @@ QBCore.Commands.Add("clearcasings", Lang:t("commands.clear_casign"), {}, false, 
     end
 end)
 
-QBCore.Commands.Add("jail", Lang:t("commands.jail_player"), {}, false, function(source)
+QBCore.Commands.Add("pjail", Lang:t("commands.jail_player"), {}, false, function(source)
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
     if Player.PlayerData.job.name == "police" and Player.PlayerData.job.onduty then
@@ -228,7 +228,7 @@ QBCore.Commands.Add("jail", Lang:t("commands.jail_player"), {}, false, function(
     end
 end)
 
-QBCore.Commands.Add("unjail", Lang:t("commands.unjail_player"), {{name = "id", help = Lang:t('info.player_id')}}, true, function(source, args)
+QBCore.Commands.Add("punjail", Lang:t("commands.unjail_player"), {{name = "id", help = Lang:t('info.player_id')}}, true, function(source, args)
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
     if Player.PlayerData.job.name == "police" and Player.PlayerData.job.onduty then
