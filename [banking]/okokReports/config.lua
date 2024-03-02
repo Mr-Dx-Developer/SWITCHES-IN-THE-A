@@ -14,7 +14,22 @@ Config.FeedbackCooldown = 10 -- Time in minutes
 
 -- Types of identifiers: steam: | license: | xbl: | live: | discord: | fivem: | ip:
 Config.AdminList = {
-	'license:07e4033cbb883208db4fd64c2a3b04c13f5ed71e', -- Example, change this
+	'license:8601d9b7e1fab1f7008d9ca44176ceddd04353bc', -- Example, change this
+
+
+	'license:a045ed84bc7b147ab67442c4be4c70a4bb7d0ad5',
+
+   
+
+
+
+    'discord:1144911208303034440',
+    'discord:981738978015313930',
+    'discord:1164653509443059732',
+    'discord:662207311665954826',
+    'discord:1012094569321615401',
+    'discord:1051260760992522320',
+    'discord:1110069724143951923',
 }
 
 -------------------------- DISCORD LOGS
