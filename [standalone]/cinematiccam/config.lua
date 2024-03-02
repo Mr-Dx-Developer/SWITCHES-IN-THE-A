@@ -9,12 +9,12 @@ Cfg.useNativeUI = true
 Cfg.useNativeUIReloaded = false
 
 -- specify, if menu should be accessible via button press
-Cfg.useButton = true
+Cfg.useButton = false
 
 -- specify, if menu should be accessible via chat command
 Cfg.useCommand = true
 -- specify chat command string
-Cfg.command = "cam"
+Cfg.command = "kcam"
 
 -- specify, if this camera should be permission based
 Cfg.usePermissions = false
