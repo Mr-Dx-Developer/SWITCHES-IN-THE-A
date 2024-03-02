@@ -87,12 +87,12 @@ Config.bakery = {
     },
 
     Duty = {
-        Main = { coords = vector3(57.64, -129.8, 55.74), radius = 0.2, debug = false },
+        Main = { coords = vector3(57.64, -129.8, 55.74), radius = 0.2, debug = true },
     },
 
     Coffeemachine = {
         Zones = {
-            Main = { coords = vector3(56.42, -131.15, 55.76), radius = 0.25, debug = false },
+            Main = { coords = vector3(56.42, -131.15, 55.76), radius = 0.25, debug = true },
         },
 
         Crafting = {
