@@ -172,6 +172,14 @@ Config.Products = {
             type = "item",
             slot = 18,
         },
+        [19] = {
+            name = "bakingsoda",
+            price = 1, 
+            amount = 10,
+            info = {},
+            type = "item",
+            slot = 19,
+        },
     },
     ["liquor"] = {
         [1] = {
@@ -419,7 +427,7 @@ Config.Products = {
         },
         [6] = {
             name = "phone",
-            price = 850,
+            price = 500,
             amount = 50,
             info = {},
             type = "item",
@@ -620,6 +628,7 @@ Config.Products = {
             type = "item",
             slot = 7,
         },
+        
         --[[ [8] = {
             name = "hydrochloric_acid",
             price = 100,
@@ -1404,7 +1413,7 @@ Config.Locations = {
     -- Hardware Store Locations
     ["hardware"] = {
         ["label"] = "Hardware Store",
-        ["coords"] = vector4(45.68, -1749.04, 29.61, 53.13),
+        ["coords"] = vector4(-42.738460540771484,-1774.931884765625,29.111328125,59.52755355834961),
         ["ped"] = 'mp_m_waremech_01',
         ["scenario"] = "WORLD_HUMAN_CLIPBOARD",
         ["radius"] = 1.5,
@@ -1415,7 +1424,7 @@ Config.Locations = {
         ["blipsprite"] = 402,
         ["blipscale"] = 0.8,
         ["blipcolor"] = 0,
-        ["delivery"] = vector4(89.15, -1745.29, 30.09, 315.25)
+        ["delivery"] = vector4(-54.751644134521484,-1780.2197265625,28.993408203125,79.37007904052734)
     },
 
     ["hardware2"] = {

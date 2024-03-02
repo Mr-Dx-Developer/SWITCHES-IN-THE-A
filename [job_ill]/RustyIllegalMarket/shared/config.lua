@@ -1078,6 +1078,15 @@ Config.Drugs = {
             type = "item",
             slot = 3,
         },
+        [4] = {
+            name = "laundrycard",
+            price = 250,
+            amount = 1,
+            info = {},
+            type = "item",
+            slot = 4,
+        },
+        
        --[[  [4] = {
             name = "plastic_table_heroine",
             price = 30000,
