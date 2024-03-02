@@ -1188,4 +1188,56 @@ Config.DoorList = {
 		pickable = false,
 		distance = 2.0
 	},
+
+
+
+	 --  recore jail
+
+	 {
+		pos = vector3(1671.640381, 2502.784912, 44.557003), 
+		rot = vector4(0.000000, 0.000000, 0.942665, 0.333741),
+		State = nil,
+		Model = `prop_basketball_net`,
+		IsSubscribed = false,
+		threePointFwdDist = 0.0,
+		threePointSideDist = 0.0,
+		threePointRadius = 30.0,
+		hideBlip = true,
+	},
+	
+	{
+		pos = vector3(1689.102173, 2523.121094, 44.641594), 
+		rot = vector4(0.000000, 0.000000, -0.329191, 0.944263),
+		State = nil,
+		Model = `prop_basketball_net`,
+		IsSubscribed = false,
+		threePointFwdDist = 0.0,
+		threePointSideDist = 0.0,
+		threePointRadius = 30.0,
+		hideBlip = true,
+	},
+	
+	{
+		pos = vector3(1729.442505, 2525.064697, 44.558537), 
+		rot = vector4(-0.000000, 0.000000, 0.965665, -0.259790),
+		State = nil,
+		Model = `prop_basketball_net`,
+		IsSubscribed = false,
+		threePointFwdDist = 0.0,
+		threePointSideDist = 0.0,
+		threePointRadius = 30.0,
+		hideBlip = true,
+	},
+	
+	{
+		pos = vector3(1718.615479, 2545.604004, 44.588676), 
+		rot = vector4(0.000000, 0.000000, 0.239589, 0.970874),
+		State = nil,
+		Model = `prop_basketball_net`,
+		IsSubscribed = false,
+		threePointFwdDist = 0.0,
+		threePointSideDist = 0.0,
+		threePointRadius = 30.0,
+		hideBlip = true,
+	},
 }
