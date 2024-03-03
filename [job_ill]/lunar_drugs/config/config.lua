@@ -100,7 +100,7 @@ Config.Cocaine = {
 	Spawning = {
 		Locations = {
 			{
-				Coords = vector3(1570.2491, 2139.9065, 80.0015),
+				Coords = vector3(-276.81756591796875,-1632.7515869140625,31.841064453125),
 				Radius = 20.0
 			}
 		},
