@@ -49,6 +49,7 @@ function HasPhoneItem(source, number)
 
     local xPlayer = ESX.GetPlayerFromId(source)
     local hasItem = xPlayer.getInventoryItem(Config.Item.Name).count > 0
+
     if not hasItem then
         return false
     end
@@ -73,11 +74,13 @@ end
 function GetCharacterName(source)
     local xPlayer = ESX.GetPlayerFromId(source)
     local firstName, lastName
+
     if xPlayer.get and xPlayer.get("firstName") and xPlayer.get("lastName") then
         firstName = xPlayer.get("firstName")
         lastName = xPlayer.get("lastName")
     else
         local name = MySQL.Sync.fetchAll("SELECT `firstname`, `lastname` FROM `users` WHERE `identifier`=@identifier", {["@identifier"] = GetIdentifier(source)})
+
         firstName, lastName = name[1]?.firstname or GetPlayerName(source), name[1]?.lastname or ""
     end
 
@@ -89,19 +92,27 @@ end
 ---@return table # Player sources
 function GetEmployees(job)
     local employees = {}
+    local employeesCount = 0
+
     if ESX.GetExtendedPlayers then
         local xPlayers = ESX.GetExtendedPlayers("job", job)
+
         for _, xPlayer in pairs(xPlayers) do
-            employees[#employees+1] = xPlayer.source
+            employeesCount += 1
+            employees[employeesCount] = xPlayer.source
         end
     else
+        infoprint("warning", "You are running an extremely old version of ESX. The script will still work, but you should consider updating. (you can remove this warning in server/custom/frameworks/esx.lua)")
         local xPlayers = ESX.GetPlayers()
+
         for _, source in pairs(xPlayers) do
             if ESX.GetPlayerFromId(source).job.name == job then
-                employees[#employees+1] = source
+                employeesCount += 1
+                employees[employeesCount] = source
             end
         end
     end
+
     return employees
 end
 
@@ -110,10 +121,8 @@ end
 ---@return integer
 function GetBalance(source)
     local xPlayer = ESX.GetPlayerFromId(source)
-    if not xPlayer then
-        return 0
-    end
-    return xPlayer.getAccount("bank")?.money or 0
+
+    return xPlayer?.getAccount("bank")?.money or 0
 end
 
 ---Add money to a player's bank account
@@ -122,6 +131,7 @@ end
 ---@return boolean # Success
 function AddMoney(source, amount)
     local xPlayer = ESX.GetPlayerFromId(source)
+
     if not xPlayer or amount < 0 then
         return false
     end
@@ -136,6 +146,7 @@ end
 ---@return boolean # Success
 function RemoveMoney(source, amount)
     local xPlayer = ESX.GetPlayerFromId(source)
+
     if not xPlayer or amount < 0 or GetBalance(source) < amount then
         return false
     end
@@ -156,14 +167,14 @@ end
 ---@param source number
 ---@return VehicleData[] vehicles An array of vehicles that the player owns
 function GetPlayerVehicles(source)
+    local toSend = {}
     local vehicles = MySQL.Sync.fetchAll("SELECT * FROM owned_vehicles WHERE owner=@owner", {
         ["@owner"] = GetIdentifier(source)
     })
 
-    local toSend = {}
-
     for i = 1, #vehicles do
         local vehicle = vehicles[i] or {}
+
         if vehicle.stored == nil or GetResourceState("qs-advancedgarages") == "started" then
             vehicle.stored = vehicle.state
         end
@@ -246,6 +257,7 @@ end
 ---@return table? vehicleData
 function GetVehicle(source, plate)
     local storedColumn, storedValue, outValue = "stored", 1, 0
+
     if GetResourceState("cd_garage") == "started" or GetResourceState("jg-advancedgarages") == "started" then
         storedColumn = "in_garage"
     elseif GetResourceState("qs-advancedgarages") == "started" then
@@ -262,6 +274,7 @@ function GetVehicle(source, plate)
     })
 
     local vehicle = res[1]
+
     if not vehicle then
         return
     end
@@ -278,7 +291,7 @@ end
 
 function IsAdmin(source)
     local xPlayer = ESX.GetPlayerFromId(source)
-    local isAdmin = xPlayer.getGroup() == "superadmin"
+    local isAdmin = xPlayer?.getGroup() == "superadmin"
 
     if not isAdmin then
         return IsPlayerAceAllowed(source, "command.lbphone_admin") == 1
@@ -380,7 +393,7 @@ if ESX.RegisterCommand then
         }
     })
 else
-    print("^6[LB Phone] ^3[WARNING]^0: ESX.RegisterCommand not found, admin commands not registered. If you wish to use commands, update your ESX. The phone will still work.")
+    infoprint("warning", "ESX.RegisterCommand not found, admin commands not registered. If you wish to use commands, update your ESX. The phone will still work. Do not ask us for help about this.")
 end
 
 -- Company / services app
@@ -388,42 +401,39 @@ end
 ---@param source number
 ---@return string
 function GetJob(source)
-    local xPlayer = ESX.GetPlayerFromId(source)
-
-    return xPlayer.job?.name or "unemployed"
+    return ESX.GetPlayerFromId(source)?.job?.name or "unemployed"
 end
 
 function RefreshCompanies()
     if ESX.JobsPlayerCount then
         for i = 1, #Config.Companies.Services do
             local jobData = Config.Companies.Services[i]
+            local jobKey = ("%s:count"):format(jobData.job)
 
-            jobData.open = (ESX.JobsPlayerCount[jobData.job] or 0) > 0
+            jobData.open = (GlobalState[jobKey] or 0) > 0
+            debugprint("Job", jobData.job, "is open:", jobData.open)
         end
 
         return
     end
 
     local openJobs = {}
+    local xPlayers = ESX.GetExtendedPlayers and ESX.GetExtendedPlayers() or ESX.GetPlayers()
 
     if ESX.GetExtendedPlayers then
-        local xPlayers = ESX.GetExtendedPlayers()
-
         for _, xPlayer in pairs(xPlayers) do
             openJobs[xPlayer.job.name] = true
         end
 
-        print("^6[LB Phone] ^3[WARNING]^7: You are running an outdated version of ESX. The script will still work, but you should consider updating. (you can remove this warning in server/custom/frameworks/esx.lua)")
+        infoprint("warning", "You are running an outdated version of ESX. The script will still work, but you should consider updating. (you can remove this warning in server/custom/frameworks/esx.lua)")
     else
-        local xPlayers = ESX.GetPlayers()
-
         for _, source in pairs(xPlayers) do
             local job = ESX.GetPlayerFromId(source).job.name
 
             openJobs[job] = true
         end
 
-        print("^6[LB Phone] ^3[WARNING]^7: You are running an extremely old version of ESX. The script will still work, but you should consider updating. (you can remove this warning in server/custom/frameworks/esx.lua)")
+        infoprint("warning", "You are running an extremely old version of ESX. The script will still work, but you should consider updating. (you can remove this warning in server/custom/frameworks/esx.lua)")
     end
 
     for i = 1, #Config.Companies.Services do
@@ -431,4 +441,26 @@ function RefreshCompanies()
 
         jobData.open = openJobs[jobData.job] or false
     end
+end
+
+for i = 1, #Config.Companies.Services do
+    local jobData = Config.Companies.Services[i]
+    local jobKey = ("%s:count"):format(jobData.job)
+
+    AddStateBagChangeHandler(jobKey, "global", function(_, _, value)
+        Wait(0) -- prevent print from showing in F8 when using command
+
+        if type(value) ~= "number" then
+            return
+        end
+
+        local isOpen = value > 0
+
+        if jobData.open ~= isOpen then
+            jobData.open = isOpen
+            TriggerClientEvent("phone:services:updateOpen", -1, jobData.job, isOpen)
+        end
+
+        debugprint(("Job count for job ^5%s^7 changed. Is open: %s"):format(jobData.job, jobData.open))
+    end)
 end

@@ -242,17 +242,63 @@
 			"TITLE": "Photos",
 			"SELECT": "Select",
 			"CANCEL": "Cancel",
+			"EDIT": "Edit",
+			"DONE": "Done",
+			"DELETE": "Delete",
 			"SELECT_ITEMS": "Select Items",
 			"SELECTED_COUNT": "{count} Items selected",
-			"PHOTO_COUNT": "{count} photos",
-			"DELETE_TITLE": "Delete {count} images",
-			"DELETE_TEXT": "Do you want to delete {count} images",
-			"DELETE_BUTTON_CANCEL": "Cancel",
-			"DELETE_BUTTON_DELETE": "Delete",
-			"DELETE_IMAGE_TITLE": "Delete image",
-			"DELETE_IMAGE_TEXT": "Do you want to delete this image?",
-			"DELETE_IMAGE_BUTTON_CANCEL": "Cancel",
-			"DELETE_IMAGE_BUTTON_DELETE": "Delete"
+
+			"PHOTOS": "Photos",
+			"ALBUMS": "Albums",
+			"LIBRARY": "Library",
+			"MY_ALBUMS": "My Albums",
+			"MEDIA_TYPES": "Media Types",
+			"NEW_ALBUM_POPUP": {
+				"TITLE": "New Album",
+				"DESCRIPTION": "Enter a name for this album",
+				"PLACEHOLDER": "Title",
+				"CANCEL": "Cancel",
+				"PROCEED": "Save"
+			},
+			"REMOVE_ALBUM": {
+				"TITLE": "Remove \"{name}\"",
+				"DESCRIPTION": "Are you sure you want to delete the album \"{name}\"? The photos will not be deleted",
+				"CANCEL": "Cancel",
+				"PROCEED": "Remove"
+			},
+			"RENAME_ALBUM_POPUP": {
+				"TITLE": "Rename Album",
+				"DESCRIPTION": "Enter a new name for this album",
+				"PLACEHOLDER": "New album name",
+				"CANCEL": "Cancel",
+				"PROCEED": "Proceed"
+			},
+			"DELETE_IMAGE_POPUP": {
+				"TITLE": "Delete Image",
+				"DESCRIPTION": "Are you sure you want to delete this image?",
+				"CANCEL": "Cancel",
+				"PROCEED": "Delete"
+			},
+
+			"NO_PHOTOS": "No Photos or Videos",
+			"NO_PHOTOS_INSTRUCTIONS": "You can take photos and videos using the camera",
+			"PHOTO_COUNT": "{photos} Photos, {videos} Videos",
+
+			"DELETE_CONTEXT_TITLE": "Do you want to delete {type} or remove them from this album",
+			"THESE_PHOTOS": "these photos",
+			"THIS_PHOTO": "this photo",
+			"REMOVE_FROM_ALBUM": "Remove from Album",
+			"ADD_TO_ALBUM": "Add to Album",
+			"ADD_TO_FAVOURITES": "Add to Favourites",
+			"VIDEOS": "Videos",
+			"SELFIES": "Selfies",
+			"SCREENSHOTS": "Screenshots",
+			"IMPORTS": "Imports",
+			"DUPLICATES": "Duplicates",
+			"YEARS": "Years",
+			"MONTHS": "Months",
+			"DAYS": "Days",
+			"ALL_PHOTOS": "All Photos"
 		},
 		"WEATHER": {
 			"TITLE": "Weather",
@@ -1429,7 +1475,12 @@
 			"TRENDY_UPLOAD_TITLE": "New video",
 			"TRENDY_UPLOAD_DESCRIPTION": "{username} uploaded a new video with the caption {caption} and id {id}",
 			"TRENDY_DELETE_TITLE": "Deleted a video",
-			"TRENDY_DELETE_DESCRIPTION": "{username} deleted a video with the id {id}"
+			"TRENDY_DELETE_DESCRIPTION": "{username} deleted a video with the id {id}",
+
+			"UPLOADED_MEDIA": "Uploaded media",
+			"UPLOADED_MEDIA_DESCRIPTION": "Took a {type} with the id {id}\n{link}",
+			"VIDEO": "video",
+			"PHOTO": "photo"
 		}
 	}
 }

@@ -5,6 +5,25 @@ local function isResourceStartedOrStarting(resource)
     return state == "started" or state == "starting"
 end
 
+local infoLevels = {
+    success = "^2[SUCCESS]",
+	info = "^5[INFO]",
+	warning = "^3[WARNING]",
+	error = "^1[ERROR]"
+}
+
+---@param level "success" | "info" | "warning" | "error"
+---@param text string
+function infoprint(level, text, ...)
+	local prefix = infoLevels[level]
+
+	if not prefix then
+		prefix = "^5[INFO]^7:"
+	end
+
+	print("^6[LB Phone] " .. prefix .. "^7: " .. text, ...)
+end
+
 function debugprint(...)
     if Config.Debug then
         local data = {...}
@@ -24,7 +43,7 @@ function debugprint(...)
             end
         end
 
-        print("^6[LB Phone] ^3[Debug]^0: " .. str)
+        print("^6[LB Phone] ^3[Debug]^7: " .. str)
     end
 end
 
@@ -168,13 +187,13 @@ local function loadLocales(locale)
 
     local fileContent = LoadResourceFile(GetCurrentResourceName(), "config/locales/" .. locale .. ".json")
     if not fileContent then
-        print("^6[LB Phone] ^1[ERROR]^7: Invalid locale '" .. locale .. "' (file not found)")
+        infoprint("error", "Invalid locale '" .. locale .. "' (file not found)")
         return {}
     end
 
     local decoded = json.decode(fileContent)
     if not decoded then
-        print("^6[LB Phone] ^1[ERROR]^7: Invalid locale '" .. locale .. "' (error in file)")
+        infoprint("error", "Invalid locale '" .. locale .. "' (error decoding file)")
         return {}
     end
 
@@ -278,4 +297,32 @@ function ConvertJSTimestamp(timestamp)
     }
 
     return os.time(date) * 1000
+end
+
+if IsDuplicityVersion() then
+    ---@param event string
+    ---@param callback fun(source: number, phoneNumber: string, ...) : any
+    ---@param defaultReturn any
+    function BaseCallback(event, callback, defaultReturn)
+        event = "phone:" .. event
+
+        lib.RegisterCallback(event, function(source, cb, ...)
+            local phoneNumber = GetEquippedPhoneNumber(source)
+
+            if not phoneNumber then
+                return cb(defaultReturn)
+            end
+
+            local startTime = os.nanotime()
+            local result = callback(source, phoneNumber, ...)
+            local finishTime = os.nanotime()
+            local ms = (finishTime - startTime) / 1e6
+
+            if Config.Debug then
+                debugprint(("Callback ^5%s^7 took %.4fms"):format(event, ms))
+            end
+
+            return cb(result)
+        end)
+    end
 end

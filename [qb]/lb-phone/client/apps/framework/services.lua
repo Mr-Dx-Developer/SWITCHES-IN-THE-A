@@ -108,6 +108,13 @@ RegisterNUICallback("Services", function(data, cb)
     end
 end)
 
+RegisterNetEvent("phone:services:updateOpen", function(job, open)
+    SendReactMessage("services:updateOpen", {
+        job = job,
+        open = open
+    })
+end)
+
 RegisterNetEvent("phone:services:newMessage", function(data)
     SendReactMessage("services:newMessage", data)
 end)

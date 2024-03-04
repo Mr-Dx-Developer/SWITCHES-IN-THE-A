@@ -21,7 +21,7 @@ function ContainsBlacklistedWord(source, app, text)
 	end
 
 	if blacklisted then
-		print(("^6[LB Phone]^7: %i (%s) tried to send a message containing a blacklisted word: %s"):format(source, GetPlayerName(source), text))
+		infoprint("warning", "Player %i (%s) tried to send a message containing a blacklisted word: %s", source, GetPlayerName(source), text)
 	end
 
 	return blacklisted

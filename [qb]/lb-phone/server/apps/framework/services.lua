@@ -1,7 +1,9 @@
 -- Get open companies
 local lastRefresh = 0
+local refreshInterval = 60 -- refresh at most once every 60 seconds
+
 lib.RegisterCallback("phone:services:getOnline", function(_, cb)
-    if (lastRefresh + 60) < os.time() and RefreshCompanies then
+    if (lastRefresh + refreshInterval) < os.time() and RefreshCompanies then
         RefreshCompanies()
         lastRefresh = os.time()
     end
@@ -142,8 +144,8 @@ lib.RegisterCallback("phone:services:getRecentMessages", function(source, cb, pa
     MySQL.Async.fetchAll([[
         SELECT id, phone_number, company, company, last_message, `timestamp`
         FROM phone_services_channels
-        WHERE 
-            phone_number = @phoneNumber 
+        WHERE
+            phone_number = @phoneNumber
             OR company = @company
         ORDER BY `timestamp` DESC
         LIMIT @page, @perPage

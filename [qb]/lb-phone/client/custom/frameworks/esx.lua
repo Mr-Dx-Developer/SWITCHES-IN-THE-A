@@ -68,7 +68,7 @@ function HasPhoneItem(number)
 
     local inventory = ESX.GetPlayerData()?.inventory
     if not inventory then
-        print("^6[LB Phone] ^3[Warning]^0: Unsupported inventory, tell the inventory author to add support for it.")
+        infoprint("warning", "Unsupported inventory, tell the inventory author to add support for it.")
         return false
     end
 

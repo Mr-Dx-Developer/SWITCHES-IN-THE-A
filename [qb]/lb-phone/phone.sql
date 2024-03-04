@@ -7,7 +7,7 @@ CREATE TABLE IF NOT EXISTS `phone_phones` (
 
     `pin` VARCHAR(4) DEFAULT NULL,
     `face_id` VARCHAR(100) DEFAULT NULL, -- the identifier of the face that is used for the phone
-    
+
     `settings` LONGTEXT, -- json encoded settings
     `is_setup` BOOLEAN DEFAULT FALSE,
     `assigned` BOOLEAN DEFAULT FALSE, -- if the phone is assigned to a phone item (metadata)
@@ -24,17 +24,40 @@ CREATE TABLE IF NOT EXISTS `phone_last_phone` (
     FOREIGN KEY (`phone_number`) REFERENCES `phone_phones`(`phone_number`) ON DELETE CASCADE ON UPDATE CASCADE
 ) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
+CREATE TABLE IF NOT EXISTS `phone_photo_albums` (
+    `id` INT NOT NULL AUTO_INCREMENT,
+    `phone_number` VARCHAR(15) NOT NULL,
+
+    `title` VARCHAR(100) NOT NULL,
+
+    PRIMARY KEY (`id`),
+    FOREIGN KEY (`phone_number`) REFERENCES `phone_phones`(`phone_number`) ON DELETE CASCADE ON UPDATE CASCADE
+) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
 CREATE TABLE IF NOT EXISTS `phone_photos` (
+    `id` INT NOT NULL AUTO_INCREMENT,
     `phone_number` VARCHAR(15) NOT NULL,
 
     `link` VARCHAR(500) NOT NULL,
     `is_video` BOOLEAN DEFAULT FALSE,
     `size` FLOAT NOT NULL DEFAULT 0,
+    `metadata` VARCHAR(20) DEFAULT NULL,
+
+    `is_favourite` BOOLEAN DEFAULT FALSE,
 
     `timestamp` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
-    PRIMARY KEY (`phone_number`, `link`),
+    PRIMARY KEY (`id`),
     FOREIGN KEY (`phone_number`) REFERENCES `phone_phones`(`phone_number`) ON DELETE CASCADE ON UPDATE CASCADE
+) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS `phone_photo_album_photos` (
+    `album_id` INT NOT NULL,
+    `photo_id` INT NOT NULL,
+
+    PRIMARY KEY (`album_id`, `photo_id`),
+    FOREIGN KEY (`album_id`) REFERENCES `phone_photo_albums`(`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (`photo_id`) REFERENCES `phone_photos`(`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 CREATE TABLE IF NOT EXISTS `phone_notes` (
@@ -138,7 +161,7 @@ CREATE TABLE IF NOT EXISTS `phone_twitter_tweets` (
     `attachments` TEXT, -- json array of attachments
 
     `reply_to` VARCHAR(50) DEFAULT NULL, -- the tweet / reply this tweet / reply was a reply to
-    
+
     `like_count` INT(11) DEFAULT 0,
     `reply_count` INT(11) DEFAULT 0,
     `retweet_count` INT(11) DEFAULT 0,
@@ -195,13 +218,13 @@ CREATE TABLE IF NOT EXISTS `phone_twitter_messages` (
     FOREIGN KEY (`sender`) REFERENCES `phone_twitter_accounts`(`username`) ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY (`recipient`) REFERENCES `phone_twitter_accounts`(`username`) ON DELETE CASCADE ON UPDATE CASCADE
 ) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
- 
+
 CREATE TABLE IF NOT EXISTS `phone_twitter_notifications` (
     `id` VARCHAR(10) NOT NULL,
     `username` VARCHAR(20) NOT NULL, -- the person who received the notification, matches to `username` in phone_twitter_accounts
     `from` VARCHAR(20) NOT NULL, -- the person who sent the notification, matches to `username` in phone_twitter_accounts
 
-    `type` VARCHAR(20) NOT NULL, -- like, retweet, reply, follow 
+    `type` VARCHAR(20) NOT NULL, -- like, retweet, reply, follow
     `tweet_id` VARCHAR(50) DEFAULT NULL, -- the tweet / reply this notification is about
 
     `timestamp` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -227,13 +250,13 @@ CREATE TABLE IF NOT EXISTS `phone_phone_contacts` (
 
 CREATE TABLE IF NOT EXISTS `phone_phone_calls` (
     `id` VARCHAR(10) NOT NULL,
-    
+
     `caller` VARCHAR(15) NOT NULL, -- the phone number of the person who called
     `callee` VARCHAR(15) NOT NULL, -- the phone number of the person who was called
 
     `duration` INT(11) NOT NULL DEFAULT 0,
     `answered` BOOLEAN DEFAULT FALSE, -- whether the call was answered or not
-    
+
     `hide_caller_id` BOOLEAN DEFAULT FALSE, -- whether the caller's phone number was hidden or not
 
     `timestamp` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -244,7 +267,7 @@ CREATE TABLE IF NOT EXISTS `phone_phone_calls` (
 CREATE TABLE IF NOT EXISTS `phone_phone_blocked_numbers` (
     `phone_number` VARCHAR(15) NOT NULL, -- the phone number of the person who blocked the number
     `blocked_number` VARCHAR(15) NOT NULL, -- the phone number that was blocked
-    
+
     PRIMARY KEY (`phone_number`, `blocked_number`)
 ) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
@@ -253,7 +276,7 @@ CREATE TABLE IF NOT EXISTS `phone_phone_voicemail` (
 
     `caller` VARCHAR(15) NOT NULL,
     `callee` VARCHAR(15) NOT NULL,
-    
+
     `url` VARCHAR(500) NOT NULL,
     `duration` INT NOT NULL,
     `hide_caller_id` BOOLEAN DEFAULT FALSE,
@@ -265,7 +288,7 @@ CREATE TABLE IF NOT EXISTS `phone_phone_voicemail` (
 -- INSTAGRAM
 CREATE TABLE IF NOT EXISTS `phone_instagram_accounts` (
     `display_name` VARCHAR(30) NOT NULL,
-    
+
     `username` VARCHAR(20) NOT NULL,
     `password` VARCHAR(100) NOT NULL,
 
@@ -291,7 +314,7 @@ CREATE TABLE IF NOT EXISTS `phone_instagram_accounts` (
 CREATE TABLE IF NOT EXISTS `phone_instagram_loggedin` (
     `phone_number` VARCHAR(15) NOT NULL,
     `username` VARCHAR(20) NOT NULL,
-    
+
     PRIMARY KEY (`phone_number`),
     FOREIGN KEY (`username`) REFERENCES `phone_instagram_accounts`(`username`) ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY (`phone_number`) REFERENCES `phone_phones`(`phone_number`) ON DELETE CASCADE ON UPDATE CASCADE
@@ -318,7 +341,7 @@ CREATE TABLE IF NOT EXISTS `phone_instagram_posts` (
 
     `username` VARCHAR(20) NOT NULL, -- the person who posted, matches to `username` in phone_instagram_accounts
 
-    `timestamp` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP, 
+    `timestamp` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
     PRIMARY KEY (`id`),
     FOREIGN KEY (`username`) REFERENCES `phone_instagram_accounts`(`username`) ON DELETE CASCADE ON UPDATE CASCADE
@@ -331,9 +354,9 @@ CREATE TABLE IF NOT EXISTS `phone_instagram_comments` (
     `username` VARCHAR(20) NOT NULL, -- the person who commented, matches to `username` in phone_instagram_accounts
     `comment` VARCHAR(500) NOT NULL DEFAULT "",
     `like_count` INT(11) NOT NULL DEFAULT 0,
-    
+
     `timestamp` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    
+
     PRIMARY KEY (`id`),
     FOREIGN KEY (`post_id`) REFERENCES `phone_instagram_posts`(`id`) ON DELETE CASCADE,
     FOREIGN KEY (`username`) REFERENCES `phone_instagram_accounts`(`username`) ON DELETE CASCADE ON UPDATE CASCADE
@@ -343,7 +366,7 @@ CREATE TABLE IF NOT EXISTS `phone_instagram_likes` (
     `id` VARCHAR(10) NOT NULL, -- the post / comment this like was on, matches to `id` in phone_instagram_posts / phone_instagram_comments
     `username` VARCHAR(20) NOT NULL, -- the person who liked, matches to `username` in phone_instagram_accounts
     `is_comment` BOOLEAN NOT NULL DEFAULT FALSE, -- whether this like was on a comment or a post
-    
+
     PRIMARY KEY (`id`, `username`),
     FOREIGN KEY (`username`) REFERENCES `phone_instagram_accounts`(`username`) ON DELETE CASCADE ON UPDATE CASCADE
 ) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
@@ -366,10 +389,10 @@ CREATE TABLE IF NOT EXISTS `phone_instagram_messages` (
 
 CREATE TABLE IF NOT EXISTS `phone_instagram_notifications` (
     `id` VARCHAR(10) NOT NULL,
-    `username` VARCHAR(20) NOT NULL, 
-    `from` VARCHAR(20) NOT NULL, 
+    `username` VARCHAR(20) NOT NULL,
+    `from` VARCHAR(20) NOT NULL,
 
-    `type` VARCHAR(20) NOT NULL, -- like, comment, follow 
+    `type` VARCHAR(20) NOT NULL, -- like, comment, follow
     `post_id` VARCHAR(50) DEFAULT NULL, -- the post / comment this notification is about
 
     `timestamp` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -381,7 +404,7 @@ CREATE TABLE IF NOT EXISTS `phone_instagram_notifications` (
 
 CREATE TABLE IF NOT EXISTS `phone_instagram_stories` (
     `id` VARCHAR(10) NOT NULL,
-    `username` VARCHAR(20) NOT NULL, 
+    `username` VARCHAR(20) NOT NULL,
     `image` VARCHAR(500) NOT NULL,
 
     `timestamp` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -447,7 +470,7 @@ CREATE TABLE IF NOT EXISTS `phone_tinder_accounts` (
 CREATE TABLE IF NOT EXISTS `phone_tinder_swipes` (
     `swiper` VARCHAR(15) NOT NULL, -- the phone number of the person who swiped
     `swipee` VARCHAR(15) NOT NULL, -- the phone number of the person who was swiped on
-    
+
     `liked` BOOLEAN NOT NULL DEFAULT FALSE, -- whether the swiper liked the swipee or not
 
     PRIMARY KEY (`swiper`, `swipee`),
@@ -469,7 +492,7 @@ CREATE TABLE IF NOT EXISTS `phone_tinder_matches` (
 
 CREATE TABLE IF NOT EXISTS `phone_tinder_messages` (
     `id` VARCHAR(10) NOT NULL, -- the message id
-    
+
     `sender` VARCHAR(15) NOT NULL, -- the phone number of the person who sent the message
     `recipient` VARCHAR(15) NOT NULL, -- the phone number of the person who received the message
 
@@ -553,7 +576,7 @@ CREATE TABLE IF NOT EXISTS `phone_darkchat_messages` (
 CREATE TABLE IF NOT EXISTS `phone_wallet_transactions` (
     `id` INT(11) NOT NULL AUTO_INCREMENT,
     `phone_number` VARCHAR(15) NOT NULL,
-    
+
     `amount` INT(11) NOT NULL,
     `company` VARCHAR(50) NOT NULL,
     `logo` VARCHAR(200) DEFAULT NULL,
@@ -688,7 +711,7 @@ CREATE TABLE IF NOT EXISTS `phone_services_messages` (
 
     `x_pos` INT(11) DEFAULT NULL,
     `y_pos` INT(11) DEFAULT NULL,
-    
+
     `timestamp` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
     PRIMARY KEY (`id`),
@@ -752,7 +775,7 @@ CREATE TABLE IF NOT EXISTS `phone_tiktok_accounts` (
 
     `phone_number` VARCHAR(15) NOT NULL,
     `date_joined` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    
+
     PRIMARY KEY (`username`),
     FOREIGN KEY (`phone_number`) REFERENCES `phone_phones`(`phone_number`) ON DELETE CASCADE ON UPDATE CASCADE
 ) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
@@ -895,7 +918,7 @@ CREATE TABLE IF NOT EXISTS `phone_tiktok_pinned_videos` (
 CREATE TABLE IF NOT EXISTS `phone_tiktok_notifications` (
     `id` INT NOT NULL AUTO_INCREMENT,
     `username` VARCHAR(20) NOT NULL,
-    
+
     `from` VARCHAR(20) NOT NULL,
     `type` VARCHAR(20) NOT NULL, -- like, comment, follow, save, reply or like_comment
     `video_id` VARCHAR(10) DEFAULT NULL,
@@ -924,11 +947,11 @@ CREATE TABLE IF NOT EXISTS `phone_tiktok_unread_messages` (
 CREATE TABLE IF NOT EXISTS `phone_voice_memos_recordings` (
     `id` VARCHAR(10) NOT NULL,
     `phone_number` VARCHAR(15) NOT NULL,
-    
+
     `file_name` VARCHAR(50) NOT NULL,
     `file_url` VARCHAR(500) NOT NULL,
     `file_length` INT(11) NOT NULL,
-    
+
     `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
     PRIMARY KEY (`id`),
@@ -1296,7 +1319,7 @@ AFTER INSERT ON phone_tiktok_messages
 FOR EACH ROW
 BEGIN
     DECLARE modified_content TEXT CHARACTER SET utf8mb4;
-    
+
     IF NEW.content LIKE '<!SHARED-VIDEO-URL%' THEN
         SET modified_content = 'Shared a video';
     ELSEIF LENGTH(NEW.content) > 50 THEN
@@ -1304,7 +1327,7 @@ BEGIN
     ELSE
         SET modified_content = NEW.content;
     END IF;
-    
+
     UPDATE phone_tiktok_channels
     SET last_message = modified_content
     WHERE id = NEW.channel_id;

@@ -140,7 +140,7 @@
             "description": "Anonymous chat rooms",
             "removable": true,
             "size": 98500,
-            "images": ["https://cdn.discordapp.com/attachments/1036595856989753345/1036596139094450267/unknown.png", "https://cdn.discordapp.com/attachments/1036595856989753345/1036596239854211122/unknown.png"]
+            "images": ["1.png", "2.png"]
         },
         "Twitter": {
             "name": "Birdy",
@@ -148,7 +148,7 @@
             "description": "Live news, sports and chat",
             "removable": true,
             "size": 256700,
-            "images": ["https://cdn.discordapp.com/attachments/1036595856989753345/1036621576931643493/unknown.png", "https://cdn.discordapp.com/attachments/1036595856989753345/1036621630090268723/unknown.png", "https://cdn.discordapp.com/attachments/1036595856989753345/1036623616911081533/unknown.png", "https://cdn.discordapp.com/attachments/1036595856989753345/1036621683005587476/unknown.png"]
+            "images": ["1.png", "2.png", "3.png", "4.png"]
         },
         "Crypto": {
             "name": "Crypto",
@@ -177,13 +177,7 @@
             "description": "Share photos and videos",
             "removable": true,
             "size": 223000,
-            "images": [
-                "https://cdn.discordapp.com/attachments/1036595856989753345/1036620033331306511/unknown.png",
-                "https://cdn.discordapp.com/attachments/1036595856989753345/1036619658113069106/unknown.png",
-                "https://cdn.discordapp.com/attachments/1036595856989753345/1036620230480363550/unknown.png",
-                "https://cdn.discordapp.com/attachments/1036595856989753345/1036620425066713148/unknown.png",
-                "https://cdn.discordapp.com/attachments/1036595856989753345/1036621073367707810/unknown.png"
-            ]
+            "images": ["1.png", "2.png", "3.png", "4.png", "5.png"]
         },
         "Tinder": {
             "name": "Spark",
@@ -191,13 +185,7 @@
             "description": "Meet new people",
             "removable": true,
             "size": 187500,
-            "images": [
-                "https://cdn.discordapp.com/attachments/1036595856989753345/1036625368976740452/unknown.png",
-                "https://cdn.discordapp.com/attachments/1036595856989753345/1036625419090284584/unknown.png",
-                "https://cdn.discordapp.com/attachments/1036595856989753345/1036625234436042802/unknown.png",
-                "https://cdn.discordapp.com/attachments/1036595856989753345/1036625566171930754/unknown.png",
-                "https://cdn.discordapp.com/attachments/1036595856989753345/1036625791842275368/unknown.png"
-            ]
+            "images": ["1.png", "2.png", "3.png", "4.png", "5.png"]
         },
         "TikTok": {
             "name": "Trendy",

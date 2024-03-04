@@ -1,6 +1,10 @@
 Config = {}
 Config.Debug = false -- Set to true to enable debug mode
 
+Config.DatabaseChecker = {}
+Config.DatabaseChecker.Enabled = true -- if true, the phone will check the database for any issues and fix them if possible
+Config.DatabaseChecker.AutoFix = true
+
 --[[ FRAMEWORK OPTIONS ]] --
 Config.Framework = "auto"
 --[[
@@ -446,11 +450,11 @@ Config.TikTok.TTS = {
 Config.ICEServers = false -- ICE Servers for WebRTC (ig live, facetim). If you don't know what you're doing, leave this as false.
 
 Config.Crypto = {}
-Config.Crypto.Enabled = false
+Config.Crypto.Enabled = true
 Config.Crypto.Coins = {"bitcoin","ethereum","tether","binancecoin","usd-coin","ripple","binance-usd","cardano","dogecoin","solana","shiba-inu","polkadot","litecoin","bitcoin-cash"}
 Config.Crypto.Currency = "usd" -- currency to use for crypto prices. https://api.coingecko.com/api/v3/simple/supported_vs_currencies
 Config.Crypto.Refresh = 5 * 60 * 1000 -- how often should the crypto prices be refreshed (client cache)? (Default 5 minutes)
-Config.Crypto.QBit = false -- support QBit? (requires qb-crypto & qb-core)
+Config.Crypto.QBit = true -- support QBit? (requires qb-crypto & qb-core)
 
 Config.KeyBinds = {
     -- Find keybinds here: https://docs.fivem.net/docs/game-references/input-mapper-parameter-ids/keyboard/
