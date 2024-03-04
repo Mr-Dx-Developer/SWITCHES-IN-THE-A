@@ -1,0 +1,2194 @@
+:root {
+  --color: #ff66ff;
+}
+
+@import url('https://kit-pro.fontawesome.com/releases/v5.14.0/css/pro.min.css');
+
+@font-face {
+  font-family: BebasNeueBold;
+  src: url(BebasNeueBold.ttf);
+}
+
+@font-face {
+  font-family: Nakara;
+  src: url(NakaraRegular.ttf);
+}
+
+*{
+	user-select: none; /* supported by Chrome and Opera */
+   -webkit-user-select: none; /* Safari */
+   -khtml-user-select: none; /* Konqueror HTML */
+   -moz-user-select: none; /* Firefox */
+   -ms-user-select: none; /* Internet Explorer/Edge */
+}
+
+html {
+  overflow: hidden;
+  font-family: 'Open Sans', sans-serif;
+}
+
+body{
+	display: none;
+	color: #a8a8aa;
+}
+
+.infonotify-container {
+	width: 17%;
+	background-color: rgba(0, 0, 0, 0.70);
+	border-bottom: 3px solid var(--color);	
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	left: 10%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 9999999;
+	border-radius: 10px;
+	display: none;
+}
+
+.infonotifytext {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 2px;
+	padding-right: 2px;	
+	vertical-align: middle;
+	text-align: center;
+	font-size: 25px;
+	font-family: BebasNeueBold;
+	color: #ffffff;
+}
+
+#infobindcolor {
+	color: var(--color);
+}
+
+.bumpercarsbuy-container {
+	width: 30%;
+	height: 50%;
+	background-color: rgba(1, 159, 232, 1.0);
+	border-bottom: 5px solid #ffde00;
+	border-radius: 10px;	
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 9999999;
+	display: none;
+}
+
+.closebumpercarsbuy {
+	position: absolute;
+	margin: 0;
+	top: 5%;
+	left: 95%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 9999999;
+}
+
+.logobumpercars img {
+	position: absolute;
+	max-width:100%;
+	max-height:100%;
+	top: 16%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 9999999;
+}
+
+.bumpercarstimelengthtextmain {
+	position: absolute;
+	margin: 0;
+	text-decoration: none;
+	text-align: center;
+	top: 35%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);	
+	font-size: 22px;
+	color: #ffde00;
+	text-align:center;
+	font-family: Nakara;
+}
+
+.bumpercarstimelengthtext {
+	position: absolute;
+	margin: 0;
+	text-decoration: none;
+	text-align: center;
+	top: 51%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);	
+	font-size: 22px;
+	color: #ffde00;
+	text-align:center;
+	font-family: Nakara;
+}
+
+#bumpercarstimeminutedata {
+	font-size: 22px;
+	color: #ffffff;
+	text-align:center;
+	font-family: Nakara;
+}
+
+.bumpercarspricetext {
+	position: absolute;
+	margin: 0;
+	text-decoration: none;
+	text-align: center;
+	top: 66%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);	
+	font-size: 22px;
+	color: #ffde00;
+	text-align:center;
+	font-family: Nakara;
+}
+
+#bumpercarspricedata {
+	font-size: 22px;
+	color: #ffffff;
+	text-align:center;
+	font-family: Nakara;
+}
+
+
+.bumpercarstimeslider {
+	-webkit-appearance: none;
+	appearance: none;	
+	position: absolute;
+	margin: 0;
+	background-color: rgba(255, 255, 255, 0.0);
+	color: #ffffff;
+	font-size: 35px;
+	text-decoration: none;
+	text-align: center;
+	top: 43%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 9999999;
+	width: 70%;
+	height: 40%;
+	border-radius: 5px;
+	font-family: Nakara;
+	outline: none;
+}
+
+.bumpercarstimesliderline {
+	-webkit-appearance: none;
+	appearance: none;	
+	position: absolute;
+	margin: 0;
+	background-color: rgba(0, 0, 0, 1.0);
+	color: #ffffff;
+	font-size: 35px;
+	text-decoration: none;
+	text-align: center;
+	top: 43%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 9999999;
+	width: 70%;
+	height: 1%;
+	border-radius: 5px;
+	font-family: Nakara;
+	outline: none;
+}
+
+.bumpercarstimeslider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%; 
+  cursor: pointer;
+  background-color: #ffffff;
+}
+
+.bumpercarstimeslider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: #ffffff;
+}
+
+input[type=range]:focus {
+  outline: none;
+}
+
+.bumpercarsbuybutton {
+	position: absolute;
+	margin: 0;
+	background-color: rgba(0, 0, 0, 1);
+	border-bottom: 5px solid #ffde00;
+	color: #ffffff;
+	font-size: 25px;
+	padding-top: 12px;
+	padding-bottom: 12px;
+	padding-left: 5px;
+	padding-right: 5px;
+	text-decoration: none;
+	text-align: center;
+	top: 85%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 99999999;
+	width: 60%;
+	border-radius: 10px;
+	font-family: Nakara;
+}
+
+.bumpercarsbuybutton:hover {
+	background: #ffde00;
+	text-decoration: none;	
+}
+
+.bumpercarmain-container {
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.0);
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 9999999;
+	display: none;
+}
+
+.bumpercartimetext {
+	position: absolute;
+	margin: 0;
+	text-decoration: none;
+	text-align: center;
+	top: 95%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);	
+	font-size: 22px;
+	color: #ffffff;
+	text-align:center;
+	font-family: BebasNeueBold;
+	display: none;
+}
+
+#bumpercartimetextdata {
+	font-size: 22px;
+	color: var(--color);
+	text-align:center;
+	font-family: BebasNeueBold;
+}
+
+.bumpercarleavetext {
+	position: absolute;
+	margin: 0;
+	text-decoration: none;
+	text-align: center;
+	top: 98%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);	
+	font-size: 22px;
+	color: #ffffff;
+	text-align:center;
+	font-family: BebasNeueBold;
+}
+
+#bumpercarleavetextkey {
+	font-size: 22px;
+	color: var(--color);
+	text-align:center;
+	font-family: BebasNeueBold;
+}
+
+.ferrismain-container {
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.0);
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 9999999;
+	display: none;
+}
+
+.ferrisanimtext {
+	position: absolute;
+	margin: 0;
+	text-decoration: none;
+	text-align: center;
+	top: 95%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);	
+	font-size: 22px;
+	color: #ffffff;
+	text-align:center;
+	font-family: BebasNeueBold;
+}
+
+#ferrisanimtextkey {
+	font-size: 22px;
+	color: var(--color);
+	text-align:center;
+	font-family: BebasNeueBold;
+}
+
+.ferrisleavetext {
+	position: absolute;
+	margin: 0;
+	text-decoration: none;
+	text-align: center;
+	top: 98%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);	
+	font-size: 22px;
+	color: #ffffff;
+	text-align:center;
+	font-family: BebasNeueBold;
+}
+
+#ferrisleavetextkey {
+	font-size: 22px;
+	color: var(--color);
+	text-align:center;
+	font-family: BebasNeueBold;
+}
+
+.shooter-container {
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.0);
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 9999999;
+	display: none;
+}
+
+.shootershottext {
+	position: absolute;
+	margin: 0;
+	text-decoration: none;
+	text-align: center;
+	top: 5%;
+	left: 40%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);	
+	font-size: 25px;
+	color: var(--color);
+	text-align:center;
+	font-family: BebasNeueBold;
+}
+
+#shootershottextdata {
+	font-size: 25px;
+	color: #ffffff;
+	text-align:center;
+	font-family: BebasNeueBold;
+}
+
+.shootermissestext {
+	position: absolute;
+	margin: 0;
+	text-decoration: none;
+	text-align: center;
+	top: 5%;
+	left: 60%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);	
+	font-size: 25px;
+	color: var(--color);
+	text-align:center;
+	font-family: BebasNeueBold;
+}
+
+#shootermissestextdata {
+	font-size: 25px;
+	color: #ffffff;
+	text-align:center;
+	font-family: BebasNeueBold;
+}
+
+.shootertimetext {
+	position: absolute;
+	margin: 0;
+	text-decoration: none;
+	text-align: center;
+	top: 5%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);	
+	font-size: 25px;
+	color: #ffffff;
+	text-align:center;
+	font-family: BebasNeueBold;
+}
+
+#shootertimetextdata {
+	font-size: 25px;
+	color: var(--color);
+	text-align:center;
+	font-family: BebasNeueBold;
+}
+
+.shootertexthit {
+	position: absolute;
+	margin: 0;
+	text-decoration: none;
+	text-align: center;
+	top: 10%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);	
+	font-size: 25px;
+	color: #ffffff;
+	text-align:center;
+	font-family: BebasNeueBold;
+	display: none;
+}
+
+.shooterend-container {
+	width: 20%;
+	height: 20%;
+	background-color: rgba(0, 0, 0, 0.70);
+	border-bottom: 3px solid var(--color);
+	border-radius: 10px;	
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 9999999;
+	display: none;
+}
+
+.shooterendmaintext {
+	position: absolute;
+	margin: 0;
+	text-decoration: none;
+	text-align: center;
+	top: 20%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);	
+	font-size: 40px;
+	color: #ffffff;
+	text-align:center;
+	font-family: BebasNeueBold;
+}
+
+.shooterendtext {
+	position: absolute;
+	margin: 0;
+	text-decoration: none;
+	text-align: center;
+	top: 45%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);	
+	font-size: 35px;
+	color: var(--color);
+	text-align:center;
+	font-family: BebasNeueBold;
+}
+
+
+.shooterendshootstext {
+	position: absolute;
+	margin: 0;
+	text-decoration: none;
+	text-align: center;
+	top: 70%;
+	left: 30%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);	
+	font-size: 30px;
+	color: var(--color);
+	text-align:center;
+	font-family: BebasNeueBold;
+}
+
+#shooterendshootstextdata {
+	font-size: 30px;
+	color: #ffffff;
+	text-align:center;
+	font-family: BebasNeueBold;
+}
+
+.shooterendmissestext {
+	position: absolute;
+	margin: 0;
+	text-decoration: none;
+	text-align: center;
+	top: 70%;
+	left: 70%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);	
+	font-size: 30px;
+	color: var(--color);
+	text-align:center;
+	font-family: BebasNeueBold;
+}
+
+#shooterendmissestextdata {
+	font-size: 30px;
+	color: #ffffff;
+	text-align:center;
+	font-family: BebasNeueBold;
+}
+
+.parkbuy-container {
+	width: 30%;
+	height: 30%;
+	background-color: rgba(0, 0, 0, 0.70);
+	border-bottom: 3px solid var(--color);
+	border-radius: 10px;	
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 9999999;
+	display: none;
+}
+
+.headerparkbuy {
+	position: absolute;
+	width:100%;
+	height: 2%;
+	color: #ffffff;
+	display: flex;
+	background-color: rgba(0, 0, 0, 1);
+	border-bottom: 3px solid var(--color);  
+	flex-direction: row;
+	flex-wrap: wrap;
+	padding-bottom:5%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);  
+	top: 6.5%;
+	left: 50%;	
+}
+
+.headerparkbuytext {
+	position: absolute;
+	margin: 0;
+	font-size: 25px;
+	color: #ffffff;
+	text-align: center;
+	top: 50%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 9999999;
+}
+
+.closeparkbuy {
+	position: absolute;
+	margin: 0;
+	top: 50%;
+	left: 95%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 9999999;
+}
+
+.parkbuytext {
+	position: absolute;
+	margin: 0;
+	text-decoration: none;
+	text-align: center;
+	top: 25%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);	
+	font-size: 40px;
+	color: #ffffff;
+	text-align:center;
+	font-family: BebasNeueBold;
+}
+
+.parkbuytextprice {
+	position: absolute;
+	margin: 0;
+	text-decoration: none;
+	text-align: center;
+	top: 50%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);	
+	font-size: 60px;
+	color: var(--color);
+	text-align:center;
+	font-family: BebasNeueBold;
+}
+
+#gymbuypricedata {
+	color: #ffffff;
+}
+
+.buttonparkbuy {
+	position: absolute;
+	margin: 0;
+	background-color: rgba(0, 0, 0, 1);
+	border-bottom: 3px solid var(--color);
+	color: #ffffff;
+	font-size: 40px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 5px;
+	padding-right: 5px;
+	text-decoration: none;
+	text-align: center;
+	top: 80%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 99999999;
+	width: 45%;
+	border-radius: 8px;
+}
+
+.buttonparkbuy:hover {
+	background: var(--color);
+	text-decoration: none;	
+	color: #ffffff;
+}
+
+.parkmanagmentmain-container {
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.0);
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 9999999;
+	display: none;
+}
+
+.parkmanagmentmaincontainer {
+	position: absolute;
+	margin: 0;
+	background-color: rgba(0, 0, 0, 0.8);
+	border-top: 3px solid var(--color);
+	color: #ffffff;
+	font-size: 35px;
+	text-decoration: none;
+	text-align: center;
+	top: 90%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 9999999;
+	width: 100%;
+	height: 20%;
+	border-top-left-radius: 40px;
+	border-top-right-radius: 40px;
+	font-family: BebasNeueBold;
+}
+
+.parkmanagmentownershiptext {
+	position: absolute;
+	margin: 0;
+	text-decoration: none;
+	text-align: center;
+	top: 20%;
+	left: 80%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);	
+	font-size: 35px;
+	color: var(--color);
+	text-align:center;
+	font-family: BebasNeueBold;
+}
+
+.parkmanagmentownershiptextinfo {
+	position: absolute;
+	margin: 0;
+	text-decoration: none;
+	text-align: center;
+	top: 45%;
+	left: 80%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);	
+	font-size: 30px;
+	color: #ffffff;
+	text-align:center;
+	font-family: BebasNeueBold;
+}
+
+.parkmanagmentownershipsellbutton {
+	position: absolute;
+	margin: 0;
+	background-color: rgba(0, 0, 0, 1);
+	border-bottom: 3px solid var(--color);
+	color: #ffffff;
+	font-size: 30px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 5px;
+	padding-right: 5px;
+	text-decoration: none;
+	text-align: center;
+	top: 75%;
+	left: 73%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 99999999;
+	width: 10%;
+	border-radius: 5px;
+}
+
+.parkmanagmentownershipsellbutton:hover {
+	background: var(--color);
+	text-decoration: none;	
+}
+
+.parkmanagmentownershipstransferbutton {
+	position: absolute;
+	margin: 0;
+	background-color: rgba(0, 0, 0, 1);
+	border-bottom: 3px solid var(--color);
+	color: #ffffff;
+	font-size: 30px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 5px;
+	padding-right: 5px;
+	text-decoration: none;
+	text-align: center;
+	top: 75%;
+	left: 87%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 99999999;
+	width: 10%;
+	border-radius: 5px;
+}
+
+.parkmanagmentownershipstransferbutton:hover {
+	background: var(--color);
+	text-decoration: none;	
+}
+
+.parkmanagmentsettingstext {
+	position: absolute;
+	margin: 0;
+	text-decoration: none;
+	text-align: center;
+	top: 20%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);	
+	font-size: 35px;
+	color: var(--color);
+	text-align:center;
+	font-family: BebasNeueBold;
+}
+
+.parkmanagmentsettingstextinfo {
+	position: absolute;
+	margin: 0;
+	text-decoration: none;
+	text-align: center;
+	top: 45%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);	
+	font-size: 30px;
+	color: #ffffff;
+	text-align:center;
+	font-family: BebasNeueBold;
+}
+
+.parkmanagmentsettingsbutton {
+	position: absolute;
+	margin: 0;
+	background-color: rgba(0, 0, 0, 1);
+	border-bottom: 3px solid var(--color);
+	color: #ffffff;
+	font-size: 30px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 5px;
+	padding-right: 5px;
+	text-decoration: none;
+	text-align: center;
+	top: 75%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 99999999;
+	width: 10%;
+	border-radius: 5px;
+}
+
+.parkmanagmentsettingsbutton:hover {
+	background: var(--color);
+	text-decoration: none;	
+}
+
+.parkmanagmentwithdrawtext {
+	position: absolute;
+	margin: 0;
+	text-decoration: none;
+	text-align: center;
+	top: 20%;
+	left: 20%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);	
+	font-size: 35px;
+	color: var(--color);
+	text-align:center;
+	font-family: BebasNeueBold;
+}
+
+.parkmanagmentwithdrawmoneytext {
+	position: absolute;
+	margin: 0;
+	text-decoration: none;
+	text-align: center;
+	top: 45%;
+	left: 20%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);	
+	font-size: 40px;
+	color: #ffffff;
+	text-align:center;
+	font-family: BebasNeueBold;
+}
+
+
+.parkmanagmentwithdrawbutton {
+	position: absolute;
+	margin: 0;
+	background-color: rgba(0, 0, 0, 1);
+	border-bottom: 3px solid var(--color);
+	color: #ffffff;
+	font-size: 30px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 5px;
+	padding-right: 5px;
+	text-decoration: none;
+	text-align: center;
+	top: 75%;
+	left: 20%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 99999999;
+	width: 10%;
+	border-radius: 5px;
+}
+
+.parkmanagmentwithdrawbutton:hover {
+	background: var(--color);
+	text-decoration: none;	
+}
+
+#showownerparkmain {
+	display: none;
+}
+
+#showsellpark {
+	display: none;
+}
+
+#showtransferpark {
+	display: none;
+}
+
+.parkmanagment-container {
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.0);
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 9999999;
+	display: none;
+}
+
+#parkmanagmentattraction1 {
+	position: absolute;
+	margin: 0;
+	background-color: rgba(0, 0, 0, 0.8);
+	border-bottom: 3px solid var(--color);
+	color: #ffffff;
+	font-size: 35px;
+	text-decoration: none;
+	text-align: center;
+	top: 10%;
+	left: 10%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 9999999;
+	width: 12%;
+	height: 10%;
+	border-radius: 5px;
+	font-family: BebasNeueBold;
+}
+
+#parkattractionconnector1 {
+	width: 1%;
+	height: 1.0%;
+	background-color: rgba(255, 255, 255, 1.0);
+	margin: 0;
+	position: absolute;
+	top: 44%;
+	left: 38%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 9999999;
+	border-radius: 5px;
+}
+
+#parkmanagmentattraction2 {
+	position: absolute;
+	margin: 0;
+	background-color: rgba(0, 0, 0, 0.8);
+	border-bottom: 3px solid var(--color);
+	color: #ffffff;
+	font-size: 35px;
+	text-decoration: none;
+	text-align: center;
+	top: 10%;
+	left: 30%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 9999999;
+	width: 12%;
+	height: 10%;
+	border-radius: 5px;
+	font-family: BebasNeueBold;
+}
+
+#parkattractionconnector2 {
+	width: 1%;
+	height: 1%;
+	background-color: rgba(255, 255, 255, 1.0);
+	margin: 0;
+	position: absolute;
+	top: 37%;
+	left: 37%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 9999999;
+	border-radius: 5px;
+}
+
+#parkmanagmentattraction3 {
+	position: absolute;
+	margin: 0;
+	background-color: rgba(0, 0, 0, 0.8);
+	border-bottom: 3px solid var(--color);
+	color: #ffffff;
+	font-size: 35px;
+	text-decoration: none;
+	text-align: center;
+	top: 10%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 9999999;
+	width: 12%;
+	height: 10%;
+	border-radius: 5px;
+	font-family: BebasNeueBold;
+}
+
+#parkattractionconnector3 {
+	width: 1%;
+	height: 1%;
+	background-color: rgba(255, 255, 255, 1.0);
+	margin: 0;
+	position: absolute;
+	top: 30.5%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 9999999;
+	border-radius: 5px;
+}
+
+#parkmanagmentattraction4 {
+	position: absolute;
+	margin: 0;
+	background-color: rgba(0, 0, 0, 0.8);
+	border-bottom: 3px solid var(--color);
+	color: #ffffff;
+	font-size: 35px;
+	text-decoration: none;
+	text-align: center;
+	top: 10%;
+	left: 70%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 9999999;
+	width: 12%;
+	height: 10%;
+	border-radius: 5px;
+	font-family: BebasNeueBold;
+}
+
+#parkattractionconnector4 {
+	width: 1%;
+	height: 1%;
+	background-color: rgba(255, 255, 255, 1.0);
+	margin: 0;
+	position: absolute;
+	top: 37%;
+	left: 43%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 9999999;
+	border-radius: 5px;
+}
+
+#parkmanagmentattraction5 {
+	position: absolute;
+	margin: 0;
+	background-color: rgba(0, 0, 0, 0.8);
+	border-bottom: 3px solid var(--color);
+	color: #ffffff;
+	font-size: 35px;
+	text-decoration: none;
+	text-align: center;
+	top: 10%;
+	left: 90%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 9999999;
+	width: 12%;
+	height: 10%;
+	border-radius: 5px;
+	font-family: BebasNeueBold;
+}
+
+#parkattractionconnector5 {
+	width: 1%;
+	height: 1%;
+	background-color: rgba(255, 255, 255, 1.0);
+	margin: 0;
+	position: absolute;
+	top: 38.5%;
+	left: 58%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 9999999;
+	border-radius: 5px;
+}
+
+#parkmanagmentattraction6 {
+	position: absolute;
+	margin: 0;
+	background-color: rgba(0, 0, 0, 0.8);
+	border-bottom: 3px solid var(--color);
+	color: #ffffff;
+	font-size: 35px;
+	text-decoration: none;
+	text-align: center;
+	top: 90%;
+	left: 10%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 9999999;
+	width: 12%;
+	height: 10%;
+	border-radius: 5px;
+	font-family: BebasNeueBold;
+}
+
+#parkattractionconnector6 {
+	width: 1%;
+	height: 1%;
+	background-color: rgba(255, 255, 255, 1.0);
+	margin: 0;
+	position: absolute;
+	top: 58%;
+	left: 37%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 9999999;
+	border-radius: 5px;
+}
+
+#parkmanagmentattraction7 {
+	position: absolute;
+	margin: 0;
+	background-color: rgba(0, 0, 0, 0.8);
+	border-bottom: 3px solid var(--color);
+	color: #ffffff;
+	font-size: 35px;
+	text-decoration: none;
+	text-align: center;
+	top: 90%;
+	left: 30%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 9999999;
+	width: 12%;
+	height: 10%;
+	border-radius: 5px;
+	font-family: BebasNeueBold;
+}
+
+#parkattractionconnector7 {
+	width: 1%;
+	height: 1%;
+	background-color: rgba(255, 255, 255, 1.0);
+	margin: 0;
+	position: absolute;
+	top: 60%;
+	left: 60%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 9999999;	
+	border-radius: 5px;
+}
+
+#parkmanagmentattraction8 {
+	position: absolute;
+	margin: 0;
+	background-color: rgba(0, 0, 0, 0.8);
+	border-bottom: 3px solid var(--color);
+	color: #ffffff;
+	font-size: 35px;
+	text-decoration: none;
+	text-align: center;
+	top: 90%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 9999999;
+	width: 12%;
+	height: 10%;
+	border-radius: 5px;
+	font-family: BebasNeueBold;
+}
+
+#parkattractionconnector8 {
+	width: 1%;
+	height: 1%;
+	background-color: rgba(255, 255, 255, 1.0);
+	margin: 0;
+	position: absolute;
+	top: 68%;
+	left: 49.8%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 9999999;
+	border-radius: 5px;
+}
+
+#parkmanagmentattraction9 {
+	position: absolute;
+	margin: 0;
+	background-color: rgba(0, 0, 0, 0.8);
+	border-bottom: 3px solid var(--color);
+	color: #ffffff;
+	font-size: 35px;
+	text-decoration: none;
+	text-align: center;
+	top: 90%;
+	left: 70%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 9999999;
+	width: 12%;
+	height: 10%;
+	border-radius: 5px;
+	font-family: BebasNeueBold;
+}
+
+#parkattractionconnector9 {
+	width: 1%;
+	height: 1%;
+	background-color: rgba(255, 255, 255, 1.0);
+	margin: 0;
+	position: absolute;
+	top: 47%;
+	left: 58%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 9999999;
+	border-radius: 5px;
+}
+
+#parkmanagmentattraction10 {
+	position: absolute;
+	margin: 0;
+	background-color: rgba(0, 0, 0, 0.8);
+	border-bottom: 3px solid var(--color);
+	color: #ffffff;
+	font-size: 35px;
+	text-decoration: none;
+	text-align: center;
+	top: 90%;
+	left: 90%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 9999999;
+	width: 12%;
+	height: 10%;
+	border-radius: 5px;
+	font-family: BebasNeueBold;
+}
+
+#parkattractionconnector10 {
+	width: 1%;
+	height: 1%;
+	background-color: rgba(255, 255, 255, 1.0);
+	margin: 0;
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 9999999;
+	border-radius: 5px;
+}
+
+.parkattractionname {
+	position: absolute;
+	margin: 0;
+	text-decoration: none;
+	text-align: center;
+	top: 25%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);	
+	font-size: 25px;
+	color: var(--color);
+	text-align:center;
+	font-family: BebasNeueBold;
+}
+
+.parkattractiontextclose {
+	position: absolute;
+	margin: 0;
+	text-decoration: none;
+	text-align: center;
+	top: 65%;
+	left: 15%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);	
+	font-size: 20px;
+	color: #ffffff;
+	text-align:center;
+	font-family: BebasNeueBold;
+}
+
+.parkattractiontextopen {
+	position: absolute;
+	margin: 0;
+	text-decoration: none;
+	text-align: center;
+	top: 65%;
+	left: 85%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);	
+	font-size: 20px;
+	color: #ffffff;
+	text-align:center;
+	font-family: BebasNeueBold;
+}
+
+
+input[type=number] {
+    -moz-appearance: textfield;
+	color: #ffffff;
+}
+
+input::placeholder { 
+	color: #ffffff;
+}
+
+.parkattractionopeninput {
+	display: inline-block;
+	width: 40%;
+	height: 32%;	
+	position: absolute;
+	margin: 0;
+	text-decoration: none;
+	text-align: center;
+	top: 65%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);	
+	text-align:center;
+}
+
+.parkattractionopeninput input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.parkattractionopeninputslider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 1);
+  border-bottom: 3px solid var(--color);    
+  border-radius: 5px;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.parkattractionopeninputslider:before {
+	position: absolute;
+	content: "";
+	width: 30%;
+	height: 70%;	
+	top: 50%;
+	left: 25%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);		
+	background-color: #ffffff;
+	border-radius: 5px;
+	-webkit-transition: .4s;
+	transition: .4s;
+}
+
+input:checked + .parkattractionopeninputslider:before {
+	top: 50%;
+	left: 75%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);	
+}
+
+connection {
+	border: 2px solid var(--color);
+	border-radius: 2px;
+	z-index: 9999999;
+}
+
+.attractionbuyticket-container {
+	width: 30%;
+	height: 50%;
+	background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+	border-radius: 10px;	
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 9999999;
+	display: none;
+}
+
+.closeattractionbuyticket {
+	position: absolute;
+	margin: 0;
+	top: 5%;
+	left: 95%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 9999999;
+}
+
+.logobuyticket img {
+	position: absolute;
+	max-width:100%;
+	max-height:100%;
+	top: 18%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 9999999;
+}
+
+.attractionbuyticketbutton {
+	position: absolute;
+	margin: 0;
+	background-color: rgba(255, 0, 195, 1.0);
+	border: 5px solid #000000;
+	color: #ffffff;
+	text-decoration: none;
+	text-align: center;
+	top: 80%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 9999999;
+	width: 85%;
+	height: 15%;
+	font-family: BebasNeueBold;
+	border-radius: 10px;
+}
+
+.attractionbuyticketbutton:hover {
+	background-color: rgba(0, 0, 0, 1.0);
+	border: 5px solid #ff00c4;
+	text-decoration: none;	
+}
+
+.attractionbuytickettext {
+	position: absolute;
+	margin: 0;
+	text-decoration: none;
+	text-align: center;
+	top: 50%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);	
+	font-size: 60px;
+	text-align:center;
+	font-family: BebasNeueBold;
+}
+
+.attractionbuytickettextpricemain {
+	position: absolute;
+	margin: 0;
+	text-decoration: none;
+	text-align: center;
+	top: 45%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);	
+	font-size: 60px;
+	text-align:center;
+	font-family: BebasNeueBold;
+	color: #ff00c4;
+}
+
+
+.attractionbuytickettextprice {
+	position: absolute;
+	margin: 0;
+	text-decoration: none;
+	text-align: center;
+	top: 60%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);	
+	font-size: 55px;
+	text-align:center;
+	font-family: BebasNeueBold;
+	color: #000000;
+}
+
+
+.logobuyticketbanks img {
+	position: absolute;
+	max-width:100%;
+	max-height:100%;
+	top: 90%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 9999999;
+}
+
+.iteminhand-container {
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.0);
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 999999;
+	display: none;
+}
+
+.iteminhandtextgive {
+	position: absolute;
+	margin: 0;
+	text-decoration: none;
+	text-align: center;
+	top: 95%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);	
+	font-size: 22px;
+	color: #ffffff;
+	text-align:center;
+	font-family: BebasNeueBold;
+}
+
+#iteminhandtextgivekey {
+	font-size: 22px;
+	color: var(--color);
+	text-align:center;
+	font-family: BebasNeueBold;
+}
+
+.iteminhandtextthrow {
+	position: absolute;
+	margin: 0;
+	text-decoration: none;
+	text-align: center;
+	top: 98%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);	
+	font-size: 22px;
+	color: #ffffff;
+	text-align:center;
+	font-family: BebasNeueBold;
+}
+
+#iteminhandtextthrowkey {
+	font-size: 22px;
+	color: var(--color);
+	text-align:center;
+	font-family: BebasNeueBold;
+}
+
+.full-screen {
+  width: 100%;
+  height:100%;
+  display: flex;
+  align-items: center;
+}
+
+.attraction-container {
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.0);
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 9999999;
+	display: none;
+}
+
+.attractionanimtext {
+	position: absolute;
+	margin: 0;
+	text-decoration: none;
+	text-align: center;
+	top: 95%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);	
+	font-size: 22px;
+	color: #ffffff;
+	text-align:center;
+	font-family: BebasNeueBold;
+	display: none;
+}
+
+#attractionanimtextkey {
+	font-size: 22px;
+	color: var(--color);
+	text-align:center;
+	font-family: BebasNeueBold;
+}
+
+.attractionleavetext {
+	position: absolute;
+	margin: 0;
+	text-decoration: none;
+	text-align: center;
+	top: 98%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);	
+	font-size: 22px;
+	color: #ffffff;
+	text-align:center;
+	font-family: BebasNeueBold;
+}
+
+#attractionleavetextkey {
+	font-size: 22px;
+	color: var(--color);
+	text-align:center;
+	font-family: BebasNeueBold;
+}
+
+.parkattraction-container {
+	width: 25%;
+	height: 40%;
+	background-color: rgba(25, 25, 25, 1.0);
+	border-bottom: 3px solid var(--color);
+	margin: 0;
+	position: absolute;
+	top: 77%;
+	left: 85%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 999;
+	display: none;
+}
+
+.parkattractioncontroltext {
+	position: absolute;
+	margin: 0;
+	text-decoration: none;
+	text-align: center;
+	top: 8%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);	
+	font-size: 25px;
+	color: var(--color);
+	text-align:center;
+	font-family: Bahnschrift;
+	font-weight: bold;
+}
+
+.parkattractioncontrolmusictext {
+	position: absolute;
+	margin: 0;
+	text-decoration: none;
+	text-align: center;
+	top: 18%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);	
+	font-size: 18px;
+	color: var(--color);
+	text-align:center;
+	font-family: Bahnschrift;
+	font-weight: bold;
+}
+
+.parkattractioncontrolmusictextdata {
+	position: absolute;
+	margin: 0;
+	text-decoration: none;
+	text-align: center;
+	top: 24%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);	
+	font-size: 16px;
+	color: #ffffff;
+	text-align:center;
+	font-family: Bahnschrift;
+	font-weight: bold;
+}
+.parkattractioncontrolmusicvolumetext {
+	position: absolute;
+	margin: 0;
+	text-decoration: none;
+	text-align: center;
+	top: 30%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);	
+	font-size: 18px;
+	color: var(--color);
+	text-align:center;
+	font-family: Bahnschrift;
+	font-weight: bold;
+}
+
+.volumeslidercontainer {
+	position: absolute;
+	margin: 0;
+	background-color: rgba(43, 43, 43, 0.0);
+	color: #ffffff;
+	font-size: 35px;
+	text-decoration: none;
+	text-align: center;
+	top: 36%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 999999;
+	width: 70%;
+	height: 6%;
+	font-family: BebasNeueBold;
+}
+
+.volumeicon1 {
+	position: absolute;
+	margin: 0;
+	text-decoration: none;
+	text-align: center;
+	top: 50%;
+	left: 8%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);	
+	font-size: 18px;
+	color: #ffffff;
+	text-align:center;
+	font-family: BebasNeueBold;
+}
+
+.volumeicon2 {
+	position: absolute;
+	margin: 0;
+	text-decoration: none;
+	text-align: center;
+	top: 50%;
+	left: 92%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);	
+	font-size: 18px;
+	color: #ffffff;
+	text-align:center;
+	font-family: BebasNeueBold;
+}
+
+#pinkcolortv {
+	color: var(--color);
+}
+
+
+.buttonmusicplay {
+	position: absolute;
+	margin: 0;
+	background-color: rgba(43, 43, 43, 1.0);
+	border-bottom: 2px solid var(--color);
+	color: #ffffff;
+	font-size: 15px;
+	padding-top: 7px;
+	padding-bottom: 7px;
+	padding-left: 5px;
+	padding-right: 5px;
+	text-decoration: none;
+	text-align: center;
+	top: 46%;
+	left: 30%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 99999999;
+	width: 35%;
+	font-family: Bahnschrift;
+	font-weight: bold;	
+}
+
+.buttonmusicplay:hover {
+	background: var(--color);
+	text-decoration: none;	
+}
+
+.buttonmusicstop {
+	position: absolute;
+	margin: 0;
+	background-color: rgba(43, 43, 43, 1.0);
+	border-bottom: 2px solid var(--color);
+	color: #ffffff;
+	font-size: 15px;
+	padding-top: 7px;
+	padding-bottom: 7px;
+	padding-left: 5px;
+	padding-right: 5px;
+	text-decoration: none;
+	text-align: center;
+	top: 46%;
+	left: 70%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 99999999;
+	width: 35%;
+	font-family: Bahnschrift;
+	font-weight: bold;	
+}
+
+.buttonmusicstop:hover {
+	background: var(--color);
+	text-decoration: none;	
+}
+
+.volumeslider {
+	-webkit-appearance: none;
+	appearance: none;	
+	position: absolute;
+	margin: 0;
+	background-color: rgba(255, 255, 255, 0.0);
+	color: #ffffff;
+	font-size: 35px;
+	text-decoration: none;
+	text-align: center;
+	top: 50%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 999999;
+	width: 70%;
+	height: 40%;
+	font-family: BebasNeueBold;
+	outline: none;
+}
+
+.volumeslideline {
+	-webkit-appearance: none;
+	appearance: none;	
+	position: absolute;
+	margin: 0;
+	background-color: rgba(255, 255, 255, 1.0);
+	color: #ffffff;
+	font-size: 35px;
+	text-decoration: none;
+	text-align: center;
+	top: 50%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 999999;
+	width: 70%;
+	height: 8%;
+	font-family: BebasNeueBold;
+	outline: none;
+}
+
+.volumeslider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+  background-color: var(--color);
+}
+
+.volumeslider::-moz-range-thumb {
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+  background-color: var(--color);
+}
+
+input[type=range]:focus {
+  outline: none;
+}
+
+.parkattractioncontrolsmokecolortext {
+	position: absolute;
+	margin: 0;
+	text-decoration: none;
+	text-align: center;
+	top: 57%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);	
+	font-size: 18px;
+	color: var(--color);
+	text-align:center;
+	font-family: Bahnschrift;
+	font-weight: bold;
+}
+
+.buttonsmokestart {
+	position: absolute;
+	margin: 0;
+	background-color: rgba(43, 43, 43, 1.0);
+	border-bottom: 2px solid var(--color);
+	color: #ffffff;
+	font-size: 15px;
+	padding-top: 7px;
+	padding-bottom: 7px;
+	padding-left: 5px;
+	padding-right: 5px;
+	text-decoration: none;
+	text-align: center;
+	top: 76%;
+	left: 30%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 99999999;
+	width: 35%;
+	font-family: Bahnschrift;
+	font-weight: bold;	
+}
+
+.buttonsmokestart:hover {
+	background: var(--color);
+	text-decoration: none;	
+}
+
+.buttonsmokestop {
+	position: absolute;
+	margin: 0;
+	background-color: rgba(43, 43, 43, 1.0);
+	border-bottom: 2px solid var(--color);
+	color: #ffffff;
+	font-size: 15px;
+	padding-top: 7px;
+	padding-bottom: 7px;
+	padding-left: 5px;
+	padding-right: 5px;
+	text-decoration: none;
+	text-align: center;
+	top: 76%;
+	left: 70%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 99999999;
+	width: 35%;
+	font-family: Bahnschrift;
+	font-weight: bold;	
+}
+
+.buttonsmokestop:hover {
+	background: var(--color);
+	text-decoration: none;	
+}
+
+.closeparkattractionmenu {
+	position: absolute;
+	left: 94%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	top: 6%
+}
+
+#color-picker {
+	font-family: BebasNeueBold;
+	background-color: rgba(43, 43, 43, 1.0);
+	color: #ffffff;
+	font-size: 18px;
+	text-decoration: none;
+	text-align: center; 
+	outline: none;
+	border: none;
+	border-bottom: 2px solid var(--color);
+	z-index: 999999;  
+}
+
+.colorchanger {
+	position: absolute;
+	color: white;
+	top: 65%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	background-color: rgba(43, 43, 43, 1.0);
+	overflow: hidden;
+	z-index: 999999;  
+	font-family: Bahnschrift;
+	font-weight: bold;
+	color: #ffffff;
+	font-size: 40px;
+	text-decoration: none;
+	text-align: center;	
+	outline: none;
+	border: none;
+}
+
+.buttonstartattraction {
+	position: absolute;
+	margin: 0;
+	background-color: rgba(43, 43, 43, 1.0);
+	border-bottom: 2px solid var(--color);
+	color: #ffffff;
+	font-size: 17px;
+	padding-top: 7px;
+	padding-bottom: 7px;
+	padding-left: 5px;
+	padding-right: 5px;
+	text-decoration: none;
+	text-align: center;
+	top: 90%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 99999999;
+	width: 40%;
+	font-family: Bahnschrift;
+	font-weight: bold;	
+}
+
+.buttonstartattraction:hover {
+	background: var(--color);
+	text-decoration: none;	
+}
+
+.attractionurl-container {
+	width: 20%;
+	height: 20%;
+	background-color: rgba(25, 25, 25, 1.0);
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 999999;
+	display: none;
+	border-bottom: 3px solid var(--color);
+}
+
+.closemusicurl {
+	position: absolute;
+	margin: 0;
+	top: 10%;
+	left: 92%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+}
+
+.musicinput {
+	position: absolute;
+	margin: 0;
+	background-color: rgba(43, 43, 43, 1.0);
+	border-bottom: 2px solid var(--color);
+	color: #ffffff;
+	font-size: 15px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 5px;
+	padding-right: 5px;
+	text-decoration: none;
+	text-align: center;
+	top: 45%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 9999999;
+	width: 75%;
+	font-family: Bahnschrift;
+	font-weight: bold;		
+}
+
+#musicinputdata {
+    border: none;
+    outline: none;
+    font-size: 15px;
+	color: #ffffff;
+	border-bottom: 2.5px solid var(--color);
+	font-family: Bahnschrift;
+	font-weight: bold;		
+}
+
+.musicurlmaintext {
+	position: absolute;
+	margin: 0;
+	text-decoration: none;
+	text-align: center;
+	top: 15%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);	
+	font-size: 20px;
+	color: var(--color);
+	text-align:center;
+	font-family: Bahnschrift;
+	font-weight: bold;
+}
+
+.buttonplaynewmusic {
+	position: absolute;
+	margin: 0;
+	background-color: rgba(43, 43, 43, 1.0);
+	border-bottom: 2px solid var(--color);
+	color: #ffffff;
+	font-size: 15px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 5px;
+	padding-right: 5px;
+	text-decoration: none;
+	text-align: center;
+	top: 80%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 99999999;
+	width: 40%;
+	font-family: Bahnschrift;
+	font-weight: bold;
+}
+
+.buttonplaynewmusic:hover {
+	background: var(--color);
+	text-decoration: none;	
+}
+
+*{
+	font-family: BebasNeueBold;
+}
