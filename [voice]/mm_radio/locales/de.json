@@ -1,0 +1,23 @@
+{
+    "join_notify_description": "Station beigetreten %.2f MHz",
+    "invalid_notify_description": "Station %.2f MHz ist nicht verfügbar",
+    "already_notify_description": "Du bist bereits der Station %.2f MHz beigetreten",
+    "restricted_notify_description": "Du darfst nicht der Station %.2f MHz beitreten",
+    "volume_notify_description": "Lautstärke auf %d%% gesetzt",
+    
+    "ui": {
+        "header": "IM RADIO",
+        "frequency": "Frequenz",
+        "disconnect": "TRENNEN",
+        "notconnected": "NICHT VERBUNDEN",
+        "channels": "Kanäle",
+        "radio": "Radio",
+        "members": "Mitglieder",
+        "favorites": "Favoriten",
+        "recommended": "Empfohlen",
+        "clear": "KLAR",
+        "hide_overlay": "OVERLAY VERSTECKEN",
+        "show_overlay": "OVERLAY ANZEIGEN",
+        "save": "SPEICHERN"
+    }
+}

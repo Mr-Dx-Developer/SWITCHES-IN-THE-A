@@ -1,0 +1,23 @@
+{
+    "join_notify_description": "Rejoint la station %.2f MHz",
+    "invalid_notify_description": "La station %.2f MHz n'est pas disponible",
+    "already_notify_description": "Vous avez déjà rejoint la station %.2f MHz",
+    "restricted_notify_description": "Vous n'êtes pas autorisé à rejoindre la station %.2f MHz",
+    "volume_notify_description": "Volume réglé sur %d%%",
+    
+    "ui": {
+        "header": "À LA RADIO",
+        "frequency": "Fréquence",
+        "disconnect": "DÉCONNECTER",
+        "notconnected": "PAS CONNECTÉ",
+        "channels": "Canaux",
+        "radio": "Radio",
+        "members": "Membres",
+        "favorites": "Favoris",
+        "recommended": "Recommandé",
+        "clear": "EFFACER",
+        "hide_overlay": "MASQUER LA SUPERPOSITION",
+        "show_overlay": "AFFICHER LA SUPERPOSITION",
+        "save": "ENREGISTRER"
+    }
+}
