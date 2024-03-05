@@ -2,14 +2,13 @@
 KonfigL = {}
 
 
-
 KonfigL.Setup = '~b~Setup'
 KonfigL.ForBack = 'Forward/Backwards: Use scrollwheel'
 KonfigL.Height = 'Height: Up/Down Arrow keys'
 KonfigL.Heading = 'Heading: Left/Right Arrow keys'
 KonfigL.EConfirm = '[E] To Confirm'
 KonfigL.Location = 'Move: [G] Location'
-KonfigL.PicupItem = '[H] Pickup Item'
+KonfigL.PickupItem = '[H] Pickup Item'
 
 
 KonfigL.GenReturn = 'Generator: Returned already active'
@@ -22,8 +21,6 @@ KonfigL.GenOn = '~g~Generator: On'
 KonfigL.StartFueling = '[E] ~g~Start Fueling'
 KonfigL.PetrolCanEmpty = '~r~ Theres nothing in your fuel can'
 KonfigL.EStats = 'Stats: [E]'
-KonfigL.EStatsNONH = 'Press [E] to toggle power!'
-
 KonfigL.NoFuel = '~r~No Fuel'
 KonfigL.NoFuelNotify = 'No Fuel'
 KonfigL.MenuGen = "Generator"
@@ -32,6 +29,8 @@ KonfigL.FuelMenu = "Fuel: "
 KonfigL.TurnOnMenu = 'Turn On'
 KonfigL.TurnOffMenu = 'Turn Off'
 KonfigL.GenBrokeNotify = 'Your Generator is Broken'
+KonfigL.EStatsNOMenu = 'Press [E] to toggle power!'
+
 
 KonfigL.LaptopReady = '~g~Laptop: Ready'
 KonfigL.NoPowerSource = '~r~Laptop: Not near any power source.'
@@ -45,10 +44,6 @@ KonfigL.CloneFrom = '[Enter] Clone from USB'
 KonfigL.CloningToBlankNotify = 'Skimmer: Copying data and cloning to blank.'
 KonfigL.FailedToClone = 'Skimmer: Failed to clone'
 KonfigL.RequiresUSBNotify = 'Skimmer: No info to clone from. (Requires: Info USB)'
-KonfigL.NoSlip = 'No slip to print on.'
-KonfigL.NoCard = 'No stolen card to copy from.'
-KonfigL.NoBlank = 'No Blank Card.'
-
 
 
 KonfigL.PrinterReady = '~g~Printer: Ready'
@@ -74,5 +69,6 @@ KonfigL.SkimemrHeadToLap = 'Head to your laptop.'
 KonfigL.CardAlready = 'Card already in skimmer.'
 KonfigL.TookOutCloned = 'Took Cloned Card.'
 KonfigL.RemovedBlank = 'Removed Blank Card.'
+KonfigL.NoBlank = 'You don\'t have any blank cards.'
 
 KonfigL.SkimmerExploit = 'Nice try.'

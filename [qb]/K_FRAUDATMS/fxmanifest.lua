@@ -5,15 +5,13 @@ description 'K_FRAUDATMS'
 version '1.0.0'
 
 
-shared_scripts {
-    '@es_extended/imports.lua',
-    'sh_config.lua'
+client_scripts {
+    'client.lua',
+    'cl_config.lua',
 }
 
-
-client_scripts {
-    'cl_config.lua',
-    'client.lua',
+shared_scripts {
+    'sh_config.lua'
 }
 
 server_scripts {
@@ -31,5 +29,4 @@ escrow_ignore {
     'client.lua',
     'server.lua',
 }
-
 dependency '/assetpacks'

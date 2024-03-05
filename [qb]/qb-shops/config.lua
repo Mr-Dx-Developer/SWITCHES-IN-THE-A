@@ -2230,6 +2230,36 @@ Config.Locations = {
         ["blipcolor"] = 0,
         ["delivery"] = vector4(-15.916481018066406,-1478.808837890625,30.6278076171875,99.21259307861328)
     },
+    ["247supermarket11"] = {
+        ["label"] = "24/7 Supermarket",
+        ["coords"] = vector4(644.2285766601562,253.63516235351562,103.233642578125,331.6535339355469),
+        ["ped"] = 'mp_m_shopkeep_01',
+        ["scenario"] = "WORLD_HUMAN_STAND_MOBILE",
+        ["radius"] = 1.5,
+        ["targetIcon"] = "fas fa-shopping-basket",
+        ["targetLabel"] = "Open Shop",
+        ["products"] = Config.Products["normal"],
+        ["showblip"] = true,
+        ["blipsprite"] = 52,
+        ["blipscale"] = 0.6,
+        ["blipcolor"] = 0,
+        ["delivery"] = vector4(644.2285766601562,253.63516235351562,103.233642578125,331.6535339355469)
+    },
+    ["247supermarket12"] = {
+        ["label"] = "24/7 Supermarket",
+        ["coords"] = vector4(287.0637512207031,-1273.859375,29.3809814453125,82.20472717285156),
+        ["ped"] = 'mp_m_shopkeep_01',
+        ["scenario"] = "WORLD_HUMAN_STAND_MOBILE",
+        ["radius"] = 1.5,
+        ["targetIcon"] = "fas fa-shopping-basket",
+        ["targetLabel"] = "Open Shop",
+        ["products"] = Config.Products["normal"],
+        ["showblip"] = true,
+        ["blipsprite"] = 52,
+        ["blipscale"] = 0.6,
+        ["blipcolor"] = 0,
+        ["delivery"] = vector4(287.0637512207031,-1273.859375,29.3809814453125,82.20472717285156)
+    },
 
     -- LTD Gasoline Locations
     ["ltdgasoline"] = {

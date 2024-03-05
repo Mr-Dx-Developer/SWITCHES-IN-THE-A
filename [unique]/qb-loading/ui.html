@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<meta charset="UTF-8">
+		<link href="styles.css" rel="stylesheet">
+	</head>
+    <body>
+        <div id="video-background" class="video-background">
+            <div id="video-foreground" class="video-foreground">
+            </div>
+        </div>
+        <div id="updatesMenu" class="slide-updates">
+            <div class="updates-header-div">
+                <div class="updates-header">
+                    <div id="whats-new" class="updates-title"></div>
+                    <div id="updates-date" class="updates-date"></div>
+                </div>
+                <div class="close-btn" onclick="toggleUpdatesMenu('closeUpdates')"><i class="fas fa-times"></i></div>
+            </div>
+            <div class="updates-content">
+                <div class="updates-banner"><img id="updates-banner" class="patch-notes-img"></div>
+                <div id="updates-title" class="updates-title"></div>
+                <div id="updates-added" class="updates-added"></div>
+                <ul id="update-list" class="ul"></ul>
+            </div>
+            <div class="updates-footer">
+                <div id="social-media" class="socials">
+                </div>
+            </div>
+        </div>
+        <div id="staffMenu" class="slide-staff">
+            <div class="staff-header">
+                <div id="staff-title" class="staff-title"></div>
+                <div class="close-btn" onclick="toggleStaffMenu('closeStaff')"><i class="fas fa-times"></i></div>
+            </div>
+            <div class="staff-filter">
+                <div id="all" class="staff-filter-option staff-selected" onClick="allStaff()"></div>
+                <div id="admins" class="staff-filter-option" onClick="onlyAdministrators()"></div>
+                <div id="mods" class="staff-filter-option" onClick="onlyModerators()"></div>
+            </div>
+            <div id="staff-list" class="staff-list">
+            </div>
+        </div>
+        <div class="container">
+            <div class="top">
+                <div class="playing">
+                    <div class="playing-img-div"><svg class="playing-img" viewBox="0 0 22 31" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.7911 30.6933C5.91255 30.6933 4.30439 30.0321 2.96663 28.7098C1.62887 27.3874 0.959991 25.7977 0.959991 23.9407C0.959991 22.0838 1.62887 20.4941 2.96663 19.1717C4.30439 17.8493 5.91255 17.1882 7.7911 17.1882C8.44575 17.1882 9.05059 17.2655 9.60562 17.4203C10.1606 17.575 10.6943 17.8071 11.2067 18.1166V0.306671H21.4533V7.05926H14.6222V23.9407C14.6222 25.7977 13.9533 27.3874 12.6156 28.7098C11.2778 30.0321 9.66966 30.6933 7.7911 30.6933Z" fill="black"/></svg></div>
+                    <div class="now-playing-div">
+                        <div id="now-playing" class="now-playing"></div>
+                        <div id="song-name-header" class="song-name"></div>
+                    </div>
+                </div>
+                <div id="openStaffButton" class="button" onclick="toggleStaffMenu()"><i class="bi bi-star-fill button-i1"></i></div>
+            </div>
+            <div class="mid">
+                <div class="patch-notes">
+                    <div id="openUpdatesButton" class="patch-notes-banner" onclick="toggleUpdatesMenu()">
+                        <div class="patch-notes-banner-title-div">
+                            <div id="patch-notes-banner-title" class="patch-notes-banner-title"></div>
+                        </div>
+                    </div>
+                    <div id="patch-notes-title" class="patch-notes-title"></div>
+                    <div id="patch-notes-description" class="patch-notes-description"></div>
+                    <div id="patch-notes-slide" class="patch-notes-slide">
+                    </div>
+                    <div class="patch-notes-control">
+                        <div class="previous">
+                            <div class="key">A</div>
+                            <div id="previous" class="key-text"></div>
+                        </div>
+                        <div class="next">
+                            <div class="key">D</div>
+                            <div id="next" class="key-text"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="control-buttons">
+                    <div id="music-management" onClick="toggleMusicWidget(event)">
+                        <div id="button" class="button"><i class="fa-solid fa-volume-high button-i2"></i></div>
+                    </div>
+                    <div id="buttonContainer" class="button"><i class="fa-solid fa-video button-i2"></i></div>
+                </div>
+            </div>
+            <div class="progressbar">
+                <div id="progressbar" class="pb-top"></div>
+                <div class="pb-bottom"></div>
+            </div>
+        </div>
+        
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <script src="https://kit.fontawesome.com/de03e13cb2.js" crossorigin="anonymous"></script>
+        <script src="locales/translations.js"></script>
+        <script src="config.js"></script>
+        <script src="scripts.js"></script>
+    </body>
+</html>

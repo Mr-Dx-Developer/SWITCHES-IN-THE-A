@@ -543,7 +543,7 @@ QBShared.Items = {
 	['infousb'] 			 = {['name'] = 'infousb', 					['label'] = 'Information USB', 				['weight'] = 500, 		['type'] = 'item', 		['image'] = 'infousb.png', 		['unique'] = false, 		['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = ''},
 	['forgedcheck'] 		 = {['name'] = 'forgedcheck', 				['label'] = 'Forged Check', 				['weight'] = 500, 		['type'] = 'item', 		['image'] = 'forgedcheck.png', 		['unique'] = false, 		['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = ''},
 	['blankcard'] 			 = {['name'] = 'blankcard', 				['label'] = 'Blank Card', 				['weight'] = 500, 		['type'] = 'item', 		['image'] = 'blankcard.png', 		['unique'] = false, 		['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = ''},
-	['clonedcard'] 			 = {['name'] = 'clonedcard', 				['label'] = 'Cloned Card', 				['weight'] = 500, 		['type'] = 'item', 		['image'] = 'clonecard.png', 		['unique'] = false, 		['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = ''},
+	['clonedcard'] 			 = {['name'] = 'clonedcard', 				['label'] = 'Cloned Card', 				['weight'] = 500, 		['type'] = 'item', 		['image'] = 'blankcard.png', 		['unique'] = false, 		['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = ''},
 	['printer'] 			 = {['name'] = 'printer', 					['label'] = 'Printer', 				['weight'] = 500, 		['type'] = 'item', 		['image'] = 'printer.png', 		['unique'] = false, 		['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = ''},
 	['skimmer'] 			 = {['name'] = 'skimmer', 					['label'] = 'Skimmer', 				['weight'] = 500, 		['type'] = 'item', 		['image'] = 'skimmer.png', 		['unique'] = false, 		['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = ''},
 	['generator'] 			 = {['name'] = 'generator', 				['label'] = 'Generator', 				['weight'] = 500, 		['type'] = 'item', 		['image'] = 'generator.png', 		['unique'] = false, 		['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = ''},
@@ -620,7 +620,7 @@ QBShared.Items = {
 	["sparetire"]=          {["name"] = "sparetire",        ["label"] = "Spare Tire",			["weight"] = 0, ["type"] = "item",  ["image"] = "sparetire.png",        ["unique"] = true,  ["useable"] = false,["shouldClose"] = false,["description"] = ""},
  ]]
 
-    mechanic_tools              = { name = "mechanic_tools", label = "Mechanic tools", weight = 0, type = "item", image = "mechanic_tools.png", unique = true, useable = true, shouldClose = true, description = "Needed for vehicle repairs"},
+mechanic_tools              = { name = "mechanic_tools", label = "Mechanic tools", weight = 0, type = "item", image = "mechanic_tools.png", unique = true, useable = true, shouldClose = true, description = "Needed for vehicle repairs"},
 toolbox                     = { name = "toolbox", label = "Toolbox", weight = 0, type = "item", image = "toolbox.png", unique = true, useable = true, shouldClose = true, description = "Needed for Performance part removal"},
 ducttape                    = { name = "ducttape", label = "Duct Tape", weight = 0, type = "item", image = "bodyrepair.png", unique = true, useable = true, shouldClose = true, description = "Good for quick fixes"},
 mechboard                   = { name = "mechboard", label = "Mechanic Sheet", weight = 0, type = "item", image = "mechboard.png", unique = true, useable = true, shouldClose = true, description = ""},
@@ -740,6 +740,14 @@ ogkushkush                              = { name = 'ogkushkush', label = 'OG Kus
 shrooms                                 = { name = 'shrooms', label = 'Shrooms', weight = 15, type = 'item', image = 'shrooms.png', unique = false, useable = true, shouldClose = true, combinable = true, description = 'This drug will probably ruin your life.' },
 fentanyl                                = { name = 'fentanyl', label = 'Fentanyl', weight = 15, type = 'item', image = 'fentanyl.png', unique = false, useable = true, shouldClose = true, combinable = true, description = 'This drug will probably ruin your life.' },
 
+
+
+
+
+['bankcard'] 			 		 = {['name'] = 'bankcard', 			  	['label'] = 'Bankcard', 			['weight'] = 0, 		['type'] = 'item', 		['image'] = 'security_card_02.png', 	['unique'] = false, 	['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'A security card... I wonder what it goes to'},
+['printer'] 			 		 = {['name'] = 'printer', 			  	['label'] = 'Printer', 			['weight'] = 0, 		['type'] = 'item', 		['image'] = 'security_card_02.png', 	['unique'] = false, 	['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'A security card... I wonder what it goes to'},
+['whiteslip'] 			 		 = {['name'] = 'whiteslip', 			  	['label'] = 'White Slip', 			['weight'] = 0, 		['type'] = 'item', 		['image'] = 'security_card_02.png', 	['unique'] = false, 	['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'A security card... I wonder what it goes to'},
+['whitecheck'] 			 		 = {['name'] = 'whitecheck', 			  	['label'] = 'White Check', 			['weight'] = 0, 		['type'] = 'item', 		['image'] = 'security_card_02.png', 	['unique'] = false, 	['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'A security card... I wonder what it goes to'},
     -- RM Heist
     ['laptop'] 				 		 = {['name'] = 'laptop', 			  	  		['label'] = 'Laptop', 					['weight'] = 750, 		['type'] = 'item', 		['image'] = 'laptop.png', 				['unique'] = false, 	['useable'] = false, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'Expensive laptop'},
 	['hackerdevice'] 			 	 = {['name'] = 'hackerdevice', 					['label'] = 'ATM Device', 	    	    ['weight'] = 2000, 		['type'] = 'item', 		['image'] = 'hackerdevice.png', 		['unique'] = false, 	['useable'] = false, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'Some hacking device for ATMs'},

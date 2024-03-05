@@ -3,9 +3,7 @@ KonfigSH = {}
 
 KonfigSH.ClonedItem = 'clonedcard'
 
-
-function getCore()
-    local ESX = nil
-    ESX = exports['es_extended']:getSharedObject()
-    return ESX
+function GetQBVersion()
+    local version = exports['qb-core']:GetCoreObject()
+    return version
 end

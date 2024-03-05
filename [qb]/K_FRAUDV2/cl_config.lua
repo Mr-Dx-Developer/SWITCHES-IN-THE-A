@@ -10,10 +10,10 @@ KonfigCL.PrinterProgressAddPerTick = 1.0 -- every 0.1 secconds add 1.0
 
 KonfigCL.CloneTime = 100
 KonfigCL.CloneProgressAddPerTick = 1.0
+KonfigCL.useQBMenu = true
 
 
-KonfigCL.UseNHForGen = false -- does not remove nh from the shops so if you want that removed just disable those shops and make or get a shop and add the required items
-function TogglePower() -- if KonfigCL.UseNHForGen is false then this will work
+function TogglePower() -- if KonfigCL.QBMenu is false then this will work
     TriggerEvent("k_fraud2:turnOnItem", 1)-- you can add any context menu you want as long as its using this trigger in it
     --[[ EXAMPLE OF A CONTEXT MENU
         local genMenu = {
@@ -87,10 +87,9 @@ KonfigCL.InsertBlank = KonfigCL.Keys["E"]
 KonfigCL.InsertBlank = KonfigCL.Keys["E"]
 
 
-
+local QBCore = GetQBVersion()
 function Notify(message)
-    TriggerEvent('esx:showNotification', message)
+    QBCore.Functions.Notify(message)
 end
-
 
 

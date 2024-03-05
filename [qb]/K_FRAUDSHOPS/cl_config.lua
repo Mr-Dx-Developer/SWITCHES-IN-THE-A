@@ -5,108 +5,99 @@ KonfigCL.NPCEnable = true
 KonfigCL.Banker = true -- enable/disable banker
 KonfigCL.WhiteSlipNPC = "a_m_m_farmer_01"
 KonfigCL.BlackMarketNPC = "a_m_m_socenlat_01"
-KonfigCL.ElectronicNPC = "ig_lifeinvad_01"
+KonfigCL.ElectronicNPC = "a_m_y_soucent_01"
 KonfigCL.BankerNPC = "u_m_m_bankman"
 
 --items to sell to banker
 
 
-KonfigCL.ElectronicsBuyLocation = vector4(-658.8, -854.79, 24.51, 0)
-KonfigCL.BlackMarketBuyLocation = vector4(-173.93, -1265.92, 32.6, 97.0)
-KonfigCL.WhiteSlipBuyLocation = vector4(1220.66, -1270.55, 35.36, 88.96)
-KonfigCL.BankerLocation = vector4(248.85, 224.34, 106.29, 150.0)
+KonfigCL.ElectronicsBuyLocation = vector3(-658.8, -854.79, 24.51)
+KonfigCL.BlackMarketBuyLocation = vector3(-173.93, -1265.92, 32.6)
+KonfigCL.WhiteSlipBuyLocation = vector3(1220.66, -1270.55, 35.36)
 
-KonfigCL.EyeTarget = true
+KonfigCL.BankerLocation = vector3(248.85, 224.34, 106.29)
 
-KonfigCL.DrawMakers = false -- draw markers on peds 
+KonfigCL.QBTarget = true
 
---to edit item prices edit the below and server.lua
-RegisterNetEvent("k_fraudshops:openBlackmarket")
-AddEventHandler('k_fraudshops:openBlackmarket', function()
-    TriggerEvent("nh-context:createMenu", {
-        {
-            header = "Blackmarket",
-        },
-        {
-            header = "Skimmer",
-            context = "$"..KonfigSH.Prices['Skimmer'],
-            event = "k_fraudshops:itemPassthrough",
-            args = {'skimmer'}
-        },
-        {
-            header = "Blankcard",
-            context = "$"..KonfigSH.Prices['Blankcard'],
-            event = "k_fraudshops:itemPassthrough",
-            args = {'blankcard'}
-        },
-        {
-            header = "Info USB",
-            context = "$"..KonfigSH.Prices['InfoUSB'],
-            event = "k_fraudshops:itemPassthrough",
-            args = {'infousb'}
-        },
-        {
-            header = "Stolen Credit Card",
-            context = "$"..KonfigSH.Prices['StolenCard'],
-            event = "k_fraudshops:itemPassthrough",
-            args = {'stolencard'}
-        },
-    })
-end)
+KonfigCL.DrawMakers = true -- draw markers on locations ^^
 
 
+KonfigCL.BlackmarketItems = {
+    [1] = {
+        name = "skimmer",
+        price = 5000,
+        amount = 1,
+        info = {},
+        type = "item",
+        slot = 1,
+    },
+    [2] = {
+        name = "blankcard",
+        price = 400,
+        amount = 10,
+        info = {},
+        type = "item",
+        slot = 2,
+    },
+    [3] = {
+        name = "infousb",
+        price = 600,
+        amount = 10,
+        info = {},
+        type = "item",
+        slot = 3,
+    },
+    [4] = {
+        name = "stolencard",
+        price = 600,
+        amount = 10,
+        info = {},
+        type = "item",
+        slot = 4,
+    },
+}
 
-RegisterNetEvent("k_fraudshops:openSlips")
-AddEventHandler('k_fraudshops:openSlips', function()
-    TriggerEvent("nh-context:createMenu", {
-        {
-            header = "Paper Dealer",
-        },
-        {
-            header = "White Slip",
-            context = "$"..KonfigSH.Prices['WhiteSlip'],
-            event = "k_fraudshops:itemPassthrough",
-            args = {'whiteslip'}
-        },
-    })
-end)
+KonfigCL.SlipItems = {
+    [1] = {
+        name = "whiteslip",
+        price = 500,
+        amount = 10,
+        info = {},
+        type = "item",
+        slot = 1,
+    },
+}
+
+KonfigCL.ElectronicItems = {
+    [1] = {
+        name = "printer",
+        price = 100,
+        amount = 1,
+        info = {},
+        type = "item",
+        slot = 1,
+    },
+    [2] = {
+        name = "generator",
+        price = 1250,
+        amount = 1,
+        info = {},
+        type = "item",
+        slot = 2,
+    },
+    [3] = {
+        name = "laptop2",
+        price = 750,
+        amount = 1,
+        info = {},
+        type = "item",
+        slot = 3,
+    },
+}
 
 
 
-RegisterNetEvent("k_fraudshops:openDigitalDen")
-AddEventHandler('k_fraudshops:openDigitalDen', function()
-    TriggerEvent("nh-context:createMenu", {
-        {
-            header = "Digital Den",
-        },
-        {
-            header = "Printer",
-            context = "$"..KonfigSH.Prices['Printer'],
-            event = "k_fraudshops:itemPassthrough",
-            args = {'printer'}
-        },
-        {
-            header = "Generator",
-            context = "$"..KonfigSH.Prices['Generator'],
-            event = "k_fraudshops:itemPassthrough",
-            args = {'generator'}
-        },
-        {
-            header = "Laptop",
-            context = "$"..KonfigSH.Prices['Laptop'],
-            event = "k_fraudshops:itemPassthrough",
-            args = {'laptop2'}
-        },
-    })
-end)
-
-
-RegisterNetEvent("k_fraudshops:itemPassthrough", function(item)
-    TriggerServerEvent('k_fraudshops:buyItem', item)
-end)
-
+local QBCore = GetQBVersion()
 function Notify(message)
-    ESX.ShowNotification(message)
+    QBCore.Functions.Notify(message)
 end
-
-
