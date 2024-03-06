@@ -196,7 +196,7 @@ Config.Pistols = {
         },
         [3] = {
             name = "weapon_appistol",
-            price = 150000,
+            price = 2000000,
             amount = 1,
             info = {},
             type = "item",
@@ -284,7 +284,7 @@ Config.SMGS = {
     items = {
         [1] = {
             name = "weapon_microsmg",
-            price = 1500000,
+            price = 2400000,
             amount = 1,
             info = {},
             type = "item",
@@ -292,7 +292,7 @@ Config.SMGS = {
         },
         [2] = {
             name = "weapon_smg",
-            price = 1000000,
+            price = 2100000,
             amount = 1,
             info = {},
             type = "item",
@@ -300,7 +300,7 @@ Config.SMGS = {
         },
         [3] = {
             name = "weapon_smg_mk2",
-            price = 1500000,
+            price = 2500000,
             amount = 1,
             info = {},
             type = "item",
@@ -308,7 +308,7 @@ Config.SMGS = {
         },
         [4] = {
             name = "weapon_assaultsmg",
-            price = 1300000,
+            price = 2300000,
             amount = 1,
             info = {},
             type = "item",
@@ -316,7 +316,7 @@ Config.SMGS = {
         },
         [5] = {
             name = "weapon_combatpdw",
-            price = 1450000,
+            price = 2450000,
             amount = 1,
             info = {},
             type = "item",
@@ -324,7 +324,7 @@ Config.SMGS = {
         },
         [6] = {
             name = "weapon_minismg",
-            price = 2000000,
+            price = 2200000,
             amount = 1,
             info = {},
             type = "item",
@@ -355,7 +355,7 @@ Config.Shotguns = {
         },
         [3] = {
             name = "weapon_assaultshotgun",
-            price = 1500000,
+            price = 2000000,
             amount = 1,
             info = {},
             type = "item",
@@ -371,7 +371,7 @@ Config.Shotguns = {
         },
         [5] = {
             name = "weapon_heavyshotgun",
-            price = 1500000,
+            price = 2500000,
             amount = 1,
             info = {},
             type = "item",
@@ -387,7 +387,7 @@ Config.Shotguns = {
         },
         [7] = {
             name = "weapon_autoshotgun",
-            price = 1800000,
+            price = 2800000,
             amount = 1,
             info = {},
             type = "item",
@@ -427,7 +427,7 @@ Config.Assaultrifles = {
         },
         [2] = {
             name = "weapon_assaultrifle_mk2",
-            price = 2200000,
+            price = 2800000,
             amount = 1,
             info = {},
             type = "item",
@@ -435,7 +435,7 @@ Config.Assaultrifles = {
         },
         [3] = {
             name = "weapon_carbinerifle",
-            price = 2200000,
+            price = 2900000,
             amount = 1,
             info = {},
             type = "item",
@@ -491,7 +491,7 @@ Config.Assaultrifles = {
         },
         [10] = {
             name = "weapon_bullpuprifle_mk2",
-            price = 2200000,
+            price = 2800000,
             amount = 1,
             info = {},
             type = "item",
@@ -499,7 +499,7 @@ Config.Assaultrifles = {
         },
         [11] = {
             name = "weapon_militaryrifle",
-            price = 2200000,
+            price = 2700000,
             amount = 1,
             info = {},
             type = "item",
@@ -510,7 +510,7 @@ Config.Assaultrifles = {
 
         [12] = {
             name = "WEAPON_PITVIPER",
-            price = 2000000,
+            price = 2600000,
             amount = 1,
             info = {},
             type = "item",
@@ -518,7 +518,7 @@ Config.Assaultrifles = {
         },
         [13] = {
             name = "WEAPON_XDME",
-            price = 1500000,
+            price = 2500000,
             amount = 1,
             info = {},
             type = "item",
@@ -558,7 +558,7 @@ Config.Assaultrifles = {
         },
         [18] = {
             name = "WEAPON_GLOCK17S",
-            price = 5500000,
+            price = 4500000,
             amount = 1,
             info = {},
             type = "item",
@@ -566,7 +566,7 @@ Config.Assaultrifles = {
         },
         [19] = {
             name = "WEAPON_GLOCKBEAMS",
-            price = 6500000,
+            price = 4500000,
             amount = 1,
             info = {},
             type = "item",
@@ -574,7 +574,7 @@ Config.Assaultrifles = {
         },
         [20] = {
             name = "WEAPON_BLUEGLOCKS",
-            price = 6500000,
+            price = 4500000,
             amount = 1,
             info = {},
             type = "item",
@@ -582,7 +582,7 @@ Config.Assaultrifles = {
         },
         [21] = {
             name = "WEAPON_MIDASGLOCK",
-            price = 5500000,
+            price = 4500000,
             amount = 1,
             info = {},
             type = "item",
@@ -663,7 +663,7 @@ Config.Assaultrifles = {
         },
         [32] = {
             name = "WEAPON_TEC9S",
-            price = 1500000,
+            price = 3500000,
             amount = 1,
             info = {},
             type = "item",

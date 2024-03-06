@@ -547,6 +547,8 @@ QBShared.Items = {
 	['printer'] 			 = {['name'] = 'printer', 					['label'] = 'Printer', 				['weight'] = 500, 		['type'] = 'item', 		['image'] = 'printer.png', 		['unique'] = false, 		['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = ''},
 	['skimmer'] 			 = {['name'] = 'skimmer', 					['label'] = 'Skimmer', 				['weight'] = 500, 		['type'] = 'item', 		['image'] = 'skimmer.png', 		['unique'] = false, 		['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = ''},
 	['generator'] 			 = {['name'] = 'generator', 				['label'] = 'Generator', 				['weight'] = 500, 		['type'] = 'item', 		['image'] = 'generator.png', 		['unique'] = false, 		['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = ''},
+
+
    --[[  --Jim-Mechanic Vehicles
 	["mechanic_tools"] =    {["name"] = "mechanic_tools",   ["label"] = "Mechanic tools",		["weight"] = 0, ["type"] = "item",  ["image"] = "mechanic_tools.png",   ["unique"] = true,  ["useable"] = true, ["shouldClose"] = true, ["description"] = "Needed for vehicle repairs"},
 	["toolbox"] =           {["name"] = "toolbox",          ["label"] = "Toolbox",				["weight"] = 0, ["type"] = "item",  ["image"] = "toolbox.png",          ["unique"] = true,  ["useable"] = true, ["shouldClose"] = true, ["description"] = "Needed for Performance part removal"},
@@ -2249,6 +2251,7 @@ lc_ammobench 			= { name = 'lc_ammobench', 			label = 'Ammo Bench',   			    wei
 	['weed_pot'] 				 	 = {['name'] = 'weed_pot', 						['label'] = 'Weed Pot', 				['weight'] = 500, 		['type'] = 'item', 		['image'] = 'weed_pot.png', 					['unique'] = false, 		['useable'] = false,  	['shouldClose'] = false,   ['combinable'] = nil,   ['description'] = 'Your description here'},
 	['weed_spray'] 				 	 = {['name'] = 'weed_spray', 					['label'] = 'Weed Spray', 				['weight'] = 500, 		['type'] = 'item', 		['image'] = 'weed_spray.png', 					['unique'] = false, 		['useable'] = false,  	['shouldClose'] = false,   ['combinable'] = nil,   ['description'] = 'Your description here'},
 		
+    
     ['laundrycard'] = {['name'] = 'laundrycard', ['label'] = 'Laundry Card', ['weight'] = 100, ['type'] = 'item', ['image'] = 'laundrycard.png', ['unique'] = false, ['useable'] = false, ['shouldClose'] = true, ['combinable'] = nil, ['description'] = 'Your description here'},
 
 }

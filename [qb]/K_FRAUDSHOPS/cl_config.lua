@@ -10,10 +10,14 @@ KonfigCL.BankerNPC = "u_m_m_bankman"
 
 --items to sell to banker
 
-
+--[[ 
 KonfigCL.ElectronicsBuyLocation = vector3(-658.8, -854.79, 24.51)
 KonfigCL.BlackMarketBuyLocation = vector3(-173.93, -1265.92, 32.6)
 KonfigCL.WhiteSlipBuyLocation = vector3(1220.66, -1270.55, 35.36)
+ ]]
+KonfigCL.ElectronicsBuyLocation = vector3(0.0, 0.0, 0.0)
+KonfigCL.BlackMarketBuyLocation = vector3(0.0, 0.0, 0.0)
+KonfigCL.WhiteSlipBuyLocation = vector3(0.0, 0.0, 0.0)
 
 KonfigCL.BankerLocation = vector3(248.85, 224.34, 106.29)
 
