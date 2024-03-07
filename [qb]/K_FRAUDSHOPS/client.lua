@@ -120,7 +120,7 @@ CreateThread(function()
                         label = 'Cash in check.',
                     }
                     },
-                    distance = 2.5,
+                    distance = 5,
                 })
             end
         else
