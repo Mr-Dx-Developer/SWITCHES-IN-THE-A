@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.css"></link>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <title>Brutal Boxing</title>
+</head>
+
+<body style="background: none;">
+
+    <div class="boxing_menu" id="boxing_menu">
+        <div class="background_effect" id="red"></div>
+        <div class="background_effect" id="blue"></div>
+        <h2 class="label mt-3">BOXING</h2>
+        <div class="row mt-3 player_container">
+            <div class="col">
+                <div class="d-flex flex-column justify-content-center align-items-center left" id="player_container1">
+                    <div class="name_box" id="red">
+                        <h2 class="my-1">PLAYER 1</h2>
+                    </div>
+                    <div class="player_stat d-flex flex-column align-items-center" id="details_1">
+                        <div class="data_container mt-3">
+                            <h2 class="title">NAME</h2>
+                            <h2 class="data" id="nickname_1">KERES</h2>
+                        </div>
+                        <div class="data_container">
+                            <h2 class="title">TOTAL WINS</h2>
+                            <h2 class="data" id="wins_1">13</h2>
+                        </div>
+                        <div class="data_container" >
+                            <h2 class="title">GENDER</h2>
+                            <h2 class="data" id="gender_1">190</h2>
+                        </div>
+                    </div>
+                    <button class="basic_btn px-3 mt-3" id="player_btn1" onclick="Join(id)">JOIN</button>
+                </div>
+            </div>
+            <div class="col-2 d-flex flex-column align-items-center">
+                <div class="match_con">
+                    <div class="data_container">
+                        <h2 class="title">ROUNDS</h2>
+                        <input type="range" class="range" value="1" min="1" max="5" id="range_rounds" oninput="SyncRangeData(id)">
+                        <h6 class="range_number" id="range_number">1</h6>
+                    </div>
+                    <div class="data_container">
+                        <h2 class="title">GLOVES</h2>
+                        <label class="custom-control ios-switch mt-2 d-flex flex-column align-items-center">
+                            <input type="checkbox" id="gloves" class="ios-switch-control-input" checked>
+                            <span class="ios-switch-control-indicator"></span>
+                        </label>
+                    </div>
+                    <div class="data_container">
+                        <h2 class="title">BET</h2>
+                        <label class="custom-control ios-switch mt-2 d-flex flex-column align-items-center">
+                            <input type="checkbox" id="bet" class="ios-switch-control-input">
+                            <span class="ios-switch-control-indicator"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="d-flex flex-column justify-content-center align-items-center right" id="player_container2">
+                    <div class="name_box" id="blue">
+                        <h2 class="my-1">PLAYER 2</h2>
+                    </div>
+                    <div class="player_stat d-flex flex-column align-items-center" id="details_2">
+                        <div class="data_container mt-3">
+                            <h2 class="title">NAME</h2>
+                            <h2 class="data" id="nickname_2">KERES</h2>
+                        </div>
+                        <div class="data_container">
+                            <h2 class="title">TOTAL WINS</h2>
+                            <h2 class="data" id="wins_2">13</h2>
+                        </div>
+                        <div class="data_container" >
+                            <h2 class="title">GENDER</h2>
+                            <h2 class="data" id="gender_2">190</h2>
+                        </div>
+                    </div>
+                    <button class="basic_btn px-3 mt-3" id="player_btn2" onclick="Join(id)">JOIN</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="d-flex flex-column justify-content-center align-items-center">
+            <button class="basic_btn px-3" disabled id="start_btn" onclick="Start()">START</button>
+            <h2 class="bet_countback">START IN 12</h2>
+        </div>
+    </div>
+
+    <div class="stat_hud" id="stat_hud">
+        <div class="row">
+            <div class="col">
+                <div class="player" id="player1">
+                    <div class="row" style="width: 550px;">
+                        <div class="col">
+                            <h2 class="name">PLAYER2</h2>
+                        </div>
+                        <div class="col">
+                            <h2 class="points">POINTS 2</h2>
+                        </div>
+                    </div>
+                    <div class="hp_bg">
+                        <div class="hp"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <h2 class="round">ROUND 2</h2>
+                <h2 class="timer">0</h2>
+            </div>
+            <div class="col">
+                <div class="player" id="player2">
+                    <div class="row float-end" style="width: 550px;">
+                        <div class="col">
+                            <h2 class="points">POINTS 2</h2>
+                        </div>
+                        <div class="col">
+                            <h2 class="name">PLAYER2</h2>
+                        </div>
+                    </div>
+                    <div class="hp_bg">
+                        <div class="hp"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="countback">
+        <div class="d-flex flex-column justify-content-center align-items-center">
+            <h1 class="number" id="cnumber">3</h1>
+        </div>
+        <div class="bg"></div>
+    </div>
+
+    <div class="end_notify">
+        <div class="texts">
+            <h2 class="winner">WINNER</h2>
+            <div class="name">NBER</div>
+            <div class="row stat">
+                <div class="col">
+                    <div class="player_con" id="player_con1">
+                        <div class="player_name">NBER</div>
+                        <div class="points">POINTS 2</div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="player_con" id="player_con2">
+                        <div class="player_name">NBER</div>
+                        <div class="points">POINTS 2</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bg"></div>
+    </div>
+    
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.2/bootstrap3-typeahead.min.js">
+</script>
+<script src="script.js"></script>
+</html>
