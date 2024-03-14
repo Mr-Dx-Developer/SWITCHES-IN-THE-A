@@ -1,7 +1,7 @@
 while (not Config) do Wait(100) end
 
 Config.PayType = 'markedbills' -- ESX = "money", "bank", "black_money" | QBCore = "cash", "markedbills"
-Config.RandomizePay = true -- If enabled, it will add a random number 1-200
+Config.RandomizePay = false -- If enabled, it will add a random number 1-200
 -- Please keep in mind, if you use marked bills disable the option above and change the prices. (QBCore)
 
 Config.Command = {
