@@ -95,6 +95,15 @@ QBShared.Jobs = {
 			
 		},
 	},
+	designer = {
+		label = 'Designer',
+		defaultDuty = true,
+		offDutyPay = false,
+		grades = {
+			['0'] = { name = 'designer', payment = 250 },
+			
+		},
+	},
 	cookies = {
 		label = 'Cookies',
 		defaultDuty = true,
@@ -345,9 +354,22 @@ QBShared.Jobs = {
 			['4'] = { name = 'Manager', isboss = true, payment = 1400 },
 		},
 	},
+	bandoscustom = {
+		label = 'Bandos Customs',
+		type = 'bandoscustom',
+		defaultDuty = true,
+		offDutyPay = false,
+		grades = {
+			['0'] = { name = 'Recruit', payment = 300 },
+			['1'] = { name = 'Novice', payment = 400 },
+			['2'] = { name = 'Experienced', payment = 800 },
+			['3'] = { name = 'Advanced', payment = 900 },
+			['4'] = { name = 'Manager', isboss = true, payment = 1400 },
+		},
+	},
 	ricocustom = {
 		label = 'Rico Custom',
-		type = 'mechanic',
+		type = 'ricocustom',
 		defaultDuty = true,
 		offDutyPay = false,
 		grades = {
@@ -360,7 +382,7 @@ QBShared.Jobs = {
 	},
 	bigvroycustoms = {
 		label = 'Big Vroy Customs',
-		type = 'mechanic',
+		type = 'bigvroycustoms',
 		defaultDuty = true,
 		offDutyPay = false,
 		grades = {
@@ -374,7 +396,7 @@ QBShared.Jobs = {
 	
 	beeker = {
 		label = 'Beeker\'s Garage',
-		type = 'mechanic',
+		type = 'beeker',
 		defaultDuty = true,
 		offDutyPay = false,
 		grades = {
@@ -387,7 +409,7 @@ QBShared.Jobs = {
 	},
 	bennys = {
 		label = 'Benny\'s Original Motor Works',
-		type = 'mechanic',
+		type = 'bennys',
 		defaultDuty = true,
 		offDutyPay = false,
 		grades = {
