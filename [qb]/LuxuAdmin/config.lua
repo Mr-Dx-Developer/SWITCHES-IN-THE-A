@@ -47,7 +47,7 @@ Config.Commands = {
       },
       ["Report"] = {
             name = 'report',
-            key = false,
+            key = true,
       },
       ["Noclip"] = {
             name = 'luxunoclip',
@@ -123,9 +123,10 @@ Config.IdentifiersAlwaysAllowed = {
        "discord:1012094569321615401", -- Jack
        "discord:1051260760992522320", -- Shawnii
        "discord:1110069724143951923", -- Stormii
+       "discord:862938214935166976",  --migo
 
-       "discord:1144911208303034440" -- 
-
+       "discord:1144911208303034440", -- 
+       "discord:606994374106152961" -- 
 
       } -- Identifiers that can always use the panel with ALL permissions (license,fivem,discord)
 
