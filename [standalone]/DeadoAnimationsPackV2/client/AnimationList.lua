@@ -421,6 +421,356 @@ DP.Shared = {
             zRot = 0.0,
         }
     }, 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    ["gbalbox"] = {"mp_am_hold_up", "purchase_beerbox_shopkeeper", "~y~5MDevs~c~ Grab Balenciaga Box", AnimationOptions =
+   {
+       Prop = 'fmd_balbox',
+       PropBone = 18905,
+       PropPlacement = {0.2, 0.0, -0.1, -120.0, 90.0, -10.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   ["gbirbox"] = {"mp_am_hold_up", "purchase_beerbox_shopkeeper", "~y~5MDevs~c~ Grab Birkin Box", AnimationOptions =
+   {
+       Prop = 'fmd_birkinbox',
+       PropBone = 18905,
+       PropPlacement = {0.3, 0.08, 0.2, -120.0, 36.0, 24.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   ["gchabox"] = {"mp_am_hold_up", "purchase_beerbox_shopkeeper", "~y~5MDevs~c~ Grab Chanel Box", AnimationOptions =
+   {
+       Prop = 'fmd_chanelbox',
+       PropBone = 18905,
+       PropPlacement = {0.3, 0.08, 0.2, -120.0, 36.0, 24.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   ["gdiorbox"] = {"mp_am_hold_up", "purchase_beerbox_shopkeeper", "~y~5MDevs~c~ Grab Dior Box", AnimationOptions =
+   {
+       Prop = 'fmd_diorbox',
+       PropBone = 18905,
+       PropPlacement = {0.26, 0.16, 0.24, -136.0, 36.0, 24.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   ["glvbox"] = {"mp_am_hold_up", "purchase_beerbox_shopkeeper", "~y~5MDevs~c~ Grab Louis Vuitton Box", AnimationOptions =
+   {
+       Prop = 'fmd_lvbox',
+       PropBone = 18905,
+       PropPlacement = {0.38, 0.24, 0.2, -120.0, 28.0, 48.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   ["gclasp"] = {"mp_am_hold_up", "purchase_energydrink_shopkeeper", "~y~5MDevs~c~ Grab Clasp", AnimationOptions =
+   {
+       Prop = 'fmd_purseclasp',
+       PropBone = 57005,
+       PropPlacement = {0.14, 0.08, 0.0, -120.0, 28.0, 48.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   ["gthread"] = {"mp_am_hold_up", "purchase_energydrink_shopkeeper", "~y~5MDevs~c~ Grab Thread", AnimationOptions =
+   {
+       Prop = 'fmd_pursethread',
+       PropBone = 57005,
+       PropPlacement = {0.12, 0.0, -0.1, -120.0, 144.0, 48.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   ["gpsbal"] = {"missheistdockssetup1clipboard@base", "base", "~y~5MDevs~c~ Grab Balenciaga Purse Sheet", AnimationOptions =
+   {
+       Prop = 'fmd_pursesheetbal',
+       PropBone = 57005,
+       PropPlacement = {0.07, 0.04, -0.11, -36.0, 14.0, 193.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   ["gpsbir"] = {"missheistdockssetup1clipboard@base", "base", "~y~5MDevs~c~ Grab Birkin Purse Sheet", AnimationOptions =
+   {
+       Prop = 'fmd_pursesheetbirkin',
+       PropBone = 57005,
+       PropPlacement = {0.07, 0.04, -0.11, -36.0, 14.0, 193.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   ["gpscha"] = {"missheistdockssetup1clipboard@base", "base", "~y~5MDevs~c~ Grab Chanel Purse Sheet", AnimationOptions =
+   {
+       Prop = 'fmd_pursesheetchanel',
+       PropBone = 57005,
+       PropPlacement = {0.07, 0.04, -0.11, -36.0, 14.0, 193.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   ["gpsdior"] = {"missheistdockssetup1clipboard@base", "base", "~y~5MDevs~c~ Grab Dior Purse Sheet", AnimationOptions =
+   {
+       Prop = 'fmd_pursesheetdior',
+       PropBone = 57005,
+       PropPlacement = {0.07, 0.04, -0.11, -36.0, 14.0, 193.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   ["gpslv"] = {"missheistdockssetup1clipboard@base", "base", "~y~5MDevs~c~ Grab Louis Vuitton Purse Sheet", AnimationOptions =
+   {
+       Prop = 'fmd_pursesheetlv',
+       PropBone = 57005,
+       PropPlacement = {0.07, 0.04, -0.11, -36.0, 14.0, 193.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   ["gfani"] = {"mp_am_hold_up", "purchase_beerbox_shopkeeper", "~y~5MDevs~c~ Grab Animal Fabric", AnimationOptions =
+   {
+       Prop = 'fmd_fabricanimal',
+       PropBone = 18905,
+       PropPlacement = {0.13, 0.18, 0.24, -39.0, 56.0, 224.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   ["gfbla"] = {"mp_am_hold_up", "purchase_beerbox_shopkeeper", "~y~5MDevs~c~ Grab Black Fabric", AnimationOptions =
+   {
+       Prop = 'fmd_fabricblack',
+       PropBone = 18905,
+       PropPlacement = {0.13, 0.18, 0.24, -39.0, 56.0, 224.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   ["gflv"] = {"mp_am_hold_up", "purchase_beerbox_shopkeeper", "~y~5MDevs~c~ Grab Louis Vuitton Fabric", AnimationOptions =
+   {
+       Prop = 'fmd_fabriclv',
+       PropBone = 18905,
+       PropPlacement = {0.13, 0.18, 0.24, -39.0, 56.0, 224.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   ["gfpink"] = {"mp_am_hold_up", "purchase_beerbox_shopkeeper", "~y~5MDevs~c~ Grab Pink Fabric", AnimationOptions =
+   {
+       Prop = 'fmd_fabricpink',
+       PropBone = 18905,
+       PropPlacement = {0.13, 0.18, 0.24, -39.0, 56.0, 224.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   ["gfpss"] = {"mp_am_hold_up", "purchase_beerbox_shopkeeper", "~y~5MDevs~c~ Grab Pink Snake Skin Fabric", AnimationOptions =
+   {
+       Prop = 'fmd_fabricsnake',
+       PropBone = 18905,
+       PropPlacement = {0.13, 0.18, 0.24, -39.0, 56.0, 224.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   ["gfwhi"] = {"mp_am_hold_up", "purchase_beerbox_shopkeeper", "~y~5MDevs~c~ Grab White Fabric", AnimationOptions =
+   {
+       Prop = 'fmd_fabricwhite',
+       PropBone = 18905,
+       PropPlacement = {0.13, 0.18, 0.24, -39.0, 56.0, 224.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},   
+   ["pcraft"] = {"mini@repair", "fixing_a_ped", "~y~5MDevs~c~ Craft Purse", AnimationOptions =
+   {
+       Prop = 'fmd_purseneedle',
+       PropBone = 57005,
+       PropPlacement = {0.13, 0.08, 0.04, -39.0, 56.0, 224.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   ["bbalhp"] = {"boxpursesanimation", "boxpurse_anim", "~y~5MDevs~c~ Box Balenciaga Hourglass Pink", AnimationOptions =
+   {
+       Prop = 'fmd_balhourglasspink',
+       PropBone = 57005,
+       PropPlacement = { 0.17, -0.01, 0.19, -108.0, -69.0, 15.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   ["bbalhps"] = {"boxpursesanimation", "boxpurse_anim", "~y~5MDevs~c~ Box Balenciaga Hourglass Pink Snake Skin", AnimationOptions =
+   {
+       Prop = 'fmd_balhourglasspinksn',
+       PropBone = 18905,
+       PropPlacement = { 0.17, -0.01, 0.19, -108.0, -69.0, 15.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   ["bbaltb"] = {"boxpursesanimation", "boxpurse_anim", "~y~5MDevs~c~ Box Balenciaga Tote Black", AnimationOptions =
+   {
+       Prop = 'fmd_baltoteblack',
+       PropBone = 18905,
+       PropPlacement = { 0.14, -0.11, 0.24, -113.0, -65.0, 15.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   ["bbalww"] = {"issheistdockssetup1clipboard@base", "base", "~y~5MDevs~c~ Box Balenciaga Wallet White", AnimationOptions =
+   {
+       Prop = 'fmd_balwalletw',
+       PropBone = 18905,
+       PropPlacement = {0.15, 0.04, -0.11, -33.0, 27.0, 206.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   ["bbirani"] = {"boxpursesanimation", "boxpurse_anim", "~y~5MDevs~c~ Box Birkin Animal Print", AnimationOptions =
+   {
+       Prop = 'fmd_birkinanimal',
+       PropBone = 18905,
+       PropPlacement = { 0.12, -0.12, 0.29, -113.0, -64.0, 15.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   ["bbirbl"] = {"boxpursesanimation", "boxpurse_anim", "~y~5MDevs~c~ Box Birkin Black", AnimationOptions =
+   {
+       Prop = 'fmd_birkinblack',
+       PropBone = 18905,
+       PropPlacement = { 0.19, -0.12, 0.25, -92.0, -69.0, 7.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   ["bbirp"] = {"boxpursesanimation", "boxpurse_anim", "~y~5MDevs~c~ Box Birkin Ruby Pink", AnimationOptions =
+   {
+       Prop = 'fmd_birkinrpink',
+       PropBone = 18905,
+       PropPlacement = { 0.19, -0.12, 0.25, -92.0, -69.0, 7.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},   
+   ["bbirps"] = {"boxpursesanimation", "boxpurse_anim", "~y~5MDevs~c~ Box Birkin Pink Snake Skin", AnimationOptions =
+   {
+       Prop = 'fmd_birkinpinksnake',
+       PropBone = 18905,
+       PropPlacement = { 0.17, -0.12, 0.22, -102.0, -69.0, 7.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},  
+   ["bchabbl"] = {"boxpursesanimation", "boxpurse_anim", "~y~5MDevs~c~ Box Chanel Backpack Black", AnimationOptions =
+   {
+       Prop = 'fmd_chanelcraftbackpackb',
+       PropBone = 18905,
+       PropPlacement = {0.2, -0.08, 0.29, -81.0, 116.0, -45.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   ["bchabp"] = {"boxpursesanimation", "boxpurse_anim", "~y~5MDevs~c~ Box Chanel Backpack Pink", AnimationOptions =
+   {
+       Prop = 'fmd_chanelcraftbackpackp',
+       PropBone = 18905,
+       PropPlacement = {0.2, -0.08, 0.29, -81.0, 116.0, -45.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   ["bchabw"] = {"boxpursesanimation", "boxpurse_anim", "~y~5MDevs~c~ Box Chanel Backpack White", AnimationOptions =
+   {
+       Prop = 'fmd_chanelcraftbackpackw',
+       PropBone = 18905,
+       PropPlacement = {0.2, -0.08, 0.29, -81.0, 116.0, -45.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},   
+   ["bdiorlani"] = {"boxpursesanimation", "boxpurse_anim", "~y~5MDevs~c~ Box Dior Lady Animal Print", AnimationOptions =
+   {
+       Prop = 'fmd_diorladyanimal',
+       PropBone = 18905,
+       PropPlacement = { 0.16, -0.12, 0.22, -77.0, 111.0, -13.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   ["bdiorlbl"] = {"boxpursesanimation", "boxpurse_anim", "~y~5MDevs~c~ Box Dior Lady Black", AnimationOptions =
+   {
+       Prop = 'fmd_diorladyblack',
+       PropBone = 18905,
+       PropPlacement = { 0.16, -0.12, 0.22, -77.0, 111.0, -13.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   ["bdiorlp"] = {"boxpursesanimation", "boxpurse_anim", "~y~5MDevs~c~ Box Dior Lady Pink", AnimationOptions =
+   {
+       Prop = 'fmd_diorladypink',
+       PropBone = 18905,
+       PropPlacement = { 0.16, -0.12, 0.22, -77.0, 111.0, -13.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   ["bdiortani"] = {"boxpursesanimation", "boxpurse_anim", "~y~5MDevs~c~ Box Dior Tote Animal Print", AnimationOptions =
+   {
+       Prop = 'fmd_diortoteanimal',
+       PropBone = 18905,
+       PropPlacement = {0.31, -0.17, 0.42, -97.0, 111.0, -93.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   ["bdiortps"] = {"boxpursesanimation", "boxpurse_anim", "~y~5MDevs~c~ Box Dior Tote Pink Snake Skin", AnimationOptions =
+   {
+       Prop = 'fmd_diortotepinksnake',
+       PropBone = 18905,
+       PropPlacement = {0.31, -0.17, 0.42, -97.0, 111.0, -93.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   
+   ["blvtlv"] = {"boxpursesanimation", "boxpurse_anim", "~y~5MDevs~c~ Box Louis Vuitton Tote", AnimationOptions =
+   {
+       Prop = 'fmd_lvtotelv',
+       PropBone = 18905,
+       PropPlacement = { 0.27, -0.28, 0.36, -92.0, 111.0, -45.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   ["blvtani"] = {"boxpursesanimation", "boxpurse_anim", "~y~5MDevs~c~ Box Louis Vuitton Tote Animal Print", AnimationOptions =
+   {
+       Prop = 'fmd_lvtoteanimal',
+       PropBone = 18905,
+       PropPlacement = { 0.27, -0.28, 0.36, -92.0, 111.0, -45.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   ["blvcb"] = {"issheistdockssetup1clipboard@base", "base", "~y~5MDevs~c~ Box Louis Vuitton Crossbody", AnimationOptions =
+   {
+       Prop = 'fmd_lvcraftcrossbody',
+       PropBone = 18905,
+       PropPlacement = {-0.54, -0.57, -1.37, -26.0, 43.0, 389.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   ["blvwallet"] = {"issheistdockssetup1clipboard@base", "base", "~y~5MDevs~c~ Box Louis Vuitton Wallet", AnimationOptions =
+   {
+       Prop = 'fmd_lvwallet',
+       PropBone = 18905,
+       PropPlacement = {0.16, -0.02, -0.07, -76.0, 43.0, 389.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
     ["kiss7"] = {
         "tigerle@custom@couple@kissing2a",
         "tigerle_couple_kissing2a",
