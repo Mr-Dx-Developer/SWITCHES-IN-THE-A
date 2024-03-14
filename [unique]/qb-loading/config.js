@@ -16,29 +16,26 @@ Config.Color = '#1f5eff' // Color of the UI
 
 Config.SocialMedia = {
     instagram: {
-        link: "https://discord.gg/qbcoreframework", // Change this to your social media link
+        link: "https://instagram.com/outdamud_rp?igshid=NGVhN2U2NjQ0Yg%3D%3D&utm_source=qr", // Change this to your social media link
     },
     tiktok: {
-        link: "https://discord.gg/qbcoreframework",
-    },
-    youtube: {
-        link: "https://www.youtube.com/@QBCoreStore",
+        link: "https://www.tiktok.com/@outdamud.gg?_t=8kUJ2Zqocsk&_r=1",
     },
     discord: {
-        link: "https://discord.gg/qbcoreframework",
+        link: "https://discord.gg/odmatlantav3",
     },
 };
 
 Config.StaffMembers = {
     1: {
-        name: "QBCore", // Staff member name
-        rank: "Owner/Founder", // Staff member rank (administrator / moderator and can't be changed)
-        image: "https://cdn.discordapp.com/attachments/1179836938199507055/1198246578713010327/QbCore.png?ex=65be3516&is=65abc016&hm=aaa44f91a87e873823e8c35ebd08a78354dd981ae57239bfc1848fefb9936a6a&", // Staff member image (img/avatars/image_name.jpg) or a link ( needs to start with https://)
+        name: "Rico Haiti ", // Staff member name
+        rank: "Owner", // Staff member rank (administrator / moderator and can't be changed)
+        image: "https://cdn.discordapp.com/attachments/1150972679940214816/1195122746720538634/IMG_7427.jpg?ex=65f3714b&is=65e0fc4b&hm=21e98a81390b671c314befed1fcac8a8e3dd49935aecad7a9597d8ca9f999792&", // Staff member image (img/avatars/image_name.jpg) or a link ( needs to start with https://)
     },
     2: {
-        name: "MamBa",
-        rank: "ASST",
-        image: "https://cdn.discordapp.com/attachments/1179836938199507055/1198246579488960552/MMB.png?ex=65be3516&is=65abc016&hm=88aba715d1c1436d2f39b878daa43452d43dddec5cacb5056ca558d2cd6587e1&",
+        name: "Stormii Haiti",
+        rank: "Owner",
+        image: "https://cdn.discordapp.com/attachments/1150972679940214816/1195130030087475270/IMG_8020.jpg?ex=65f37813&is=65e10313&hm=a640052d133107870f0dc346e02cb7da4e0b29dc37167e6751dfc5d311a2b3b0&",
     },
 }
 
@@ -102,8 +99,8 @@ Config.UpdateList = {
 Config.Music = {
     1: {
         filename: 'BossManDlow.mp3',
-        title: 'BossManDlow',
-        artist: 'Rival x Jim Yosef'
+        title: 'Mr Pot Scraper',
+        artist: 'BossMan Dlow'
     }
    /*  2: {
         filename: 'allineed.mp3',
