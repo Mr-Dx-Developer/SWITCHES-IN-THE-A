@@ -2407,7 +2407,7 @@ QBCore.Commands.Add("giveitem", "Give An Item (Admin Only)", {{name="id", help="
 				elseif itemData["name"] == "harness" then
 					info.uses = 20
 				elseif itemData["name"] == "markedbills" then
-					info.worth = math.random(5000, 10000)
+					info.worth = math.random(1, 2)
 				
 				elseif itemData["name"] == "bmx" then
 					info.prim = math.random(0, 100)
@@ -2715,3 +2715,36 @@ end)
 RegisterNetEvent('inventory:server:addGloveboxItems', function()
 	print('inventory:server:addGloveboxItems has been deprecated please use exports[\'qb-inventory\']:addGloveboxItems(plate, items)')
 end)
+
+
+
+
+
+-- required for k9
+function getTrunkItems(plate)
+	if Trunks[plate] then
+		return Trunks[plate]
+	else
+		local result = MySQL.scalar.await('SELECT items FROM trunkitems WHERE plate = ?', {plate})
+		if not result then return false end
+		local data = {
+			items = json.decode(result)
+		}
+		return data
+	end
+end
+function getGloveboxItems(plate)
+	if Gloveboxes[plate] then
+		return Gloveboxes[plate]
+	else
+		local result = MySQL.scalar.await('SELECT items FROM gloveboxitems WHERE plate = ?', {plate})
+		if not result then return false end
+		local data = {
+			items = json.decode(result)
+		}
+		return data
+	end
+end
+exports("getGloveboxItems", getGloveboxItems)
+exports("getTrunkItems", getTrunkItems)
+-- required for k9
