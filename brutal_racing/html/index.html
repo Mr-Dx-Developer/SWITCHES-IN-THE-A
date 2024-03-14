@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.css"></link>
+    <title>Brutal Racing</title>
+</head>
+
+<body>
+
+    <section class="section-main">
+        <button class="exit" onclick="Close()"><i class="fa-solid fa-xmark"></i></button>
+        <button class="info" id="show" onclick="Info(id)"><i class="fa-solid fa-info"></i></button>
+        <h5></h5>
+
+        <div class="create-container">
+            <h1>CREATE PATRY</h1>
+            <img>
+            <h3>Max Players</h3>
+            <div class="change-container">
+                <button class="buttom-change" id="decrease" onclick="change_player(id)"><i class="fa-solid fa-chevron-left"></i></button>
+                <button class="buttom-change" id="increase" onclick="change_player(id)"><i class="fa-solid fa-chevron-right"></i></button>
+                <div class="number-container" id="player">2<i class="fa-solid fa-user"></i></div>
+            </div>
+            <h3>Lap Number</h3>
+            <div class="change-container">
+                <button class="buttom-change" id="decrease" onclick="change_lap(id)"><i class="fa-solid fa-chevron-left"></i></button>
+                <button class="buttom-change" id="increase" onclick="change_lap(id)"><i class="fa-solid fa-chevron-right"></i></button>
+                <div class="number-container" id="lap">1<i class="fa-solid fa-clock-rotate-left"></i></div>
+            </div>
+            <h3>Vehicle</h3>
+            <div class="change-container">
+                <button class="buttom-change" id="decrease" onclick="change_veh(id)"><i class="fa-solid fa-chevron-left"></i></button>
+                <button class="buttom-change" id="increase" onclick="change_veh(id)"><i class="fa-solid fa-chevron-right"></i></button>
+                <div class="number-container" id="veh_type"><h2></h2></div>
+            </div>
+            <h3>Accessibility</h3>
+            <div class="switch-button-container">
+                <button class="switch-button" id="open" onclick="change_accessibility(id)">Open</button>
+                <button class="switch-button" id="request" onclick="change_accessibility(id)">Request</button>
+            </div>
+            <h3 class="ent">Entrance fee</h3>
+            <input class="moneyinput" id="moneyinput" type="text" placeholder="0" onkeypress="return isNumber(event)">
+
+            <button class="create" onclick="createparty()">Create</button>
+        </div>
+
+        <div class="start-container">
+            <h1>START PATRY</h1>
+            <img>
+            <h3>Max Players</h3>
+            <h4 id="player">16</h4>
+            <h3>Laps</h3>
+            <h4 id="lap">4</h4>
+            <h3>Vehicle</h3>
+            <h4 id="vehicle"></h4>
+            <h3>Accessibility</h3>
+            <h4 id="acc">Open</h4>
+            <h3 class="ent">Entrance fee</h3>
+            <h4 class="ent" id="ent">300</h4>
+
+            <div class="joined-container">
+                <table>
+                    <tr>
+                        <th class="id">id</th>
+                        <th>Name</th>
+                        <th>Action</th>
+                    </tr>
+                </table>
+                <hr>
+                <div class="players"></div>
+            </div>
+
+            <button class="create" onclick="startparty()">Start</button>
+            <button class="cancel" onclick="cancelparty()">Cancel</button>
+        </div>
+
+        <div class="join-container">
+            <h1>JOIN PATRY</h1>
+            <img>
+            <h3>Max Players</h3>
+            <h4 id="player">16</h4>
+            <h3>Laps</h3>
+            <h4 id="lap">4</h4>
+            <h3>Vehicle</h3>
+            <h4 id="vehicle"></h4>
+            <h3>Accessibility</h3>
+            <h4 id="acc">Open</h4>
+            <h3 class="ent">Entrance fee</h3>
+            <h4 class="ent" id="ent">300</h4>
+
+            <div class="joined-container">
+                <table>
+                    <tr>
+                        <th class="id">id</th>
+                        <th>Name</th>
+                    </tr>
+                </table>
+                <hr>
+                <div class="players"></div>
+            </div>
+
+            <div class="startedloading">Started...</div>
+            <div class="loader_two"></div>
+        </div>
+
+        <div class="stat-container">
+            <h1>LEADERBOARD</h1>
+            <div class="button-container">
+                <button class="button-board" id="top" onclick="changeboard(id)">Top 25</button>
+                <button class="button-board" id="today" onclick="changeboard(id)">Today</button>
+            </div>
+            <table>
+                <tr>
+                    <th class="number">#</th>
+                    <th>Name</th>
+                    <th class="time">Time</th>
+                </tr>
+            </table>
+            <hr>
+            <div class="stats"></div>
+        </div>
+    </section>
+
+    <section class="section-HUD">
+        <h1 id="laps">1/1<i><a>Laps</a></i></h1>
+        <div class="hud-element" id="time"><i><h1>TIME</h1><h2>0:00</h2></i></div>
+        <div class="hud-element" id="lap"><i><h1>LAP</h1><h2>0:00</h2></i></div>
+        <div class="hud-element" id="best"><i><h1>BEST</h1><h2>0:00</h2></i></div>
+    </section>
+
+    <section class="section-spectate">
+        <h2>Someone's name</h2>
+        <h3>You can switch between the members with the arrows ⬅️ ➡️</h3>
+        <div class="stat-container">
+            <h1>LEADERBOARD</h1>
+            <table>
+                <tr>
+                    <th class="number">#</th>
+                    <th>Name</th>
+                    <th class="time">Time</th>
+                </tr>
+            </table>
+            <hr>
+            <div class="stats specstat"></div>
+        </div>
+    </section>
+
+    <div class="info_container">
+        <div class="container">
+            <button class="exit" id="hide" onclick="Info(id)"><i class="fa-solid fa-xmark"></i></button>
+            <h1>More Info</h1>
+            <div class="text_container">
+                <h2>Creating races</h2>
+                <h3>You can create a race with the conditions you gave above</h3>
+                <h2>Start a race</h2>
+                <h3>If you want to start the race you can do it after you creted it</h3>
+                <h2>Top 25</h2>
+                <h3>In this section you can see the all time records</h3>
+                <h2>Today</h2>
+                <h3>In this section you can see the today records</h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="sure">
+        <div class="container">
+            <h1>Are you sure to close this report?</h1>
+            <button class="tasks" id="yes" onclick="returnsure(id)">YES</button>
+            <button class="tasks" id="cancel" onclick="returnsure(id)">CANCEL</button>
+        </div>
+    </div>
+
+</body>
+<script src="script.js"></script>
+</html>

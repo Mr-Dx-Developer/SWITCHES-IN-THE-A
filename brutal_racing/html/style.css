@@ -1,0 +1,842 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+
+body{
+    font-family: "Orbitron", sans-serif;
+    font-weight: 700;
+    user-select: none;
+    overflow: hidden;
+}
+
+:root{
+    --main_color: red;
+}
+
+.section-main{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 60%;
+    height: 60%;
+    background-color: black;
+    border-radius: 15px;
+    border: solid 3px rgb(75, 75, 75);
+    opacity: 0;
+    display: none;
+    will-change: opacity, display;
+    transition: all 0.4s ease-in-out;          
+}
+
+.section-main > h5{
+    text-align: center;
+    font-size: 2.2vw;
+    color: var(--main_color);
+    margin-top: 7px;
+}
+
+.exit{
+    position: absolute;
+    margin-top: 7px;
+    margin-left: 10px;
+    color: white;
+    font-size: 2.5vw;
+    z-index: 5;
+}
+
+.exit:hover{
+    color: red;
+}
+
+.info{
+    position: absolute;
+    margin-top: 7px;
+    right: 10px;
+    height: 2.5vw;
+    width: 2.5vw;
+    border-radius: 0.4vw;
+    color: white;
+    font-size: 1.7vw;
+}
+
+hr{
+    width: 90%;
+    color: aliceblue;
+}
+
+button{
+    user-select: none;
+    border: none;
+    transition: 0.2s;
+    background-color: transparent;
+}
+
+button:focus{
+    outline: none; 
+}
+
+button:hover{
+    filter: brightness(80%);
+}
+
+button:active{
+    transition: 0.1s;
+    filter: brightness(100%);
+}
+
+.section-main .create-container{
+    position: absolute;
+    top: 52%;
+    left: 5%;
+    transform: translate(0%, -50%);
+    height: 85%;
+    width: 42.5%;
+    background-color: rgb(32, 34, 35);
+    border-radius: 0.7vw;
+    text-align: center;
+    display: none;
+}
+
+.section-main .create-container h1{
+    font-size: 1.5vw;
+    color: var(--main_color);
+    margin-top: 0.3vw;
+    margin-bottom: -3%;
+}
+
+.section-main .create-container h3{
+    color: white;
+    font-size: 1.3vw;
+    text-align: left;
+    margin-left: 5%;
+    margin-bottom: 1%;
+    margin-top: 5.5%;
+    width: 45%;
+}
+
+.section-main .create-container img{
+    position: absolute;
+    top: 10%;
+    right: 5%;
+    width: 45%;
+    height: auto;
+    border-radius: 0.5vw;
+    border: solid 3px rgb(75, 75, 75);
+}
+
+.section-main .create-container .change-container{
+    margin-left: 5%;
+    width: 40%;
+    height: 8%;
+    color: white;
+    margin-bottom: -3%;
+}
+
+.section-main .create-container .change-container .buttom-change{
+    width: 20%;
+    height: 100%;
+    background-color: var(--main_color);
+    color: white;
+    border-radius: 0.3vw;
+    font-size: 1.7vw;
+}
+
+.section-main .create-container .change-container #decrease{
+    float: left;
+}
+
+.section-main .create-container .change-container #increase{
+    float: right;
+}
+
+.section-main .create-container .change-container .number-container{
+    position: relative;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    width: 60%;
+    height: 100%;
+    background-color: rgb(76, 76, 76);
+    font-size: 1.8vw;
+    border-radius: 0.3vw;
+    text-align: left;
+}
+    
+.section-main .create-container #veh_type h2{
+    position: relative;
+    top: -50%;
+    left: 0%;
+    transform: translate(0%, -50%);
+    font-size: 0.9vw;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.section-main .create-container .switch-button-container{
+    margin-left: 5%;
+    width: auto;
+    height: 10%;
+    display: block;
+    text-align: left;
+    margin-bottom: -2%;
+}
+
+.section-main .create-container .switch-button-container .switch-button{
+    width: auto;
+    height: 100%;
+    background-color: rgb(76, 76, 76);
+    border-radius: 0.4vw;
+    color: white;
+    font-size: 1.5vw;
+    font-weight: 700;
+    margin-right: 0.5vw;
+    font-weight: 700;
+    font-family: "Orbitron", sans-serif;
+    transition: all 0.4s ease;
+}
+
+.section-main .create-container .switch-button-container #open{
+    background-color: var(--main_color);
+}
+
+.section-main .create-container .moneyinput{
+    float: left;
+    background-color: rgb(76, 76, 76);
+    width: 45%;
+    height: 2.5vw;
+    margin-left: 5%;
+    border: none;
+    outline: none;
+    border-radius: 0.4vw;
+    text-align: center;
+    color: white;
+    font-size: 1.4vw;
+    font-family: "Orbitron", sans-serif;
+}
+
+.section-main .create{
+    position: absolute;
+    right: 5%;
+    bottom: 2.5%;
+    height: 10%;
+    width: auto;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    background-color: var(--main_color);
+    border-radius: 0.4vw;
+    color: white;
+    font-size: 1.5vw;
+    font-weight: 700;
+    font-family: "Orbitron", sans-serif;
+}
+
+.section-main .cancel{
+    position: absolute;
+    left: 30%;
+    bottom: 2.5%;
+    height: 10%;
+    width: auto;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    background-color: red;
+    border-radius: 0.4vw;
+    color: white;
+    font-size: 1.5vw;
+    font-weight: 700;
+    font-family: "Orbitron", sans-serif;
+}
+
+.section-main .start-container{
+    position: absolute;
+    top: 52%;
+    left: 5%;
+    transform: translate(0%, -50%);
+    height: 85%;
+    width: 42.5%;
+    background-color: rgb(32, 34, 35);
+    border-radius: 0.7vw;
+    text-align: center;
+    display: none;
+}
+
+.section-main .start-container h1{
+    font-size: 1.5vw;
+    color: var(--main_color);
+    margin-top: 0.3vw;
+    margin-bottom: -3%;
+}
+
+.section-main .start-container h3{
+    color: white;
+    font-size: 1.2vw;
+    text-align: left;
+    margin-left: 5%;
+    margin-top: 6%;
+    width: 40%;
+}
+
+.section-main .start-container h4{
+    color: white;
+    font-size: 1.2vw;
+    text-align: left;
+    margin-left: 5%;
+    margin-top: -4%;
+    width: fit-content;
+    padding: 0.5vw;
+    background-color: rgb(75, 75, 75);
+    border-radius: 0.3vw;
+    text-align: center;
+    margin-bottom: -3%;
+}
+
+.section-main .start-container img{
+    position: absolute;
+    top: 10%;
+    right: 5%;
+    width: 45%;
+    height: auto;
+    border-radius: 0.5vw;
+    border: solid 3px rgb(75, 75, 75);
+}
+
+.section-main .start-container .joined-container{
+    position: absolute;
+    top: 35%;
+    right: 5%;
+    width: 55%;
+    height: 50%;
+    background-color: rgb(64, 64, 64);
+    border-radius: 0.4vw;
+}
+
+.section-main .join-container{
+    position: absolute;
+    top: 52%;
+    left: 5%;
+    transform: translate(0%, -50%);
+    height: 85%;
+    width: 42.5%;
+    background-color: rgb(32, 34, 35);
+    border-radius: 0.7vw;
+    text-align: center;
+    display: none;
+}
+
+.section-main .join-container .startedloading{
+    position: absolute;
+    right: 15%;
+    bottom: 2.5%;
+    height: auto;
+    width: auto;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    color: white;
+    font-size: 1.5vw;
+    font-weight: 700;
+    font-family: "Orbitron", sans-serif;
+    display: none;
+}
+
+.section-main .join-container .loader_two{
+    border: 0.3vw solid #2b2b2b;
+    border-radius: 50%;
+    border-top: 0.3vw solid var(--main_color);
+    width: 1.5vw;
+    height: 1.5vw;
+    animation: spin 3s linear infinite;
+    position: absolute;
+    right: 5%;
+    bottom: 2.5%;
+}
+
+.section-main .join-container h1{
+    font-size: 1.5vw;
+    color: var(--main_color);
+    margin-top: 0.3vw;
+    margin-bottom: -3%;
+}
+
+.section-main .join-container h3{
+    color: white;
+    font-size: 1.2vw;
+    text-align: left;
+    margin-left: 5%;
+    margin-top: 4%;
+    width: 40%;
+}
+
+.section-main .join-container h4{
+    color: white;
+    font-size: 1.2vw;
+    text-align: left;
+    margin-left: 5%;
+    margin-top: -4%;
+    width: fit-content;
+    padding: 0.5vw;
+    background-color: rgb(75, 75, 75);
+    border-radius: 0.3vw;
+    text-align: center;
+    margin-bottom: -3%;
+}
+
+.section-main .join-container img{
+    position: absolute;
+    top: 10%;
+    right: 5%;
+    width: 45%;
+    height: auto;
+    border-radius: 0.5vw;
+    border: solid 3px rgb(75, 75, 75);
+}
+
+.section-main .joined-container{
+    position: absolute;
+    top: 35%;
+    right: 5%;
+    width: 45%;
+    height: 50%;
+    background-color: rgb(64, 64, 64);
+    border-radius: 0.4vw;
+}
+
+.section-main .joined-container .players{
+    height: 80%;
+    overflow: auto;
+}
+
+.section-main .joined-container table{
+    margin-top: 2%;
+    width: 90%;
+}
+
+.section-main .joined-container table .id{
+    width: 25%;
+}
+
+.section-main .joined-container .players .joined-element{
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    width: 90%;
+    height: 2vw;
+    background-color: rgb(32, 34, 35);
+    margin-top: 0.3vw;
+    margin-bottom: 0.3vw;
+    border-radius: 0.3vw;
+}
+
+.section-main .joined-container .players #notjoined{
+    opacity: 0.6;
+}
+
+.section-main .joined-container .players .joined-element table{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-bottom: 0%;
+    margin-top: 0%;
+}
+
+.section-main .joined-container .players .joined-element table .action{
+    height: 1.4vw;
+    width: 1.4vw;
+    border-radius: 0.2vw;
+    color: white;
+    margin-right: 0vw;
+    margin-left: 0.4vw;
+    font-size: 1vw;
+    float: right;
+}
+
+.section-main .joined-container .players .joined-element table .kick{
+    background-color: red;
+}
+
+.section-main .joined-container .players .joined-element table .approve{
+    background-color: rgb(42, 207, 42);
+}
+
+.section-main .stat-container{
+    position: absolute;
+    top: 52%;
+    right: 5%;
+    transform: translate(0%, -50%);
+    height: 85%;
+    width: 42.5%;
+    background-color: rgb(32, 34, 35);
+    border-radius: 0.7vw;
+    text-align: center;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.stat-container h1{
+    font-size: 1.5vw;
+    color: var(--main_color);
+    margin: 0.3vw;
+}
+
+.section-main .stat-container .button-container{
+    width: 100%;
+    height: auto;
+    display: block;
+    text-align: center;
+    margin-bottom: 1vw;
+}
+
+.section-main .stat-container .button-container .button-board{
+    height: 2vw;
+    width: 30%;
+    background-color: rgb(76, 76, 76);
+    border-radius: 0.3vw;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    color: white;
+    font-size: 1vw;
+    font-weight: 600;
+    font-family: "Orbitron", sans-serif;
+    transition: all 0.4s ease;
+}
+
+.section-main .stat-container .button-container #top{
+    background-color: var(--main_color);
+}
+
+table{
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    border-collapse: collapse;
+    table-layout: fixed;
+    width: 90%;
+    height: 10%;
+    text-align: center;
+    margin-bottom: -2%;
+    margin-top: -4%;
+}
+
+table th{
+    font-size: 1vw;
+    color: white;
+}
+
+.stat-container table .number{
+    width: 15%;
+}
+
+.stat-container table .time{
+    width: 25%;
+}
+
+.stat-container .stats{
+    width: 100%;
+    height: 70%;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    margin-top: -0.4vw;
+}
+
+::-webkit-scrollbar{
+    width: 0.5vw;
+}
+
+.stat-container .stats::-webkit-scrollbar-track{
+    background-color: rgb(76, 76, 76);
+    border-radius: 3vh;
+}
+   
+::-webkit-scrollbar-thumb{
+    background: var(--main_color); 
+    border-radius: 3vh;
+}
+
+.stat-container .stats .stat-element{
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    width: 90%;
+    height: 3vw;
+    background-color: rgb(76, 76, 76);
+    margin-top: 0.7vw;
+    margin-bottom: 0.7vw;
+    border-radius: 0.7vw;
+}
+
+.stat-container .stats #myname{
+    background-color: var(--main_color);
+}
+
+.stat-container .stats #notfinished{
+    opacity: 0.7;
+}
+
+.stat-container .stats .stat-element .date{
+    position: absolute;
+    top: 2px;
+    right: 5px;
+    color: rgba(255, 255, 255, 0.647);
+    font-size: 0.6vw;
+}
+
+.stat-container .stats .stat-element table{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    margin-bottom: 0%;
+    margin-top: 0%;
+}
+
+.section-HUD{
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    height: 20vw;
+    width: 20vw;
+    display: none;
+    opacity: 0;
+    transition: all 0.4s ease;
+    will-change: display, opacity;
+}
+
+.section-HUD h1{
+    font-size: 6vw;
+    color: var(--main_color);
+    text-align: left;
+    margin-top: -1.5vw;
+    margin-bottom: 0vw;
+}
+
+.section-HUD a{
+    font-size: 3vw;
+    color: white;
+}
+
+.section-HUD .hud-element{
+    height: 2.5vw;
+    width: 100%;
+    margin-top: 0.3vw;
+    background-color: rgba(98, 98, 98, 0.488);
+    border-radius: 0.2vw;
+    overflow: hidden;
+}
+
+.section-HUD .hud-element h1{
+    font-size: 2vw;
+    color: var(--main_color);
+    text-align: left;
+    margin-left: 0.5vw;
+    width: fit-content;
+    display: inline;
+}
+
+.section-HUD .hud-element h2{
+    font-size: 2vw;
+    color: white;
+    margin-right: 0.5vw;
+    text-align: right;
+    float: inline-end;
+    display: inline;
+    margin-top: 0vw;
+}
+
+.section-spectate{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    display: none;
+    opacity: 0;
+    transition: all 0.4s ease;
+    will-change: display, opacity;
+}
+
+.section-spectate h2{
+    position: absolute;
+    left: 50%;
+    bottom: 4%;
+    transform: translate(-50%, 0%);
+    color: var(--main_color);
+    font-size: 3vw;
+    white-space: nowrap;
+    text-shadow: 3px 3px 4px rgb(0, 0, 0);
+}
+
+.section-spectate h3{
+    position: absolute;
+    left: 50%;
+    bottom: 1%;
+    transform: translate(-50%, 0%);
+    color: rgba(255, 255, 255, 0.726);
+    font-size: 1.8vw;
+    white-space: nowrap;
+    text-shadow: 3px 3px 4px rgb(0, 0, 0);
+}
+
+.section-spectate .stat-container{
+    position: absolute;
+    top: 20%;
+    right: 3%;
+    height: 60%;
+    width: 20%;
+    background-color: rgb(32, 34, 35);
+    border-radius: 0.7vw;
+    text-align: center;
+    overflow: hidden;
+    border: solid 3px rgb(75, 75, 75);
+}
+
+.loader{
+    border: 0.3vw solid #2b2b2b;
+    border-radius: 50%;
+    border-top: 0.3vw solid var(--main_color);
+    width: 1.5vw;
+    height: 1.5vw;
+    animation: spin 3s linear infinite;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%,0%);
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.section-spectate .stat-container .specstat{
+    height: 90%;
+}
+
+.sure{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.532);
+    transition: 0.4s;
+    display: none;
+    opacity: 0;
+    z-index: 5;
+}
+
+.sure .container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 13vw;
+    width: 30vw;
+    background-color: rgb(32, 34, 35);
+    border-radius: 0.5vw;
+}
+
+.sure .container h1{
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    height: 50%;
+    width: 100%;
+    transform: translate(-50%, 0%);
+    font-size: 2vw;
+    color: white;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.sure .container #yes{
+    position: absolute;
+    bottom: 20px;
+    right: 12%;
+    background-color: var(--main_color);
+    padding-top: 5px;
+}
+
+.sure .container #cancel{
+    position: absolute;
+    bottom: 20px;
+    left: 12%;
+    background-color: rgb(75, 75, 75);
+}
+
+.tasks{
+    height: 3.5vw;
+    width: 8vw;
+    margin: 0.3vw;
+    border-radius: 0.4vw;
+    border: none;
+    font-size: 1.5vw;
+    font-weight: 700;
+    color: white;
+    transition: all 0.3s;
+    font-family: "Orbitron", sans-serif;
+}
+
+.info_container{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.532);
+    transition: 0.4s;
+    display: none;
+    opacity: 0;
+    z-index: 5;
+}
+
+.info_container .container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: auto;
+    min-height: 15vw;
+    width: 30vw;
+    background-color: rgb(32, 34, 35);
+    border-radius: 0.5vw;
+}
+
+.info_container .container h1{
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    height: 50%;
+    width: 100%;
+    transform: translate(-50%, 0%);
+    font-size: 2vw;
+    color: white;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.info_container .container .text_container{
+    margin-top: 15%;
+    height: auto;
+    width: 100%;
+    padding-bottom: 1vw;
+}
+
+.info_container .container .text_container h2{
+    font-size: 1.5vw;
+    color: white;
+    font-weight: 800;
+    margin-top: 1vw;
+    margin-left: 1.5vw;
+    margin-right: 1.5vw;
+}
+
+.info_container .container .text_container h3{
+    font-size: 1vw;
+    color: white;
+    font-weight: 400;
+    margin-top: -1vw;
+    margin-left: 2vw;
+    margin-right: 1.5vw;
+}
