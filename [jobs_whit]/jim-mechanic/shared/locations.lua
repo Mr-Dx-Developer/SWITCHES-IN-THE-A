@@ -258,3 +258,65 @@ Config.Locations[#Config.Locations+1] = {
 		color = 2571775,
 	}
 }
+
+
+
+Config.Locations[#Config.Locations+1] = { 
+	Enabled = true,
+	job = "bandoscustom",
+	zones = {
+		vec2(1013.5384521484375,-1509.7318115234375),
+		vec2(1015.2659301757812,-1469.248291015625),
+		vec2(962.887939453125,-1484.822021484375),
+		vec2(962.017578125,-1510.3516845703125)
+		
+	},
+	autoClock = { enter = true, exit = true, },
+	stash = {
+		{ coords = vec4(995.21, -1489.5, 31.5, 0.0), w = 2.0, d = 4.0 },
+	},
+	store = {
+		{ coords = vec4(1001.59, -1500.38, 31.5, 90), w = 5.6, d = 5.5 },
+		
+	},
+	crafting = {
+		{ coords = vec4(0.0, 0.0, 0.0, 0.0), w = 3.2, d = 1.0 },
+	},
+	clockin = {
+		{ coords = vec4(990.92, -1490.91, 31.5, 0.0), prop = false, },
+	},
+	manualRepair = {
+		{ coords = vec4(0.0, 0.0, 0.0, 0.0), prop = false, },
+	},
+	carLift = {
+		{ coords = vec4(0.0, 0.0, 0.0, 0.0), },
+		{ coords = vec4(0.0, 0.0, 0.0, 0.0) },
+	},
+	garage = {
+		spawn = vec4(1002.5274658203125,-1481.89453125,31.217529296875,272.1259765625),
+		out = vec4(996.8043823242188,-1481.96044921875,31.4197998046875,269.2913513183594),
+		list = { "towtruck", "panto", "slamtruck", "cheburek", "utillitruck3" },
+		prop = true
+	},
+	payments = {
+		img = "https://static.wikia.nocookie.net/gtawiki/images/b/be/BennysOriginalMotorWorks-GTAO-Logo.png",
+		{ coords = vec4(0.0, 0.0, 0.0, 0.0), prop = false },
+	},
+	Restrictions = {
+		Vehicle = { "Compacts", "Sedans", "SUVs", "Coupes", "Muscle", "Sports Classics", "Sports", "Super", "Motorcycles", "Off-road", "Industrial", "Utility", "Vans", "Cycles", "Service", "Emergency", "Commercial", },
+		Allow = { "tools", "cosmetics", "repairs", "nos", "perform" },
+	},
+	blip = {
+		coords = vec3(990.92, -1490.91, 31.5),
+		label = "Bandos Customs",
+		color = 81,
+		sprite = 446,
+		disp = 6,
+		scale = 0.7,
+		cat = nil,
+	},
+	discord = {
+		link = "",
+		color = 2571775,
+	}
+}
