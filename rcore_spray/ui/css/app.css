@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@700&display=swap');
+
+* {
+  user-select: none;
+}
+
+body {
+  font-family: "Fira Sans", sans-serif;
+}
+
+.container {
+  width: 600px;
+  height: 400px;
+
+  background: url('/ui/images/container.png') center center;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+}
+
+.container-inside {
+  position: relative;
+  width: 100%;
+  height: calc(100% - 43px);
+}
+
+.top-buttons {
+
+}
+
+.top-button {
+  width: calc(50% - 5px);
+  height: 40px;
+  float: left;
+  line-height: 40px;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 35px;
+  border: 3px solid black;
+  border-bottom: 0;
+  color: rgba(255, 255, 255, 0.452);
+  background: #000000cc;
+  cursor: pointer;
+}
+
+.top-button:first-child {
+  border-right: 0;
+  width: calc(50% - 4px);
+}
+
+.top-button.active {
+  background: black;
+  color: white;
+}
+
+.search-text {
+  position: relative;
+  width: 80%;
+  float: left;
+  padding: 0px 10px;
+}
+
+
+.search-text .input-error {
+  position: absolute;
+  background: red;
+  width: calc(100% - 18px);
+  border-bottom: 4px solid black;
+  border-top: 1px solid black;
+  text-align: left;
+  padding: 5px;
+  color: white;
+  font-weight: normal;
+}
+
+.color-input {
+  float: left;
+  position: relative;
+  top: 14px;
+  left: 10px;
+}
+
+.color-input .descr {
+  position: absolute;
+  right: -40px;
+  top: 4px;
+  color: #ffffffcc;
+}
+
+.input {
+  position: relative;
+  text-align: center;
+
+}
+.input input {
+  all: unset;
+  margin-top: 10px;
+  width: 100%;
+  font-size: 20px;
+  
+  background: white;
+  text-align: left;
+  padding: 4px;
+  border: 2px solid transparent;
+}
+
+.input input:focus {
+  border: 2px solid rgb(54, 215, 226);
+}
+
+.graffiti-container {
+  text-align: center;
+  font-size: 60px;
+  padding-top: 5px;
+  height: 306px;
+  overflow-y: scroll;
+}
+
+.graffiti-example {
+  color: white;
+  padding-top: 5px;
+  border: 3px solid transparent;
+  border-right: 0;
+  cursor: pointer;
+}
+
+.graffiti-example.selected {
+  border: 3px solid #00ffff90;
+  background: #00ffff50;
+  border-right: 0;
+}
+
+.spray-button {
+  position: absolute;
+  bottom: -43px;
+  right: 0;
+  background: #000;
+  color: white;
+  height: 35px;
+  font-size: 30px;
+  padding: 4px 9px;
+  line-height: 35px;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+.spray-button.hint {
+  font-size: 20px;
+}
+
+.cancel-button {
+  position: absolute;
+  bottom: -43px;
+  left: 0;
+  background: #000;
+  color: rgba(255, 255, 255, 1);
+  height: 35px;
+  font-size: 30px;
+  padding: 4px 9px;
+  cursor: pointer;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #5e5e5e;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #00ffff;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #00b8b8;
+}
+
+.graffiti-images {
+  text-align: center;
+  padding-top: 5px;
+  height: 352px;
+  overflow-y: scroll;
+}
+
+.graffiti-images img {
+  width: 200px;
+  cursor: pointer;
+  border: solid 5px #00ffff00;
+}
+
+.graffiti-images img.selected {
+  border: solid 5px #00ffff20;
+  background: #00ffff20;
+}
+
+.img-sep {
+  width: 80%;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.466);
+  margin: 10px auto;
+}
+
+.container-keybind {
+  height: 70px;
+  top: auto;
+  bottom: 20px;
+  border: 5px solid aqua;
+}
+
+
+.container-keybind.has-error {
+  height: 120px;
+
+}
+
+.container-keybind.has-error .error {
+  text-align: center;
+  font-size: 30;
+  color: red;
+}
+
+.container-keybind .container-inside {
+  padding: 10px;
+  padding-left: 30px;
+}
+
+.keybind {
+  float: left;
+}
+
+.keybind.keybind-size {
+  margin-left: 30px;
+}
+
+.keybind img {
+  width: 50px;
+}
+
+.keybind span {
+  color: white;
+  position: relative;
+  font-size: 30px;
+  top: -15px;
+}

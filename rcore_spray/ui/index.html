@@ -1,0 +1,77 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="css/app.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/nano.min.css"/> <!-- 'nano' theme -->
+    <script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.es5.min.js"></script>
+
+    <style class='font-cfg'>
+    </style>
+</head>
+<body>
+    <img src="/ui/images/container.png" style="width: 0px; height: 0px; " />
+    <div class="container first-part hidden">
+        <div class="top-buttons">
+            <div class="top-button active" id='nav-text' data-mode='text'><span data-translate='text'>TEXT</span></div>
+            <div class="top-button" id='nav-image' data-mode='image'><span data-translate='image'>IMAGE</span></div>
+            <div style="clear: both"></div>
+        </div>
+
+        <div class="container-inside">
+            <div class="graffiti-input-text input">
+                <div class="search-text">
+                    <input type="text" placeholder="Your graffiti text here">
+                    <div class="input-error hidden"><span data-translate='word-not-allowed'>This word is not allowed!</span></div>
+                </div>
+                <div class="color-input">
+                    <span class="color-picker"></span>
+                    <span class='descr'><span data-translate='color'>color</span></span>
+                </div>
+                <div style='clear: both'></div>
+            </div>
+
+            <div class="graffiti-container">
+                <!-- <div class='graffiti-example selected' style="font-family: graffiti1; font-size: 37%">HELLO WORLD</div> -->
+            </div>
+
+            <div class="graffiti-images hidden">
+                <!-- <img src="graffiti/aztecas.png"> -->
+            </div>
+
+            <div class="bl-hide">
+                <div id='select-color' class="spray-button hidden"><span data-translate='spray'>SPRAY</span> <i class="fas fa-chevron-right"></i></div>
+            </div>
+            <div id='click-to-select-font' class="spray-button hint"><i style='transform: rotateY(0deg) rotate(-15deg);' class="fas fa-chevron-up"></i> <span data-translate='click-to-select'>CLICK TO SELECT</span></i></div>
+            <div class="cancel-button"><i class="fas fa-times"></i> <span data-translate='cancel'>CANCEL</span></i></div>
+        </div>
+    </div>
+
+    <div class="container container-keybind hidden">
+        <div class="container-inside">
+            <div class="keybind keybind-spray">
+                <img src="/ui/images/Enter_Key_Light.png"> 
+                <span data-translate='keybind-spray'>Spray</span>
+            </div>
+            
+            <div class="keybind keybind-size">
+                <img src="/ui/images/Mouse_Middle_Key_Light.png">
+                <span data-translate='keybind-change-size'>Change Size</span>
+            </div>
+
+            <div class="keybind keybind-size">
+                <img src="/ui/images/Backspace_Key_Light.png">
+                <span data-translate='keybind-back'>Back</span>
+            </div>
+
+            <div style="clear: both"></div>
+
+            <div class='error hidden'></div>
+
+        </div>
+    </div>
+
+    <script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+    <script src="scripts/app.js"></script>
+</body>
+</html>
