@@ -111,7 +111,7 @@ Config.MouseCursorKeyLabel = "["
 
 
 Config.WaterMarkInformations = { -- informations displayed in the upper right watermark
-    logo = "https://media.discordapp.net/attachments/1179152362900832316/1208672022842970143/Watermark.png?ex=65e4228a&is=65d1ad8a&hm=e60d3d1076fa307b70de2fb043e97c25e4815ed8535cf765fe69cf44b32e322c&=&format=webp&quality=lossless&width=1193&height=671",
+    logo = "https://media.discordapp.net/attachments/1179152362900832316/1217949831696482335/Watermark.png?ex=6605e32c&is=65f36e2c&hm=439ce1e2692271f3b256b8ae997ba911574f7f874420abefca7b8586551a5708&=&format=webp&quality=lossless&width=550&height=309",
     servername = "",
     discordlink = "discord.gg/odmatlantav3"
 }

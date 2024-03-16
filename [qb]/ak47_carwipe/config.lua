@@ -1,7 +1,7 @@
 Config = {}
 Config.Locale = 'en'
 
-Config.WipeCooldown 	= 10 	--minutes [minimum 2 minutes]
+Config.WipeCooldown 	= 30 	--minutes [minimum 2 minutes]
 Config.WarningStarts 	= 1 	--minutes [minimum 1 minutes]
 Config.RedAlert 		= 20 	--seconds [minimum 2 seconds]
 

@@ -100,12 +100,29 @@ QBShared.Jobs = {
 		defaultDuty = true,
 		offDutyPay = false,
 		grades = {
+			
 			['0'] = { name = 'designer', payment = 250 },
+			['1'] = { name = 'Shopkeeper', payment = 450 },
+			['2'] = { name = 'Shopkeeper', payment = 600 },
+			['3'] = { name = 'Manager', payment = 700 },
+			['4'] = { name = 'Owner', isboss = true, payment = 1000 },
 			
 		},
 	},
 	cookies = {
 		label = 'Cookies',
+		defaultDuty = true,
+		offDutyPay = false,
+		grades = {
+			['0'] = { name = 'Farmer', payment = 250 },
+			['1'] = { name = 'Shopkeeper', payment = 450 },
+			['2'] = { name = 'Shopkeeper', payment = 600 },
+			['3'] = { name = 'Manager', payment = 700 },
+			['4'] = { name = 'Owner', isboss = true, payment = 1000 },
+		},
+	},
+	cannabiscafe = {
+		label = 'CannabisCafe',
 		defaultDuty = true,
 		offDutyPay = false,
 		grades = {

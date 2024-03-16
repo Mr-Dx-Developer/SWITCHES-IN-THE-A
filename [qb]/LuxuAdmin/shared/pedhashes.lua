@@ -3,6 +3,7 @@
 -- Add corresponding image to nui/addon_ped_imgs/,
 
 PedModels = {
+      ['Omen1'] = { ['custom'] = nil },
       ['strikes'] = { ['custom'] = nil },
       ['DeadpoolMovie'] = { ['custom'] = nil },
       ['gundam'] = { ['custom'] = nil },

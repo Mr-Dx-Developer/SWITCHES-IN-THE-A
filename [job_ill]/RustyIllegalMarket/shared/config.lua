@@ -763,14 +763,6 @@ Config.Assaultrifles = {
             slot = 43, 
         },
         [44] = {
-            name = "WEAPON_LBTARP",
-            price = 4000000,
-            amount = 1,
-            info = {},
-            type = "item",
-            slot = 44, 
-        },
-        [45] = {
             name = "WEAPON_IA2",
             price = 4000000,
             amount = 1,
@@ -778,7 +770,7 @@ Config.Assaultrifles = {
             type = "item",
             slot = 45, 
         },
-        [46] = {
+        [45] = {
             name = "WEAPON_TARP",
             price = 4000000,
             amount = 1,
@@ -786,7 +778,7 @@ Config.Assaultrifles = {
             type = "item",
             slot = 46, 
         },
-        [47] = {
+        [46] = {
             name = "WEAPON_P416",
             price = 4500000,
             amount = 1,
@@ -794,7 +786,7 @@ Config.Assaultrifles = {
             type = "item",
             slot = 47, 
         },
-        [48] = {
+        [47] = {
             name = "WEAPON_AUGA1",
             price = 5500000,
             amount = 1,
@@ -802,7 +794,7 @@ Config.Assaultrifles = {
             type = "item",
             slot = 48, 
         },
-        [49] = {
+        [48] = {
             name = "WEAPON_DDM4V5",
             price = 6400000,
             amount = 1,
@@ -810,7 +802,7 @@ Config.Assaultrifles = {
             type = "item",
             slot = 49, 
         },
-        [50] = {
+        [49] = {
             name = "WEAPON_MPX",
             price = 4000000,
             amount = 1,
@@ -818,7 +810,7 @@ Config.Assaultrifles = {
             type = "item",
             slot = 50, 
         },
-        [51] = {
+        [50] = {
             name = "WEAPON_PLR",
             price = 4000000,
             amount = 1,

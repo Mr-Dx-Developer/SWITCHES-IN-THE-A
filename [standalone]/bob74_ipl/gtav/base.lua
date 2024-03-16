@@ -96,5 +96,9 @@ Citizen.CreateThread(function()
     RequestIpl("canyonriver01_lod")
 
     -- Ferris wheel
-    RequestIpl("ferris_finale_anim")
+   -- RequestIpl("ferris_finale_anim")
+
+    -- Train track: 2626.374, 2949.869, 39.1409
+    RequestIpl("ld_rail_01_track")
+    RequestIpl("ld_rail_02_track")
 end)

@@ -14,7 +14,7 @@ Config.increaseWheelRenderTiming = false
 Config.alternativeWheelBreak = false
 
 -- The amount of damage the wheels will take on collisions (10-30 seems reasonable to me, for more realistic experience I'd recommend values between 50-100)
-Config.collisionDamageAmount = 30
+Config.collisionDamageAmount = 15
 
 -- If you define a model specific multiplier it will be used instead of the class multiplier
 -- Vehicle classes https://docs.fivem.net/natives/?_0x29439776AAA00A62
@@ -50,7 +50,7 @@ Config.collisionDamageMultiplier = {
 
 
 -- The amount of damage the wheels will take on falls (10-30 seems reasonable to me, for more realistic experience I'd recommend values between 50-100)
-Config.fallDamageAmount = 30
+Config.fallDamageAmount = 20
 
 -- Multiplier for the fall damage for vehicles that are using off-road tires/wheels
 Config.offroadTireFallDamageMultiplier = 0.7

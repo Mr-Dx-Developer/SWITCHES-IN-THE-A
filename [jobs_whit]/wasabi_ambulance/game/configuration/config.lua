@@ -248,7 +248,7 @@ Config.targetSystem = true          -- Target system for targetting players, med
 Config.RespawnTimer = 2 * minutes   -- Time before optional respawn
 Config.BleedoutTimer = 10 * minutes -- Time before it forces respawn
 
-Config.removeItemsOnDeath = false   -- Must have Config.Inventory set properly
+Config.removeItemsOnDeath = true   -- Must have Config.Inventory set properly
 Config.Inventory =
 'qb'                                --Options include: 'ox' - (ox_inventory) / 'qb' - (QBCore qb-inventory) 'mf' - (mf-inventory) / 'qs' (qs-inventory) / 'esx' (default esx) / 'other' (whatever else can customize in client/cl_customize.lua)
 

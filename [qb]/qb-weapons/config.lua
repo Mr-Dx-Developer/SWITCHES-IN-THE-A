@@ -23,6 +23,8 @@ Config.Throwables = {
 }
 
 Config.DurabilityMultiplier = {
+    WEAPON_SCEVO                = 0.15,
+    
     weapon_ddm4v7 	             = 0.15,
     weapon_g2c 	                 = 0.15,
     weapon_pmr 		             = 0.15,
@@ -271,7 +273,9 @@ Config.WeaponRepairCosts = {
 }
 
 WeaponAttachments = {
+    
     clip_attachment = {
+        WEAPON_SCEVO = `w_ar_cz_sc_evo_mag2`,
         weapon_pistol = `COMPONENT_PISTOL_CLIP_02`,
         weapon_pistol_mk2 = `COMPONENT_PISTOL_MK2_CLIP_02`,
         weapon_combatpistol = `COMPONENT_COMBATPISTOL_CLIP_02`,
@@ -404,6 +408,7 @@ WeaponAttachments = {
         weapon_glockbeams = `COMPONENT_AT_PI_GLOCKBEAMS_FLSH`, -- v5
     },
     suppressor_attachment = {
+        WEAPON_SCEVO = `w_at_cz_sc_evo_supp`,
         weapon_pistol = `COMPONENT_AT_PI_SUPP_02`,
         weapon_pistol_mk2 = `COMPONENT_AT_PI_SUPP_02`,
         weapon_combatpistol = `COMPONENT_AT_PI_SUPP`,
@@ -446,6 +451,7 @@ WeaponAttachments = {
         weapon_redm4a1 = `COMPONENT_AT_AR_REDM4A1_SUPP`, -- v5
     },
     smallscope_attachment = {
+        WEAPON_SCEVO  = `w_at_cz_sc_evo_scope_small`,
         weapon_pistol_mk2 = `COMPONENT_AT_PI_RAIL`,
         weapon_snspistol_mk2 = `COMPONENT_AT_PI_RAIL_02`,
         weapon_microsmg = `COMPONENT_AT_SCOPE_MACRO`,
@@ -590,6 +596,7 @@ WeaponAttachments = {
         weapon_heavysniper_mk2 = `COMPONENT_AT_SR_BARREL_02`,
     },
     grip_attachment = {
+        WEAPON_SCEVO = `w_at_cz_sc_evo_afgrip`,
         weapon_combatpdw = `COMPONENT_AT_AR_AFGRIP`,
         weapon_assaultshotgun = `COMPONENT_AT_AR_AFGRIP`,
         weapon_bullpupshotgun = `COMPONENT_AT_AR_AFGRIP`,

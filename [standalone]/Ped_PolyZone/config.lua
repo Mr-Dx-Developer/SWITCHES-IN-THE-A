@@ -11,7 +11,7 @@ PedZones = {
             debugPoly = false -- If "true" it will demarcate the area with green "walls", if "false" it will not demarcate them.
         }
     },
-    Zona2 = {
+   --[[  Zona2 = {
         pontos = {
             vector2(-97.27912139892578,-1754.3341064453125), -- Coordinates "x","y"
             vector2(-55.43735885620117,-1733.5252685546875),
@@ -22,7 +22,7 @@ PedZones = {
             name = 'Zona 2',
             debugPoly = false -- If "true" it will demarcate the area with green "walls", if "false" it will not demarcate them.
         }
-    },
+    }, ]]
     Zona3 = {
         pontos = {
             vector2(-127.74066162109375,-1546.7340087890625), -- Coordinates "x","y"

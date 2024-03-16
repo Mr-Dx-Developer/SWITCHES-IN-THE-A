@@ -1,0 +1,41 @@
+<head>
+	<link rel="stylesheet" href="styles.css" type="text/css">
+	<link rel="stylesheet" href="https://kit-pro.fontawesome.com/releases/v6.2.0/css/pro.min.css">
+	<script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+	<script src="howler.core.js"></script>
+	<script src="scripts.js" type="text/javascript"></script>
+	<script src="debounce.min.js" type="text/javascript"></script>	
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>	
+</head>
+
+<body>
+	<div class="full-screen">	
+		<div class="notify-container">
+			<div class="body notifications">
+			</div>		
+		</div>
+		<div class="notifysettings-container" id="notifysettingsshow">	
+			<img class="closenotifyedit" src="img/close.png" style="width:26px;height:24px" alt="CloseNotifyEdit"/>
+			<div class="notifysettingsmaintext">NOTIFY SETTINGS</div>	
+			<div class="notifysettingsscale">SCALE</div>	
+			<div class="scaleslidercontainer">	
+				<div class="scalesliderline">
+				</div>				
+				<input type="range" min="5" max="15" value="10" class="scaleslider" id="scalesliderdata">			
+			</div>
+			<div class="notifysettingssound">SOUND</div>
+			<div class="notifysettingshide">HIDE</div>
+			<label class="notifyvolumeswitch">
+			  <input type="checkbox" id="notifyvolumeswitchdata">
+			  <span class="slidervolumeswitch"></span>
+			</label>	
+			<label class="notifyhideswitch">
+			  <input type="checkbox" id="notifyhideswitchdata">
+			  <span class="sliderhideswitch"></span>
+			</label>				
+			<div class="buttonsettingsreset">RESET</div>
+			<div class="buttonsettingssave">SAVE</div>
+		</div>		
+	</div>
+</body>

@@ -3,7 +3,7 @@ KonfigCL = {}
 KonfigCL.InfFuel = false
 KonfigCL.FuelDrainTime = 1000 --every seccond to drain fuel from amount
 KonfigCL.FuelDrainAmount = -0.1 -- drain
-KonfigCL.HackMinigame = true -- set to false to disable datacrack
+KonfigCL.HackMinigame = false -- set to false to disable datacrack
 
 KonfigCL.PrinterPrintTime = 100 -- every 0.1 secconds add from amount
 KonfigCL.PrinterProgressAddPerTick = 1.0 -- every 0.1 secconds add 1.0
