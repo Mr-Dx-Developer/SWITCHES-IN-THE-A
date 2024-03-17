@@ -1,0 +1,5 @@
+INSERT IGNORE `drugs_fields` (`id`, `label`, `coords`, `radius`, `object_model`, `max_objects`, `items`, `time`, `blip_name`, `blip_sprite`, `blip_color`, `blip_scale`) VALUES 
+(1, 'Alternative Cannabis', '{"y":3151.98,"z":6.87,"x":3702.27}', 30, 'prop_weed_01', 15, '[{"minQuantity":2,"chances":70,"maxQuantity":5,"name":"cannabis"},{"minQuantity":2,"chances":30,"maxQuantity":5,"name":"green_gelato_cannabis"}]', 5, 'Cannabis field', 140, 2, 1),
+(2, 'Opium', '{"z":245.68,"y":439.03,"x":1656.17}', 40, 'prop_cs_plant_01', 15, '[{"minQuantity":1,"maxQuantity":5,"chances":100,"name":"opium"}]', 5, 'Opium field', 403, 40, 1),
+(3, 'Cocaine', '{"z":34.49,"y":3019.87,"x":-92.15}', 20, 'prop_plant_01a', 8, '[{"minQuantity":1,"maxQuantity":5,"chances":100,"name":"cocaine"}]', 5, 'Cocaine field', 403, 0, 1),
+(4, 'Cannabis', '{"z":41.83,"y":4893.95,"x":2016.97}', 25, 'prop_weed_02', 20, '[{"minQuantity":1,"maxQuantity":5,"chances":25,"name":"cannabis"}]', 7, 'Cannabis field', 140, 2, 1);

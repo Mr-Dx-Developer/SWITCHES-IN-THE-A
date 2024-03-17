@@ -1,0 +1,1629 @@
+<!DOCTYPE html>
+<html data-theme="dark">
+
+<head>
+	<title>Drugs Creator</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+
+	<!-- Script CSS -->
+	<link href="index.css" rel="stylesheet" type="text/css" />
+
+	<!-- Fonts -->
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap">
+	<link rel="stylesheet" media="print" onload="this.onload=null;this.removeAttribute('media');" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap">
+	<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Work+Sans:wght@700&display=swap" rel="stylesheet"> 	
+		
+	<!-- jQuery -->
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+	<!-- Bootstrap icons -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+	<!-- Datatables -->
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs5/dt-1.11.3/datatables.min.css"/>
+	<script type="text/javascript" src="https://cdn.datatables.net/v/bs5/dt-1.11.3/datatables.min.js"></script>
+
+    <!-- Notifications -->
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+	<!-- Rating -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/rater-js@1.0.1/lib/style.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/rater-js@1.0.1/index.min.js"></script>
+
+    <!-- Theme -->
+	<link rel="stylesheet" href="./assets/css/theme.bundle.css" id="stylesheetLTR">
+</head>
+
+<body style="background-color: transparent !important;">
+    <div id="drugs_creator" class="container-lg bg-white position-absolute top-50 start-50 translate-middle rounded" style="display: none;">
+        <div id="main-bar" class="d-inline-block col-12 text-center">
+            <p id="advanced-drugs-creator-label" class="d-inline script-name">Drugs Creator - <span id="advanced-drugs-creator-version" class="d-inline script-name"></span></p>
+
+			<button id="close-main-btn" type="button" class="btn-close btn-close-white float-end mt-2"></button>
+		</div>
+
+        <div class="d-flex align-items-start my-2">
+			<div class="nav flex-column nav-pills me-3" role="tablist" aria-orientation="vertical">
+				<button class="nav-link active" data-translation-id="menu:harvestable_items" data-is-default="1" id="harvestable-items-tab" data-bs-toggle="pill" data-bs-target="#harvestable-items" type="button" role="tab"><i class="bi bi-geo-fill"></i> Harvestable items</button>
+				<button class="nav-link" data-translation-id="menu:fields" id="fields-tab" data-bs-toggle="pill" data-bs-target="#fields" type="button" role="tab"><i class="bi bi-tree-fill"></i> Drugs fields</button>
+				<button class="nav-link" data-translation-id="menu:crafting_recipes" id="crafting-recipes-tab" data-bs-toggle="pill" data-bs-target="#crafting-recipes" type="button" role="tab"><i class="bi bi-tools"></i> Crafting recipes</button>
+				<button class="nav-link" data-translation-id="menu:laboratories" id="laboratories-tab" data-bs-toggle="pill" data-bs-target="#laboratories" type="button" role="tab"><i class="bi bi-building"></i> Laboratories</button>
+				<button class="nav-link" data-translation-id="menu:pocket_craftings" id="pocket-craftings-tab" data-bs-toggle="pill" data-bs-target="#pocket-craftings" type="button" role="tab"><i class="bi bi-hammer"></i> Pocket craftings</button>
+				<button class="nav-link" data-translation-id="menu:selling" id="selling-tab" data-bs-toggle="pill" data-bs-target="#selling" type="button" role="tab"><i class="bi bi-currency-dollar"></i> Selling</button>
+				<button class="nav-link" data-translation-id="menu:effects" id="effects-tab" data-bs-toggle="pill" data-bs-target="#effects" type="button" role="tab"><i class="bi bi-droplet-half"></i> Effects</button>
+                <button class="nav-link" id="nexus-tab" data-bs-toggle="pill" data-bs-target="#nexus" type="button" role="tab"><i class="bi bi-rocket-takeoff-fill"></i> Nexus</button>
+                <button class="nav-link" data-translation-id="menu:settings" id="settings-tab" data-bs-toggle="pill" data-bs-target="#settings" type="button" role="tab"><i class="bi bi-gear-fill"></i> Settings</button>
+			</div>
+
+            <div class="tab-content container">
+				<div class="tab-pane fade show active" data-is-default="1" id="harvestable-items" role="tabpanel">
+					<div class="d-inline-block col-12 my-2">
+						<button id="new-harvestable-item-btn" type="button" class="btn btn-success float-end" data-translation-id="menu:new_harvestable_item">New harvestable item</button>
+					</div>
+					
+					<table id="harvestable-items-container" class="table table-hover fs-4 mb-2">
+						<thead>
+							<tr>
+                                <th scope="col" data-translation-id="menu:ID">ID</th>
+                                <th scope="col" data-translation-id="menu:item_name">Item name</th>
+                                <th scope="col" data-translation-id="menu:minimum_quantity">Minimum quantity</th>
+                                <th scope="col" data-translation-id="menu:maximum_quantity">Maximum quantity</th>
+                                <th scope="col" data-translation-id="menu:x">X</th>
+                                <th scope="col" data-translation-id="menu:y">Y</th>
+                                <th scope="col" data-translation-id="menu:z">Z</th>
+							</tr>
+						</thead>
+
+						<tbody>
+
+						</tbody>
+					</table>	
+				</div>
+
+                <div class="tab-pane fade" id="fields" role="tabpanel">
+					<div class="d-inline-block col-12 my-2">
+						<button id="new-field-btn" type="button" class="btn btn-success float-end" data-translation-id="menu:new_field">New field</button>
+					</div>
+					
+					<table id="fields-container" class="table table-hover fs-4 mb-2">
+						<thead>
+							<tr>
+                                <th scope="col" data-translation-id="menu:ID">ID</th>
+                                <th scope="col" data-translation-id="menu:field_name">Field name</th>
+                                <th scope="col" data-translation-id="menu:radius">Radius</th>
+                                <th scope="col" data-translation-id="menu:x">X</th>
+                                <th scope="col" data-translation-id="menu:y">Y</th>
+                                <th scope="col" data-translation-id="menu:z">Z</th>
+							</tr>
+						</thead>
+
+						<tbody>
+
+						</tbody>
+					</table>	
+                </div>
+
+                <div class="tab-pane fade" role="tabpanel" id="crafting-recipes">
+                    <div class="d-inline-block col-12 my-2">
+						<button id="new-crafting-btn" type="button" class="btn btn-success float-end" data-translation-id="menu:crafting:new_crafting">Create crafting</button>
+					</div>
+
+                    <table id="crafting-recipes-container" class="table table-hover fs-4 mb-2">
+						<thead>
+							<tr>
+                                <th scope="col" data-translation-id="menu:ID">ID</th>
+                                <th scope="col" data-translation-id="menu:craft_name">Craft name</th>
+                                <th scope="col" data-translation-id="menu:item_name">Item name</th>
+                                <th scope="col" data-translation-id="menu:time">Time</th>
+							</tr>
+						</thead>
+
+						<tbody>
+
+						</tbody>
+					</table>	
+                </div>
+                
+                <div class="tab-pane fade" role="tabpanel" id="laboratories">
+                    <div class="d-inline-block col-12 my-2">
+						<button id="new-laboratory-btn" type="button" class="btn btn-success float-end" data-translation-id="menu:laboratory:new_laboratory">Create laboratory</button>
+					</div>
+
+                    <table id="laboratories-container" class="table table-hover fs-4 mb-2">
+						<thead>
+							<tr>
+                                <th scope="col" data-translation-id="menu:ID">ID</th>
+                                <th scope="col" data-translation-id="menu:laboratory:laboratory_name">Laboratory name</th>
+                                <th scope="col" data-translation-id="menu:x">X</th>
+                                <th scope="col" data-translation-id="menu:y">Y</th>
+                                <th scope="col" data-translation-id="menu:z">Z</th>
+							</tr>
+						</thead>
+
+						<tbody>
+
+						</tbody>
+					</table>	
+                </div>
+
+                <form id="pocket-craftings" class="tab-pane fade needs-validation" role="tabpanel" novalidate>
+                    <h3 class="text-center mb-1" data-translation-id="menu:pocket_craftings:description"></h3>
+                    <p class="text-center text-warning" data-translation-id="menu:pocket_craftings:description_2"></p>
+
+                    <div class="d-inline-block col-12 my-2">
+                        <button id="create-new-pocket-crafting-btn" type="button" class="btn btn-success float-end" data-translation-id="menu:pocket_craftings:create_new">Create new pocket crafting</button>
+                    </div>
+
+                    <div id="pocket-craftings-list" class="container scrollbar" style="min-height: 60vh; max-height: 60vh; overflow-y: auto">
+
+                    </div>
+
+                    <div class="d-inline-block col-12 my-2">
+                        <button id="apply-changes-to-pocket-craftings" type="submit" class="btn btn-success float-end" data-translation-id="menu:apply_changes">Apply changes</button>
+                    </div>
+                </form>
+
+                <form class="tab-pane fade needs-validation" role="tabpanel" id="selling" novalidate>
+                    <ul class="nav nav-pills mb-4 justify-content-center" role="tablist">
+                        <li class="nav-item" role="presentation">
+                          <button class="nav-link active" data-translation-id="menu:selling:plane" id="selling-plane-tab" data-bs-toggle="pill" data-bs-target="#selling-plane" type="button" role="tab">Plane</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                          <button class="nav-link" data-translation-id="menu:selling:boat" id="selling-boat-tab" data-bs-toggle="pill" data-bs-target="#selling-boat" type="button" role="tab">Boat</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                          <button class="nav-link" data-translation-id="menu:selling:npc" id="selling-npc-tab" data-bs-toggle="pill" data-bs-target="#selling-npc" type="button" role="tab">NPC</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                          <button class="nav-link" data-translation-id="menu:selling:narcos" id="selling-narcos-tab" data-bs-toggle="pill" data-bs-target="#selling-narcos" type="button" role="tab">Narocs</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                          <button class="nav-link" data-translation-id="menu:selling:pushers" id="selling-pushers-tab" data-bs-toggle="pill" data-bs-target="#selling-pushers" type="button" role="tab">Pushers</button>
+                        </li>
+                    </ul>
+                    
+                    <div class="tab-content container scrollbar" id="pills-tabContent" style="max-height: 70vh; overflow-y:auto">
+                        <div id="selling-plane" class="tab-pane fade show active" role="tabpanel">
+                            <div class="form-check form-switch fs-3">
+                                <input class="form-check-input" type="checkbox" role="switch" id="enable-plane-selling">
+                                <label class="form-check-label" data-translation-id="menu:plane:enable_selling" for="enable-plane-selling">Enable plane selling</label>
+                            </div>
+
+                            <hr>
+
+                            <div class="form-floating mb-3 text-body">
+                                <input type="number" class="form-control" id="plane-minimum-police" placeholder="Minimum police" required>
+                                <label for="plane-minimum-police" data-translation-id="menu:minimum_police">Minimum police online</label>
+                            </div>
+
+                            <hr>
+
+                            <div class="mt-3">
+                                <p class="text-center fs-4" data-translation-id="menu:plane:minimum_height_description">Minimum meters height to sell drugs while on a plane</p>
+
+                                <div class="form-floating mb-3 text-body">
+                                    <input type="number" min=1 class="form-control" id="minimum-plane-height" placeholder="Minimum height" required>
+                                    <label for="minimum-plane-height" data-translation-id="menu:plane:minimum_height">Minimum height</label>
+                                </div>
+                            </div>
+                            
+                            <hr>
+
+                            <div class="mt-3">
+                                <p class="text-center fs-4" data-translation-id="menu:plane:time_to_sell_description">Seconds player has to stay above the minimum height to sell drugs</p>
+
+                                <div class="form-floating mb-3 text-body">
+                                    <input type="number" min=1 class="form-control" id="time-to-sell-in-plane" placeholder="Seconds" required>
+                                    <label for="time-to-sell-in-plane" data-translation-id="menu:seconds">Seconds</label>
+                                </div>
+                            </div>
+
+                            <hr>
+
+                            <div class="mt-3">
+                                <p class="text-center fs-4" data-translation-id="menu:plane:police_alert_description">Will the police be alerted when the player starts selling on the plane?</p>
+
+                                <div class="form-check form-switch fs-3">
+                                    <input class="form-check-input" type="checkbox" role="switch" id="enable-plane-police-alert">
+                                    <label class="form-check-label" data-translation-id="menu:plane:police_alert_description" for="enable-plane-police-alert">Will the police be alerted when the player starts selling on the plane?</label>
+                                </div>
+                            </div>
+
+                            <hr>
+
+                            <div class="mt-3">
+                                <div class="form-check form-switch fs-3">
+                                    <input class="form-check-input" type="checkbox" role="switch" id="plane-use-the-whole-ocean">
+                                    <label class="form-check-label" data-translation-id="menu:selling:use_whole_ocean" for="plane-use-the-whole-ocean">Use the whole ocean?</label>
+                                </div>
+
+                                <div class="mt-2" id="plane-selling-coords">
+                                    <p class="text-center fs-5" data-translation-id="menu:coordinates">Coordinates</p>
+                
+                                    <div class="row g-2 row-cols-4 text-body">
+                                        <div class="form-floating">
+                                            <input type="number" step="0.01" class="form-control max-two-decimals" id="plane-selling-coords-x" placeholder="X" required>
+                                            <label for="plane-selling-coords-x" data-translation-id="menu:x">X</label>
+                                        </div>
+                                        <div class="form-floating">
+                                            <input type="number" step="0.01" class="form-control max-two-decimals" id="plane-selling-coords-y" placeholder="Y" required>
+                                            <label for="plane-selling-coords-y" data-translation-id="menu:y">Y</label>
+                                        </div>
+                                        <div class="form-floating">
+                                            <input type="number" step="0.01" class="form-control max-two-decimals" id="plane-selling-coords-z" placeholder="Z" required>
+                                            <label for="plane-selling-coords-z" data-translation-id="menu:z">Z</label>
+                                        </div>
+                                        <div class="form-floating">
+                                            <input type="number" class="form-control" id="plane-selling-coords-radius" placeholder="Radius" required>
+                                            <label for="plane-selling-coords-radius" data-translation-id="menu:radius">Radius</label>
+                                        </div>
+                                    </div>
+                
+                                    <button id="plane-selling-current-coords-btn" type="button" class="btn btn-secondary my-2" data-translation-id="menu:current_coords">Current coords</button>
+                                
+                                    <div class="form-check form-switch fs-3 mb-2">
+                                        <input class="form-check-input" type="checkbox" role="switch" id="plane-show-radius-while-selling">
+                                        <label class="form-check-label" data-translation-id="menu:selling:show_radius_while_selling" for="plane-show-radius-while-selling">Show radius while selling</label>
+                                    </div>
+                                </div>
+
+                                <hr>
+
+                                <div class="d-flex gap-3 align-items-center">
+                                    <div class="form-floating col">
+                                        <input type="text" class="form-control" id="plane-selling-account" placeholder="Account" required>
+                                        <label for="plane-selling-account" data-translation-id="menu:account_where_receive_money">Account where receive money</label>
+                                    </div>
+
+                                    <button type="button" class="btn btn-secondary" data-dialog-type="account" data-target="#plane-selling-account"><i class="bi bi-list-ul"></i></button>
+                                </div>
+
+                                <hr>
+
+                                <p class="text-center fs-3" data-translation-id="menu:plane:acceptable_drugs">Acceptable drugs with plane selling</p>
+
+                                <div id="plane-selling-acceptable-drugs" class="mt-2">
+                                    
+                                </div>
+
+                                <button id="plane-add-new-drug" type="button" class="btn btn-secondary mb-3" data-translation-id="menu:add_drug">Add drug</button>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane fade" id="selling-boat" role="tabpanel">
+                            <div class="form-check form-switch fs-3">
+                                <input class="form-check-input" type="checkbox" role="switch" id="enable-boat-selling">
+                                <label class="form-check-label" data-translation-id="menu:boat:enable_selling" for="enable-boat-selling">Enable boat selling</label>
+                            </div>
+
+                            <hr>
+
+                            <div class="form-floating mb-3 text-body">
+                                <input type="number" class="form-control" id="boat-minimum-police" placeholder="Minimum police" required>
+                                <label for="boat-minimum-police" data-translation-id="menu:minimum_police">Minimum police online</label>
+                            </div>
+
+                            <hr>
+
+                            <div class="mt-3">
+                                <p class="text-center fs-4" data-translation-id="menu:boat:time_to_sell_description">Seconds to sell drugs while staying on the boat</p>
+
+                                <div class="form-floating mb-3 text-body">
+                                    <input type="number" min=1 class="form-control" id="time-to-sell-in-boat" placeholder="Seconds" required>
+                                    <label for="time-to-sell-in-boat" data-translation-id="menu:seconds">Seconds</label>
+                                </div>
+                            </div>
+
+                            <hr>
+
+                            <div class="mt-3">
+                                <p class="text-center fs-4" data-translation-id="menu:boat:police_alert_description">Will the police be alerted when the player starts selling on the boat?</p>
+
+                                <div class="form-check form-switch fs-3">
+                                    <input class="form-check-input" type="checkbox" role="switch" id="enable-boat-police-alert">
+                                    <label class="form-check-label" data-translation-id="menu:enable_police_alert" for="enable-boat-police-alert">Enable police alert</label>
+                                </div>
+                            </div>
+
+                            <hr>
+
+                            <div class="mt-3">
+                                <div class="form-check form-switch fs-3">
+                                    <input class="form-check-input" type="checkbox" role="switch" id="boat-use-the-whole-ocean">
+                                    <label class="form-check-label" data-translation-id="menu:selling:use_whole_ocean" for="boat-use-the-whole-ocean">Use the whole ocean?</label>
+                                </div>
+
+                                <div class="mt-2" id="boat-selling-coords">
+                                    <p class="text-center fs-5" data-translation-id="menu:coordinates">Coordinates</p>
+                
+                                    <div class="row g-2 row-cols-4 text-body">
+                                        <div class="form-floating">
+                                            <input type="number" step="0.01" class="form-control max-two-decimals" id="boat-selling-coords-x" placeholder="X" required>
+                                            <label for="boat-selling-coords-x" data-translation-id="menu:x">X</label>
+                                        </div>
+                                        <div class="form-floating">
+                                            <input type="number" step="0.01" class="form-control max-two-decimals" id="boat-selling-coords-y" placeholder="Y" required>
+                                            <label for="boat-selling-coords-y" data-translation-id="menu:y">Y</label>
+                                        </div>
+                                        <div class="form-floating">
+                                            <input type="number" step="0.01" class="form-control max-two-decimals" id="boat-selling-coords-z" placeholder="Z" required>
+                                            <label for="boat-selling-coords-z" data-translation-id="menu:z">Z</label>
+                                        </div>
+                                        <div class="form-floating">
+                                            <input type="number" class="form-control" id="boat-selling-coords-radius" placeholder="Radius" required>
+                                            <label for="boat-selling-coords-radius" data-translation-id="menu:radius">Radius</label>
+                                        </div>
+                                    </div>
+                
+                                    <button id="boat-selling-current-coords-btn" type="button" class="btn btn-secondary my-2" data-translation-id="menu:current_coords">Current coords</button>
+                                
+                                    <div class="form-check form-switch fs-3">
+                                        <input class="form-check-input" type="checkbox" role="switch" id="boat-show-radius-while-selling">
+                                        <label class="form-check-label" data-translation-id="menu:selling:show_radius_while_selling" for="boat-show-radius-while-selling">Show radius while selling</label>
+                                    </div>
+                                </div>
+
+                                <hr>
+
+                                <div class="d-flex gap-3 align-items-center">
+                                    <div class="form-floating col">
+                                        <input type="text" class="form-control" id="boat-selling-account" placeholder="Account" required>
+                                        <label for="boat-selling-account" data-translation-id="menu:account_where_receive_money">Account where receive money</label>
+                                    </div>
+
+                                    <button type="button" class="btn btn-secondary" data-dialog-type="account" data-target="#boat-selling-account"><i class="bi bi-list-ul"></i></button>
+                                </div>
+
+                                <hr>
+
+                                <p class="text-center fs-3" data-translation-id="menu:boat:acceptable_drugs">Acceptable drugs with boat selling</p>
+
+                                <div id="boat-selling-acceptable-drugs" class="mt-2">
+                                    
+                                </div>
+
+                                <button id="boat-add-new-drug" type="button" class="btn btn-secondary mb-3" data-translation-id="menu:add_drug">Add drug</button>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane fade" id="selling-npc" role="tabpanel">
+                            <div class="form-check form-switch fs-3">
+                                <input class="form-check-input" type="checkbox" role="switch" id="enable-npc-selling">
+                                <label class="form-check-label" data-translation-id="menu:npc:enable_selling" for="enable-npc-selling">Enable NPC selling</label>
+                            </div>
+    
+                            <hr>
+
+                            <div class="form-floating mb-3 text-body">
+                                <input type="number" class="form-control" id="npc-minimum-police" placeholder="Minimum police" required>
+                                <label for="npc-minimum-police" data-translation-id="menu:minimum_police">Minimum police online</label>
+                            </div>
+
+                            <hr>
+    
+                            <div class="mt-3">
+                                <p class="text-center fs-4" data-translation-id="menu:npc:seconds_required_to_sell">Seconds required to sell to a NPC</p>
+    
+                                <div class="form-floating mb-3 text-body">
+                                    <input type="number" min=1 class="form-control" id="npc-seconds-to-sell" placeholder="Seconds" required>
+                                    <label for="npc-seconds-to-sell" data-translation-id="menu:seconds">Seconds</label>
+                                </div>
+                            </div>
+
+                            <hr>
+
+                            <div class="mt-2">
+                                <p class="text-center fs-5" data-translation-id="menu:npc:acceptable_quantity">Drug quantity NPC can accept</p>
+            
+                                <div class="row g-2 row-cols-2 text-body">
+                                    <div class="form-floating">
+                                        <input type="number" class="form-control" id="npc-selling-min-quantity" placeholder="Min quantity" required>
+                                        <label for="npc-selling-min-quantity" data-translation-id="menu:minimum_quantity">Min quantity</label>
+                                    </div>
+                                    <div class="form-floating">
+                                        <input type="number" class="form-control" id="npc-selling-max-quantity" placeholder="Max quantity" required>
+                                        <label for="npc-selling-max-quantity" data-translation-id="menu:maximum_quantity">Max quantity</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <hr>
+
+                            <div class="mt-2">
+                                <p class="text-center fs-5" data-translation-id="menu:npc:money_account_description">Where to receive money from NPCs</p>
+
+                                <div class="d-flex gap-3 align-items-center">
+                                    <div class="form-floating col">
+                                        <input type="text" class="form-control" id="npc-money-account" placeholder="Money account" required>
+                                        <label for="npc-money-account" data-translation-id="menu:npc:money_account">Money account</label>
+                                    </div>
+
+                                    <button type="button" class="btn btn-secondary" data-dialog-type="account" data-target="#npc-money-account"><i class="bi bi-list-ul"></i></button>
+                                </div>
+                            </div>
+
+                            <hr>
+
+                            <div class="mt-2">
+                                <p class="text-center fs-5" data-translation-id="menu:npc:accept_chances_description">Probabilities that the NPC will accept the drug</p>
+
+                                <div class="form-floating text-body">
+                                    <input type="number" min=0 max=100 class="form-control" id="npc-accept-chances" placeholder="Probabilities" required>
+                                    <label for="npc-accept-chances" data-translation-id="menu:npc:accept_chances">Probabilities</label>
+                                </div>
+                            </div>
+
+                            <hr>
+
+                            <div class="mt-2">
+                                <p class="text-center fs-5" data-translation-id="menu:npc:alert_police_chances">Probabilities that police will be alerted</p>
+
+                                <div class="form-floating text-body">
+                                    <input type="number" min=0 max=100 class="form-control" id="npc-alert-police-chances" placeholder="Probabilities" required>
+                                    <label for="npc-alert-police-chances" data-translation-id="menu:npc:accept_chances">Probabilities</label>
+                                </div>
+                            </div>
+
+                            <hr>
+
+                            <div class="mt-2">
+                                <p class="text-center fs-5" data-translation-id="menu:npc:max_drug_quantity_description">Max quantity of drugs each player can sell to NPCs each script/server restart</p>
+
+                                <div class="form-floating text-body">
+                                    <input type="number" min=0 class="form-control" id="npc-max-drug-quantity" placeholder="Probabilities" required>
+                                    <label for="npc-max-drug-quantity" data-translation-id="menu:npc:max_drug_quantity">Max drug quantity</label>
+                                </div>
+                            </div>
+
+                            <hr>
+
+                            <p class="text-center fs-3" data-translation-id="menu:npc:acceptable_drugs">Acceptable drugs with NPCs selling</p>
+
+                            <div id="npc-selling-acceptable-drugs" class="mt-2">
+                                
+                            </div>
+
+                            <button id="npc-add-new-drug" type="button" class="btn btn-secondary mb-3" data-translation-id="menu:add_drug">Add drug</button>
+                        </div>
+
+                        <div id="selling-narcos" class="tab-pane fade" role="tabpanel">
+                            <div class="form-check form-switch fs-3">
+                                <input class="form-check-input" type="checkbox" role="switch" id="enable-narcos-selling">
+                                <label class="form-check-label" data-translation-id="menu:narcos:enable_selling" for="enable-narcos-selling">Enable narcos selling</label>
+                            </div>
+    
+                            <hr>
+
+                            <div class="form-floating mb-3 text-body">
+                                <input type="number" class="form-control" id="narcos-minimum-police" placeholder="Minimum police" required>
+                                <label for="narcos-minimum-police" data-translation-id="menu:minimum_police">Minimum police online</label>
+                            </div>
+
+                            <hr>
+    
+                            <div class="mt-3">
+                                <p class="text-center fs-4" data-translation-id="menu:narcos:model">NPC model narcos will have</p>
+    
+                                <div class="form-floating mb-3 text-body">
+                                    <input type="text" class="form-control" id="narcos-model" placeholder="Model" required>
+                                    <label for="narcos-model" data-translation-id="menu:model">Model</label>
+                                </div>
+                            </div>
+
+                            <hr>
+
+                            <div>
+                                <div class="form-check form-switch fs-3">
+                                    <input class="form-check-input" type="checkbox" role="switch" id="enable-narcos-blip">
+                                    <label class="form-check-label" data-translation-id="menu:narcos:enable_blip" for="enable-narcos-blip">Show narcos blip</label>
+                                </div>
+    
+                                <div class="row g-2 row-cols-4 text-body mt-2">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="narcos-selling-blip-name" placeholder="Name" required>
+                                        <label for="narcos-selling-blip-name" data-translation-id="menu:name">Name</label>
+                                    </div>
+    
+                                    <div class="form-floating">
+                                        <input type="number" step=0.01 min=0.1 class="form-control" id="narcos-selling-blip-scale" placeholder="Scale" required>
+                                        <label for="narcos-selling-blip-scale" data-translation-id="menu:scale">Scale</label>
+                                    </div>
+    
+                                    <div class="form-floating">
+                                        <input type="number" class="form-control" id="narcos-selling-blip-sprite" placeholder="Sprite" required>
+                                        <label for="narcos-selling-blip-sprite" data-translation-id="menu:sprite">Sprite</label>
+                                    </div>
+    
+                                    <div class="form-floating">
+                                        <input type="number" class="form-control" id="narcos-selling-blip-color" placeholder="Color" required>
+                                        <label for="narcos-selling-blip-color" data-translation-id="menu:color">Color</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <hr>
+
+                            <div>
+                                <p class="text-center fs-4" data-translation-id="menu:narcos:spawn_locations">Possible narcos spawn locations</p>
+
+                                <div id="narcos-spawn-locations">
+
+                                </div>
+
+                                <button id="narcos-add-spawn-btn" type="button" class="btn btn-secondary" data-translation-id="menu:narcos:add_spawn">Add spawn location</button>
+                            </div>
+
+                            <hr>
+
+                            <div class="mt-3">
+                                <p class="text-center fs-4" data-translation-id="menu:narcos:location_change">Minutes after narcos will change location (and change the requested drug)</p>
+    
+                                <div class="form-floating mb-3 text-body">
+                                    <input type="number" class="form-control" min=1 id="narcos-location-change" placeholder="Minutes" required>
+                                    <label for="narcos-location-change" data-translation-id="menu:minutes">Minutes</label>
+                                </div>
+                            </div>
+
+                            <hr>
+
+                            <div class="mt-3">
+                                <p class="text-center fs-2" data-translation-id="menu:narcos:acceptable_drugs">Narcos acceptable drugs</p>
+                                <p class="text-center fs-4" data-translation-id="menu:narcos:acceptable_drugs_description">Random drug with random quantity will be requested by the narcos</p>
+    
+                                <div id="narcos-selling-acceptable-drugs">
+
+                                </div>
+
+                                <button id="narcos-add-new-drug" type="button" class="btn btn-secondary" data-translation-id="menu:add_drug">Add drug</button>
+                            </div>
+                            
+                            <hr>
+
+                            <div class="mt-3">
+                                <p class="text-center fs-4" data-translation-id="menu:narcos:reward_account">Narcos reward account</p>
+                                
+                                <div class="d-flex gap-3 align-items-center">
+                                    <div class="form-floating col">
+                                        <input type="text" class="form-control" id="narcos-reward-account" placeholder="Account" required>
+                                        <label for="narcos-reward-account" data-translation-id="menu:account">Account</label>
+                                    </div>
+
+                                    <button type="button" class="btn btn-secondary" data-dialog-type="account" data-target="#narcos-reward-account"><i class="bi bi-list-ul"></i></button>
+                                </div>
+                            </div>
+
+                            <hr>
+
+                            <div class="mt-3">
+                                <p class="text-center fs-4" data-translation-id="menu:narcos:police_call_chances">Chances that after selling to a narcos the police will be notified</p>
+    
+                                <div class="form-floating mb-3 text-body">
+                                    <input type="number" min=0 max=100 class="form-control" id="narcos-police-alert-chances" placeholder="Account" required>
+                                    <label for="narcos-police-alert-chances" data-translation-id="menu:chances">Chances</label>
+                                </div>
+                            </div>
+
+                            <hr>
+
+                            <div class="form-check form-switch fs-3 mt-2">
+                                <p class="text-center fs-4" data-translation-id="menu:narcos:accept_one_buyer_description">If enabled, narcos will only buy once per location, so if a player sells to him, he won't accept anything until he changes location</p>
+                                <input class="form-check-input" type="checkbox" role="switch" id="narcos-accepts-only-one-buyer-per-location">
+                                <label class="form-check-label" data-translation-id="menu:narcos:accept_one_buyer" for="narcos-accepts-only-one-buyer-per-location">menu:narcos:accept_one_buyer</label>
+                            </div>
+
+                        </div>
+
+                        <div id="selling-pushers" class="tab-pane fade" role="tabpanel">
+                            <div class="form-check form-switch fs-3">
+                                <input class="form-check-input" type="checkbox" role="switch" id="enable-pushers-selling">
+                                <label class="form-check-label" data-translation-id="menu:pushers:enable_selling" for="enable-pushers-selling">Enable pushers selling</label>
+                            </div>
+
+                            <hr>
+
+                            <div class="form-floating mb-3 text-body">
+                                <input type="number" class="form-control" id="pushers-minimum-police" placeholder="Minimum police" required>
+                                <label for="pushers-minimum-police" data-translation-id="menu:minimum_police">Minimum police online</label>
+                            </div>
+
+                            <hr>
+    
+                            <div class="mt-3">
+                                <p class="text-center fs-4" data-translation-id="menu:pushers:model">NPC model pushers will have</p>
+    
+                                <div class="form-floating mb-3 text-body">
+                                    <input type="text" class="form-control" id="pushers-model" placeholder="Model" required>
+                                    <label for="pushers-model" data-translation-id="menu:model">Model</label>
+                                </div>
+                            </div>
+
+                            <hr>
+                            
+                            <div class="d-flex gap-3 align-items-center">
+                                <div class="form-floating col">
+                                    <input type="text" class="form-control" id="pushers-selling-account" placeholder="Account" required>
+                                    <label for="pushers-selling-account" data-translation-id="menu:account_where_receive_money">Account where receive money</label>
+                                </div>
+
+                                <button type="button" class="btn btn-secondary" data-dialog-type="account" data-target="#pushers-selling-account"><i class="bi bi-list-ul"></i></button>
+                            </div>
+
+                            <hr>
+    
+                            <div class="mt-3">
+                                <p class="text-center fs-4" data-translation-id="menu:pushers:alert_police_chances">Chances that police will be alerted when selling to pushers</p>
+    
+                                <div class="form-floating mb-3 text-body">
+                                    <input type="number" min=0 max=100 class="form-control" id="pushers-alert-police-chances" placeholder="Chances" required>
+                                    <label for="pushers-alert-police-chances" data-translation-id="menu:chances">Model</label>
+                                </div>
+                            </div>
+
+                            <hr>
+
+                            <div>
+                                <div class="form-check form-switch fs-3">
+                                    <input class="form-check-input" type="checkbox" role="switch" id="enable-pushers-blip">
+                                    <label class="form-check-label" data-translation-id="menu:pushers:enable_blip" for="enable-pushers-blip">Show pushers blip</label>
+                                </div>
+    
+                                <div class="row g-2 row-cols-4 text-body mt-2">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="pushers-selling-blip-name" placeholder="Name" required>
+                                        <label for="pushers-selling-blip-name" data-translation-id="menu:name">Name</label>
+                                    </div>
+    
+                                    <div class="form-floating">
+                                        <input type="number" step=0.01 min=0.1 class="form-control" id="pushers-selling-blip-scale" placeholder="Scale" required>
+                                        <label for="pushers-selling-blip-scale" data-translation-id="menu:scale">Scale</label>
+                                    </div>
+    
+                                    <div class="form-floating">
+                                        <input type="number" class="form-control" id="pushers-selling-blip-sprite" placeholder="Sprite" required>
+                                        <label for="pushers-selling-blip-sprite" data-translation-id="menu:sprite">Sprite</label>
+                                    </div>
+    
+                                    <div class="form-floating">
+                                        <input type="number" class="form-control" id="pushers-selling-blip-color" placeholder="Color" required>
+                                        <label for="pushers-selling-blip-color" data-translation-id="menu:color">Color</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <hr>
+
+                            <div class="mt-3">
+                                <p class="text-center fs-4" data-translation-id="menu:pushers">Pushers</p>
+
+                                <div id="pushers-list">
+                                    
+                                </div>
+
+                                <button id="add-pusher-btn" type="button" class="btn btn-secondary">Add pusher</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-2">
+                        <button type="submit" class="btn btn-success float-end" data-translation-id="menu:apply_changes">Apply changes</button>
+                        <button type="button" class="btn btn-danger float-start restore-to-default-config" data-translation-id="menu:restore_default_config">Restore default config</button>
+                    </div>
+                </form>
+
+                <form id="effects" class="tab-pane fade needs-validation" role="tabpanel" novalidate>
+                    <div class="d-inline-block col-12 my-2">
+                        <button id="create-new-item-effect-btn" type="button" class="btn btn-success float-end" data-translation-id="menu:effects:create_new">Create new item with effect</button>
+                    </div>
+
+                    <div id="drugs-effects" class="container scrollbar" style="min-height: 60vh; max-height: 60vh; overflow-y: auto">
+
+                    </div>
+
+                    <div class="d-inline-block col-12 my-2">
+                        <button id="apply-changes-to-effects" type="submit" class="btn btn-success float-end" data-translation-id="menu:apply_changes">Apply changes</button>
+                    </div>
+                </form>
+
+                <div class="tab-pane fade container" id="nexus" role="tabpanel" style="max-height: 90vh; overflow-y: auto;">
+					<div class="d-flex justify-content-center align-items-center" style="min-height:40vh">
+						<div id="nexus-login">
+							<button type="button" id="enter-in-nexus-btn" class="btn btn-success btn-lg">
+								<span class="spinner-border spinner-border-sm" style="display: none;"></span>
+								<span id="enter-in-nexus-label">Enter in nexus</span>
+							</button>						  
+						</div>
+	
+						<div id="nexus-container" class="container" style="display: none;">
+							<div class="d-inline-block col-12 my-2">
+								<button id="upload-to-nexus-btn" type="button" class="btn btn-success float-end" data-translation-id="menu:nexus:share">Share</button>
+							</div>
+		
+							<table id="nexus-table" class="table table-hover fs-4">
+								<thead>
+									<tr>
+										<th scope="col" data-translation-id="menu:nexus:name">Name</th>
+										<th scope="col" data-translation-id="menu:nexus:description">Description</th>
+										<th scope="col" data-translation-id="menu:nexus:type">type</th>
+										<th scope="col" data-translation-id="menu:nexus:content_amount">Content amount</th>
+										<th scope="col" data-translation-id="menu:nexus:rating">Rating</th>
+										<th scope="col" data-translation-id="menu:nexus:votes">Votes</th>
+										<th scope="col" data-translation-id="menu:nexus:author">Author</th>
+									</tr>
+								</thead>
+					
+								<tbody id="nexus-container-body">
+					
+								</tbody>
+							</table>			
+						</div>
+					</div>
+				</div>
+
+                <form class="tab-pane fade needs-validation" role="tabpanel" id="settings" novalidate>
+                    <div class="container my-2 scrollbar" style="max-height: 60vh; overflow-y: auto">
+
+                        <div class="row align-items-center mt-2">
+							<p class="text-center my-auto" data-translation-id="menu:settings:language" style="width: auto;">Language</p>
+	
+							<select class="form-select w-25" id="settings_locale" data-select>
+								<option value="en">English</option>
+								<option value="it">Italiano</option>
+								<option value="de">Deutsch</option>
+								<option value="pr">Persian</option>
+								<option value="nl">Nederlandse</option>
+								<option value="fr">Français</option>
+								<option value="es">Español</option>
+                                <option value="pt">Português</option>
+								<option value="cs">Česky</option>
+								<option value="cn">中国人</option>
+								<option value="hu">Magyar</option>
+							</select>
+						</div>
+
+                        <hr>
+
+						<div class="row align-items-center mt-2">
+							<p class="text-center my-auto" data-translation-id="menu:settings:player_menu_position" style="width:auto">Player menu position</p>
+							
+							<select id="settings_menuPosition" class="form-select w-25" data-select>
+								<option data-translation-id="menu:settings:player_menu_position:bottom_right" value="bottom-right">Bottom right</option>
+								<option data-translation-id="menu:settings:player_menu_position:right" value="right">Center Right</option>
+								<option data-translation-id="menu:settings:player_menu_position:top_right" value="top-right">Top right</option>
+								<option data-translation-id="menu:settings:player_menu_position:bottom_left" value="bottom-left">Bottom left</option>
+								<option data-translation-id="menu:settings:player_menu_position:left" value="left">Center left</option>
+								<option data-translation-id="menu:settings:player_menu_position:top_left" value="top-left">Top left</option>
+							</select>	
+						</div>
+
+						<hr/>
+
+                        <div class="row align-items-center mt-2" data-translation-id="menu:probably_requires_script_restart" data-bs-toggle="tooltip" data-bs-placement="top">
+							<p class="text-center fs-4 my-auto" data-translation-id="menu:settings:targeting_script" style="width:auto">Targeting script</p>
+							
+							<select id="settings-targeting-script" class="form-select w-25" data-select>
+								<option data-translation-id="menu:none" value="none">None</option>
+								<option value="ox_target">OX Target</option>
+								<option value="qb_target">QB Target</option>
+							</select>
+						</div>
+
+                        <hr>
+                        
+                        <div class="row align-items-center mt-2">
+							<p class="text-center translatable fs-4 my-auto" data-translation-id="menu:settings:help_notification" style="width:auto">Help notification</p>
+							
+							<select id="settings-help-notification-script" class="form-select w-25" data-select>
+								<option data-translation-id="menu:default" value="none">Default</option>
+								<option value="esx_textui">ESX TextUI</option>
+							</select>
+						</div>
+
+                        <hr>
+
+                        <div>
+                            <h2 class="text-center mb-0">
+                                <span data-translation-id="menu:settings:selling">Selling</span>
+                                <i class="bi bi-question-circle" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-html="true" data-translation-id="menu:settings:selling:description"></i>
+                            </h2>
+
+                            <p class="text-center fs-5 fst-italic" data-translation-id="menu:settings:selling:subtitle">Selling subtitle</p>
+
+                            <div class="d-flex justify-content-center gap-3 mt-4">
+                                <div class="form-floating text-body col">
+                                    <input type="number" class="form-control" id="minimum-cops-for-base-price" placeholder="Minimum cops" required>
+                                    <label for="minimum-cops-for-base-price" class="ms-2" data-translation-id="menu:settings:selling:minimum_cops_for_base_price">Cops</label>
+                                </div>
+    
+                                <div class="form-floating text-body col">
+                                    <input type="number" min="0" max="100" class="form-control" id="price-reduction-percentage" placeholder="Percentage %" required data-bs-toggle="tooltip" data-bs-placement="top" data-bs-html="true" data-translation-id="menu:settings:selling:price_reduction_percentage:description">
+                                    <label for="price-reduction-percentage" class="ms-2" data-translation-id="menu:settings:selling:price_reduction_percentage">Reduction</label>
+                                </div>
+    
+                                <div class="form-floating text-body col">
+                                    <input type="number" class="form-control" id="price-reduction-interval" placeholder="Interval" required data-bs-toggle="tooltip" data-bs-placement="top" data-bs-html="true" data-translation-id="menu:settings:selling:reduction_interval:description">
+                                    <label for="price-reduction-interval" class="ms-2" data-translation-id="menu:settings:selling:reduction_interval">Interval</label>
+                                </div>
+                            </div>
+                        </div>
+
+						<hr/>
+
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" role="switch" id="enable-fire-on-error">
+                            <label class="form-check-label" data-translation-id="menu:settings:fire_on_error" for="enable-fire-on-error">Start a fire when the ingredients used in a laboratory are wrong</label>
+                        </div>
+        
+                        <div class="d-flex gap-3 justify-content-between align-items-center mt-4">
+                            <div class="form-check form-switch my-auto">
+                                <input class="form-check-input" type="checkbox" role="switch" id="enable-explosion-on-error">
+                                <label class="form-check-label" data-translation-id="menu:settings:explosion_on_error" for="enable-explosion-on-error">Enable explosion if player uses wrong recipe</label>
+                            </div>
+                        
+                            <p class="text-center my-auto ms-5" data-translation-id="menu:settings:seconds_before_explosion">Seconds before explosion</p>
+        
+                            <div class="form-floating col">
+                                <input type="number" class="form-control" id="seconds-before-explosion" placeholder="Seconds" required="">
+                                <label for="seconds-before-explosion" data-translation-id="menu:seconds">Seconds</label>
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <div>
+                            <h2 class="text-center" data-translation-id="menu:npc_selling"></h2>
+
+                            <div class="form-floating mb-3 text-body">
+                                <input type="number" class="form-control clickable" id="key-to-sell-to-npcs" placeholder="Key" data-dialog-type='control' readonly required>
+                                <label for="key-to-sell-to-npcs" data-translation-id="menu:settings:key_to_sell_to_npcs">Key to sell to NPCs</label>
+                            </div>
+
+                            <h3 class="text-center mb-1 mt-6" data-translation-id="menu:sell_with_command"></h3>
+                            <p class="text-center" data-translation-id="menu:npc_selling_command:description"></p>
+
+                            <div class="d-flex gap-3 justify-content-center">
+                                <div class="form-check my-auto">
+                                    <input type="checkbox" id="npc-selling-command-is-enabled" class="form-check-input">
+                                    <label class="form-check-label" data-translation-id="menu:npc_selling:enable_command"></label>
+                                </div>
+
+                                <div class="form-check my-auto">
+                                    <input type="checkbox" id="npc-selling-command-has-to-spawn-npc" class="form-check-input">
+                                    <label class="form-check-label" data-translation-id="menu:npc_selling:spawn_npc"></label>
+                                </div>
+
+                                <div class="form-floating col-3">
+                                    <input type="text" class="form-control" id="npc-selling-command" placeholder="Command" required>
+                                    <label for="npc-selling-command" data-translation-id="menu:npc_selling:command">Command</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr>
+
+
+                        <div>
+                            <h2 class="text-center" data-translation-id="menu:police"></h2>
+
+                            <div class="d-flex justify-content-center gap-3">
+                                <div class="form-floating col">
+                                    <input type="number" class="form-control" id="harvestable-items-minimum-police" placeholder="Minimum police" required>
+                                    <label for="harvestable-items-minimum-police" data-translation-id="menu:harvestable_items:minimum_police">Minimum police for harvestable items</label>
+                                </div>
+        
+                                <div class="form-floating col">
+                                    <input type="number" class="form-control" id="laboratory-minimum-police" placeholder="Minimum police" required>
+                                    <label for="laboratory-minimum-police" data-translation-id="menu:laboratory:minimum_police">Minimum police for laboratories</label>
+                                </div>
+        
+                                <div class="form-floating col">
+                                    <input type="number" class="form-control" id="fields-minimum-police" placeholder="Minimum police" required>
+                                    <label for="fields-minimum-police" data-translation-id="menu:fields:minimum_police">Minimum police for fields</label>
+                                </div>    
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <div>
+                            <h2 class="text-center" data-translation-id="automatic_farming">Automatic farming</h2>
+
+                            <div class="form-check form-switch fs-3 mb-2">
+                                <input class="form-check-input" type="checkbox" role="switch" id="allow-afk-farming-for-harvest">
+                                <label class="form-check-label" data-translation-id="allow_afk_farming_for_harvestable_items" for="allow-afk-farming-for-harvest">Allow AFK farming for harvestable items</label>
+                            </div>
+        
+                        </div>
+
+                        <hr>
+
+                        <div>
+                            <h2 class="text-center" data-translation-id="menu:settings:discord">Discord</h2>
+    
+                            <div class="form-check form-switch fs-3 mb-2">
+                                <input class="form-check-input" type="checkbox" role="switch" id="enable-discord-logs">
+                                <label class="form-check-label" data-translation-id="menu:settings:enable_discord_logs" for="enable-discord-logs">Enable discord logs</label>
+                            </div>
+    
+                            <h4 class="text-center" data-translation-id="menu:settings:discord_webhooks">Discord webhooks</h4>
+    
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" data-translation-id="menu:settings:main_webhook">Main webhook</span>
+                                <input type="text" class="form-control" placeholder="https://discord.com/api/webhooks/USE_YOUR_WEBHOOK/YOUR_WEBHOOK" id="main-discord-webhook">
+                            </div>
+    
+                            <h4 class="text-center" data-translation-id="menu:settings:discord_specific_webhooks">Discord specific webhooks</h4>
+    
+                            <div id="discord-specific-webhooks">
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" data-translation-id="menu:settings:discord_webhook:harvestable_item">Harvestable item</span>
+                                    <input type="text" class="form-control webhook" data-webhook-type="harvestable_item" placeholder="https://discord.com/api/webhooks/USE_YOUR_WEBHOOK/YOUR_WEBHOOK">
+                                </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" data-translation-id="menu:settings:discord_webhook:drug_field">Drug field</span>
+                                    <input type="text" class="form-control webhook" data-webhook-type="drug_field" placeholder="https://discord.com/api/webhooks/USE_YOUR_WEBHOOK/YOUR_WEBHOOK">
+                                </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" data-translation-id="menu:settings:discord_webhook:laboratories">Laboratories</span>
+                                    <input type="text" class="form-control webhook" data-webhook-type="laboratories" placeholder="https://discord.com/api/webhooks/USE_YOUR_WEBHOOK/YOUR_WEBHOOK">
+                                </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" data-translation-id="menu:settings:discord_webhook:plane_sell">Plane sell</span>
+                                    <input type="text" class="form-control webhook" data-webhook-type="plane_sell" placeholder="https://discord.com/api/webhooks/USE_YOUR_WEBHOOK/YOUR_WEBHOOK">
+                                </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" data-translation-id="menu:settings:discord_webhook:boat_sell">Boat sell</span>
+                                    <input type="text" class="form-control webhook" data-webhook-type="boat_sell" placeholder="https://discord.com/api/webhooks/USE_YOUR_WEBHOOK/YOUR_WEBHOOK">
+                                </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" data-translation-id="menu:settings:discord_webhook:npc_sell">NPC sell</span>
+                                    <input type="text" class="form-control webhook" data-webhook-type="npc_sell" placeholder="https://discord.com/api/webhooks/USE_YOUR_WEBHOOK/YOUR_WEBHOOK">
+                                </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" data-translation-id="menu:settings:discord_webhook:narcos_sell">Narcos sell</span>
+                                    <input type="text" class="form-control webhook" data-webhook-type="narcos_sell" placeholder="https://discord.com/api/webhooks/USE_YOUR_WEBHOOK/YOUR_WEBHOOK">
+                                </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" data-translation-id="menu:settings:discord_webhook:pushers_sell">Pushers sell</span>
+                                    <input type="text" class="form-control webhook" data-webhook-type="pushers_sell" placeholder="https://discord.com/api/webhooks/USE_YOUR_WEBHOOK/YOUR_WEBHOOK">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d-inline-block col-12 my-2">
+						<button class="btn btn-success float-end rounded" data-translation-id="menu:apply_changes" type="submit">Apply changes</button>
+						<button class="btn btn-danger float-start rounded restore-to-default-config" data-translation-id="menu:restore_default_config" type="button">Restore default config</button>
+					</div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Harvestable item modal -->
+    <div id="harvestable-item-modal" class="modal fade" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+            <form id="harvestable-form" class="modal-content needs-validation" novalidate>
+				<div class="modal-header">
+					<h5 class="modal-title" data-translation-id="menu:new_harvestable_item:harvestable_item">Harvestable item</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+                    <div class="row g-2 align-items-center">
+                        <div class="form-floating col-8">
+                            <input type="text" class="form-control" id="harvestable-item-name" placeholder="Item name" required>
+                            <label for="harvestable-item-name" data-translation-id="menu:new_harvestable_item:item_name">Item name</label>
+                        </div>
+    
+                        <button id="harvestable-choose-item-btn" type="button" class="btn btn-secondary float-end col-4" data-translation-id="menu:choose_item">Choose item</button>
+                    </div>
+
+                    <div class="mt-2">
+                        <p class="text-center fs-5" data-translation-id="menu:coordinates">Coordinates</p>
+    
+                        <div class="row g-2 row-cols-3">
+                            <div class="form-floating">
+                                <input type="number" step="0.01" class="form-control max-two-decimals" id="harvestable-coords-x" placeholder="X" required>
+                                <label for="harvestable-coords-x" data-translation-id="menu:x">X</label>
+                            </div>
+                            <div class="form-floating">
+                                <input type="number" step="0.01" class="form-control max-two-decimals" id="harvestable-coords-y" placeholder="Y" required>
+                                <label for="harvestable-coords-y" data-translation-id="menu:y">Y</label>
+                            </div>
+                            <div class="form-floating">
+                                <input type="number" step="0.01" class="form-control max-two-decimals" id="harvestable-coords-z" placeholder="Z" required>
+                                <label for="harvestable-coords-z" data-translation-id="menu:z">Z</label>
+                            </div>
+                        </div>
+    
+                        <button id="harvestable-current-coords-btn" type="button" class="btn btn-secondary my-2" data-translation-id="menu:current_coords">Current coords</button>
+                    </div>
+
+                    <div class="col my-2">
+                        <div class="form-check form-switch fs-4">
+                            <input class="form-check-input" type="checkbox" id="harvestable-item-map-blip">
+                            <label class="form-check-label" data-translation-id="menu:map_blip" for="harvestable-item-map-blip">Map blip</label>
+                        </div>
+
+                        <div id="harvestable-item-map-blip-inputs" class="row gx-1 mt-1">
+                            <div class="col-md">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="harvestable-item-blip-name" placeholder="Name">
+                                    <label for="harvestable-item-blip-name" data-translation-id="menu:blip_name">Blip name</label>
+                                </div>
+                            </div>
+                            <div class="col-md">
+                                <div class="form-floating">
+                                    <input type="number" class="form-control" id="harvestable-item-sprite-id" placeholder="sprite ID">
+                                    <label for="harvestable-item-sprite-id" data-translation-id="menu:blip_sprite">Sprite</label>
+                                </div>
+                            </div>
+                            <div class="col-md">
+                                <div class="form-floating">
+                                    <input type="number" class="form-control" id="harvestable-item-blip-color" placeholder="color ID">
+                                    <label for="harvestable-item-blip-color" data-translation-id="menu:blip_color">Color</label>
+                                </div>
+                            </div>
+                            <div class="col-md">
+                                <div class="form-floating">
+                                    <input type="number" step="0.1" class="form-control" id="harvestable-item-blip-scale" placeholder="scale">
+                                    <label for="harvestable-item-blip-scale" data-translation-id="menu:blip_scale">Scale</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-2">
+                        <p class="text-center fs-5" data-translation-id="menu:scale">Scale</p>
+    
+                        <div class="row g-2 row-cols-3">
+                            <div class="form-floating">
+                                <input type="number" step="0.01" min="1.5" class="form-control max-two-decimals" id="harvestable-scale-x" placeholder="X" required>
+                                <label for="harvestable-scale-x" data-translation-id="menu:x">X</label>
+                            </div>
+                            <div class="form-floating">
+                                <input type="number" step="0.01" min="1.5" class="form-control max-two-decimals" id="harvestable-scale-y" placeholder="Y" required>
+                                <label for="harvestable-scale-y" data-translation-id="menu:y">Y</label>
+                            </div>
+                            <div class="form-floating">
+                                <input type="number" step="0.01" min="1.5" class="form-control max-two-decimals" id="harvestable-scale-z" placeholder="Z" required>
+                                <label for="harvestable-scale-z" data-translation-id="menu:z">Z</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-4">
+                        <p class="text-center fs-5" data-translation-id="menu:customization">Customization</p>
+    
+                        <div class="row g-2 row-cols-3">
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" role="switch" id="harvestable-bounce">
+                                <label class="form-check-label" data-translation-id="menu:bounce" for="harvestable-bounce">Bounce</label>
+                            </div>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" role="switch" id="harvestable-follow-camera">
+                                <label class="form-check-label" data-translation-id="menu:follow_camera" for="harvestable-follow-camera">Follow camera</label>
+                            </div>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" role="switch" id="harvestable-rotate">
+                                <label class="form-check-label" data-translation-id="menu:rotate" for="harvestable-rotate">Rotate</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-4">
+                        <div class="row g-2 row-cols-3">
+                            <div class="form-floating">
+                                <input type="number" class="form-control" id="harvestable-icon-type" placeholder="Minimum quantity" required>
+                                <label for="harvestable-icon-type" data-translation-id="menu:icon_type">Icon type</label>
+                            </div>
+    
+                            <div class="row align-items-center">
+                                <label for="harvestable-color" class="form-label text-center" data-translation-id="menu:color">Color</label>
+                                <input type="color" class="form-control form-control-color mx-auto" id="harvestable-color" value="#563d7c" style="border:none">
+                            </div>
+
+                            <div>
+                                <label for="harvestable-opacity" class="form-label" data-translation-id="menu:opacity">Opacity</label>
+                                <input type="range" class="form-range" id="harvestable-opacity" min=0 max=255>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row g-2 row-cols-2 mt-4">
+                        <div class="form-floating">
+                            <input type="number" class="form-control" id="harvestable-min-quantity" placeholder="Minimum quantity" required>
+                            <label for="harvestable-min-quantity" data-translation-id="menu:minimum_quantity">Minimum quantity</label>
+                        </div>
+                        <div class="form-floating">
+                            <input type="number" class="form-control" id="harvestable-max-quantity" placeholder="Maximum quantity" required>
+                            <label for="harvestable-max-quantity" data-translation-id="menu:maximum_quantity">Maximum quantity</label>
+                        </div>
+                    </div>
+
+                    <div class="form-floating mt-2">
+                        <input type="number" class="form-control" id="harvestable-harvest-time" placeholder="Seconds to harvest" required>
+                        <label for="harvestable-harvest-time" data-translation-id="menu:new_harvestable_item:seconds_to_harvest">Seconds to harvest</label>
+                    </div>
+				</div>
+				<div class="modal-footer">
+                    <button id="delete-harvestable-item-btn" type="button" class="btn btn-danger me-auto" data-translation-id="menu:delete" data-bs-dismiss="modal">Delete</button>
+					<button type="button" class="btn btn-secondary" data-translation-id="menu:close" data-bs-dismiss="modal">Close</button>
+					<button id="save-harvestable-item-btn" type="submit" class="btn btn-success" data-translation-id="menu:create">Create</button>
+				</div>
+			</form>
+        </div>
+    </div>
+
+    <!-- Field modal -->
+    <div id="field-modal" class="modal fade" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+            <form id="field-form" class="modal-content needs-validation" novalidate>
+                <div class="modal-header">
+                    <h5 class="modal-title" data-translation-id="menu:fields:field">Field</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body scrollbar">
+                    <div class="form-floating">
+                        <input type="text" class="form-control" id="field-label" placeholder="label" required>
+                        <label for="field-label" data-translation-id="menu:label">Label</label>
+                    </div>
+
+                    <div class="mt-2">
+                        <h2 class="text-center" data-translation-id="menu:coordinates">Coordinates</h2>
+
+                        <div class="row g-2 row-cols-4">
+                            <div class="form-floating">
+                                <input type="number" step="0.01" class="form-control max-two-decimals" id="field-coords-x" placeholder="X" required>
+                                <label for="field-coords-x" data-translation-id="menu:x">X</label>
+                            </div>
+                            <div class="form-floating">
+                                <input type="number" step="0.01" class="form-control max-two-decimals" id="field-coords-y" placeholder="Y" required>
+                                <label for="field-coords-y" data-translation-id="menu:y">Y</label>
+                            </div>
+                            <div class="form-floating">
+                                <input type="number" step="0.01" class="form-control max-two-decimals" id="field-coords-z" placeholder="Z" required>
+                                <label for="field-coords-z" data-translation-id="menu:z">Z</label>
+                            </div>
+
+                            <div class="form-floating">
+                                <input type="number" class="form-control" id="field-radius" placeholder="radius" required>
+                                <label for="field-radius" data-translation-id="menu:radius">Radius</label>
+                            </div>
+                        </div>
+
+                        <button id="field-current-coords-btn" type="button" class="btn btn-secondary my-2" data-translation-id="menu:current_coords">Current coords</button>
+                    </div>
+
+                    <div class="row g-2 row-cols-3 my-3">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="field-object-model" placeholder="Object model" required>
+                            <label for="field-object-model" data-translation-id="menu:object_model">Object model</label>
+                        </div>
+    
+                        <div class="form-floating">
+                            <input type="number" class="form-control" id="field-max-objects" placeholder="Object model" required>
+                            <label for="field-max-objects" data-translation-id="menu:max_objects">Max objects</label>
+                        </div>
+
+                        <div class="form-floating">
+                            <input type="number" class="form-control" id="field-seconds-to-harvest" placeholder="Seconds to harvest" required>
+                            <label for="field-seconds-to-harvest" data-translation-id="menu:seconds_to_harvest">Seconds to harvest</label>
+                        </div>
+                    </div>
+
+                    <div class="col my-2">
+                        <div class="form-check form-switch fs-4">
+                            <input class="form-check-input" type="checkbox" id="field-map-blip">
+                            <label class="form-check-label" data-translation-id="menu:map_blip" for="field-map-blip">Map blip</label>
+                        </div>
+
+                        <div id="field-map-blip-inputs" class="row gx-1 mt-1">
+                            <div class="col-md">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="field-blip-name" placeholder="Name">
+                                    <label for="field-blip-name" data-translation-id="menu:blip_name">Blip name</label>
+                                </div>
+                            </div>
+                            <div class="col-md">
+                                <div class="form-floating">
+                                    <input type="number" class="form-control" id="field-sprite-id" placeholder="sprite ID">
+                                    <label for="field-sprite-id" data-translation-id="menu:blip_sprite">Sprite</label>
+                                </div>
+                            </div>
+                            <div class="col-md">
+                                <div class="form-floating">
+                                    <input type="number" class="form-control" id="field-blip-color" placeholder="color ID">
+                                    <label for="field-blip-color" data-translation-id="menu:blip_color">Color</label>
+                                </div>
+                            </div>
+                            <div class="col-md">
+                                <div class="form-floating">
+                                    <input type="number" step="0.1" class="form-control" id="field-blip-scale" placeholder="scale">
+                                    <label for="field-blip-scale" data-translation-id="menu:blip_scale">Scale</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h2 class="text-center" data-translation-id="menu:items">Items</h2>
+
+                    <div id="fields-items" class="scrollbar">
+
+                    </div>
+
+                    <button id="field-add-item" type="button" class="btn btn-secondary" data-translation-id="menu:add_item">Add item</button>
+                </div>
+                <div class="modal-footer">
+                    <button id="delete-field-btn" type="button" class="btn btn-danger me-auto" data-translation-id="menu:delete" data-bs-dismiss="modal">Delete</button>
+                    <button type="button" class="btn btn-secondary" data-translation-id="menu:close" data-bs-dismiss="modal">Close</button>
+                    <button id="save-field-btn" type="submit" class="btn btn-success" data-translation-id="menu:create">Create</button>
+                </div>
+            </form>
+        </div>
+    </div>    
+
+    <!-- Crafting recipe modal -->
+    <div id="crafting-recipe-modal" class="modal fade" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+            <form id="crafting-recipe-form" class="modal-content needs-validation" novalidate>
+                <div class="modal-header">
+                    <h5 class="modal-title" data-translation-id="menu:crafting_recipe">Crafting recipe</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body scrollbar">
+
+                    <p class="fs-5 mb-5 text-center fst-italic fw-semibold" data-translation-id="menu:crafting_recipe:description"></p>
+
+                    <div class="row g-2">
+                        <div class="col-sm form-floating mb-2">
+                            <input id="crafting-recipe-name" type="text" class="form-control" placeholder="Crafting name" value="Default craft" required>
+                            <label data-translation-id="menu:crafting_recipe:crafting_name">Crafting name (whatever you want)</label>
+                        </div>
+
+                        <div class="col-sm form-floating mb-2">
+                            <input id="crafting-recipe-time-to-craft" type="number" class="form-control" placeholder="Time to craft" value="5" required>
+                            <label data-translation-id="menu:crafting_recipe:time_to_craft">Time to craft (seconds)</label>
+                        </div>
+                    </div>
+
+                    <p class="text-center fs-4 fw-bold mt-2" data-translation-id="menu:crafting_recipe:result_items">Result items</p>
+                    <p class="text-center fs-5 fw-lighter fst-italic" data-translation-id="menu:crafting_recipe:result_items_description">Result items if the recipe is correct but not all ingredients are in the perfect quantities</p>
+
+                    <div id="crafting-recipe-result-items-container">
+                        
+                    </div>
+
+                    <div class="d-inline-block col-12 my-2">
+                        <button id="crafting-recipe-add-result-item-btn" type="button" class="btn btn-secondary float-end"><i class="bi bi-plus-square"></i></button>
+                    </div>
+
+                    <hr>
+
+                    <p class="text-center fs-4 fw-bold" data-translation-id="menu:crafting_recipe:ingredients">Ingredients</p>
+
+                    <div id="crafting-recipe-ingredients-container">
+
+                    </div>
+
+                    <div class="d-inline-block col-12 my-2">
+                        <button id="crafting-recipe-add-ingredient-btn" type="button" class="btn btn-secondary float-end"><i class="bi bi-plus-square"></i></button>
+
+                    </div>
+
+                    <hr>
+                    
+                    <p class="text-center fs-4 fw-bold" data-translation-id="menu:crafting_recipe:perfect_recipe_reward">Perfect recipe reward</p>
+                    <p class="text-center fs-5 fw-lighter fst-italic" data-translation-id="menu:crafting_recipe:perfect_recipe_reward_description">Perfect recipe reward</p>
+
+                    <div id="crafting-recipe-perfect-recipe-reward-container">
+
+                    </div>
+
+                    <div class="d-inline-block col-12 my-2">
+                        <button id="crafting-recipe-add-reward-item-btn" type="button" class="btn btn-secondary float-end"><i class="bi bi-plus-square"></i></button>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button id="delete-crafting-recipe-btn" type="button" class="btn btn-danger me-auto" data-translation-id="menu:delete">Delete</button>
+                    <button type="button" class="btn btn-secondary" data-translation-id="menu:close" data-bs-dismiss="modal">Close</button>
+                    <button id="crafting-recipe-modal-confirm-btn" type="submit" class="btn btn-success" data-translation-id="menu:create">Create</button>
+                </div>
+            </form>
+        </div>
+    </div>    
+
+    <!-- Laboratory modal -->
+    <div id="laboratory-modal" class="modal fade" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+            <form id="laboratory-form" class="modal-content needs-validation" novalidate>
+                <div class="modal-header">
+                    <h5 class="modal-title" data-translation-id="menu:laboratory">Laboratory</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body scrollbar">
+                    <div class="col-sm form-floating mb-2">
+                        <input id="laboratory-name" type="text" class="form-control" placeholder="Laboratory name" value="Laboratory" required>
+                        <label data-translation-id="menu:laboratory:name">Laboratory name (whatever you want)</label>
+                    </div>
+
+                    <div class="mt-2">
+                        <p class="text-center fs-5" data-translation-id="menu:coordinates">Coordinates</p>
+    
+                        <div class="row g-2 row-cols-3">
+                            <div class="form-floating">
+                                <input type="number" step="0.01" class="form-control max-two-decimals" id="laboratory-coords-x" placeholder="X" required>
+                                <label for="laboratory-coords-x" data-translation-id="menu:x">X</label>
+                            </div>
+                            <div class="form-floating">
+                                <input type="number" step="0.01" class="form-control max-two-decimals" id="laboratory-coords-y" placeholder="Y" required>
+                                <label for="laboratory-coords-y" data-translation-id="menu:y">Y</label>
+                            </div>
+                            <div class="form-floating">
+                                <input type="number" step="0.01" class="form-control max-two-decimals" id="laboratory-coords-z" placeholder="Z" required>
+                                <label for="laboratory-coords-z" data-translation-id="menu:z">Z</label>
+                            </div>
+                        </div>
+    
+                        <button id="laboratory-current-coords-btn" type="button" class="btn btn-secondary my-2" data-translation-id="menu:current_coords">Current coords</button>
+                    </div>
+
+                    <div class="col my-2">
+                        <div class="form-check form-switch fs-4">
+                            <input class="form-check-input" type="checkbox" id="laboratory-map-blip">
+                            <label class="form-check-label" data-translation-id="menu:map_blip" for="laboratory-map-blip">Map blip</label>
+                        </div>
+
+                        <div id="laboratory-map-blip-inputs" class="row gx-1 mt-1">
+                            <div class="col-md">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="laboratory-blip-name" placeholder="Name">
+                                    <label for="laboratory-blip-name" data-translation-id="menu:blip_name">Blip name</label>
+                                </div>
+                            </div>
+                            <div class="col-md">
+                                <div class="form-floating">
+                                    <input type="number" class="form-control" id="laboratory-sprite-id" placeholder="sprite ID">
+                                    <label for="laboratory-sprite-id" data-translation-id="menu:blip_sprite">Sprite</label>
+                                </div>
+                            </div>
+                            <div class="col-md">
+                                <div class="form-floating">
+                                    <input type="number" class="form-control" id="laboratory-blip-color" placeholder="color ID">
+                                    <label for="laboratory-blip-color" data-translation-id="menu:blip_color">Color</label>
+                                </div>
+                            </div>
+                            <div class="col-md">
+                                <div class="form-floating">
+                                    <input type="number" step="0.1" class="form-control" id="laboratory-blip-scale" placeholder="scale">
+                                    <label for="laboratory-blip-scale" data-translation-id="menu:blip_scale">Scale</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-2">
+                        <p class="text-center fs-5" data-translation-id="menu:scale">Scale</p>
+    
+                        <div class="row g-2 row-cols-3">
+                            <div class="form-floating">
+                                <input type="number" step="0.01" min="1.5" class="form-control max-two-decimals" id="laboratory-scale-x" placeholder="X" required>
+                                <label for="laboratory-scale-x" data-translation-id="menu:x">X</label>
+                            </div>
+                            <div class="form-floating">
+                                <input type="number" step="0.01" min="1.5" class="form-control max-two-decimals" id="laboratory-scale-y" placeholder="Y" required>
+                                <label for="laboratory-scale-y" data-translation-id="menu:y">Y</label>
+                            </div>
+                            <div class="form-floating">
+                                <input type="number" step="0.01" class="form-control max-two-decimals" id="laboratory-scale-z" placeholder="Z" required>
+                                <label for="laboratory-scale-z" data-translation-id="menu:z">Z</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-4">
+                        <p class="text-center fs-5" data-translation-id="menu:customization">Customization</p>
+    
+                        <div class="row g-2 row-cols-3">
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" role="switch" id="laboratory-bounce">
+                                <label class="form-check-label" data-translation-id="menu:bounce" for="laboratory-bounce">Bounce</label>
+                            </div>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" role="switch" id="laboratory-follow-camera">
+                                <label class="form-check-label" data-translation-id="menu:follow_camera" for="laboratory-follow-camera">Follow camera</label>
+                            </div>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" role="switch" id="laboratory-rotate">
+                                <label class="form-check-label" data-translation-id="menu:rotate" for="laboratory-rotate">Rotate</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-4">
+                        <div class="row g-2 row-cols-3">
+                            <div class="form-floating">
+                                <input type="number" class="form-control" id="laboratory-icon-type" placeholder="Minimum quantity" required>
+                                <label for="laboratory-icon-type" data-translation-id="menu:icon_type">Icon type</label>
+                            </div>
+    
+                            <div class="row align-items-center">
+                                <label for="laboratory-color" class="form-label text-center" data-translation-id="menu:color">Color</label>
+                                <input type="color" class="form-control form-control-color mx-auto" data-translation-id="menu:color" id="laboratory-color" value="#563d7c" style="border:none">
+                            </div>
+
+                            <div>
+                                <label for="laboratory-opacity" class="form-label" data-translation-id="menu:opacity">Opacity</label>
+                                <input type="range" class="form-range" id="laboratory-opacity" min=0 max=255>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <div class="mt-3">
+                        <p class="text-center fs-5" data-translation-id="menu:laboratory:allowed_jobs">Allowed jobs</p>
+                        
+                        <p id="laboratory-allowed-jobs" class="fs-5 fst-italic text-center"></p>
+
+                        <button type="button" id="laboratory-choose-jobs" class="btn btn-secondary col-12" data-translation-id="menu:laboratory:choose_jobs">Choose jobs</button>
+                    </div>
+
+                    <hr>
+
+                    <div class="mt-3">
+                        <p class="text-center fs-5" data-translation-id="menu:laboratory:allowed_crafting_recipes">Allowed crafting recipes</p>
+                        
+                        <p id="laboratory-allowed-crafting-recipes" class="fs-5 fst-italic text-center"></p>
+
+                        <button type="button" id="laboratory-choose-recipes" class="btn btn-secondary col-12" data-translation-id="menu:laboratory:choose_crafting_recipes">Choose crafting recipes</button>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button id="delete-laboratory-btn" type="button" class="btn btn-danger me-auto" data-translation-id="menu:delete">Delete</button>
+                    <button type="button" class="btn btn-secondary" data-translation-id="menu:close" data-bs-dismiss="modal">Close</button>
+                    <button id="laboratory-modal-confirm-btn" type="submit" class="btn btn-success" data-translation-id="menu:create">Create</button>
+                </div>
+            </form>
+        </div>
+    </div>    
+
+    <!-- Crafting recipes dialog -->
+    <div class="modal fade" id="input-crafting-recipes-dialog-modal" tabindex="-1" role="dialog" style="z-index: 1070;">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" data-translation-id="menu:crafting_recipes_dialog:title">Crafting recipes List</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="input-group">
+                        <span class="input-group-text" data-translation-id="menu:crafting_recipes_dialog:search_recipe">Search recipe</span>
+                        <input id="input-crafting-recipe-search" type="text" class="form-control">
+                    </div>
+
+                    <div id="crafting-recipes-list" class="mt-2">
+
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-translation-id="menu:close" data-bs-dismiss="modal">Close</button>
+                    <button id="input-crafting-recipes-confirm-btn" type="button" class="btn btn-success" data-translation-id="menu:confirm">Confirm</button>
+                </div>    
+            </div>
+        </div>
+    </div>
+
+    <!-- Confirm dialog modal -->
+	<div class="modal fade" id="confirm-dialog-modal" tabindex="-1" role="dialog" aria-hidden="true" style="z-index: 1071;">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" data-translation-id="menu:confirm">Confirm</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+
+				<div class="modal-body"></div>
+
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-translation-id="menu:close" data-bs-dismiss="modal">Close</button>
+					<button id="confirm-dialog-confirm" type="button" class="btn btn-danger" data-translation-id="menu:confirm">Confirm</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Nexus modal -->
+	<div class="modal fade" id="nexus-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" style="z-index: 1070;">
+		<div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable" role="document">
+			<div id="animations-modal-form" class="modal-content needs-validation" novalidate>
+				<div class="modal-header">
+					<h5 class="modal-title" id="nexus-modal-title-text"></h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+				</div>
+				<div class="modal-body scrollbar">
+					<h1 class="text-center" id="nexus-modal-instance-listing-label"></h1>
+					
+					<div class="row mt-4">
+						<div class="container col-7">							
+							<div class="mt-3">
+								<h5>Description:</h5>
+								<p id="nexus-modal-instance-description"></p>
+							</div>
+						</div>
+
+						<div class="container col-5 fs-4">
+							<p>
+								<span id="nexus-modal-instance-average-rating"></span>
+								| 
+								<span><span id="nexus-modal-instance-total-votes"></span> <span data-translation-id="menu:nexus:votes"></span></span>
+							</p>
+
+							<p> <span class="fw-bold">Created by: </span> <span id="nexus-modal-instance-author"></span> </p>
+						</div>
+					</div>
+
+					<hr/>
+
+                    <div class="d-flex justify-content-evenly">
+                        <p><span class="fw-bold" data-translation-id="menu:nexus:content_type">Content type</span> - <span id="nexus-instance-content-type" class="font-monospace"></span></p>
+                        <p><span class="fw-bold" data-translation-id="menu:nexus:content_amount">Content amount</span> - <span id="nexus-instance-content-amount" class="font-monospace"></span></p>    
+                    </div>
+
+                    <h3 class="text-center" data-translation-id="menu:nexus:imported_elements_list"></h3>
+
+                    <ol id="nexus-modal-instance-content" class="list-group list-group-numbered col-6 text-center mx-auto">
+
+                    </ol>
+
+				</div>
+				<div class="modal-footer d-inline-block col-12">
+					<div class="float-start" id="vote-instance-rater"></div>
+					<button id="nexus-import-instance-btn" type="button" class="btn btn-primary float-end" data-translation-id="menu:nexus:import">Import</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="nexus-modal-upload" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" style="z-index: 1070;">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <form id="nexus-upload-form" class="modal-content needs-validation" novalidate>
+                <div class="modal-header">
+                    <h5 class="modal-title" data-translation-id="menu:nexus:data_to_share"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body">
+					<div class="mb-3">
+						<label class="form-label" data-translation-id="menu:nexus:name"></label>
+						<input type="text" class="form-control" id="nexus-upload-label" required>
+					</div>
+
+					<div class="mb-3">
+						<label class="form-label" data-translation-id="menu:nexus:description"></label>
+						<textarea class="form-control" id="nexus-upload-description" rows="3" minlength="5" required></textarea>
+					</div>
+
+					<div class="form-check mt-3">
+						<input type="checkbox" id="nexus-upload-accept-tos" class="form-check-input" required>
+						<label class="form-check-label">I agree to the   <a href="https://documentation.jaksam-scripts.com/jaksams-scripts/nexus-terms" target="_blank" onclick='window.invokeNative("openUrl", "https://documentation.jaksam-scripts.com/jaksams-scripts/nexus-terms")'>Nexus Terms and Privacy Policy</a></label>
+					</div>
+				</div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" data-translation-id="menu:close"></button>
+                    <button type="submit" class="btn btn-success" data-translation-id="menu:nexus:upload"></button>
+                </div>    
+            </form>
+        </div>
+    </div>
+
+    <script src="./assets/js/theme.bundle.js"></script>
+	<script src="index.js"></script>
+    <script src="../utils/dialogs/dialogs.js"></script>
+</body>
+
+</html>

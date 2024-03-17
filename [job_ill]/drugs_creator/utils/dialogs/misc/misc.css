@@ -1,0 +1,19 @@
+.swal-overlay {
+    background-color: rgba(11, 11, 11, 0.6);
+}
+
+.swal-modal {
+    background-color: #212529 !important;
+    color: #fff;
+    border: 1px solid #555;
+}
+
+.swal-icon--success:before,
+.swal-icon--success:after,
+.swal-icon--success__hide-corners {
+    background: none !important;
+}
+
+.swal-title, .swal-text {
+    color: white !important;
+}

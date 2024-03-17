@@ -1,0 +1,395 @@
+{
+    "server": {
+        "canAlwaysCarryItem": false,
+        "allowAfkFarmingForHarvest": false,
+        "acePermission": "drugs_creator",
+        "pushersCallPoliceChances": 20,
+        "mainDiscordWebhook": "",
+        "pocketCraftings": {},
+        "narcosNeededDrugs": [
+            {
+                "maxQuantity": 100,
+                "name": "drug_lsd",
+                "maxPrice": 2200,
+                "minQuantity": 50,
+                "minPrice": 1800
+            },
+            {
+                "maxQuantity": 100,
+                "name": "drug_meth",
+                "maxPrice": 3800,
+                "minQuantity": 50,
+                "minPrice": 3400
+            }
+        ],
+        "narcosAcceptsOnlyOneBuyerPerLocation": false,
+        "npcAcceptableDrugs": [
+            {
+                "maxPrice": 1000,
+                "minPrice": 500,
+                "name": "drug_lsd"
+            },
+            {
+                "maxPrice": 1000,
+                "minPrice": 500,
+                "name": "drug_ecstasy"
+            },
+            {
+                "maxPrice": 1000,
+                "minPrice": 500,
+                "name": "drug_meth"
+            },
+            {
+                "maxPrice": 1000,
+                "minPrice": 500,
+                "name": "drug_lean"
+            }
+        ],
+        "narcosRewardAccount": "black_money",
+        "maxNPCSellQuantity": 10,
+        "enableNarcosSelling": true,
+        "minNPCSellQuantity": 2,
+        "pushersSellingAccount": "black_money",
+        "pushers": {
+            "4": {
+                "heading": 231.92,
+                "coords": {
+                    "x": 36.92,
+                    "z": 30.43,
+                    "y": 6553.7
+                },
+                "workTime": {
+                    "finishHour": 2,
+                    "startHour": 0
+                },
+                "drugsNeeded": [
+                    {
+                        "maxQuantity": 80,
+                        "maxPrice": 1500,
+                        "minPrice": 1300,
+                        "name": "drug_lsd"
+                    },
+                    {
+                        "maxQuantity": 80,
+                        "maxPrice": 1500,
+                        "minPrice": 1300,
+                        "name": "drug_meth"
+                    },
+                    {
+                        "maxQuantity": 80,
+                        "maxPrice": 1500,
+                        "minPrice": 1300,
+                        "name": "drug_lean"
+                    },
+                    {
+                        "maxQuantity": 80,
+                        "maxPrice": 1500,
+                        "minPrice": 1300,
+                        "name": "drug_ecstasy"
+                    }
+                ]
+            },
+            "3": {
+                "heading": 208.85,
+                "coords": {
+                    "x": 1573.48,
+                    "z": 34.34,
+                    "y": 3605
+                },
+                "workTime": {
+                    "finishHour": 22,
+                    "startHour": 20
+                },
+                "drugsNeeded": [
+                    {
+                        "maxQuantity": 80,
+                        "maxPrice": 1500,
+                        "minPrice": 1300,
+                        "name": "drug_lsd"
+                    },
+                    {
+                        "maxQuantity": 80,
+                        "maxPrice": 1500,
+                        "minPrice": 1300,
+                        "name": "drug_meth"
+                    },
+                    {
+                        "maxQuantity": 80,
+                        "maxPrice": 1500,
+                        "minPrice": 1300,
+                        "name": "drug_lean"
+                    },
+                    {
+                        "maxQuantity": 80,
+                        "maxPrice": 1500,
+                        "minPrice": 1300,
+                        "name": "drug_ecstasy"
+                    }
+                ]
+            },
+            "2": {
+                "heading": 109.38,
+                "coords": {
+                    "x": -1278.7,
+                    "z": 3.03,
+                    "y": -1307.16
+                },
+                "workTime": {
+                    "finishHour": 20,
+                    "startHour": 18
+                },
+                "drugsNeeded": [
+                    {
+                        "maxQuantity": 80,
+                        "maxPrice": 1500,
+                        "minPrice": 1300,
+                        "name": "drug_lsd"
+                    },
+                    {
+                        "maxQuantity": 80,
+                        "maxPrice": 1500,
+                        "minPrice": 1300,
+                        "name": "drug_meth"
+                    },
+                    {
+                        "maxQuantity": 80,
+                        "maxPrice": 1500,
+                        "minPrice": 1300,
+                        "name": "drug_lean"
+                    },
+                    {
+                        "maxQuantity": 80,
+                        "maxPrice": 1500,
+                        "minPrice": 1300,
+                        "name": "drug_ecstasy"
+                    }
+                ]
+            },
+            "1": {
+                "heading": 137.04,
+                "coords": {
+                    "x": 219.24,
+                    "z": 25.95,
+                    "y": -1855.7
+                },
+                "workTime": {
+                    "finishHour": 15,
+                    "startHour": 10
+                },
+                "drugsNeeded": [
+                    {
+                        "maxQuantity": 80,
+                        "maxPrice": 1500,
+                        "minPrice": 1300,
+                        "name": "drug_lsd"
+                    },
+                    {
+                        "maxQuantity": 80,
+                        "maxPrice": 1500,
+                        "minPrice": 1300,
+                        "name": "drug_meth"
+                    },
+                    {
+                        "maxQuantity": 80,
+                        "maxPrice": 1500,
+                        "minPrice": 1300,
+                        "name": "drug_lean"
+                    },
+                    {
+                        "maxQuantity": 80,
+                        "maxPrice": 1500,
+                        "minPrice": 1300,
+                        "name": "drug_ecstasy"
+                    }
+                ]
+            }
+        },
+        "specificWebhooks": {
+            "harvestable_item": "",
+            "drug_field": "",
+            "laboratories": "",
+            "plane_sell": "",
+            "boat_sell": "",
+            "npc_sell": "",
+            "narcos_sell": "",
+            "pushers_sell": ""
+        },
+        "enableExplosionOnError": true,
+        "boatSellingAccount": "black_money",
+        "npcSellingMinimumPolice": 0,
+        "accountFromNPCSell": "black_money",
+        "narcosSellingMinimumPolice": 0,
+        "areDiscordLogsActive": false,
+        "drugsEffects": {
+            "drug_ecstasy": {
+                "effects": [
+                    "pink_visual"
+                ],
+                "effectsDuration": 120,
+                "takingMethod": "pill"
+            },
+            "drug_lean": {
+                "effects": [
+                    "pink_visual",
+                    "visual_shaking"
+                ],
+                "effectsDuration": 120,
+                "takingMethod": "drink"
+            },
+            "drug_lsd": {
+                "effects": [
+                    "green_visual",
+                    "visual_shaking"
+                ],
+                "effectsDuration": 120,
+                "takingMethod": "pill"
+            },
+            "drug_meth": {
+                "effects": [
+                    "confused_visual",
+                    "drunk_walk"
+                ],
+                "effectsDuration": 120,
+                "takingMethod": "smoke"
+            }
+        },
+        "planeSellingMinimumPolice": 0,
+        "narcosCallPoliceChances": 20,
+        "planeAcceptableDrugs": [
+            {
+                "maxPrice": 1000,
+                "minPrice": 500,
+                "name": "drug_meth"
+            },
+            {
+                "maxPrice": 1000,
+                "minPrice": 500,
+                "name": "drug_lean"
+            }
+        ],
+        "boatSellingMinimumPolice": 0,
+        "maxNPCsSellableDrugQuantity": 200,
+        "boatAcceptableDrugs": [
+            {
+                "maxPrice": 1000,
+                "minPrice": 500,
+                "name": "drug_ecstasy"
+            },
+            {
+                "maxPrice": 1000,
+                "minPrice": 500,
+                "name": "drug_lsd"
+            }
+        ],
+        "narcosBuyerLocations": [
+            {
+                "coords": {
+                    "x": 320.57,
+                    "z": 98.74,
+                    "y": 98.76
+                },
+                "heading": 266.27
+            },
+            {
+                "coords": {
+                    "x": -2185.18,
+                    "z": 47.54,
+                    "y": 4248.49
+                },
+                "heading": 277.1
+            },
+            {
+                "coords": {
+                    "x": 2955.03,
+                    "z": 49.37,
+                    "y": 4625.27
+                },
+                "heading": 266.57
+            }
+        ],
+        "pushersSellingMinimumPolice": 0,
+        "sellToNPCChancesToAccept": 80,
+        "narcosLocationChangeTime": 120,
+        "npcAlertPoliceChances": 20,
+        "enableFireOnError": true,
+        "planeSellingAccount": "black_money",
+        "harvestingItemsMinimumPolice": 0,
+        "useLaboratoryMinimumPolice": 0,
+        "harvestFieldMinimumPolice": 0,
+        "priceReduction": {
+            "minimumPolice": 0,
+            "reductionPercentage": 0,
+            "reductionInterval": 0
+        }
+    },
+    "shared": {
+        "timeToSellInPlane": 300,
+        "arePushersEnabled": true,
+        "npcSecondsToSell": 8,
+        "locale": "en",
+        "enableBoatSell": true,
+        "alarmPoliceInPlane": true,
+        "alarmPoliceInBoat": true,
+        "timeToSellInBoat": 300,
+        "enableAirplaneSell": true,
+        "enableNarcosSelling": true,
+        "enableNPCSell": true,
+        "npcSellingCommand": {
+            "enabled": false,
+            "command": "selldrugs",
+            "hasToSpawnPed": false
+        }
+    },
+    "client": {
+        "keyToSellToNPCs": 38,
+        "showNarcosBlip": true,
+        "heightToSell": 600,
+        "alarmPoliceInPlane": true,
+        "pusherModel": "s_m_y_dealer_01",
+        "sellArea": {
+            "plane": {
+                "coords": {
+                    "x": 1602.84,
+                    "z": 39.51,
+                    "y": 3207.02
+                },
+                "radius": 5
+            },
+            "boat": {
+                "coords": {
+                    "x": 1602.84,
+                    "z": 39.51,
+                    "y": 3207.02
+                },
+                "radius": 1
+            }
+        },
+        "narcosModel": "g_m_y_salvaboss_01",
+        "pusherBlip": {
+            "color": 1,
+            "sprite": 514,
+            "scale": 0.7,
+            "name": "Pusher"
+        },
+        "secondsBeforeExplosion": 15,
+        "sellUseWholeOcean": {
+            "plane": true,
+            "boat": true
+        },
+        "sellShowRadius": {
+            "plane": false,
+            "boat": false
+        },
+        "menuPosition": "bottom-right",
+        "showPushersBlips": true,
+        "alarmPoliceInBoat": true,
+        "narcosBlip": {
+            "color": 1,
+            "sprite": 480,
+            "scale": 1,
+            "name": "Narcos"
+        },
+        "targetingScript": "none",
+        "helpNotification": "none"
+    }
+}

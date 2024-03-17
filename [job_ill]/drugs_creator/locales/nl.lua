@@ -1,0 +1,82 @@
+locales['nl'] = {
+    ['not_enough'] = "Je hebt niet genoeg ~r~%s",
+    ['open_lab'] = "Druk op ~INPUT_CONTEXT~ om het lab te gebruiken",
+    ['press_to_stop'] = "Druk op ~INPUT_CONTEXT~ om te stoppen",
+    ['stopped'] = "Gestopt",
+    ['too_far'] = "Je bent uit het lab gegaan",
+    ['lab'] = "Laboratorium",
+    ['interact'] = "Druk ~INPUT_CONTEXT~ om te oogsten",
+    ['sold'] = "Je hebt zoveel  ~b~x%d~s~ ~y~%s~s~ verkocht voor ~r~$%s",
+    ['height'] = "Huidige hoogte: %s%dm", -- %s will be the color, don't remove it
+    ['nothing_useful'] = "Je hebt niks bruikbaars",
+    ['minimum_altitude'] = "Je zit niet boven de minimale hoogte",
+    ['remain_to_sell'] = "Blijf boven deze hoogte ~g~%ds~s~ om drugs te blijven verkopen", 
+    ['timer'] = "Wacht ~g~%ds~s~ om drugs te verkopen",
+    ['plane_spotted'] = "Een verdachte vliegtuig is gespot op de kaart",
+    ['boat_spotted'] = "Een verdachte boot is gespot op de kaart",
+    ['no_space'] = "Je hebt niet genoeg ruimte",
+    ['crafting_drug'] = "Samenstellen van drugs %s",
+    ["it_will_explode"] = "Er komt zo een explosie, ~r~Rennen!~s~",
+    ["explosion_in_zone"] = "Er was een ~r~explosie~s~",
+    ['wrong_items'] = "Je gebruikte de verkeerde ingredienten",
+    ['ingredient_taken'] = "Je oogste ~b~x%d~s~ ~y~%s~s~",
+    ['press_to_sell'] = "Druk op E om drugs te verkopen",
+    ['drug_not_wanted'] = "Deze persoon wil geen drugs",
+    ['sold_for'] = "Je verkocht ~y~x%d %s~s~ voor ~g~$%s~s~",
+    ['someone_tried_to_sell_drugs'] = "Iemand probeerd  ~r~drugs~s~ te verkopen",
+    ['not_enough_police'] = "Er is niet genoeg politie",
+    ['gang_member'] = "Gang Lid",
+    ['this_is_our_zone'] = "Dit is ~r~onze~s~ zone!",
+    ['citizen'] = "Inwoner",
+    ['how_you_dare'] = "Hoe durf je!?",
+    ['press_to_retrieve_drugs'] = "Druk op ~INPUT_CONTEXT~ om je drugs terug te krijgen",
+    ['drug_has_been_stolen'] = "~b~x%d~s~ ~y~%s~s~ ~r~zijn gestolen~s~ van jou! Pak het terug!",
+    ['interact_narcos'] = "Druk op ~INPUT_CONTEXT~ om tegen de narcos te praten",
+    ['narcos:drug_request'] = "<span style='color: %s'>x%d %s - $%s</span>",
+    ['narcos:this_is_what_i_need'] = "Dit heb ik nodig",
+    ['narcos:sold_drug'] = "Je hebt ~b~x%d~s~ ~y~%s~s~ voor ~r~$%s~s~",
+    ['invalid_quantity'] = "Ongeldige hoeveelheid",
+    ['confirm'] = "<span style='color: green'>Confirm</span>",
+    ['quantity'] = "Hoeveelheid",
+    ['you_have_to_wait'] = "Je moet even wachten om opnieuw te gebruiken",
+    ['you_cant_sell_anymore'] = "Je kan niet meer verkopen",
+    ['i_dont_need_anything_for_now'] = "Ik heb ~r~niks nodig~s~ voor nu, kom later terug",
+    ['narcos'] = "Narcos",
+    ["no_drugs_to_sell"] = "Je hebt geen drugs om te verkopen",
+    ["canceled_sale"] = "Verkoop ~r~geannuleerd~s~",
+
+    -- Pushers
+    ["pusher"] = "Pusher",
+    ["interact_pusher"] = "Druk op ~INPUT_CONTEXT~ praat tegen de pusher",
+    ["pusher:drug_to_sell"] = "<span style='color: %s'>%d/%d - %s</span>",
+    ["pusher:sold"] = "Je verkocht ~b~x%d~s~ ~y~%s~s~ voor ~r~$%s~s~",
+
+    --[[ Logs ]]
+    ['log:generic'] = "Nickname: %s\nIdentifier: %s\n\n%s",
+
+    ['logs:pickedUpItem'] = "Heeft plukbare drugs op gepakt",
+    ['logs:pickedUpItem:description'] = "Pakte **x%d** **%s** in plukbare items **%d**",
+    ['logs:pickedUpItem:error'] = "PRobeerde een ongeldige item te pakken",
+    ['logs:pickedUpItem:error:description'] = "PRobeerde dit op te pakken **%s**",
+    
+    ["logs:drugField"] = "Oogsten in een drugs veld",
+    ["logs:drugField:description"] = "Oogste **x%d** **%s** in het drugs veld **%s** (field ID: **%d**)",
+
+    ['logs:craftedRecipe'] = "Item gemaakt in lab",
+    ['logs:craftedRecipe:description'] = "item gemaakt  **%s** in laboratorium **%s** (laboratory ID: **%d**)",
+
+    ['logs:soldOnPlane'] = "Drugs verkocht vanuit vliegtuig",
+    ['logs:soldOnPlane:description'] = "Verkocht **%s** voor **$%s**",
+
+    ['logs:soldOnBoat'] = "Drugs verkocht vanuit boot",
+    ['logs:soldOnBoat:description'] = "Verkocht **%s** voor **$%s**",
+
+    ['logs:soldToNarcos'] = "Verkocht aan narcos",
+    ['logs:soldToNarcos:description'] = "Verkocht **x%d** **%s** voor **$%s** aan narcos",
+
+    ['logs:soldToNPC'] = "Verkocht aan NPC",
+    ['logs:soldToNPC:description'] = "Verkocht **x%d** **%s** voor **$%s** aan NPC",
+
+    ['logs:soldToPusher'] = "Verkocht aan pusher",
+    ['logs:soldToPusher:description'] = "Verkocht **x%d** **%s** voor **$%s** aan pusher ID **%d**",
+}
