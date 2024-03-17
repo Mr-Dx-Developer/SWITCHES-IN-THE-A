@@ -537,7 +537,7 @@ local function GetStashItems(stashId)
 	return items
 end
 
-local function SaveStashItems(stashId, items)
+--[[ local function SaveStashItems(stashId, items)
 	if Stashes[stashId].label == "Stash-None" or not items then return end
 
 	for _, item in pairs(items) do
@@ -550,6 +550,22 @@ local function SaveStashItems(stashId, items)
 	})
 
 	Stashes[stashId].isOpen = false
+end ]]
+local function SaveStashItems(stashId, items)
+	if Stashes[stashId].label == 'Stash-None' or not items then return end
+
+	for _, item in pairs(items) do
+		item.description = nil
+	end
+
+	MySQL.insert('INSERT INTO stashitems (stash, items) VALUES (:stash, :items) ON DUPLICATE KEY UPDATE items = :items',
+		{
+			['stash'] = stashId,
+			['items'] = json.encode(items)
+		})
+
+	Stashes[stashId].isOpen = false
+	TriggerEvent('keep-harmony:stash->close', stashId) --- this is the line 
 end
 
 local function AddToStash(stashId, slot, otherslot, itemName, amount, info, created)
@@ -2247,6 +2263,8 @@ RegisterNetEvent('inventory:server:SetInventoryData', function(fromInventory, to
 	end
 end)
 
+TriggerEvent('keep-harmony:stash->close', stashId)
+
 RegisterNetEvent('qb-inventory:server:SaveStashItems', function(stashId, items)
     MySQL.Async.insert('INSERT INTO stashitems (stash, items) VALUES (:stash, :items) ON DUPLICATE KEY UPDATE items = :items', {
         ['stash'] = stashId,
@@ -2748,3 +2766,10 @@ end
 exports("getGloveboxItems", getGloveboxItems)
 exports("getTrunkItems", getTrunkItems)
 -- required for k9
+
+
+exports('GetInventoryData', function(type, id)
+	if type == 'stash' then
+		return Stashes[id]
+	end
+end)
