@@ -38,6 +38,21 @@ Config.Drugs = {
         RequiredAmount = 1,
         DenyChance = 0
     },
+    [5] = {
+        Label = '101 Brick',
+        Item = '101_brick',
+        Price = 3500, 
+        RequiredAmount = 1,
+        DenyChance = 0
+    },
+    [6] = {
+        Label = 'Famgoon Dogfood',
+        Item = 'famgoon_dogfood',
+        Price = 5500, 
+        RequiredAmount = 1,
+        DenyChance = 0
+    },
+    
 }
 
 Config.Discord = {
