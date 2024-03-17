@@ -2,10 +2,10 @@ Config = {}
 
 Config.MinZOffset = 45
 
-Config.MinimumHouseRobberyPolice = 2
+Config.MinimumHouseRobberyPolice = 1
 
-Config.MinimumTime = 5
-Config.MaximumTime = 22
+Config.MinimumTime = 1
+Config.MaximumTime = 24
 
 Config.Rewards = {
     [1] = {
