@@ -2,7 +2,7 @@ Config = {}
 
 Config.TVs = {}
 
-Config.Framework = "standalone"  -- types (standalone, qbcore, esx, custom)
+Config.Framework = "qbcore"  -- types (standalone, qbcore, esx, custom)
 
 Config.ESXFramework = {
 	newversion = false, -- use this if you using new esx version (if you get error with old esxsharedobjectmethod in console)
@@ -18,7 +18,7 @@ Config.Language = "English" -- text language from code, if you want translate in
 
 Config.TvForItem = true -- this will enable tv open via item
 
-Config.TvForCommand = true -- this will enable tv open via command
+Config.TvForCommand = false -- this will enable tv open via command
 
 Config.TvCommand = "tv" -- command for open tv
 
@@ -26,7 +26,7 @@ Config.TelevisionObjectPlacer = false -- while is this enable, it will spawn tel
 
 Config.TelevisionPermissions = false -- enable this if you want use permission system for some locations, you need define locations in Config.TelevisionPermissionsLocations
 
-Config.VehicleTelevisionOffSetsCreator = false --enable this only on dev server, you can open offset menu via /tvcreator command
+Config.VehicleTelevisionOffSetsCreator = true --enable this only on dev server, you can open offset menu via /tvcreator command
 
 Config.VehicleTelevision = true -- this will enable vehicle television system
 
