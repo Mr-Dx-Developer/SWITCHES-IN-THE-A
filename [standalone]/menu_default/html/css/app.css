@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap");
+
+.menu {
+	font-family: "Poppins", sans-serif;
+	font-size: 22px;
+	min-width: 300px;
+	color: #fff;
+	position: absolute;
+	font-weight: 300;
+}
+
+.menu.align-left {
+	left: 40;
+	top: 50%;
+	transform: translate(0, -50%);
+}
+
+.menu.align-top-left {
+	left: 40;
+	top: 40;
+}
+
+.menu.align-top {
+	left: 50%;
+	top: 40;
+	transform: translate(-50%, 0);
+}
+
+.menu.align-top-right {
+	right: 10;
+	top: 40;
+}
+
+.menu.align-right {
+	right: 40;
+	top: 50%;
+	transform: translate(0, -50%);
+}
+
+.menu.align-bottom-right {
+	right: 40;
+	bottom: 40;
+}
+
+.menu.align-bottom {
+	left: 50%;
+	bottom: 40;
+	transform: translate(-50%, 0);
+}
+
+.menu.align-bottom-left {
+	left: 40;
+	bottom: 40;
+}
+
+.menu.align-center {
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.menu .head {
+    background-color: rgba(23, 23, 23, 90%);
+	text-align: center;
+	height: 40px;
+	line-height: 40px;
+	font-size: 0.9rem;
+    font-weight: 400;
+}
+
+.menu .menu-items {
+	max-height: 600px;
+	overflow-y: auto;
+}
+
+.menu .menu-items .menu-item {
+    height: 40px;
+    display: block;
+    background-color: rgba(23, 23, 23, 90%);
+    line-height: 40px;
+    color: #ffffff;
+	font-size: 0.9rem;
+    padding: 0.45rem;
+    margin-top: 0.5rem;
+    border-radius: 0.15rem;
+    text-align: center;
+    max-width: 100%;
+    box-shadow: 0rem 0rem 0.1rem 0.05rem #000000;
+}
+
+.menu .menu-items .menu-item.selected {
+    background-color: #dc143c;
+}
