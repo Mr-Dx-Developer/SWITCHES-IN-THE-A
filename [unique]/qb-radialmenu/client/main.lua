@@ -155,7 +155,7 @@ end
 local adminIndex = nil
 
 local function AdminMenu()
-    QBCore.Functions.TriggerCallback('Dx-radialmenu:checkPermission', function(result)
+    QBCore.Functions.TriggerCallback('qb-radialmenu:checkPermission', function(result)
         if result == true then
             local AdminMenu = {
                 id = 'admin',

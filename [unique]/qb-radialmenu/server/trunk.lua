@@ -18,7 +18,7 @@ QBCore.Functions.CreateCallback('qb-trunk:server:getTrunkBusy', function(_, cb, 
     cb(false)
 end)
 
-QBCore.Functions.CreateCallback('Dx-radialmenu:checkPermission', function(source, cb)
+QBCore.Functions.CreateCallback('qb-radialmenu:checkPermission', function(source, cb)
     local src = source
     if QBCore.Functions.HasPermission(src, 'admin') then
         cb(true)

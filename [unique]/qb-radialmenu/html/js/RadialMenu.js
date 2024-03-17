@@ -51,7 +51,7 @@ RadialMenu.prototype.close = function (bool) {
     var self = this;
 
     if (self.currentMenu) {
-        $.post(`https://Dx-radialmenu/closeRadial`, JSON.stringify({ delay: bool }) );
+        $.post(`https://qb-radialmenu/closeRadial`, JSON.stringify({ delay: bool }) );
         var parentMenu;
         while (parentMenu = self.parentMenu.pop()) {
             parentMenu.remove();
@@ -627,7 +627,7 @@ RadialMenu.nextTick = function (fn) {
  * Font Awesome Free 5.15.3 by @fontawesome - https://fontawesome.com
  * Search: https://fontawesome.com/v5.0/icons?d=gallery&p=2&s=brands,light,regular,solid&m=free
  * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
- * Modified for Dx-radialmenu by zfbx
+ * Modified for qb-radialmenu by zfbx
  */
 
 const icos = {
