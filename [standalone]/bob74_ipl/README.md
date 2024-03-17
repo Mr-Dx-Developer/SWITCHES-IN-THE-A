@@ -30,22 +30,6 @@ This resource has been completely rewritten from scratch since v2.0. You can cus
 (DD/MM/YYYY)
 
 ---
-05/12/2023 - 2.1.3
-- Added missing train track near Davis Quartz (https://github.com/Bob74/bob74_ipl/pull/129 @TheIndra55)
-
-10/01/2023 - 2.1.2
-- Fix native and update native names (@NeenGame )
-
-24/10/2022 - 2.1.1
-- Fix vespucci beach wall hole
-- Fix Boat House Door in Sandy Shores
-- Fix GTA 5 24/7 Roof in Sandy Shores
-- Fix Industrial Building near Lesters Warehouse
-- Fix Collision Holes near Lost MC compound
-
-11/10/2022 - 2.1.0a
-- Make Doomsday Facility Objects non network
-
 03/08/2022 - 2.1.0
 - Added "The Criminal Enterprises" support
 
@@ -133,8 +117,8 @@ This resource has been completely rewritten from scratch since v2.0. You can cus
 - Fixed gang members names using an old format
 - Disabled the Mod shop from CEO garage 3 (ImportCEOGarage3) because it is overlapping with CEO office 3 (FinanceOffice3)
 
-08/11/2018 - 2.0.3
-- Added biker gang’s name, missions, and members pictures
+- 08/11/2018 - 2.0.3
+Added biker gang’s name, missions, and members pictures
 - Added CEO office organization’s name
 
 05/11/2018 - 2.0.1
