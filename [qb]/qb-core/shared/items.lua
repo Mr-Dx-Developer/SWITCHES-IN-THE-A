@@ -233,6 +233,16 @@ QBShared.Items = {
     ['weapon_smokegrenade']             = {['name'] = 'weapon_smokegrenade',               ['label'] = 'Smoke Grenade',             ['weight'] = 1000,         ['type'] = 'weapon',     ['ammotype'] = nil,                        ['image'] = 'weapon_c4.png',                 ['unique'] = true,         ['useable'] = false,     ['description'] = 'An explosive charge that can be remotely detonated'},
     ['weapon_flare']                    = {['name'] = 'weapon_flare',                      ['label'] = 'Flare pistol',              ['weight'] = 1000,         ['type'] = 'weapon',     ['ammotype'] = 'AMMO_FLARE',               ['image'] = 'weapon_flare.png',              ['unique'] = true,         ['useable'] = false,     ['description'] = 'A small pyrotechnic devices used for illumination and signalling'},
 
+
+
+    ['fixkit'] = {['name'] = 'fixkit', ['label'] = 'Fixkit', ['weight'] = 500, ['type'] = 'item', ['image'] = 'your_image.png', ['unique'] = false, ['useable'] = false, ['shouldClose'] = false, ['combinable'] = nil},
+	['medikit'] = {['name'] = 'medikit', ['label'] = 'Medikit', ['weight'] = 500, ['type'] = 'item', ['image'] = 'your_image.png', ['unique'] = false, ['useable'] = false, ['shouldClose'] = false, ['combinable'] = nil},
+	['sponge'] = {['name'] = 'sponge', ['label'] = 'Sponge', ['weight'] = 500, ['type'] = 'item', ['image'] = 'your_image.png', ['unique'] = false, ['useable'] = false, ['shouldClose'] = false, ['combinable'] = nil},
+	['handcuffs'] = {['name'] = 'handcuffs', ['label'] = 'Handcuffs', ['weight'] = 500, ['type'] = 'item', ['image'] = 'your_image.png', ['unique'] = false, ['useable'] = false, ['shouldClose'] = false, ['combinable'] = nil},
+	['lockpick'] = {['name'] = 'lockpick', ['label'] = 'Lockpick', ['weight'] = 500, ['type'] = 'item', ['image'] = 'your_image.png', ['unique'] = false, ['useable'] = false, ['shouldClose'] = false, ['combinable'] = nil},
+	['bandage'] = {['name'] = 'bandage', ['label'] = 'Bandage', ['weight'] = 500, ['type'] = 'item', ['image'] = 'your_image.png', ['unique'] = false, ['useable'] = false, ['shouldClose'] = false, ['combinable'] = nil},
+
+    
     -- Miscellaneous
     ['weapon_petrolcan']                = {['name'] = 'weapon_petrolcan',                  ['label'] = 'Petrol Can',                ['weight'] = 1000,         ['type'] = 'weapon',     ['ammotype'] = 'AMMO_PETROLCAN',           ['image'] = 'weapon_petrolcan.png',          ['unique'] = true,         ['useable'] = false,     ['description'] = 'A robust liquid container made from pressed steel'},
     ['weapon_fireextinguisher']         = {['name'] = 'weapon_fireextinguisher',           ['label'] = 'Fire Extinguisher',         ['weight'] = 1000,         ['type'] = 'weapon',     ['ammotype'] = nil,                        ['image'] = 'weapon_fireextinguisher.png',   ['unique'] = true,         ['useable'] = false,     ['description'] = 'A portable device that discharges a jet of water, foam, gas, or other material to extinguish a fire'},
