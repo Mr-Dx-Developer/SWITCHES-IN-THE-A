@@ -1859,6 +1859,22 @@ Config.Products = {
             type = "item",
             slot = 135,
         },
+        [136] = {
+            name = "backpack1",
+            price = 15, 
+            amount = 10,
+            info = {},
+            type = "item",
+            slot = 136,
+        },
+        [137] = {
+            name = "backpack2",
+            price = 15, 
+            amount = 10,
+            info = {},
+            type = "item",
+            slot = 137,
+        },
         
 
 

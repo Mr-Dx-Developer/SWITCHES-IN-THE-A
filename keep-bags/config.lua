@@ -40,8 +40,8 @@ Config.retrieval = {
 Config.Bags = {
      {
           item = 'backpack1',
-          slots = 15,
-          size = 100000,
+          slots = 20,
+          size = 1200000,
           cloth = {
                male = {
                     ["bag"] = { item = 36, texture = 0 }
@@ -63,7 +63,7 @@ Config.Bags = {
      {
           item = 'backpack2',
           slots = 20,
-          size = 200000,
+          size = 1200000,
           cloth = {
                male = {
                     ["bag"] = { item = 36, texture = 1 }
