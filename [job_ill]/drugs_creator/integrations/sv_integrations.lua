@@ -14,7 +14,7 @@ POLICE_JOBS_NAMES = {
 SKIP_ITEM_EXISTS_CHECK = false
 
 -- Force inventory refresh or not. Set to true if NPC selling is not working properly
-FORCE_INVENTORY_REFRESH = true
+FORCE_INVENTORY_REFRESH = false
 
 --[[
     You can edit this function if you want to add second jobs or anything like that (editing this function is down to you)
