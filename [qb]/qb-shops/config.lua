@@ -1875,6 +1875,22 @@ Config.Products = {
             type = "item",
             slot = 137,
         },
+        [138] = {
+            name = "tvremote",
+            price = 10, 
+            amount = 10,
+            info = {},
+            type = "item",
+            slot = 138,
+        },
+        [139] = {
+            name = "vehicletv",
+            price = 10, 
+            amount = 10,
+            info = {},
+            type = "item",
+            slot = 139,
+        },
         
 
 
