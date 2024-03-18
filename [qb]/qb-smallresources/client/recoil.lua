@@ -120,6 +120,11 @@ local recoils = {
     -- [883325847] = 0.3,        --['weapon_petrolcan']
     -- [101631238] = 0.3,        --['weapon_fireextinguisher']
     -- [-1168940174] = 0.3,        --['weapon_hazardcan']
+
+    [`weapon_galilar`] = 0.5,
+    [`weapon_jrbak`] = 0.5,
+    [`weapon_howa_2`] = 0.5,
+    [`weapon_glacier`] = 0.5,
     	-- CUSTOM WEAPONS
 	[GetHashKey("weapon_ak47")] = 0.5,
 	[GetHashKey("weapon_de")] = 0.5,

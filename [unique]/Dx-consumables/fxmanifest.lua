@@ -1,25 +1,11 @@
-----------------------------------
---<!>-- BOII | DEVELOPMENT --<!>--
-----------------------------------
-
-fx_version 'cerulean'
-
-game 'gta5'
-
-author 'case#1993'
-
-description 'BOII | Development - Utility: Consumables'
-
-version '3.0.1'
-
+name "Jim-Consumables"
+author "Jimathy"
+version "1.5"
+description "Consumable Script By Jimathy"
+fx_version "cerulean"
+game "gta5"
 lua54 'yes'
 
-shared_scripts {
-    'shared/*',
-}
-client_scripts{
-    'client/*'
-}
-server_scripts {
-    'server/*'
-}
+shared_scripts { 'config.lua', 'shared/*.lua' }
+client_scripts { 'client/*.lua', }
+server_scripts { 'server/*.lua' }

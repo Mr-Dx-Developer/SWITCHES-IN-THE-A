@@ -47,11 +47,11 @@ client_scripts {
     'client/pocket_craftings.lua',
 
     -- Script - Sellings
-    ---'client/boat_selling.lua',
-    ---'client/plane_selling.lua',
-    ---'client/npc_selling.lua',
-    ---'client/narcos.lua',
-    ---'client/pushers.lua',
+    'client/boat_selling.lua',
+    'client/plane_selling.lua',
+    'client/npc_selling.lua',
+    'client/narcos.lua',
+    'client/pushers.lua',
 }
 
 server_scripts{

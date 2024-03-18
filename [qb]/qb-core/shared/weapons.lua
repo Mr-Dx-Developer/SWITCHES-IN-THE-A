@@ -1,6 +1,15 @@
 QBShared = QBShared or {}
 QBShared.Weapons = {
-	[`WEAPON_SCEVO`]                = { name = 'WEAPON_SCEVO',      label = 'CZ Scorpion EVO',       weapontype = 'Assault Rifle', ammotype = 'AMMO_RIFLE', damagereason = 'Ended / Rifled / Shot down / Floored' },
+
+
+	[`weapon_galilar`]          = { name = 'weapon_galilar', label = 'GALILAR', weapontype = 'Assault Rifle', ammotype = 'AMMO_RIFLE', damagereason = 'Ended / Rifled / Shot down / Floored' },
+	[`weapon_jrbak`]          = { name = 'weapon_jrbak', label = 'JRBAK', weapontype = 'Assault Rifle', ammotype = 'AMMO_RIFLE', damagereason = 'Ended / Rifled / Shot down / Floored' },
+	[`weapon_neva`] 		         = {['name'] = 'weapon_neva', 	 	        ['label'] = 'NEVA', 			            ['weapontype'] = 'Assault Rifle',	['ammotype'] = 'AMMO_RIFLE',	['damagereason'] = 'Ended / Rifled / Shot down / Floored'},
+	[`weapon_howa_2`]          = { name = 'weapon_howa_2', label = 'HOWA_2', weapontype = 'Assault Rifle', ammotype = 'AMMO_RIFLE', damagereason = 'Ended / Rifled / Shot down / Floored' },
+	[`WEAPON_SCEVO`]	= {['name'] = 'WEAPON_SCEVO',	['label'] = 'CZ Scorpion EVO',	['weapontype'] = 'Assault Rifle',	['ammotype'] = 'AMMO_RIFLE',	['damagereason'] = 'Ended / Rifled / Shot down / Floored'},
+	[`weapon_glacier`]          = { name = 'weapon_glacier', label = 'GLACIER', weapontype = 'Assault Rifle', ammotype = 'AMMO_RIFLE', damagereason = 'Ended / Rifled / Shot down / Floored' },
+
+
 
 	--Kyros Weapon Pack V3
 	[`weapon_ddm4v7`]                = { name = 'weapon_ddm4v7',      label = 'DDM4V7 AR15',       weapontype = 'Assault Rifle', ammotype = 'AMMO_RIFLE', damagereason = 'Ended / Rifled / Shot down / Floored' },

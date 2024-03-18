@@ -41,7 +41,7 @@ Config.Drugs = {
     [5] = {
         Label = '101 Brick',
         Item = '101_brick',
-        Price = 3500, 
+        Price = 4000, 
         RequiredAmount = 1,
         DenyChance = 0
     },
@@ -52,6 +52,38 @@ Config.Drugs = {
         RequiredAmount = 1,
         DenyChance = 0
     },
+    [7] = {
+        Label = 'ACE30',
+        Item = 'ace30',
+        Price = 3500, 
+        RequiredAmount = 1,
+        DenyChance = 0
+    },
+    
+    [8] = {
+        Label = 'WHAM PACK',
+        Item = 'wham_pack',
+        Price = 2500, 
+        RequiredAmount = 1,
+        DenyChance = 0
+    },
+    
+    [9] = {
+        Label = 'Gumbo',
+        Item = 'gumbo',
+        Price = 2500, 
+        RequiredAmount = 1,
+        DenyChance = 0
+    },
+    
+    [10] = {
+        Label = '101 Cups',
+        Item = '101_cups',
+        Price = 3000, 
+        RequiredAmount = 1,
+        DenyChance = 0
+    },
+    
     
 }
 
