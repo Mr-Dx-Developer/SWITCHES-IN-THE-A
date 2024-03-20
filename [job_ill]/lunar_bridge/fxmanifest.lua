@@ -5,7 +5,7 @@ lua54 'yes'
 
 author 'Lunar Scripts'
 description 'Bridge module'
-version '1.2.2'
+version '1.2.3'
 
 -- What to run
 escrow_ignore {
