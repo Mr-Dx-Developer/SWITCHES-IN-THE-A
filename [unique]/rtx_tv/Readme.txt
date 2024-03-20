@@ -50,4 +50,4 @@ License agreement / Terms of Service
 2. Each product is to be used on a singular server, with the exception of a test server.
 3. Any form of redistribution of our content is considered copyright infringement.
 4. If any of these rules are broken, legal actions can be taken.
-© 2022 RTX Development, all rights reserved.
+© 2024 RTX Development, all rights reserved.

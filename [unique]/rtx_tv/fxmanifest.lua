@@ -4,7 +4,7 @@ game 'gta5'
 
 description 'RTX TV'
 
-version '20.0'
+version '25.0'
 
 server_scripts {
 	--'@mysql-async/lib/MySQL.lua',  -- enable this and remove oxmysql line (line 11) if you use mysql-async (only enable this for qbcore/esx framework)
@@ -32,8 +32,7 @@ files {
 	'html/tv/index.html',
 	'html/tv/style.css',
 	'html/tv/img/background.png',
-	'html/img/*.png',
-	'html/videos/*.mp4'
+	'html/img/*.png'
 }
 
 ui_page 'html/ui.html'

@@ -80,6 +80,7 @@ Config.EnabledLinkTypes = { -- you can enable or disable the link type here
     ["bilibili"] = true,
     ["huya"] = true,
     ["aparat"] = true,
+	["kick"] = true,
 }	
 
 Config.TelevisionObjects = {
