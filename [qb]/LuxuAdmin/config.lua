@@ -127,7 +127,7 @@ Config.IdentifiersAlwaysAllowed = {
 
        "discord:1144911208303034440", -- 
        "discord:606994374106152961" -- 
-
+      
       } -- Identifiers that can always use the panel with ALL permissions (license,fivem,discord)
 
 -- All the ace groups in your server
