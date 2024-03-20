@@ -43,83 +43,83 @@ Config.UseTarget = GetConvar('UseTarget', 'false') == 'true'
 Config.Purses = {
     [1] = {
         item = 'fmdbaltotebox',
-        price = math.random(350,900)
+        price = math.random(50,100)
     },
     [2] = {
         item = 'fmdbalwwalletbox',
-        price = math.random(350,900)
+        price = math.random(50,100)
     },
     [3] = {
         item = 'fmdbalpsbagbox',
-        price = math.random(350,900)
+        price = math.random(50,100)
     },
     [4] = {
         item = 'fmdbalpbagbox',
-        price = math.random(350,900)
+        price = math.random(50,100)
     },
     [5] = {
         item = 'fmdchpbox',
-        price = math.random(350,900)
+        price = math.random(50,100)
     },
     [6] = {
         item = 'fmdchwbox',
-        price = math.random(350,900)
+        price = math.random(50,100)
     },
     [7] = {
         item = 'fmdchbbox',
-        price = math.random(350,900)
+        price = math.random(50,100)
     },
     [8] = {
         item = 'fmdbirpsbox',
-        price = math.random(350,900)
+        price = math.random(50,100)
     },
     [9] = {
         item = 'fmdbirbbox',
-        price = math.random(350,900)
+        price = math.random(50,100)
     },
     [10] = {
         item = 'fmdbirapbox',
-        price = math.random(350,900)
+        price = math.random(50,100)
     },
     [11] = {
         item = 'fmdbirpinkbox',
-        price = math.random(350,900)
+        price = math.random(50,100)
     },
     [12] = {
         item = 'fmdlvcbbox',
-        price = math.random(350,900)
+        price = math.random(50,100)
     },
     [13] = {
         item = 'fmdlvtotebox',
-        price = math.random(350,900)
+        price = math.random(50,100)
     },
     [14] = {
         item = 'fmdlvwalletbox',
-        price = math.random(350,900)
+        price = math.random(50,100)
     },
     [15] = {
         item = 'fmdlvjunglebox',
-        price = math.random(350,900)
+        price = math.random(50,100)
     },
     [16] = {
         item = 'fmddiorapbox',
-        price = math.random(350,900)
+        price = math.random(50,100)
     },
     [17] = {
         item = 'fmddiorbbox',
-        price = math.random(350,900)
+        price = math.random(50,100)
     },
     [18] = {
         item = 'fmddiorplbox',
-        price = math.random(350,900)
+        price = math.random(50,100)
     },
     [19] = {
         item = 'fmddiortotebox',
-        price = math.random(350,900)
+        price = math.random(50,100)
     },
     [20] = {
         item = 'fmddiorptotebox',
-        price = math.random(350,900)
+        price = math.random(50,100)
     },
 }
 
