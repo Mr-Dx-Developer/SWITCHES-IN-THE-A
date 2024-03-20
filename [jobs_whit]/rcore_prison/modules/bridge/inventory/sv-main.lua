@@ -242,7 +242,11 @@ Bridge.RemoveItem = function(playerId, itemName, itemCount, metadata, slot)
             end
         elseif HasResource(Prison.InventoryScripts.ESX_INVENTORY) and not hasOxInventory then
             if Player then
-                Player.removeInventoryItem(itemName, itemCount)
+                if itemName == 'money' then
+                    Player.removeAccountMoney('bank', tonumber(itemCount))
+                else
+                    Player.removeInventoryItem(itemName, itemCount)
+                end
             end
         end
     else
@@ -264,6 +268,15 @@ Bridge.GetItem = function(playerId, itemName)
     
         if Prison.Framework == FRAMEWORK_MAP.ESX then
             local data = Player.getInventoryItem(itemName)
+
+            if itemName == 'money' then
+                return Player.getAccount('bank').money or 0
+            end
+
+            if not data then
+                return result
+            end
+
             result = data and tonumber(data.count) or tonumber(data.amount) or 0
         elseif Prison.Framework == FRAMEWORK_MAP.QBCORE then
             if itemName == 'money' then
@@ -346,7 +359,12 @@ function ClearInventory(serverId)
             end
         end
     elseif HasResource(Prison.InventoryScripts.OX_INVENTORY) then
-        exports.ox_inventory:ClearInventory(serverId, Prison.KeepItemState and keepItems or {})
+        if Prison.KeepItemState and keepItems then
+            exports.ox_inventory:ClearInventory(serverId, Prison.KeepItemState and keepItems)
+        else
+            exports.ox_inventory:ClearInventory(serverId)
+        end
+
         clearState = true
     end
 
@@ -376,11 +394,23 @@ function ClearInventory(serverId)
             local clearinventory = ('%s %s'):format('clearinventory', serverId)
 
             local commandState, commandErrMessage = pcall(function()
-                ExecuteCommand(clearinventory)
+                if Prison.KeepItemState and keepItems then
+                    exports.inventory:clearInventory(player, true, Prison.KeepItemState and keepItems)
+                else
+                    exports.inventory:clearInventory(player, true, {})
+                end
             end)
 
             if commandState then
                 clearState = true
+            else
+                local backClear, backClearErr = pcall(function()
+                    ExecuteCommand(clearinventory)
+                end)
+    
+                if backClear then
+                    clearState = true
+                end
             end
         end
     end
@@ -389,7 +419,6 @@ function ClearInventory(serverId)
 
     return clearState
 end
-
 
 function GetServerInventory()
     local InventoryScripts = Prison.InventoryScripts or {}
@@ -404,13 +433,18 @@ function GetServerInventory()
         end
     end
 
-    if DeployInventory == 'es_extended' and HasResource('qs-inventory') then
-        DeployInventory = Prison.InventoryScripts.QS_INVENTORY
+    if DeployInventory == 'es_extended' and HasResource(InventoryScripts.QS_INVENTORY) then
+        DeployInventory = InventoryScripts.QS_INVENTORY
     end
 
-    if DeployInventory == 'es_extended' and HasResource('ox_inventory') then
-        DeployInventory = Prison.InventoryScripts.OX_INVENTORY
+    if DeployInventory == 'es_extended' and HasResource(InventoryScripts.OX_INVENTORY) then
+        DeployInventory = InventoryScripts.OX_INVENTORY
     end
+
+    if DeployInventory == 'es_extended' and HasResource(InventoryScripts.CHEEZA_INVENTORY) then
+        DeployInventory = InventoryScripts.CHEEZA_INVENTORY
+    end
+
 
     return DeployInventory
 end

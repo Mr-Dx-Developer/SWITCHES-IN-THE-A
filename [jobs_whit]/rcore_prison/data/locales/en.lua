@@ -27,6 +27,9 @@ return {
     ['PRISONER_FAR_AWAY'] = 'You can only hold players near you.',
     ['USER_NOT_ONLINE'] = 'You cannot jail offline citizen.',
 
+    ['CITIZEN_JAILED_ANNOUCEMENT'] = 'Citizen named %s was jailed for %s months',
+    ['PRISON'] = 'Prison',
+
     ['ACCOUNT_TRANSACTIONS'] = 'Transactions',
     ['ACCOUNT_ID'] = 'Account number',
     ['ACCOUNT_GIFTSTATE'] = 'Receive gifts',

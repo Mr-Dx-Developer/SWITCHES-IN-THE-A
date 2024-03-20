@@ -392,7 +392,7 @@ return {
         {
             npc = {
                 model = 's_m_y_prismuscl_01',
-                heading = 180.0,
+                heading = 360.0,
                 anim = {
                     type = 'scenario',
                     name = 'PROP_HUMAN_SEAT_BENCH',
@@ -405,7 +405,7 @@ return {
                 size = vec3(0.5, 0.5, 0.5),
                 type = 0
             },
-            coords = vec3(1715.2, 2555.32, 45.48 - 1),
+            coords = vec3(1715.2, 2554.90, 46.00 - 1),
             type = 'dealer',
             name = 'What i can do for you?',
             trade = {
@@ -603,7 +603,7 @@ return {
         {
             npc = {
                 model = 's_m_y_prismuscl_01',
-                heading = 100.0,
+                heading = 45.0,
                 anim = {
                     type = 'scenario',
                     name = 'PROP_HUMAN_SEAT_BENCH',
@@ -616,7 +616,7 @@ return {
                 size = vec3(0.5, 0.5, 0.5),
                 type = 0
             },
-            coords = vec3(1779.16, 2582.96, 45.68 - 1),
+            coords = vec3(1779.16, 2582.46, 46.28 - 1),
             type = 'dealer',
             name = 'What i can do for you?',
             trade = {
@@ -681,7 +681,7 @@ return {
             },
             npc = {
                 model = 's_m_m_prisguard_01',
-                heading = 90.0,
+                heading = 180.0,
             },
             marker = {
                 renderState = false,
@@ -723,7 +723,7 @@ return {
             },
             npc = {
                 model = 's_m_m_prisguard_01',
-                heading = 270.0,
+                heading = 0.0,
             },
             marker = {
                 renderState = false,
@@ -744,7 +744,7 @@ return {
             },
             npc = {
                 model = 'mp_m_securoguard_01',
-                heading = 225.0,
+                heading = 0.0,
             },
             marker = {
                 renderState = false,
@@ -752,7 +752,7 @@ return {
                 size = vec3(0.5, 0.5, 0.5),
                 type = 0
             },
-            coords = vec3(1776.3153, 2572.7754, 45.7978),
+            coords = vec3(1775.503, 2572.724, 45.79779),
             type = 'jobs',
         },
         {

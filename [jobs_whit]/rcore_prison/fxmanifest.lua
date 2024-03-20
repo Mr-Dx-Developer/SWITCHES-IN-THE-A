@@ -6,7 +6,7 @@ game         'gta5'
 --[[ Resource Information ]]--
 name         'rcore_prison'
 author       'NewEdit'
-version      '1.90'
+version      '1.91'
 description  'Standalone unique Prison system.'
 
 shared_scripts {

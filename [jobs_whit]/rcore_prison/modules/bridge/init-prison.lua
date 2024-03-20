@@ -14,12 +14,13 @@ function GetSharedObjectSafe()
 
 			LoadEsx = function()
 				if tries == 0 then
-					dbg.debug("Could not load any Es_extended object you need to correct the event name or change export name!")
+					dbg.debug(
+					"Could not load any Es_extended object you need to correct the event name or change export name!")
 					return
 				end
-					
+
 				tries = tries - 1
-					
+
 				if ESX == nil then
 					SetTimeout(100, LoadEsx)
 				end
@@ -45,18 +46,18 @@ function GetSharedObjectSafe()
 				object = exports[resourceName or 'qb-core']['GetSharedObject']()
 				promise_:resolve(object)
 			end, function(error)
-
 				local QBCore = nil
 				local tries = 3
-				
+
 				LoadQBCore = function()
 					if tries == 0 then
-						dbg.debug("Could not load any QB-Core object you need to correct the event name or change export name!")
+						dbg.debug(
+						"Could not load any QB-Core object you need to correct the event name or change export name!")
 						return
 					end
-							
-					tries = tries - 1                      
-							
+
+					tries = tries - 1
+
 					if QBCore == nil then
 						SetTimeout(100, LoadQBCore)
 					end
@@ -77,7 +78,7 @@ function GetSharedObjectSafe()
 	if Prison.Framework == 0 or not Prison.Framework then
 		promise_:resolve(object)
 	end
-	
+
 	Citizen.Await(promise_)
 
 	return object or {}
@@ -142,7 +143,8 @@ CreateThread(function()
 	else
 		if shared.preset == 'gabz' then
 			if not IsScriptLoaded('rcore_prison_models_gabz') then
-				dbg.info('Detected GABZ prison, but for Cigarette production, its required to load [rcore_prison_models_gabz]')
+				dbg.info(
+				'Detected GABZ prison, but for Cigarette production, its required to load [rcore_prison_models_gabz]')
 			end
 		end
 
@@ -189,21 +191,20 @@ if IsDuplicityVersion() then
 
 	SyncZones = function(source)
 		if pastAreas and Utils.tablesize(pastAreas) > 0 then
-			
 			dbg.debug('Found zones to resync for you. [%s]', GetPlayerName(source))
 
 			for idx, v in pairs(Zones.vertGroups) do
-				TriggerClientEvent('rcore_prison:registerZoneForTarget', source, source,  {
-						models = Zones.models,
-						zones = Zones.vertGroups[idx],
-						idx = idx,
+				TriggerClientEvent('rcore_prison:registerZoneForTarget', source, source, {
+					models = Zones.models,
+					zones = Zones.vertGroups[idx],
+					idx = idx,
 				})
 			end
 		else
 			dbg.debug('Nothing resync was find. [%s]', GetPlayerName(source))
 		end
 	end
-	
+
 	InternalCharacterLoaded = function(source, loadType)
 		local player = Bridge.GetPlayer(source)
 
@@ -258,7 +259,7 @@ if IsDuplicityVersion() then
 			else
 				idx = getUserCW(source)
 				label = l('CW_WELCOME_BACK') .. ' [' .. time .. ']'
-				
+
 				if CWUsers[idx] and CWUsers[idx].position then
 					TriggerClientEvent('rcore_prison:setBlipWaypoint', source, source, {
 						coords = CWUsers[idx].position,
@@ -290,7 +291,8 @@ if IsDuplicityVersion() then
 			SetPrisonerJailTime(source, time, 'restore', prisoner.state)
 			HandleOnlineSentence('init', source, time)
 
-			LevelDebug(3, 'User cannot be released [%s] with SID [%s] | %s', prisoner.prisonerName, source, prisoner.state)
+			LevelDebug(3, 'User cannot be released [%s] with SID [%s] | %s', prisoner.prisonerName, source,
+				prisoner.state)
 		end
 	end
 
@@ -323,7 +325,7 @@ if IsDuplicityVersion() then
 			local jobName = NotifyActivities()
 
 			Bridge.HandleCuffs(playerId)
-			
+
 			if jobName then
 				Bridge.Notify(playerId, {
 					title = l('WARDEN_TITLE'),
@@ -337,7 +339,7 @@ if IsDuplicityVersion() then
 					}
 				})
 			end
-		
+
 			dbg.debug('Prisoner [%s] was put in prison with SID [%s] in place [%s]', data.prisoner.name,
 				data.serverId, data.prisoner.cellId)
 		end
@@ -412,7 +414,7 @@ if IsDuplicityVersion() then
 				return true
 			end
 
-			local retval = false    
+			local retval = false
 
 			local mePed = GetPlayerPed(copSID)
 			local targetPed = GetPlayerPed(targetSID)
@@ -461,7 +463,7 @@ if IsDuplicityVersion() then
 
 			TriggerClientEvent('rcore_prison:openApp', source, source, data)
 		end)
-		
+
 
 		RegisterCommand(Prison.Commands.Jail, function(source, args, rawCommand)
 			local arg = args
@@ -677,46 +679,46 @@ else
 	Bridge = {}
 
 	TASK_LABEL_MAP = {
-		['canteen'] =  l('CANTEEN_LABEL_INTERACT'),
-		['lobby'] =  l('LOBBY_LABEL_INTERACT'),
-		['booth'] =  l('BOOTH_LABEL_INTERACT'),
-		['jobs'] = l('JOBS_LABEL_INTERACT'),
-		['package_cigarette'] =  l('CIGAR_PACKAGE_LABEL_INTERACT'),
-		['situps'] =  l('SITUPS_PACKAGE_LABEL_INTERACT'),
-		['cranks'] =  l('CRANKS_PACKAGE_LABEL_INTERACT'),
-		['muslechin']  = l('MUSLECHIN_PACKAGE_LABEL_INTERACT'),
-		['account']  = l('ACCOUNT_CREATE_LABEL_INTERACT')
+		['canteen']           = l('CANTEEN_LABEL_INTERACT'),
+		['lobby']             = l('LOBBY_LABEL_INTERACT'),
+		['booth']             = l('BOOTH_LABEL_INTERACT'),
+		['jobs']              = l('JOBS_LABEL_INTERACT'),
+		['package_cigarette'] = l('CIGAR_PACKAGE_LABEL_INTERACT'),
+		['situps']            = l('SITUPS_PACKAGE_LABEL_INTERACT'),
+		['cranks']            = l('CRANKS_PACKAGE_LABEL_INTERACT'),
+		['muslechin']         = l('MUSLECHIN_PACKAGE_LABEL_INTERACT'),
+		['account']           = l('ACCOUNT_CREATE_LABEL_INTERACT')
 	}
 
 
 	Suggestions = {
 		State = Prison.Commands.Suggestions,
 		Commands = {
-			['startcs_command'] = {
+			['startcs_command']   = {
 				command_label = l('COMMAND_STARTCS_LABEL'),
 				command_desc = l('COMMAND_STARTCS_DESC'),
 				params = {
-					{ name='serverId', help=l('COMMAND_STARTCS_PARAM_TARGET_HELP') },
-					{ name=l('COMMAND_STARTCS_PARAM_PEROLL_AMOUNT'), help=l('COMMAND_STARTCS_PARAM_PEROLL_HELP') },   
+					{ name = 'serverId',                             help = l('COMMAND_STARTCS_PARAM_TARGET_HELP') },
+					{ name = l('COMMAND_STARTCS_PARAM_PEROLL_AMOUNT'), help = l('COMMAND_STARTCS_PARAM_PEROLL_HELP') },
 				}
 			},
-			['jail_command']  = {
+			['jail_command']      = {
 				command_label = l('COMMAND_JAIL_LABEL'),
 				command_desc = l('COMMAND_JAIL_DESC'),
 				params = {
-					{ name=l('COMMAND_JAIL_PARAM_TARGET_LABEL'), help=l('COMMAND_JAIL_PARAM_TARGET_DESC') },
-					{ name=l('COMMAND_JAIL_PARAM_TIME_LABEL'), help=l('COMMAND_JAIL_PARAM_TIME_DESC') },
-					{ name=l('COMMAND_JAIL_PARAM_JAIL_REASON_TITLE'), help=l('COMMAND_JAIL_PARAM_JAIL_REASON_DESC') }
+					{ name = l('COMMAND_JAIL_PARAM_TARGET_LABEL'),    help = l('COMMAND_JAIL_PARAM_TARGET_DESC') },
+					{ name = l('COMMAND_JAIL_PARAM_TIME_LABEL'),      help = l('COMMAND_JAIL_PARAM_TIME_DESC') },
+					{ name = l('COMMAND_JAIL_PARAM_JAIL_REASON_TITLE'), help = l('COMMAND_JAIL_PARAM_JAIL_REASON_DESC') }
 				}
 			},
-			['unjail_command']  = {
+			['unjail_command']    = {
 				command_label = l('COMMAND_UNJAIL_LABEL'),
 				command_desc = l('COMMAND_UNJAIL_DESC'),
 				params = {
-					{ name=l('COMMAND_UNJAIL_PARAM_LABEL'), help=l('COMMAND_UNJAIL_PARAM_DESC') },
+					{ name = l('COMMAND_UNJAIL_PARAM_LABEL'), help = l('COMMAND_UNJAIL_PARAM_DESC') },
 				}
 			},
-			['dashboard_command']  = {
+			['dashboard_command'] = {
 				command_label = l('COMMAND_DASHBOARD_LABEL'),
 				command_desc = l('COMMAND_DASHBOARD_DESC'),
 				params = {}
@@ -731,14 +733,14 @@ else
 		local players = GetActivePlayers()
 		local closestDistance = maxDist or 5.0
 		local closestPlayer = -1
-		
+
 		for i = 1, #players, 1 do
 			local playerId = players[i]
 
 			if (playerId ~= PlayerId() or includePlayer) and playerId ~= -1 then
 				local pos = GetEntityCoords(GetPlayerPed(playerId))
 				local distance = #(pos - coords)
-	
+
 				if distance < closestDistance then
 					closestPlayer = GetPlayerServerId(playerId)
 					closestDistance = distance
@@ -753,18 +755,18 @@ else
 		local players = GetActivePlayers()
 		local nearby = {}
 		local count = 0
-	
+
 		local maxDistance = maxDistance or 5.0
-	
+
 		for i = 1, #players do
 			local playerId = players[i]
-	
+
 			if playerId ~= PlayerId() or includePlayer then
 				local playerPed = GetPlayerPed(playerId)
 				local playerCoords = GetEntityCoords(playerPed)
 				local playerName = GetPlayerName(playerId)
 				local distance = #(coords - playerCoords)
-	
+
 				if distance < maxDistance then
 					count += 1
 					nearby[count] = {
@@ -778,7 +780,7 @@ else
 		if count <= 0 then
 			dbg.debug('Failed to fetch closest players in area.')
 		end
-	
+
 		return nearby
 	end
 
@@ -794,8 +796,14 @@ else
 		end
 	end
 
-	Bridge.GymAPI = function()
-		return dbg.debug('[GymAPI] You need to hook own function for player stats')
+	Bridge.GymAPI = function(percent, exerciseName)
+		TriggerEvent('rcore_prison:client:heartbeat', {
+			actionType = 'GYM',
+			data = {
+				percent = percent,
+				exerciseName = exerciseName
+			}
+		})
 	end
 
 	Bridge.SetEntryOutfit = function()
@@ -804,11 +812,11 @@ else
 
 	Bridge.ResetPrisoner = function(data, state)
 		Bridge.HandleResetPrisoner(data, state)
-	
+
 		Prisoner = {}
 
 		ActiveState = false
-	
+
 		DisplayRadar(true)
 
 		ClearAllHelpMessages()
@@ -818,22 +826,22 @@ else
 
 		ClearInterval('jail_time')
 		ClearInterval('jail_activity')
-	
+
 		SetTimeout(2000, function()
 			ClearInterval('jail_time')
 			ClearInterval('jail_activity')
 
 			NetworkEndTutorialSession()
-			
+
 			ClearAllHelpMessages()
 			BusyspinnerOff()
 		end)
 	end
 
-	
+
 	Bridge.HandleCloseMenuInterval = function(place)
 		SetInterval('target_menu_interval', Prison.Target.CheckMenuDistInterval, function()
-			local plyPed =  PlayerPedId()
+			local plyPed = PlayerPedId()
 			local plyCoords = GetEntityCoords(plyPed)
 
 			local place = place
@@ -844,12 +852,6 @@ else
 				ClearInterval('target_menu_interval')
 			end
 		end)
-	end
-   
-	DisplayTime = function(_text)
-		BeginTextCommandBusyspinnerOn("STRING")
-		AddTextComponentSubstringPlayerName(_text)
-		EndTextCommandBusyspinnerOn(1)
 	end
 
 	AddEventHandler('rcore_prison:performTask', function(received)
@@ -874,21 +876,27 @@ else
 		local radiusSize = 20.0
 		local centerPoint = vec3(1643.163086, 2529.749756, 45.564835)
 		local prisonMin, prisonMax = vec3(1265.648, 2346.0022, 36.56355), vec3(1955.37378, 2837.94, 72.65112)
-	
-		if Prison.HandleNPCPoolState then   
-			if not DoesScenarioBlockingAreaExist(prisonMin, prisonMax) then      
+
+		ClearAreaOfPeds(centerPoint.x, centerPoint.y, centerPoint.z, radiusSize * 10, false)
+
+		if Prison.HandleNPCPoolState then
+			if not DoesScenarioBlockingAreaExist(prisonMin, prisonMax) then
 				AddScenarioBlockingArea(centerPoint - radiusSize, centerPoint + radiusSize, false, true, true, true)
 				AddPopMultiplierArea(centerPoint - radiusSize, centerPoint + radiusSize, 0.0, 0.0, false)
 				SetPedNonCreationArea(centerPoint - radiusSize, centerPoint + radiusSize)
 				SetAllVehicleGeneratorsActiveInArea(prisonMin, prisonMax, false, false)
-			end 
+				ClearAreaOfPeds(centerPoint.x, centerPoint.y, centerPoint.z, radiusSize * 10, false)
+			end
 		end
 	end
+
+	provideExport('HandleNPCPool', GetCurrentResourceName(), Bridge.BlockPool)
 
 	Bridge.HandlePrisonMap = function(actionType)
 		if not Prison.RenderPrisonMap then return end
 
-		dbg.debug('Loading prison map, it might conflict cayo perico map if you are using it.\n Go to configs/config.lua - RenderPrisonMap and set it to false if you dont want to use it.')
+		dbg.debug(
+		'Loading prison map, it might conflict cayo perico map if you are using it.\n Go to configs/config.lua - RenderPrisonMap and set it to false if you dont want to use it.')
 
 		if actionType == 'init' then
 			while true do
@@ -898,7 +906,7 @@ else
 			end
 		end
 	end
-	
+
 	Bridge.CreateBlip = function(data)
 		if not data.sprite then
 			return
@@ -938,12 +946,13 @@ else
 	function InvokeDistanceInteract()
 		Bridge.RegisterInteract()
 	end
-		
+
 	CreateThread(function()
 		collectgarbage("collect")
 
 		if not shared.data.interaction then
-			return warn('Failed to get interaction data.\n Check your preset in rcore_prison/data/presets/' .. shared.preset .. '.lua')
+			return warn('Failed to get interaction data.\n Check your preset in rcore_prison/data/presets/' ..
+			shared.preset .. '.lua')
 		end
 
 		AddTextEntry('RCORE_PRISON_START_JOB', l('START_JOB'))
@@ -1017,7 +1026,7 @@ else
 			AddTextEntry('RCORE_PRISON_NPC_INTERACT_GYM', l('PRISON_CHECK_GYM'))
 			AddTextEntry('RCORE_PRISON_NPC_INTERACT_DEALER', l('PRISON_CHECK_DEALER'))
 			AddTextEntry('RCORE_PRISON_NPC_INTERACT_CW', l('PRISON_CHECK_CW'))
-			
+
 			HandleJailCache('init')
 			HandleJailInteraction('init')
 		else
@@ -1097,13 +1106,13 @@ else
 	if Prison.Notify.DefaultNotify then
 		Bridge.Notify = function(data)
 			local settings = data
-			
+
 			local icon = settings.icon or "CHAR_DEFAULT"
 			local type = settings.type or 1
 			local text = settings.description or ""
 			local title = settings.title or ""
 			local subTitle = settings.subtitle or ""
-	
+
 			SetNotificationTextEntry("STRING")
 			AddTextComponentString(text)
 			SetTextFont(getFontId())
@@ -1117,7 +1126,7 @@ else
 			elseif Framework and Framework.ShowNotification then
 				return Framework.ShowNotification(data.description, data.type, 3000)
 			end
-			
+
 			return dbg.debug('[Notify] You need to hook own notify for this function.')
 		end
 	end
@@ -1127,41 +1136,41 @@ else
 		local placeCoords = shared.data.outfitMenu
 		local fixedZ = GetEntityHeightAboveGround(plyPed)
 		local retval = nil
-	
+
 		SetEntityCoords(plyPed, placeCoords.x, placeCoords.y, placeCoords.z - fixedZ)
 		SetEntityHeading(plyPed, placeCoords.w)
-		
+
 		local time = GetGameTimer()
-	
+
 		RequestCollisionAtCoord(placeCoords.x, placeCoords.y, placeCoords.z)
-		
+
 		local interiorId = GetInteriorAtCoords(placeCoords.x, placeCoords.y, placeCoords.z)
-		
-		if interiorId then    
+
+		if interiorId then
 			SetInteriorActive(interiorId, true)
 		end
-	
+
 		while (not HasCollisionLoadedAroundEntity(plyPed) and (GetGameTimer() - time) < 5000) do
 			Wait(0)
-			
+
 			RequestCollisionAtCoord(placeCoords.x, placeCoords.y, placeCoords.z)
-	
+
 			if GetGameTimer() - time > 5000 then
 				break
 			end
 		end
-	
+
 		Wait(0)
-	
+
 		if placeCoords then
 			retval = PrepareClothingCamera()
 		end
-	
+
 		SetCameraLookAtPos()
-	
+
 		return retval
 	end
-	
+
 	Bridge.SelectOutfit = function(plyPed, data)
 		Clothing.SetUserOutfit(data, 'selectOutfit')
 	end
@@ -1181,7 +1190,7 @@ else
 
 		if jailType == 'jailed' then
 			local randomOutfit = Clothing.SelectRandomOutfit()
-				   
+
 			if randomOutfit then
 				Clothing.SetUserOutfit(randomOutfit, 'relog')
 			end

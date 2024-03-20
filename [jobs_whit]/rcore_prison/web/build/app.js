@@ -218,6 +218,8 @@ function DisplayMenuButton(index, button, action) {
     }
 }
 
+
+
 function ScrollUp() {
     let currentButton = undefined
     let previousButton = undefined
@@ -401,6 +403,11 @@ var previousTimer = null;
 
 window.addEventListener('message', (event) => {
     var item = event.data;
+
+    
+    if (item.type === "hideSubtitles"){
+        hideSubtitles()
+    }
 
     if (item.type === "blackbars"){//default number 15% -- Default speed 0
         if(item.size == -1){

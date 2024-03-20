@@ -7,7 +7,7 @@ RegisterNetEvent('phone:phone:call', function(data)
     local targetNumber = tonumber(data.number)
 
     if BoothStates[targetNumber] then
-        if BoothStates[targetNumber].state == CALL_ENUMS.BOOTH_WAITING_CALL  then
+        if BoothStates[targetNumber].state == CALL_ENUMS.BOOTH_WAITING_CALL then
             local size = BoothStates[targetNumber].callData and Utils.tablesize(BoothStates[targetNumber].callData) or 0
 
             if BoothStates[targetNumber] and BoothStates[targetNumber].callData and size <= 0 then

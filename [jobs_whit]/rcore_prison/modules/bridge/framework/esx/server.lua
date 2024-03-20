@@ -70,7 +70,14 @@ CreateThread(function()
                     end
                 end)
     
-                if IsScriptLoaded('cd_spawnselect') or not IsScriptLoaded('esx_multicharacter') then
+                if not IsScriptLoaded('cd_spawnselect') then
+                    AddEventHandler(Prison.FrameworkTriggers.playerLoadedServer, function(serverId, xPlayer)
+                        SetTimeout(3000, function()
+                            SyncZones(serverId)
+                            InternalCharacterLoaded(serverId)
+                        end)
+                    end)
+                else
                     IsUserInPrison = function(Source)
                         local retval = false
                         local place = shared.data.prisonYard
@@ -94,7 +101,7 @@ CreateThread(function()
                     RegisterNetEvent('rcore_prison:requestInternalLoad', function()
                         local Source = source
                         local player = Bridge.GetPlayer(Source)
-                        local loadTimeout = 2000
+                        local loadTimeout = 3000
     
                         if not player then return end
     
@@ -111,14 +118,6 @@ CreateThread(function()
                         SetTimeout(loadTimeout, function()
                             InternalCharacterLoaded(Source)
                         end)
-                    end)
-                else
-                    AddEventHandler(Prison.FrameworkTriggers.playerLoadedServer, function(serverId, xPlayer)
-                        SetTimeout(3000, function()
-                            SyncZones(serverId)
-                        end)
-                        
-                        InternalCharacterLoaded(serverId)
                     end)
                 end
         

@@ -13,6 +13,12 @@ Prison = {
         event = 'rcore_prison:renderNotification' -- Retval: serverId, data
     },
 
+
+    UI = {
+        RenderSentenceResource = TextLibraries.AUTO, -- [ TextLibraries.NATIVE, TextLibraries.OX, TextLibraries.QBCORE, TextLibraries.ESX -- If left on AUTO, if will try to load one of supported Text UIS ]
+        RenderSentenceTextPosition = 'left', -- [ This is not functional for native, since it cannot be moved! ['left', 'right', 'top'] ]
+    },
+
     Presets = {
         -- Key: resourceName ['rcore_prison_map']
         -- Preset name: ['rcore'] | data/presets/<XX>
@@ -20,11 +26,11 @@ Prison = {
         Maps = {
             ['rcore_prison_map'] = 'rcore'
         --    ['prison_main'] = 'desertos',
-         --   ['cfx-gabz-prison'] = 'gabz',
-         --   ['int_prison'] = 'unclejust',
-          --  ['molo_alcatraz'] = 'alcatraz',
-         --   ['YBNPrison'] = 'ybn',
-         --   ['cfx_prompt_Bolingbroke_Prison_Interiors'] = 'prompt-prison'
+        --    ['cfx-gabz-prison'] = 'gabz',
+        --    ['int_prison'] = 'unclejust',
+        --    ['molo_alcatraz'] = 'alcatraz',
+        --    ['YBNPrison'] = 'ybn',
+        --    ['cfx_prompt_Bolingbroke_Prison_Interiors'] = 'prompt-prison'
         }
     },
 
@@ -48,23 +54,23 @@ Prison = {
 
 
     ClothingScripts = {
-        FIVEM_APPEARANCE = 'fivem-appearance',
+     --   FIVEM_APPEARANCE = 'fivem-appearance',
         ILLENIUM_APPEARANCE = 'illenium-appearance',
-        QB_CLOTHING = 'qb-clothing',
+      --  QB_CLOTHING = 'qb-clothing',
         SKINCHANGER = 'skinchanger',
     },
 
     InventoryScripts = {
-        MF_INVENTORY = 'mf-inventory',
-        OX_INVENTORY = 'ox_inventory',
+      --  MF_INVENTORY = 'mf-inventory',
+     --   OX_INVENTORY = 'ox_inventory',
         QB_INVENTORY = 'qb-inventory',
-        LJ_INVENTORY = 'lj-inventory',
-        AJ_INVENTORY = 'aj-inventory',
-        PS_INVENTORY = 'ps-inventory',
-        QS_INVENTORY = 'qs-inventory',
-        CHEEZA_INVENTORY = 'inventory',
-        ESX_INVENTORY = 'es_extended',
-        CORE_INVENTORY = 'core_inventory',
+      --  LJ_INVENTORY = 'lj-inventory',
+     --   AJ_INVENTORY = 'aj-inventory',
+      --  PS_INVENTORY = 'ps-inventory',
+      --  QS_INVENTORY = 'qs-inventory',
+      --  CHEEZA_INVENTORY = 'inventory',
+      --  ESX_INVENTORY = 'es_extended',
+      --  CORE_INVENTORY = 'core_inventory',
     },
 
 
@@ -91,12 +97,17 @@ Prison = {
         ['lb-phone'] = true,
     },
 
+
+
+
     Dashboard = {
         AddSentence = {
             PlayersInAreaCheck = 10.0, -- This will get only players around officer which is using AddSentence.
             ShowNames = true -- Want to hide player names in Add Sentence - list (dashboard - panel)
         }
     },
+
+    InformAboutNewPrisoner = false, -- Do you want to write in chat when some citizen is jailed?
 
     RenderNPCBlips = true, -- Do you want to show where are specific things in prison area (true/false)
     RenderPrisonMap = true, -- Do you want to render prison yard and stuff? (true/fase)
@@ -111,13 +122,12 @@ Prison = {
     OutfitSelectionTimeout = 10 * 1000,  -- How much time prisoner have time for outfit selection.
     PackageCooldown = 30 * 1000, -- For Ciggarets packaging minigame, delay between each package session
 
-    InteractionDist = 1.5, -- Used for cache system, when you are not using target interaction.
+    InteractionDist = 5.0, -- Used for cache system, when you are not using target interaction.
 
     Language = 'en', -- 'en', 'cs
 
     Yard = {
         AnnoucementState = true, -- Enable annoucement in Prison yard from Warden
-        AnnoucementAlarmState = false, -- Enable / Disable annoucement of Alarm, when break-out in progress.
     },
 
     Inmates = {
@@ -252,7 +262,7 @@ Prison = {
 
     NPC = {
         SpawnNPC = false, -- Handle spawning of guards running arround Prisoners 
-        HandleNPCPoolState = false, -- Disable spawning on NPC from scenario!
+        HandleNPCPoolState = true, -- Disable spawning on NPC from scenario!
     },
 
     -- Gym
