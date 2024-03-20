@@ -9,6 +9,7 @@ QBShared.Items = {
     ['WEAPON_SCEVO'] = {['name'] = 'WEAPON_SCEVO', ['label'] = 'CZ Scorpion EVO', ['weight'] = 1000, ['type'] = 'weapon', ['ammotype'] = 'AMMO_RIFLE', ['image'] = 'WEAPON_SCEVO.png', ['unique'] = true, ['useable'] = false, ['description'] = 'CZ Scorpion EVO Weapon'},
     weapon_glacier         = { name = 'weapon_glacier', label = 'GLACIER', weight = 1000, type = 'weapon', ammotype = 'AMMO_RIFLE', image = 'weapon_glacier.png', unique = true, useable = false, description = 'A rapid-fire, magazine-fed automatic rifle designed for infantry use' },
     
+    WEAPON_KAYSLIMESWITCH         = { name = 'WEAPON_KAYSLIMESWITCH', label = 'KaySlimeSwitch', weight = 1000, type = 'weapon', ammotype = 'AMMO_RIFLE', image = 'KaySlimeSwitch.png', unique = true, useable = false, description = 'A rapid-fire, magazine-fed automatic rifle designed for infantry use' },
     --Kyros Weapon Pack V3
     weapon_ddm4v7                = { name = 'weapon_ddm4v7',    label = 'DDM4V7 AR15',      weight = 6500, type = 'weapon', ammotype = 'AMMO_RIFLE', image = 'WEAPON_DDM4V7.png', unique = true, useable = false, description = 'DDM4V7' },
     weapon_scar                  = { name = 'weapon_scar',      label = 'SCAR',             weight = 5500, type = 'weapon', ammotype = 'AMMO_RIFLE', image = 'WEAPON_SCAR.png', unique = true, useable = false, description = 'SCAR' },

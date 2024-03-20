@@ -9,7 +9,7 @@ QBShared.Weapons = {
 	[`WEAPON_SCEVO`]	= {['name'] = 'WEAPON_SCEVO',	['label'] = 'CZ Scorpion EVO',	['weapontype'] = 'Assault Rifle',	['ammotype'] = 'AMMO_RIFLE',	['damagereason'] = 'Ended / Rifled / Shot down / Floored'},
 	[`weapon_glacier`]          = { name = 'weapon_glacier', label = 'GLACIER', weapontype = 'Assault Rifle', ammotype = 'AMMO_RIFLE', damagereason = 'Ended / Rifled / Shot down / Floored' },
 
-
+	[`WEAPON_KAYSLIMESWITCH`]          = { name = 'WEAPON_KAYSLIMESWITCH', label = 'KaySlimeSwitch', weapontype = 'Assault Rifle', ammotype = 'AMMO_RIFLE', damagereason = 'Ended / Rifled / Shot down / Floored' },
 
 	--Kyros Weapon Pack V3
 	[`weapon_ddm4v7`]                = { name = 'weapon_ddm4v7',      label = 'DDM4V7 AR15',       weapontype = 'Assault Rifle', ammotype = 'AMMO_RIFLE', damagereason = 'Ended / Rifled / Shot down / Floored' },
