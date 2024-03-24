@@ -125,6 +125,9 @@ local recoils = {
     [`weapon_jrbak`] = 0.5,
     [`weapon_howa_2`] = 0.5,
     [`weapon_glacier`] = 0.5,
+    [`weapon_anarchy`] = 0.5,
+    [`weapon_art64`] = 0.5,
+    
     	-- CUSTOM WEAPONS
 	[GetHashKey("weapon_ak47")] = 0.5,
 	[GetHashKey("weapon_de")] = 0.5,
