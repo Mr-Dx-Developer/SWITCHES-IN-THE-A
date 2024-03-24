@@ -1,0 +1,124 @@
+body {
+    background-color: transparent !important;
+    overflow: hidden;
+}
+
+@keyframes slide-up-phone {
+    0% {top: 175%;}
+    100% {top: 50%;}
+}
+
+@keyframes slide-down-phone {
+    0% {top: 50%;}
+    100% {top: 175%;}
+}
+
+@keyframes slide-up-screen {
+    0% {top: 174.49%;}
+    100% {top: 49.49%;}
+}
+
+@keyframes slide-down-screen {
+    0% {top: 49.49%;}
+    100% {top: 174.49%;}
+}
+
+.cont {
+    width: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: slide-up-phone 1s forwards;
+}
+
+.screen {
+    position: absolute;
+    top: 49.49%;
+    left: 49.8%;
+    transform: translate(-50%, -50%);
+    width: 274px;
+    height: 490px;
+    animation: slide-up-screen 0.995s forwards;
+    background-image: url('./assets/wallpaper.webp'); 
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    justify-content: top;
+    gap: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 2px black;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+#shop {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    height: 500px;
+    background-color: rgb(255, 152, 246);
+    justify-content: top;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    font-family: "Courgette", cursive;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+    color: white;
+    border-radius: 10px;
+    padding: 10px;
+    gap: 1rem;
+
+}
+
+#shop-cont {
+    width: 80%;
+    height: 70%;
+    background-color: rgba(255, 255, 255, 0.377);
+    justify-content: flex-start; 
+    align-items: center;
+    display: flex;
+    flex-wrap: nowrap; 
+    overflow-x: auto; 
+    gap: 1rem;
+    max-width: 100%;
+    padding: 20px;
+    border-radius: 10px;
+
+}
+
+#shop-cont::-webkit-scrollbar {
+    background-color: rgb(255, 211, 218);
+    height: 20px;
+}
+
+#shop-cont::-webkit-scrollbar-thumb {
+    background-color: rgb(255, 143, 162);
+    height: 10px;
+    border-radius: 10px;
+}
+
+.item-cont {
+    width: 200px; 
+    height: auto;
+    background-color: rgb(250, 104, 238);
+    flex: 0 0 auto; 
+    margin-right: 1rem; 
+    justify-content: top;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: white;
+    gap: 0.1rem;
+    border-radius: 10px;
+    padding: 10px;
+}
