@@ -33,7 +33,7 @@ Config.Locations = {
         [6] = vector3(611.6981, 15.7074, 82.7418),
     },
     ["impound"] = {
-        [1] = vector4(503.1774, 27.4986, 69.5083, 212.9289),
+        [1] = vector4(0.0, 0.0, 0.0, 0.0),
     },
     ["helicopter"] = {
         [1] = vector4(580.8574, 11.9392, 103.2331, 32.0656),
@@ -446,7 +446,7 @@ Config.Items = {
             slot = 20,
             authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
         },
-        [21] = {
+        --[[ [21] = {
             name = "weapon_g18c",
             price = 0,
             amount = 50,
@@ -454,14 +454,14 @@ Config.Items = {
             type = "item",
             slot = 21,
             authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
-        },
-        [22] = {
+        }, ]]
+        [21] = {
             name = "weapon_glock22",
             price = 0,
             amount = 50,
             info = {},
             type = "item",
-            slot = 22,
+            slot = 21,
             authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
         },
        --[[  [24] = {
@@ -473,8 +473,17 @@ Config.Items = {
             slot = 24,
             authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
         }, ]]
-        [23] = {
+        [22] = {
             name = "weapon_groza",
+            price = 0,
+            amount = 50,
+            info = {},
+            type = "item",
+            slot = 22,
+            authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
+        },
+        [23] = {
+            name = "mdt",
             price = 0,
             amount = 50,
             info = {},
@@ -483,7 +492,7 @@ Config.Items = {
             authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
         },
         [24] = {
-            name = "mdt",
+            name = "WEAPON_SR40",
             price = 0,
             amount = 50,
             info = {},
@@ -492,7 +501,7 @@ Config.Items = {
             authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
         },
         [25] = {
-            name = "WEAPON_SR40",
+            name = "WEAPON_G19G4",
             price = 0,
             amount = 50,
             info = {},
@@ -501,7 +510,7 @@ Config.Items = {
             authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
         },
         [26] = {
-            name = "WEAPON_G19G4",
+            name = "WEAPON_XDS9",
             price = 0,
             amount = 50,
             info = {},
@@ -510,7 +519,7 @@ Config.Items = {
             authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
         },
         [27] = {
-            name = "WEAPON_XDS9",
+            name = "WEAPON_FN57",
             price = 0,
             amount = 50,
             info = {},
@@ -519,7 +528,7 @@ Config.Items = {
             authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
         },
         [28] = {
-            name = "WEAPON_FN57",
+            name = "WEAPON_GLOCK41",
             price = 0,
             amount = 50,
             info = {},
@@ -528,7 +537,7 @@ Config.Items = {
             authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
         },
         [29] = {
-            name = "WEAPON_GLOCK41",
+            name = "WEAPON_GLOCK19",
             price = 0,
             amount = 50,
             info = {},
@@ -537,7 +546,7 @@ Config.Items = {
             authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
         },
         [30] = {
-            name = "WEAPON_GLOCK19",
+            name = "WEAPON_680",
             price = 0,
             amount = 50,
             info = {},
@@ -546,7 +555,7 @@ Config.Items = {
             authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
         },
         [31] = {
-            name = "WEAPON_680",
+            name = "WEAPON_MK18",
             price = 0,
             amount = 50,
             info = {},
@@ -555,7 +564,7 @@ Config.Items = {
             authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
         },
         [32] = {
-            name = "WEAPON_MK18",
+            name = "WEAPON_BAR15",
             price = 0,
             amount = 50,
             info = {},
@@ -564,7 +573,7 @@ Config.Items = {
             authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
         },
         [33] = {
-            name = "WEAPON_BAR15",
+            name = "WEAPON_BSCAR",
             price = 0,
             amount = 50,
             info = {},
@@ -573,7 +582,7 @@ Config.Items = {
             authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
         },
         [34] = {
-            name = "WEAPON_BSCAR",
+            name = "WEAPON_552",
             price = 0,
             amount = 50,
             info = {},
@@ -582,21 +591,12 @@ Config.Items = {
             authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
         },
         [35] = {
-            name = "WEAPON_552",
-            price = 0,
-            amount = 50,
-            info = {},
-            type = "item",
-            slot = 35,
-            authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
-        },
-        [36] = {
             name = "WEAPON_MCX",
             price = 0,
             amount = 50,
             info = {},
             type = "item",
-            slot = 36,
+            slot = 35,
             authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
         },
 
