@@ -27,12 +27,15 @@ Config.DurabilityMultiplier = {
     weapon_jrbak          = 0.15,
     ['weapon_neva'] 		= 0.15,
     weapon_howa_2          = 0.15,
+    ['weapon_bas_p_red'] 		= 0.15,
 
 
-    ['CZ Scorpion EVO'] 		= 0.15,
+    ['weapon_scevo'] 		= 0.15,
     weapon_glacier          = 0.15,
+    weapon_anarchy          = 0.15,
+    weapon_art64          = 0.15,
+
     
-    weapon_ddm4v7 	             = 0.15,
     weapon_g2c 	                 = 0.15,
     weapon_pmr 		             = 0.15,
     weapon_g19g4 	             = 0.15,
@@ -282,12 +285,17 @@ Config.WeaponRepairCosts = {
 WeaponAttachments = {
     
     clip_attachment = {
+        weapon_anarchy = `w_ar_anarchy_mag2`,
         weapon_glacier = `w_ar_glacier_mag2`,
         weapon_howa_2 = `w_ar_howa_2_mag2`,
         weapon_jrbak = `w_ar_jrbak_mag2`,
         weapon_galilar = `w_ar_galilar_mag2`,
+        weapon_bas_p_red = `w_sb_bas_p_mag2`,
+        weapon_neva = `w_ar_neva_mag2`,
+        weapon_art64 = `w_ar_art64_mag2`,
 
-        WEAPON_SCEVO = `w_ar_cz_sc_evo_mag2`,
+
+        weapon_scevo = `w_ar_cz_sc_evo_mag2`,
         weapon_pistol = `COMPONENT_PISTOL_CLIP_02`,
         weapon_pistol_mk2 = `COMPONENT_PISTOL_MK2_CLIP_02`,
         weapon_combatpistol = `COMPONENT_COMBATPISTOL_CLIP_02`,
@@ -420,13 +428,17 @@ WeaponAttachments = {
         weapon_glockbeams = `COMPONENT_AT_PI_GLOCKBEAMS_FLSH`, -- v5
     },
     suppressor_attachment = {
+        weapon_anarchy = `w_at_ar_anarchy_supp`,
         weapon_glacier = `w_at_ar_glacier_supp`,
         weapon_howa_2 = `w_at_ar_howa_2_supp`,
         weapon_jrbak = `w_at_ar_jrbak_supp`,
         weapon_galilar = `w_at_ar_galilar_supp`,
+        weapon_bas_p_red = `w_at_bas_p_supp`,
+        weapon_neva = `w_at_ar_neva_supp`,
+        weapon_art64 = `w_at_ar_art64_supp`,
 
 
-        WEAPON_SCEVO = `w_at_cz_sc_evo_supp`,
+        weapon_scevo = `w_at_cz_sc_evo_supp`,
         weapon_pistol = `COMPONENT_AT_PI_SUPP_02`,
         weapon_pistol_mk2 = `COMPONENT_AT_PI_SUPP_02`,
         weapon_combatpistol = `COMPONENT_AT_PI_SUPP`,
@@ -469,7 +481,7 @@ WeaponAttachments = {
         weapon_redm4a1 = `COMPONENT_AT_AR_REDM4A1_SUPP`, -- v5
     },
     smallscope_attachment = {
-        WEAPON_SCEVO  = `w_at_cz_sc_evo_scope_small`,
+        weapon_scevo  = `w_at_cz_sc_evo_scope_small`,
         weapon_pistol_mk2 = `COMPONENT_AT_PI_RAIL`,
         weapon_snspistol_mk2 = `COMPONENT_AT_PI_RAIL_02`,
         weapon_microsmg = `COMPONENT_AT_SCOPE_MACRO`,
@@ -491,10 +503,16 @@ WeaponAttachments = {
         weapon_grenadelauncher = `COMPONENT_AT_SCOPE_SMALL`,
     },
     medscope_attachment = {
+        weapon_anarchy = `w_at_ar_anarchy_scope`,
         weapon_glacier = `w_at_ar_glacier_scope`,
         weapon_howa_2 = `w_at_ar_howa_2_scope`,
         weapon_jrbak = `w_at_ar_jrbak_scope`,
         weapon_galilar = `w_at_ar_galilar_scope`,
+        weapon_neva = `w_at_ar_neva_scope`,
+        weapon_bas_p_red = `w_at_bas_p_scope`,
+        weapon_art64 = `w_at_ar_art64_scope`,
+
+
 
         weapon_smg_mk2 = `COMPONENT_AT_SCOPE_SMALL_SMG_MK2`,
         weapon_pumpshotgun_mk2 = `COMPONENT_AT_SCOPE_SMALL_MK2`,
@@ -619,12 +637,18 @@ WeaponAttachments = {
         weapon_heavysniper_mk2 = `COMPONENT_AT_SR_BARREL_02`,
     },
     grip_attachment = {
+        weapon_anarchy = `w_at_ar_anarchy_grip`,
         weapon_glacier = `w_at_ar_glacier_grip`,
         weapon_howa_2 = `w_at_ar_howa_2_grip`,
         weapon_jrbak = `w_at_ar_jrbak_grip`,
         weapon_galilar = `w_at_ar_galilar_grip`,
+        weapon_bas_p_red = `w_at_bas_p_grip`,
+        weapon_neva = `w_at_ar_neva_grip`,
+        weapon_art64 = `w_at_ar_art64_grip`,
 
-        WEAPON_SCEVO = `w_at_cz_sc_evo_afgrip`,
+        
+
+        weapon_scevo = `w_at_cz_sc_evo_afgrip`,
         weapon_combatpdw = `COMPONENT_AT_AR_AFGRIP`,
         weapon_assaultshotgun = `COMPONENT_AT_AR_AFGRIP`,
         weapon_bullpupshotgun = `COMPONENT_AT_AR_AFGRIP`,
