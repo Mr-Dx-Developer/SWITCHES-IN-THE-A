@@ -1,0 +1,41 @@
+{
+	"folders": [
+		{
+			"path": "server"
+		},
+		{
+			"path": "client"
+		},
+		{
+			"path": "locale"
+		}
+	],
+	"settings": {
+		"Lua.runtime.version": "Lua 5.4",
+		"Lua.runtime.plugin": "c:\\Users\\admin\\.vscode\\extensions\\overextended.cfxlua-vscode-1.7.20\\plugin\\plugin.lua",
+		"Lua.runtime.nonstandardSymbol": [
+			"/**/",
+			"`",
+			"+=",
+			"-=",
+			"*=",
+			"/=",
+			"<<=",
+			">>=",
+			"&=",
+			"|=",
+			"^="
+		],
+		"Lua.workspace.ignoreDir": [
+			".vscode",
+			".git",
+			".github",
+			"node_modules"
+		],
+		"Lua.workspace.library": [
+			"c:\\Users\\admin\\.vscode\\extensions\\overextended.cfxlua-vscode-1.7.20\\plugin\\library\\runtime",
+			"c:\\Users\\admin\\.vscode\\extensions\\overextended.cfxlua-vscode-1.7.20\\plugin\\library\\natives\\CFX-NATIVE",
+			"c:\\Users\\admin\\.vscode\\extensions\\overextended.cfxlua-vscode-1.7.20\\plugin\\library\\natives\\GTAV"
+		]
+	}
+}

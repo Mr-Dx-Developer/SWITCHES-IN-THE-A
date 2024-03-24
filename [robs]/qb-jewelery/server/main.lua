@@ -22,7 +22,7 @@ QBCore.Functions.CreateCallback('qb-jewellery:server:getVitrineState', function(
 end)
 
 -- Functions
-
+--[[ 
 local function exploitBan(id, reason)
     MySQL.insert('INSERT INTO bans (name, license, discord, ip, reason, expire, bannedby) VALUES (?, ?, ?, ?, ?, ?, ?)',
         {
@@ -38,7 +38,7 @@ local function exploitBan(id, reason)
         string.format('%s was banned by %s for %s', GetPlayerName(id), 'qb-jewelery', reason), true)
     DropPlayer(id, 'You were permanently banned by the server for: Exploiting')
 end
-
+ ]]
 -- Events
 
 RegisterNetEvent('qb-jewellery:server:setVitrineState', function(stateType, state, k)
