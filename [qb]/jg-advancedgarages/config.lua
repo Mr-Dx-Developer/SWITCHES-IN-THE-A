@@ -310,7 +310,7 @@ Config.GangGarageLocations = { -- IMPORTANT - Every garage name must be unique
 }
 
 -- Impound
-Config.ImpoundCommand = "iv"
+Config.ImpoundCommand = "impound"
 Config.ImpoundJobRestriction = {"police"}
 Config.ImpoundFeesSocietyFund = "police" -- Job name of society fund to pay impound fees into (optional)
 Config.ImpoundShowBlips = true
