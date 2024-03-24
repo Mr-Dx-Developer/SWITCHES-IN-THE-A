@@ -132,7 +132,7 @@ Config.Locations[#Config.Locations+1] = {
 }
 
 
-
+--[[ 
 Config.Locations[#Config.Locations+1] = { 
 	Enabled = true,
 	job = "ricocustom",
@@ -194,8 +194,66 @@ Config.Locations[#Config.Locations+1] = {
 		color = 2571775,
 	}
 }
-
-
+ ]]
+ Config.Locations[#Config.Locations+1] = { 
+	Enabled = true,
+	job = "ricocustom",
+	zones = {
+		vec2(1440.843994140625, 1125.059326171875),
+		vec2(1440.936279296875, 1100.05712890625),
+		vec2(1477.6219482421875, 1100.13623046875),
+		vec2(1477.6483154296875, 1125.046142578125)
+		
+	},
+	autoClock = { enter = true, exit = true, },
+	stash = {
+		{ coords = vec4(1473.94, 1106.11, 114.8, 0), w = 1.6, d = 0.6 },
+	},
+	store = {
+		{ coords = vec4(1468.05, 1103.91, 114.8, 270), w = 5.6, d = 5.5 },
+		
+	},
+	crafting = {
+		{ coords = vec4(0.0, 0.0, 0.0, 0.0), w = 3.2, d = 1.0 },
+	},
+	clockin = {
+		{ coords = vec4(1467.72, 1120.29, 119.13, 0), prop = false, },
+	},
+	manualRepair = {
+		{ coords = vec4(0.0, 0.0, 0.0, 0.0), prop = false, },
+	},
+	carLift = {
+		{ coords = vec4(0.0, 0.0, 0.0, 0.0), },
+		{ coords = vec4(0.0, 0.0, 0.0, 0.0) },
+	},
+	garage = {
+		spawn = vec4(0.0, 0.0, 0.0, 0.0),
+		out = vec4(0.0, 0., 0.0, 0.0),
+		list = { "towtruck", "panto", "slamtruck", "cheburek", "utillitruck3" },
+		prop = true
+	},
+	payments = {
+		img = "https://static.wikia.nocookie.net/gtawiki/images/b/be/BennysOriginalMotorWorks-GTAO-Logo.png",
+		{ coords = vec4(0.0, 0.0, 0.0, 0.0), prop = false },
+	},
+	Restrictions = {
+		Vehicle = { "Compacts", "Sedans", "SUVs", "Coupes", "Muscle", "Sports Classics", "Sports", "Super", "Motorcycles", "Off-road", "Industrial", "Utility", "Vans", "Cycles", "Service", "Emergency", "Commercial", },
+		Allow = { "tools", "cosmetics", "repairs", "nos", "perform" },
+	},
+	--[[ blip = {
+		coords = vec3(283.61, -198.65, 54.06),
+		label = "Rico Custom",
+		color = 81,
+		sprite = 446,
+		disp = 6,
+		scale = 0.7,
+		cat = nil,
+	}, ]]
+	discord = {
+		link = "",
+		color = 2571775,
+	}
+}
 
 Config.Locations[#Config.Locations+1] = { 
 	Enabled = true,
