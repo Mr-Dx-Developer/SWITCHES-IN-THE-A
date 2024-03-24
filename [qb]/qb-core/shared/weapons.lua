@@ -8,8 +8,11 @@ QBShared.Weapons = {
 	[`weapon_howa_2`]          = { name = 'weapon_howa_2', label = 'HOWA_2', weapontype = 'Assault Rifle', ammotype = 'AMMO_RIFLE', damagereason = 'Ended / Rifled / Shot down / Floored' },
 	[`weapon_scevo`]	= {['name'] = 'weapon_scevo',	['label'] = 'CZ Scorpion EVO',	['weapontype'] = 'Assault Rifle',	['ammotype'] = 'AMMO_RIFLE',	['damagereason'] = 'Ended / Rifled / Shot down / Floored'},
 	[`weapon_glacier`]          = { name = 'weapon_glacier', label = 'GLACIER', weapontype = 'Assault Rifle', ammotype = 'AMMO_RIFLE', damagereason = 'Ended / Rifled / Shot down / Floored' },
-
+	[`weapon_anarchy`]          = { name = 'weapon_anarchy', label = 'ANARCHY', weapontype = 'Assault Rifle', ammotype = 'AMMO_RIFLE', damagereason = 'Ended / Rifled / Shot down / Floored' },
 	[`weapon_kayslimeswitch`]          = { name = 'weapon_kayslimeswitch', label = 'RicoSwitch', weapontype = 'Assault Rifle', ammotype = 'AMMO_PISTOL', damagereason = 'Ended / Rifled / Shot down / Floored' },
+	[`weapon_bas_p_red`]	= {['name'] = 'weapon_bas_p_red',	['label'] = 'BAS-P Red',	['weapontype'] = 'Assault Rifle',	['ammotype'] = 'AMMO_RIFLE',	['damagereason'] = 'Ended / Rifled / Shot down / Floored'},
+	[`weapon_art64`]          = { name = 'weapon_art64', label = 'ART64', weapontype = 'Assault Rifle', ammotype = 'AMMO_RIFLE', damagereason = 'Ended / Rifled / Shot down / Floored' },
+	
 
 	--Kyros Weapon Pack V3
 	[`weapon_ddm4v7`]                = { name = 'weapon_ddm4v7',      label = 'DDM4V7 AR15',       weapontype = 'Assault Rifle', ammotype = 'AMMO_RIFLE', damagereason = 'Ended / Rifled / Shot down / Floored' },
