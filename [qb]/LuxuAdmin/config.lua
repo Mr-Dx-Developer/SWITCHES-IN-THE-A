@@ -118,12 +118,12 @@ Config.IdentifiersAlwaysAllowed = {
 
        "discord:1144911208303034440",  -- Vroy
        "discord:981738978015313930", -- Dex
-       "discord:1164653509443059732", -- Ishh
        "discord:662207311665954826",  -- Ace
        "discord:1012094569321615401", -- Jack
        "discord:1051260760992522320", -- Shawnii
        "discord:1110069724143951923", -- Stormii
-       "discord:862938214935166976",  --migo
+       "discord:862938214935166976",  --Migo
+       "discord:1050220609029808310", -- Jaylonn
 
        "discord:1144911208303034440", -- 
        "discord:606994374106152961" -- 
