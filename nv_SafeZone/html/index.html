@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="default.css">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+</head>
+<body>
+    <div id="main-container">
+        <h1>Safe Zones</h1>
+        <img id="add-zone" src="./media/add-icon.png" onclick="OpenPopUp2();">
+        <div id="search-finder" class="input-with-icon">
+            <span class="material-symbols-outlined">search</span>
+            <input id="search-finder-input" type="text" placeholder="Search">
+        </div>
+        <div class="table-container">
+            <div class="table-titles">
+                <span class="titles-table">Pre-View</span>
+                <span class="titles-table">Name</span>
+                <span class="titles-table">Status</span>
+                <span class="titles-table">Actions</span>
+            </div>
+            <div id="main-table" class="table-row-scroll">
+                
+            </div>
+        </div>
+    </div>
+
+    <div id="main-popup">
+        <img id="close-popup" src="./media/add-icon.png" onclick="ClosePopUp();">
+        <img id="save-popup" src="./media/save-icon.png" onclick="SavePopUp();">
+        <img id="trash-popup" src="./media/trash-icon.png" onclick="DeletePopUp();">
+        <h1 id="popup-title">Nuvil Shop</h1>
+        <div><img id="popup-preview" src="https://cdn.discordapp.com/attachments/923373052522270782/1051964092849606717/banner.png"></div>
+        <input id="zone-rad" type="text" placeholder="Radius">
+        <input id="zone-vel" type="text" placeholder="Max Velocity">
+        <button id="veh-damage">Anti-Vehicle Damage <span id="main-color">Off</span></button>
+        <button id="update-img" onclick="UploadImage();">Update Image</button>
+        <input id="coordsx" type="text" placeholder="X Axis">
+        <input id="coordsy" type="text" placeholder="Y Axis">
+        <input id="coordsz" type="text" placeholder="Z Axis">
+    </div>
+
+    <div id="create-popup">
+        <img id="close-popup" src="./media/add-icon.png" onclick="ClosePopUp2();">
+        <img id="save-popup" src="./media/save-icon.png" onclick="SavePopUp2();">
+        <h1 id="popup-title2"><input id="zone-tit" type="text" placeholder="Name"></h1>
+        <div><img id="popup-preview2" src="https://cdn.discordapp.com/attachments/923373052522270782/1051964092849606717/banner.png"></div>
+        <input id="zone-rad2" type="text" placeholder="Radius">
+        <input id="zone-vel2" type="text" placeholder="Max Velocity">
+        <button id="veh-damage2">Anti-Vehicle Damage <span id="create-color">Off</span></button>
+        <button id="update-img2" onclick="UploadImage2();">Update Image</button>
+    </div>
+
+    <img onclick="window.invokeNative('openUrl', 'https://discord.gg/sERxdnduDM');" id="watermark" src="https://cdn.discordapp.com/attachments/723696788099563601/1058124637910876270/logo-resized.png">
+</body>
+    <script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+    <script src="./jquery-3.6.1.js" type="text/javascript"></script>
+    <script src="./script.js" type="text/javascript"></script>
+</html>
