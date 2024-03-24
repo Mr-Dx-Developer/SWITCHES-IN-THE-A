@@ -193,6 +193,55 @@ Config = {
 						extras = { 1, 2, 3, 4, 5, 6, 7, 8 },
 						performance = "max",
 					},
+					["222"] = {
+						CustomName = "222",
+						livery = 4,
+						extras = { 1, 2, 3, 4, 5, 6, 7, 8 },
+						performance = "max",
+					},
+					["283"] = {
+						CustomName = "283",
+						livery = 4,
+						extras = { 1, 2, 3, 4, 5, 6, 7, 8 },
+						performance = "max",
+					},
+					["452"] = {
+						CustomName = "452",
+						livery = 4,
+						extras = { 1, 2, 3, 4, 5, 6, 7, 8 },
+						performance = "max",
+					},
+					["883"] = {
+						CustomName = "883",
+						livery = 4,
+						extras = { 1, 2, 3, 4, 5, 6, 7, 8 },
+						performance = "max",
+					},
+					["lib114ram"] = {
+						CustomName = "lib114ram",
+						livery = 4,
+						extras = { 1, 2, 3, 4, 5, 6, 7, 8 },
+						performance = "max",
+					},
+
+					["lib120explorer"] = {
+						CustomName = "lib120explorer",
+						livery = 4,
+						extras = { 1, 2, 3, 4, 5, 6, 7, 8 },
+						performance = "max",
+					},
+					["lib118charger"] = {
+						CustomName = "lib118charger",
+						livery = 4,
+						extras = { 1, 2, 3, 4, 5, 6, 7, 8 },
+						performance = "max",
+					},
+					["lib121tahoe"] = {
+						CustomName = "lib121tahoe",
+						livery = 4,
+						extras = { 1, 2, 3, 4, 5, 6, 7, 8 },
+						performance = "max",
+					}
 
 
 
@@ -225,6 +274,12 @@ Config = {
 					},
 					["sou_madmaxpd"] = {
 						CustomName = "sou_madmaxpd",
+						livery = 4,
+						extras = { 1, 2, 3, 4, 5, 6, 7, 8 },
+						performance = "max",
+					},
+					["f450amb"] = {
+						CustomName = "f450amb",
 						livery = 4,
 						extras = { 1, 2, 3, 4, 5, 6, 7, 8 },
 						performance = "max",
