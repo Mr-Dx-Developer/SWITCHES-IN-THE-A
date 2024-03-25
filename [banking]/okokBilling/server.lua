@@ -60,7 +60,7 @@ AddEventHandler("okokBilling:PayInvoice", function(invoice_id)
 			TriggerClientEvent('okokNotify:Alert', _source, "BILLING", "You don't have enough money!", 10000, 'error')
 		else
 			xPlayer.Functions.RemoveMoney('bank', invoices.invoice_value)
-			TriggerServerEvent("qb-bossmenu:server:okokBillingDeposit", tonumber(invoices.invoice_value))
+			TriggerEvent("qb-bossmenu:server:okokBillingDeposit", invoices.society, invoices.invoice_value)
 
 			exports.oxmysql:execute('UPDATE okokBilling SET status = @status, paid_date = CURRENT_TIMESTAMP WHERE id = @id', {
 				['@status'] = 'paid',
@@ -137,7 +137,7 @@ AddEventHandler("okokBilling:CreateInvoice", function(data)
 			['@notes'] = data.invoice_notes,
 			['@limit_pay_date'] = Config.LimitDateDays
 		}, function(result)
-			TriggerClientEvent('okokNotify:Alert', target.PlayerData.source, "BILLING", "You have just received a new invoice!", 10000, 'info')
+			TriggerClientEvent('okokNotify:Alert', target.PlayerData.source, "BILLING", "You have just received a new invoice! Press F7", 10000, 'info')
 			if Webhook ~= '' then
 				createNewInvoiceWebhook(webhookData)
 			end
@@ -156,7 +156,7 @@ AddEventHandler("okokBilling:CreateInvoice", function(data)
 			['@notes'] = data.invoice_notes,
 			['@limit_pay_date'] = 'N/A'
 		}, function(result)
-			TriggerClientEvent('okokNotify:Alert', target.PlayerData.source, "BILLING", "You have just received a new invoice!", 10000, 'info')
+			TriggerClientEvent('okokNotify:Alert', target.PlayerData.source, "BILLING", "You have just received a new invoice! Press F7", 10000, 'info')
 			if Webhook ~= '' then
 				createNewInvoiceWebhook(webhookData)
 			end
@@ -233,7 +233,7 @@ function checkTimeLeft()
 							['@playerAccount'] = playerAccount,
 							['@target'] = v.receiver_identifier
 						}, function(changed)
-							TriggerServerEvent("qb-bossmenu:server:okokBillingDeposit", tonumber(invoice_value))
+							TriggerEvent("qb-bossmenu:server:okokBillingDeposit", v.society, invoice_value)
 							exports.oxmysql:execute('UPDATE okokBilling SET status = @paid, paid_date = CURRENT_TIMESTAMP() WHERE id = @id', {
 								['@paid'] = 'autopaid',
 								['@id'] = v.id
@@ -242,7 +242,7 @@ function checkTimeLeft()
 					end)
 				else
 					xPlayer.Functions.RemoveMoney('bank', invoice_value)
-					TriggerServerEvent("qb-bossmenu:server:okokBillingDeposit", tonumber(invoice_value))
+					TriggerEvent("qb-bossmenu:server:okokBillingDeposit", v.society, invoice_value)
 
 					exports.oxmysql:execute('UPDATE okokBilling SET status = @paid, paid_date = CURRENT_TIMESTAMP() WHERE id = @id', {
 						['@paid'] = 'autopaid',
@@ -258,9 +258,12 @@ function checkTimeLeft()
 	SetTimeout(30 * 60000, checkTimeLeft)
 end
 
-if Config.PayAutomaticallyAfterLimit then
-	checkTimeLeft()
-end
+Citizen.CreateThread(function()
+    if Config.PayAutomaticallyAfterLimit then
+        Citizen.Wait(5000)
+        checkTimeLeft()
+    end
+end)
 
 -------------------------- PAY INVOICE WEBHOOK
 

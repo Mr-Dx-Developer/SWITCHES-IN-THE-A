@@ -101,7 +101,7 @@ window.addEventListener('message', function(event) {
 					else if (invoices.status == 'unpaid') {
 						tablestatus = '<td class="text-center align-middle"><span class="badge bg-danger" style="font-size: 14px;"><i class="fas fa-times-circle"></i> DUE</span></td>';
 						modalstatus = '<span class="badge bg-danger" style="position: absolute; right: 5%; top: 5%; font-size: 18px;"><i class="fas fa-times-circle"></i> DUE</span>';
-						payment_status = `<button type="button" id="" class="btn btn-blue flex-grow-1 payInvoice" style="border-radius: 10px; flex-basis: 100%;" data-invoiceId="${invoices.id}" data-invoiceMoney="${invoices.invoice_value}" data-bs-dismiss="modal"><i class="fas fa-shopping-bag"></i> PAY ${invoices.invoice_value.toLocaleString()}&usd;</button>`;
+						payment_status = `<button type="button" id="" class="btn btn-blue flex-grow-1 payInvoice" style="border-radius: 10px; flex-basis: 100%;" data-invoiceId="${invoices.id}" data-invoiceMoney="${invoices.invoice_value}" data-bs-dismiss="modal"><i class="fas fa-shopping-bag"></i> PAY ${invoices.invoice_value.toLocaleString()}&euro;</button>`;
 					}
 					else if (invoices.status == 'autopaid') {
 						tablestatus = '<td class="text-center align-middle"><span class="badge bg-info" style="font-size: 14px;"><i class="fas fa-clock"></i> AUTOPAID</span></td>';
@@ -126,7 +126,7 @@ window.addEventListener('message', function(event) {
 							${tablestatus}
 							<td class="text-center align-middle">${invoices.society_name}</td>
 							<td class="text-center align-middle">${invoices.item}</td>
-							<td class="text-center align-middle">${invoices.invoice_value.toLocaleString()}$</td>
+							<td class="text-center align-middle">${invoices.invoice_value.toLocaleString()}€</td>
 							<td class="text-center align-middle"><button type="button" class="btn btn-blue showInvoice" style="border-radius: 10px; flex-basis: 100%;" data-toggle="modal" data-target="#showInvoiceModal${invoices.id}" data-invoiceId="${invoices.id}""><i class="fas fa-eye"></i> VIEW</button></td>
 						</tr>
 					`;
@@ -143,18 +143,18 @@ window.addEventListener('message', function(event) {
 												<h6 class="" id="" style="">From: <span style="color: #2f3037;">${invoices.author_name}</span></h6>
 												<hr>
 												<div class="d-flex justify-content-between">
-													<span class="" id="" style="color: #2f3037; font-size: 20px;">${invoices.item}</span> <span class="" id="" style="font-size: 18px;">${Math.round(invoices.invoice_value - Math.round(invoices.invoice_value * (event.data.VAT/100))).toLocaleString()} &usd;</span>
+													<span class="" id="" style="color: #2f3037; font-size: 20px;">${invoices.item}</span> <span class="" id="" style="font-size: 18px;">${Math.round(invoices.invoice_value - Math.round(invoices.invoice_value * (event.data.VAT/100))).toLocaleString()} &euro;</span>
 												</div>
 												<hr>
 												<div class="d-flex justify-content-between">
-													<span class="" id="" style="color: #2f3037; font-size: 20px;">Subtotal</span> <span class="" id="" style="font-size: 18px;">${Math.round(invoices.invoice_value - Math.round(invoices.invoice_value * (event.data.VAT/100))).toLocaleString()} &usd;</span>
+													<span class="" id="" style="color: #2f3037; font-size: 20px;">Subtotal</span> <span class="" id="" style="font-size: 18px;">${Math.round(invoices.invoice_value - Math.round(invoices.invoice_value * (event.data.VAT/100))).toLocaleString()} &euro;</span>
 												</div>
 												<div class="d-flex justify-content-between">
-													<span class="" id="" style="color: #2f3037; font-size: 20px;">VAT (${event.data.VAT}%)</span> <span class="" id="" style="font-size: 18px;">${Math.round(invoices.invoice_value * (event.data.VAT/100)).toLocaleString()} &usd;</span>
+													<span class="" id="" style="color: #2f3037; font-size: 20px;">VAT (${event.data.VAT}%)</span> <span class="" id="" style="font-size: 18px;">${Math.round(invoices.invoice_value * (event.data.VAT/100)).toLocaleString()} &euro;</span>
 												</div>
 												<br>
 												<div class="d-flex justify-content-between">
-													<span class="" id="" style="color: #2f3037; font-size: 20px; font-weight: 700;">Total</span> <span class="" id="" style="font-size: 18px;">${Math.round(invoices.invoice_value).toLocaleString()} &usd;</span>
+													<span class="" id="" style="color: #2f3037; font-size: 20px; font-weight: 700;">Total</span> <span class="" id="" style="font-size: 18px;">${Math.round(invoices.invoice_value).toLocaleString()} &euro;</span>
 												</div>
 												<br>
 												<div class="d-flex justify-content-center">
@@ -210,9 +210,9 @@ window.addEventListener('message', function(event) {
 
 					$("#societyInvoicesTitle").html(invoices.society_name);
 					$("#totalInvoices").html(data.totalInvoices);
-					$("#totalIncome").html(`${data.totalIncome.toLocaleString()}$`);
+					$("#totalIncome").html(`${data.totalIncome.toLocaleString()}€`);
 					$("#unpaidInvoices").html(data.totalUnpaid);
-					$("#awaitedIncome").html(`${data.awaitedIncome.toLocaleString()}$`);
+					$("#awaitedIncome").html(`${data.awaitedIncome.toLocaleString()}€`);
 
 					if (invoices.status == 'paid') {
 						tablestatus = '<td class="text-center align-middle"><span class="badge bg-success" style="font-size: 14px;"><i class="fas fa-check-circle"></i> PAID</span></td>';
@@ -247,7 +247,7 @@ window.addEventListener('message', function(event) {
 							${tablestatus}
 							<td class="text-center align-middle">${invoices.receiver_name}</td>
 							<td class="text-center align-middle">${invoices.item}</td>
-							<td class="text-center align-middle">${invoices.invoice_value.toLocaleString()}$</td>
+							<td class="text-center align-middle">${invoices.invoice_value.toLocaleString()}€</td>
 							<td class="text-center align-middle"><button type="button" class="btn btn-blue showInvoice" style="border-radius: 10px; flex-basis: 100%;" data-toggle="modal" data-target="#showInvoiceModal${invoices.id}" data-invoiceId="${invoices.id}""><i class="fas fa-eye"></i> VIEW</button></td>
 						</tr>
 					`;
@@ -264,18 +264,18 @@ window.addEventListener('message', function(event) {
 												<h6 class="" id="" style="">From: <span style="color: #2f3037;">${invoices.author_name}</span></h6>
 												<hr>
 												<div class="d-flex justify-content-between">
-													<span class="" id="" style="color: #2f3037; font-size: 20px;">${invoices.item}</span> <span class="" id="" style="font-size: 18px;">${Math.round(invoices.invoice_value - Math.round(invoices.invoice_value * (event.data.VAT/100))).toLocaleString()} &usd;</span>
+													<span class="" id="" style="color: #2f3037; font-size: 20px;">${invoices.item}</span> <span class="" id="" style="font-size: 18px;">${Math.round(invoices.invoice_value - Math.round(invoices.invoice_value * (event.data.VAT/100))).toLocaleString()} &euro;</span>
 												</div>
 												<hr>
 												<div class="d-flex justify-content-between">
-													<span class="" id="" style="color: #2f3037; font-size: 20px;">Subtotal</span> <span class="" id="" style="font-size: 18px;">${Math.round(invoices.invoice_value - Math.round(invoices.invoice_value * (event.data.VAT/100))).toLocaleString()} &usd;</span>
+													<span class="" id="" style="color: #2f3037; font-size: 20px;">Subtotal</span> <span class="" id="" style="font-size: 18px;">${Math.round(invoices.invoice_value - Math.round(invoices.invoice_value * (event.data.VAT/100))).toLocaleString()} &euro;</span>
 												</div>
 												<div class="d-flex justify-content-between">
-													<span class="" id="" style="color: #2f3037; font-size: 20px;">VAT (${event.data.VAT}%)</span> <span class="" id="" style="font-size: 18px;">${Math.round(invoices.invoice_value * (event.data.VAT/100)).toLocaleString()} &usd;</span>
+													<span class="" id="" style="color: #2f3037; font-size: 20px;">VAT (${event.data.VAT}%)</span> <span class="" id="" style="font-size: 18px;">${Math.round(invoices.invoice_value * (event.data.VAT/100)).toLocaleString()} &euro;</span>
 												</div>
 												<br>
 												<div class="d-flex justify-content-between">
-													<span class="" id="" style="color: #2f3037; font-size: 20px; font-weight: 700;">Total</span> <span class="" id="" style="font-size: 18px;">${Math.round(invoices.invoice_value).toLocaleString()} &usd;</span>
+													<span class="" id="" style="color: #2f3037; font-size: 20px; font-weight: 700;">Total</span> <span class="" id="" style="font-size: 18px;">${Math.round(invoices.invoice_value).toLocaleString()} &euro;</span>
 												</div>
 												<br>
 												<div class="d-flex justify-content-center">

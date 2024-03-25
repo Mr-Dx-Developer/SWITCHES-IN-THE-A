@@ -13,25 +13,27 @@ Config.LimitDateDays = 10 -- If Config.LimitDate is enabled, it is used to defin
 Config.PayAutomaticallyAfterLimit = true -- It serves to enable/disable if we want the invoice to be automatically paid after the due date
 
 -- (For this to work you need to set  = true and add a number to LimitDateDays)
-Config.FeeAfterEachDay = true -- Serves to enable/disable if we want unpaid invoices to increase in value after each day they are not paid 
+Config.FeeAfterEachDay = false -- Serves to enable/disable if we want unpaid invoices to increase in value after each day they are not paid 
 
 Config.FeeAfterEachDayPercentage = 5 -- If Config.FeeAfterEachDay is enabled, it is used to set the fee percentage after each day
 
 Config.OnlyBossCanAccessSocietyInvoices = true -- Defines if only the boss can access the society invoices, if false all the employees will have access to it
 
+Config.Key = 168 -- [F7]
+
 Config.AllowedSocieties = { -- Allowed societies to open the 'Society Invoices' and 'Create Invoice' menus
 	'police',
 	'ambulance',
-	'mechanic'
+	'uwu'
 }
 
 -------------------------- DISCORD LOGS
 
 -- To set your Discord Webhook URL go to server.lua, line 5
 
-Config.BotName = 'Dx' -- Write the desired bot name
+Config.BotName = 'ServerName' -- Write the desired bot name
 
-Config.ServerName = 'Dx Server' -- Write your server's name
+Config.ServerName = 'ServerName' -- Write your server's name
 
 Config.IconURL = '' -- Insert your desired image link
 

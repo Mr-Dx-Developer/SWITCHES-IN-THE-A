@@ -33,7 +33,7 @@ textarea {
 }
 
 .card-body {
-	background-color: #82d6b4;
+	background-color: #ffffff;
 	color: rgba(110, 113, 121, 1);
 	font-size: 15px;
 	font-weight: 500;
@@ -72,7 +72,7 @@ textarea {
 
 .mainmenu-subcard:hover {
 	transition: 0.3s;
-	background-color: #249093 !important;
+	background-color: #1f5eff !important;
 	color: #eeeff3 !important;
 	cursor: pointer;
 }
@@ -197,22 +197,22 @@ textarea {
 }
 
 .btn.btn-blue {
-	background-color: #249093;
+	background-color: #1f5eff;
 	color: #fff;
 	font-size: 15px;
 }
 
 .btn.btn-blue.btn-border {
-	border-color: #249093;
-	color: #249093;
+	border-color: #1f5eff;
+	color: #1f5eff;
 }
 
 .btn.btn-blue.btn-3d {
-	box-shadow: inset 0 -2px 0 #0af9c1;
+	box-shadow: inset 0 -2px 0 #0a4df9;
 }
 
 .btn.btn-blue:hover {
-	background-color: #0af9c1;
+	background-color: #0a4df9;
 }
 
 .btn.btn-red {
@@ -256,22 +256,22 @@ textarea {
 }
 
 .btn.btn-bluesociety {
-	background-color: #249093;
+	background-color: #1f5eff;
 	color: #e6e6e6;
 	font-size: 15px;
 }
 
 .btn.btn-bluesociety.btn-border {
-	border-color: #249093;
-	color: #249093;
+	border-color: #1f5eff;
+	color: #1f5eff;
 }
 
 .btn.btn-bluesociety.btn-3d {
-	box-shadow: inset 0 -2px 0 #0af9c1;
+	box-shadow: inset 0 -2px 0 #0a4df9;
 }
 
 .btn.btn-bluesociety:hover {
-	background-color: #0af9c1;
+	background-color: #0a4df9;
 	color: #e6e6e6;
 }
 
@@ -366,7 +366,7 @@ tbody tr:hover {
 }
 
 .modal-body {
-	background-color: #82d6b4;
+	background-color: #ffffff;
 	color: rgba(110, 113, 121, 1);
 	font-size: 15px;
 	font-weight: 500;

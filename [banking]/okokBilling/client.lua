@@ -1,6 +1,20 @@
 QBCore = nil
 PlayerData = {}
 
+exports('CreateNewInvoice', function(job)
+    return CreateInvoice(job)
+end)
+
+Citizen.CreateThread(function()
+    while true do
+        Citizen.Wait(1)
+
+        if IsControlJustReleased(0, Config.Key) then
+            ExecuteCommand(Config.InvoicesCommand)
+        end
+    end
+end)
+
 Citizen.CreateThread(function()
 	while QBCore == nil do
 		QBCore = exports['qb-core']:GetCoreObject()
@@ -60,48 +74,6 @@ function CreateInvoice(society)
 		society = society
 	})
 end
-
-RegisterNetEvent("okokbilling:open")
-AddEventHandler("okokbilling:open", function()
-	local isAllowed = false
-	local jobName = ""
-	for k, v in pairs(Config.AllowedSocieties) do
-		if v == PlayerData.job.name then
-			jobName = v
-			isAllowed = true
-		end
-	end
-
-	if Config.OnlyBossCanAccessSocietyInvoices and PlayerData.job.isboss == true and isAllowed then
-		SetNuiFocus(true, true)
-		SendNUIMessage({
-			action = 'mainmenu',
-			society = true,
-			create = true
-		})
-	elseif Config.OnlyBossCanAccessSocietyInvoices and PlayerData.job.isboss ~= true and isAllowed then
-		SetNuiFocus(true, true)
-		SendNUIMessage({
-			action = 'mainmenu',
-			society = false,
-			create = true
-		})
-	elseif not Config.OnlyBossCanAccessSocietyInvoices and isAllowed then
-		SetNuiFocus(true, true)
-		SendNUIMessage({
-			action = 'mainmenu',
-			society = true,
-			create = true
-		})
-	elseif not isAllowed then
-		SetNuiFocus(true, true)
-		SendNUIMessage({
-			action = 'mainmenu',
-			society = false,
-			create = false
-		})
-	end
-end)
 
 RegisterCommand(Config.InvoicesCommand, function()
 	local isAllowed = false
