@@ -16292,6 +16292,38 @@ DP.White4ro = {
         EmoteLoop = true,
         EmoteMoving = false,
     }},
+    ["health_insurance"] = {"anim@heists@humane_labs@finale@keycards", "ped_a_enter_loop", "Card", AnimationOptions =
+    {
+        Prop = "m-insurance_prop_card_health",
+        PropBone = 18905,
+        PropPlacement = {0.17, 0.03, 0.04, 1.0, 184.0, 0.0},
+        EmoteLoop = true,
+        EmoteMoving = true,
+    }},
+    ["car_insurance"] = {"anim@heists@humane_labs@finale@keycards", "ped_a_enter_loop", "Card", AnimationOptions =
+    {
+        Prop = "m-insurance_prop_card_vehicle",
+        PropBone = 18905,
+        PropPlacement = {0.17, 0.03, 0.04, 1.0, 184.0, 0.0},
+        EmoteLoop = true,
+        EmoteMoving = true,
+    }},
+    ["car_registration"] = {"anim@heists@humane_labs@finale@keycards", "ped_a_enter_loop", "Card", AnimationOptions =
+    {
+        Prop = "m-insurance_prop_card_registration",
+        PropBone = 18905,
+        PropPlacement = {0.17, 0.03, 0.04, 1.0, 184.0, 0.0},
+        EmoteLoop = true,
+        EmoteMoving = true,
+    }},
+    ["home_insurance"] = {"anim@heists@humane_labs@finale@keycards", "ped_a_enter_loop", "Card", AnimationOptions =
+    {
+        Prop = "m-insurance_prop_card_house",
+        PropBone = 18905,
+        PropPlacement = {0.17, 0.03, 0.04, 1.0, 184.0, 0.0},
+        EmoteLoop = true,
+        EmoteMoving = true,
+    }},
     ["gsign405"] = {"chiraq2@from94", "chiraq2_clip", "Chicago Sign 2 ~b~GDK Smoke ~r~New", AnimationOptions =
     {    
         Prop = 'prop_cs_ciggy_01',
