@@ -1,4 +1,4 @@
-local QBCore = exports['qb-core']:GetCoreObject()
+--[[ local QBCore = exports['qb-core']:GetCoreObject()
 local seatbeltOn = false
 local harnessOn = false
 local harnessHp = Config.HarnessUses
@@ -270,4 +270,4 @@ RegisterCommand('toggleseatbelt', function()
     toggleSeatbelt()
 end, false)
 
-RegisterKeyMapping('toggleseatbelt', 'Toggle Seatbelt', 'keyboard', 'B')
+RegisterKeyMapping('toggleseatbelt', 'Toggle Seatbelt', 'keyboard', 'B') ]]
