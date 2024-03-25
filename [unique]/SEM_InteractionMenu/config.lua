@@ -27,7 +27,7 @@ Config.VersionChecker = 0
 
 --This is how you open the menu either via a command or button
 --Button = 0 [Default]  |  Command = 1
-Config.OpenMenu = 0
+Config.OpenMenu = 1
 
 --This is the button that will open the menu (If chosen at Config.OpenMenu)
 --Default = 244 [M]  |  To change the button check out https://docs.fivem.net/game-references/controls/
@@ -35,7 +35,7 @@ Config.OpenMenu = 0
 Config.MenuButton = 244
 
 --This is the command that will open the menu (If chosen at Config.OpenMenu)
-Config.Command = 'semmenu'
+Config.Command = 'interaction'
 
 --This is the width of the menu when open
 --Default = 80
