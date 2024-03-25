@@ -343,7 +343,7 @@ RegisterNetEvent('weapons:ResetHolster', function()
 end)
 
 RegisterNetEvent('weapons:client:DrawWeapon', function()
-    if GetResourceState('ps-inventory') == 'missing' then return end -- This part is only made to work with ps-inventory, other inventories might conflict
+    if GetResourceState('qb-inventory') == 'missing' then return end -- This part is only made to work with qb-inventory, other inventories might conflict
     local sleep
     local weaponCheck = 0
     while true do
@@ -526,7 +526,7 @@ end)
 
 function CeaseFire()
     CreateThread(function()
-        if GetResourceState('ps-inventory') == 'missing' then return end -- This part is only made to work with ps-inventory, other inventories might conflict
+        if GetResourceState('qb-inventory') == 'missing' then return end -- This part is only made to work with qb-inventory, other inventories might conflict
         while not canFire do
             DisableControlAction(0, 25, true)
             DisablePlayerFiring(PlayerId(), true)
