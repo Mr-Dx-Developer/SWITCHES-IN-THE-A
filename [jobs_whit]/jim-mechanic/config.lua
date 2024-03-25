@@ -3,7 +3,7 @@ Config = {
 	System = {
 		Debug = false, -- Set to true to show green debug boxes to help track any issues
 
-		Menu = "qb",  				-- "qb", "ox", "gta"
+		Menu = "ox",  				-- "qb", "ox", "gta"
 		Notify = "qb",				-- "qb", "ox", "gta", "esx"
 		ProgressBar = "qb", 		-- "qb", "ox", "gta", "esx"
 
@@ -24,7 +24,7 @@ Config = {
 		JobLocationRequired = true, -- Are the mecahanics locked to specific locations?
 		LocationBlips = true, 		-- Enable to grab the blip locations from locations.lua
 		CosmeticsJob = false, 		-- Do vehicle cosmetics require a mechanic job role?
-		JobRoles = { "mechanic", "ricocustom", "bigvroycustoms", "bandoscustom" }, -- These are the job roles who can use items if RequiresJob is enabled.
+		JobRoles = { "mechanic", "ricocustom", "bigvroycustoms", "bandoscustom", "vroyluxury" }, -- These are the job roles who can use items if RequiresJob is enabled.
 									-- Add your extra job roles here or just leave as "mechanic"
 									-- Example-- --JobRoles = { "mechanic", "tuner" }
 	},

@@ -254,7 +254,7 @@ Config.Locations[#Config.Locations+1] = {
 		color = 2571775,
 	}
 }
-
+--[[ 
 Config.Locations[#Config.Locations+1] = { 
 	Enabled = true,
 	job = "bigvroycustoms",
@@ -317,7 +317,7 @@ Config.Locations[#Config.Locations+1] = {
 	}
 }
 
-
+ ]]
 
 Config.Locations[#Config.Locations+1] = { 
 	Enabled = true,
@@ -367,6 +367,67 @@ Config.Locations[#Config.Locations+1] = {
 	blip = {
 		coords = vec3(990.92, -1490.91, 31.5),
 		label = "Bandos Customs",
+		color = 81,
+		sprite = 446,
+		disp = 6,
+		scale = 0.7,
+		cat = nil,
+	},
+	discord = {
+		link = "",
+		color = 2571775,
+	}
+}
+
+
+Config.Locations[#Config.Locations+1] = { 
+	Enabled = true,
+	job = "vroyluxury",
+	zones = {
+		vec2(881.1428833007812, -993.3230590820312),
+		vec2(978.6197509765625, -987.4681396484375),
+		vec2(955.2000122070312, -903.098876953125),
+		vec2(879.2571411132812, -905.7362670898438)
+		
+	},
+	autoClock = { enter = true, exit = true, },
+	stash = {
+		{ coords = vec4(918.47, -928.13, 42.95, 0.0), w = 2.0, d = 4.0 },
+	},
+	store = {
+		{ coords = vec4(919.2, -922.01, 42.95, 0.0), w = 5.6, d = 5.5 },
+		
+	},
+	crafting = {
+		{ coords = vec4(0.0, 0.0, 0.0, 0.0), w = 3.2, d = 1.0 },
+	},
+	clockin = {
+		{ coords = vec4(959.78, -952.97, 42.95, 0.0), prop = false, },
+	},
+	manualRepair = {
+		{ coords = vec4(0.0, 0.0, 0.0, 0.0), prop = false, },
+	},
+	carLift = {
+		{ coords = vec4(0.0, 0.0, 0.0, 0.0), },
+		{ coords = vec4(0.0, 0.0, 0.0, 0.0) },
+	},
+	garage = {
+		spawn = vec4(0.0, 0.0, 0.0, 0.0),
+		out = vec4(0.0, 0.0, 0.0, 0.0),
+		list = { "towtruck", "panto", "slamtruck", "cheburek", "utillitruck3" },
+		prop = true
+	},
+	payments = {
+		img = "https://static.wikia.nocookie.net/gtawiki/images/b/be/BennysOriginalMotorWorks-GTAO-Logo.png",
+		{ coords = vec4(0.0, 0.0, 0.0, 0.0), prop = false },
+	},
+	Restrictions = {
+		Vehicle = { "Compacts", "Sedans", "SUVs", "Coupes", "Muscle", "Sports Classics", "Sports", "Super", "Motorcycles", "Off-road", "Industrial", "Utility", "Vans", "Cycles", "Service", "Emergency", "Commercial", },
+		Allow = { "tools", "cosmetics", "repairs", "nos", "perform" },
+	},
+	blip = {
+		coords = vec3(959.78, -952.97, 42.95),
+		label = "Vroy Luxury",
 		color = 81,
 		sprite = 446,
 		disp = 6,

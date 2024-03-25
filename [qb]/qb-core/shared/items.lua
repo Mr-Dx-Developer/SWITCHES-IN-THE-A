@@ -11,6 +11,7 @@ QBShared.Items = {
     weapon_anarchy         = { name = 'weapon_anarchy', label = 'ANARCHY', weight = 1000, type = 'weapon', ammotype = 'AMMO_RIFLE', image = 'weapon_anarchy.png', unique = true, useable = false, description = 'A rapid-fire, magazine-fed automatic rifle designed for infantry use' },
     ['weapon_bas_p_red'] = {['name'] = 'weapon_bas_p_red', ['label'] = 'BAS-P Red', ['weight'] = 1000, ['type'] = 'weapon', ['ammotype'] = 'AMMO_RIFLE', ['image'] = 'weapon_bas_p_red.png', ['unique'] = true, ['useable'] = false, ['description'] = 'BAS-P Red'},
     weapon_art64         = { name = 'weapon_art64', label = 'ART64', weight = 1000, type = 'weapon', ammotype = 'AMMO_RIFLE', image = 'weapon_art64.png', unique = true, useable = false, description = 'A rapid-fire, magazine-fed automatic rifle designed for infantry use' },
+    weapon_autosmg              = { name = 'weapon_autosmg', label = 'AUTOSMG', weight = 1000, type = 'weapon', ammotype = 'AMMO_SMG', image = 'weapon_autosmg.png', unique = true, useable = false, description = 'A handheld light weight machine gun' },
 
     
     weapon_kayslimeswitch         = { name = 'weapon_kayslimeswitch', label = '101 Switch', weight = 1000, type = 'weapon', ammotype = 'AMMO_PISTOL', image = '101_switch.png', unique = true, useable = false, description = 'A rapid-fire, magazine-fed automatic rifle designed for infantry use' },
@@ -491,7 +492,13 @@ QBShared.Items = {
     ['wine']                            = {['name'] = 'wine',                              ['label'] = 'Wine',                      ['weight'] = 300,          ['type'] = 'item',         ['image'] = 'wine.png',                    ['unique'] = false,         ['useable'] = true,     ['shouldClose'] = false,      ['combinable'] = nil,   ['description'] = 'Some good wine to drink on a fine evening'},
     ['grapejuice']                      = {['name'] = 'grapejuice',                        ['label'] = 'Grape Juice',               ['weight'] = 200,          ['type'] = 'item',         ['image'] = 'grapejuice.png',              ['unique'] = false,         ['useable'] = true,     ['shouldClose'] = false,      ['combinable'] = nil,   ['description'] = 'Grape juice is said to be healthy'},
 
-
+["insurance"]         = {["name"] = "insurance",          ["label"] = "Car Insurance",             ["weight"] = 150,         ["type"] = "item",         ["image"] = "insurance.png",                    ["unique"] = true,       ["useable"] = true,    ["shouldClose"] = false,    ["combinable"] = nil,   ["description"] = ""},
+    
+    ["car_registration"]            = {["name"] = "car_registration",   ["label"] = "Car Registration",         ["weight"] = 150,         ["type"] = "item",         ["image"] = "car_registration.png",                    ["unique"] = true,       ["useable"] = true,    ["shouldClose"] = false,    ["combinable"] = nil,   ["description"] = ""},
+    
+    ["health_insurance"]  = {["name"] = "health_insurance",   ["label"] = "Health Insurance",         ["weight"] = 150,         ["type"] = "item",        ["image"] = "health_insurance.png",               ["unique"] = true,      ["useable"] = true,    ["shouldClose"] = false,    ["combinable"] = nil,   ["description"] = ""},
+    
+    ["home_insurance"]    = {["name"] = "home_insurance",     ["label"] = "Home Insurance",         ["weight"] = 150,         ["type"] = "item",        ["image"] = "home_insurance.png",                    ["unique"] = true,      ["useable"] = true,    ["shouldClose"] = false,    ["combinable"] = nil,   ["description"] = ""},
 
     ['clientale_phone'] 				 	 = {['name'] = 'clientale_phone', 						['label'] = 'Clientale Phone', 				['weight'] = 100, 		['type'] = 'item', 		['image'] = 'clientale_phone.png', 					['unique'] = true, 		['useable'] = true,  	['shouldClose'] = true,    ['combinable'] = nil,   ['description'] = 'Used to get Wig Orders for 2x Amount profit'},
     ['wig_40inches'] 				 	 = {['name'] = 'wig_40inches', 						['label'] = '40 Inch Wig', 				['weight'] = 10, 		['type'] = 'item', 		['image'] = 'wig_40inches.png', 					['unique'] = false, 		['useable'] = false,  	['shouldClose'] = true,    ['combinable'] = nil,   ['description'] = 'The traditional baddie wig'},

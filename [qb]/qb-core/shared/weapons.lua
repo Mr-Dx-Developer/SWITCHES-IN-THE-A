@@ -12,6 +12,7 @@ QBShared.Weapons = {
 	[`weapon_kayslimeswitch`]          = { name = 'weapon_kayslimeswitch', label = 'RicoSwitch', weapontype = 'Assault Rifle', ammotype = 'AMMO_PISTOL', damagereason = 'Ended / Rifled / Shot down / Floored' },
 	[`weapon_bas_p_red`]	= {['name'] = 'weapon_bas_p_red',	['label'] = 'BAS-P Red',	['weapontype'] = 'Assault Rifle',	['ammotype'] = 'AMMO_RIFLE',	['damagereason'] = 'Ended / Rifled / Shot down / Floored'},
 	[`weapon_art64`]          = { name = 'weapon_art64', label = 'ART64', weapontype = 'Assault Rifle', ammotype = 'AMMO_RIFLE', damagereason = 'Ended / Rifled / Shot down / Floored' },
+	[`weapon_autosmg`]              = { name = 'weapon_autosmg', label = 'AUTOSMG', weapontype = 'Submachine Gun', ammotype = 'AMMO_SMG', damagereason = 'Riddled / Drilled / Finished / Submachine Gunned' },
 	
 
 	--Kyros Weapon Pack V3

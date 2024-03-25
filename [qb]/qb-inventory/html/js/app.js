@@ -458,6 +458,60 @@ function FormatItemInfo(itemData, dom) {
                 itemData.info.nationality +
                 "</span></p>"
             );
+        } else if (itemData.name == "insurance") {
+            $(".item-info-title").html("<p>" + itemData.label + "</p>");
+            $(".item-info-description").html(
+                "<p><strong>Name: </strong><span>" +
+                itemData.info.name +
+                "</span></p><p><strong>Plate: </strong><span>" +
+                itemData.info.plate +
+                "</span></p><p><strong>Vehicle Model: </strong><span>" +
+                itemData.info.model +
+                "</span></p><p><strong>Date: </strong><span>" +
+                itemData.info.date +
+                "</span></p><p><strong>Expires: </strong><span>" +
+                itemData.info.expire +
+                "</span></p>"
+            );
+    
+        } else if (itemData.name == "car_registration") {
+            $(".item-info-title").html("<p>" + itemData.label + "</p>");
+            $(".item-info-description").html(
+                "<p><strong>Name: </strong><span>" +
+                itemData.info.name +
+                "</span></p><p><strong>Plate: </strong><span>" +
+                itemData.info.plate +
+                "</span></p><p><strong>Vehicle Model: </strong><span>" +
+                itemData.info.model +
+                "</span></p>"
+            );
+    
+        } else if (itemData.name == "health_insurance") {
+            $(".item-info-title").html("<p>" + itemData.label + "</p>");
+            $(".item-info-description").html(
+                "<p><strong>Name: </strong><span>" +
+                itemData.info.name +
+                "<p><strong>CitizenID: </strong><span>" +
+                itemData.info.citizenid +
+                "</span></p><p><strong>Date: </strong><span>" +
+                itemData.info.date +
+                "</span></p><p><strong>Expires: </strong><span>" +
+                itemData.info.expire +
+                "</span></p>"
+            );
+        } else if (itemData.name == "home_insurance") {
+            $(".item-info-title").html("<p>" + itemData.label + "</p>");
+            $(".item-info-description").html(
+                "<p><strong>Name: </strong><span>" +
+                itemData.info.name +
+                "<p><strong>CitizenID: </strong><span>" +
+                itemData.info.citizenid +
+                "</span></p><p><strong>Date: </strong><span>" +
+                itemData.info.date +
+                "</span></p><p><strong>Expires: </strong><span>" +
+                itemData.info.expire +
+                "</span></p>"
+            );    
         } else if (itemData.name == "driver_license") {
             $(".item-info-title").html("<p>" + itemData.label + "</p>");
             $(".item-info-description").html(

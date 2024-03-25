@@ -34,6 +34,10 @@ Config.DurabilityMultiplier = {
     weapon_glacier          = 0.15,
     weapon_anarchy          = 0.15,
     weapon_art64          = 0.15,
+    weapon_autosmg              = 0.15,
+
+
+
 
     
     weapon_g2c 	                 = 0.15,
@@ -293,6 +297,7 @@ WeaponAttachments = {
         weapon_bas_p_red = `w_sb_bas_p_mag2`,
         weapon_neva = `w_ar_neva_mag2`,
         weapon_art64 = `w_ar_art64_mag2`,
+        weapon_autosmg = `w_sb_autosmg_mag2`,
 
 
         weapon_scevo = `w_ar_cz_sc_evo_mag2`,
@@ -436,6 +441,7 @@ WeaponAttachments = {
         weapon_bas_p_red = `w_at_bas_p_supp`,
         weapon_neva = `w_at_ar_neva_supp`,
         weapon_art64 = `w_at_ar_art64_supp`,
+        weapon_autosmg = `w_at_sb_autosmg_supp`,
 
 
         weapon_scevo = `w_at_cz_sc_evo_supp`,
@@ -482,6 +488,8 @@ WeaponAttachments = {
     },
     smallscope_attachment = {
         weapon_scevo  = `w_at_cz_sc_evo_scope_small`,
+        weapon_autosmg = `w_at_sb_autosmg_scope`,
+
         weapon_pistol_mk2 = `COMPONENT_AT_PI_RAIL`,
         weapon_snspistol_mk2 = `COMPONENT_AT_PI_RAIL_02`,
         weapon_microsmg = `COMPONENT_AT_SCOPE_MACRO`,
@@ -645,6 +653,7 @@ WeaponAttachments = {
         weapon_bas_p_red = `w_at_bas_p_grip`,
         weapon_neva = `w_at_ar_neva_grip`,
         weapon_art64 = `w_at_ar_art64_grip`,
+        weapon_autosmg = `w_at_sb_autosmg_grip`,
 
         
 

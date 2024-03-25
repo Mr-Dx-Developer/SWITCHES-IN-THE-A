@@ -861,15 +861,15 @@ Config.Locations = {
             Coords = vec3(-245.697, 6316.074, 32.409 - 0.95),                       -- Coords of ped/target
             Heading = 40,                                                   -- Heading of ped
             Supplies = {                                                        -- Supplies
-                -- { item = 'medbag',     label = 'Medical Bag',   price = 1000 }, -- Pretty self explanatory, price may be set to 'false' to make free
-                -- { item = 'medikit',    label = 'First-Aid Kit', price = 250 },
-                -- { item = 'morphine30', label = 'Morphine 30MG', price = 100 },
-                -- { item = 'morphine10', label = 'Morphine 10MG', price = 45 },
-                -- { item = 'perc30',     label = 'Percocet 30MG', price = 60 },
-                -- { item = 'perc10',     label = 'Percocet 10MG', price = 40 },
-                -- { item = 'perc5',      label = 'Percocet 5MG',  price = 30 },
-                -- { item = 'vic10',      label = 'Vicodin 10MG',  price = 30 },
-                -- { item = 'vic5',       label = 'Vicodin 5MG',   price = 15 },
+                { item = 'medbag',     label = 'Medical Bag',   price = 1000 }, -- Pretty self explanatory, price may be set to 'false' to make free
+                { item = 'medikit',    label = 'First-Aid Kit', price = 250 },
+                { item = 'morphine30', label = 'Morphine 30MG', price = 100 },
+                { item = 'morphine10', label = 'Morphine 10MG', price = 45 },
+                { item = 'perc30',     label = 'Percocet 30MG', price = 60 },
+                { item = 'perc10',     label = 'Percocet 10MG', price = 40 },
+                { item = 'perc5',      label = 'Percocet 5MG',  price = 30 },
+                { item = 'vic10',      label = 'Vicodin 10MG',  price = 30 },
+                { item = 'vic5',       label = 'Vicodin 5MG',   price = 15 },
                 { item = 'bandage',         label = 'Bandage',   price = 200 },
                 { item = 'gps_tracker',     label = 'GPS Tracker',   price = 100 },
                 { item = 'radio',           label = 'Radio',   price = 500 },
