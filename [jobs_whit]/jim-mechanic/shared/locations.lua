@@ -393,9 +393,11 @@ Config.Locations[#Config.Locations+1] = {
 	autoClock = { enter = true, exit = true, },
 	stash = {
 		{ coords = vec4(918.47, -928.13, 42.95, 0.0), w = 2.0, d = 4.0 },
+		{ coords = vec4(901.32, -986.89, 50.34, 0.0), w = 2.0, d = 4.0 },
 	},
 	store = {
 		{ coords = vec4(919.2, -922.01, 42.95, 0.0), w = 5.6, d = 5.5 },
+		{ coords = vec4(906.57, -987.5, 50.34, 275.0), w = 5.6, d = 5.5 },
 		
 	},
 	crafting = {
