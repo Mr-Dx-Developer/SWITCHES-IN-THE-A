@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: transparent;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    place-items: center;
+}
+
+#vehiclerc,
+#healthinsurance,
+#homeinsurance,
+#vehicleinsurance {
+    display: none;
+}
+
+.container {
+    display: block;
+    width: 40vh;
+    position: absolute;
+    top: 80px; /* This is where they move up and leave the card position */
+    right: 0;  /* Here you can go further left if necessary */
+}
+
+
+img {
+    width: 100%;
+}
+
+.heading-text {
+    position: absolute;
+    text-align: center;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+}
+
+.title {
+    color: #f1ebd3;
+    font-size: 1rem;
+    background-color: #000000;
+    margin: 0;
+    margin-right: 0.3vh;
+}
+
+.title-license {
+    color: #f1ebd3;
+    font-size: 1rem;
+    background-color: #000000;
+    margin: 0;
+    margin-right: 0.3vh;
+}
+
+.title-health {
+    color: #f1ebd3;
+    font-size: 1rem;
+    background-color: #000000;
+    margin: 0;
+    margin-right: 0.3vh;
+}
+
+p {
+    margin: 0;
+}
+
+.text-details {
+    position: absolute;
+    top: 50.50%;
+    left: 52.50%;
+    font-size: .8rem;
+    font-weight: 900;
+    color: black;
+    transform: translate(-35%, -50%);
+}
+
+.text-details p {
+    margin-bottom: 0.35rem;
+}
+
+.text-details-insurance {
+    position: absolute;
+    top: 50.50%;
+    left: 52.50%;
+    font-size: .8rem;
+    font-weight: 900;
+    color: black;
+    transform: translate(-35%, -50%);
+}
+
+.text-details-insurance p {
+    margin-bottom: 0.35rem;
+}
+
+.text-details-health {
+    position: absolute;
+    top: 50.50%;
+    left: 52.50%;
+    font-size: .8rem;
+    font-weight: 900;
+    color: black;
+    transform: translate(-35%, -50%);
+}
+
+.text-details-health p {
+    margin-bottom: 0.35rem;
+}
+
+.text-details-home {
+    position: absolute;
+    top: 50.50%;
+    left: 52.50%;
+    font-size: .8rem;
+    font-weight: 900;
+    color: black;
+    transform: translate(-35%, -50%);
+}
+
+.text-details-home p {
+    margin-bottom: 0.35rem;
+}
+
+span {
+    font-size: .8rem;
+    font-weight: 500;
+}
+
+.red {
+    color: red;
+}
+
+
