@@ -12,6 +12,14 @@ Config.MenuItems = {
         icon = 'user',
         items = {
             {
+                id = 'checkinsurance',
+                title = 'Check Insurance',
+                icon = 'car',
+                type = 'client',
+                event = 'm-Insurance:Client:CheckVehicleInsurance',
+                shouldClose = true
+            },
+            {
                 id = 'givenum',
                 title = 'Give Contact Details',
                 icon = 'address-book',
