@@ -2153,7 +2153,30 @@ Config.Products = {
         
 
 
-
+        [140] = {
+            name = "pregtest",
+            price = 10, 
+            amount = 10,
+            info = {},
+            type = "item",
+            slot = 140,
+        },
+        [141] = {
+            name = "condom",
+            price = 10, 
+            amount = 10,
+            info = {},
+            type = "item",
+            slot = 141,
+        },
+        [142] = {
+            name = "planb",
+            price = 10, 
+            amount = 10,
+            info = {},
+            type = "item",
+            slot = 142,
+        },
 
 
 
