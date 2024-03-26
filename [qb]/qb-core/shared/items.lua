@@ -252,7 +252,12 @@ QBShared.Items = {
 	['lockpick'] = {['name'] = 'lockpick', ['label'] = 'Lockpick', ['weight'] = 500, ['type'] = 'item', ['image'] = 'your_image.png', ['unique'] = false, ['useable'] = false, ['shouldClose'] = false, ['combinable'] = nil},
 	['bandage'] = {['name'] = 'bandage', ['label'] = 'Bandage', ['weight'] = 500, ['type'] = 'item', ['image'] = 'your_image.png', ['unique'] = false, ['useable'] = false, ['shouldClose'] = false, ['combinable'] = nil},
 
-    
+    ['pregtest'] 			 = {['name'] = 'pregtest', 					['label'] = 'Pregnancy Test', 				['weight'] = 100, 		['type'] = 'item', 		['image'] = 'pregtest.png', 		['unique'] = false, 		['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = ''},
+	['condom'] 			 = {['name'] = 'condom', 					['label'] = 'Condom', 				['weight'] = 100, 		['type'] = 'item', 		['image'] = 'condom.png', 		['unique'] = false, 		['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = ''},
+	['planb'] 			 = {['name'] = 'planb', 				['label'] = 'Plan B', 				['weight'] = 100, 		['type'] = 'item', 		['image'] = 'planb.png', 		['unique'] = false, 		['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = ''},
+
+
+
     -- Weapon Attachments
     clip_attachment              = { name = 'clip_attachment', label = 'Clip', weight = 1000, type = 'item', image = 'clip_attachment.png', unique = false, useable = true, shouldClose = true, combinable = nil, description = 'A clip for a weapon' },
     drum_attachment              = { name = 'drum_attachment', label = 'Drum', weight = 1000, type = 'item', image = 'drum_attachment.png', unique = false, useable = true, shouldClose = true, combinable = nil, description = 'A drum for a weapon' },
@@ -517,8 +522,6 @@ QBShared.Items = {
     ['spray'] 	  = {['name'] = 'spray', ['label'] = 'Spray', ['weight'] = 500, ['type'] = 'item', ['image'] = 'spray.png', ['unique'] = false, ['useable'] = true, ['shouldClose'] = true, ['combinable'] = nil, ['description'] = 'Spray paint can'},
 ['spray_remover'] = {['name'] = 'spray_remover', ['label'] = 'Spray Remover', ['weight'] = 500, ['type'] = 'item', ['image'] = 'spray_remover.png', ['unique'] = false, ['useable'] = true, ['shouldClose'] = true, ['combinable'] = nil, ['description'] = 'Removes graffiti'},
 
-
-    ['condom']                       = {['name'] = 'condom',                             ['label'] = 'Condom',                 ['weight'] = 100,         ['type'] = 'item',         ['image'] = 'condom.png',             ['unique'] = false,     ['useable'] = true,     ['shouldClose'] = true,       ['combinable'] = nil,   ['description'] = 'Condom'},
 
 ['levonorgestrel']                       = {['name'] = 'levonorgestrel',                             ['label'] = 'Levonorgestrel',                 ['weight'] = 100,         ['type'] = 'item',         ['image'] = 'levonorgestrel.png',             ['unique'] = false,     ['useable'] = true,     ['shouldClose'] = true,       ['combinable'] = nil,   ['description'] = 'Levonorgestrel'},
 
