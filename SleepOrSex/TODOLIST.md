@@ -1,5 +1,0 @@
-1. Squirt bug position for some animation (on progress)
-2. Disease can infect other if having sex (Done, Need Massive Check)
-3. DNA (Done, Need Massive Check)
-4. Partner sex (Done, Need Massive Check)
-5. Sync Disease (Done, Need Massive Check)
