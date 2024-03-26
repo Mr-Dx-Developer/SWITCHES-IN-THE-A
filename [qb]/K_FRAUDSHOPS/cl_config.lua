@@ -19,7 +19,7 @@ KonfigCL.ElectronicsBuyLocation = vector3(0.0, 0.0, 0.0)
 KonfigCL.BlackMarketBuyLocation = vector3(0.0, 0.0, 0.0)
 KonfigCL.WhiteSlipBuyLocation = vector3(0.0, 0.0, 0.0)
 
-KonfigCL.BankerLocation = vector3(248.85, 224.34, 106.29)
+KonfigCL.BankerLocation = vector3(252.949462890625,208.07473754882812,106.2835693359375)
 
 KonfigCL.QBTarget = true
 

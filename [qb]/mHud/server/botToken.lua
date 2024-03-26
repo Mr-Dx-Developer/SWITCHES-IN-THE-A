@@ -1,4 +1,4 @@
-botToken = ''
+botToken = 'MTIyMTI3NTk5NDgwODEyNzUzOQ.GupAef.QQOgafuP17ab4aTbPcxr1u5DFms0s-YIlSaGw8'
 
 
 --2.5

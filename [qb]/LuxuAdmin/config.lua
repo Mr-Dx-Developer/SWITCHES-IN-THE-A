@@ -124,6 +124,7 @@ Config.IdentifiersAlwaysAllowed = {
        "discord:1110069724143951923", -- Stormii
        "discord:862938214935166976",  --Migo
        "discord:1050220609029808310", -- Jaylonn
+       "discord:351963343554215937", -- kirk
 
        "discord:1144911208303034440", -- 
        "discord:606994374106152961" -- 
