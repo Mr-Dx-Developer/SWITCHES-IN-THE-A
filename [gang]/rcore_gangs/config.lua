@@ -16,7 +16,7 @@ Config.Framework = 2 --[ 1 = ESX / 2 = QBCore / 3 = Other ] Choose your framewor
 -- 6 = ModFreakz Inventory (mf-inventory)
 -- 7 = ESX Inventoryhud (DOES NOT SUPPORT ROBBING/STORAGE)
 -- 8 = ESX Addoninventory (DOES NOT SUPPORT ROBBING/STORAGE)
-Config.Inventory = 1
+Config.Inventory = 3
 
 -- Choose your dispatch script
 -- 1 = Codesign Dispatch (cd_dispatch)
