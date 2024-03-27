@@ -29,14 +29,14 @@ Config = {
     Target = 'qb-target', -- "qb-target", "ox_target", or "qtarget". You may edit cooking targets in in cl_targets.lua
     Distance = 2.0, -- Target Distance from Appliance
 
-    Inventory = 'qb', 
+    Inventory = 'qs', 
     -- "ox" for ox_inventory, 
     -- "qb" for qb-inventory, or QB based Inventories, including QB version of Quasar Inventory.
     -- "esx" for esx based inventories.
     -- "qs" if using the ESX version of Quasar Inventory.
 
     -- REPLACE LINK BELOW WITH YOUR IMAGES FOLDER LINK.
-    Images = "qb-inventory/html/images/", 
+    Images = "qs-inventory/html/images/", 
     -- Examples:
     -- "xmmx_letscookplus/html/images/ingredients/", -- uses the images in the html folder of the script
     -- "ox_inventory/web/images/", -- Ox Inventory Images Location

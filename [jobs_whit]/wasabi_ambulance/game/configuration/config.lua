@@ -250,7 +250,7 @@ Config.BleedoutTimer = 10 * minutes -- Time before it forces respawn
 
 Config.removeItemsOnDeath = true   -- Must have Config.Inventory set properly
 Config.Inventory =
-'qb'                                --Options include: 'ox' - (ox_inventory) / 'qb' - (QBCore qb-inventory) 'mf' - (mf-inventory) / 'qs' (qs-inventory) / 'esx' (default esx) / 'other' (whatever else can customize in client/cl_customize.lua)
+'qs'                                --Options include: 'ox' - (ox_inventory) / 'qb' - (QBCore qb-inventory) 'mf' - (mf-inventory) / 'qs' (qs-inventory) / 'esx' (default esx) / 'other' (whatever else can customize in client/cl_customize.lua)
 
 Config.AntiCombatLog = {            --  When enabled will kill player who logged out while dead
     enabled = true,                 --  enabled?
@@ -567,7 +567,7 @@ Config.Locations = {
             Coords = vec3(326.9274597167969,-584.6109619140625,43.2652587890625 - 0.95),                       -- Coords of ped/target
             Heading = 157.98,                                                   -- Heading of ped
             Supplies = {                                                        -- Supplies
-                { item = 'medbag',     label = 'Medical Bag',   price = 1000 }, Pretty self explanatory, price may be set to 'false' to make free
+                { item = 'medbag',     label = 'Medical Bag',   price = 1000 }, --- Pretty self explanatory, price may be set to 'false' to make free
                 { item = 'medikit',    label = 'First-Aid Kit', price = 250 },
                 { item = 'morphine30', label = 'Morphine 30MG', price = 100 },
                 { item = 'morphine10', label = 'Morphine 10MG', price = 45 },
