@@ -11,7 +11,7 @@ Config.Variables = {
         TriggerEvent('k_sexm:sleepsetup') -- Find and sleep in bed trigger -- Example useage: Option on a radial menu 
     ]]
     PregTestFemaleOnly = true, --set to false to enable anyone to use a preg test
-    TimeTillBirth = 60, -- In minutes, 60 = 1hr (time for pregnancies)
+    TimeTillBirth = 5760, -- In minutes, 60 = 1hr (time for pregnancies)
     NotifyPregnant = 10, -- In minutes, When should the player get notified that they need to head to hospital!
     UsingKDisease = true, -- set to true if you are using k_disease to get diseases to work!
     AllowTransmitted = {
