@@ -183,7 +183,7 @@ Config.Framework = esxHas and 'esx' or qbHas and 'qb' or 'none' -- You can chang
 
 
 Config.MenuType = 'ox_lib'
-Config.Inventory = 'qb-inventory'
+Config.Inventory = 'qs-inventory'
 Config.Wardrobe = 'illenium-appearance'
 Config.Garage = 'jg-advancedgarages' -- or some option above
 Config.Logout = 'qb-multicharacter'
