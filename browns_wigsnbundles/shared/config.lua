@@ -2,7 +2,7 @@ return {
 
     ['core'] = { -- configure core stuff
         framework = 'qb-core', -- 'esx', 'qb-core', 'qbx-core', or 'nd_core'
-        inventory = 'qb-inventory', -- 'qb-inventory', 'ox_inventory', 'qs-inventory', 'lj-inventory', 'ps-inventory', 'chezza-inventory', or 'ak47-inventory'
+        inventory = 'qs-inventory', -- 'qb-inventory', 'ox_inventory', 'qs-inventory', 'lj-inventory', 'ps-inventory', 'chezza-inventory', or 'ak47-inventory'
         target = 'qb-target', -- 'qb-target', 'ox_target', or 'qtarget'
         notify = function(message, types, duration) -- notification function
 

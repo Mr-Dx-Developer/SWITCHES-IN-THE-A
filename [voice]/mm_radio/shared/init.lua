@@ -17,13 +17,13 @@ end
 if GetResourceState('ox_inventory') == 'started' then -- change your inventory script
     Shared.Inventory = 'ox' -- dont touch this
 elseif GetResourceState('mm_inventory') == 'started' then -- change your inventory script
-    Shared.Inventory = 'qb' -- dont touch this
+    Shared.Inventory = 'mm' -- dont touch this
 elseif GetResourceState('ps-inventory') == 'started' then -- change your inventory script
-    Shared.Inventory = 'qb' -- dont touch this
+    Shared.Inventory = 'ps' -- dont touch this
 elseif GetResourceState('qb-inventory') == 'started' then -- change your inventory script
     Shared.Inventory = 'qb' -- dont touch this
 elseif GetResourceState('qs-inventory') == 'started' then -- change your inventory script
-    Shared.Inventory = 'qb' -- dont touch this
+    Shared.Inventory = 'qs' -- dont touch this
 else
     Shared.Inventory = false
     warn('No Inventory found')
