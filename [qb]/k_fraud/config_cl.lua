@@ -5,9 +5,10 @@ ConfigCL.PrintingTime = 10 -- 10000 = 10secs, 1000 = 1sec
 ConfigCL.SaleCooldown = 10 -- check sale cooldown
 
 -- bankcard buy location, check sales location
-ConfigCL.BankCardSpot = vector3(152.0898, -1041.3323, 29.3742)
-ConfigCL.CheckSales = vector3(145.3439, -1041.1469, 29.3679)
-
+--[[ ConfigCL.BankCardSpot = vector3(152.0898, -1041.3323, 29.3742)
+ConfigCL.CheckSales = vector3(145.3439, -1041.1469, 29.3679) ]]
+ConfigCL.BankCardSpot = vector3(0.0, 0.0, 0.0)
+ConfigCL.CheckSales = vector3(0.0, 0.0, 0.0)
 
 ---buy locations for items required
 ConfigCL.BuyLocations = true -- set to false if you want to put slips, printers, laptops in some other script to buy from
