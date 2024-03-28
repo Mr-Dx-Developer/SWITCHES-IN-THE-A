@@ -46,9 +46,9 @@ Config.EnableRoutingBucketTv = true -- enable this if you want "instanced tvs" f
 
 Config.EnableImagesForTv = false -- enable putting images to tv (png, gif, jpg)
 
-Config.EnableWebsitesForTv = false -- enable other websites for tv, you can view any website in tv (you cannot scroll or interact with it) (be sure to add websites in blacklist if you want blacklist some website)
+Config.EnableWebsitesForTv = true -- enable other websites for tv, you can view any website in tv (you cannot scroll or interact with it) (be sure to add websites in blacklist if you want blacklist some website)
 
-Config.EnableVideosFromFolder = false -- enable this if you want play videos which is in rtx_tv/html/videos folder, you must add also video name and filename in Config.VideoList
+Config.EnableVideosFromFolder = true -- enable this if you want play videos which is in rtx_tv/html/videos folder, you must add also video name and filename in Config.VideoList
 
 Config.StreamerModeCommand = "streamermode" -- command for disable music for example for streamers, when player will use this command he will not hear music from televisions
 
