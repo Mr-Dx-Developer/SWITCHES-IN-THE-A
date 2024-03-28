@@ -43,8 +43,8 @@ return {
         },
     
         phone = { -- configure clientale phone settings
-            enable = true, -- enable the ability to randomly get a clientale phone (sends you on a mission to sell wigs for 2x profit)
-            chance = 5, -- chance of getting this rare phone item (% out of 100)
+            enable = false, -- enable the ability to randomly get a clientale phone (sends you on a mission to sell wigs for 1x profit)
+            chance = 0, -- chance of getting this rare phone item (% out of 100)
             locations = { -- list of house locations where you will be sent to do these missions
                 {coords = vec3(281.6472, -1694.5334, 29.6479)},
                 {coords = vec3(338.9823, -1829.2081, 28.3375)},
@@ -64,8 +64,8 @@ return {
         },
 
         maxSell = { -- making it to where there is a maximum amount of wigs you can sell per transaction (except for when doing clientale phone missions)
-            enable = true, -- enable?
-            amount = 7 -- max amount of wigs you can spawn per transaction
+            enable = false, -- enable?
+            amount = 1 -- max amount of wigs you can spawn per transaction
         },
 
         pedSpawnDistance = 20.0, -- distance of how far infront of the player will peds spawn when selling wigs
@@ -74,10 +74,10 @@ return {
     },
 
     ['sell'] = { -- configure sell profits
-        ['wig_bang'] = 600, -- how much you make from each bang wig sold
-        ['wig_curly'] = 975, -- how much you make from each curly wig sold
-        ['wig_braids'] = 1220, -- how much you make from each braids wig sold
-        ['wig_40inches'] = 1300, -- how much you make from each 40 inch wig sold
+        ['wig_bang'] = 60, -- how much you make from each bang wig sold
+        ['wig_curly'] = 97, -- how much you make from each curly wig sold
+        ['wig_braids'] = 120, -- how much you make from each braids wig sold
+        ['wig_40inches'] = 130, -- how much you make from each 40 inch wig sold
     },
 
     ['shop'] = { -- configure shop
