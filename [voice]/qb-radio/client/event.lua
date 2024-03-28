@@ -29,7 +29,7 @@ AddEventHandler('onResourceStop', function(resource)
     end
 end)
 
-RegisterNetEvent('mm_radio:client:use', function()
+RegisterNetEvent('qb-radio:client:use', function()
     Radio.usingRadio = true
     SetNuiFocus(true, true)
     Radio:toggleRadioAnimation(true)
@@ -50,14 +50,14 @@ RegisterNetEvent('mm_radio:client:use', function()
     updateTime()
 end)
 
-RegisterNetEvent('mm_radio:client:remove', function()
+RegisterNetEvent('qb-radio:client:remove', function()
     Radio.usingRadio = false
     SetNuiFocus(false, false)
     Radio:toggleRadioAnimation(false)
     Radio:SendSvelteMessage("setRadioHide", nil)
 end)
 
-RegisterNetEvent('mm_radio:client:radioListUpdate', function(players, channel)
+RegisterNetEvent('qb-radio:client:radioListUpdate', function(players, channel)
     if Radio.RadioChannel == channel then
         Radio:SendSvelteMessage("updateRadioList", players)
     end

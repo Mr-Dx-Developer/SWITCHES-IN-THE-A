@@ -1,10 +1,10 @@
 A Beautiful Radio script for communication! It has many features packed in one script which every RP server wants and it provides a whole new UI look, enriching user experience.
 
 ## ⚠️ Attention
-Download a [release](https://github.com/SOH69/mm_radio/releases/) or build the source code
+Download a [release](https://github.com/SOH69/qb-radio/releases/) or build the source code
 ```
-git clone https://github.com/SOH69/mm_radio.git
-cd mm_radio/ui
+git clone https://github.com/SOH69/qb-radio.git
+cd qb-radio/ui
 pnpm i
 pnpm run build
 ```
@@ -29,8 +29,8 @@ pnpm run build
 5. 0 resmon highly optimized
 
 # EXPORTS:
-1. `exports["mm_radio"]:JoinRadio(channel: number)`
-2. `exports["mm_radio"]:LeaveRadio()`
+1. `exports["qb-radio"]:JoinRadio(channel: number)`
+2. `exports["qb-radio"]:LeaveRadio()`
 
 # GUIDE:
 Follow the Shared Lua and change the requireds

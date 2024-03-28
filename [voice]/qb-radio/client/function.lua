@@ -38,7 +38,7 @@ function Radio:connecttoradio(channel)
         exports["pma-voice"]:setVoiceProperty("radioEnabled", true)
     end
     exports["pma-voice"]:setRadioChannel(channel)
-    TriggerServerEvent('mm_radio:server:addToRadioChannel', self.RadioChannel, self.userData.name)
+    TriggerServerEvent('qb-radio:server:addToRadioChannel', self.RadioChannel, self.userData.name)
     
     self:Notify(locale('join_notify_description', channel))
     if not lib.table.contains(Radio.recomended, channel) then
@@ -63,7 +63,7 @@ end
 
 function Radio:leaveradio()
     self:closeEvent()
-    TriggerServerEvent('mm_radio:server:removeFromRadioChannel', self.RadioChannel)
+    TriggerServerEvent('qb-radio:server:removeFromRadioChannel', self.RadioChannel)
     self.RadioChannel = 0
     self.onRadio = false
     exports["pma-voice"]:setRadioChannel(0)
@@ -159,9 +159,9 @@ lib.addKeybind({
     onPressed = function()
         if not Radio.usingRadio then
             if Shared.Inventory and Radio.hasRadio then
-                TriggerEvent('mm_radio:client:use')
+                TriggerEvent('qb-radio:client:use')
             elseif not Shared.Inventory then
-                TriggerEvent('mm_radio:client:use')
+                TriggerEvent('qb-radio:client:use')
             end
         end
     end

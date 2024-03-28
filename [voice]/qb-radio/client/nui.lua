@@ -28,7 +28,7 @@ RegisterNUICallback("volumeChange", function(data, cb)
 end)
 
 RegisterNUICallback("hideUI", function(_, cb)
-    TriggerEvent('mm_radio:client:remove')
+    TriggerEvent('qb-radio:client:remove')
     cb('ok')
 end)
 
@@ -76,6 +76,6 @@ end)
 RegisterNUICallback('saveData', function(data, cb)
     Radio.userData.name = data
     Radio:update()
-    TriggerServerEvent('mm_radio:server:addToRadioChannel', Radio.RadioChannel, data)
+    TriggerServerEvent('qb-radio:server:addToRadioChannel', Radio.RadioChannel, data)
     SetResourceKvp('radioSettings', json.encode(Radio.userData))
 end)

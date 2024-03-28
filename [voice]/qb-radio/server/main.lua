@@ -1,20 +1,20 @@
 local channels = {}
 
-RegisterNetEvent('mm_radio:server:addToRadioChannel', function(channel, username)
+RegisterNetEvent('qb-radio:server:addToRadioChannel', function(channel, username)
     local src = source
     if not channels[channel] then
         channels[channel] = {}
     end
     channels[channel][tostring(src)] = {name = username, isTalking = false}
-    TriggerClientEvent('mm_radio:client:radioListUpdate', -1, channels[channel], channel)
+    TriggerClientEvent('qb-radio:client:radioListUpdate', -1, channels[channel], channel)
 end)
 
-RegisterNetEvent('mm_radio:server:removeFromRadioChannel', function(channel)
+RegisterNetEvent('qb-radio:server:removeFromRadioChannel', function(channel)
     local src = source
 
     if not channels[channel] then return end
     channels[channel][tostring(src)] = nil
-    TriggerClientEvent('mm_radio:client:radioListUpdate', -1, channels[channel], channel)
+    TriggerClientEvent('qb-radio:client:radioListUpdate', -1, channels[channel], channel)
 end)
 
 AddEventHandler("playerDropped", function()
@@ -23,7 +23,7 @@ AddEventHandler("playerDropped", function()
     for id, channel in pairs (channels) do
         if channel[tostring(plyid)] then
             channels[id][tostring(plyid)] = nil
-            TriggerClientEvent('mm_radio:client:radioListUpdate', -1, channels[id], channel)
+            TriggerClientEvent('qb-radio:client:radioListUpdate', -1, channels[id], channel)
             break
         end
     end
@@ -35,7 +35,7 @@ if Shared.UseCommand or not Shared.Inventory then
         help = 'Open Radio Menu',
         params = {},
     }, function(source)
-        TriggerClientEvent('mm_radio:client:use', source)
+        TriggerClientEvent('qb-radio:client:use', source)
     end)
 end
 
@@ -43,11 +43,11 @@ lib.addCommand('remradiodata', {
     help = 'Remove Radio Data',
     params = {},
 }, function(source)
-    TriggerClientEvent('mm_radio:client:removedata', source)
+    TriggerClientEvent('qb-radio:client:removedata', source)
 end)
 
-lib.versionCheck('SOH69/mm_radio')
+lib.versionCheck('SOH69/qb-radio')
 
 if not Shared.Ready then
-	return error('^1UI has not been built, refer to the readme or download a release build.\n	^3https://github.com/SOH69/mm_radio/releases/', 0)
+	return error('^1UI has not been built, refer to the readme or download a release build.\n	^3https://github.com/SOH69/qb-radio/releases/', 0)
 end

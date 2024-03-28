@@ -50,7 +50,7 @@ if not Radio.userData.name then
 	}
 end
 
-RegisterNetEvent('mm_radio:client:removedata', function()
+RegisterNetEvent('qb-radio:client:removedata', function()
 	DeleteResourceKvp('radioSettings')
 	Radio.userData = {
 		favourite = {},
@@ -73,5 +73,5 @@ RegisterNetEvent('mm_radio:client:removedata', function()
 end)
 
 if not Shared.Ready then
-	return error('UI has not been built, refer to the readme or download a release build.\n	^3https://github.com/SOH69/mm_radio/releases/', 0)
+	return error('UI has not been built, refer to the readme or download a release build.\n	^3https://github.com/SOH69/qb-radio/releases/', 0)
 end
