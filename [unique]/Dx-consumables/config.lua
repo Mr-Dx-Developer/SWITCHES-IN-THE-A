@@ -48,6 +48,7 @@ Config = {
 		["gumbo"] = { 		emote = "coke",		time = math.random(5000, 6000), stress = math.random(12, 24), heal = 0, armor = 0, type = "drug", stats = { screen = "focus", effect = "stamina", widepupils = false, canOD = true } },
 		["101_cups"] = { 		emote = "coke",		time = math.random(5000, 6000), stress = math.random(12, 24), heal = 0, armor = 0, type = "drug", stats = { screen = "focus", effect = "armor", widepupils = false, canOD = true } },
 		["gumbo_snowball"] = { 		emote = "coke",		time = math.random(5000, 6000), stress = math.random(12, 24), heal = 0, armor = 0, type = "drug", stats = { screen = "focus", effect = "armor", widepupils = false, canOD = true } },
+		["undertaker"] = { 		emote = "coke",		time = math.random(5000, 6000), stress = math.random(12, 24), heal = 0, armor = 0, type = "drug", stats = { screen = "focus", effect = "armor", widepupils = false, canOD = true } },
 		
 		["joint"] = { 			emote = "smoke3",	time = math.random(5000, 6000), stress = math.random(5, 8), heal = 0, armor = 0, type = "drug", stats = { screen = "weed", effect = "armor", widepupils = false, canOD = false } },
 		--Testing effects & armor with small functionality to drugs - This may be another one left to default scripts
