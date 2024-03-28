@@ -83,14 +83,20 @@ Config.Drugs = {
         RequiredAmount = 1,
         DenyChance = 0
     },
-    [10] = {
+    [11] = {
         Label = 'Gumbo SnowBall',
         Item = 'gumbo_snowball',
         Price = 1200, 
         RequiredAmount = 1,
         DenyChance = 0
     },
-    
+    [12] = {
+        Label = 'Undertaker',
+        Item = 'undertaker',
+        Price = 2500, 
+        RequiredAmount = 1,
+        DenyChance = 0
+    },
     
 }
 
