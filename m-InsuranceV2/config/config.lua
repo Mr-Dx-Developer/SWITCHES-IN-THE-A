@@ -16,10 +16,10 @@ Config.TargetDistances = 3.0 -- Distance of targets
 -- Insurance & Registration Settings
 Config.InsuranceSettings = {
     Blip = { 
-        [1] = { enable = true, coords = vector3(834.99, -813.01, 26.33), sprite = 89, colour = 5, scale = 0.8, name = "Insurance" },
+        [1] = { enable = true, coords = vector3(823.3450317382812, -822.6461181640625, 26.2637939453125), sprite = 89, colour = 5, scale = 0.8, name = "Insurance" },
     },
     Peds = {
-        [1] = { coords = vector3(834.99, -813.01, 26.33), pedModel = "s_m_m_fiboffice_01", heading = 90.62},
+        [1] = { coords = vector3(823.3450317382812, -822.6461181640625, 26.2637939453125), pedModel = "s_m_m_fiboffice_01", heading = 93.54330444335938},
     }
 }
 
@@ -133,7 +133,7 @@ Config.QuasarGaragesRepairs = false -- You use qs-advancedgarages?
 Config.Repairs = {
     [1] = {
         blipRepair = { enable = true, sprite = 402, colour = 5, scale = 0.8, name = "Car Repair" },
-        pedCoords = vector3(-209.95, -1331.48, 30.89),
+        pedCoords = vector3(-22.325271606445312, -1015.120849609375, 28.9091796875),
         pedHeading = 111.22,
         pedModel = "s_m_m_autoshop_02",
         repairType = "all", -- "engine", "body", "all"
