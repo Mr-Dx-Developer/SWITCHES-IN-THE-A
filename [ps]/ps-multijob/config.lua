@@ -22,6 +22,7 @@ Config.WhitelistJobs = {
 	["ricocustom"] = true,
 	["bigvroycustoms"] = true,
 	["designer"] = true,
+	["trucker"] = true,
 }
 
 Config.Descriptions = {
