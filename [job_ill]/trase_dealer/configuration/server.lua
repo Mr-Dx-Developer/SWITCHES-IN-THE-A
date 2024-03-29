@@ -97,6 +97,13 @@ Config.Drugs = {
         RequiredAmount = 1,
         DenyChance = 0
     },
+    [13] = {
+        Label = 'WhyPhy',
+        Item = 'whyphy',
+        Price = 2500, 
+        RequiredAmount = 1,
+        DenyChance = 0
+    },
     
 }
 
