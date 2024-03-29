@@ -23,7 +23,7 @@ Config.IplData = {
 		},
 		exitCoords = vec3(-787.44, 315.81, 217.64),
 		iplCoords = vec3(-787.78050000, 334.92320000, 215.83840000),
-		inventory = { weight = 5000, slots = 20 },
+		inventory = { weight = 5000000, slots = 35 },
 	},
 	{
 		-- Office
@@ -44,7 +44,7 @@ Config.IplData = {
 		},
 		exitCoords = vec3(-1579.756, -565.0661, 108.523),
 		iplCoords = vec3(-1576.127441, -575.050537, 108.507690),
-		inventory = { weight = 500000, slots = 15 },
+		inventory = { weight = 5000000, slots = 35 },
 	},
 	{
 		-- Night Club
