@@ -22,7 +22,7 @@ Config.EnableMoneyWash			= false
 Config.QuantityMaximumInVehicle	= 5 
 Config.MissCraft                = 10 -- %
 Config.requiredCops             = 0
-Config.cityPoint                = false
+Config.cityPoint                = true
 Config.account                  = 'money'
 
 Config.Blips = {
