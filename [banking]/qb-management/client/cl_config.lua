@@ -31,6 +31,9 @@ Config.BossMenus = {
     ['vroyluxury'] = {
         vector3(961.86, -950.19, 50.34), --place this in qb-management/client/cl_config.lua
     },
+    ['mcdonalds'] = {
+        vector3(-222.51, -1318.98, 31.45),
+    },
     
     
 }
@@ -61,6 +64,9 @@ Config.BossMenuZones = {
     },
     ['vroyluxury'] = {
         {coords = vector3(961.86, -950.19, 50.34), length = 1.15, width = 2.6, heading = 0.0, minZ = 49.34, maxZ = 53.34}, --place this in qb-management/client/cl_config.lua [Config.BossMenuZones]
+    },
+    ['mcdonalds'] = {
+        { coords = vector3(-222.51, -1318.98, 31.45), length = 1.15, width = 2.6, heading = 0.0, minZ = 30.45, maxZ = 34.45 },
     },
 }
 
