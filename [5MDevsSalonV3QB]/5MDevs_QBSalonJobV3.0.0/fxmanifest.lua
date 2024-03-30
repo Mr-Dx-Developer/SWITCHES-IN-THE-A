@@ -3,7 +3,7 @@ games { 'gta5' }
 name "5MDevs_QBSalonJobV3.0.0"
 author '5M Devs - https://www.5mdevs.store/shop'
 description 'Salon Job V3 QB by 5M Devs'
-version '3.0.1'
+version '3.0.2'
 
 lua54 'yes'
 

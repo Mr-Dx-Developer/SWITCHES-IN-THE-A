@@ -13,7 +13,7 @@ Keys = {
 Config = {}
 Config.Locale = 'en'
 
-Config.DrawDistance = 10.0
+Config.DrawDistance = 1.5
 Config.ZoneSize     = {x = 1.0, y = 1.0, z = 1.0}
 Config.MarkerColor  = {r = 27, g = 0, b = 20}
 Config.MarkerType   = 27
@@ -22,12 +22,12 @@ Config.EnableMoneyWash			= false
 Config.QuantityMaximumInVehicle	= 5 
 Config.MissCraft                = 10 -- %
 Config.requiredCops             = 0
-Config.cityPoint                = true
+Config.cityPoint                = false
 Config.account                  = 'money'
 
 Config.Blips = {
 	Blip = {
-		Pos		= { x = -1248.7252197265625, y = -795.2439575195312, z = 18.6307373046875 },
+		Pos		= { x = -1248.7252197265625, y = -795.2439575195312, z = 18.6307373046875 }, 
 		Sprite	= 496,
 		Display	= 4,
 		Scale	= 1.0,
@@ -35,28 +35,43 @@ Config.Blips = {
 	}
 }
 
-Boxes = vector3(-1246.839599609375,-799.081298828125,18.6307373046875)
+--[[ Config.Boxes = vector3(72.9450, -1388.6199, 28.3609)
 
-Dyes = vector3(-1248.3033447265625,-788.6505737304688,18.6307373046875)
+Dyes = vector3(80.3256, -1394.4280, 28.3760)
 
-Dyes2 = vector3(-1246.945068359375,-790.3912353515625,18.6307373046875)
+Dyes2 = vector3(77.8296, -1394.4635, 28.3763)
 
-Dyes3 = vector3(-1245.6131591796875,-792.1318359375,18.6307373046875)
+Dyes3 = vector3(75.3497, -1394.4343, 28.3769)
 
-Sink = vector3(-1252.3385009765625,-796.4571533203125,18.6307373046875)
+Sink = vector3(73.5015, -1394.4302, 28.3774)
 
-Sink2 = vector3(-1253.96044921875,-794.3735961914062,18.6307373046875)
+Sink2 = vector3(71.2514, -1394.6250, 28.3774)
 
-Sink3 = vector3(-1255.3978271484375,-792.5406494140625,18.6307373046875)
+Sink3 = vector3(68.8604, -1394.3086, 28.3777)
 
-Boxing = vector3(-1251.9296875,-784.8659057617188,18.6307373046875)
+Boxing = vector3(71.1809, -1388.4233, 28.3510)
 
-BossActions = vector3(-1244.927490234375,-788.0966796875,18.6307373046875)
+BossActions = vector3(-616.5818, -1157.3553, 21.4037)
+ ]]
+ Boxes = vector3(-1246.839599609375,-799.081298828125,18.6307373046875)
+
+ Dyes = vector3(-1248.3033447265625,-788.6505737304688,18.6307373046875)
+ 
+ Dyes2 = vector3(-1246.945068359375,-790.3912353515625,18.6307373046875)
+ 
+ Dyes3 = vector3(-1245.6131591796875,-792.1318359375,18.6307373046875)
+ 
+ Sink = vector3(-1252.3385009765625,-796.4571533203125,18.6307373046875)
+ 
+ Sink2 = vector3(-1253.96044921875,-794.3735961914062,18.6307373046875)
+ 
+ Sink3 = vector3(-1255.3978271484375,-792.5406494140625,18.6307373046875)
+ 
+ Boxing = vector3(-1251.9296875,-784.8659057617188,18.6307373046875)
+ 
+ BossActions = vector3(-1244.927490234375,-788.0966796875,18.6307373046875) 
 
 
-
-
-Config.EnterExitKey = Keys['E']
 
 BoxSalonMarkerText = 'Press ~INPUT_CONTEXT~ to grab boxes.'
 DyeSalonMarkerText = 'Press ~INPUT_CONTEXT~ to grab basic color dyes.'
