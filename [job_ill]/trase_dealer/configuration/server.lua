@@ -41,21 +41,21 @@ Config.Drugs = {
     [5] = {
         Label = '101 Brick',
         Item = '101_brick',
-        Price = 4000, 
+        Price = 6000, 
         RequiredAmount = 1,
         DenyChance = 0
     },
     [6] = {
         Label = 'Famgoon Dogfood',
         Item = 'famgoon_dogfood',
-        Price = 5500, 
+        Price = 10000, 
         RequiredAmount = 1,
         DenyChance = 0
     },
     [7] = {
         Label = 'ACE30',
         Item = 'ace30',
-        Price = 3500, 
+        Price = 4500, 
         RequiredAmount = 1,
         DenyChance = 0
     },
@@ -79,7 +79,7 @@ Config.Drugs = {
     [10] = {
         Label = '101 Cups',
         Item = '101_cups',
-        Price = 3000, 
+        Price = 4300, 
         RequiredAmount = 1,
         DenyChance = 0
     },
@@ -100,7 +100,14 @@ Config.Drugs = {
     [13] = {
         Label = 'WhyPhy',
         Item = 'whyphy',
-        Price = 2500, 
+        Price = 7000, 
+        RequiredAmount = 1,
+        DenyChance = 0
+    },
+    [14] = {
+        Label = 'Muddy',
+        Item = 'muddy',
+        Price = 2750, 
         RequiredAmount = 1,
         DenyChance = 0
     },
