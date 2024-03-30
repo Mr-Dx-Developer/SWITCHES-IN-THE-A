@@ -424,6 +424,19 @@ QBShared.Jobs = {
 			['4'] = { name = 'Manager', isboss = true, payment = 1500 },
 		},
 	},
+	slatlanta = {
+		label = 'slatlanta Customs',
+		type = 'slatlanta',
+		defaultDuty = true,
+		offDutyPay = false,
+		grades = {
+			['0'] = { name = 'Recruit', payment = 250 },
+			['1'] = { name = 'Novice', payment = 375 },
+			['2'] = { name = 'Experienced', payment = 800 },
+			['3'] = { name = 'Advanced', payment = 925 },
+			['4'] = { name = 'Manager', isboss = true, payment = 1500 },
+		},
+	},
 	vroyluxury = {
 		label = 'Vroy Luxury',
 		type = 'vroyluxury',

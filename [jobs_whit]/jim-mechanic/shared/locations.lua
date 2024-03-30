@@ -254,10 +254,10 @@ Config.Locations[#Config.Locations+1] = {
 		color = 2571775,
 	}
 }
---[[ 
+
 Config.Locations[#Config.Locations+1] = { 
 	Enabled = true,
-	job = "bigvroycustoms",
+	job = "slatlanta",
 	zones = {
 		vec2(-242.57, -1157.14),
 		vec2(-195.25, -1154.97),
@@ -304,7 +304,7 @@ Config.Locations[#Config.Locations+1] = {
 	},
 	blip = {
 		coords = vec3(-193.76, -1167.78, 23.05),
-		label = "Big Vroy Customs",
+		label = "Slatlanta Auto",
 		color = 81,
 		sprite = 446,
 		disp = 6,
@@ -317,7 +317,7 @@ Config.Locations[#Config.Locations+1] = {
 	}
 }
 
- ]]
+
 
 Config.Locations[#Config.Locations+1] = { 
 	Enabled = true,
