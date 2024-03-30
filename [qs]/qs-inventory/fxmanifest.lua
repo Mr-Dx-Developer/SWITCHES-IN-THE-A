@@ -4,7 +4,7 @@ game 'gta5'
 
 lua54 'yes'
 
-version '2.6.1'
+version '2.6.2'
 
 data_file 'WEAPONINFO_FILE_PATCH' 'weaponsnspistol.meta'
 
@@ -64,7 +64,6 @@ escrow_ignore {
 dependencies {
     '/server:4752', -- ⚠️PLEASE READ⚠️ This requires at least server build 4700 or higher
     'ox_lib',       -- Required
-    'progressbar'   -- Required
 }
 
 dependency '/assetpacks'

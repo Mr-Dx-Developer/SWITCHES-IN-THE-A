@@ -11,7 +11,21 @@ end)
 local spamCount = 0
 local lastSpamId = nil
 
+local inventory_opening_anim = {
+    -- dict = 'mp_player_inteat@burger',
+    -- clip = 'mp_player_int_eat_burger_fp'
+}
+
+local inventory_opening_disable = {
+    disableMovement = true,
+    disableCarMovement = true,
+    disableMouse = true,
+    disableCombat = true
+}
+
+local openingInv = false
 RegisterCommand('inventory', function()
+    if Config.OpeingProgressBar and openingInv then return end
     if IsNuiFocused() then return Debug('NUI Focused') end
     if spamCount > 2 then
         SendTextMessage(Lang('INVENTORY_NOTIFICATION_SPAM'), 'error')
@@ -28,6 +42,16 @@ RegisterCommand('inventory', function()
     if LocalPlayer.state.inv_busy or not IsPlayerDead() then
         Warning("You can't use this action because inv_busy is active (avoids dupes)")
         return SendTextMessage(Lang('INVENTORY_NOTIFICATION_NOT_ACCESSIBLE'), 'error')
+    end
+
+    if Config.OpeingProgressBar then
+        openingInv = true
+        local success = ProgressBarSync('inventory', 'Inventory opening', 1500, true, true, inventory_opening_disable, inventory_opening_anim)
+        openingInv = false
+        if not success then
+            print('failed')
+            return
+        end
     end
 
     if inInventory and not IsNuiFocused() then

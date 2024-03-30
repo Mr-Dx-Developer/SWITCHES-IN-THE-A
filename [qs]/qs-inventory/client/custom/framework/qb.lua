@@ -75,13 +75,25 @@ end
 
 function SendTextMessage(msg, type)
     if type == 'inform' then
-        QBCore.Functions.Notify(msg, 'primary', 5000)
+        lib.notify({
+            title = 'Inventory',
+            description = msg,
+            type = 'inform'
+        })
     end
     if type == 'error' then
-        QBCore.Functions.Notify(msg, 'error', 5000)
+        lib.notify({
+            title = 'Inventory',
+            description = msg,
+            type = 'error'
+        })
     end
     if type == 'success' then
-        QBCore.Functions.Notify(msg, 'success', 5000)
+        lib.notify({
+            title = 'Inventory',
+            description = msg,
+            type = 'success'
+        })
     end
 end
 
@@ -101,51 +113,38 @@ function DrawText3Ds(x, y, z, text)
 end
 
 function ProgressBar(name, label, duration, useWhileDead, canCancel, disableControls, animation, prop, propTwo, onFinish, onCancel)
-    if GetResourceState('progressbar') ~= 'started' then error('progressbar needs to be started in order for Progressbar to work') end
-    exports['progressbar']:Progress({
-        name = name:lower(),
-        duration = duration,
-        label = label,
-        useWhileDead = useWhileDead,
-        canCancel = canCancel,
-        controlDisables = disableControls,
-        animation = animation,
-        prop = prop,
-        propTwo = propTwo,
-    }, function(cancelled)
-        if not cancelled then
-            if onFinish then
-                onFinish()
-            end
-        else
-            if onCancel then
-                onCancel()
-            end
-        end
-    end)
+    if lib.progressCircle({
+            duration = duration,
+            label = label,
+            position = 'bottom',
+            useWhileDead = useWhileDead,
+            canCancel = canCancel,
+            disable = {
+                car = disableControls,
+            },
+            anim = {
+                dict = animation.animDict,
+                clip = animation.anim,
+                flag = animation?.flag
+            },
+            prop = prop
+        }) then
+        onFinish()
+    else
+        onCancel()
+    end
 end
 
-function ProgressBarSync(name, label, duration, useWhileDead, canCancel, disableControls, animation, prop, propTwo)
-    if GetResourceState('progressbar') ~= 'started' then error('progressbar needs to be started in order for Progressbar to work') end
-    local promise = promise.new()
-    exports['progressbar']:Progress({
-        name = name:lower(),
+function ProgressBarSync(name, label, duration, useWhileDead, canCancel, disableControls, animation, prop)
+    return lib.progressBar({
         duration = duration,
         label = label,
         useWhileDead = useWhileDead,
         canCancel = canCancel,
-        controlDisables = disableControls,
-        animation = animation,
-        prop = prop,
-        propTwo = propTwo,
-    }, function(cancelled)
-        if not cancelled then
-            promise:resolve(true)
-        else
-            promise:resolve(true)
-        end
-    end)
-    return Citizen.Await(promise)
+        disable = disableControls,
+        anim = animation,
+        prop = prop
+    })
 end
 
 function ToggleHud(bool)

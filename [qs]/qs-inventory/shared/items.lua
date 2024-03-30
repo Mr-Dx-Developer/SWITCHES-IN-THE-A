@@ -32,13 +32,13 @@
             },
             usetime = 2500, -- Progressbar timer
             anim = {
-                animDict = 'mp_player_intdrink', -- Animations
-                anim = 'loop_bottle' -- Animations
+                dict =  'mp_player_intdrink', -- Animations
+                clip =  'loop_bottle' -- Animations
             },
             prop = {
                 model = 'p_wine_glass_s', -- Animation prop
-                coords = vec3(0.02, 0.02, -0.08), -- Prop coords
-                rotation = vec3(0.0, 0.0, 0.0) -- Prop Rotation
+                pos =  vec3(0.02, 0.02, -0.08), -- Prop coords
+                rot =  vec3(0.0, 0.0, 0.0) -- Prop Rotation
             },
             disable = {
                 disableMovement = true, -- Disable events
@@ -3049,13 +3049,13 @@ ItemList = {
             },
             usetime = 2500,
             anim = {
-                animDict = 'mp_player_inteat@burger',
-                anim = 'mp_player_int_eat_burger_fp'
+                dict = 'mp_player_inteat@burger',
+                clip = 'mp_player_int_eat_burger_fp'
             },
             prop = {
                 model = 'prop_cs_burger_01',
-                coords = vec3(0.02, 0.02, -0.02),
-                rotation = vec3(0.0, 0.0, 0.0)
+                pos = vec3(0.02, 0.02, -0.02),
+                rot = vec3(0.0, 0.0, 0.0)
             },
             disable = {
                 disableMovement = true,
@@ -3086,13 +3086,13 @@ ItemList = {
             },
             usetime = 2500,
             anim = {
-                animDict = 'mp_player_inteat@burger',
-                anim = 'mp_player_int_eat_burger_fp'
+                dict = 'mp_player_inteat@burger',
+                clip = 'mp_player_int_eat_burger_fp'
             },
             prop = {
                 model = 'ng_proc_candy01a',
-                coords = vec3(0.02, 0.02, -0.02),
-                rotation = vec3(0.0, 0.0, 0.0)
+                pos = vec3(0.02, 0.02, -0.02),
+                rot = vec3(0.0, 0.0, 0.0)
             },
             disable = {
                 disableMovement = true,
@@ -3123,13 +3123,13 @@ ItemList = {
             },
             usetime = 2500,
             anim = {
-                animDict = 'mp_player_inteat@burger',
-                anim = 'mp_player_int_eat_burger_fp'
+                dict = 'mp_player_inteat@burger',
+                clip = 'mp_player_int_eat_burger_fp'
             },
             prop = {
                 model = 'prop_candy_pqs',
-                coords = vec3(0.02, 0.02, -0.02),
-                rotation = vec3(0.0, 0.0, 0.0)
+                pos = vec3(0.02, 0.02, -0.02),
+                rot = vec3(0.0, 0.0, 0.0)
             },
             disable = {
                 disableMovement = true,
@@ -3160,13 +3160,13 @@ ItemList = {
             },
             usetime = 2500,
             anim = {
-                animDict = 'mp_player_inteat@burger',
-                anim = 'mp_player_int_eat_burger_fp'
+                dict = 'mp_player_inteat@burger',
+                clip = 'mp_player_int_eat_burger_fp'
             },
             prop = {
                 model = 'prop_sandwich_01',
-                coords = vec3(0.02, 0.02, -0.02),
-                rotation = vec3(0.0, 0.0, 0.0)
+                pos = vec3(0.02, 0.02, -0.02),
+                rot = vec3(0.0, 0.0, 0.0)
             },
             disable = {
                 disableMovement = true,
@@ -3199,13 +3199,13 @@ ItemList = {
             },
             usetime = 2500,
             anim = {
-                animDict = 'mp_player_intdrink',
-                anim = 'loop_bottle'
+                dict = 'mp_player_intdrink',
+                clip = 'loop_bottle'
             },
             prop = {
                 model = 'prop_ld_flow_bottle',
-                coords = vec3(0.02, 0.02, -0.02),
-                rotation = vec3(0.0, 0.0, 0.0)
+                pos = vec3(0.02, 0.02, -0.02),
+                rot = vec3(0.0, 0.0, 0.0)
             },
             disable = {
                 disableMovement = true,
@@ -3236,13 +3236,13 @@ ItemList = {
             },
             usetime = 2500,
             anim = {
-                animDict = 'mp_player_intdrink',
-                anim = 'loop_bottle'
+                dict = 'mp_player_intdrink',
+                clip = 'loop_bottle'
             },
             prop = {
                 model = 'ng_proc_coffee_01a',
-                coords = vec3(0.02, 0.02, -0.02),
-                rotation = vec3(0.0, 0.0, 0.0)
+                pos = vec3(0.02, 0.02, -0.02),
+                rot = vec3(0.0, 0.0, 0.0)
             },
             disable = {
                 disableMovement = true,
@@ -3273,13 +3273,13 @@ ItemList = {
             },
             usetime = 2500,
             anim = {
-                animDict = 'mp_player_intdrink',
-                anim = 'loop_bottle'
+                dict = 'mp_player_intdrink',
+                clip = 'loop_bottle'
             },
             prop = {
                 model = 'prop_ecola_can',
-                coords = vec3(0.02, 0.02, -0.02),
-                rotation = vec3(0.0, 0.0, 0.0)
+                pos = vec3(0.02, 0.02, -0.02),
+                rot = vec3(0.0, 0.0, 0.0)
             },
             disable = {
                 disableMovement = true,
@@ -3312,13 +3312,13 @@ ItemList = {
             },
             usetime = 2500,
             anim = {
-                animDict = 'mp_player_intdrink',
-                anim = 'loop_bottle'
+                dict = 'mp_player_intdrink',
+                clip = 'loop_bottle'
             },
             prop = {
                 model = 'prop_amb_beer_bottle',
-                coords = vec3(0.02, 0.02, -0.02),
-                rotation = vec3(0.0, 0.0, 0.0)
+                pos = vec3(0.02, 0.02, -0.02),
+                rot = vec3(0.0, 0.0, 0.0)
             },
             disable = {
                 disableMovement = true,
@@ -3349,13 +3349,13 @@ ItemList = {
             },
             usetime = 2500,
             anim = {
-                animDict = 'mp_player_intdrink',
-                anim = 'loop_bottle'
+                dict = 'mp_player_intdrink',
+                clip = 'loop_bottle'
             },
             prop = {
                 model = 'p_whiskey_bottle_s',
-                coords = vec3(0.02, 0.02, -0.02),
-                rotation = vec3(0.0, 0.0, 0.0)
+                pos = vec3(0.02, 0.02, -0.02),
+                rot = vec3(0.0, 0.0, 0.0)
             },
             disable = {
                 disableMovement = true,
@@ -3386,13 +3386,13 @@ ItemList = {
             },
             usetime = 2500,
             anim = {
-                animDict = 'mp_player_intdrink',
-                anim = 'loop_bottle'
+                dict = 'mp_player_intdrink',
+                clip = 'loop_bottle'
             },
             prop = {
                 model = 'prop_vodka_bottle',
-                coords = vec3(0.02, 0.02, -0.25),
-                rotation = vec3(0.0, 0.0, 0.0)
+                pos = vec3(0.02, 0.02, -0.25),
+                rot = vec3(0.0, 0.0, 0.0)
             },
             disable = {
                 disableMovement = true,
@@ -3423,13 +3423,13 @@ ItemList = {
             },
             usetime = 2500,
             anim = {
-                animDict = 'mp_player_intdrink',
-                anim = 'loop_bottle'
+                dict = 'mp_player_intdrink',
+                clip = 'loop_bottle'
             },
             prop = {
                 model = 'p_wine_glass_s',
-                coords = vec3(0.02, 0.02, -0.08),
-                rotation = vec3(0.0, 0.0, 0.0)
+                pos = vec3(0.02, 0.02, -0.08),
+                rot = vec3(0.0, 0.0, 0.0)
             },
             disable = {
                 disableMovement = true,
@@ -3946,7 +3946,7 @@ ItemList = {
                 'gatecrack'
             },
             reward = 'trojan_usb',
-            anim = nil
+            clip = nil
         },
         ['description'] = 'If you\'ve always wanted to build a robot you can maybe start here. Maybe you\'ll be the new Elon Musk?'
     },

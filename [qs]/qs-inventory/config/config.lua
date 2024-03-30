@@ -22,18 +22,19 @@ Config.Language = 'en'
         'none' It means that it is deactivated
 ]]
 
-Config.UseTarget = 'qb-target'               -- Choose between 'qb-target', 'ox_target' or 'none' disabled!
+Config.UseTarget = 'qb-target'                -- Choose between 'qb-target', 'ox_target' or 'none' disabled!
 
-Config.BlockedSwap = false              -- If set to true, you will not be able to swap between items
-Config.BlockedSlot = false              -- This is the sixth slot, the one that does not allow them to steal from that space
-Config.GiveItemHideName = false         -- If you enable this, then the player will not be able to see names in giveitem, only id
+Config.BlockedSwap = false               -- If set to true, you will not be able to swap between items
+Config.BlockedSlot = false               -- This is the sixth slot, the one that does not allow them to steal from that space
+Config.GiveItemHideName = false          -- If you enable this, then the player will not be able to see names in giveitem, only id
+Config.OpeingProgressBar = false          -- Please leave this set to true to avoid dupes
 
-Config.Handsup = false                   -- Enable or disable Handsup and Robbery button
-Config.StealDeadPlayer = true           -- Steal from dead players?
-Config.StealWithoutWeapons = false      -- Possibility to draw only if the target player raises his arms (without weapons)
+Config.Handsup = false                    -- Enable or disable Handsup and Robbery button
+Config.StealDeadPlayer = true            -- Steal from dead players?
+Config.StealWithoutWeapons = false       -- Possibility to draw only if the target player raises his arms (without weapons)
 Config.DropItemWhenInventoryFull = true -- Drop the item when the inventory is fully
 
-Config.InventoryWeight = {              -- Configuration of maximum weight and maximum slots of the player
+Config.InventoryWeight = {               -- Configuration of maximum weight and maximum slots of the player
     ['weight'] = 1200000,
     --- CAUTION: If you change this value after the anyone has items. It will cause dupe problems. So don't forget to wipe all the inventories.
     ['slots'] = 61, -- If you want to remove the 6 slot, use 40 here!
@@ -113,9 +114,10 @@ Config.Genders = { -- You can ignore this
     touch that configuration a lot.
 ]]
 
-Config.OpenInventoryAnim = false -- Inventory animation enabled or disabled
-Config.Logo = false              -- or 'https://i.imgur.com/xfcHKW6.png'
-Config.IdleCamera = true         -- Disable or enable idle camera!
+Config.OpenInventoryAnim = true   -- Enable or disable ped animation
+Config.OpenInventoryScene = false -- Inventory animation enabled or disabled
+Config.Logo = false               -- or 'https://i.imgur.com/xfcHKW6.png'
+Config.IdleCamera = true          -- Disable or enable idle camera!
 
 Config.InventoryOptions = {
     -- Generic menu

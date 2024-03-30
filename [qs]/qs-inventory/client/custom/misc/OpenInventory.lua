@@ -59,7 +59,7 @@ RegisterNetEvent(Config.InventoryPrefix .. ':client:OpenInventory', function(Pla
             Ammo = PlayerAmmo,
             playerName = firstName .. ' ' .. lastName,
             logo = Config.Logo,
-            openAnimation = Config.OpenInventoryAnim,
+            openAnimation = Config.OpenInventoryScene,
             optionClothes = Config.InventoryOptions.clothes,
             optionConfiguration = Config.InventoryOptions.configuration,
             optionHealth = Config.InventoryOptions.health,
