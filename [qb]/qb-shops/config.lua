@@ -2177,6 +2177,14 @@ Config.Products = {
             type = "item",
             slot = 142,
         },
+        [143] = {
+            name = "medikit",
+            price = 500, 
+            amount = 10,
+            info = {},
+            type = "item",
+            slot = 143,
+        },
 
 
 
