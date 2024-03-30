@@ -50,11 +50,11 @@ Config.AIResponse = {
 -- To Set This Up visit https://forum.cfx.re/t/how-to-updated-discord-rich-presence-custom-image/157686
 Config.Discord = {
     isEnabled = true,                                     -- If set to true, then discord rich presence will be enabled
-    applicationId = '1210744457381806110',                   -- The discord application id
+    applicationId = '1221275994808127539',                   -- The discord application id
     iconLarge = 'logo',                               -- The name of the large icon
     iconLargeHoverText = '𝐎𝐃𝐌 𝐀𝐓𝐋 𝐑𝐏', -- The hover text of the large icon
-    iconSmall = 'verified',                         -- The name of the small icon
-    iconSmallHoverText = 'Buy Now', -- The hover text of the small icon
+    iconSmall = 'logo',                         -- The name of the small icon
+    iconSmallHoverText = 'Join Server', -- The hover text of the small icon
     updateRate = 60000,                                    -- How often the player count should be updated
     showPlayerCount = true,                                -- If set to true the player count will be displayed in the rich presence
     maxPlayers = 64,                                       -- Maximum amount of players
