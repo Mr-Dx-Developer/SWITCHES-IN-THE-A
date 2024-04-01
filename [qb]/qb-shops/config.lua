@@ -4223,6 +4223,14 @@ Config.Products = {
             type = "item",
             slot = 4,
         },
+        [5] = {
+            name = "armor",
+            price = 200000,
+            amount = 1,
+            info = {},
+            type = "item",
+            slot = 5,
+        },
         
        --[[  [4] = {
             name = "plastic_table_heroine",
@@ -4445,6 +4453,40 @@ Config.Products = {
             slot = 23,
         },
     },
+    ["blackmarket5"] = {
+        [1] = {
+            name = "pistol_ammo",
+            price = 2500,
+            amount = 1,
+            info = {},
+            type = "item",
+            slot = 1,
+        },
+        [2] = {
+            name = "rifle_ammo",
+            price = 3000,
+            amount = 1,
+            info = {},
+            type = "item",
+            slot = 2,
+        },
+        [3] = {
+            name = "smg_ammo",
+            price = 1500,
+            amount = 1,
+            info = {},
+            type = "item",
+            slot = 3,
+        },
+        [4] = {
+            name = "shotgun_ammo",
+            price = 1500,
+            amount = 1,
+            info = {},
+            type = "item",
+            slot = 4,
+        },
+    },
 }
     Config.Locations = {
     ["blackmarket1"] = {
@@ -4506,6 +4548,21 @@ Config.Products = {
         ["blipscale"] = 0.7,
         ["blipcolor"] = 7,
         ["delivery"] = vector4(-593.25, 216.73, 74.15, 86.3)
+    },
+    ["blackmarket5"] = {
+        ["label"] = "Gun Paints",
+        ["coords"] = vector4(-594.11, 219.45, 74.15, 9.34),
+        ["ped"] = 'a_m_y_beach_01',
+        ["scenario"] = "WORLD_HUMAN_STAND_MOBILE_CLUBHOUSE",
+        ["radius"] = 6.5,
+        ["targetIcon"] = "fas fa-leaf",
+        ["targetLabel"] = "Open Menu",
+        ["products"] = Config.Products["blackmarket5"],
+        ["showblip"] = false,
+        ["blipsprite"] = 52,
+        ["blipscale"] = 0.7,
+        ["blipcolor"] = 7,
+        ["delivery"] = vector4(-594.11, 219.45, 74.15, 9.34)
     },
 
 
