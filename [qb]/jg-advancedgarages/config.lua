@@ -37,10 +37,10 @@ Config.DisableServerVehicleSpawning = false -- Set to true to use CreateVehicle 
 
 -- Vehicle Transfers
 Config.GarageVehicleTransferCost = 2500 -- Cost to transfer between garages
-Config.TransferHidePlayerNames = false
+Config.TransferHidePlayerNames = true
 Config.EnableTransfers = {
   betweenGarages = true,
-  betweenPlayers = false
+  betweenPlayers = true
 }
 
 -- Prevent vehicle duplication
