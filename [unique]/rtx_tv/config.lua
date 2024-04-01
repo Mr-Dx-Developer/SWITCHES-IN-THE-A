@@ -85,6 +85,13 @@ Config.EnabledLinkTypes = { -- you can enable or disable the link type here
 
 Config.TelevisionObjects = {
 	{
+		object = "prop_huge_display_01", --object name
+		maxdistance = 15.0, --max distance for display screen
+		maxcontroldistance = 15.0, -- max distance for control tv (its cannot be higher than maxdistance)
+		rendertarget = true, -- enable render target
+		rendertargetname = "tvscreen", -- render target name
+	},
+	{
 		object = "prop_tv_flat_01", --object name
 		maxdistance = 15.0, --max distance for display screen
 		maxcontroldistance = 15.0, -- max distance for control tv (its cannot be higher than maxdistance)
