@@ -111,6 +111,13 @@ Config.Drugs = {
         RequiredAmount = 1,
         DenyChance = 0
     },
+    [15] = {
+        Label = '101 Snow White',
+        Item = '101_snowwhite',
+        Price = 2750, 
+        RequiredAmount = 1,
+        DenyChance = 0
+    },
     
 }
 
