@@ -93,7 +93,7 @@ Config.Drugs = {
     [12] = {
         Label = 'Undertaker',
         Item = 'undertaker',
-        Price = 2500, 
+        Price = 5200, 
         RequiredAmount = 1,
         DenyChance = 0
     },
