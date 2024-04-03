@@ -72,17 +72,21 @@ Config.CustomHud = function(bool)
 end
 
 Config.StarterItems = {
-    --[[ ['phone'] = {
+    ['phone'] = {
         amount = 1,
         item = 'phone'
-    }, ]]
+    }, 
     ['id_card'] = {
         amount = 1,
         item = 'id_card',
     },
-    ['driver_license'] = {
+    ['giftbox'] = {
         amount = 1,
-        item = 'driver_license',
+        item = 'giftbox',
+    },
+    ['bmx'] = {
+        amount = 1,
+        item = 'bmx',
     },
 }
 
