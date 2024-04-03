@@ -330,52 +330,52 @@ Config.IlegalWeaponsPoints = {
 Config.Level = {
     ['legal'] = {
         [1] = {
-            money = 100,        -- money that it will give you if you are at level 1
+            money = 1500,        -- money that it will give you if you are at level 1
             exp = 10,           -- exp that it will give you if you are at level 1
             exprequired = 1000  -- exp required to level up (legal and ilegal)
         },
         [2] = {
-            money = 200,
+            money = 2000,
             exp = 20, 
             exprequired = 2000
         },
         [3] = {
-            money = 300,
+            money = 3000,
             exp = 30, 
             exprequired = 3000
         },
         [4] = {
-            money = 400,
+            money = 4000,
             exp = 40, 
             exprequired = 4000
         },
         [5] = {
-            money = 500,
+            money = 5000,
             exp = 50, 
             exprequired = 5000
         },
         [6] = {
-            money = 600,
+            money = 6000,
             exp = 60, 
             exprequired = 6000
         },
         [7] = {
-            money = 700,
+            money = 7000,
             exp = 70, 
             exprequired = 7000
         },
         [8] = {
-            money = 800,
+            money = 8000,
             exp = 80, 
             exprequired = 8000
         },
         [9] = {
-            money = 900,
+            money = 9000,
             exp = 90, 
             exprequired = 9000
         },
         [10] = {
-            money = 1000,
+            money = 10000,
             exp = 100, 
             exprequired = 100000 -- do not touch
         }

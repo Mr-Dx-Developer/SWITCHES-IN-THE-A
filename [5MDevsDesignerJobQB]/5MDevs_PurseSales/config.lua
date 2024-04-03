@@ -38,7 +38,7 @@ Config.UseTimes = false -- Set to false if you want sales available 24/7
 Config.TimeOpen = 7 -- Opening Time military time
 Config.TimeClosed = 17 -- Closing Time
 
-Config.UseTarget = GetConvar('UseTarget', 'false') == 'false'
+Config.UseTarget = GetConvar('UseTarget', 'false') == 'true'
 
 Config.Purses = {
     [1] = {

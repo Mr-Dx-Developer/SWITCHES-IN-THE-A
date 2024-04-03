@@ -54,25 +54,15 @@ Config.Elevators = {
                 Coords = vector3(-877.24, -2177.65, 9.7),
                 ExitHeading = "315"
             },
-        }
-    },
-    ["lidt2"] = {
-        Name = "Without Sound & Restricted Floor",
-        Floors = {
-            [1] = {
-                Label = "Roof",
-                FloorDesc = "Roof",
+            [3] = {
+                Label = "Roof 2",
+                FloorDesc = "Roof 2",
                 Coords = vector3(-855.7450561523438, -2143.9384765625, 106.7047119140625),
                 ExitHeading = "124.72441101074219"
             },
-            [2] = {
-                Label = "Ground",
-                FloorDesc = "Ground",
-                Coords = vector3(-879.94287109375, -2175.402099609375, 9.801513671875),
-                ExitHeading = "306.1417236328125"
-            },
         }
     },
+    
 }
 
 Config.Language = {

@@ -3,7 +3,7 @@ games { 'gta5' }
 name "5mdevs_DesignerJobQB"
 author '5M Devs - https://www.5mdevs.store/shop'
 description 'Designer Job V1 by 5M Devs'
-version '1.0.3'
+version '1.0.4'
 
 lua54 'yes'
 
