@@ -53,7 +53,7 @@ Config = {
 		["gumbo_snowball"] = { 		emote = "coke",		time = math.random(5000, 6000), stress = math.random(12, 24), heal = 0, armor = 0, type = "drug", stats = { screen = "focus", effect = "armor", widepupils = false, canOD = true } },
 		["undertaker"] = { 		emote = "coke",		time = math.random(5000, 6000), stress = math.random(12, 24), heal = 0, armor = 0, type = "drug", stats = { screen = "focus", effect = "armor", widepupils = false, canOD = true } },
 		["101_snowwhite"] = { 		emote = "coke",		time = math.random(5000, 6000), stress = math.random(12, 24), heal = 0, armor = 0, type = "drug", stats = { screen = "focus", effect = "armor", widepupils = false, canOD = true } },
-
+		["macbook_pro_drug"] = { 		emote = "coke",		time = math.random(5000, 6000), stress = math.random(12, 24), heal = 0, armor = 0, type = "drug", stats = { screen = "focus", effect = "armor", widepupils = false, canOD = true } },
 
 
 		["joint"] = { 			emote = "smoke3",	time = math.random(5000, 6000), stress = math.random(5, 8), heal = 0, armor = 0, type = "drug", stats = { screen = "weed", effect = "armor", widepupils = false, canOD = false } },

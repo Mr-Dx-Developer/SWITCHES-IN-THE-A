@@ -100,7 +100,7 @@ Config.Drugs = {
     [13] = {
         Label = 'WhyPhy',
         Item = 'whyphy',
-        Price = 7000, 
+        Price = 6500, 
         RequiredAmount = 1,
         DenyChance = 0
     },
@@ -114,7 +114,14 @@ Config.Drugs = {
     [15] = {
         Label = '101 Snow White',
         Item = '101_snowwhite',
-        Price = 2750, 
+        Price = 4750, 
+        RequiredAmount = 1,
+        DenyChance = 0
+    },
+    [16] = {
+        Label = '24 MacBook Pro',
+        Item = 'macbook_pro_drug',
+        Price = 2575, 
         RequiredAmount = 1,
         DenyChance = 0
     },
