@@ -83,43 +83,43 @@ Config.Purses = {
     },
     [11] = {
         item = 'fmdbirpinkbox',
-        price = math.random(50,100)
+        price = math.random(500,1500)
     },
     [12] = {
         item = 'fmdlvcbbox',
-        price = math.random(50,100)
+        price = math.random(500,1500)
     },
     [13] = {
         item = 'fmdlvtotebox',
-        price = math.random(50,100)
+        price = math.random(500,1500)
     },
     [14] = {
         item = 'fmdlvwalletbox',
-        price = math.random(50,100)
+        price = math.random(500,1500)
     },
     [15] = {
         item = 'fmdlvjunglebox',
-        price = math.random(50,100)
+        price = math.random(500,1500)
     },
     [16] = {
         item = 'fmddiorapbox',
-        price = math.random(50,100)
+        price = math.random(500,1500)
     },
     [17] = {
         item = 'fmddiorbbox',
-        price = math.random(50,100)
+        price = math.random(500,1500)
     },
     [18] = {
         item = 'fmddiorplbox',
-        price = math.random(50,100)
+        price = math.random(500,1500)
     },
     [19] = {
         item = 'fmddiortotebox',
-        price = math.random(50,100)
+        price = math.random(500,1500)
     },
     [20] = {
         item = 'fmddiorptotebox',
-        price = math.random(50,100)
+        price = math.random(500,1500)
     },
 }
 
