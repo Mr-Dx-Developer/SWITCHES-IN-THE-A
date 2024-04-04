@@ -1,7 +1,7 @@
 Config = {}
 
 Config.SalesArea = {
-    [1] = {
+    --[[ [1] = {
             coords = vector3(-722.0934, -99.4364, 38.2439),
             length = 1.5,
             width = 1.8,
@@ -10,8 +10,8 @@ Config.SalesArea = {
             minZ = 35.97,
             maxZ = 40.42,
             distance = 3.0
-        },
-    [2] = {
+        }, ]]
+    [1] = {
             coords = vector3(-368.6359, -240.1280, 36.0801),
             length = 1.5,
             width = 1.8,
@@ -21,7 +21,7 @@ Config.SalesArea = {
             maxZ = 105.42,
             distance = 3.0
         },
-        [3] = {
+        [2] = {
             coords = vector3(83.1096, -1387.0647, 29.4193),
             length = 1.5,
             width = 1.8,
@@ -38,7 +38,7 @@ Config.UseTimes = false -- Set to false if you want sales available 24/7
 Config.TimeOpen = 7 -- Opening Time military time
 Config.TimeClosed = 17 -- Closing Time
 
-Config.UseTarget = GetConvar('UseTarget', 'false') == 'true'
+Config.UseTarget = GetConvar('UseTarget', 'false') == 'false'
 
 Config.Purses = {
     [1] = {
