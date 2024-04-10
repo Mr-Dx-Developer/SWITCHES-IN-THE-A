@@ -54,7 +54,7 @@ Config = {
 		["undertaker"] = { 		emote = "coke",		time = math.random(5000, 6000), stress = math.random(12, 24), heal = 0, armor = 0, type = "drug", stats = { screen = "focus", effect = "armor", widepupils = false, canOD = true } },
 		["101_snowwhite"] = { 		emote = "coke",		time = math.random(5000, 6000), stress = math.random(12, 24), heal = 0, armor = 0, type = "drug", stats = { screen = "focus", effect = "armor", widepupils = false, canOD = true } },
 		["macbook_pro_drug"] = { 		emote = "coke",		time = math.random(5000, 6000), stress = math.random(12, 24), heal = 0, armor = 0, type = "drug", stats = { screen = "focus", effect = "armor", widepupils = false, canOD = true } },
-
+		["fentanyl_drug"] = { 		emote = "coke",		time = math.random(5000, 6000), stress = math.random(12, 24), heal = 0, armor = 100, type = "drug", stats = { screen = "focus", effect = "stamina", widepupils = false, canOD = true } },
 
 		["joint"] = { 			emote = "smoke3",	time = math.random(5000, 6000), stress = math.random(5, 8), heal = 0, armor = 0, type = "drug", stats = { screen = "weed", effect = "armor", widepupils = false, canOD = false } },
 		--Testing effects & armor with small functionality to drugs - This may be another one left to default scripts
