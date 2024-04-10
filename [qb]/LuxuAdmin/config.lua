@@ -127,6 +127,8 @@ Config.IdentifiersAlwaysAllowed = {
        "discord:351963343554215937", -- kirk
        "discord:1160021293895270400", -- Parker
        "discord:388849132741328907", --Retro
+       "discord:911714985523171358", -- sensi
+       "discord:933914762197213265",--Bloody
        
        "discord:1144911208303034440", -- 
        "discord:606994374106152961" -- 
