@@ -3682,7 +3682,7 @@ Config.Products = {
 
     ["blackmarket2"] = {
         [1] = {
-            name = "assaultrifle_defaultclip",
+            name = "clip_attachment",
             price = 12500,
             amount = 1,
             info = {},
@@ -3690,7 +3690,7 @@ Config.Products = {
             slot = 1,
         },
         [2] = {
-            name = "assaultrifle_extendedclip",
+            name = "drum_attachment",
             price = 13000,
             amount = 1,
             info = {},
@@ -3698,7 +3698,7 @@ Config.Products = {
             slot = 2,
         },
         [3] = {
-            name = "assaultrifle_drum",
+            name = "flashlight_attachment",
             price = 15000,
             amount = 1,
             info = {},
@@ -3706,7 +3706,7 @@ Config.Products = {
             slot = 3,
         },
         [4] = {
-            name = "rifle_flashlight",
+            name = "suppressor_attachment",
             price = 1500,
             amount = 1,
             info = {},
@@ -3714,7 +3714,7 @@ Config.Products = {
             slot = 4,
         },
         [5] = {
-            name = "rifle_grip",
+            name = "smallscope_attachment",
             price = 1500,
             amount = 1,
             info = {},
@@ -3722,7 +3722,7 @@ Config.Products = {
             slot = 5,
         },
         [6] = {
-            name = "rifle_suppressor",
+            name = "medscope_attachment",
             price = 1500,
             amount = 1,
             info = {},
@@ -3730,7 +3730,7 @@ Config.Products = {
             slot = 6,
         },
         [7] = {
-            name = "carbinerifle_defaultclip",
+            name = "largescope_attachment",
             price = 1500,
             amount = 1,
             info = {},
@@ -3738,7 +3738,7 @@ Config.Products = {
             slot = 7,
         },
         [8] = {
-            name = "carbinerifle_extendedclip",
+            name = "largescope_attachment",
             price = 1500,
             amount = 1,
             info = {},
@@ -3746,7 +3746,7 @@ Config.Products = {
             slot = 8,
         },
         [9] = {
-            name = "carbinerifle_scope",
+            name = "holoscope_attachment",
             price = 1500,
             amount = 1,
             info = {},
@@ -3754,15 +3754,15 @@ Config.Products = {
             slot = 9,
         },
         [10] = {
-            name = "advancedrifle_defaultclip",
+            name = "advscope_attachment",
             price = 1500,
             amount = 1,
             info = {},
             type = "item",
             slot = 10,
-        },
-        [11] = {
-            name = "advancedrifle_extendedclip",
+        }
+        --[[ [11] = {
+            name = "nvscope_attachment",
             price = 1500,
             amount = 1,
             info = {},
@@ -3770,7 +3770,7 @@ Config.Products = {
             slot = 11,
         },
         [12] = {
-            name = "specialcarbine_defaultclip",
+            name = "flat_muzzle_brake",
             price = 1500,
             amount = 1,
             info = {},
@@ -3778,7 +3778,7 @@ Config.Products = {
             slot = 12,
         },
         [13] = {
-            name = "specialcarbine_extendedclip",
+            name = "tactical_muzzle_brake",
             price = 1500,
             amount = 1,
             info = {},
@@ -3786,7 +3786,7 @@ Config.Products = {
             slot = 13,
         },
         [14] = {
-            name = "specialcarbine_drum",
+            name = "fat_end_muzzle_brake",
             price = 1500,
             amount = 1,
             info = {},
@@ -3794,7 +3794,7 @@ Config.Products = {
             slot = 14,
         },
         [15] = {
-            name = "bullpuprifle_defaultclip",
+            name = "precision_muzzle_brake",
             price = 1500,
             amount = 1,
             info = {},
@@ -4186,7 +4186,7 @@ Config.Products = {
             info = {},
             type = "item",
             slot = 64,
-        }
+        } ]]
     },
 
 
@@ -4687,7 +4687,21 @@ Config.Products = {
         ["blipcolor"] = 7,
         ["delivery"] = vector4(-810.2373657226562,-1217.169189453125,7.3245849609375,229.60629272460938)
     },
-
+    ["FMDDRINKS1"] = {
+        ["label"] = "Wings Store",
+        ["coords"] = vector4(-1380.052734375,-596.7164916992188,30.20654296875,110.55118560791016),
+        ["ped"] = 'a_m_y_beach_01',
+        ["scenario"] = "WORLD_HUMAN_STAND_MOBILE_CLUBHOUSE",
+        ["radius"] = 3.5,
+        ["targetIcon"] = "fas fa-leaf",
+        ["targetLabel"] = "Open Menu",
+        ["products"] = Config.Products["FMDDRINKS"],
+        ["showblip"] = true,
+        ["blipsprite"] = 52,
+        ["blipscale"] = 0.7,
+        ["blipcolor"] = 7,
+        ["delivery"] = vector4(-1380.052734375,-596.7164916992188,30.20654296875,110.55118560791016)
+    },
 
 
 
