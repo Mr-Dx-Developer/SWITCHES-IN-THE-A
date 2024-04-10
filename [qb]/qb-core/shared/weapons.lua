@@ -13,7 +13,15 @@ QBShared.Weapons = {
 	[`weapon_bas_p_red`]	= {['name'] = 'weapon_bas_p_red',	['label'] = 'BAS-P Red',	['weapontype'] = 'Assault Rifle',	['ammotype'] = 'AMMO_RIFLE',	['damagereason'] = 'Ended / Rifled / Shot down / Floored'},
 	[`weapon_art64`]          = { name = 'weapon_art64', label = 'ART64', weapontype = 'Assault Rifle', ammotype = 'AMMO_RIFLE', damagereason = 'Ended / Rifled / Shot down / Floored' },
 	[`weapon_autosmg`]              = { name = 'weapon_autosmg', label = 'AUTOSMG', weapontype = 'Submachine Gun', ammotype = 'AMMO_SMG', damagereason = 'Riddled / Drilled / Finished / Submachine Gunned' },
-	
+	[`weapon_acwr`]          = { name = 'weapon_acwr', label = 'ACWR', weapontype = 'Assault Rifle', ammotype = 'AMMO_RIFLE', damagereason = 'Ended / Rifled / Shot down / Floored' },
+	[`weapon_fmr`]          = { name = 'weapon_fmr', label = 'FMR', weapontype = 'Assault Rifle', ammotype = 'AMMO_RIFLE', damagereason = 'Ended / Rifled / Shot down / Floored' },
+	[`weapon_scarsc`]          = { name = 'weapon_scarsc', label = 'SCARSC', weapontype = 'Assault Rifle', ammotype = 'AMMO_RIFLE', damagereason = 'Ended / Rifled / Shot down / Floored' },
+	[`weapon_sb181`]              = { name = 'weapon_sb181', label = 'SB181', weapontype = 'Submachine Gun', ammotype = 'AMMO_SMG', damagereason = 'Riddled / Drilled / Finished / Submachine Gunned' },
+	[`weapon_m4_tactical_red`]	= {['name'] = 'weapon_m4_tactical_red',	['label'] = 'M4 TACTICAL RED',	['weapontype'] = 'Assault Rifle',	['ammotype'] = 'AMMO_RIFLE',	['damagereason'] = 'Ended / Rifled / Shot down / Floored'},
+	[`weapon_galilarv2`]	= {['name'] = 'weapon_galilarv2',	['label'] = 'GALILARV2 Black Gang',	['weapontype'] = 'Assault Rifle',	['ammotype'] = 'AMMO_RIFLE',	['damagereason'] = 'Ended / Rifled / Shot down / Floored'},
+	[`weapon_m4asiimov`]	= {['name'] = 'weapon_m4asiimov',	['label'] = 'M4 Asiimov',	['weapontype'] = 'Assault Rifle',	['ammotype'] = 'AMMO_RIFLE',	['damagereason'] = 'Ended / Rifled / Shot down / Floored'},
+
+
 
 	--Kyros Weapon Pack V3
 	[`weapon_ddm4v7`]                = { name = 'weapon_ddm4v7',      label = 'DDM4V7 AR15',       weapontype = 'Assault Rifle', ammotype = 'AMMO_RIFLE', damagereason = 'Ended / Rifled / Shot down / Floored' },

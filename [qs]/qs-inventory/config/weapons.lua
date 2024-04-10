@@ -6,7 +6,7 @@
 ]]
 
 Config.LimitAmmo = false                    -- If you enable this feature, it will only allow one full magazine per weapon
-Config.ReloadTime = math.random(4000, 6000) -- Reload progressbar
+Config.ReloadTime = math.random(1, 2) -- Reload progressbar
 
 Config.RemoveTintAfterRemoving = false      -- Remove tint once you remove them from the gun?
 
@@ -301,7 +301,11 @@ Config.DurabilityMultiplier = {
     ["WEAPON_BAS_P_RED"] 		= 0.15,
     ["CZ Scorpion EVO"] 		= 0.15,
     ["weapon_galilar"] 		= 0.15,
-
+    ["weapon_acwr"] 		= 0.15,
+    ["weapon_fmr"] 		= 0.15,
+    ["weapon_sb181"] 		= 0.15,
+    ["weapon_scarsc"] 		= 0.15,
+    ['weapon_m4_tactical_red'] 		= 0.15,
 
 }
 
@@ -414,6 +418,67 @@ Config.Tints = {
 
 
 Config.WeaponAttachments = {
+    
+    ['weapon_sb181'] = {
+        
+        ['extendedclip'] = {
+            component = 'w_sb_sb181_mag2',
+            item = 'carbinerifle_extendedclip',
+            type = 'clip',
+        },
+        ['scope'] = {
+            component = 'w_at_sb_sb181_scope',
+            item = 'carbinerifle_scope',
+        },
+        ['suppressor'] = {
+            component = 'w_at_sb_sb181_supp',
+            item = 'rifle_suppressor',
+        },
+        
+    },
+    ['weapon_scarsc'] = {
+        ['extendedclip'] = {
+            component = 'w_ar_scarsc_mag2',
+            item = 'carbinerifle_extendedclip',
+            type = 'clip',
+        },
+        ['scope'] = {
+            component = 'w_at_ar_scarsc_scope',
+            item = 'carbinerifle_scope',
+        },
+        ['suppressor'] = {
+            component = 'w_at_ar_scarsc_supp',
+            item = 'rifle_suppressor',
+        },
+        ['grip'] = {
+            component = 'w_at_ar_scarsc_grip',
+            item = 'rifle_grip',
+        },
+    },
+    ['weapon_fmr'] = {
+        ['defaultclip'] = {
+            component = 'w_ar_fmr_mag1',
+            item = 'carbinerifle_defaultclip',
+            type = 'clip',
+        },
+        ['extendedclip'] = {
+            component = 'w_ar_fmr_mag2',
+            item = 'carbinerifle_extendedclip',
+            type = 'clip',
+        },
+        ['scope'] = {
+            component = 'w_at_ar_fmr_scope',
+            item = 'carbinerifle_scope',
+        },
+        ['suppressor'] = {
+            component = 'w_at_ar_fmr_supp',
+            item = 'rifle_suppressor',
+        },
+        ['grip'] = {
+            component = 'w_at_ar_fmr_grip',
+            item = 'rifle_grip',
+        },
+    },
     ['weapon_galilar'] = {
         ['defaultclip'] = {
             component = 'w_ar_galilar_mag1',
@@ -435,7 +500,31 @@ Config.WeaponAttachments = {
         },
         ['grip'] = {
             component = 'w_at_ar_galilar_grip',
+            item = 'rifle_grip',
+        },
+    },
+    ['weapon_acwr'] = {
+        ['defaultclip'] = {
+            component = 'w_ar_acwr_mag1',
+            item = 'carbinerifle_defaultclip',
+            type = 'clip',
+        },
+        ['extendedclip'] = {
+            component = 'w_ar_acwr_mag2',
+            item = 'carbinerifle_extendedclip',
+            type = 'clip',
+        },
+        ['scope'] = {
+            component = 'w_at_ar_acwr_scope',
+            item = 'carbinerifle_scope',
+        },
+        ['suppressor'] = {
+            component = 'w_at_ar_acwr_supp',
             item = 'rifle_suppressor',
+        },
+        ['grip'] = {
+            component = 'w_at_ar_acwr_grip',
+            item = 'rifle_grip',
         },
     },
 
@@ -460,7 +549,7 @@ Config.WeaponAttachments = {
         },
         ['grip'] = {
             component = 'w_at_cz_sc_evo_afgrip',
-            item = 'rifle_suppressor',
+            item = 'rifle_grip',
         },
     },
 
@@ -486,7 +575,7 @@ Config.WeaponAttachments = {
         },
         ['grip'] = {
             component = 'w_at_bas_p_grip',
-            item = 'rifle_suppressor',
+            item = 'rifle_grip',
         },
     },
 
@@ -641,6 +730,30 @@ Config.WeaponAttachments = {
         },
     },
 
+    ['weapon_m4_tactical_red'] = {
+        ['defaultclip'] = {
+            component = 'w_ar_m4_tactical_red_mag1',
+            item = 'carbinerifle_defaultclip',
+            type = 'clip',
+        },
+        ['extendedclip'] = {
+            component = 'w_ar_m4_tactical_red_mag2',
+            item = 'carbinerifle_extendedclip',
+            type = 'clip',
+        },
+        ['scope'] = {
+            component = 'w_at_m4_tactical_red_scope_small',
+            item = 'carbinerifle_scope',
+        },
+        ['suppressor'] = {
+            component = 'w_at_m4_tactical_red_supp',
+            item = 'rifle_suppressor',
+        },
+        ['grip'] = {
+            component = 'w_at_m4_tactical_red_supp',
+            item = 'rifle_grip',
+        },
+    },
 -- Do It Digital Weapons
 ['WEAPON_NEVA'] = {
     ['defaultclip'] = {
