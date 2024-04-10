@@ -125,6 +125,13 @@ Config.Drugs = {
         RequiredAmount = 1,
         DenyChance = 0
     },
+    [17] = {
+        Label = 'Fentanyl Drug',
+        Item = 'fentanyl_drug',
+        Price = 13500, 
+        RequiredAmount = 1,
+        DenyChance = 0
+    },
     
 }
 
