@@ -20,7 +20,7 @@ QBShared.Weapons = {
 	[`weapon_m4_tactical_red`]	= {['name'] = 'weapon_m4_tactical_red',	['label'] = 'M4 TACTICAL RED',	['weapontype'] = 'Assault Rifle',	['ammotype'] = 'AMMO_RIFLE',	['damagereason'] = 'Ended / Rifled / Shot down / Floored'},
 	[`weapon_galilarv2`]	= {['name'] = 'weapon_galilarv2',	['label'] = 'GALILARV2 Black Gang',	['weapontype'] = 'Assault Rifle',	['ammotype'] = 'AMMO_RIFLE',	['damagereason'] = 'Ended / Rifled / Shot down / Floored'},
 	[`weapon_m4asiimov`]	= {['name'] = 'weapon_m4asiimov',	['label'] = 'M4 Asiimov',	['weapontype'] = 'Assault Rifle',	['ammotype'] = 'AMMO_RIFLE',	['damagereason'] = 'Ended / Rifled / Shot down / Floored'},
-
+	[`weapon_m47v2`]	= {['name'] = 'weapon_m47v2',	['label'] = 'M47V2',	['weapontype'] = 'Assault Rifle',	['ammotype'] = 'AMMO_RIFLE',	['damagereason'] = 'Ended / Rifled / Shot down / Floored'},
 
 
 	--Kyros Weapon Pack V3

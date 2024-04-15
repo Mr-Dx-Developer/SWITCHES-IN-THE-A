@@ -19,7 +19,7 @@ QBShared.Items = {
     ['weapon_m4_tactical_red'] = {['name'] = 'weapon_m4_tactical_red', ['label'] = 'M4 TACTICAL RED', ['weight'] = 1000, ['type'] = 'weapon', ['ammotype'] = 'AMMO_RIFLE', ['image'] = 'WEAPON_M4_TACTICAL_RED_R.png', ['unique'] = true, ['useable'] = false, ['description'] = 'M4 TACTICAL RED'},
     ['weapon_galilarv2'] = {['name'] = 'weapon_galilarv2', ['label'] = 'GALILARV2 Black Gang', ['weight'] = 1000, ['type'] = 'weapon', ['ammotype'] = 'AMMO_RIFLE', ['image'] = 'weapon_galilarv2.png', ['unique'] = true, ['useable'] = false, ['description'] = 'Weapon GALILARV2 Black Gang'},
     ['weapon_m4asiimov'] 		         = {['name'] = 'weapon_m4asiimov', 	 	            ['label'] = 'M4 Asiimov', 			        ['weight'] = 1000, 		['type'] = 'weapon', 	['ammotype'] = 'AMMO_RIFLE',			['image'] = 'M4ASIIMOV_R.png', 	    ['unique'] = true, 		['useable'] = false, 	['description'] = 'M4 Asiimov Weapon'},
-
+    ['weapon_m47v2'] = {['name'] = 'weapon_m47v2', ['label'] = 'M47V2', ['weight'] = 1000, ['type'] = 'weapon', ['ammotype'] = 'AMMO_RIFLE', ['image'] = 'WEAPON_M47V2_R.png', ['unique'] = true, ['useable'] = false, ['description'] = 'M47V2'},
 
     weapon_kayslimeswitch         = { name = 'weapon_kayslimeswitch', label = '101 Switch', weight = 1000, type = 'weapon', ammotype = 'AMMO_PISTOL', image = '101_switch.png', unique = true, useable = false, description = 'A rapid-fire, magazine-fed automatic rifle designed for infantry use' },
     --Kyros Weapon Pack V3
@@ -585,6 +585,7 @@ QBShared.Items = {
     ['gumbo_snowball']                 = {['name'] = 'gumbo_snowball',                   ['label'] = 'Gumbo SnowBall',                ['weight'] = 1,         ['type'] = 'item',         ['image'] = 'gumbo_snowbal.png',              ['unique'] = false,          ['useable'] = true,    ['shouldClose'] = true,       ['combinable'] = nil,   ['description'] = ''},
     ['101_snowwhite']                 = {['name'] = '101_snowwhite',                   ['label'] = '101 Snow White',                ['weight'] = 1,         ['type'] = 'item',         ['image'] = '101_snowwhite.png',              ['unique'] = false,          ['useable'] = true,    ['shouldClose'] = true,       ['combinable'] = nil,   ['description'] = ''},
     ['fentanyl_drug']                 = {['name'] = 'fentanyl_drug',                   ['label'] = 'Fentanyl Drug',                ['weight'] = 1,         ['type'] = 'item',         ['image'] = 'fentanyl.png',              ['unique'] = false,          ['useable'] = true,    ['shouldClose'] = true,       ['combinable'] = nil,   ['description'] = ''},
+    ['tusi_drug']                 = {['name'] = 'tusi_drug',                   ['label'] = 'TUSI Drug',                ['weight'] = 1,         ['type'] = 'item',         ['image'] = 'tusi_drug.png',              ['unique'] = false,          ['useable'] = true,    ['shouldClose'] = true,       ['combinable'] = nil,   ['description'] = ''},
 
 
     ['macbook_pro_drug']                 = {['name'] = 'macbook_pro_drug',                   ['label'] = '24 MacBook Pro',                ['weight'] = 1,         ['type'] = 'item',         ['image'] = 'macdrug.png',              ['unique'] = false,          ['useable'] = true,    ['shouldClose'] = true,       ['combinable'] = nil,   ['description'] = ''},
@@ -1320,7 +1321,7 @@ fentanyl                                = { name = 'fentanyl', label = 'Fentanyl
    ['cocacola'] 					= {['name'] = 'cocacola', 			 	  	  	['label'] = 'McDonalds Coca-Cola', 	            ['weight'] = 200, 		['type'] = 'item', 		['image'] = 'cocacola.png', 				['unique'] = false, 	['useable'] = true, 	['shouldClose'] = true,   ['combinable'] = nil,   ['description'] = 'Nice to eat'},
    
 
-   ['tvremote'] = {['name'] = 'tvremote', ['label'] = 'TV Remote', ['weight'] = 1000, ['type'] = 'item', ['image'] = 'remote.png', ['unique'] = false, ['useable'] = true, ['shouldClose'] = true, ['combinable'] = nil, ['description'] = 'TV Remote'},
+   ['tvremote'] = {['name'] = 'tvremote', ['label'] = 'TV Remote', ['weight'] = 1000, ['type'] = 'item', ['image'] = 'tvremote.png', ['unique'] = false, ['useable'] = true, ['shouldClose'] = true, ['combinable'] = nil, ['description'] = 'TV Remote'},
    ['vehicletv'] = {['name'] = 'vehicletv', ['label'] = 'Vehicle Remote', ['weight'] = 1000, ['type'] = 'item', ['image'] = 'remote.png', ['unique'] = false, ['useable'] = true, ['shouldClose'] = true, ['combinable'] = nil, ['description'] = 'Vehicle TV'},
 
    --kael-ciger
