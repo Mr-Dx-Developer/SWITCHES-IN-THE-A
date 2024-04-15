@@ -278,7 +278,7 @@ Config.DurabilityMultiplier = {
     weapon_galilarv2          = 0.15,
 
 
-
+    weapon_m47v2          = 0.15,
 
 
 
@@ -319,7 +319,7 @@ WeaponAttachments = {
         weapon_m4_tactical_red = `w_ar_m4_tactical_red_mag2`,
         weapon_galilarv2 = `w_ar_galilarv2_mag2`,
         weapon_m4asiimov = `w_ar_m4_asiimov_mag2`,
-
+        weapon_m47v2 = `w_ar_m47v2_mag2`,
 
 
         weapon_scevo = `w_ar_cz_sc_evo_mag2`,
@@ -471,7 +471,7 @@ WeaponAttachments = {
         weapon_m4_tactical_red = `w_at_m4_tactical_red_supp`,
         weapon_galilarv2 = `w_at_ar_galilarv2_supp`,
         weapon_m4asiimov = `w_at_m4_asiimov_supp`,
-
+        weapon_m47v2 = `w_at_ar_m47v2_supp`,
 
 
 
@@ -523,6 +523,7 @@ WeaponAttachments = {
         weapon_sb181 = `w_at_sb_sb181_scope`,
         weapon_m4_tactical_red = `w_at_m4_tactical_red_scope_small`,
         weapon_m4asiimov = `w_at_m4_asiimov_scope_small`,
+        weapon_m47v2 = `w_at_m47v2_scope_small`,
 
 
 
@@ -698,6 +699,9 @@ WeaponAttachments = {
         weapon_scarsc = `w_at_ar_scarsc_grip`,
         weapon_m4_tactical_red = `w_at_m4_tactical_red_supp`,
         weapon_m4asiimov = `w_at_m4_asiimov_grip`,
+        weapon_m47v2 = `w_at_ar_m47v2_grip`,
+
+
 
         weapon_scevo = `w_at_cz_sc_evo_afgrip`,
         weapon_combatpdw = `COMPONENT_AT_AR_AFGRIP`,
