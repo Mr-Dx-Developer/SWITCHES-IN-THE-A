@@ -904,6 +904,7 @@ Config.FurnitureList = {
 					{ ['object'] = 'hei_heist_str_avunits_01',  ['price'] = 1600, ['label'] = 'TV Sound 01' },
 					{ ['object'] = 'apa_mp_h_str_avunitl_01_b', ['price'] = 6800, ['label'] = 'TV Executive' },
 					{ ['object'] = 'hei_heist_str_avunitl_01',  ['price'] = 6800, ['label'] = 'TV Executive 01' },
+					{ ['object'] = 'prop_big_cin_screen',  ['price'] = 9000, ['label'] = 'Big Screen' },
 				}
 			},
 			{
