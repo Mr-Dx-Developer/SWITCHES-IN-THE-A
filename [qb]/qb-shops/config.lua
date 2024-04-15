@@ -2848,6 +2848,24 @@ Config.Products = {
             slot = 8,
           --  requiresLicense = false
         },
+        [9] = {
+            name = "smg_ammo",
+            price = 650,
+            amount = 250,
+            info = {},
+            type = "item",
+            slot = 7,
+          --  requiresLicense = false
+        },
+        [10] = {
+            name = "rifle_ammo",
+            price = 650,
+            amount = 250,
+            info = {},
+            type = "item",
+            slot = 7,
+          --  requiresLicense = false
+        },
     },
     ["casino"] = {
         [1] = {
@@ -3294,7 +3312,7 @@ Config.Products = {
             slot = 17, 
         },
         [18] = {
-            name = "WEAPON_GLOCKBEAMS",
+            name = "WEAPON_BLUEGLOCKS",
             price = 3500000,
             amount = 1,
             info = {},
