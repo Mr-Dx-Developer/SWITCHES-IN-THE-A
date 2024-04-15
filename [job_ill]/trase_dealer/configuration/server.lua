@@ -48,7 +48,7 @@ Config.Drugs = {
     [6] = {
         Label = 'Famgoon Dogfood',
         Item = 'famgoon_dogfood',
-        Price = 10000, 
+        Price = 23500, 
         RequiredAmount = 1,
         DenyChance = 0
     },
@@ -100,7 +100,7 @@ Config.Drugs = {
     [13] = {
         Label = 'WhyPhy',
         Item = 'whyphy',
-        Price = 6500, 
+        Price = 7000, 
         RequiredAmount = 1,
         DenyChance = 0
     },
@@ -128,7 +128,14 @@ Config.Drugs = {
     [17] = {
         Label = 'Fentanyl Drug',
         Item = 'fentanyl_drug',
-        Price = 13500, 
+        Price = 25000, 
+        RequiredAmount = 1,
+        DenyChance = 0
+    },
+    [18] = {
+        Label = 'TUSI Drug',
+        Item = 'tusi_drug ',
+        Price = 12000, 
         RequiredAmount = 1,
         DenyChance = 0
     },
