@@ -433,10 +433,10 @@ Config.CommandSuggestion['CREATEGANG'] = {
             name = 'color',
             help = 'Color of the gang'
         },
-        {
+        --[[ {
             name = 'group',
             help = 'Group of the gang'
-        },
+        }, ]]
         {
             name = 'tag',
             help = 'Tag, 10 characters maximum'
