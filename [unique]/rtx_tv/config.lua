@@ -316,6 +316,20 @@ Config.TelevisionObjects = {
 		nonobject = true,  -- enable this if you want use just screen, withount rendering on object
 		nonobjectcoords = vector3(2399.82, 3016.64, 34.8), -- screen cordinates
 		nonobjectrotation = vector3(0.0, 0.0, 180.0), -- screen rotation
+	},
+	{
+		object = "prop_big_cin_screen", --object name 
+		maxdistance = 15.0, --max distance for display screen
+		maxcontroldistance = 15.0, -- max distance for control tv (its cannot be higher than maxdistance)
+		rendertarget = true, -- enable render target 
+		rendertargetname = "tvscreen", -- render target name
+	},
+	{
+		object = "v_ilev_cin_screen", --object name 
+		maxdistance = 15.0, --max distance for display screen
+		maxcontroldistance = 15.0, -- max distance for control tv (its cannot be higher than maxdistance)
+		rendertarget = true, -- enable render target 
+		rendertargetname = "tvscreen", -- render target name
 	},			
 	--[[ --This is example for television withount rendertarget with gfx (you need download generic_texture_renderer_gfx for this https://forum.cfx.re/t/release-generic-dui-2d-3d-renderer/131208)
 	{
