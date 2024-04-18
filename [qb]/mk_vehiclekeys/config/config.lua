@@ -308,7 +308,7 @@ Config.NpcVehicles = { --NONE OF THE CHECKS BELOW APPLY TO PLAYER OWNED OR STOLE
 ------------------------------------------------------------------------------------------------------------------------------
 
 ------------------------------------------------------KEYS AS ITEMS-----------------------------------------------------------
-Config.KeysAsItem = { --THIS FEATURE CURRENTLY ONLY SUPPORTS (QBCORE FRAMEWORK WITH QB-INVENTORY) OR (ESX-LEGACY FRAMEWORK WITH OX_INVENTORY); DO NOT ENABLE IF YOU RUN SOMETHING DIFFERENT.
+Config.KeysAsItem = {
     PlayerOwned = {
         Enabled = true, --TRUE = PLAYER VEHICLES REQUIRE A PHYSICAL ITEM / FALSE = DISABLED
         ItemName = 'carkey',

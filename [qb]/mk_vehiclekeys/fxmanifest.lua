@@ -3,7 +3,7 @@ games {'gta5'}
 
 author 'ManKind - [https://discord.gg/39fNFepADG]'
 description 'Vehicle Keys System'
-version '1.4.2'
+version '1.4.4'
 
 lua54 'yes'
 
