@@ -21,6 +21,17 @@ QBShared.Items = {
     ['weapon_m4asiimov'] 		         = {['name'] = 'weapon_m4asiimov', 	 	            ['label'] = 'M4 Asiimov', 			        ['weight'] = 1000, 		['type'] = 'weapon', 	['ammotype'] = 'AMMO_RIFLE',			['image'] = 'M4ASIIMOV_R.png', 	    ['unique'] = true, 		['useable'] = false, 	['description'] = 'M4 Asiimov Weapon'},
     ['weapon_m47v2'] = {['name'] = 'weapon_m47v2', ['label'] = 'M47V2', ['weight'] = 1000, ['type'] = 'weapon', ['ammotype'] = 'AMMO_RIFLE', ['image'] = 'WEAPON_M47V2_R.png', ['unique'] = true, ['useable'] = false, ['description'] = 'M47V2'},
 
+
+
+    weapon_kayslimeswitchb              = { name = 'weapon_kayslimeswitchb', label = 'KaySlimeSwitch Black', weight = 1000, type = 'weapon', ammotype = 'AMMO_PISTOL', image = 'weapon_kayslimeswitchb.png', unique = true, useable = false, description = 'A handheld light weight machine gun' },
+    weapon_kayslimeswitchbl              = { name = 'weapon_kayslimeswitchbl', label = 'KaySlimeSwitch Blue', weight = 1000, type = 'weapon', ammotype = 'AMMO_PISTOL', image = 'weapon_kayslimeswitchbl.png', unique = true, useable = false, description = 'A handheld light weight machine gun' },
+    weapon_kayslimeswitchlg              = { name = 'weapon_kayslimeswitchlg', label = 'KaySlimeSwitch Lime Green', weight = 1000, type = 'weapon', ammotype = 'AMMO_PISTOL', image = 'weapon_kayslimeswitchlg.png', unique = true, useable = false, description = 'A handheld light weight machine gun' },
+    weapon_kayslimeswitchp              = { name = 'weapon_kayslimeswitchp', label = 'KaySlimeSwitch Purple', weight = 1000, type = 'weapon', ammotype = 'AMMO_PISTOL', image = 'weapon_kayslimeswitchp.png', unique = true, useable = false, description = 'A handheld light weight machine gun' },
+    weapon_kayslimeswitchr              = { name = 'weapon_kayslimeswitchr', label = 'KaySlimeSwitch Red', weight = 1000, type = 'weapon', ammotype = 'AMMO_PISTOL', image = 'weapon_kayslimeswitchr.png', unique = true, useable = false, description = 'A handheld light weight machine gun' },
+    weapon_kayslimeswitchy              = { name = 'weapon_kayslimeswitchy', label = 'KaySlimeSwitch Yellow', weight = 1000, type = 'weapon', ammotype = 'AMMO_PISTOL', image = 'weapon_kayslimeswitchy.png', unique = true, useable = false, description = 'A handheld light weight machine gun' },
+
+
+
     weapon_kayslimeswitch         = { name = 'weapon_kayslimeswitch', label = '101 Switch', weight = 1000, type = 'weapon', ammotype = 'AMMO_PISTOL', image = '101_switch.png', unique = true, useable = false, description = 'A rapid-fire, magazine-fed automatic rifle designed for infantry use' },
     --Kyros Weapon Pack V3
     weapon_ddm4v7                = { name = 'weapon_ddm4v7',    label = 'DDM4V7 AR15',      weight = 6500, type = 'weapon', ammotype = 'AMMO_RIFLE', image = 'WEAPON_DDM4V7.png', unique = true, useable = false, description = 'DDM4V7' },

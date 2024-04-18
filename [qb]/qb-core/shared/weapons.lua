@@ -23,6 +23,13 @@ QBShared.Weapons = {
 	[`weapon_m47v2`]	= {['name'] = 'weapon_m47v2',	['label'] = 'M47V2',	['weapontype'] = 'Assault Rifle',	['ammotype'] = 'AMMO_RIFLE',	['damagereason'] = 'Ended / Rifled / Shot down / Floored'},
 
 
+	[`weapon_kayslimeswitchb`]              = { name = 'weapon_kayslimeswitchb', label = 'KaySlimeSwitch Black', weapontype = 'Pistol', ammotype = 'AMMO_PISTOL', damagereason = 'Pistoled / Blasted / Plugged / Bust a cap in' },
+	[`weapon_kayslimeswitchbl`]              = { name = 'weapon_kayslimeswitchbl', label = 'KaySlimeSwitch Blue', weapontype = 'Pistol', ammotype = 'AMMO_PISTOL', damagereason = 'Pistoled / Blasted / Plugged / Bust a cap in' },
+	[`weapon_kayslimeswitchlg`]              = { name = 'weapon_kayslimeswitchlg', label = 'KaySlimeSwitch Lime Green', weapontype = 'Pistol', ammotype = 'AMMO_PISTOL', damagereason = 'Pistoled / Blasted / Plugged / Bust a cap in' },
+	[`weapon_kayslimeswitchp`]              = { name = 'weapon_kayslimeswitchp', label = 'KaySlimeSwitch Purple', weapontype = 'Pistol', ammotype = 'AMMO_PISTOL', damagereason = 'Pistoled / Blasted / Plugged / Bust a cap in' },
+	[`weapon_kayslimeswitchr`]              = { name = 'weapon_kayslimeswitchr', label = 'KaySlimeSwitch Red', weapontype = 'Pistol', ammotype = 'AMMO_PISTOL', damagereason = 'Pistoled / Blasted / Plugged / Bust a cap in' },
+	[`weapon_kayslimeswitchy`]              = { name = 'weapon_kayslimeswitchy', label = 'KaySlimeSwitch Yellow', weapontype = 'Pistol', ammotype = 'AMMO_PISTOL', damagereason = 'Pistoled / Blasted / Plugged / Bust a cap in' },
+
 	--Kyros Weapon Pack V3
 	[`weapon_ddm4v7`]                = { name = 'weapon_ddm4v7',      label = 'DDM4V7 AR15',       weapontype = 'Assault Rifle', ammotype = 'AMMO_RIFLE', damagereason = 'Ended / Rifled / Shot down / Floored' },
 	[`weapon_scar`]                  = { name = 'weapon_scar',        label = 'SCAR',              weapontype = 'Assault Rifle', ammotype = 'AMMO_RIFLE', damagereason = 'Ended / Rifled / Shot down / Floored' },
