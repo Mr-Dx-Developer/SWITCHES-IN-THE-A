@@ -45,7 +45,7 @@ Config.ambulanceJobs = { -- Jobs that are considered ambulance jobs (If unsure, 
     --'fire',
 }
 
-Config.MuteDeadPlayers = false -- If a player is dead, should he be muted?
+Config.MuteDeadPlayers = true -- If a player is dead, should he be muted?
 
 -- Logs
 Config.DeathLogs = true  -- Enable death logs via Discord webhook?(Set up in configuration/deathlogs.lua)
