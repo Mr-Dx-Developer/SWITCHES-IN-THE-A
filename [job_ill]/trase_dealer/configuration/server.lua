@@ -55,7 +55,7 @@ Config.Drugs = {
     [7] = {
         Label = 'ACE30',
         Item = 'ace30',
-        Price = 4500, 
+        Price = 10000, 
         RequiredAmount = 1,
         DenyChance = 0
     },
@@ -134,7 +134,7 @@ Config.Drugs = {
     },
     [18] = {
         Label = 'TUSI Drug',
-        Item = 'tusi_drug ',
+        Item = 'tusi_drug',
         Price = 12000, 
         RequiredAmount = 1,
         DenyChance = 0
