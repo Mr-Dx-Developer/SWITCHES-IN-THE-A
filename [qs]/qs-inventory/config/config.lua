@@ -26,7 +26,7 @@ Config.UseTarget = 'qb-target'                -- Choose between 'qb-target', 'ox
 
 Config.BlockedSwap = false               -- If set to true, you will not be able to swap between items
 Config.BlockedSlot = false               -- This is the sixth slot, the one that does not allow them to steal from that space
-Config.GiveItemHideName = false          -- If you enable this, then the player will not be able to see names in giveitem, only id
+Config.GiveItemHideName = true          -- If you enable this, then the player will not be able to see names in giveitem, only id
 Config.OpeingProgressBar = false          -- Please leave this set to true to avoid dupes
 
 Config.Handsup = false                    -- Enable or disable Handsup and Robbery button
