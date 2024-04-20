@@ -1,0 +1,347 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+*
+{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Ubuntu', sans-serif;
+}
+
+
+@font-face {
+    font-family: 'merchant';
+    src: url('./font/merchant_copy_doublesize-webfont.woff2') format('woff2'),
+         url('./font/merchant_copy_doublesize-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+@font-face {
+    font-family: 'bestyregular';
+    src: url('./font/besty-webfont.woff2') format('woff2'),
+         url('./font/besty-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+body {
+	position:absolute;
+	width:100%;
+	height:100%;
+	max-width: 1920px;
+	max-height: 1080px;
+	margin: 0;
+	top:50%;
+	left:50%;
+	transform:translate(-50%,-50%);
+	font-family: 'Ubuntu', sans-serif;
+	background-color: transparent;
+	overflow: hidden;
+}
+
+.noselect {
+    user-select: none;
+}
+
+.Main {
+	position: absolute;
+	display: block;
+	top: 2%;
+	left: 78%;
+	width: 20%;
+	height: 96%;
+	background: rgb(216,243,255);
+	background: linear-gradient(rgba(242,252,255,1) 0%, rgba(123,216,255,1) 100%);
+	
+	/* background: linear-gradient(rgba(216,243,255,1) 0%, rgba(123,216,255,1) 100%); */
+	border-radius: 20px;
+}
+
+.ListPart {
+	position: relative;
+	display: grid;
+	margin-left: 3%;
+	margin-top: 3%;
+	margin-right: 2%;
+	/* width: 98%; */
+	height: 90%;
+	grid-template-columns: repeat(2,0.5fr);
+	grid-gap: 4px;
+	grid-auto-rows: minmax(20%, 20%);
+	background-image: url("./img/BG.png");
+	/* background-size: cover; */
+	background-size: 100%;
+	overflow-y: scroll;
+}
+
+
+.ListPart::-webkit-scrollbar {
+	width: 5px;
+	height: 80%;
+	left:1%;
+}
+
+/* Track */
+
+.ListPart::-webkit-scrollbar-track {
+	opacity: 0.3;
+}
+
+/* Handle */
+
+.ListPart::-webkit-scrollbar-thumb {
+	background: rgb(242,252,255);
+	opacity: 0.3;
+	border-radius: 10px;
+}
+/* Handle on hover */
+
+.ListPart::-webkit-scrollbar-thumb:hover {
+	background: light-grey;
+	opacity: 0.3;
+	border-radius: 10px;
+}
+
+.ListPart::-webkit-scrollbar-button {
+	height: 10%;
+}
+
+
+.BabyCard {
+	position: relative;
+	display: block;
+	width: 98%;
+	height: 98%;
+	
+	background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(5px);
+    border-top: 1px solid rgba(255,255,255,0.2);
+    border-right: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 5px 5px 2px rgba(0,0,0,0.2);
+	border-radius: 10px;
+	transition: transform ease-in 0.3s, box-shadow ease-in 0.25s;
+}
+.BabyCard:focus {
+    outline: 0;
+  }
+  
+.BabyCard:before, .BabyCard:after{
+    position: absolute;
+    content: '';
+    display: block;
+    width: 140%;
+    height: 125%;
+    left: 0%;
+    z-index: -1000;
+    transition: all ease-in-out 0.5s;
+    background-repeat: no-repeat;
+  }
+  
+  .BabyCard:before{
+    display: none;
+    top: -75%;
+    background-image:  
+      radial-gradient(circle, rgb(123,216,255) 20%, transparent 20%),
+    radial-gradient(circle,  transparent 20%, rgb(123,216,255) 20%, transparent 30%),
+    radial-gradient(circle, rgb(123,216,255) 20%, transparent 20%), 
+    radial-gradient(circle, rgb(123,216,255) 20%, transparent 20%),
+    radial-gradient(circle,  transparent 10%, rgb(123,216,255) 15%, transparent 20%),
+    radial-gradient(circle, rgb(123,216,255) 20%, transparent 20%),
+    radial-gradient(circle, rgb(123,216,255) 20%, transparent 20%),
+    radial-gradient(circle, rgb(123,216,255) 20%, transparent 20%),
+    radial-gradient(circle, rgb(123,216,255) 20%, transparent 20%);
+  background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%, 10% 10%, 18% 18%;
+  //background-position: 0% 80%, -5% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%, 50% 50%, 65% 20%, 85% 30%;
+  }
+  
+  .BabyCard:after{
+    display: none;
+    bottom: -75%;
+    background-image:  
+    radial-gradient(circle, rgb(123,216,255) 20%, transparent 20%), 
+    radial-gradient(circle, rgb(123,216,255) 20%, transparent 20%),
+    radial-gradient(circle,  transparent 10%, rgb(123,216,255) 15%, transparent 20%),
+    radial-gradient(circle, rgb(123,216,255) 20%, transparent 20%),
+    radial-gradient(circle, rgb(123,216,255) 20%, transparent 20%),
+    radial-gradient(circle, rgb(123,216,255) 20%, transparent 20%),
+    radial-gradient(circle, rgb(123,216,255) 20%, transparent 20%);
+  background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 10% 10%, 20% 20%;
+  //background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%, 40% 90%, 55% 90%, 70% 90%;
+  }
+ 
+  .BabyCard:active{
+    transform: scale(0.9);
+    background-color: darken(rgb(123,216,255), 5%);
+    box-shadow: 0 2px 25px rgba(255, 0, 130, 0.2);
+  }
+  
+/* .animate { */
+.animate:after {
+      display: block;
+      animation: bottomBubbles ease-in-out 1.75s forwards;
+    }
+	
+.animate:before {
+      display: block;
+      animation: topBubbles ease-in-out 1.75s forwards;
+    }
+    
+  /* } */
+  
+  /* box-shadow: 0 2px 25px rgba(255, 0, 130, 0.5); */
+/* } */
+
+/* .animate{ */
+/* .animate::before{ */
+      /* display: block; */
+      /* animation: topBubbles ease-in-out 0.75s forwards; */
+    /* } */
+	
+/* .animate:after{ */
+      /* display: block; */
+      /* animation: bottomBubbles ease-in-out 0.75s forwards; */
+    /* } */
+  
+
+.BabyCard:hover {
+
+	box-shadow: 5px 5px 2px rgba(255,255,255,0.2);
+
+}
+
+
+.BabyImage {
+	position: relative;
+	display: block;
+	left: 5%;
+	top: 5%;
+	/* margin-top: 1%; */
+	/* margin-left: 3%;	 */
+	width: 90%;
+	height: 90%;
+	/* background: rgb(255,0,255); */
+	
+}
+.BabyText {
+	position: relative;
+	display: block;
+	left: 5%;
+	/* top: 5%; */
+	/* margin-top: 1%; */
+	/* margin-left: 3%;	 */
+	width: 90%;
+	height: 90%;
+	/* background: rgb(255,0,255); */
+	text-align: center;
+	font-family: 'bestyregular', 'Ubuntu', sans-serif;
+	color: white;
+	/* text-shadow: -1px 1px 0 rgb(0,0,0), */
+                  /* 1px 1px 0 rgb(0,0,0), */
+                  /* 1px -1px 0 rgb(0,0,0), */
+                  /* -1px -1px 0 rgb(0,0,0); */
+	color: rgba(123,216,255,1);
+	text-shadow: -1px  1px  0   rgba(242,252,255,1),
+                  1px  1px  0   rgba(242,252,255,1),
+                  1px -1px  0   rgba(242,252,255,1),
+                 -1px -1px  0   rgba(242,252,255,1);
+}
+.BabyImage img{
+  position: relative;
+	
+  max-width: 99%;
+	
+  max-height: 99%;
+  transform:translate(-50%,-50%);
+  top:50%;
+  left:50%;
+}
+
+	
+
+
+
+
+
+
+
+
+.StorePart {
+	position: relative;
+	display: flex;
+	left: 10%;
+	top: .5%;
+	width: 80%;
+	height: 5%;
+	/* background: rgb(0,255,0); */
+	margin-top:1%;
+	color: rgb(242,252,255);
+}
+
+.StoreButton {
+	position: relative;
+	display: block;
+	width: 50%;
+	height: 100%;
+	transform:translateY(25%);
+	text-align:left;
+	font-size: 2.5rem;
+	text-shadow: 5px  5px  2px   rgb(128,128,128);
+}
+.StoreButton :active{
+    transform: scale(0.9);
+    background-color: darken(rgb(123,216,255), 5%);
+}
+
+.StoreButton i:hover {
+	color: rgb(128,128,128);
+	text-shadow: 5px 5px 2px rgb(242,252,255);
+}
+
+
+.LeaveButton {
+	position: relative;
+	display: block;
+	width: 50%;
+	height: 100%;
+	transform:translateY(25%);
+	text-align:right;
+	font-size: 2.5rem;
+	text-shadow: 5px  5px  2px   rgb(128,128,128);
+}
+
+.LeaveButton i:hover {
+	color: rgb(128,128,128);
+	text-shadow: 5px 5px 2px rgb(242,252,255);
+}
+
+.LeaveButton :active{
+    transform: scale(0.9);
+    background-color: darken(rgb(123,216,255), 5%);
+}
+@keyframes topBubbles {
+  0%{
+    background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%, 40% 90%, 55% 90%, 70% 90%;
+  }
+    50% {
+      background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%, 50% 50%, 65% 20%, 90% 30%;}
+ 100% {
+    background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%, 50% 40%, 65% 10%, 90% 20%;
+  background-size: 0% 0%, 0% 0%,  0% 0%,  0% 0%,  0% 0%,  0% 0%;
+  }
+}
+
+@keyframes bottomBubbles {
+  0%{
+    background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%, 70% -10%, 70% 0%;
+  }
+  50% {
+    background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%, 105% 0%;}
+ 100% {
+    background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%, 110% 10%;
+  background-size: 0% 0%, 0% 0%,  0% 0%,  0% 0%,  0% 0%,  0% 0%;
+  }
+}
