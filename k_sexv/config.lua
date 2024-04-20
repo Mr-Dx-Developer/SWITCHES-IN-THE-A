@@ -13,7 +13,7 @@ Config.Variables = {
     PregTestFemaleOnly = true, --set to false to enable anyone to use a preg test
     TimeTillBirth = 5760, -- In minutes, 60 = 1hr (time for pregnancies)
     NotifyPregnant = 10, -- In minutes, When should the player get notified that they need to head to hospital!
-    UsingKDisease = true, -- set to true if you are using k_disease to get diseases to work!
+    UsingKDisease = false, -- set to true if you are using k_disease to get diseases to work!
     AllowTransmitted = {
         ["Chlamydia"] = {chance = 50, randomChance = 3}, -- chance = player transmission, randomChance = completely random chance for a player to get this sickness
         ["Gonorrhea"] = {chance = 50, randomChance = 3} ,-- chance = player transmission, randomChance = completely random chance for a player to get this sickness
