@@ -1,9 +1,3 @@
----
---- @author Dylan MALANDAIN, Kalyptus
---- @version 1.0.0
---- created at [24/05/2021 10:02]
----
-
 RageUI.PanelColour = {
     HairCut = {
         { 22, 19, 19 }, -- 0

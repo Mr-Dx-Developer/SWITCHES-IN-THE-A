@@ -1,18 +1,20 @@
----
---- @author Dylan MALANDAIN, Kalyptus
---- @version 1.0.0
---- created at [24/05/2021 10:02]
----
+fx_version 'adamant'
+games { 'gta5' };
 
-fx_version 'cerulean'
-
-games { 'gta5' }
+name 'RageUI';
+description 'RageUI, and a project specially created to replace the NativeUILua-Reloaded library. This library allows to create menus similar to the one of Grand Theft Auto online.'
 
 client_scripts {
-    'src/RageUI.lua',
-    'src/Menu.lua',
-    'src/MenuController.lua',
-    'src/components/*.lua',
-    'src/elements/*.lua',
-    'src/items/*.lua',
+    "RMenu.lua",
+    "menu/RageUI.lua",
+    "menu/Menu.lua",
+    "menu/MenuController.lua",
+    "components/*.lua",
+    "menu/elements/*.lua",
+    "menu/items/*.lua",
+    "menu/panels/*.lua",
+    "menu/windows/*.lua",
+
 }
+
+
