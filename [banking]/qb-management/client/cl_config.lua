@@ -34,6 +34,10 @@ Config.BossMenus = {
     ['mcdonalds'] = {
         vector3(-222.51, -1318.98, 31.45),
     },
+
+    ['tow'] = {
+        vector3(662.8, 233.42, 94.25),
+    },
     
     
 }
@@ -67,6 +71,10 @@ Config.BossMenuZones = {
     },
     ['mcdonalds'] = {
         { coords = vector3(-222.51, -1318.98, 31.45), length = 1.15, width = 2.6, heading = 0.0, minZ = 30.45, maxZ = 34.45 },
+    },
+
+    ['tow'] = {
+        { coords = vector3(662.8, 233.42, 94.25), length = 1.15, width = 2.6, heading = 330.0, minZ = 93.01, maxZ = 95.01 },
     },
 }
 
