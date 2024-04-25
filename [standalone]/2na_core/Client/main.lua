@@ -4,6 +4,7 @@ TwoNa.Framework = nil
 TwoNa.Game = {}
 TwoNa.Functions = TwoNaShared.Functions
 TwoNa.Types = TwoNaShared.Types
+TwoNa.Config = Config
 
 TwoNa.TriggerServerCallback = function(name, payload, func) 
     if not func then 
@@ -16,17 +17,17 @@ TwoNa.TriggerServerCallback = function(name, payload, func)
 end
 
 TwoNa.Game.GetVehicleProperties = function(vehicle)
-    if Config.Framework == TwoNa.Types.Framework.ESX then
+    if Config.Framework == "ESX" then
         return TwoNa.Framework.Game.GetVehicleProperties(vehicle)
-    elseif Config.Framework == TwoNa.Types.Framework.QB then
+    elseif Config.Framework == "QBCore" then
         return TwoNa.Framework.Functions.GetVehicleProperties(vehicle)
     end
 end
 
 TwoNa.Game.SetVehicleProperties = function(vehicle, props) 
-    if Config.Framework == TwoNa.Types.Framework.ESX then
+    if Config.Framework == "ESX" then
         return TwoNa.Framework.Game.SetVehicleProperties(vehicle, props)
-    elseif Config.Framework == TwoNa.Types.Framework.QB then
+    elseif Config.Framework == "QBCore" then
         return TwoNa.Framework.Functions.SetVehicleProperties(vehicle, props)
     end
 end

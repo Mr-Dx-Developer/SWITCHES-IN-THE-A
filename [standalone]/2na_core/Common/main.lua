@@ -21,22 +21,36 @@ TwoNaShared.Functions.Includes = function(arr, target)
    return includes
 end
 
-TwoNaShared.Functions.GetFramework = function(framework) 
-   if TwoNaShared.Types.Framework[framework:upper()] then 
-      return TwoNaShared.Types.Framework[framework:upper()]
-   elseif TwoNaShared.Types.FrameworkAlias[framework:lower()] then
-      return TwoNaShared.Types.FrameworkAlias[framework:lower()]
-   else
-      return nil
+TwoNaShared.Functions.GetFramework = function() 
+   local availableFramework = nil
+
+   for k,v in ipairs(TwoNaShared.Types.Frameworks) do 
+      if GetResourceState(v.ResourceName) == "starting" or GetResourceState(v.ResourceName) == "started" then 
+         availableFramework = v
+      end
    end
+
+   if not availableFramework then 
+      TwoNaShared.Functions.Log("^1Could not find a supported framework! Please ensure that framework script name did not got change.^7")
+   end
+
+   return availableFramework
 end 
 
-TwoNaShared.Functions.GetDatabase = function(database) 
-   if TwoNaShared.Types.Database[database:upper()] then 
-      return TwoNaShared.Types.Database[database:upper()]
-   else
-      return nil
+TwoNaShared.Functions.GetDatabase = function() 
+   local availableDatabase = nil
+
+   for k,v in ipairs(TwoNaShared.Types.Databases) do 
+      if GetResourceState(v.ResourceName) == "starting" or GetResourceState(v.ResourceName) == "started" then 
+         availableDatabase = v
+      end
    end
+
+   if not availableDatabase then 
+      TwoNaShared.Functions.Log("^1Could not find a supported database! Please ensure that database script name did not got change.^7")
+   end
+
+   return availableDatabase
 end 
 
 TwoNaShared.Functions.Log = function(str) 

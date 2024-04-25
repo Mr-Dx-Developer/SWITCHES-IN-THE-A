@@ -2,10 +2,10 @@ fx_version 'adamant'
 
 game 'gta5'
 
-author 'Tuna#1565'
+author 'tunasayin'
 description 'Core script needed for almost all 2na scripts.'
 
-version '0.2.6'
+version '0.3.0'
 
 shared_scripts {
 	'Common/*.lua',

@@ -5,6 +5,7 @@ TwoNa.Framework = nil
 TwoNa.Functions = TwoNaShared.Functions
 TwoNa.Types = TwoNaShared.Types
 TwoNa.Vehicles = nil
+TwoNa.Config = Config
 TwoNa.MySQL = {
     Async = {},
     Sync = {}
@@ -29,9 +30,9 @@ TwoNa.MySQL.Async.Fetch = function(query, variables, cb)
         cb = function() end
     end
 
-    if Config.Database == TwoNa.Types.Database.MYSQL_ASYNC then
+    if Config.Database.Name == "MYSQL-ASYNC" then
         return exports["mysql-async"]:mysql_fetch_all(query, variables, cb) 
-    elseif Config.Database == TwoNa.Types.Database.OXMYSQL then
+    elseif Config.Database.Name == "OXMYSQL" then
         return exports["oxmysql"]:prepare(query, variables, cb) 
     end
 end
@@ -44,9 +45,9 @@ TwoNa.MySQL.Sync.Fetch = function(query, variables)
         finishedQuery = true
     end
 
-    if Config.Database == TwoNa.Types.Database.MYSQL_ASYNC then
+    if Config.Database.Name == "MYSQL-ASYNC" then
         exports["mysql-async"]:mysql_fetch_all(query, variables, cb) 
-    elseif Config.Database == TwoNa.Types.Database.OXMYSQL then
+    elseif Config.Database.Name == "OXMYSQL" then
         exports["oxmysql"]:execute(query, variables, cb)
     end
 
@@ -58,9 +59,9 @@ TwoNa.MySQL.Sync.Fetch = function(query, variables)
 end
 
 TwoNa.MySQL.Async.Execute = function(query, variables, cb) 
-    if Config.Database == TwoNa.Types.Database.MYSQL_ASYNC then
+    if Config.Database.Name == "MYSQL-ASYNC" then
         return exports["mysql-async"]:mysql_execute(query, variables, cb) 
-    elseif Config.Database == TwoNa.Types.Database.OXMYSQL then
+    elseif Config.Database.Name == "OXMYSQL" then
         return exports["oxmysql"]:update(query, variables, cb)
     end
 end
@@ -73,9 +74,9 @@ TwoNa.MySQL.Sync.Execute = function(query, variables)
         finishedQuery = true
     end
 
-    if Config.Database == TwoNa.Types.Database.MYSQL_ASYNC then
+    if Config.Database.Name == "MYSQL-ASYNC" then
         exports["mysql-async"]:mysql_execute(query, variables, cb) 
-    elseif Config.Database == TwoNa.Types.Database.OXMYSQL then
+    elseif Config.Database.Name == "OXMYSQL" then
         exports["oxmysql"]:execute(query, variables, cb)
     end
 
@@ -90,15 +91,15 @@ TwoNa.IsPlayerAvailable = function(source)
     local available = false
 
     if type(source) == 'number' then 
-        if Config.Framework == TwoNa.Types.Framework.ESX then
+        if Config.Framework.Name == "ESX" then
             available = TwoNa.Framework.GetPlayerFromId(source) ~= nil
-        elseif Config.Framework == TwoNa.Types.Framework.QB then
+        elseif Config.Framework.Name == "QBCore" then
             available = TwoNa.Framework.Functions.GetPlayer(source) ~= nil
         end
     elseif type(source) == 'string' then
-        if Config.Framework == TwoNa.Types.Framework.ESX then
+        if Config.Framework.Name == "ESX" then
             available = TwoNa.Framework.GetPlayerFromIdentifier(identifier) ~= nil
-        elseif Config.Framework == TwoNa.Types.Framework.QB then
+        elseif Config.Framework.Name == "QBCore" then
             available = TwoNa.Framework.Functions.GetSource(identifier) ~= nil
         end
     end
@@ -108,11 +109,24 @@ end
 
 TwoNa.GetPlayerIdentifier = function(source)
     if TwoNa.IsPlayerAvailable(source) then
-        if Config.Framework == TwoNa.Types.Framework.ESX then
+        if Config.Framework.Name == "ESX" then
             local xPlayer = TwoNa.Framework.GetPlayerFromId(source)
             return xPlayer.getIdentifier()
-        elseif Config.Framework == TwoNa.Types.Framework.QB then
+        elseif Config.Framework.Name == "QBCore" then
             return TwoNa.Framework.Functions.GetIdentifier(source, 'license')
+        end
+    else
+        return nil
+    end
+end
+
+TwoNa.GetCharacterIdentifier = function(source)
+    if TwoNa.IsPlayerAvailable(source) then
+        if Config.Framework.Name == "ESX" then
+            local xPlayer = TwoNa.Framework.GetPlayerFromId(source)
+            return xPlayer.identifier
+        elseif Config.Framework.Name == "QBCore" then
+            return TwoNa.Framework.Functions.GetPlayer(source).PlayerData.citizenid
         end
     else
         return nil
@@ -126,7 +140,7 @@ TwoNa.CreatePlayer = function(xPlayer)
         return nil
     end
 
-    if Config.Framework == TwoNa.Types.Framework.ESX then 
+    if Config.Framework.Name == "ESX" then 
         player.name = xPlayer.getName()
         player.accounts = {}
         for _,v in ipairs(xPlayer.getAccounts()) do 
@@ -152,14 +166,18 @@ TwoNa.CreatePlayer = function(xPlayer)
         end
         player.getMoney = xPlayer.getMoney
         player.addBank = function(amount) 
-            xPlayer.addAccountMoney('bank', amount) 
+            xPlayer.addAccountMoney('bank', tonumber(amount)) 
         end
-        player.addMoney = xPlayer.addMoney
+        player.addMoney = function(amount)
+            xPlayer.addMoney(tonumber(amount))
+        end
         player.removeBank = function(amount) 
-            xPlayer.removeAccountMoney('bank', amount) 
+            xPlayer.removeAccountMoney('bank', tonumber(amount)) 
         end
-        player.removeMoney = xPlayer.removeMoney
-    elseif Config.Framework == TwoNa.Types.Framework.QB then
+        player.removeMoney = function(amount) 
+            xPlayer.removeMoney(tonumber(amount))
+        end
+    elseif Config.Framework.Name == "QBCore" then
         player.name = xPlayer.PlayerData.charinfo.firstname .. " " .. xPlayer.PlayerData.charinfo.lastname
         player.accounts = {
             bank =  xPlayer.PlayerData.money.bank,
@@ -203,9 +221,9 @@ TwoNa.GetPlayer = function(source)
     if TwoNa.IsPlayerAvailable(source) then 
         local xPlayer = nil
 
-        if Config.Framework == TwoNa.Types.Framework.ESX then
+        if Config.Framework.Name == "ESX" then
             xPlayer = TwoNa.Framework.GetPlayerFromId(source)
-        elseif Config.Framework == TwoNa.Types.Framework.QB then
+        elseif Config.Framework.Name == "QBCore" then
             xPlayer = TwoNa.Framework.Functions.GetPlayer(source)
         end
 
@@ -219,9 +237,9 @@ TwoNa.GetPlayerFromIdentifier = function(identifier)
     if TwoNa.IsPlayerAvailable(identifier) then 
         local xPlayer = nil
 
-        if Config.Framework == TwoNa.Types.Framework.ESX then
+        if Config.Framework.Name == "ESX" then
             xPlayer = TwoNa.Framework.GetPlayerFromIdentifier(identifier)
-        elseif Config.Framework == TwoNa.Types.Framework.QB then
+        elseif Config.Framework.Name == "QBCore" then
             xPlayer = TwoNa.Framework.Functions.GetPlayer(TwoNa.Framework.Functions.GetSource(identifier))
         end
 
@@ -231,6 +249,28 @@ TwoNa.GetPlayerFromIdentifier = function(identifier)
     end
 end
 
+TwoNa.GetPlayerFromCharacterIdentifier = function(charIdentifier)
+    local xPlayer = nil 
+    if Config.Framework.Name == "ESX" then
+        for _, player in ipairs(TwoNa.Framework.GetExtendedPlayers()) do 
+            if player.identifier == charIdentifier then
+                xPlayer = player 
+                break
+            end
+        end
+    elseif Config.Framework.Name == "QBCore" then
+        for _, player in ipairs(TwoNa.Framework.Functions.GetPlayers()) do 
+            player = TwoNa.Framework.Functions.GetPlayer(player)
+            if player.PlayerData.citizenid == charIdentifier then 
+                xPlayer = player
+            end
+        end
+
+    end
+
+    return TwoNa.CreatePlayer(xPlayer)
+end 
+
 TwoNa.GetAllVehicles = function(force)
     if TwoNa.Vehicles and not force then 
         return TwoNa.Vehicles
@@ -238,7 +278,7 @@ TwoNa.GetAllVehicles = function(force)
 
     local vehicles = {}
 
-    if Config.Framework == TwoNa.Types.Framework.ESX then
+    if Config.Framework.Name == "ESX" then
         local data = TwoNa.MySQL.Sync.Fetch("SELECT * FROM vehicles", {})
 
         for k, v in ipairs(data) do 
@@ -250,7 +290,7 @@ TwoNa.GetAllVehicles = function(force)
             }
         end
         
-    elseif Config.Framework == TwoNa.Types.Framework.QB then 
+    elseif Config.Framework.Name == "QBCore" then 
         for k,v in pairs(TwoNa.Framework.Shared.Vehicles) do
             vehicles[k] = {
                 model = k,
@@ -301,7 +341,7 @@ TwoNa.GetPlayerVehicles = function(source)
         local vehicles = TwoNa.GetAllVehicles(false)
         local playerVehicles = {}
 
-        if Config.Framework == TwoNa.Types.Framework.ESX then
+        if Config.Framework.Name == "ESX" then
             local data = TwoNa.MySQL.Sync.Fetch("SELECT * FROM owned_vehicles WHERE owner = @identifier", { ["@identifier"] = identifier })
 
             for k,v in ipairs(data) do
@@ -328,7 +368,7 @@ TwoNa.GetPlayerVehicles = function(source)
                     garage = v.garage or nil
                 })
             end
-        elseif Config.Framework == TwoNa.Types.Framework.QB  then
+        elseif Config.Framework.Name == "QBCore"  then
             local data = TwoNa.MySQL.Sync.Fetch("SELECT * FROM player_vehicles WHERE license = @identifier", { ["@identifier"] = identifier })
 
             for k,v in ipairs(data) do
@@ -376,9 +416,9 @@ TwoNa.UpdatePlayerVehicle = function(source, plate, vehicleData)
         end
 
         local query = nil
-        if Config.Framework == TwoNa.Types.Framework.ESX then
+        if Config.Framework.Name == "ESX" then
             query = "UPDATE owned_vehicles SET vehicle = @props, stored = @stored, garage = @garage WHERE owner = @identifier AND plate = @plate"
-        elseif Config.Framework == TwoNa.Types.Framework.QB then
+        elseif Config.Framework.Name == "QBCore" then
             query = "UPDATE player_vehicles SET mods = @props, stored = @stored, garage = @garage WHERE license = @identifier AND plate = @plate"
         end
 
@@ -409,9 +449,9 @@ TwoNa.UpdateVehicleOwner = function(plate, target)
     end
 
     local query = nil
-    if Config.Framework == TwoNa.Types.Framework.ESX then
+    if Config.Framework.Name == "ESX" then
         query = "UPDATE owned_vehicles SET owner = @newOwner WHERE plate = @plate" 
-    elseif Config.Framework == TwoNa.Types.Framework.QB then
+    elseif Config.Framework.Name == "QBCore" then
         query = "UPDATE player_vehicles SET license = @newOwner WHERE plate = @plate"
     end
 
@@ -424,15 +464,29 @@ TwoNa.UpdateVehicleOwner = function(plate, target)
     end
 end
 
+TwoNa.RegisterUsableItem = function(name, action) 
+    if Config.Framework.Name == "ESX" then 
+        TwoNa.Framework.RegisterUsableItem(name, function(source)
+            local xPlayer = TwoNa.Framework.GetPlayerFromId(source)
+            action(TwoNa.CreatePlayer(xPlayer), source)
+        end)
+    elseif Config.Framework.Name == 'QBCore' then
+        TwoNa.Framework.Functions.CreateUseableItem(name, function(source)
+            local xPlayer = TwoNa.Framework.Functions.GetPlayer(source)
+            action(TwoNa.CreatePlayer(xPlayer), source)
+        end)
+    end
+end
+
 TwoNa.CheckUpdate = function()
     PerformHttpRequest("https://api.github.com/repos/tunasayin/2na_core/releases/latest", function(errorCode, rawData, headers) 
         if rawData ~= nil then
             local data = json.decode(tostring(rawData))
-            local version = string.gsub(data.tag_name, "v", "")
-            local installedVersion = GetResourceMetadata(GetCurrentResourceName(), "version", 0)
+            local version = string.gsub(data.tag_name, "v", ""):gsub("%.", "")
+            local installedVersion = GetResourceMetadata(GetCurrentResourceName(), "version", 0):gsub("%.", "")
 
-            if installedVersion ~= version then
-                TwoNa.Functions.Log("An update is available! You can download the update from this link: " .. data.html_url) 
+            if tonumber(installedVersion) < tonumber(version) then
+                TwoNa.Functions.Log("^3An update is available! You can download the update from this link: " .. data.html_url .. "^7") 
             end
         end
     end)

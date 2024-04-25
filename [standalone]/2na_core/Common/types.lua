@@ -1,17 +1,26 @@
 TwoNaShared.Types = {}
 
-TwoNaShared.Types.Framework = {
-    ["ESX"] = "ESX",
-    ["QB"] = "QB",
+TwoNaShared.Types.Frameworks = { 
+    {
+        Name = "ESX",
+        ResourceName = "es_extended",
+        GetFramework = function() return exports["es_extended"]:getSharedObject() end
+    },
+    {
+        Name = "QBCore",
+        ResourceName = "qb-core",
+        GetFramework = function() return exports["qb-core"]:GetCoreObject() end
+    }
 }
 
-TwoNaShared.Types.Database = {
-    ["MYSQL_ASYNC"] = "MYSQL_ASYNC",
-    ["OXMYSQL"] = "OXMYSQL"
+TwoNaShared.Types.Databases = { 
+    {
+        Name = "MYSQL-ASYNC",
+        ResourceName = "mysql_async"
+    },
+    {
+        Name = "OXMYSQL",
+        ResourceName = "oxmysql"
+    }
 }
 
-TwoNaShared.Types.FrameworkAlias = {
-    ["es_extended"] = TwoNaShared.Types.Framework.ESX,
-    ["qb-core"] = TwoNaShared.Types.Framework.QB,
-    ["qbcore"] = TwoNaShared.Types.Framework.QB
-}
