@@ -101,11 +101,11 @@ Config.DealershipLocations = {
   },
   ["luxury"] = {
     type = "owned", -- or "owned", "self-service"
-    openShowroom = vector3(-1257.4, -369.12, 36.98),
-    openManagement = vector3(-1249.04, -346.96, 37.34),
-    purchaseSpawn = vector4(-1233.46, -346.81, 37.33, 23.36),
-    testDriveSpawn = vector4(-1233.46, -346.81, 37.33, 23.36),
-    sellVehicle = vector4(-1233.46, -346.81, 37.33, 23.36),
+    openShowroom = vector3(911.116455078125, -929.5911865234375, 26.2806396484375),
+    openManagement = vector3(911.4989013671875, -937.068115234375, 26.2806396484375),
+    purchaseSpawn = vector4(887.98681640625, -918.2373657226562, 26.2806396484375, 93.54330444335938),
+    testDriveSpawn = vector4(887.98681640625, -918.2373657226562, 26.2806396484375, 93.54330444335938),
+    sellVehicle = vector4(887.98681640625, -918.2373657226562, 26.2806396484375, 93.54330444335938),
     camera = {
       name = "Car",
       coords = vector4(-146.6166, -596.6301, 166.0000, 120.0),
