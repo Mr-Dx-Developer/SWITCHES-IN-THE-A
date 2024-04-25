@@ -84,7 +84,10 @@ RegisterNetEvent("jg-dealerships:server:update-purchased-vehicle-props", functio
 
   local vehicle = MySQL.single.await("SELECT * FROM " .. Framework.VehiclesTable .. " WHERE plate = ? AND " .. Framework.PlayerId .. " = ?", {plate, identifier})
   if not vehicle then return false end
-  if vehicle[Framework.VehProps] then return false end
+  if vehicle[Framework.VehProps] ~= nil and vehicle[Framework.VehProps] ~= "" and vehicle[Framework.VehProps] ~= false then
+    print("Error: Could not update props because they already exist!")
+    return false
+  end
 
   MySQL.update.await("UPDATE " .. Framework.VehiclesTable .. " SET " .. Framework.VehProps .. " = ? WHERE plate = ?", {json.encode(props), plate})
 end)

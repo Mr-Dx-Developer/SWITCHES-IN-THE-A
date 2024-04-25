@@ -3,7 +3,7 @@ game "gta5"
 lua54 "yes"
 
 description "Comprehensive dealerships script for FiveM"
-version 'v1.1.8'
+version 'v1.1.9'
 author "JG Scripts"
 
 shared_scripts {

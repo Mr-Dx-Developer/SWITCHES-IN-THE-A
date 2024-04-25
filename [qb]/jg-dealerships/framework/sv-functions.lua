@@ -91,9 +91,9 @@ function Framework.Server.SaveVehicleToGarage(src, purchaseType, society, societ
 
     if purchaseType == "society" then
       if societyType == "job" then
-        MySQL.insert.await("INSERT INTO player_vehicles (license,citizenid,hash,plate,financed,finance_data,job_vehicle,job_vehicle_rank) VALUES(?,?,?,?,?,?,?,?,?)", {license, society, model, joaat(model), plate, financed, json.encode(financeData), 1, 0})
+        MySQL.insert.await("INSERT INTO player_vehicles (license,citizenid,vehicle,hash,plate,financed,finance_data,job_vehicle,job_vehicle_rank) VALUES(?,?,?,?,?,?,?,?,?)", {license, society, model, joaat(model), plate, financed, json.encode(financeData), 1, 0})
       elseif societyType == "gang" then
-        MySQL.insert.await("INSERT INTO player_vehicles (license,citizenid,hash,plate,financed,finance_data,gang_vehicle,gang_vehicle_rank) VALUES(?,?,?,?,?,?,?,?,?)", {license, society, model, joaat(model), plate, financed, json.encode(financeData), 1, 0})
+        MySQL.insert.await("INSERT INTO player_vehicles (license,citizenid,vehicle,hash,plate,financed,finance_data,gang_vehicle,gang_vehicle_rank) VALUES(?,?,?,?,?,?,?,?,?)", {license, society, model, joaat(model), plate, financed, json.encode(financeData), 1, 0})
       end
     else
       MySQL.insert.await("INSERT INTO player_vehicles (license,citizenid,vehicle,hash,plate,financed,finance_data) VALUES(?,?,?,?,?,?,?)", {license, citizenid, model, joaat(model), plate, financed, json.encode(financeData)})

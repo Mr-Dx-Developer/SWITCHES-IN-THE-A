@@ -59,41 +59,40 @@ RegisterNUICallback("purchase-vehicle", function(data, cb)
         return cb({ error = true })
       end
 
-      TriggerEvent("jg-dealerships:client:exit-showroom", true)
-      Wait(100)
-
-      Framework.Client.TriggerCallback("jg-dealerships:server:purchase-vehicle", function(cbData)
-        if cbData and cbData.error then
-          DoScreenFadeIn(0)
-          return cb(false)
-        end
-
-        local plate = cbData.plate
-        local hasUsableSeats = GetVehicleModelNumberOfSeats(hash) > 0
-        
-        Functions.SpawnVehicle(hash, plate, purchaseSpawn, false, hasUsableSeats, function(vehicleEntity, netId)
-          if not vehicleEntity then
+      TriggerEvent("jg-dealerships:client:exit-showroom", function()
+        Framework.Client.TriggerCallback("jg-dealerships:server:purchase-vehicle", function(cbData)
+          if cbData and cbData.error then
+            DoScreenFadeIn(0)
             return cb(false)
           end
-
-          Functions.SetVehicleColor(vehicleEntity, vehicleColor)
-          Framework.Client.VehicleSetFuel(vehicleEntity, 100)
-          Framework.Client.VehicleGiveKeys(plate, vehicleEntity)
-          local props = Framework.Client.GetVehicleProperties(vehicleEntity)
-
-          TriggerServerEvent("jg-dealerships:server:update-purchased-vehicle-props", plate, props)
-          TriggerEvent("jg-dealerships:client:purchase-vehicle:config", vehicleEntity, plate, purchaseType, amountToPay, paymentMethod, financed)
-          TriggerServerEvent("jg-dealerships:server:purchase-vehicle:config", netId, plate, purchaseType, amountToPay, paymentMethod, financed)
-
-          -- If they are running jg-advancedgarages, register the vehicle is out & set vehicle in valid garage ID
-          if GetResourceState("jg-advancedgarages") == "started" then
-            TriggerServerEvent("jg-advancedgarages:server:RegisterVehicleOutside", plate, netId)
-            TriggerServerEvent("jg-advancedgarages:server:dealerships-send-to-default-garage", vehicleType, plate)
-          end
-
-          cb(cbData)
-        end)
-      end, purchaseType, society, societyType, vehicleModel, amountToPay, paymentMethod, dealershipId, financed, financeData, dealerPlayerId)
+  
+          local plate = cbData.plate
+          local hasUsableSeats = GetVehicleModelNumberOfSeats(hash) > 0
+          
+          Functions.SpawnVehicle(hash, plate, purchaseSpawn, false, hasUsableSeats, function(vehicleEntity, netId)
+            if not vehicleEntity then
+              return cb(false)
+            end
+  
+            Functions.SetVehicleColor(vehicleEntity, vehicleColor)
+            Framework.Client.VehicleSetFuel(vehicleEntity, 100)
+            Framework.Client.VehicleGiveKeys(plate, vehicleEntity)
+            local props = Framework.Client.GetVehicleProperties(vehicleEntity)
+  
+            TriggerServerEvent("jg-dealerships:server:update-purchased-vehicle-props", plate, props)
+            TriggerEvent("jg-dealerships:client:purchase-vehicle:config", vehicleEntity, plate, purchaseType, amountToPay, paymentMethod, financed)
+            TriggerServerEvent("jg-dealerships:server:purchase-vehicle:config", netId, plate, purchaseType, amountToPay, paymentMethod, financed)
+  
+            -- If they are running jg-advancedgarages, register the vehicle is out & set vehicle in valid garage ID
+            if GetResourceState("jg-advancedgarages") == "started" then
+              TriggerServerEvent("jg-advancedgarages:server:RegisterVehicleOutside", plate, netId)
+              TriggerServerEvent("jg-advancedgarages:server:dealerships-send-to-default-garage", vehicleType, plate)
+            end
+  
+            cb(cbData)
+          end)
+        end, purchaseType, society, societyType, vehicleModel, amountToPay, paymentMethod, dealershipId, financed, financeData, dealerPlayerId)
+      end)
     end)
   end, dealershipId, vehicleModel)
 end)
