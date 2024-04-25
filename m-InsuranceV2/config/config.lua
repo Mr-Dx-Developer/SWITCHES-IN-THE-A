@@ -8,8 +8,8 @@ Config.MenuName = "qb-menu" -- If you use ox, ignore this
 Config.Menu = "ox" -- "qb" or "ox"
 Config.EmoteMenu = "dp" -- "rp" or "dp" or "scully"
 Config.SpacePlate = false -- If true if your plate has space | Example: QQS 224
-Config.Debug = true -- If true, some prints happen on console
-Config.Webhook = ""
+Config.Debug = false -- If true, some prints happen on console
+Config.Webhook = "https://discord.com/api/webhooks/1232997961340944405/fADRJ-7-0DzhqwlEL9-Kq6DO6OyNS-OTegoX-RUQ8Q-iRC5IhDOH2UwiMFaFg2yLH1Wy"
 Config.TargetDistances = 3.0 -- Distance of targets
 
 
