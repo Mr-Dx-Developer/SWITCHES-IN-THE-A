@@ -2,7 +2,7 @@
 
 local QBCore = exports['qb-core']:GetCoreObject()
 
-QBCore.Commands.Add("restart", "restart the server [GOD ONLY]", {}, false, function(source, args)
+QBCore.Commands.Add("srestart", "restart the server [GOD ONLY]", {}, false, function(source, args)
     local Player = QBCore.Functions.GetPlayer(source)
     TriggerClientEvent('QBCore:Client:PvpHasToggled', -1)
     TriggerEvent('qb-restart')
