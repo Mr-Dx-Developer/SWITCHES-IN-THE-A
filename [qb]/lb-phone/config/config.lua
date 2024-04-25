@@ -303,7 +303,7 @@ Config.Battery.DischargeWhenInactiveInterval = { 80, 120 } -- How many seconds f
 Config.Battery.DischargeWhenInactive = true -- Should the phone remove battery when the phone is closed?
 
 Config.CurrencyFormat = "$%s" -- ($100) Choose the formatting of the currency. %s will be replaced with the amount.
-Config.MaxTransferAmount = 1000000 -- The maximum amount of money that can be transferred at once via wallet / messages.
+Config.MaxTransferAmount = 10000000 -- The maximum amount of money that can be transferred at once via wallet / messages.
 
 Config.EnableMessagePay = true -- Allow players to pay other players via messages?
 Config.EnableVoiceMessages = true -- Allow players to send voice messages?
