@@ -41,7 +41,7 @@ Config.Drugs = {
     [5] = {
         Label = '101 Brick',
         Item = '101_brick',
-        Price = 6000, 
+        Price = 15000, 
         RequiredAmount = 1,
         DenyChance = 0
     },
@@ -55,7 +55,7 @@ Config.Drugs = {
     [7] = {
         Label = 'ACE30',
         Item = 'ace30',
-        Price = 10000, 
+        Price = 15000, 
         RequiredAmount = 1,
         DenyChance = 0
     },
@@ -71,7 +71,7 @@ Config.Drugs = {
     [9] = {
         Label = 'Gumbo',
         Item = 'gumbo',
-        Price = 2500, 
+        Price = 4500, 
         RequiredAmount = 1,
         DenyChance = 0
     },
@@ -79,7 +79,7 @@ Config.Drugs = {
     [10] = {
         Label = '101 Cups',
         Item = '101_cups',
-        Price = 4300, 
+        Price = 8000, 
         RequiredAmount = 1,
         DenyChance = 0
     },
@@ -135,7 +135,7 @@ Config.Drugs = {
     [18] = {
         Label = 'TUSI Drug',
         Item = 'tusi_drug',
-        Price = 12000, 
+        Price = 13500, 
         RequiredAmount = 1,
         DenyChance = 0
     },
