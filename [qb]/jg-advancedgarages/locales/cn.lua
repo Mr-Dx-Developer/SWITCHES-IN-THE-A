@@ -57,8 +57,6 @@ Locales['cn'] = {
   changeVehiclePlate = "改变车牌",
   newPlate = "新车牌",
   search = "按名称或车牌搜索",
-
-  -- NEW
   noPrivateGarages = "无私人车库",
   editPrivateGarage = "编辑私人车库",
   owners = "业主",
@@ -88,6 +86,8 @@ Locales['cn'] = {
   noLiveries = "未提供涂装",
   noExtras = "无额外服务",
   none = "无",
+  vehicleNeedsService = "Needs Service",
+  type = "Type",
 
   -- Notifications
   insertVehicleTypeError = "您只能在此车库中存储%{value}车型",

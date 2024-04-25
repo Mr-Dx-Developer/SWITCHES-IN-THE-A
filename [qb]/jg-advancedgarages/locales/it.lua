@@ -57,8 +57,6 @@ Locales['it'] = {
   changeVehiclePlate = "Cambia Targa Veicolo",
   newPlate = "Nuova Targa",
   search = "Ricerca Per Nome O Targa",
-
-  -- NEW
   noPrivateGarages = "Nessun garage privato",
   editPrivateGarage = "Modifica garage privato",
   owners = "Proprietario/i",
@@ -88,6 +86,8 @@ Locales['it'] = {
   noLiveries = "Nessuna livrea disponibile",
   noExtras = "Nessun extra disponibile",
   none = "Nessuno",
+  vehicleNeedsService = "Needs Service",
+  type = "Type",
 
   -- Notifications
   insertVehicleTypeError = "Puoi Depositare %{value} Tipi Di Veicoli In Questo Garage",

@@ -57,8 +57,6 @@ Locales['en'] = {
   changeVehiclePlate = "Change Vehicle Plate",
   newPlate = "New Plate",
   search = "Search by name or plate",
-
-  --NEW--
   noPrivateGarages = "No private garages",
   editPrivateGarage = "Edit Private Garage",
   owners = "Owner(s)",
@@ -80,6 +78,16 @@ Locales['en'] = {
   noPlayers = "There are no players added",
   addPlayer = "Add player",
   loadingVehicle = "Loading vehicle...",
+  vehicleSetup = "Vehicle Setup",
+  extras = "Extras",
+  extra = "Extra",
+  liveries = "Liveries",
+  livery = "Livery",
+  noLiveries = "No liveries available",
+  noExtras = "No extras available",
+  none = "None",
+  vehicleNeedsService = "Needs Service",
+  type = "Type",
 
   -- Notifications
   insertVehicleTypeError = "You can only store %{value} vehicle types in this garage",
@@ -127,13 +135,4 @@ Locales['en'] = {
   cmdChangePlate = "Change vehicle plate (Admin only)",
   cmdDeleteVeh = "Delete vehicle from database (Admin only)",
   cmdCreatePrivGarage = "Create a private garage for a player",
-
-  vehicleSetup = "Vehicle Setup",
-  extras = "Extras",
-  extra = "Extra",
-  liveries = "Liveries",
-  livery = "Livery",
-  noLiveries = "No liveries available",
-  noExtras = "No extras available",
-  none = "None",
 }

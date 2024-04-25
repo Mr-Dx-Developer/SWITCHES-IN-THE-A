@@ -5,6 +5,7 @@ if Config.Framework == "ESX" then
   RegisterNetEvent('esx:playerLoaded')
   AddEventHandler('esx:playerLoaded', function(xPlayer)
     Globals.PlayerData = xPlayer
+    createJobGarageBlips()
   end)
 
   RegisterNetEvent('esx:setJob')

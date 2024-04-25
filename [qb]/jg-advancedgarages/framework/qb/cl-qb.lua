@@ -5,6 +5,8 @@ if Config.Framework == "QBCore" then
   RegisterNetEvent("QBCore:Client:OnPlayerLoaded")
   AddEventHandler("QBCore:Client:OnPlayerLoaded", function()
     Globals.PlayerData = QBCore.Functions.GetPlayerData()
+    createJobGarageBlips()
+    createGangGarageBlips()
   end)
 
   RegisterNetEvent("QBCore:Client:OnJobUpdate")

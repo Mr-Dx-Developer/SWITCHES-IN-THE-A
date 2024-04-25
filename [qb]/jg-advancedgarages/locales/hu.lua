@@ -57,8 +57,6 @@ Locales['hu'] = {	-- Erre a sorra is figyelj oda!!! Ez nem en.lua, hanem hu.lua,
   changeVehiclePlate = "Rendszámtábla cserélése",
   newPlate = "Új rendszám",
   search = "Keresés név vagy rendszám alapján",
-
-  --NEW--
   noPrivateGarages = "Nincs privát garázsod",
   editPrivateGarage = "Privát garázs szerkesztése",
   owners = "Tulajdonos(ok)",
@@ -88,6 +86,8 @@ Locales['hu'] = {	-- Erre a sorra is figyelj oda!!! Ez nem en.lua, hanem hu.lua,
   noLiveries = "Nincs elérhető festés",
   noExtras = "Nincsenek extrák",
   none = "Semmi",
+  vehicleNeedsService = "Needs Service",
+  type = "Type",
 
   -- Notifications
   insertVehicleTypeError = "Ebben a garázsban csak %{value} járműtípusokat tárolhat",

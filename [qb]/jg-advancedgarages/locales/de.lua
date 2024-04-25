@@ -57,8 +57,6 @@ Locales['de'] = {
   changeVehiclePlate = "Kennzeichen ändern",
   newPlate = "Neues Kennzeichen",
   search = "Suche nach Name oder Kennzeichen",
-
-  -- NEW
   noPrivateGarages = "Keine privaten Garagen",
   editPrivateGarage = "Private Garage bearbeiten",
   owners = "Eigentümer(n)",
@@ -88,6 +86,8 @@ Locales['de'] = {
   noLiveries = "Keine Lackierungen verfügbar",
   noExtras = "Keine Extras verfügbar",
   none = "Keine",
+  vehicleNeedsService = "Needs Service",
+  type = "Type",
 
   -- Notifications
   insertVehicleTypeError = "Du kannst hier nur %{value} einparken",

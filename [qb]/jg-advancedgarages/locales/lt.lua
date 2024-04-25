@@ -57,8 +57,6 @@ Locales['lt'] = {
   changeVehiclePlate = "Pakeisti tr. priemonės valst. numerius",
   newPlate = "Nauji valst. numeriai",
   search = "Ieškokite pagal pavadinimą arba valst. numerius",
-
-  -- NEW
   noPrivateGarages = "Nessun garage privato",
   editPrivateGarage = "Modifica del garage privato",
   owners = "Proprietario/i",
@@ -88,6 +86,8 @@ Locales['lt'] = {
   noLiveries = "Nėra piešinių",
   noExtras = "Papildomų priedų nėra",
   none = "Nėra",
+  vehicleNeedsService = "Needs Service",
+  type = "Type",
 
   -- Notifications
   insertVehicleTypeError = "Čia gali laikyti tik %{value} tipo tr. priemones",

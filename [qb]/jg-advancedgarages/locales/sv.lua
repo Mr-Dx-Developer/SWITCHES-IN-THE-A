@@ -57,8 +57,6 @@ Locales['sv'] = {
   changeVehiclePlate = "Ändra registreringsnummer",
   newPlate = "Nytt registreringsnummer",
   search = "Sök med namn eller registreringsskylt",
-
-  -- NEW
   noPrivateGarages = "Inga privata garage",
   editPrivateGarage = "Edit Privat garage",
   owners = "Ägare(n)",
@@ -88,6 +86,8 @@ Locales['sv'] = {
   noLiveries = "Inga liveries tillgängliga",
   noExtras = "Inga extrafunktioner tillgängliga",
   none = "Ingen",
+  vehicleNeedsService = "Needs Service",
+  type = "Type",
 
   -- Notifications
   insertVehicleTypeError = "Du kan endast förvara %{value} fordonstyp i detta garage",

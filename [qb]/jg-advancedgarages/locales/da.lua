@@ -57,8 +57,6 @@ Locales['da'] = {
   changeVehiclePlate = "Skift nummerplade",
   newPlate = "Ny nummerplade",
   search = "Søg efter navn eller nummerplade",
-
-  -- NEW
   noPrivateGarages = "Ingen private garager",
   editPrivateGarage = "Rediger privat garage",
   owners = "Ejer(e)",
@@ -88,6 +86,8 @@ Locales['da'] = {
   noLiveries = "Ingen liveries tilgængelige",
   noExtras = "Ingen ekstraudstyr til rådighed",
   none = "Ingen",
+  vehicleNeedsService = "Needs Service",
+  type = "Type",
 
   -- Notifications
   insertVehicleTypeError = "Du kan kun opbevare %{value} i denne garage",

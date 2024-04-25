@@ -33,7 +33,7 @@ Config.DoNotSpawnInsideVehicle = false
 Config.SaveVehicleDamage = true -- Save and apply body and engine damage when taking the vehicle out a garage
 Config.AdvancedVehicleDamage = true -- use VehicleDeformation
 Config.SaveVehiclePropsOnInsert = true
-Config.DisableServerVehicleSpawning = false -- Set to true to use CreateVehicle instead of CreateVehicleServerSetter (only do this if you know what you're doing, or told to do so by support)
+Config.UseCreateVehicleServerSetter = false -- (only do this if you know what you're doing, or told to do so by support)
 
 -- Vehicle Transfers
 Config.GarageVehicleTransferCost = 2500 -- Cost to transfer between garages

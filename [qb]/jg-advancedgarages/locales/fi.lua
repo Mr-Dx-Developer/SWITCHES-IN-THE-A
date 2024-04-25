@@ -57,8 +57,6 @@ Locales['fi'] = {
   changeVehiclePlate = "Vaihda ajoneuvon kilpeä",
   newPlate = "Uusi kilpi",
   search = "Hae nimellä tai ajoneuvokilven mukaan",
-
-  -- NEW
   noPrivateGarages = "Ei yksityisiä autotalleja",
   editPrivateGarage = "Edit Yksityinen autotalli",
   owners = "Omistaja(t)",
@@ -88,6 +86,8 @@ Locales['fi'] = {
   noLiveries = "Maalauksia ei ole saatavilla",
   noExtras = "Ei lisävarusteita saatavilla",
   none = "Ei ole",
+  vehicleNeedsService = "Needs Service",
+  type = "Type",
 
   -- Notifications
   insertVehicleTypeError = "Voit ainoastaan tallettaa %{value} ajoneuvo tyyppejä tähän talliin",

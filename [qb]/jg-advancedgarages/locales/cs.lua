@@ -57,8 +57,6 @@ Locales['cs'] = {
   changeVehiclePlate = "Vyměnit registrační značku vozidla",
   newPlate = "Nová registrační značka",
   search = "Hledejte podle jména nebo štítku",
-
-  -- NEW
   noPrivateGarages = "Žádné soukromé garáže",
   editPrivateGarage = "Upravit soukromou garáž",
   owners = "Majitel(é)",
@@ -88,6 +86,8 @@ Locales['cs'] = {
   noLiveries = "Nejsou k dispozici žádné livreje",
   noExtras = "Žádné doplňky nejsou k dispozici",
   none = "Žádné",
+  vehicleNeedsService = "Needs Service",
+  type = "Type",
 
   -- Notifications
   insertVehicleTypeError = "V této garáži lze uložit pouze %{value} typů vozidel",

@@ -58,8 +58,6 @@ Locales['vi'] = {
   changeVehiclePlate = "Đổi biển số xe",
   newPlate = "Biển số mới",
   search = "Tìm kiếm theo tên hoặc biển số xe",
-
-  -- NEW
   noPrivateGarages = "Không có nhà để xe riêng",
   editPrivateGarage = "Chỉnh sửa nhà để xe riêng",
   owners = "Những chủ sở hữu)",
@@ -89,6 +87,8 @@ Locales['vi'] = {
   noLiveries = "không có gan",
   noExtras = "Không có tính năng bổ sung",
   none = "Không có",
+  vehicleNeedsService = "Needs Service",
+  type = "Type",
 
   -- Notifications
   insertVehicleTypeError = "Bạn chỉ có thể để %{value} vào trong gara này!",

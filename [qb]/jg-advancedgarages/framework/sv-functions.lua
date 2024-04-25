@@ -193,6 +193,12 @@ function Framework.Server.GetGangs()
   end
 end
 
+---@param vehicle integer
+---@return string | false plate 
 function Framework.Server.GetPlate(vehicle)
-  return string.gsub(GetVehicleNumberPlateText(vehicle), '^%s*(.-)%s*$', '%1')
+  local plate = GetVehicleNumberPlateText(vehicle)
+  if not plate or plate == nil or plate == "" then return false end
+
+  local trimmedPlate = string.gsub(plate, "^%s*(.-)%s*$", "%1")
+  return trimmedPlate
 end

@@ -251,18 +251,26 @@ function Framework.Client.GetModelColumn(vehicle)
 end
 
 function Framework.Client.GetVehicleProperties(vehicle)
-  if Config.Framework == "QBCore" then
-    return QBCore.Functions.GetVehicleProperties(vehicle)
-  elseif Config.Framework == "ESX" then
-    return ESX.Game.GetVehicleProperties(vehicle)
+  if GetResourceState("jg-mechanic") == "started" then
+    return exports["jg-mechanic"]:getVehicleProperties(vehicle)
+  else
+    if Config.Framework == "QBCore" then
+      return QBCore.Functions.GetVehicleProperties(vehicle)
+    elseif Config.Framework == "ESX" then
+      return ESX.Game.GetVehicleProperties(vehicle)
+    end
   end
 end
 
 function Framework.Client.SetVehicleProperties(vehicle, props)
-  if Config.Framework == "QBCore" then
-    return QBCore.Functions.SetVehicleProperties(vehicle, props)
-  elseif Config.Framework == "ESX" then
-    return ESX.Game.SetVehicleProperties(vehicle, props)
+  if GetResourceState("jg-mechanic") == "started" then
+    return exports["jg-mechanic"]:setVehicleProperties(vehicle, props)
+  else
+    if Config.Framework == "QBCore" then
+      return QBCore.Functions.SetVehicleProperties(vehicle, props)
+    elseif Config.Framework == "ESX" then
+      return ESX.Game.SetVehicleProperties(vehicle, props)
+    end
   end
 end
 
@@ -302,7 +310,7 @@ function Framework.Client.GetVehicleLabel(model)
     label = model
   else
     if GetLabelText(modelName) == "NULL" and GetLabelText(makeName) == "NULL" then
-      label = makeName .. ' ' .. modelName
+      label = (makeName or "") .. ' ' .. (modelName or "")
     elseif GetLabelText(makeName) == "NULL" then
       label = GetLabelText(modelName)
     end

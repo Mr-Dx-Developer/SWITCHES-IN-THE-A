@@ -57,8 +57,6 @@ Locales['es'] = {
   changeVehiclePlate = "Cambio de Matricula",
   newPlate = "Matricula Nueva",
   search = "Buscar por nombre o placa",
-
-  -- NEW
   noPrivateGarages = "Sin garajes privados",
   editPrivateGarage = "Editar Garaje Privado",
   owners = "Propietario(s)",
@@ -88,6 +86,8 @@ Locales['es'] = {
   noLiveries = "No hay vinilos disponibles",
   noExtras = "No hay extras disponibles",
   none = "Ninguno",
+  vehicleNeedsService = "Needs Service",
+  type = "Type",
 
   -- Notifications
   insertVehicleTypeError = "Solo puedes almacenar vehículos de tipo %{value} en este garaje",

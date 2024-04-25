@@ -57,8 +57,6 @@ Locales['nl'] = {
   changeVehiclePlate = "Voertuigkenteken wijzigen",
   newPlate = "Nieuw Kenteken",
   search = "Zoek op naam of plaat",
-
-  -- NEW
   noPrivateGarages = "Geen privégarages",
   editPrivateGarage = "Bewerk privégarage",
   owners = "Eigenaar(s)",
@@ -88,6 +86,8 @@ Locales['nl'] = {
   noLiveries = "Geen liveries beschikbaar",
   noExtras = "Geen extra's beschikbaar",
   none = "Geen",
+  vehicleNeedsService = "Needs Service",
+  type = "Type",
 
   -- Notifications
   insertVehicleTypeError = "U kunt alleen opslaan %{value} voertuigtypes in deze garage",
