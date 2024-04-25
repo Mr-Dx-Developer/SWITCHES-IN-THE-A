@@ -2185,6 +2185,14 @@ Config.Products = {
             type = "item",
             slot = 143,
         },
+        [144] = {
+            name = "fitbit",
+            price = 100, 
+            amount = 10,
+            info = {},
+            type = "item",
+            slot = 144,
+        },
 
 
 
@@ -4629,6 +4637,21 @@ Config.Products = {
     ["blipscale"] = 0.7,
     ["blipcolor"] = 7,
     ["delivery"] = vector4(-319.8988952636719,-1361.050537109375,31.3524169921875,175.74803161621094)
+},
+["dancestore3"] = {
+    ["label"] = "Dance Store",
+    ["coords"] = vector4(546.4483642578125,-168.5142822265625,56.6776123046875,192.75592041015625),
+    ["ped"] = 'a_m_y_beach_01',
+    ["scenario"] = "WORLD_HUMAN_STAND_MOBILE_CLUBHOUSE",
+    ["radius"] = 6.5,
+    ["targetIcon"] = "fas fa-leaf",
+    ["targetLabel"] = "Open Menu",
+    ["products"] = Config.Products["dancestore"],
+    ["showblip"] = true,
+    ["blipsprite"] = 52,
+    ["blipscale"] = 0.7,
+    ["blipcolor"] = 7,
+    ["delivery"] = vector4(546.4483642578125,-168.5142822265625,56.6776123046875,192.75592041015625)
 },
 ["dancestore2"] = {
     ["label"] = "Dance Store",
