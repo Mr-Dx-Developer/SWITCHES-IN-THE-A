@@ -1,19 +1,16 @@
-fx_version 'cerulean'
-games { 'gta5' }
+fx_version 'adamant'
+game 'gta5'
 
-version '1.0.0'
-
-loadscreen 'html/index.html'
+author 'NaorNC#8998' -- # Discord - Discord.gg/cKt4Mpd2PQ
+description 'nc-loadingscreen'
 
 files {
-    'html/index.html',
-	'html/assets/logo.png',
-    'html/css/style.css',
-	'html/js/main.js',
-    'html/assets/bgvideo.mp4',
-	'html/assets/music.mp3'
+    '*.html',
+    'assets/**/*.*',
+    'assets/**/**/*.*'
 }
 
---loadscreen_manual_shutdown 'yes'
+client_script 'client.lua'
 
-client_script 'client/client.lua'
+--loadscreen_manual_shutdown "yes"
+loadscreen 'index.html'
