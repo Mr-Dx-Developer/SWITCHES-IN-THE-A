@@ -4,6 +4,19 @@
 if Config.Language ~= 'cn' then return end
 
 Strings = {
+    possible_cause = '可能原因',
+
+    full_name = '名字',
+    pulse = '脉搏',
+    bpm = 'BPM: %s',
+    bleed_rate = '出血速率',
+    bleed_rate_low = '低',
+    bleed_rate_medium = '中',
+    bleed_rate_high = '高',
+    no_name = '无名',
+    injuries = '当前伤情',
+
+
     get_off_stretcher_ui = '[E] - 下车担架',
     move = '移动',
     move_desc = '移动担架',
@@ -276,4 +289,23 @@ Strings = {
     interact_stretcher_ui = '[E] - 互动',
     stretcher_menu_title = '担架互动',
     open_shop_ui = '[E] - 打开药房'
+}
+
+UIStrings = {
+    player_dying = "你正在垂死",
+    player_passed = "你已经过世",
+    ems_on_the_way = "紧急服务正在前往!",
+    press_ems_services = "寻求紧急服务",
+    press_for_light = "看到光明",
+    hold = "把持",
+    time_to_respawn = "重生剩余时间",
+    press = "按",
+    player_hurt_critical = "危急情况！",
+    player_hurt_severe = "你受了严重的伤",
+    player_hurt_unconscious = "无意识",
+    player_hurt_unconscious_direct = "你失去了意识",
+    player_hurt_find_help_or_ems = "按 <span class='color'>G</span> 键请求紧急服务",
+    player_hurt_time_to_live = "正在流血",
+    player_hurt_auto_respawn = "生命体征减弱",
+    player_hurt_respawn = "按 E 键去见光"
 }

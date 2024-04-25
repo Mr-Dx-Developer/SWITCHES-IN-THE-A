@@ -4,6 +4,20 @@
 if Config.Language ~= 'fr' then return end
 
 Strings = {
+
+    possible_cause = 'Cause possible',
+
+    full_name = 'Nom',
+    pulse = 'Pouls',
+    bpm = 'BPM: %s',
+    bleed_rate = 'Taux de saignement',
+    bleed_rate_low = 'Faible',
+    bleed_rate_medium = 'Moyen',
+    bleed_rate_high = 'Élevé',
+    no_name = 'Pas de nom',
+    injuries = 'Blessures actuelles',
+
+
     get_off_stretcher_ui = '[E] - Descendre du brancard',
     move = 'Déplacer',
     move_desc = 'Déplacer le brancard',
@@ -280,4 +294,23 @@ Strings = {
     stretcher_menu_title = 'Interactions avec la civière',
     open_shop_ui = '[E] - Ouvrir la pharmacie'
 
+}
+
+UIStrings = {
+    player_dying = "VOUS ÊTES EN TRAIN DE MOURIR",
+    player_passed = "VOUS ÊTES DÉCÉDÉ",
+    ems_on_the_way = "Les services d'urgence sont en route!",
+    press_ems_services = "pour les services d'urgence",
+    press_for_light = "pour voir la lumière",
+    hold = "Tenir",
+    time_to_respawn = "Temps restant avant réapparition",
+    press = "Appuyez",
+    player_hurt_critical = "État critique!",
+    player_hurt_severe = "Vous êtes gravement blessé",
+    player_hurt_unconscious = "Inconscient",
+    player_hurt_unconscious_direct = "Vous êtes inconscient",
+    player_hurt_find_help_or_ems = "Appuyez sur <span class='color'>G</span> pour demander des services d'urgence",
+    player_hurt_time_to_live = "En train de saigner",
+    player_hurt_auto_respawn = "Signes vitaux en baisse",
+    player_hurt_respawn = "Appuyez sur E pour voir la lumière"
 }

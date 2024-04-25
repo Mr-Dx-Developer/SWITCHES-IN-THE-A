@@ -9,10 +9,10 @@ lua54 'yes'
 
 description 'Wasabi ESX/QBCore Advanced Ambulance Job'
 author 'wasabirobby'
-version '1.9.9'
+version '1.10.5'
 
-ui_page '/nui/index.html'
-files { '/nui/index.html', '/nui/**/*' }
+ui_page 'nui/index.html'
+files { 'nui/*', 'nui/**/*' }
 
 data_file 'DLC_ITYP_REQUEST' 'stream/wasabi_stretcher.ytyp'
 
@@ -33,4 +33,5 @@ escrow_ignore {
   'game/client/radial.lua',
   'game/server/sv_customize.lua'
 }
+
 dependency '/assetpacks'

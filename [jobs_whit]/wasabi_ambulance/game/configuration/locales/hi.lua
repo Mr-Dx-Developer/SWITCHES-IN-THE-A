@@ -4,6 +4,20 @@
 if Config.Language ~= 'hi' then return end
 
 Strings = {
+
+    possible_cause = 'संभावित कारण',
+
+    full_name = 'नाम',
+    pulse = 'नाड़ी',
+    bpm = 'BPM: %s',
+    bleed_rate = 'रक्तस्राव दर',
+    bleed_rate_low = 'कम',
+    bleed_rate_medium = 'मध्यम',
+    bleed_rate_high = 'अधिक',
+    no_name = 'कोई नाम नहीं',
+    injuries = 'वर्तमान चोटें',
+
+
     get_off_stretcher_ui = '[E] - स्ट्रेचर से उतरें',
     move = 'हिलाएँ',
     move_desc = 'स्ट्रेचर को हिलाएँ',
@@ -279,5 +293,23 @@ Strings = {
     stretcher_menu_title = 'स्ट्रेचर संवाद',
     open_shop_ui = '[E] - फार्मेसी खोलें'
 
+}
 
+UIStrings = {
+    player_dying = "आप मर रहे हैं",
+    player_passed = "आप चले गए",
+    ems_on_the_way = "आपातकालीन सेवाएं आ रही हैं!",
+    press_ems_services = "आपातकालीन सेवाओं के लिए",
+    press_for_light = "प्रकाश देखने के लिए",
+    hold = "पकड़",
+    time_to_respawn = "पुनर्जीवित होने तक का समय",
+    press = "दबाएं",
+    player_hurt_critical = "गंभीर स्थिति!",
+    player_hurt_severe = "आप गंभीर रूप से घायल हैं",
+    player_hurt_unconscious = "बेहोश",
+    player_hurt_unconscious_direct = "आप बेहोश हैं",
+    player_hurt_find_help_or_ems = "आपातकालीन सेवाओं का अनुरोध करने के लिए <span class='color'>G</span> दबाएं",
+    player_hurt_time_to_live = "रक्तस्राव हो रहा है",
+    player_hurt_auto_respawn = "महत्वपूर्ण संकेत कमजोर पड़ रहे हैं",
+    player_hurt_respawn = "प्रकाश देखने के लिए E दबाएं"
 }

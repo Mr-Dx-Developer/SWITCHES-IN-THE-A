@@ -4,6 +4,20 @@
 if Config.Language ~= 'es' then return end
 
 Strings = {
+
+    possible_cause = 'Causa posible',
+
+    full_name = 'Nombre',
+    pulse = 'Pulso',
+    bpm = 'BPM: %s',
+    bleed_rate = 'Tasa de sangrado',
+    bleed_rate_low = 'Bajo',
+    bleed_rate_medium = 'Medio',
+    bleed_rate_high = 'Alto',
+    no_name = 'Sin nombre',
+    injuries = 'Lesiones actuales',
+
+
     get_off_stretcher_ui = '[E] - Bajar de la camilla',
     move = 'Mover',
     move_desc = 'Mover la camilla',
@@ -278,4 +292,23 @@ Strings = {
     stretcher_menu_title = 'Interacciones con Camilla',
     open_shop_ui = '[E] - Abrir Farmacia'
 
+}
+
+UIStrings = {
+    player_dying = "TE ESTÁS MURIENDO",
+    player_passed = "HAS FALLECIDO",
+    ems_on_the_way = "¡Los servicios de emergencia están en camino!",
+    press_ems_services = "para Servicios de Emergencia",
+    press_for_light = "para ver la luz",
+    hold = "Sostener",
+    time_to_respawn = "Tiempo restante hasta reaparecer",
+    press = "Presione",
+    player_hurt_critical = "¡Condición Crítica!",
+    player_hurt_severe = "Estás gravemente herido",
+    player_hurt_unconscious = "Inconsciente",
+    player_hurt_unconscious_direct = "Estás inconsciente",
+    player_hurt_find_help_or_ems = "Presiona <span class='color'>G</span> para solicitar servicios de emergencia",
+    player_hurt_time_to_live = "Desangrándose",
+    player_hurt_auto_respawn = "Signos vitales desvaneciéndose",
+    player_hurt_respawn = "Presiona E para ver la luz"
 }

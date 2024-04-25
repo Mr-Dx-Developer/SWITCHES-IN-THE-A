@@ -4,6 +4,20 @@
 if Config.Language ~= 'jp' then return end
 
 Strings = {
+
+    possible_cause = '可能性の原因',
+
+    full_name = '名前',
+    pulse = '脈拍',
+    bpm = 'BPM: %s',
+    bleed_rate = '出血率',
+    bleed_rate_low = '低',
+    bleed_rate_medium = '中',
+    bleed_rate_high = '高',
+    no_name = '名無し',
+    injuries = '現在の怪我',
+
+
     get_off_stretcher_ui = '[E] - ストレッチャーから降りる',
     move = '移動',
     move_desc = 'ストレッチャーを移動する',
@@ -277,4 +291,23 @@ Strings = {
     stretcher_menu_title = 'ストレッチャーの対話',
     open_shop_ui = '[E] - 薬局を開く'
 
+}
+
+UIStrings = {
+    player_dying = "あなたは死にかけています",
+    player_passed = "あなたは亡くなりました",
+    ems_on_the_way = "緊急サービスが向かっています！",
+    press_ems_services = "緊急サービスへ",
+    press_for_light = "光を見るために",
+    hold = "保持",
+    time_to_respawn = "リスポーンまでの残り時間",
+    press = "押す",
+    player_hurt_critical = "重大な状態！",
+    player_hurt_severe = "あなたは重傷を負っています",
+    player_hurt_unconscious = "意識不明",
+    player_hurt_unconscious_direct = "あなたは意識不明です",
+    player_hurt_find_help_or_ems = "緊急サービスを要請するには<span class='color'>G</span>を押してください",
+    player_hurt_time_to_live = "出血中",
+    player_hurt_auto_respawn = "生命徴候が消失しつつあります",
+    player_hurt_respawn = "光を見るためにEを押してください"
 }

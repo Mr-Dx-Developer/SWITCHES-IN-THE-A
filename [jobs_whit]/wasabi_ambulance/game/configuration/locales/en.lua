@@ -6,6 +6,18 @@ if Config.Language ~= 'en' then return end
 
 Strings = {
 
+    possible_cause = 'Possible Cause',
+
+    full_name = 'Name',
+    pulse = 'BPM',
+    bpm = 'BPM: %s',
+    bleed_rate = 'Bleed Rate',
+    bleed_rate_low = 'Low',
+    bleed_rate_medium = 'Medium',
+    bleed_rate_high = 'High',
+    no_name = 'No Name',
+    injuries = 'Current Injuries',
+
     get_off_stretcher_ui = '[E] - Get Off Stretcher',
     move = 'Move',
     move_desc = 'Move the stretcher',
@@ -283,4 +295,23 @@ Strings = {
     interact_stretcher_ui = '[E] - Interact',
     stretcher_menu_title = 'Stretcher Interactions',
     open_shop_ui = '[E] - Open Pharmacy'
+}
+
+UIStrings = {
+    player_dying = "YOU ARE DYING",
+    player_passed = "YOU PASSED AWAY",
+    ems_on_the_way = "Emergency services are on the way!",
+    press_ems_services = "for Emergency Services",
+    press_for_light = "to see the light",
+    hold = "Hold",
+    time_to_respawn = "Time left till respawn",
+    press = "Press",
+    player_hurt_critical = "Critical Condition!",
+    player_hurt_severe = "You are severely hurt",
+    player_hurt_unconscious = "Unconscious",
+    player_hurt_unconscious_direct = "You are unconscious",
+    player_hurt_find_help_or_ems = "Press <span class='color'>G</span> to request emergency services",
+    player_hurt_time_to_live = "Bleeding out",
+    player_hurt_auto_respawn = "Vitals fading",
+    player_hurt_respawn = "Hold E to see the light"
 }

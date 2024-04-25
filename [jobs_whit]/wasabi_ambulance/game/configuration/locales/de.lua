@@ -4,6 +4,20 @@
 if Config.Language ~= 'de' then return end
 
 Strings = {
+
+    possible_cause = 'Mögliche Ursache',
+
+    full_name = 'Name',
+    pulse = 'Puls',
+    bpm = 'BPM: %s',
+    bleed_rate = 'Blutungsrate',
+    bleed_rate_low = 'Niedrig',
+    bleed_rate_medium = 'Mittel',
+    bleed_rate_high = 'Hoch',
+    no_name = 'Kein Name',
+    injuries = 'Aktuelle Verletzungen',
+
+
     get_off_stretcher_ui = '[E] - Von der Trage absteigen',
     move = 'Bewegen',
     move_desc = 'Die Trage bewegen',
@@ -279,4 +293,23 @@ Strings = {
     stretcher_menu_title = 'Interaktionen mit der Trage',
     open_shop_ui = '[E] - Apotheke öffnen'
 
+}
+
+UIStrings = {
+    player_dying = "DU BIST AM STERBEN",
+    player_passed = "DU BIST VERSTORBEN",
+    ems_on_the_way = "Rettungsdienste sind unterwegs!",
+    press_ems_services = "für Rettungsdienste",
+    press_for_light = "um das Licht zu sehen",
+    hold = "Halten",
+    time_to_respawn = "Verbleibende Zeit bis zur Wiederbelebung",
+    press = "Drücken",
+    player_hurt_critical = "Kritischer Zustand!",
+    player_hurt_severe = "Du bist schwer verletzt",
+    player_hurt_unconscious = "Bewusstlos",
+    player_hurt_unconscious_direct = "Du bist bewusstlos",
+    player_hurt_find_help_or_ems = "Drücken Sie <span class='color'>G</span>, um Notdienste anzufordern",
+    player_hurt_time_to_live = "Verblutend",
+    player_hurt_auto_respawn = "Lebenszeichen schwinden",
+    player_hurt_respawn = "Drücken Sie E, um das Licht zu sehen"
 }

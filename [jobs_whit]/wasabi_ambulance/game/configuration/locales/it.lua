@@ -4,6 +4,20 @@
 if Config.Language ~= 'it' then return end
 
 Strings = {
+
+    possible_cause = 'Causa possibile',
+
+    full_name = 'Nome',
+    pulse = 'Polso',
+    bpm = 'BPM: %s',
+    bleed_rate = 'Tasso di sanguinamento',
+    bleed_rate_low = 'Basso',
+    bleed_rate_medium = 'Medio',
+    bleed_rate_high = 'Alto',
+    no_name = 'Nessun nome',
+    injuries = 'Infortuni attuali',
+
+
     get_off_stretcher_ui = '[E] - Scendi dalla barella',
     move = 'Muovi',
     move_desc = 'Muovi la barella',
@@ -280,4 +294,23 @@ Strings = {
     open_shop_ui = '[E] - Apri Farmacia'
 
 
+}
+
+UIStrings = {
+    player_dying = "STAI MORENDO",
+    player_passed = "SEI PASSATO",
+    ems_on_the_way = "I servizi di emergenza sono in arrivo!",
+    press_ems_services = "per i servizi di emergenza",
+    press_for_light = "per vedere la luce",
+    hold = "Tenere",
+    time_to_respawn = "Tempo rimanente prima della ricomparsa",
+    press = "Premere",
+    player_hurt_critical = "Condizione critica!",
+    player_hurt_severe = "Sei gravemente ferito",
+    player_hurt_unconscious = "Incosciente",
+    player_hurt_unconscious_direct = "Sei incosciente",
+    player_hurt_find_help_or_ems = "Premi <span class='color'>G</span> per richiedere i servizi di emergenza",
+    player_hurt_time_to_live = "Perdita di sangue",
+    player_hurt_auto_respawn = "Segni vitali in calo",
+    player_hurt_respawn = "Premi E per vedere la luce"
 }

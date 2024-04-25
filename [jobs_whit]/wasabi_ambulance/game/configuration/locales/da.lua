@@ -4,6 +4,20 @@
 if Config.Language ~= 'da' then return end
 
 Strings = {
+
+    possible_cause = 'Mulig årsag',
+
+    full_name = 'Navn',
+    pulse = 'Puls',
+    bpm = 'BPM: %s',
+    bleed_rate = 'Blødningsrate',
+    bleed_rate_low = 'Lav',
+    bleed_rate_medium = 'Medium',
+    bleed_rate_high = 'Høj',
+    no_name = 'Intet navn',
+    injuries = 'Nuværende skader',
+
+
     get_off_stretcher_ui = '[E] - Stå af båre',
     move = 'Flyt',
     move_desc = 'Flyt båren',
@@ -278,4 +292,23 @@ Strings = {
     interact_stretcher_ui = '[E] - Interager',
     stretcher_menu_title = 'Interaktioner med bårer',
     open_shop_ui = '[E] - Åben Apotek'
+}
+
+UIStrings = {
+    player_dying = "DU ER VED AT DØ",
+    player_passed = "DU ER GÅET BORT",
+    ems_on_the_way = "Ambulancen er på vej!",
+    press_ems_services = "for Ambulancen",
+    press_for_light = "for at se lyset",
+    hold = "Hold",
+    time_to_respawn = "Tid til genstart",
+    press = "Tryk",
+    player_hurt_critical = "Kritisk tilstand!",
+    player_hurt_severe = "Du er alvorligt såret",
+    player_hurt_unconscious = "Bevidstløs",
+    player_hurt_unconscious_direct = "Du er bevidstløs",
+    player_hurt_find_help_or_ems = "Tryk på <span class='color'>G</span> for at anmode om nødtjenester",
+    player_hurt_time_to_live = "Bløder ud",
+    player_hurt_auto_respawn = "Livstegn aftager",
+    player_hurt_respawn = "Tryk på E for at se lyset"
 }

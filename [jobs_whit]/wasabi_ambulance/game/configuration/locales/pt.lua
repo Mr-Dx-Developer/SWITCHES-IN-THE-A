@@ -4,6 +4,20 @@
 if Config.Language ~= 'pt' then return end
 
 Strings = {
+
+    possible_cause = 'Causa possível',
+
+    full_name = 'Nome',
+    pulse = 'Pulso',
+    bpm = 'BPM: %s',
+    bleed_rate = 'Taxa de sangramento',
+    bleed_rate_low = 'Baixo',
+    bleed_rate_medium = 'Médio',
+    bleed_rate_high = 'Alto',
+    no_name = 'Sem nome',
+    injuries = 'Lesões atuais',
+
+
     get_off_stretcher_ui = '[E] - Descer da maca',
     move = 'Mover',
     move_desc = 'Mover a maca',
@@ -279,4 +293,23 @@ Strings = {
     stretcher_menu_title = 'Interações com Maca',
     open_shop_ui = '[E] - Abrir Farmácia'
 
+}
+
+UIStrings = {
+    player_dying = "VOCÊ ESTÁ MORRENDO",
+    player_passed = "VOCÊ PASSOU",
+    ems_on_the_way = "Os serviços de emergência estão a caminho!",
+    press_ems_services = "para Serviços de Emergência",
+    press_for_light = "para ver a luz",
+    hold = "Segurar",
+    time_to_respawn = "Tempo restante até o respawn",
+    press = "Pressione",
+    player_hurt_critical = "Condição Crítica!",
+    player_hurt_severe = "Você está gravemente ferido",
+    player_hurt_unconscious = "Inconsciente",
+    player_hurt_unconscious_direct = "Você está inconsciente",
+    player_hurt_find_help_or_ems = "Pressione <span class='color'>G</span> para solicitar serviços de emergência",
+    player_hurt_time_to_live = "Sangrando até a morte",
+    player_hurt_auto_respawn = "Sinais vitais diminuindo",
+    player_hurt_respawn = "Pressione E para ver a luz"
 }

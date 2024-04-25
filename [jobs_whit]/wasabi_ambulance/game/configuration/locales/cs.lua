@@ -4,6 +4,20 @@
 if Config.Language ~= 'cs' then return end
 
 Strings = {
+
+    possible_cause = 'Možná příčina',
+
+    full_name = 'Jméno',
+    pulse = 'Puls',
+    bpm = 'BPM: %s',
+    bleed_rate = 'Rychlost krvácení',
+    bleed_rate_low = 'Nízká',
+    bleed_rate_medium = 'Střední',
+    bleed_rate_high = 'Vysoká',
+    no_name = 'Bez jména',
+    injuries = 'Aktuální zranění',
+
+
     get_off_stretcher_ui = '[E] - Sestoupit z nosítek',
     move = 'Pohyb',
     move_desc = 'Pohněte nosítky',
@@ -279,4 +293,23 @@ Strings = {
     stretcher_menu_title = 'Interakce s nosítky',
     open_shop_ui = '[E] - Otevřít lékárnu'
 
+}
+
+UIStrings = {
+    player_dying = "UMÍRÁŠ",
+    player_passed = "OPUSTIL JSI ŽIVOT",
+    ems_on_the_way = "Záchranné služby jsou na cestě!",
+    press_ems_services = "pro Záchranné služby",
+    press_for_light = "pro vidění světla",
+    hold = "Drž",
+    time_to_respawn = "Čas do obnovení",
+    press = "Stiskněte",
+    player_hurt_critical = "Kritický stav!",
+    player_hurt_severe = "Jste vážně zraněn",
+    player_hurt_unconscious = "Bezvědomí",
+    player_hurt_unconscious_direct = "Jste v bezvědomí",
+    player_hurt_find_help_or_ems = "Stiskněte <span class='color'>G</span> pro vyžádání nouzových služeb",
+    player_hurt_time_to_live = "Vykrvácení",
+    player_hurt_auto_respawn = "Životní funkce slábnou",
+    player_hurt_respawn = "Stiskněte E pro návrat k životu"
 }

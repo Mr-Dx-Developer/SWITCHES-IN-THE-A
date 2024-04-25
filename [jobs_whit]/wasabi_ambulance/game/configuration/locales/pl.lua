@@ -4,6 +4,20 @@
 if Config.Language ~= 'pl' then return end
 
 Strings = {
+
+    possible_cause = 'Możliwa przyczyna',
+
+    full_name = 'Nazwa',
+    pulse = 'Puls',
+    bpm = 'BPM: %s',
+    bleed_rate = 'Wskaźnik krwawienia',
+    bleed_rate_low = 'Niski',
+    bleed_rate_medium = 'Średni',
+    bleed_rate_high = 'Wysoki',
+    no_name = 'Brak nazwy',
+    injuries = 'Obecne obrażenia',
+
+
     get_off_stretcher_ui = '[E] - Zejdź z noszy',
     move = 'Przenieś',
     move_desc = 'Przenieś nosze',
@@ -279,4 +293,23 @@ Strings = {
     stretcher_menu_title = 'Interakcje z Nosze',
     open_shop_ui = '[E] - Otwórz Aptekę'
 
+}
+
+UIStrings = {
+    player_dying = "UMIERASZ",
+    player_passed = "ODSZEDŁEŚ",
+    ems_on_the_way = "Służby ratunkowe są w drodze!",
+    press_ems_services = "dla Służb Ratunkowych",
+    press_for_light = "by zobaczyć światło",
+    hold = "Trzymać",
+    time_to_respawn = "Czas do respawnu",
+    press = "Naciśnij",
+    player_hurt_critical = "Stan krytyczny!",
+    player_hurt_severe = "Jesteś poważnie ranny",
+    player_hurt_unconscious = "Nieprzytomny",
+    player_hurt_unconscious_direct = "Jesteś nieprzytomny",
+    player_hurt_find_help_or_ems = "Naciśnij <span class='color'>G</span>, aby wezwać pomoc",
+    player_hurt_time_to_live = "Krwotok",
+    player_hurt_auto_respawn = "Zanikają funkcje życiowe",
+    player_hurt_respawn = "Naciśnij E, aby zobaczyć światło"
 }

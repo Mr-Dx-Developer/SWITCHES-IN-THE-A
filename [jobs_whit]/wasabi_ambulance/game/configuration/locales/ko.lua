@@ -4,6 +4,20 @@
 if Config.Language ~= 'ko' then return end
 
 Strings = {
+
+    possible_cause = '가능한 원인',
+
+    full_name = '이름',
+    pulse = '맥박',
+    bpm = 'BPM: %s',
+    bleed_rate = '출혈률',
+    bleed_rate_low = '낮음',
+    bleed_rate_medium = '보통',
+    bleed_rate_high = '높음',
+    no_name = '이름 없음',
+    injuries = '현재 부상',
+
+
     get_off_stretcher_ui = '[E] - 들것에서 내리기',
     move = '이동',
     move_desc = '들것을 이동하기',
@@ -277,4 +291,23 @@ Strings = {
     stretcher_menu_title = '스트레처 상호 작용',
     open_shop_ui = '[E] - 약국 열기'
 
+}
+
+UIStrings = {
+    player_dying = "당신은 죽고 있습니다",
+    player_passed = "당신은 돌아가셨습니다",
+    ems_on_the_way = "긴급 서비스가 가고 있습니다!",
+    press_ems_services = "긴급 서비스 요청",
+    press_for_light = "빛을 보려면",
+    hold = "잡다",
+    time_to_respawn = "리스폰까지 남은 시간",
+    press = "누르다",
+    player_hurt_critical = "위독한 상태!",
+    player_hurt_severe = "심각하게 다쳤습니다",
+    player_hurt_unconscious = "의식 불명",
+    player_hurt_unconscious_direct = "당신은 의식이 없습니다",
+    player_hurt_find_help_or_ems = "응급 서비스 요청을 위해 <span class='color'>G</span>를 누르세요",
+    player_hurt_time_to_live = "출혈 중",
+    player_hurt_auto_respawn = "생명 징후가 사라지고 있습니다",
+    player_hurt_respawn = "빛을 보려면 E를 누르세요"
 }

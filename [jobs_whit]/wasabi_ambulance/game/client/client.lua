@@ -7,16 +7,16 @@ isDead, disableKeys, inMenu, medbagCoords, isBusy, Authorized, OnPainKillers, Ga
 local deathInjury, previousHealth, previousArmour
 plyRequests = {}
 currentDrugEffect, nodOutRunning = false, false
+local targetedVehicle = nil
 
 CreateThread(function()
     while not wsb.playerLoaded do Wait(1000) end
     CreateThread(function()
-        Wait(2500)
-        SendReactMessage('initialize', json.encode({
-            language = Config.Language,
+        SendNUIMessage({
+            action = 'initialize',
             color = Config.UIColor,
-            deathEffectsEnabled = Config.DeathScreenEffects
-        }))
+            translationStrings = UIStrings
+        })
     end)
 
     if Config.policeCanTreat and Config.policeCanTreat.enabled and wsb.hasGroup(Config.policeCanTreat.jobs) then
@@ -134,37 +134,29 @@ CreateThread(function()
                     icon = 'fas fa-car',
                     label = Strings.remove_dead_target,
                     canInteract = function(entity)
-                        local model = GetEntityModel(entity)
-                        local found = false
-                        for k, _ in pairs(Config.AmbulanceOffsets) do
-                            if model == GetHashKey(k) then
-                                found = true
-                                break
-                            end
-                        end
-                        if found then return false end
+                        if not IsVehicleAmbulance(entity) then return false end
                         local deadPlayerID = GetDeadPlayerInsideVehicle(entity)
                         return deadPlayerID
                     end
                 },
---[[                {
+                {
                     event = 'wasabi_ambulance:placeInVehicle',
                     icon = 'fas fa-car',
                     label = Strings.place_patient,
                     canInteract = function(entity)
-                        local model = GetEntityModel(entity)
-                        local found = false
-                        for k, _ in pairs(Config.AmbulanceOffsets) do
-                            if model == GetHashKey(k) then
-                                found = true
-                                break
-                            end
-                        end
-                        return found
+                        if not IsVehicleAmbulance(entity) then return false end
+                        local coords = GetEntityCoords(entity)
+                        local closestPlayer = wsb.getClosestPlayer(coords, 4.0)
+                        if not closestPlayer then return false end
+                        targetedVehicle = entity
+                        if IsPedInAnyVehicle(GetPlayerPed(closestPlayer), false) then return true end
+                        if not Config.EnableStretcher then return true end
+                        if IsPlayerUsingStretcher(closestPlayer) then return false end
+                        return true
                     end,
                     job = Config.ambulanceJob or JobArrayToTarget(),
                     groups = Config.ambulanceJob or JobArrayToTarget()
-                },]]
+                },
             },
             distance = 1.5
         })
@@ -190,7 +182,6 @@ end)
 
 RegisterNetEvent('wasabi_bridge:playerLoaded', function()
     while not wsb?.playerLoaded and not wsb?.playerData?.job do Wait(1000) end
-    TriggerServerEvent('wasabi_ambulance:setPlayerIdentifier')
     if Config.AntiCombatLog.enabled then
         CreateThread(function()
             while not DoesEntityExist(PlayerPedId()) do Wait(500) end
@@ -272,6 +263,9 @@ CreateThread(function()
     local setDeadFace = false
     while true do
         local sleep = 1500
+        if isDead and (IsPedArmed(cache.ped, 1) or IsPedArmed(cache.ped, 2) or IsPedArmed(cache.ped, 4)) then
+            SetCurrentPedWeapon(PlayerPedId(), `WEAPON_UNARMED`, true)
+        end
         if isDead == 'dead' or disableKeys or (isDead == 'laststand' and Config.DisableLastStandCrawl) then
             sleep = 0
             DisableAllControlActions(0)
@@ -413,6 +407,7 @@ end)
 
 -- Death Event
 local originalDeath
+local originalLocation
 AddEventHandler('wasabi_bridge:onPlayerDeath', function(data)
     if OccupyingStretcher then
         local occupyingStretcher = OccupyingStretcher
@@ -428,38 +423,67 @@ AddEventHandler('wasabi_bridge:onPlayerDeath', function(data)
             end
         end)
     end
-    if not isDead then originalDeath = data.deathCause end
+    if not isDead then
+        originalDeath = data.deathCause
+        local _, bone = GetPedLastDamageBone(cache.ped)
+        if originalLocation ~= Bones[bone] then
+            originalLocation = Bones[bone]
+        end
+    end
     if isDead == 'laststand' and originalDeath then
-        data.deathCause = originalDeath
+        if data.deathCause == -842959696 then
+            data.deathCause = originalDeath
+        else
+            local _, bone = GetPedLastDamageBone(cache.ped)
+            if originalLocation ~= Bones[bone] then
+                originalLocation = Bones[bone]
+            end
+        end
         originalDeath = nil
     end
     if data.deathCause == 0 then
+        local onFire = false
+        if IsEntityOnFire(cache.ped) then
+            deathInjury = 'burned'
+            onFire = true
+        end
         local deathSource = wsb.getClosestPlayer(vec3(data.victimCoords.x, data.victimCoords.y, data.victimCoords.z), 3.0)
-        if deathSource then
+        local _, bone = GetPedLastDamageBone(cache.ped)
+        if originalLocation ~= Bones[bone] then
+            originalLocation = Bones[bone]
+        end
+        if deathSource and not onFire then
             local deathSourcePed = GetPlayerPed(deathSource)
             local weapon = GetSelectedPedWeapon(deathSourcePed)
+            local foundInjury
             for k, v in pairs(InjuryReasons) do
                 for i = 1, #v do
                     if v[i] == weapon then
                         deathInjury = tostring(k)
+                        foundInjury = true
                         break
                     end
                 end
             end
+            if weapon and not foundInjury then deathInjury = CheckWeaponType(weapon) end
             if deathInjury == 'shot' then deathInjury = 'beat' end
         end
     elseif data.deathCause == -842959696 then
         deathInjury = 'bleedout'
     else
+        local foundInjury
         for k, v in pairs(InjuryReasons) do
             for i = 1, #v do
                 if v[i] == data.deathCause then
                     deathInjury = tostring(k)
+                    foundInjury = true
                     break
                 end
             end
         end
+        if not foundInjury then deathInjury = CheckWeaponType(data.deathCause) end
     end
+
     PlayerInjury = {}
     if Config.DeathLogs then
         local killer = GetPedSourceOfDeath(cache.ped)
@@ -485,7 +509,15 @@ AddEventHandler('wasabi_bridge:onPlayerDeath', function(data)
         TriggerEvent('mythic_hospital:client:RemoveBleed')
         TriggerEvent('mythic_hospital:client:ResetLimbs')
     end
-    TriggerServerEvent('wasabi_ambulance:injurySync', deathInjury)
+    local injuryData = {
+        injury = deathInjury or Strings.unknown,
+        location = originalLocation
+    }
+    TriggerServerEvent('wasabi_ambulance:injurySync', injuryData)
+    if not Config.DisableHeadShotKill and Config.LastStand and not isDead and injuryData.injury == 'shot' and injuryData.location == 'head' then
+        OnPlayerDeath(false)
+        return
+    end
     if not Config.LastStand or IsPedInAnyVehicle(cache.ped, false) then
         OnPlayerDeath(false)
         return
@@ -598,7 +630,7 @@ if Config.EnableLiveInjury then
                 if GetGameTimer() - lastBleedCheck > 10000 then
                     local totalBleed = 0
                     for _, v in pairs(PlayerInjury) do
-                        totalBleed = totalBleed + v.data.bleed
+                        totalBleed = totalBleed + (v.data.bleed or 0)
                     end
                     if totalBleed > 0 then
                         local currentHealth = GetEntityHealth(ped)
@@ -610,8 +642,8 @@ if Config.EnableLiveInjury then
                 if not OnPainKillers then
                     for k, v in pairs(PlayerInjury) do
                         -- Adjust the severity to 4 levels
-                        if v.data.level > 4 then v.data.level = 4 end
-                        if v.data.bleed > 4 then v.data.bleed = 4 end
+                        if v.data.level or 0 > 4 then v.data.level = 4 end
+                        if v.data.bleed or 0 > 4 then v.data.bleed = 4 end
 
                         if not OnPainKillers then
                             -- Handle head injuries
@@ -1487,11 +1519,14 @@ if wsb.framework == 'esx' then
 end
 
 RegisterNetEvent('wasabi_ambulance:revivePlayer', function(serverdata)
+    local playerId = PlayerId()
     if isDead then
         local injury = serverdata
         HideDeathNui()
         TriggerEvent('wasabi_ambulance:customInjuryClear')
         SetEntityInvincible(cache.ped, false)
+        if GetPlayerInvincible(playerId) then SetPlayerInvincible(playerId, false) end
+
         TriggerServerEvent('wasabi_ambulance:setDeathStatus', false, true)
         DrugIntake = {}
         ClearDrugEffects(PlayerPedId())
@@ -1525,7 +1560,9 @@ RegisterNetEvent('wasabi_ambulance:revivePlayer', function(serverdata)
             TriggerServerEvent('hud:server:RelieveStress', 100)
             TriggerEvent('wasabi_bridge:onPlayerSpawn')
         end
-        ClearPedTasks(cache.ped)
+        if not IsCheckedIn then
+            ClearPedTasks(cache.ped)
+        end
         Wait(1000)
         if not injury then return end
         ApplyDamageToPed(cache.ped, Config.ReviveHealth[injury], false)
@@ -1536,6 +1573,9 @@ end)
 RegisterNetEvent('wasabi_ambulance:revive', function(noAnim)
     TriggerEvent('wasabi_ambulance:customInjuryClear')
     SetEntityInvincible(cache.ped, false)
+    local playerId = PlayerId()
+    if GetPlayerInvincible(playerId) then SetPlayerInvincible(playerId, false) end
+
     TriggerServerEvent('wasabi_ambulance:injurySync', false)
     HideDeathNui()
     TriggerServerEvent('wasabi_ambulance:setDeathStatus', false, true)
@@ -1552,7 +1592,7 @@ RegisterNetEvent('wasabi_ambulance:revive', function(noAnim)
         local coords = GetEntityCoords(cache.ped)
         local heading = GetEntityHeading(cache.ped)
         NetworkResurrectLocalPlayer(coords.x, coords.y, coords.z, heading, true, false)
-    else
+    elseif not IsCheckedIn then
         ClearPedTasks(cache.ped)
     end
     if GetEntityHealth(cache.ped) < 200 then SetEntityHealth(cache.ped, 200) end
@@ -1579,6 +1619,7 @@ RegisterNetEvent('wasabi_ambulance:revive', function(noAnim)
         TriggerEvent('wasabi_bridge:onPlayerSpawn', (noAnim or false))
     end
     Wait(1000)
+    if IsCheckedIn then return end
     ClearPedTasks(cache.ped)
 end)
 
@@ -1673,6 +1714,19 @@ end)
 
 AddEventHandler('wasabi_ambulance:buyItem', function(data)
     TriggerServerEvent('wasabi_ambulance:restock', data)
+end)
+
+AddEventHandler('wasabi_ambulance:placeInVehicle', function()
+    if not targetedVehicle or not DoesEntityExist(targetedVehicle) then return end
+    local coords = GetEntityCoords(cache.ped)
+    local closestPlayer = wsb.getClosestPlayer(vec3(coords.x, coords.y, coords.z), 3.0)
+    if not closestPlayer then
+        TriggerEvent('wasabi_bridge:notify', Strings.no_nearby, Strings.no_nearby_desc, 'error')
+        return
+    end
+    local targetId = GetPlayerServerId(closestPlayer)
+    if IsPlayerUsingStretcher(targetId) then return end
+    TriggerServerEvent('wasabi_ambulance:putInVehicle', targetId)
 end)
 
 AddEventHandler('wasabi_ambulance:openBossMenu', function()

@@ -132,24 +132,20 @@ end)
 
 -- Death screen related editables
 function StartDeathTimer()
-	local deathTrigger = false
 	canRespawn = false
 	if not Config.DisableDeathAnimation then
 		SetGameplayCamRelativeHeading(-360)
 	end
 	local earlySpawnTimer = math.floor(Config.RespawnTimer / 1000)
 	local bleedoutTimer = math.floor(Config.BleedoutTimer / 1000)
-	-- Null
-	SendReactMessage('display', json.encode({
-		component = 'deathScreen',
-		show = true,
-		initialData = {
-			counter = earlySpawnTimer,
-			dispatched = false,
-			canRespawn = canRespawn,
-			type = Config.DeathScreenType
-		},
-	}))
+
+	SendNUIMessage({
+		action = 'displayDeathScreen',
+		counter = earlySpawnTimer,
+		dispatched = false,
+		canRespawn = canRespawn,
+		type = Config.DeathScreenType
+	})
 
 	CreateThread(function()
 		while earlySpawnTimer > 0 and isDead do
@@ -161,16 +157,13 @@ function StartDeathTimer()
 			if earlySpawnTimer > 0 then
 				earlySpawnTimer = earlySpawnTimer - 1
 				if not IsCheckedIn and isDead then
-					-- Null
-					SendReactMessage('update', json.encode({
-						component = 'deathScreen',
-						newData = {
-							counter = earlySpawnTimer,
-							dispatched = IsDispatched or false,
-							canRespawn = canRespawn,
-							type = Config.DeathScreenType
-						},
-					}))
+					SendNUIMessage({
+						action = 'updateDeathScreen',
+						counter = earlySpawnTimer,
+						dispatched = IsDispatched and true or false,
+						canRespawn = canRespawn,
+						type = Config.DeathScreenType
+					})
 				else
 					HideDeathNui()
 					break
@@ -178,10 +171,6 @@ function StartDeathTimer()
 			end
 		end
 		while bleedoutTimer > 0 and isDead do
-			if not deathTrigger then
-				SendReactMessage('playerDied', json.encode(true))
-				deathTrigger = true
-			end
 			if isDead == 'laststand' then SetEntityHealth(cache.ped, 0) end
 			Wait(1000)
 			if not wsb.playerLoaded then
@@ -191,16 +180,13 @@ function StartDeathTimer()
 			if bleedoutTimer > 0 then
 				bleedoutTimer = bleedoutTimer - 1
 				if not IsCheckedIn and isDead then
-					-- Null
-					SendReactMessage('update', json.encode({
-						component = 'deathScreen',
-						newData = {
-							counter = bleedoutTimer,
-							dispatched = IsDispatched or false,
-							canRespawn = canRespawn,
-							type = Config.DeathScreenType
-						},
-					}))
+					SendNUIMessage({
+						action = 'updateDeathScreen',
+						counter = bleedoutTimer,
+						dispatched = IsDispatched or false,
+						canRespawn = canRespawn,
+						type = Config.DeathScreenType
+					})
 				else
 					HideDeathNui()
 					break
@@ -232,20 +218,17 @@ function StartDeathTimer()
 				end
 			end
 			if not canRespawn then
-				SendReactMessage('update', json.encode({
-					component = 'deathScreen',
-					newData = {
-						counter = bleedoutTimer,
-						dispatched = IsDispatched or false,
-						canRespawn = true,
-						type = Config.DeathScreenType
-					},
-				}))
+				SendNUIMessage({
+					action = 'updateDeathScreen',
+					counter = bleedoutTimer,
+					dispatched = IsDispatched or false,
+					canRespawn = true,
+					type = Config.DeathScreenType
+				})
 				canRespawn = true
 			end
 			if not IsCheckedIn then
 				if IsControlPressed(0, 38) and timeHeld > 60 then
-					HideDeathNui()
 					StartRPDeath()
 					break
 				end
@@ -259,7 +242,6 @@ function StartDeathTimer()
 			end
 		end
 		if bleedoutTimer < 1 and isDead then
-			HideDeathNui()
 			StartRPDeath()
 		end
 	end)

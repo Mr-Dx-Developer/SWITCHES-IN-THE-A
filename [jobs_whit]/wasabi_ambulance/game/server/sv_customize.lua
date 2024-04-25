@@ -14,6 +14,17 @@ function MuteDeadPlayer(src, isDead)
     MumbleSetPlayerMuted(src, bool)
 end
 
+RegisterNetEvent('wasabi_ambulance:qbBill', function(target, amount, job)
+    local src = source
+    if not wsb.hasGroup(src, Config.ambulanceJobs or Config.ambulanceJob) then return end
+    wsb.removeMoney(target, 'bank', amount)
+    TriggerClientEvent('wasabi_bridge:notify', src, Strings.fine_sent, (Strings.fine_sent_desc):format(addCommas(amount)),
+        'success')
+    TriggerClientEvent('wasabi_bridge:notify', target, Strings.fine_received,
+        (Strings.fine_received_desc):format(addCommas(amount)), 'error')
+    exports['qb-management']:AddMoney(job, amount)
+end)
+
 if wsb.framework == 'esx' then
     if not Config.ambulanceJob and type(Config.ambulanceJobs) == 'table' then
         for i = 1, #Config.ambulanceJobs do
@@ -24,7 +35,7 @@ if wsb.framework == 'esx' then
         goto continue
     end
     TriggerEvent('esx_society:registerSociety', Config.ambulanceJob, Config.ambulanceJob, 'society_' ..
-    Config.ambulanceJob, 'society_' .. Config.ambulanceJob, 'society_' .. Config.ambulanceJob, { type = 'public' })
+        Config.ambulanceJob, 'society_' .. Config.ambulanceJob, 'society_' .. Config.ambulanceJob, { type = 'public' })
     ::continue::
     ESX.RegisterServerCallback('esx_ambulancejob:getDeathStatus', function(source, cb)
         if deadPlayers[source] then
@@ -118,7 +129,7 @@ RegisterNetEvent('wasabi_ambulance:punishPlayer', function(reason)
     local src = source
     wsb.kickPlayer(src,
         string.format(
-        'You got kicked!\n\nAuthor: %s\nReason: %s\n\nYou think this punishment was not fair?\nContact our support at discord.gg/',
+            'You got kicked!\n\nAuthor: %s\nReason: %s\n\nYou think this punishment was not fair?\nContact our support at discord.gg/',
             GetCurrentResourceName(), reason))
 
     --[[
@@ -175,7 +186,7 @@ if Config.CompleteDeath.enabled and wsb.framework == 'esx' then
             }, function(result)
                 if disable == 1 then
                     xPlayer.kick(string.format(
-                    'You got kicked!\n\nAuthor: %s\nReason: You reached the max deathcount\nDeathcount: %s/%s\n\nYour character is now disabled.',
+                        'You got kicked!\n\nAuthor: %s\nReason: You reached the max deathcount\nDeathcount: %s/%s\n\nYour character is now disabled.',
                         GetCurrentResourceName(), deathCount, Config.CompleteDeath.maxDeaths))
                 end
             end)

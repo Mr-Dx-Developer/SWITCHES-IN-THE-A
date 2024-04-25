@@ -28,14 +28,14 @@ Config.CheckForUpdates = true -- Check for updates? Who would not want to know u
 -- 'da' (Danish)
 -- 'cs' (Czech)
 -- If you would like us to add a language, join our discord and create a ticket!
--- Lua strings can be found in /game/configuration/locales/
+-- All locale strings can be found in /game/configuration/locales/
 Config.Language = 'en'
-Config.UIColor = 'red'           -- Can be 'red', 'blue', or a hex '#FF0000'
-Config.DeathScreenEffects = true -- Enable screen effects while dead (for applicable death screens)
+Config.UIColor = 'red' -- Can be 'red', 'blue', or a hex '#FF0000'
+-- Config.DeathScreenEffects = true -- OBSOLETE RIGHT NOW
 
--- Which style do you want to use for death UI?(Current options: 1, 2, 3, 4, 5)
+-- Which style do you want to use for death UI?(Current options: 1, 2, 3, 4)
 -- Check docs for examples of all types! https://docs.wasabiscripts.com
-Config.DeathScreenType = 5
+Config.DeathScreenType = 3
 -- If you want to use the previous death screen(Draw text, not recommended) see docs
 
 Config.ambulanceJobs = { -- Jobs that are considered ambulance jobs (If unsure, likely leave the way it is)
@@ -53,9 +53,18 @@ Config.ReviveLogs = true -- Enable admin revive logs via Discord webhook? (Linke
 Config.LogIPs = false     -- If Config.DeathLogs/Config.ReviveLogs enabled, do you want to logs IP addresses as well?
 
 -- Stretcher Settings
-Config.EnableStretcher = false -- Enable stretcher system?
+Config.EnableStretcher = false     -- Enable stretcher system?
 Config.StretcherProp = 'wasabi_stretcher'
-Config.StretcherKey = 38      -- Key to place the stretcher on the ground
+Config.StretcherKey = 38          -- Key to place the stretcher on the ground
+Config.HoldingStretcherOffSet = { -- Offset for holding stretcher
+    pos = { x = -0.032, y = -0.716, z = -1.269 },
+    rot = { x = 16.489, y = 1.863, z = -1.3292 }
+}
+Config.OccupyingStretcherOffSet = { -- Offset for occupying stretcher
+    pos = { x = 0.0, y = 0.0, z = 1.9 },
+    rot = { x = 0.0, y = 0.0, z = 180.0 }
+}
+
 
 
 Config.BagProp = `xm_prop_x17_bag_med_01a`
@@ -159,8 +168,9 @@ Config.KnockoutFeature = {
 -- Last Stand (2 Stage death)
 Config.LastStand = true                -- Enable a 2 stage death. Where initially you can crawl around(Similiar to qb-ambulancejob)
 Config.DisableLastStandCrawl = false   -- Disable crawling within last stand
-Config.LastStandTickTime = 5 * seconds -- Everytime this time passes while in last stand, a random amount(8-15) amount of
--- health will be deducted to similuate bleeding out
+Config.LastStandTickTime = 5 * seconds -- Everytime this time passes while in last stand,
+----------------------------------------- a random amount(8-15) amount of health will be deducted to similuate bleeding out
+Config.DisableHeadShotKill = false     -- When enabled, a player who is shot in the head will still go into last stand (Recommended to leave false)
 
 -- Live injury
 Config.EnableLiveInjury = true                             -- Enable live injury system?
@@ -233,6 +243,15 @@ Config.EnviPrescriptions = {
     ---------------------------------------------------
     enabled = false, -- Enable to add option for prescriptions to job menu
     minRank = 1      -- Minimum job level/grade to have this option available
+}
+
+Config.mInsurance = {
+    -----------------------------------
+    --   If you use m-Insurance:     --
+    -- https://marcinhu.tebex.io/    --
+    -----------------------------------
+    enabled = false, -- Enable to allow for discount on insured patient
+    checkInDiscount = 500 --The amount to deduct from the configured check-price if player has insurance
 }
 
 Config.phoneDistress = false        -- Options: 'gks' (GKS Phone - ESX ONLY) / 'qs' (qs-smartphone) / 'd-p' (d-phone) / 'lb' (lb-phone) WILL REPLACE BUILT IN DISPATCH WITH PHONE DISPATCH / Add additonal dispatch in client/cl_customize.lua
@@ -312,6 +331,7 @@ Config.ReviveHealth = { -- How much health to deduct for those revived without p
     burned = 20
 }
 
+Config.ReviveTime = 12 * seconds   -- Time to revive player
 Config.TreatmentTime = 9 * seconds -- Time to perform treatment
 Config.DiagnoseTime = 7 * seconds  -- Time to diagnose patient
 

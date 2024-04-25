@@ -4,6 +4,19 @@
 if Config.Language ~= 'nl' then return end
 
 Strings = {
+
+    possible_cause = 'Mogelijke oorzaak',
+
+    full_name = 'Naam',
+    pulse = 'Pols',
+    bpm = 'BPM: %s',
+    bleed_rate = 'Bloedingsgraad',
+    bleed_rate_low = 'Laag',
+    bleed_rate_medium = 'Gemiddeld',
+    bleed_rate_high = 'Hoog',
+    no_name = 'Geen naam',
+    injuries = 'Huidige verwondingen',
+
     get_off_stretcher_ui = '[E] - Van brancard afstappen',
     move = 'Bewegen',
     move_desc = 'De brancard bewegen',
@@ -279,4 +292,23 @@ Strings = {
     stretcher_menu_title = 'Stretcher Interacties',
     open_shop_ui = '[E] - Apotheek Openen'
 
+}
+
+UIStrings = {
+    player_dying = "JE GAAT DOOD",
+    player_passed = "JE BENT OVERLEDEN",
+    ems_on_the_way = "Nooddiensten zijn onderweg!",
+    press_ems_services = "voor Nooddiensten",
+    press_for_light = "om het licht te zien",
+    hold = "Houden",
+    time_to_respawn = "Tijd tot respawn",
+    press = "Druk",
+    player_hurt_critical = "Kritieke toestand!",
+    player_hurt_severe = "Je bent ernstig gewond",
+    player_hurt_unconscious = "Bewusteloos",
+    player_hurt_unconscious_direct = "Je bent bewusteloos",
+    player_hurt_find_help_or_ems = "Druk op <span class='color'>G</span> om noodhulp aan te vragen",
+    player_hurt_time_to_live = "Bloedt uit",
+    player_hurt_auto_respawn = "Levensfuncties vervagen",
+    player_hurt_respawn = "Druk op E om het licht te zien"
 }

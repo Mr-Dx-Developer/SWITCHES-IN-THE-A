@@ -4,6 +4,20 @@
 if Config.Language ~= 'tw' then return end
 
 Strings = {
+
+    possible_cause = '可能原因',
+
+    full_name = '名稱',
+    pulse = '脈搏',
+    bpm = 'BPM: %s',
+    bleed_rate = '出血率',
+    bleed_rate_low = '低',
+    bleed_rate_medium = '中',
+    bleed_rate_high = '高',
+    no_name = '無名',
+    injuries = '當前傷勢',
+
+
     get_off_stretcher_ui = '[E] - 離開擔架',
     move = '移動',
     move_desc = '移動擔架',
@@ -276,4 +290,23 @@ Strings = {
     interact_stretcher_ui = '[E] - 互動',
     stretcher_menu_title = '担架互動',
     open_shop_ui = '[E] - 打開藥房'
+}
+
+UIStrings = {
+    player_dying = "你正在垂死",
+    player_passed = "你已經過世",
+    ems_on_the_way = "緊急服務正在前往!",
+    press_ems_services = "尋求緊急服務",
+    press_for_light = "看到光明",
+    hold = "把持",
+    time_to_respawn = "重生剩餘時間",
+    press = "按",
+    player_hurt_critical = "危急狀況！",
+    player_hurt_severe = "你受了嚴重的傷",
+    player_hurt_unconscious = "無意識",
+    player_hurt_unconscious_direct = "你失去了意識",
+    player_hurt_find_help_or_ems = "按 <span class='color'>G</span> 鍵請求緊急服務",
+    player_hurt_time_to_live = "正在流血",
+    player_hurt_auto_respawn = "生命體徵減弱",
+    player_hurt_respawn = "按 E 鍵去見光"
 }
