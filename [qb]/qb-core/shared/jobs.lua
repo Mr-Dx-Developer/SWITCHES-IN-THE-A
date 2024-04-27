@@ -398,6 +398,16 @@ QBShared.Jobs = {
 			['4'] = { name = 'Manager', isboss = true, payment = 1400 },
 		},
 	},
+	bluenight = {
+		label = 'Blue Night Club',
+		type = 'bluenight',
+		defaultDuty = true,
+		offDutyPay = false,
+		grades = {
+			['0'] = { name = 'Manager', payment = 900 },
+			['1'] = { name = 'OWNER', isboss = true, payment = 1400 },
+		},
+	},
 	ricocustom = {
 		label = 'Rico Custom',
 		type = 'ricocustom',

@@ -4668,6 +4668,22 @@ Config.Products = {
     ["blipcolor"] = 7,
     ["delivery"] = vector4(350.0703430175781,-912,30.7457275390625,286.2991943359375)
 },
+
+["bluenight"] = {
+    ["label"] = "Blue Night",
+    ["coords"] = vector4(-566.6637573242188,220.94505310058594,70.03955078125,170.0787353515625),
+    ["ped"] = 'a_m_y_beach_01',
+    ["scenario"] = "WORLD_HUMAN_STAND_MOBILE_CLUBHOUSE",
+    ["radius"] = 6.5,
+    ["targetIcon"] = "fas fa-leaf",
+    ["targetLabel"] = "Open Menu",
+    ["products"] = Config.Products["dancestore"],
+    ["showblip"] = true,
+    ["blipsprite"] = 52,
+    ["blipscale"] = 0.7,
+    ["blipcolor"] = 7,
+    ["delivery"] = vector4(-566.6637573242188,220.94505310058594,70.03955078125,170.0787353515625)
+},
     ["wings1"] = {
         ["label"] = "Wings Store",
         ["coords"] = vector4(-29.56483268737793,-1770.830810546875,29.111328125,136.06298828125),

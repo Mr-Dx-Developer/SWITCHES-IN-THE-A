@@ -38,6 +38,10 @@ Config.BossMenus = {
     ['tow'] = {
         vector3(662.8, 233.42, 94.25),
     },
+
+    ['bluenight'] = {
+        vector3(-566.2417602539062, 194.6769256591797, 73.999267578125),
+    },
     
     
 }
@@ -75,6 +79,10 @@ Config.BossMenuZones = {
 
     ['tow'] = {
         { coords = vector3(662.8, 233.42, 94.25), length = 1.15, width = 2.6, heading = 330.0, minZ = 93.01, maxZ = 95.01 },
+    },
+
+    ['bluenight'] = {
+        { coords = vector3(-566.2417602539062, 194.6769256591797, 73.999267578125), length = 1.15, width = 2.6, heading = 334.4881896972656, minZ = 73.02, maxZ = 75.02 },
     },
 }
 
