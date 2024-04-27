@@ -14,10 +14,10 @@ Config.CustomBindText = "F1"; // leave as "" if you don't want the bind text in 
 
 // Staff list
 Config.Staff = [
-    {name: "RicoHaiti", description: "Owner", color: "#ff0000", image: "https://cdn.discordapp.com/attachments/1179152362900832316/1231647905568526467/141201E1-5E07-4F7C-8D64-D98D998907E8.JPG?ex=662694ff&is=6625437f&hm=770ccf36d4b43ada3070a62a759816fa3c6a5e75496591c1ba453b8409943c15&"},
-    {name: "Mr 101", description: "Owner", color: "#ff0000", image: "https://cdn.discordapp.com/attachments/1179152362900832316/1231651082447491185/IMG_5888.jpg?ex=662697f5&is=66254675&hm=b0945455d297d640504b2e9297e2f200294f9ff3e0cccfc33609813ca05dd80a&"},
-    {name: "ACE", description: "Co-Owner", color: "#ff0000", image: "https://media.discordapp.net/attachments/1179152362900832316/1231652212850167948/IMG_0653.jpg?ex=6637bc82&is=66254782&hm=1b7aa196b2e68c93266dd85c0ef5f02c0d262d5063b308ba64fb17f37de006f3&=&format=webp&width=731&height=1216"},
-    {name: "Dex", description: "Management", color: "#ff0000", image: "https://media.discordapp.net/attachments/1179152362900832316/1232142694940413962/IMG_3350.png?ex=662861ce&is=6627104e&hm=48c8528bbe4e0bf3c3f0e9d06dd1bd0dfb8ecc5d3748ec7efbbf103db4c37f72&=&format=webp&quality=lossless&width=262&height=350"},
+    {name: "RicoHaiti", description: "Owner", color: "#ff0000", image: "https://media.discordapp.net/attachments/1179152362900832316/1231647905568526467/141201E1-5E07-4F7C-8D64-D98D998907E8.JPG?ex=662bdaff&is=662a897f&hm=f39bf3007ccb4abed21241e4fa60a1cc928889b7c0d4462e6231fd4999ee4889&=&format=webp&width=385&height=482"},
+    {name: "Mr 101", description: "Owner", color: "#ff0000", image: "https://media.discordapp.net/attachments/1233034228309164042/1233133488740241548/IMG_0740.png?ex=662bfc8e&is=662aab0e&hm=22296e387fb1dd79a6b16d0e31733038bd8ed556a9f36a8c77729a2318fb54d3&=&format=webp&quality=lossless&width=222&height=481"},
+    {name: "ACE", description: "Co-Owner", color: "#ff0000", image: "https://media.discordapp.net/attachments/1233034228309164042/1233124408982372442/IMG_9466.png?ex=662bf419&is=662aa299&hm=fb8cf0057348cc23343fe256a5f62618ab5f36faeb6640dfdf81050144657eed&=&format=webp&quality=lossless&width=271&height=482"},
+    {name: "Dex", description: "Management", color: "#ff0000", image: "https://media.discordapp.net/attachments/1179152362900832316/1232142694940413962/IMG_3350.png?ex=662bad8e&is=662a5c0e&hm=ae3017d52f38c4cdfbdc49089f481bf5519b2615d79b3af361ac7c8fee8779e3&=&format=webp&quality=lossless&width=361&height=482"},
     {name: "Mr_Dx", description: "DEVELOPER", color: "#ff0000", image: "https://avatars.githubusercontent.com/u/116806087?v=4"},
 
 
