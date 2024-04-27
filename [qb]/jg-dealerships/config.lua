@@ -62,16 +62,17 @@ Config.Categories = {
   suvs = "SUVs",
   commercial = "Commercial",
   cycles = "Cycles",
-  industrial = "Industrial"
+  industrial = "Industrial",
+  custom = "Custom"
 }
 
 Config.DealershipLocations = {
   ["pdm"] = {
-    type = "owned", -- or "owned", "self-service"
-    openShowroom = vector3(911.116455078125, -929.5911865234375, 26.2806396484375),
-    openManagement = vector3(911.4989013671875, -937.068115234375, 26.2806396484375),
-    purchaseSpawn = vector4(887.98681640625, -918.2373657226562, 26.2806396484375, 93.54330444335938),
-    testDriveSpawn = vector4(887.98681640625, -918.2373657226562, 26.2806396484375, 93.54330444335938),
+    type = "self-service", -- or "owned", "self-service"
+    openShowroom = vector3(-37.64, -1088.28, 26.44),
+    openManagement = vector3(-30.8, -1117.12, 26.44),
+    purchaseSpawn = vector4(-13.68, -1092.31, 26.67, 159.82),
+    testDriveSpawn = vector4(-49.77, -1110.83, 26.44, 75.94),
     camera = {
       name = "Car",
       coords = vector4(-146.6166, -596.6301, 166.0000, 120.0),
@@ -99,13 +100,13 @@ Config.DealershipLocations = {
     job = "cardealer", -- Owned dealerships only
     directSaleDistance = 50,
   },
-  --[[ ["luxury"] = {
-    type = "self-service", -- or "owned", "self-service"
-    openShowroom = vector3(-1257.4, -369.12, 36.98),
-    openManagement = vector3(-1249.04, -346.96, 37.34),
-    purchaseSpawn = vector4(-1233.46, -346.81, 37.33, 23.36),
-    testDriveSpawn = vector4(-1233.46, -346.81, 37.33, 23.36),
-    sellVehicle = vector4(-1233.46, -346.81, 37.33, 23.36),
+  ["luxury"] = {
+    type = "owned", -- or "owned", "self-service"
+    openShowroom = vector3(911.116455078125, -929.5911865234375, 26.2806396484375),
+    openManagement = vector3(911.4989013671875, -937.068115234375, 26.2806396484375),
+    purchaseSpawn = vector4(887.98681640625, -918.2373657226562, 26.2806396484375, 93.54330444335938),
+    testDriveSpawn = vector4(887.98681640625, -918.2373657226562, 26.2806396484375, 93.54330444335938),
+    sellVehicle = vector4(0.0, 0.0, 0.0, 0.0),
     camera = {
       name = "Car",
       coords = vector4(-146.6166, -596.6301, 166.0000, 120.0),
@@ -128,7 +129,7 @@ Config.DealershipLocations = {
     showroomGangWhitelist = {},
     societyPurchaseJobWhitelist = {},
     societyPurchaseGangWhitelist = {},
-  }, ]]
+  },
   ["boats"] = {
     type = "self-service", -- or "owned", "self-service"
     openShowroom = vector3(-739.55, -1333.75, 1.6),
