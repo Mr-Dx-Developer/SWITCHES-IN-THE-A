@@ -321,6 +321,8 @@ WeaponAttachments = {
         weapon_m4asiimov = `w_ar_m4_asiimov_mag2`,
         weapon_m47v2 = `w_ar_m47v2_mag2`,
 
+        weapon_nv_rifle_purple = `w_ar_nvrifle_purple_mag2`,
+
 
         weapon_scevo = `w_ar_cz_sc_evo_mag2`,
         weapon_pistol = `COMPONENT_PISTOL_CLIP_02`,
@@ -472,7 +474,7 @@ WeaponAttachments = {
         weapon_galilarv2 = `w_at_ar_galilarv2_supp`,
         weapon_m4asiimov = `w_at_m4_asiimov_supp`,
         weapon_m47v2 = `w_at_ar_m47v2_supp`,
-
+        weapon_nv_rifle_purple = `w_at_nvrifle_purple_supp`,
 
 
         weapon_scevo = `w_at_cz_sc_evo_supp`,
@@ -524,7 +526,7 @@ WeaponAttachments = {
         weapon_m4_tactical_red = `w_at_m4_tactical_red_scope_small`,
         weapon_m4asiimov = `w_at_m4_asiimov_scope_small`,
         weapon_m47v2 = `w_at_m47v2_scope_small`,
-
+        weapon_nv_rifle_purple = `w_at_nvrifle_purple_scope_small`,
 
 
         weapon_pistol_mk2 = `COMPONENT_AT_PI_RAIL`,
@@ -592,6 +594,7 @@ WeaponAttachments = {
         weapon_carbinerifle_mk2 = `COMPONENT_AT_SIGHTS`,
         weapon_combatmg_mk2 = `COMPONENT_AT_SIGHTS`,
         weapon_marksmanrifle_mk2 = `COMPONENT_AT_SIGHTS`,
+        weapon_nv_rifle_purple = `w_at_nvrifle_purple_scope_sight`,
     },
     advscope_attachment = {
         weapon_sniperrifle = `COMPONENT_AT_SCOPE_MAX`,
@@ -701,7 +704,7 @@ WeaponAttachments = {
         weapon_m4asiimov = `w_at_m4_asiimov_grip`,
         weapon_m47v2 = `w_at_ar_m47v2_grip`,
 
-
+        weapon_nv_rifle_purple = `w_at_nvrifle_purple_afgrip`,
 
         weapon_scevo = `w_at_cz_sc_evo_afgrip`,
         weapon_combatpdw = `COMPONENT_AT_AR_AFGRIP`,
