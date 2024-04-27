@@ -48,7 +48,7 @@ Config.AIResponse = {
 }
 
 -- To Set This Up visit https://forum.cfx.re/t/how-to-updated-discord-rich-presence-custom-image/157686
-Config.Discord = {
+--[[ Config.Discord = {
     isEnabled = true,                                     -- If set to true, then discord rich presence will be enabled
     applicationId = '1221275994808127539',                   -- The discord application id
     iconLarge = 'logo',                               -- The name of the large icon
@@ -69,12 +69,12 @@ Config.Discord = {
         }
     }
 }
-
+ ]]
 Config.Density = {
     parked = 0.2,
     vehicle = 0.2,
     multiplier = 0.2,
-    peds = 0.2,
+    peds = 0.4,
     scenario = 0.2
 }
 
