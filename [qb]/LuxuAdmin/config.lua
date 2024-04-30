@@ -128,7 +128,8 @@ Config.IdentifiersAlwaysAllowed = {
        "discord:933914762197213265",--Bloody
        "discord:1081405836183752885",-- Chanel
        "discord:370022500895031296",-- Morgan
-       "discord:1012094569321615401",-- Jack 
+       "discord:1012094569321615401",-- Jack
+       "discord:1160021293895270400", --Parker 
        
        "discord:1144911208303034440", --
       
