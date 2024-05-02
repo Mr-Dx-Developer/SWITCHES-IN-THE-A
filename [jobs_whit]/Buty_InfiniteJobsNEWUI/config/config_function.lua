@@ -6,7 +6,7 @@ end
 
 if Configuration.UseFuel then
     function fuel(fuelvehicle)
-        exports["cdn-fuel"]:SetFuel(fuelvehicle, 100)
+        exports["LegacyFuel"]:SetFuel(fuelvehicle, 100)
     end
 end
 

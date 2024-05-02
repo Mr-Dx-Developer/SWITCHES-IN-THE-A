@@ -11,13 +11,13 @@ Config.CurrencySymbol = "$"
 
 -- Framework
 Config.Framework = "QBCore" -- or "ESX"
-Config.FuelSystem = "cdn-fuel" -- or "LegacyFuel", "ps-fuel", "lj-fuel", "ox_fuel", "cdn-fuel", "hyon_gas_station", "okokGasStation", "nd_fuel", "myFuel", "ti_fuel", "none"
+Config.FuelSystem = "LegacyFuel" -- or "LegacyFuel", "ps-fuel", "lj-fuel", "ox_fuel", "cdn-fuel", "hyon_gas_station", "okokGasStation", "nd_fuel", "myFuel", "ti_fuel", "none"
 Config.VehicleKeys = "mk_vehiclekeys" -- or "qb-vehiclekeys", "jaksam-vehicles-keys", "qs-vehiclekeys", "mk_vehiclekeys", "wasabi_carlock", "cd_garage", "okokGarage", "t1ger_keys", "none"
 Config.Notifications = "default" -- or "okokNotify", "ox_lib", "ps-ui"
 
 
 -- Draw text UI prompts (key binding control IDs here: https://docs.fivem.net/docs/game-references/controls/)
-Config.DrawText = "qb-DrawText" -- or "qb-DrawText", "okokTextUI", "ox_lib", "ps-ui"
+Config.DrawText = "ox_lib" -- or "qb-DrawText", "okokTextUI", "ox_lib", "ps-ui"
 Config.OpenGarageKeyBind = 38
 Config.OpenGaragePrompt = "[E] Open Garage"
 Config.OpenImpoundKeyBind = 38
@@ -225,8 +225,8 @@ Config.GarageLocations = { -- IMPORTANT - Every garage name must be unique
     markers = { id = 21, size = { x = 0.3, y = 0.3, z = 0.3 }, color = { r = 255, g = 255, b = 255, a = 120 }, bobUpAndDown = 0, faceCamera = 0, rotate = 1, drawOnEnts = 0 },
   },
   ['Hangar'] = {
-    coords = vector3(-1243.49, -3391.88, 13.94),
-    spawn = vector4(-1258.4, -3394.56, 13.94, 328.23),
+    coords = vector3(-961.5692138671875, -2964.35595703125, 13.9296875),
+    spawn = vector4(-961.5692138671875, -2964.35595703125, 13.9296875, 85.03936767578125),
     distance = 20,
     type = "air",
     blip = {

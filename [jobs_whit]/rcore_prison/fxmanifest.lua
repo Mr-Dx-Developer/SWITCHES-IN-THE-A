@@ -6,7 +6,7 @@ game         'gta5'
 --[[ Resource Information ]]--
 name         'rcore_prison'
 author       'NewEdit'
-version      '1.91'
+version      '1.93'
 description  'Standalone unique Prison system.'
 
 shared_scripts {
@@ -89,4 +89,5 @@ dependencies {
 	'/server:5104',
 	'/onesync',
 }
+
 dependency '/assetpacks'

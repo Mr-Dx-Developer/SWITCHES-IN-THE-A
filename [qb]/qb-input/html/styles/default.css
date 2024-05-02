@@ -11,8 +11,8 @@
 .root-wrapper {
     width: 30vw;
     height: auto;
-    top: 35.2%;
-    left: 83.5%;
+    top: 31.2%;
+    left: 62.5%;
     transform: translateY(-50%) translateX(-50%);
     position: absolute;
     overflow: hidden;
@@ -24,40 +24,31 @@ body {
     background: transparent !important;
 }
 
-.backgroundColour {
-    display: none;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to right, rgba(133,133,133,0) 10%, rgba(133, 133, 133, 0) 30%, rgb(43, 44, 54) 100%);
-    content: "";
-}
-
 /* width */
 ::-webkit-scrollbar {
-    width: 4px;
+    width: 10px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 5px rgb(79,74,78);
-    border-radius: 2px;
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: rgb(254,252,255);
-    border-radius: 2px;
+    background: #171717e6;
+    border-radius: 10px;
 }
 
 .main-wrapper {
     margin: auto;
-    margin-top: 59.2%;
+    margin-top: 64.2%;
     width: 44.5%;
     height: 80vh;
     position: relative;
     overflow: auto;
-    border-radius: 3px;
+    border-radius: 5%;
     padding: 1.5rem;
     display: none;
 }
@@ -67,9 +58,11 @@ body {
     justify-content: center;
     overflow: wrap;
     margin-bottom: 5px;
-    border-bottom: 2px solid rgb(56,236,168);
+    background: rgba(23, 23, 23, 90%);
+    box-shadow: 0rem 0rem 0.1rem 0.05rem #000000;
+    border-radius: 5px;
     color: white;
-    font-size: 20px;
+    font-size: 0.9rem;
     font-weight: 400;
     padding: 0.45rem;
 }
@@ -90,17 +83,6 @@ body {
     flex-direction: column;
 }
 
-option {
-    background: rgb(19,25,38);
-    color: rgb(7,203,155);
-}
-
-option:hover {
-    transition: all 0.3s;
-    background: rgb(26, 33, 49);
-    color: rgb(255, 255, 255);
-}
-
 .form label {
     margin-top: 24px;
 }
@@ -114,12 +96,9 @@ option:hover {
 .form-control[type="password"] {
     border: none;
     font-size: 14px;
-    border-style: solid;
-    border-width: 0.15rem;
-    color: white;
+    border-radius: 5px;
     margin: 5px 0px;
-    border-color: rgba(110, 110, 119, 0.925);
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.089) 0%, rgba(77, 79, 87, 0.177) 100%);
+    background: rgba(23, 23, 23, 90%);
     height: 50px;
     text-align: center;
     width: 100%;
@@ -131,14 +110,7 @@ option:hover {
     transition-property: box-shadow;
     transition-duration: 0.25s;
     transition-timing-function: linear, ease-in;
-    outline: none;
-    background: radial-gradient(circle, rgba(38, 94, 86, 0.684) 0%, rgba(31, 79, 72, 0.256) 100%);
-    border-style: solid;
-    border-radius: 3px;
-    border-width: 0.15rem;
-    border-color: rgb(7,203,155);
 }
-
 
 .form-control[type="color"] {
     appearance: none;
@@ -146,11 +118,10 @@ option:hover {
     width: 100%;
     height: 50px;
     border: none;
-    border-radius: 3px;
+    border-radius: 5px;
     background: rgba(23, 23, 23, 90%);
     cursor: pointer;
 }
-
 
 .form-control[type="color"]::-webkit-color-swatch-wrapper {
     padding: 0;
@@ -158,7 +129,7 @@ option:hover {
 
 .form-control[type="color"]::-webkit-color-swatch {
     border: none;
-    border-radius: 3px;
+    border-radius: 5px;
 }
 
 .form-control[type="color"]:focus {
@@ -167,16 +138,13 @@ option:hover {
 }
 
 .form-input-group {
-    border-color: rgba(110, 110, 119, 0.925);
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.089) 0%, rgba(77, 79, 87, 0.177) 100%);
-    border-style: solid;
-    border-width: 0.15rem;
+    background: rgba(23, 23, 23, 90%);
+    box-shadow: 0rem 0rem 0.1rem 0.05rem #000000;
     margin-top: 5px;
     margin-bottom: 10px;
     padding: 5px;
-    border-radius: 3px;
+    border-radius: 5px;
 }
-
 
 .input-group {
     display: flex;
@@ -199,48 +167,37 @@ option:hover {
     color: rgba(255, 255, 255, 1) !important;
 }
 
-
 .form-group-title {
     width: 100%;
     text-align: center;
 }
 
 .select-title {
-    border-color: rgba(110, 110, 119, 0.925);
-    background: radial-gradient(circle, rgba(136, 136, 136, 0.312) 0%, rgba(129, 126, 129, 0.734) 100%);
-    border-style: solid;
-    border-width: 0.09rem;
+    background: rgba(23, 23, 23, 90%);
+    box-shadow: 0rem 0rem 0.1rem 0.05rem #000000;
     margin: 5px 0px;
     padding: 5px;
-    border-radius: 3px;
+    border-radius: 5px;
     text-align: center;
 }
 
 .form-select {
     width: 100%;
-    border-color: rgba(110, 110, 119, 0.925);
-    color: rgb(255, 255, 255);
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.089) 0%, rgba(77, 79, 87, 0.177) 100%);
-    border-style: solid;
-    border-width: 0.15rem;
-    border-radius: 3px;
-    outline: none;
+    background: rgba(23, 23, 23, 90%);
+    box-shadow: 0rem 0rem 0.1rem 0.05rem #000000;
     margin-top: 2.5px;
     margin-bottom: 10px;
     padding: 5px;
+    border-radius: 5px;
     border: none;
     height: 50px;
 }
 
-
-
 .form-select:active,
 .form-select:focus {
     width: 100%;
-    background: radial-gradient(circle, rgba(38, 94, 86, 0.684) 0%, rgba(31, 79, 72, 0.256) 100%);
-    border-color: rgb(7,203,155);
-    border-style: solid;
-    border-width: 0.15rem;
+    background: rgba(23, 23, 23, 90%);
+    box-shadow: 0rem 0rem 0.1rem 0.05rem #000000;
     margin-top: 2.5px;
     margin-bottom: 10px;
     padding: 5px;
@@ -248,22 +205,18 @@ option:hover {
     border: none;
 }
 
-
-
 .form-select:focus-visible {
     outline: unset;
 }
 
-.form-select:after {
-    position: absolute;
-    content: "";
-    top: 14px;
-    right: 10px;
-    width: 0;
-    height: 0;
-    border: 90px solid transparent;
+.form-select option:hover {
+    background: rgba(23, 23, 23, 90%);
+    box-shadow: 0rem 0rem 0.1rem 0.05rem #000000;
+    padding: 1rem 0;
+    border-radius: 5px;
+    border: none;
+    appearance: none;
 }
-  
 
 ::placeholder {
     opacity: 65%;
@@ -285,11 +238,9 @@ option:hover {
     width: 100%;
     height: 50px;
     font-size: 16px;
-    background: radial-gradient(circle, rgba(38, 94, 86, 0.684) 0%, rgba(31, 79, 72, 0.256) 100%);
-    border-style: solid;
-    border-radius: 3px;
-    border-width: 0.15rem;
-    border-color: rgb(77, 164, 151);
+    background: rgba(23, 23, 23, 90%);
+    box-shadow: 0rem 0rem 0.1rem 0.05rem #000000;
+    border: none;
     font-weight: 500;
     border-radius: 5px;
     transition-property: color, background-color;
@@ -299,23 +250,13 @@ option:hover {
 }
 
 .btn:hover {
-    transition: all 0.3s;
-    border-style: solid;
-    border-radius: 3px;
-    border-width: 0.15rem;
-    border-color: rgb(11, 218, 166);
-    background: radial-gradient(circle, rgba(38, 94, 86, 0.684) 0%, rgba(31, 79, 72, 0.256) 100%);
-    outline: none;
-    color: rgb(254,252,255);
+    background-color: #228a3a;
 }
 
 .label {
-    background: radial-gradient(circle, rgba(38, 94, 86, 0.684) 0%, rgba(31, 79, 72, 0.256) 100%);
-    border-style: solid;
-    border-radius: 3px;
-    border-width: 0.15rem;
-    border-color: rgb(77, 164, 151);
+    background: rgba(23, 23, 23, 90%);
     padding: 10px;
+    border-radius: 5px;
     font-size: 14px;
     margin: 5px 0px;
 }

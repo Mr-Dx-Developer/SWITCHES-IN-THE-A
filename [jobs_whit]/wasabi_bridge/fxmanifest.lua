@@ -7,16 +7,35 @@ lua54 'yes'
 
 description 'A library of functions used to ease the bridge between Wasabi Scripts'
 author 'wasabirobby'
-version '1.1.5'
+version '1.2.0'
 
-shared_scripts { '@ox_lib/init.lua', 'config.lua' }
-client_scripts { 'frameworks/**/client.lua', 'utils/compatibility/*.lua', 'customize/cl_customize.lua', 'utils/shared/client.lua'}
-server_scripts { '@oxmysql/lib/MySQL.lua', 'frameworks/**/server.lua', 'utils/shared/server.lua' }
+shared_script 'config.lua'
 
-files { 'import.lua', 'utils/verification.lua' }
+client_scripts {
+    'frameworks/**/client.lua',
+    'targets/*.lua',
+    'inventories/**/client.lua',
+    'customize/cl_customize.lua',
+    'utils/client/*.lua'
+}
 
-dependencies { 'ox_lib', 'oxmysql' }
+server_scripts {
+    '@oxmysql/lib/MySQL.lua',
+    'frameworks/**/server.lua',
+    'inventories/**/server.lua',
+    'utils/server/*.lua'
+}
 
-escrow_ignore { 'config.lua', 'frameworks/**/*.lua', 'customize/*.lua' }
+files { 'import.lua' }
+
+dependencies { 'oxmysql' }
+
+escrow_ignore {
+    'config.lua',
+    'frameworks/**/*.lua',
+    'targets/*.lua',
+    'inventories/**/*.lua',
+    'customize/*.lua'
+}
 
 dependency '/assetpacks'

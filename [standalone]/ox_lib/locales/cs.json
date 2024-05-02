@@ -4,8 +4,26 @@
     "cancel": "Zrušit",
     "close": "Zavřít",
     "confirm": "Potvrdit",
-    "more": "Více..."
+    "more": "Více...",
+    "settings": {
+      "locale": "Change locale",
+      "locale_description": "Current language: ${language} (%s)",
+      "notification_audio": "Notification audio",
+      "notification_position": "Notification position"
+    },
+    "position": {
+      "bottom": "Bottom",
+      "bottom-left": "Bottom-left",
+      "bottom-right": "Bottom-right",
+      "center-left": "Center-left",
+      "center-right": "Center-right",
+      "top": "Top",
+      "top-left": "Top-left",
+      "top-right": "Top-right"
+    }
   },
+  "open_radial_menu": "Otevřít kruhové menu",
+  "cancel_progress": "Zrušit aktuální progress bar",
   "txadmin_announcement": "Serverové oznámení od %s",
   "txadmin_dm": "Soukromá zpráva od %s",
   "txadmin_warn": "Byl jsi varován od %s",

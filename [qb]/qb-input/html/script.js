@@ -7,7 +7,7 @@ const OpenMenu = (data) => {
     }
 
     $(`.main-wrapper`).fadeIn(0);
-    $('.backgroundColour').css('display', 'block')
+
     let form = ["<form id='qb-input-form'>", `<div class="heading">${data.header != null ? data.header : "Form Title"}</div>`];
 
     data.inputs.forEach((item, index) => {
@@ -152,8 +152,6 @@ const renderColorInput = (item) => {
 const CloseMenu = () => {
     $(`.main-wrapper`).fadeOut(0);
     $("#qb-input-form").remove();
-    $('.backgroundColour').fadeIn(1000)
-    $('.backgroundColour').css('display', 'none')
     formInputs = {};
 };
 

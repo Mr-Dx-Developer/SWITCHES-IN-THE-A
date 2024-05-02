@@ -1,7 +1,10 @@
 -----------------For support, scripts, and more----------------
 --------------- https://discord.gg/wasabiscripts  -------------
 ---------------------------------------------------------------
-if GetResourceState('qb-core') ~= 'started' then return end
+
+local found = GetResourceState('qb-core')
+if found ~= 'started' and found ~= 'starting' then return end
+
 QBCore = exports['qb-core']:GetCoreObject()
 WSB = {}
 WSB.framework = 'qb'

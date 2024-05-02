@@ -2,7 +2,7 @@ const CONFIG = {
     "phoneLenght": 10, // "npwd - 10", "gcphone: 9", "gksphone: 7, qb-phone: 10"
     "phoneFormat": "qb-phone", // "npwd", "gcphone", "gksphone", "qb-phone"
 
-    "logoURL": "https://i.imgur.com/PxiLvFt.png",
+    "logoURL": "https://rco.re/product/prison/ingame/PxiLvFt.png",
     "logoHeight": 90,
 
     "pageSize": 9,

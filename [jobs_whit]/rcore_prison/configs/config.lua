@@ -15,7 +15,7 @@ Prison = {
 
 
     UI = {
-        RenderSentenceResource = TextLibraries.AUTO, -- [ TextLibraries.NATIVE, TextLibraries.OX, TextLibraries.QBCORE, TextLibraries.ESX -- If left on AUTO, if will try to load one of supported Text UIS ]
+        RenderSentenceResource = TextLibraries.NATIVE, -- [ TextLibraries.NATIVE, TextLibraries.OX, TextLibraries.QBCORE, TextLibraries.ESX -- If left on AUTO, if will try to load one of supported Text UIS ]
         RenderSentenceTextPosition = 'left', -- [ This is not functional for native, since it cannot be moved! ['left', 'right', 'top'] ]
     },
 
@@ -25,12 +25,12 @@ Prison = {
 
         Maps = {
             ['rcore_prison_map'] = 'rcore'
-        --    ['prison_main'] = 'desertos',
-        --    ['cfx-gabz-prison'] = 'gabz',
-        --    ['int_prison'] = 'unclejust',
-        --    ['molo_alcatraz'] = 'alcatraz',
-        --    ['YBNPrison'] = 'ybn',
-        --    ['cfx_prompt_Bolingbroke_Prison_Interiors'] = 'prompt-prison'
+           -- ['prison_main'] = 'desertos',
+           -- ['cfx-gabz-prison'] = 'gabz',
+           -- ['int_prison'] = 'unclejust',
+          --  ['molo_alcatraz'] = 'alcatraz',
+          --  ['YBNPrison'] = 'ybn',
+          --  ['cfx_prompt_Bolingbroke_Prison_Interiors'] = 'prompt-prison'
         }
     },
 
@@ -48,29 +48,30 @@ Prison = {
         playerUnloadedClient = 'qbcore', -- ['esx', 'qbcore'] Set playerUnloadedClient (client-side) event, automatic detection will be performed
         playerLoadedClient = 'qbcore', -- ['esx', 'qbcore'] Set playerLoadedClient (client-side) event, automatic detection will be performed
         resourceName = 'qbcore', -- ['esx', 'qbcore'] Set the resource name, if left blank, automatic detection will be performed
-        resourceNameClothing = 'illenium-appearance', -- [ ESX = 'skinchanger' / QBCore = 'qb-clothing', 'fivem-appearance', 'illenium-appearance' ] Set the clothing resource name, if left blank, automatic detection will be performed
+        resourceNameClothing = 'QBCore', -- [ ESX = 'skinchanger' / QBCore = 'qb-clothing', 'fivem-appearance', 'illenium-appearance' ] Set the clothing resource name, if left blank, automatic detection will be performed
         resourceNamePhone = 'lb-phone', -- '[ 'qb-phone', 'npwd', 'gksphone', 'qs-smartphone'] Set the phone resource name for booth usage, if left blank, automatic detection will be performed
     },
 
 
     ClothingScripts = {
-     --   FIVEM_APPEARANCE = 'fivem-appearance',
+       -- FIVEM_APPEARANCE = 'fivem-appearance',
         ILLENIUM_APPEARANCE = 'illenium-appearance',
-      --  QB_CLOTHING = 'qb-clothing',
-        SKINCHANGER = 'skinchanger',
+       -- QB_CLOTHING = 'qb-clothing',
+       -- SKINCHANGER = 'skinchanger',
     },
 
     InventoryScripts = {
       --  MF_INVENTORY = 'mf-inventory',
-     --   OX_INVENTORY = 'ox_inventory',
-      --  QB_INVENTORY = 'qb-inventory',
-      --  LJ_INVENTORY = 'lj-inventory',
-     --   AJ_INVENTORY = 'aj-inventory',
+      --  OX_INVENTORY = 'ox_inventory',
+       -- QB_INVENTORY = 'qb-inventory',
+       -- LJ_INVENTORY = 'lj-inventory',
+      --  AJ_INVENTORY = 'aj-inventory',
       --  PS_INVENTORY = 'ps-inventory',
         QS_INVENTORY = 'qs-inventory',
       --  CHEEZA_INVENTORY = 'inventory',
-      --  ESX_INVENTORY = 'es_extended',
-      --  CORE_INVENTORY = 'core_inventory',
+       -- ESX_INVENTORY = 'es_extended',
+      --  CODEM_INVENTORY = 'codem-inventory',
+      --  ORIGEN_INVENTORY = 'origen_inventory',
     },
 
 
@@ -303,7 +304,7 @@ Prison = {
     },
 
     Target = {
-        ModuleState = true, -- You want to use this module true / false?
+        ModuleState = false, -- You want to use this module true / false?
         CheckMenuDistInterval = 250, -- How many tick interval should check dist opened menu?
         CheckMenuDist = 2.5, -- Distance of when hiding of interaction menu should perform?
         CheckDist = 2.5,  -- Distance of showing options when performing target
@@ -393,14 +394,14 @@ Prison = {
         AlignMenu = 'top-left', -- 'top-left', 'top-right'
         useLibrary = 'rcore', -- Select your preffered library for menus: 'ox_lib', 'qb-menu', 'es_extended', 'es_context', 'rcore'
         Libraries = {
-            ['esx_context'] = true,
-            ['es_extended'] = true,
-            ['ox_lib'] = true,
+            ['esx_context'] = false,
+            ['es_extended'] = false,
+            ['ox_lib'] = false,
             ['qb-menu'] = true,
         },
     },
 
-    EnableGuidebookIntegration = true, -- If you want to to hook guidebook with content from prison.
+    EnableGuidebookIntegration = false, -- If you want to to hook guidebook with content from prison.
 
     -- Which items can jailed user take in Prison and outside when released?
 

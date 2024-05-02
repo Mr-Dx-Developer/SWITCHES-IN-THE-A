@@ -65,18 +65,18 @@ function DisplayTime(jailTime)
 end
 
 function HideTextUI()
-    if LibText == TextLibraries.QBCORE then
-        exports['qb-core']:HideText()
-    elseif LibText == TextLibraries.OX then
-        lib.hideTextUI()
-    elseif LibText == TextLibraries.ESX then
-        SetTimeout(200, function()
+    SetTimeout(3000, function ()
+        if LibText == TextLibraries.QBCORE then
+            exports['qb-core']: HideText()
+        elseif LibText == TextLibraries.OX then
+            lib.hideTextUI()
+        elseif LibText == TextLibraries.ESX then
             exports['esx_textui']:HideUI()
-        end)
-    else
-		ClearAllHelpMessages()
-		BusyspinnerOff()
-    end
+        else
+            ClearAllHelpMessages()
+            BusyspinnerOff()
+        end
+	end)
 end
 
 AddEventHandler('rcore_prison:hudState', function(actionType, state)

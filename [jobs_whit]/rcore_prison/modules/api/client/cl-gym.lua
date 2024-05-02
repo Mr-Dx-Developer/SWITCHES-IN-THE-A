@@ -5,7 +5,5 @@ AddEventHandler('rcore_prison:client:heartbeat', function(actionType, data)
     if actionType == 'GYM' then
         local exerciseName = session?.exerciseName
         local percentage = session?.percent
-
-        -- HOOK YOUR EVENT
     end
 end)

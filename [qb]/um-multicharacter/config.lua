@@ -148,7 +148,7 @@ Config.PrivSlots = Slots.List -- Set a custom total slots for the user whose lic
  -- UM - Multi Character | Customize Settings
 -----------------------------------------------------------------------------------------------------------------
 
-Config.CinematicMode = true -- If you want to use cinematic mode, you can make it true (um special?)
+Config.CinematicMode = false -- If you want to use cinematic mode, you can make it true (um special?)
 
 Config.BackgroundMusic = {
     Status = false, -- If you want to use background music, you can make it true.
@@ -169,7 +169,7 @@ Config.Pages = {
 
 Config.Coords = {
     Single = Coords.List[5], -- If random false [list/coordslist.lua]
-    Random = true
+    Random = false
 }
 
 Config.Effects = {
@@ -180,18 +180,18 @@ Config.Effects = {
 
 Config.Animation = {
     -- If you have a custom animation menu, customize the export in animationlist.lua or use scenario
-    Status = true, -- If you want to use animations, you can make it true.
+    Status = false, -- If you want to use animations, you can make it true.
     Single = Animation.List[1], -- If random false [list/animationlist.lua]
-    Random = true,
+    Random = false,
     Scenario = {
-        Status = true, -- If you want to use scenario, you can make it true.
+        Status = false, -- If you want to use scenario, you can make it true.
         Single = Animation.ScenarioList[2], -- If random false [list/animationlist.lua]
-        Random = true
+        Random = false
     }
 }
 
 Config.TimeSettings = {
-    SyncStatus = true, -- Synchronize with the weather on the server if you don't want to set custom weather and time in multicharacter
+    SyncStatus = false, -- Synchronize with the weather on the server if you don't want to set custom weather and time in multicharacter
     Time = 23, -- recommended 10-23 | not 00 or 00:00
     Weather = 'XMAS' -- CLEAR, EXTRASUNNY, CLOUDS, OVERCAST, RAIN, CLEARING , THUNDER, SMOG, FOGGY, XMAS , SNOWLIGHT, BLIZZARD
 }

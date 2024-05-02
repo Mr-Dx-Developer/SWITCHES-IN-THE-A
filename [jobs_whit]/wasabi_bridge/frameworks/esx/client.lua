@@ -1,7 +1,9 @@
 -----------------For support, scripts, and more----------------
 --------------- https://discord.gg/wasabiscripts  -------------
 ---------------------------------------------------------------
-if GetResourceState('es_extended') ~= 'started' then return end
+local found = GetResourceState('es_extended')
+if found ~= 'started' and found ~= 'starting' then return end
+
 ESX = exports['es_extended']:getSharedObject()
 WSB = {}
 WSB.framework, WSB.playerLoaded, WSB.playerData = 'esx', nil, {}
@@ -47,12 +49,22 @@ end)
 
 ---@diagnostic disable: duplicate-set-field
 
-function WSB.showNotification(msg, _type)
-    ESX.ShowNotification(msg)
+function WSB.showNotification(_title, msg, type)
+    if type == 'inform' then type = 'info' end
+    ESX.ShowNotification(msg, type)
 end
 
 function WSB.serverCallback(name, cb, ...)
     ESX.TriggerServerCallback(name, cb, ...)
+end
+
+function WSB.awaitServerCallback(name, ...)
+    local args = { ... }
+    local promise = promise.new()
+    ESX.TriggerServerCallback(name, function(...)
+        promise:resolve(...)
+    end, table.unpack(args))
+    return table.unpack({ Citizen.Await(promise) })
 end
 
 function WSB.hasGroup(filter)

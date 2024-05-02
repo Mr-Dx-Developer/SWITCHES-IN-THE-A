@@ -1,5 +1,3 @@
---[[
-
 local function hideText()
     SendNUIMessage({
         action = 'HIDE_TEXT',
@@ -7,7 +5,7 @@ local function hideText()
 end
 
 local function drawText(text, position)
-    if type(position) ~= "string" then position = "left" end
+    if type(position) ~= 'string' then position = 'left' end
 
     SendNUIMessage({
         action = 'DRAW_TEXT',
@@ -19,7 +17,7 @@ local function drawText(text, position)
 end
 
 local function changeText(text, position)
-    if type(position) ~= "string" then position = "left" end
+    if type(position) ~= 'string' then position = 'left' end
 
     SendNUIMessage({
         action = 'CHANGE_TEXT',
@@ -38,30 +36,6 @@ local function keyPressed()
         Wait(500)
         hideText()
     end)
-end]]
-
-local function hideText()
-    exports['Dx-textui']:Close()
-end
-
-local function drawText(text, position)
-    exports['Dx-textui']:Show(text)
-end
-
-local function changeText(text, position)
-    if type(position) ~= "string" then position = "left" end
-
-    SendNUIMessage({
-        action = 'CHANGE_TEXT',
-        data = {
-            text = text,
-            position = position
-        }
-    })
-end
-
-local function keyPressed()
-    exports['Dx-textui']:Close()
 end
 
 RegisterNetEvent('qb-core:client:DrawText', function(text, position)

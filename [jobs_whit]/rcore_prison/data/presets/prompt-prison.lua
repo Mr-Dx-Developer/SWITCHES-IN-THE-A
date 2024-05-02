@@ -503,6 +503,138 @@ return {
     },
 
     interaction = {
+		{
+            npc = {
+                model = 's_m_y_prismuscl_01',
+                heading = 180.0,
+                anim = {
+                    type = 'scenario',
+                    name = 'PROP_HUMAN_SEAT_BENCH',
+                    dict = nil,
+                },
+            },
+            marker = {
+                renderState = false,
+                rgba = vec4(255, 255, 255, 255),
+                size = vec3(0.5, 0.5, 0.5),
+                type = 0
+            },
+            helpers = {
+                dist = Prison.Target.EyeDist
+            },
+            coords = vec3(1707.786377, 2552.555908, 46.007427 - 1),
+            type = 'dealer',
+            name = 'Dealer',
+            trade = {
+                {
+                    label = 'Knife',
+                    transaction = {
+                        takeCount = 10,
+                        takeItem = Prison.ECONOMY_ITEM,
+                        giveItem = 'WEAPON_KNIFE',
+                        giveCount = 1,
+                    },
+                },
+                {
+                    label = 'Taco',
+                    transaction = {
+                        takeCount = 3,
+                        takeItem = Prison.ECONOMY_ITEM,
+                        giveItem = 'taco',
+                        giveCount = 1,
+                    },
+                }
+            },
+            options = {},
+        },
+        {
+            npc = {
+                model = 's_m_y_prismuscl_01',
+                heading = 190.0,
+                anim = {
+                    type = 'scenario',
+                    name = 'WORLD_HUMAN_AA_SMOKE',
+                    dict = nil,
+                },
+            },
+            marker = {
+                renderState = false,
+                rgba = vec4(255, 255, 255, 255),
+                size = vec3(0.5, 0.5, 0.5),
+                type = 0
+            },
+            helpers = {
+                dist = Prison.Target.EyeDist
+            },
+            coords = vec3(1656.264038, 2547.330811, 45.564854),
+            type = 'dealer',
+            name = 'Dealer',
+            trade = {
+                {
+                    label = 'Knife',
+                    transaction = {
+                        takeCount = 10,
+                        takeItem = Prison.ECONOMY_ITEM,
+                        giveItem = 'WEAPON_KNIFE',
+                        giveCount = 1,
+                    },
+                },
+                {
+                    label = 'Taco',
+                    transaction = {
+                        takeCount = 3,
+                        takeItem = Prison.ECONOMY_ITEM,
+                        giveItem = 'taco',
+                        giveCount = 1,
+                    },
+                }
+            },
+            options = {},
+        },
+        {
+            npc = {
+                model = 's_m_y_prismuscl_01',
+                heading = 100.0,
+                anim = {
+                    type = 'scenario',
+                    name = 'PROP_HUMAN_SEAT_BENCH',
+                    dict = nil,
+                },
+            },
+            marker = {
+                renderState = false,
+                rgba = vec4(255, 255, 255, 255),
+                size = vec3(0.5, 0.5, 0.5),
+                type = 0
+            },
+            helpers = {
+                dist = Prison.Target.EyeDist
+            },
+            coords = vec3(1715.009644, 2586.764404, 46.046280 - 1),
+            type = 'dealer',
+            name = 'Dealer',
+            trade = {
+                {
+                    label = 'Knife',
+                    transaction = {
+                        takeCount = 10,
+                        takeItem = Prison.ECONOMY_ITEM,
+                        giveItem = 'WEAPON_KNIFE',
+                        giveCount = 1,
+                    },
+                },
+                {
+                    label = 'Taco',
+                    transaction = {
+                        takeCount = 3,
+                        takeItem = Prison.ECONOMY_ITEM,
+                        giveItem = 'taco',
+                        giveCount = 1,
+                    },
+                }
+            },
+            options = {},
+        },
         {
             type = 'booth',
             npc = {
@@ -623,13 +755,13 @@ return {
             }
         },
         {
-            coords = vec3(1734.937012, 2588.871094, 45.419418),
+            coords = vec3(1732.6306, 2588.5928, 45.4196),
             type = 'canteen',
             blip = {
                 color = 0,
                 scale = 0.6,
                 state = true,
-                name = 'Prisoners canteen',
+                name = 'Prisoners canteene',
                 sprite = 214
             },
             marker = {
@@ -638,7 +770,7 @@ return {
                 rgba = vec4(255.000000, 255.000000, 255.000000, 255.000000),
                 renderState = false
             },
-            name = 'Prisoners canteen',
+            name = 'Prisoners canteene',
             npc = {
                 heading = 179.99998474121,
                 model = 's_m_m_prisguard_01'
@@ -683,7 +815,7 @@ return {
             coords = vec3(1589.712402, 2557.346191, 45.5),
             blip = {
                 scale = 0.6,
-                name = 'Cigar crafting',
+                name = 'Zigaretten crafting',
                 color = 0,
                 sprite = 214,
                 state = true
@@ -702,6 +834,14 @@ return {
                 size = vec3(0.500000, 0.500000, 0.500000),
                 rgba = vec4(255.000000, 255.000000, 255.000000, 255.000000),
                 renderState = false
+            },
+            production = {
+                items = {
+                    {
+                        itemName = 'cigarette', -- cigar
+                        count = math.random(2, 4)
+                    },
+                }
             }
         },
         {
@@ -713,7 +853,7 @@ return {
                 sprite = 214,
                 state = true
             },
-            name = 'Prison Jobs',
+            name = 'Prison jobs',
             type = 'jobs',
             npc = {
                 heading = 0.0,
@@ -800,7 +940,7 @@ return {
             coords = vec3(1717.169800, 2454.927979, 45.651279),
             blip = {
                 scale = 0.6,
-                name = 'Prisoners canteen',
+                name = 'Prisoners canteene',
                 color = 0,
                 sprite = 214,
                 state = true
@@ -828,7 +968,7 @@ return {
             coords = vec3(1782.527466, 2501.417725, 45.651279),
             blip = {
                 scale = 0.6,
-                name = 'Prisoneers canteen',
+                name = 'Prisoners canteene',
                 color = 0,
                 sprite = 214,
                 state = true

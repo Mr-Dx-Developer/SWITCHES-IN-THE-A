@@ -88,6 +88,8 @@ Bridge.IsUserAllowedToPerform = function(source, commandName)
         retval = true
     end
 
+    dbg.debug('IsUserAllowedToPerform: User: %s (%s) tried access command: %s with state result: %s', GetPlayerName(source), source, commandName, retval)
+
     return retval
 end
 
@@ -107,6 +109,15 @@ function GetIdentifiers(playerId, identifierName)
 
     return identifiers and identifiers[identifierName]
 end
+
+CreateThread(function()
+    Wait(2000)
+
+    if shared.framework == 'unk' then
+        dbg.debug('Bridge: Standalone mode is active, no framework detected.')
+        Prison.Notify.DefaultNotify = true
+    end
+end)
 
 Bridge.GetPlayer = function(source)
     return {

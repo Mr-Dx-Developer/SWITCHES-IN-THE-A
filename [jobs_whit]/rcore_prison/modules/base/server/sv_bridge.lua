@@ -177,18 +177,18 @@ CreateThread(function()
                                 },
                             })
                         else
-                            goto ServiceFee
+                            goto CheckDist
                         end
                     else
-                        goto ServiceFee
+                        goto CheckDist
                     end
                 end
             end
         else
-            goto ServiceFee
+            goto CheckDist
         end
 
-        ::ServiceFee::
+        ::CheckDist::
 
         Wait(cycleTime)
     end
@@ -201,7 +201,15 @@ Bridge.InsertAccountCredits = function(Source, amount)
         if state then
             dbg.debug('Insert credits for [%s] - amount [%s]', player.name, amount)
 
-            InventoryTransaction(Source,
+            local prisonAccount = GetPrisonerAccount(player.charid)
+            local hasAmount = Bridge.GetItem(Source, Prison.Accounts.CreditsItem)
+
+            dbg.debugInventory('Inserting credit check if user has enough %s for inserting amount: %s -> has amount: %s | User: %s', Prison.Accounts.CreditsItem, amount, hasAmount, player.name)
+
+            amount = tonumber(amount)
+
+            if hasAmount >= amount then
+                InventoryTransaction(Source,
                 {
                     take = {
                         {
@@ -211,12 +219,12 @@ Bridge.InsertAccountCredits = function(Source, amount)
                     },
                 },
                 function()
-                    local prisonAccount = GetPrisonerAccount(player.charid)
-
                     prisonAccount.balance = prisonAccount.balance + amount
 
                     local accountId = prisonAccount.account_id
 
+                    Bridge.RemoveItem(Source, Prison.Accounts.CreditsItem, amount)
+                    
                     db.UpdatePrisonAccountBalance(prisonAccount.balance, player.charid)
 
                     local label = l('ACCOUNT_DEPOSIT_CREDITS_TRANSACTIONS')
@@ -256,6 +264,19 @@ Bridge.InsertAccountCredits = function(Source, amount)
                         },
                     })
                 end)
+            else
+                Bridge.Notify(Source, {
+                    title = l('WARDEN_TITLE'),
+                    subtitle = l('PRISON_TITLE'),
+                    description = ('%s [%s]'):format(l('ACCOUNT_CREDITS_FAILED_SENT'), amount),
+                    position = 'top',
+                    lenght = 4000,
+                    style = {
+                        backgroundColor = '#141517',
+                        color = '#909296'
+                    },
+                })
+            end
         end
     end)
 end

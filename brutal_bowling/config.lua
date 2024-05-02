@@ -12,12 +12,12 @@ More informations about the script:   https://docs.brutalscripts.com
 Config = {
     Core = 'QBCORE',  -- 'ESX' / 'QBCORE' | Other core setting on the 'core' folder.
     TextUI = 'ox_lib', -- 'ox_lib' / 'okokTextUI' / 'ESXTextUI' / 'QBDrawText' // Custom can be add in the cl_utils.lua!!!
-    BrutalNotify = true, -- Buy here: (4€+VAT) https://store.brutalscripts.com | Or set up your own notify >> cl_utils.lua
+    BrutalNotify = false, -- Buy here: (4€+VAT) https://store.brutalscripts.com | Or set up your own notify >> cl_utils.lua
     SteamName = true, -- true = Steam name | false = character name
 
     Marker = {use = true, marker = 20, bobUpAndDown = false, rotate = false, size = {0.3, 0.2, 0.2}, rgb = {15, 100, 210}},
     DisableControls = {22}, -- These controls will blocked during the boxing match. (Except: Key Bindings)
-    EnableSounds = false, --Enable additional sounds while players play bowling
+    EnableSounds = true, --Enable additional sounds while players play bowling
 
     Blips = {
         {label = 'Glory Bowls', coords = vector3(-1668.3221, -1064.3582, 13.1500), color = 26, sprite = 103, size = 0.8},

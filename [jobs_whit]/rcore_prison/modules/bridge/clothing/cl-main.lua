@@ -127,6 +127,9 @@ Clothing.SetUserOutfit = function(data, actionType)
     local plyPed = PlayerPedId()
 
     dbg.debugClothing('SetUserOutfit: Setting outfit for player, resource: %s, actionType: %s', Clothing.resourceName, actionType)
+    if HasResource('codem-appearance') and actionType == 'release' then
+        return TriggerEvent("codem-appearance:reloadSkin")
+    end
 
     IsResourceLoaded(Clothing.resourceName, function(state, clothingResource)
         if state then

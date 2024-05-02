@@ -281,8 +281,8 @@ CreateThread(function()
             local driverVersion = GetResourceMetadata(shared.SQL, 'version', 0) or nil
 
             if driverVersion then
-                if shared.SQL == 'mysql-async' and driverVersion ~= '3.3.2' then
-                    return db.critical('Failed to start script -> Download latest version of mysql-async, you are using old version [%s]', driverVersion)
+                if shared.SQL == 'mysql-async' and driverVersion ~= '3.3.2' and HasResource('mysql-async') then
+                    return dbg.critical('Failed to start script -> Download latest version of mysql-async, you are using old version [%s]', driverVersion)
                 end
             end
 

@@ -5,7 +5,7 @@ end)
 function UnjailPlayer(target)
     dbg.debugAPI('Getting request from resource: %s for prison event: %s\n Logic path: rcore_prison/modules/api/client/cl-unjailPlayer.lua', GetInvokingResource(), 'rcore_prison:client:UnjailPlayer')
 
-    if target then
+    if target and type(target) == 'number' then
         UnjailPlayerCustom(target)
     elseif not target then
         dbg.debugAPI('[UNJAIL PLAYER] - Enforce load UnjailClosestPlayer since not received: %s', target and 'TARGET_PLAYER_ID')

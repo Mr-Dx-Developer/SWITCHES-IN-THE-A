@@ -1,4 +1,10 @@
-if GetResourceState('qb-core') ~= 'started' then return end
+-----------------For support, scripts, and more----------------
+--------------- https://discord.gg/wasabiscripts  -------------
+---------------------------------------------------------------
+
+local found = GetResourceState('qb-core')
+if found ~= 'started' and found ~= 'starting' then return end
+
 QBCore = exports['qb-core']:GetCoreObject()
 WSB = {}
 WSB.framework, WSB.playerLoaded, WSB.playerData = 'qb', nil, {}
@@ -10,7 +16,7 @@ end
 
 AddStateBagChangeHandler('isLoggedIn', '', function(_bagName, _key, value, _reserved, _replicated)
     if value then
-       SwitchHandler('isLoggedIn', WSB.playerData)
+        SwitchHandler('isLoggedIn', WSB.playerData)
     else
         SwitchHandler('isLoggedOut')
     end
@@ -28,7 +34,7 @@ end)
 
 AddEventHandler('gameEventTriggered', function(event, data)
     if event ~= 'CEventNetworkEntityDamage' then return end
-    local playerPed = cache.ped
+    local playerPed = PlayerPedId()
     local victim, victimDied = data[1], data[4]
     if not IsPedAPlayer(victim) then return end
     local player = PlayerId()
@@ -53,12 +59,22 @@ end)
 
 ---@diagnostic disable: duplicate-set-field
 
-function WSB.showNotification(msg, type)
-    QBCore.Functions.Notify(msg, type)
+function WSB.showNotification(title, msg, type)
+    if type == 'inform' or type == 'info' then type = 'primary' end
+    QBCore.Functions.Notify({ text = title, caption = msg }, type)
 end
 
 function WSB.serverCallback(name, cb, ...)
     QBCore.Functions.TriggerCallback(name, cb, ...)
+end
+
+function WSB.awaitServerCallback(name, ...)
+    local args = { ... }
+    local promise = promise.new()
+    QBCore.Functions.TriggerCallback(name, function(...)
+        promise:resolve(...)
+    end, table.unpack(args))
+    return table.unpack({ Citizen.Await(promise) })
 end
 
 function WSB.hasGroup(filter)

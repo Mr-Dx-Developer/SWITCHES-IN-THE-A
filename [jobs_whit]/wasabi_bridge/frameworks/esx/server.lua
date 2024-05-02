@@ -1,7 +1,9 @@
 -----------------For support, scripts, and more----------------
 --------------- https://discord.gg/wasabiscripts  -------------
 ---------------------------------------------------------------
-if GetResourceState('es_extended') ~= 'started' then return end
+local found = GetResourceState('es_extended')
+if found ~= 'started' and found ~= 'starting' then return end
+
 ESX = exports['es_extended']:getSharedObject()
 WSB = {}
 WSB.framework = 'esx'
@@ -162,6 +164,9 @@ end
 function WSB.addItem(source, item, count, slot, metadata)
     local player = WSB.getPlayer(source)
     if not player then return end
+    if metadata and not WSB.inventory then
+        print('^0[^3WARNING^0] wasabi_bridge has had an item passed with metadata but did not detect your inventory! Issues may occur!')
+    end
     return player.addInventoryItem(item, count, metadata, slot)
 end
 

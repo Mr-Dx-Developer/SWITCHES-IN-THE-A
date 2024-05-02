@@ -639,7 +639,7 @@ if IsDuplicityVersion() then
 	end
 
 	Bridge.Notify = function(serverId, data)
-		return dbg.debug('[Notify] You need to hook own notify for this function.')
+		return
 	end
 
 	Bridge.GetPlayer = function(serverId)
@@ -669,7 +669,7 @@ if IsDuplicityVersion() then
 	end
 
 	Bridge.Notify = function(serverId, data)
-		if Prison.DefaultNotify then
+		if Prison.Notify.DefaultNotify then
 			TriggerClientEvent(Prison.Notify.event, serverId, data)
 		else
 			TriggerClientEvent(Prison.FrameworkTriggers.notify, serverId, data.description, data.type)
@@ -1125,9 +1125,21 @@ else
 				return TriggerEvent('QBCore:Notify', data.description, data.type)
 			elseif Framework and Framework.ShowNotification then
 				return Framework.ShowNotification(data.description, data.type, 3000)
-			end
+			else
+				local settings = data
 
-			return dbg.debug('[Notify] You need to hook own notify for this function.')
+				local icon = settings.icon or "CHAR_DEFAULT"
+				local type = settings.type or 1
+				local text = settings.description or ""
+				local title = settings.title or ""
+				local subTitle = settings.subtitle or ""
+	
+				SetNotificationTextEntry("STRING")
+				AddTextComponentString(text)
+				SetTextFont(getFontId())
+				SetNotificationMessage(icon, icon, true, type, title, subTitle)
+				DrawNotification(false, true)
+			end
 		end
 	end
 

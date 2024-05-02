@@ -163,19 +163,21 @@ CreateThread(function()
                 end
     
                 Bridge.HandleCuffs = function(serverId)
-                    local Player = ESX.GetPlayerFromId(source)
+                    local Player = ESX.GetPlayerFromId(serverId)
     
                     if not Player then return end
     
                     dbg.debug('Citizen [%s] was handcuffed, uncuffing him.', GetPlayerName(serverId))
 
-                    if IsResourceOnServer('wasabi_police') then
-                        TriggerClientEvent('wasabi_police:uncuff', serverId)
-                    elseif IsResourceOnServer('esx_policejob') then
-                        TriggerClientEvent("esx_policejob:unrestrain", serverId)
-                    end
+                    SetTimeout(1000, function()
+                        if IsResourceOnServer('wasabi_police') then
+                            TriggerClientEvent('wasabi_police:uncuff', serverId)
+                        elseif IsResourceOnServer('esx_policejob') then
+                            TriggerClientEvent("esx_policejob:unrestrain", serverId)
+                        end
+                    end)
                 end
-        
+
                 Bridge.GetPlayer = function(source)
                     local charData = ESX.GetPlayerFromId(source)
         

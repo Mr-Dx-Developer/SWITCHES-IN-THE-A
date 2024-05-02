@@ -35,69 +35,96 @@ Bridge.AddItem = function(playerId, itemName, itemCount, metadata, slot)
             itemName = itemName:lower()
         end
 
-        dbg.debugInventory('Adding item [%s] to player [%s] with amount [%s] | USER: %s', itemName, playerId, itemCount, GetPlayerName(playerId))
+        dbg.debugInventory('Adding item [%s] to player [%s] with amount [%s] | USER: %s', itemName, playerId, itemCount,
+            GetPlayerName(playerId))
 
-        if HasResource(Prison.InventoryScripts.QB_INVENTORY) or HasResource(Prison.InventoryScripts.AJ_INVENTORY) or HasResource(Prison.InventoryScripts.LJ_INVENTORY) or HasResource(Prison.InventoryScripts.PS_INVENTORY) then
+
+        if HasResource('origen_inventory') then
+            local match = string.match(itemName, "^WEAPON_(.*)")
+
+            if match then
+                return exports['origen_inventory']:GiveWeaponToPlayer(playerId, itemName, math.random(30, 120))
+            end
+
+            return exports['origen_inventory']:AddItem(playerId, itemName, itemCount or 1, slot, metadata, true)
+        elseif HasResource(Prison.InventoryScripts.QB_INVENTORY) or HasResource(Prison.InventoryScripts.AJ_INVENTORY) or HasResource(Prison.InventoryScripts.LJ_INVENTORY) or HasResource(Prison.InventoryScripts.PS_INVENTORY) then
             if Player then
                 if itemName == 'money' or itemName == 'cash' and not hasOxInventory then
                     return Player.Functions.AddMoney('cash', itemCount)
                 end
 
-                return Player.Functions.AddItem(itemName, itemCount, false, metadata or {}) 
+                return Player.Functions.AddItem(itemName, itemCount, false, metadata or {})
             end
         elseif HasResource(Prison.InventoryScripts.OX_INVENTORY) then
             exports[Prison.InventoryScripts.OX_INVENTORY]:AddItem(playerId, itemName, itemCount, metadata, slot)
         elseif HasResource(Prison.InventoryScripts.MF_INVENTORY) and Prison.Framework == FRAMEWORK_MAP.ESX then
             if itemName == 'money' or itemName == 'cash' then
                 return Player.addMoney(tonumber(itemCount), 'prison_stashed_item')
-            end    
+            end
 
-            return exports[Prison.InventoryScripts.MF_INVENTORY]:addInventoryItem(Player.getIdentifier(), itemName, itemCount)
+            return exports[Prison.InventoryScripts.MF_INVENTORY]:addInventoryItem(Player.getIdentifier(), itemName,
+                itemCount)
         elseif HasResource(Prison.InventoryScripts.QS_INVENTORY) and Prison.Framework == FRAMEWORK_MAP.QBCORE then
             local version = GetResourceMetadata('qs-inventory', 'version', 0)
 
             if version and version >= '2.0.6' then
                 if itemName == 'money' and not hasOxInventory then
                     return Player.Functions.AddMoney('cash', itemCount)
-                end    
-                
+                end
+
                 return exports['qs-inventory']:AddItem(playerId, itemName, itemCount, nil, metadata)
             else
                 if Player then
                     if itemName == 'money' or itemName == 'cash' and not hasOxInventory then
                         return Player.Functions.AddMoney('cash', itemCount)
                     end
-        
-                    return Player.Functions.AddItem(itemName, itemCount, false, metadata or {}) 
+
+                    return Player.Functions.AddItem(itemName, itemCount, false, metadata or {})
                 end
             end
-        elseif HasResource(Prison.InventoryScripts.QS_INVENTORY) and Prison.Framework == FRAMEWORK_MAP.ESX then 
+        elseif HasResource(Prison.InventoryScripts.QS_INVENTORY) and Prison.Framework == FRAMEWORK_MAP.ESX then
             local version = GetResourceMetadata('qs-inventory', 'version', 0)
 
             if version and version >= '2.0.6' then
                 if itemName == 'money' and not hasOxInventory then
                     return Player.addMoney(tonumber(itemCount), 'prison_stashed_item')
-                end    
+                end
 
                 return exports['qs-inventory']:AddItem(playerId, itemName, itemCount, nil, metadata)
             else
                 if Player then
                     if itemName == 'money' or itemName == 'cash' and not hasOxInventory then
                         return Player.addMoney(tonumber(itemCount), 'prison_stashed_item')
-                    end    
-        
-                    return Player.addInventoryItem(itemName, itemCount) 
+                    end
+
+                    return Player.addInventoryItem(itemName, itemCount)
                 end
             end
         elseif HasResource(Prison.InventoryScripts.ESX_INVENTORY) and not hasOxInventory then
             if itemName == 'money' or itemName == 'cash' then
                 return Player.addMoney(tonumber(itemCount), 'prison_stashed_item')
-            end    
+            end
 
             return Player.addInventoryItem(itemName, itemCount)
+        elseif HasResource(Prison.InventoryScripts.CODEM_INVENTORY) then
+            if Prison.Framework == FRAMEWORK_MAP.QBCORE then
+                if itemName == 'money' or itemName == 'cash' and not hasOxInventory then
+                    return Player.Functions.AddMoney('cash', itemCount)
+                end
+
+                return exports['codem-inventory']:AddItem(playerId, itemName, itemCount, slot, metadata or {})
+            elseif Prison.Framework == FRAMEWORK_MAP.ESX then
+                if itemName == 'money' or itemName == 'cash' then
+                    return Player.addMoney(tonumber(itemCount), 'prison_stashed_item')
+                end
+
+                return exports['codem-inventory']:AddItem(playerId, itemName, itemCount, slot, metadata or {})
+            end
         end
     else
-        dbg.debugInventory('Failed to find any supported inventory, not adding item [%s] to player [%s] with amount [%s] | USER: %s', itemName, playerId, itemCount, GetPlayerName(playerId))
+        dbg.debugInventory(
+            'Failed to find any supported inventory, not adding item [%s] to player [%s] with amount [%s] | USER: %s',
+            itemName, playerId, itemCount, GetPlayerName(playerId))
     end
 end
 
@@ -114,10 +141,14 @@ Bridge.ReturnPrisonerItems = function(serverId, charId, returnType)
             state = Bridge.ReturnPrisonerItemsFromStash(serverId)
         elseif not Prison.Release.ReturnItemsOnRelease and returnType == 'npc' then
             state = Bridge.ReturnPrisonerItemsFromStash(serverId)
-        end 
+        end
     end
 
     if not Prison.Release.ReturnItemsOnRelease and returnType == 'release' then
+        if Prison.StashItemsOnRelease then
+            return
+        end
+
         Bridge.Notify(serverId, {
             title = l('WARDEN_TITLE'),
             description = l('PRISONER_RELEASE_ITEMS_AT_NPC'),
@@ -135,49 +166,46 @@ Bridge.ReturnPrisonerItems = function(serverId, charId, returnType)
 end
 
 Bridge.TakePrisonerItems = function(targetSID, charId)
+    if not Prison.Release.StashItems then
+        return
+    end
+
     local inventoryState = GetInventoryState()
-    local userInventory, status = gatherInventoryData(targetSID)
 
     if inventoryState then
-        if Prison.Release.StashItems then
-            if status == INVENTORY_STATUS_CODES.HAS_ITEMS then
-                dbg.debugInventory('Player named %s has items in his inventory, saving to database.', GetPlayerName(targetSID))
+        local userInventory, status = gatherInventoryData(targetSID)
 
-                local state = ClearInventory(targetSID)
+        if status == INVENTORY_STATUS_CODES.HAS_ITEMS then
+            dbg.debugInventory('Player named %s has items in his inventory, saving to database.',
+                GetPlayerName(targetSID))
 
-                if state then
-                    if Prison.KeepItemState then
-                        for k, v in pairs(userInventory) do
-                            if Prison.KeepItems[v.name:lower()] then
-                                userInventory[k] = nil
-                            end
+            local state = ClearInventory(targetSID)
+
+            if state then
+                if Prison.KeepItemState then
+                    for k, v in pairs(userInventory) do
+                        if Prison.KeepItems[v.name:lower()] then
+                            userInventory[k] = nil
                         end
                     end
-
-                    db.SavePrisonerItems(userInventory, charId)
-                end
-            else
-                -- Try to clear inventory anyway, since we want to make sure that the prisoner has no items in his inventory, when any inventory found on server as fallback.
-
-                if inventoryState then
-                    ClearInventory(targetSID)
                 end
 
-                dbg.debugInventory('Player named %s has no items in his inventory, not saving anything in database.', GetPlayerName(targetSID))
+                db.SavePrisonerItems(userInventory, charId)
             end
         else
-            dbg.debugInventory('Stashing of items is disabled [configs/config.lua - Prison.Release.Stashitems = false], skipping taking of items prisoner named %s.', GetPlayerName(targetSID))
+            -- Try to clear inventory anyway, since we want to make sure that the prisoner has no items in his inventory, when any inventory found on server as fallback.
 
             if inventoryState then
                 ClearInventory(targetSID)
             end
+
+            dbg.debugInventory('Player named %s has no items in his inventory, not saving anything in database.',
+                GetPlayerName(targetSID))
         end
     else
-        dbg.debugInventory('Is not running any inventory, loading standalone mode, skipping taking of items prisoner named %s.', GetPlayerName(targetSID))
-        
-        if inventoryState then
-            ClearInventory(targetSID)
-        end
+        dbg.debugInventory(
+            'Is not running any inventory, loading standalone mode, skipping taking of items prisoner named %s.',
+            GetPlayerName(targetSID))
     end
 end
 
@@ -186,39 +214,26 @@ Bridge.RemoveItem = function(playerId, itemName, itemCount, metadata, slot)
 
     local hasOxInventory = HasResource(Prison.InventoryScripts.OX_INVENTORY)
     local state = GetInventoryState()
-    
+
     if state then
-        dbg.debugInventory('Removing item [%s] from player [%s] with amount [%s] | USER: %s', itemName, playerId, itemCount, GetPlayerName(playerId))
+        dbg.debugInventory('Removing item [%s] from player [%s] with amount [%s] | USER: %s', itemName, playerId,
+            itemCount, GetPlayerName(playerId))
 
         if HasResource(Prison.InventoryScripts.OX_INVENTORY) then
             exports[Prison.InventoryScripts.OX_INVENTORY]:RemoveItem(playerId, itemName, itemCount, metadata, slot)
         elseif HasResource(Prison.InventoryScripts.MF_INVENTORY) and Prison.Framework == FRAMEWORK_MAP.ESX then
             if itemName == 'money' then
                 return Player.removeMoney(tonumber(itemCount), 'prison_stashed_item')
-            end    
-            
+            end
+
             exports[Prison.InventoryScripts.MF_INVENTORY]:removeInventoryItem(Player.getIdentifier(), itemName, itemCount)
-        elseif HasResource(Prison.InventoryScripts.CORE_INVENTORY) and Prison.Framework == FRAMEWORK_MAP.QBCORE then
-            if Player then
-                local charId = Player.PlayerData.citizenid
-                local inventoryPrefix = ('%s-%s'):format('content', charId)
-
-                exports[Prison.InventoryScripts.CORE_INVENTORY]:removeItem(inventoryPrefix, itemName, tonumber(itemCount))
-            end
-        elseif HasResource(Prison.InventoryScripts.CORE_INVENTORY) and Prison.Framework == FRAMEWORK_MAP.ESX then
-            if Player then
-                local charId = Player.getIdentifier()
-                local inventoryPrefix = ('%s-%s'):format('content', charId)
-
-                exports[Prison.InventoryScripts.CORE_INVENTORY]:removeItem(inventoryPrefix, itemName, tonumber(itemCount))
-            end
         elseif HasResource(Prison.InventoryScripts.QB_INVENTORY) or HasResource(Prison.InventoryScripts.AJ_INVENTORY) or HasResource(Prison.InventoryScripts.LJ_INVENTORY) then
             if Player then
                 if itemName == 'money' then
                     return Player.Functions.RemoveMoney('cash', itemCount)
-                end    
+                end
 
-                Player.Functions.RemoveItem(itemName, itemCount, false, metadata or {}) 
+                Player.Functions.RemoveItem(itemName, itemCount, false, metadata or {})
             end
         elseif HasResource(Prison.InventoryScripts.QS_INVENTORY) and Prison.Framework == FRAMEWORK_MAP.QBCORE then
             local version = GetResourceMetadata('qs-inventory', 'version', 0)
@@ -227,10 +242,10 @@ Bridge.RemoveItem = function(playerId, itemName, itemCount, metadata, slot)
                 exports['qs-inventory']:RemoveItem(playerId, itemName, itemCount)
             else
                 if Player then
-                    Player.Functions.RemoveItem(itemName, itemCount, false, metadata or {}) 
+                    Player.Functions.RemoveItem(itemName, itemCount, false, metadata or {})
                 end
             end
-        elseif HasResource(Prison.InventoryScripts.QS_INVENTORY) and Prison.Framework == FRAMEWORK_MAP.ESX then 
+        elseif HasResource(Prison.InventoryScripts.QS_INVENTORY) and Prison.Framework == FRAMEWORK_MAP.ESX then
             local version = GetResourceMetadata('qs-inventory', 'version', 0)
 
             if version and version >= '2.0.6' then
@@ -248,9 +263,13 @@ Bridge.RemoveItem = function(playerId, itemName, itemCount, metadata, slot)
                     Player.removeInventoryItem(itemName, itemCount)
                 end
             end
+        elseif HasResource(Prison.InventoryScripts.CODEM_INVENTORY) then
+            exports['codem-inventory']:RemoveItem(source, itemName, itemCount)
         end
     else
-        dbg.debugInventory('Failed to find any supported inventory, not removing item [%s] from player [%s] with amount [%s] | USER: %s', itemName, playerId, itemCount, GetPlayerName(playerId))
+        dbg.debugInventory(
+            'Failed to find any supported inventory, not removing item [%s] from player [%s] with amount [%s] | USER: %s',
+            itemName, playerId, itemCount, GetPlayerName(playerId))
     end
 end
 
@@ -265,7 +284,7 @@ Bridge.GetItem = function(playerId, itemName)
         if shared.framework == 'QBCORE' and not hasOxInventory then
             itemName = itemName:lower()
         end
-    
+
         if Prison.Framework == FRAMEWORK_MAP.ESX then
             local data = Player.getInventoryItem(itemName)
 
@@ -292,8 +311,9 @@ Bridge.GetItem = function(playerId, itemName)
                 result = data and tonumber(data.amount) or 0
             end
         end
-    
-        dbg.debugInventory('Got inventory item [%s] from player [%s] with amount [%s] | USER: %s', itemName, playerId, result, GetPlayerName(playerId) or 'N/A')
+
+        dbg.debugInventory('Got inventory item [%s] from player [%s] with amount [%s] | USER: %s', itemName, playerId,
+            result, GetPlayerName(playerId) or 'N/A')
     end
 
     return result
@@ -310,14 +330,14 @@ end
 Bridge.ReturnPrisonerItemsFromStash = function(src)
     local player = Bridge.GetPlayer(src)
 
-    if not player then 
-        return 
+    if not player then
+        return
     end
 
     local stashItems = db.FetchStashItems(player.charid)
 
-    if not stashItems then 
-        return 
+    if not stashItems then
+        return
     end
 
     local decodedStashItems = stashItems and type(stashItems) == 'string' and json.decode(stashItems)
@@ -325,7 +345,7 @@ Bridge.ReturnPrisonerItemsFromStash = function(src)
 
     if decodedStashItems and next(decodedStashItems) then
         state = true
-        
+
         for itemName, data in pairs(decodedStashItems) do
             Bridge.AddItem(src, data.name, data.count, data.metadata or data.info or {})
         end
@@ -346,14 +366,22 @@ function ClearInventory(serverId)
     local player = getPlayer(serverId)
     local clearState = false
 
-    if Prison.Framework == FRAMEWORK_MAP.QBCORE and not HasResource(Prison.InventoryScripts.OX_INVENTORY) then
+    if HasResource('origen_inventory') then
+        if Prison.KeepItemState and keepItems then
+            exports['origen_inventory']:ClearInventory(serverId, Prison.KeepItemState and keepItems)
+        else
+            exports['origen_inventory']:ClearInventory(serverId)
+        end
+
+        clearState = true
+    elseif Prison.Framework == FRAMEWORK_MAP.QBCORE and not HasResource(Prison.InventoryScripts.OX_INVENTORY) then
         local clearMain, clearMainErr = pcall(player.Functions.ClearInventory)
 
         if clearMain then
             clearState = true
         else
             local backClear, backClearErr = pcall(player.Functions.SetPlayerData, "items", {})
-    
+
             if backClear then
                 clearState = true
             end
@@ -366,6 +394,14 @@ function ClearInventory(serverId)
         end
 
         clearState = true
+    elseif HasResource(Prison.InventoryScripts.CODEM_INVENTORY) then
+        local success, error_message = pcall(function()
+            exports['codem-inventory']:ClearInventory(serverId)
+        end)
+
+        if success then
+            clearState = true
+        end
     end
 
     if not clearState then
@@ -379,7 +415,7 @@ function ClearInventory(serverId)
             else
                 local version = GetResourceMetadata('qs-inventory', 'version', 0)
                 local clearInventory = ('%s %s'):format('clearinv', serverId)
-    
+
                 if clearInventory and version >= '2.0.6' then
                     local commandState, commandErrMessage = pcall(function()
                         ExecuteCommand(clearInventory)
@@ -407,7 +443,7 @@ function ClearInventory(serverId)
                 local backClear, backClearErr = pcall(function()
                     ExecuteCommand(clearinventory)
                 end)
-    
+
                 if backClear then
                     clearState = true
                 end
@@ -415,7 +451,8 @@ function ClearInventory(serverId)
         end
     end
 
-    dbg.debugInventory('%s inventory for user %s! | FW: %s', clearState and 'CLEARED' or 'NOT_CLEARED', GetPlayerName(serverId), shared.framework)
+    dbg.debugInventory('%s inventory for user %s! | FW: %s', clearState and 'CLEARED' or 'NOT_CLEARED',
+        GetPlayerName(serverId), shared.framework)
 
     return clearState
 end
@@ -445,11 +482,12 @@ function GetServerInventory()
         DeployInventory = InventoryScripts.CHEEZA_INVENTORY
     end
 
+    if DeployInventory == 'es_extended' and HasResource(InventoryScripts.ORIGEN_INVENTORY) then
+        DeployInventory = InventoryScripts.ORIGEN_INVENTORY
+    end
 
     return DeployInventory
 end
-
-
 
 function getPlayer(source)
     source = tonumber(source)
@@ -466,6 +504,18 @@ function gatherInventoryData(playerId)
     local inventory, statusCode = {}, INVENTORY_STATUS_CODES.EMPTY_INVENTORY
     local p = promise.new()
     local iterCount = 0
+
+    if not inventoryData then
+        dbg.debugInventory('Failed to gather player inventory data, expected table, received boolean for user : %s',
+            GetPlayerName(playerId))
+        return inventory, statusCode
+    end
+
+    if inventoryData and type(inventoryData?.value) == 'boolean' then
+        dbg.debugInventory('Failed to gather player inventory data, expected table, received boolean for user : %s',
+            GetPlayerName(playerId))
+        return inventory, statusCode
+    end
 
     if inventoryData and next(inventoryData) and inventoryData.value and next(inventoryData.value) then
         for k, item in pairs(inventoryData.value) do
@@ -507,14 +557,23 @@ function getInventoryDataByPlayerId(serverId)
     local resolvedCount = 0
 
     local hasCheezaInventory = HasResource(Prison.InventoryScripts.CHEEZA_INVENTORY)
-    local hasQsInventoryWithQbCore = HasResource(Prison.InventoryScripts.QS_INVENTORY) and Prison.Framework == FRAMEWORK_MAP.QBCORE
-    local hasQsInventoryWithESX = HasResource(Prison.InventoryScripts.QS_INVENTORY) and Prison.Framework == FRAMEWORK_MAP.ESX
+    local hasQsInventoryWithQbCore = HasResource(Prison.InventoryScripts.QS_INVENTORY) and
+        Prison.Framework == FRAMEWORK_MAP.QBCORE
+    local hasQsInventoryWithESX = HasResource(Prison.InventoryScripts.QS_INVENTORY) and
+        Prison.Framework == FRAMEWORK_MAP.ESX
     local hasOxInventory = HasResource(Prison.InventoryScripts.OX_INVENTORY)
 
     local hasMfInventory = HasResource(Prison.InventoryScripts.MF_INVENTORY)
     local hasESXInventory = HasResource(Prison.InventoryScripts.ESX_INVENTORY) and not hasOxInventory
+    local hasCODEMInventory = HasResource(Prison.InventoryScripts.CODEM_INVENTORY)
+    local hasOrigenInventory = HasResource('origen_inventory')
 
     for resourceName, scriptName in pairs(Prison.InventoryScripts) do
+        if hasOrigenInventory then
+            local inventory = exports['origen_inventory']:GetInventory(serverId) or {}
+            return p:resolve(inventory)
+        end
+
         if hasQsInventoryWithESX then
             local version = GetResourceMetadata('qs-inventory', 'version', 0)
             local player = getPlayer(serverId)
@@ -524,13 +583,28 @@ function getInventoryDataByPlayerId(serverId)
                 inventory = exports['qs-inventory']:GetInventory(serverId)
             else
                 local minimalInv = false
-            
+
                 if player then
                     inventory = player.getInventory(minimalInv) and player.getInventory(minimalInv)
                 end
             end
 
             return p:resolve(inventory or {})
+        end
+
+        if hasCODEMInventory then
+            local player = getPlayer(serverId)
+            local identifier = nil
+
+            if Prison.Framework == FRAMEWORK_MAP.ESX then
+                identifier = player and (player.identifier or player.getIdentifier())
+            elseif Prison.Framework == FRAMEWORK_MAP.QBCORE then
+                identifier = player and player.PlayerData and player.PlayerData.citizenid
+            end
+
+            local inventory = exports['codem-inventory']:GetInventory(identifier, serverId) or {}
+
+            return p:resolve(inventory)
         end
 
         if hasESXInventory then
@@ -579,7 +653,7 @@ function getInventoryDataByPlayerId(serverId)
             if player then
                 inventory = player.getInventory(minimalInv) and player.getInventory(minimalInv) or player.inventory
             end
-            
+
             return p:resolve(inventory)
         end
 
@@ -603,7 +677,7 @@ function getInventoryDataByPlayerId(serverId)
                 inventory = exports['qs-inventory']:GetInventory(serverId)
             else
                 local minimalInv = false
-            
+
                 if player then
                     inventory = player.getInventory(minimalInv) and player.getInventory(minimalInv)
                 end
@@ -656,26 +730,26 @@ function getInventoryDataByPlayerId(serverId)
             p:resolve(true)
         end
     end
-    
+
     return Citizen.Await(p)
 end
 
 GetMissingItems = function(myArray)
-	if not myArray then
-		return
-	end
+    if not myArray then
+        return
+    end
 
-	local message = ""
+    local message = ""
 
-	for itemName, state in pairs(myArray) do
+    for itemName, state in pairs(myArray) do
         if not state then
-            message = message ..  itemName .. ', '
+            message = message .. itemName .. ', '
         end
-	end
+    end
 
-	message = message:sub(1, -3)
+    message = message:sub(1, -3)
 
-	return message
+    return message
 end
 
 
