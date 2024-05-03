@@ -241,17 +241,69 @@
             "TITLE": "Photo",
             "SELECT": "Sélectionner",
             "CANCEL": "Annuler",
+            "EDIT": "Modifier",
+            "DONE": "Fini",
+            "DELETE": "Supprimer",
             "SELECT_ITEMS": "Sélectionnez les éléments",
             "SELECTED_COUNT": "{count} éléments sélectionnés",
-            "PHOTO_COUNT": "{count} photos",
-            "DELETE_TITLE": "Supprimer {count} images",
-            "DELETE_TEXT": "Voulez-vous supprimer {count} images",
-            "DELETE_BUTTON_CANCEL": "Annuler",
-            "DELETE_BUTTON_DELETE": "Supprimer",
-            "DELETE_IMAGE_TITLE": "Supprimer l'image",
-            "DELETE_IMAGE_TEXT": "Voulez-vous supprimer cette image?",
-            "DELETE_IMAGE_BUTTON_CANCEL": "Annuler",
-            "DELETE_IMAGE_BUTTON_DELETE": "Supprimer"
+            "PHOTOS": "Photos",
+            "ALBUMS": "Albums",
+            "LIBRARY": "Gallery",
+            "MY_ALBUMS": "Mes Albums",
+            "MEDIA_TYPES": "Types de médias",
+            "NEW_ALBUM_POPUP": {
+                "TITLE": "Nouveau Album",
+                "DESCRIPTION": "Entrer un nom pour cet album",
+                "PLACEHOLDER": "Titre",
+                "CANCEL": "Annuler",
+                "PROCEED": "Sauvegarder"
+            },
+            "REMOVE_ALBUM": {
+                "TITLE": "Supprimer \"{name}\"",
+                "DESCRIPTION": "Êtes vous dûr de vouloir supprimer l'album \"{name}\"? Les photos ne seront pas supprimés",
+                "CANCEL": "Annuler",
+                "PROCEED": "Supprimer"
+            },
+            "RENAME_ALBUM_POPUP": {
+                "TITLE": "Renommer l'Album",
+                "DESCRIPTION": "Entrer un nouveau nom pour cet album",
+                "PLACEHOLDER": "Nouveau nom d'album",
+                "CANCEL": "Annuler",
+                "PROCEED": "Poursuivre"
+            },
+            "DELETE_IMAGE_POPUP": {
+                "TITLE": "Supprimer l'Image",
+                "DESCRIPTION": "ëtes vous sur de vouloir supprimer cet image?",
+                "CANCEL": "Annuler",
+                "PROCEED": "Supprimer"
+            },
+            "IMPORT_IMAGE_POPUP": {
+                "TITLE": "Importer dans l'album",
+                "DESCRIPTION": "Importer une image dans cet album",
+                "CANCEL": "Annuler",
+                "PROCEED": "Importer",
+                "PLACEHOLDER": "URL de l'Image"
+            },
+            "NO_PHOTOS": "Pas de Photos ou Vidéos",
+            "NO_PHOTOS_INSTRUCTIONS": "Vous pouvez prendre des images et photos avec l'appareil photo",
+            "PHOTO_COUNT": "{photos} Photos, {videos} Vidéos",
+            "DELETE_CONTEXT_TITLE": "Voulez vous supprimer {type} ou les retirer de cet album",
+            "THESE_PHOTOS": "ces photos",
+            "THIS_PHOTO": "cette photo",
+            "REMOVE_FROM_ALBUM": "Retirer de l'Album",
+            "ADD_TO_ALBUM": "Ajouter à l'Album",
+            "ADD_TO_FAVOURITES": "Ajouter aux Favoris",
+            "VIDEOS": "Vidéos",
+            "SELFIES": "Selfies",
+            "SCREENSHOTS": "Captures d'écrans",
+            "IMPORTS": "Importations",
+            "DUPLICATES": "Doublons",
+            "YEARS": "Années",
+            "MONTHS": "Mois",
+            "DAYS": "Jours",
+            "ALL_PHOTOS": "Toutes les photos",
+            "FAVOURITES": "Favouris",
+            "RECENTS": "Récents"
         },
         "WEATHER": {
             "TITLE": "Météo",
@@ -349,7 +401,9 @@
                 "TITLE": "Supprimer la conversation",
                 "DESCRIPTION": "Voulez-vous vraiment supprimer cette conversation ?"
             },
-            "MARK_AS_READ": "Marquer comme lu"
+            "MARK_AS_READ": "Marquer comme lu",
+            "MESSAGE_DELETED": "Message supprimer",
+            "OPEN_IN_MAPS": "Ouvrir dans Maps"
         },
         "PHONE": {
             "TITLE": "Téléphoner",
@@ -374,7 +428,7 @@
                 "KEYPAD": "clavier",
                 "SPEAKER": "enceinte",
                 "ADD_CALL": "ajouter un appel",
-                "VIDEO": "video",
+                "VIDEO": "vidéo",
                 "CONTACTS": "contacts",
                 "MOBILE": "Mobile"
             },
@@ -392,7 +446,7 @@
                 "DELETE_CONTACT": "Supprimer le contact",
                 "MESSAGE": "message",
                 "CALL": "appel",
-                "VIDEO": "video",
+                "VIDEO": "vidéo",
                 "MAIN": "principal",
                 "SHARE_CONTACT": "Partager le contact",
                 "SHARE_LOCATION": "Partager ma position",
@@ -466,6 +520,8 @@
             "MY_CARS": "Mes voitures",
             "OUT": "Dehors",
             "GARAGE": "Garage",
+            "IMPOUNDED": "En fourrière",
+            "IMPOUND_INFO": "Information fourrière",
             "LOCATION": "Localisation",
             "SUMMON": "Appeler",
             "VALET": "Valet",
@@ -497,6 +553,12 @@
                 "TEXT": "Voulez-vous {toggle} votre véhicule ?",
                 "CANCEL": "Annuler",
                 "PROCEED": "Procéder"
+            },
+            "IMPOUND_REASON": {
+                "REASON": "Raison",
+                "RETRIEVABLE": "Récupérable",
+                "IMPOUNDER": "Mis en fourrière par",
+                "PRICE": "Coût"
             }
         },
         "HOME": {
@@ -789,8 +851,8 @@
             "ACTIVITY": "Activité",
             "FOLLOW": "Suivre",
             "FOLLOWING": "Suivi(e)s",
-            "FOLLOWERS": "Followers",
-            "FOLLOWER": "Follower",
+            "FOLLOWERS": "Abonnés",
+            "FOLLOWER": "Abonnements",
             "REQUESTED": "Demandé",
             "LIKES": "J'aime",
             "LIKED_BY": "Aimé par",
@@ -844,7 +906,7 @@
             "TO": "A",
             "TWEETS": "Publications",
             "REPLIES": "Réponses",
-            "MEDIA": "Media",
+            "MEDIA": "Média",
             "LIKES": "Likes",
             "CANCEL": "Annuler",
             "TWEET": "Publier",
@@ -935,7 +997,8 @@
             "PROMOTED": "Promu",
             "ADD_ACCOUNT": "Ajouter un compte",
             "FOLLOWER_REQUESTS": "Demandes de suivi",
-            "NEW_POSTS": "Nouveaux posts"
+            "NEW_POSTS": "Nouveaux Posts",
+            "NEW_POST": "Nouvveau Post"
         },
         "SERVICES": {
             "ACTIONS": "Actions",
@@ -1125,7 +1188,7 @@
             "LIKED_HIDDEN_TITLE": "Les vidéos aimées par cet utilisateur sont actuellement cachées",
             "LIKED_HIDDEN_SUBTITLE": "Les vidéos aimées par {name} sont actuellement cachées",
             "INVALID_ACCOUNT_POPUP": {
-                "TITLE": "Invalid {name}",
+                "TITLE": "Invalide {name}",
                 "DESCRIPTION": "Vous n'êtes pas connecté au compte {name} que vous avez entré, veuillez vous connecter pour continuer.",
                 "OK": "OK"
             },
@@ -1141,7 +1204,7 @@
             "PREVIEW": "Aperçu",
             "CAPTION": "Légende",
             "CAPTION_PLACEHOLDER": "Ajouter une légende...",
-            "TTS": "Text to Speech (TTS)",
+            "TTS": "Synthèse vocale",
             "TTS_PLACEHOLDER": "Ajouter du text to speech...",
             "MUSIC": "Musique",
             "SELECT_MUSIC": "Sélectionnez une musique",
@@ -1184,6 +1247,7 @@
         "GALLERY": {
             "CANCEL": "Annuler",
             "EXTERNAL_URL": "URL externe",
+            "EXTERNAL_URL_BLACKLISTED": "Cet URL est interdite",
             "NO_IMAGES": "Pas d'images"
         },
         "NOTIFICATIONS": {
@@ -1350,6 +1414,13 @@
             "RECEIVED_TRANSFER_TITLE": "Réception de {coin}",
             "RECEIVED_TRANSFER_DESCRIPTION": "Vous avez reçu {amount} {coin} valant ${value}"
         },
+        "MAIL": {
+            "AUTOMATIC_PASSWORD": {
+                "SENDER": "System",
+                "SUBJECT": "Votre Adresse Mail",
+                "MESSAGE": "Salut,\n\nVotre adresse mail générée automatiquement est {address} et votre mot de passe est {password}"
+            }
+        },
         "LOGS": {
             "MAIL_TITLE": "Email",
             "NEW_MAIL": "{sender} a envoyé un mail à {recipient}",
@@ -1384,7 +1455,11 @@
             "TRENDY_UPLOAD_TITLE": "Nouvelle vidéo",
             "TRENDY_UPLOAD_DESCRIPTION": "{username} a publié une nouvelle vidéo. Description : {caption} et id {id}",
             "TRENDY_DELETE_TITLE": "Vidéo supprimée",
-            "TRENDY_DELETE_DESCRIPTION": "{username} a supprimé une vidéo (ID : {id})"
+            "TRENDY_DELETE_DESCRIPTION": "{username} a supprimé une vidéo (ID : {id})",
+            "UPLOADED_MEDIA": "Médias téléchargés",
+            "UPLOADED_MEDIA_DESCRIPTION": "Pris un(e) {type} avec id {id}\n{link}",
+            "VIDEO": "vidéo",
+            "PHOTO": "photo"
         }
     }
 }

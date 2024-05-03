@@ -2,7 +2,7 @@ fx_version "cerulean"
 game "gta5"
 lua54 "yes"
 
-version "1.6.0"
+version "1.7.3"
 
 shared_script {
     "config/*.lua",
@@ -42,7 +42,7 @@ escrow_ignore {
     "client/misc/debug.lua",
     "server/misc/debug.lua",
 
-    "server/misc/functions.lua.",
+    "server/misc/functions.lua",
     "server/misc/databaseChecker/*.lua",
 
     "server/apiKeys.lua",

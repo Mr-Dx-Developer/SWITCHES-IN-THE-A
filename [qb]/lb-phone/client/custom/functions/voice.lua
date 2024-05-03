@@ -1,30 +1,47 @@
+---@diagnostic disable: param-type-mismatch
 local pma = exports["pma-voice"]
 local mumble = exports["mumble-voip"]
 local toko = exports["tokovoip_script"]
+local MumbleIsPlayerTalking = MumbleIsPlayerTalking
+local NetworkIsPlayerTalking = NetworkIsPlayerTalking
 
 function AddToCall(callId)
     debugprint("Joining call", callId)
-    if Config.Voice.System == "pma" then
-        pma:addPlayerToCall(callId)
-    elseif Config.Voice.System == "mumble" then
-        mumble:addPlayerToCall(callId)
-    elseif Config.Voice.System == "salty" then
-        TriggerServerEvent("phone:voice:addToCall", callId)
-    elseif Config.Voice.System == "toko" then
-        toko:addPlayerToRadio(callId)
+
+    local success = pcall(function()
+        if Config.Voice.System == "pma" then
+            pma:addPlayerToCall(callId)
+        elseif Config.Voice.System == "mumble" then
+            mumble:addPlayerToCall(callId)
+        elseif Config.Voice.System == "salty" then
+            TriggerServerEvent("phone:voice:addToCall", callId)
+        elseif Config.Voice.System == "toko" then
+            toko:addPlayerToRadio(callId)
+        end
+    end)
+
+    if not success then
+        infoprint("error", "Failed to join call (unsupported voice script)")
     end
 end
 
 function RemoveFromCall(callId)
     debugprint("Leaving call", callId)
-    if Config.Voice.System == "pma" then
-        pma:removePlayerFromCall()
-    elseif Config.Voice.System == "mumble" then
-        mumble:removePlayerFromCall()
-    elseif Config.Voice.System == "salty" then
-        TriggerServerEvent("phone:voice:removeFromCall", callId)
-    elseif Config.Voice.System == "toko" then
-        toko:removePlayerFromRadio(callId)
+
+    local success = pcall(function()
+        if Config.Voice.System == "pma" then
+            pma:removePlayerFromCall()
+        elseif Config.Voice.System == "mumble" then
+            mumble:removePlayerFromCall()
+        elseif Config.Voice.System == "salty" then
+            TriggerServerEvent("phone:voice:removeFromCall", callId)
+        elseif Config.Voice.System == "toko" then
+            toko:removePlayerFromRadio(callId)
+        end
+    end)
+
+    if not success then
+        infoprint("error", "Failed to leave call (unsupported voice script)")
     end
 end
 
@@ -34,8 +51,6 @@ function ToggleSpeaker(enabled)
     end
 end
 
-local MumbleIsPlayerTalking = MumbleIsPlayerTalking
-local NetworkIsPlayerTalking = NetworkIsPlayerTalking
 function IsTalking()
     if Config.Voice.System == "pma" or Config.Voice.System == "mumble" then
         return MumbleIsPlayerTalking(PlayerId())
@@ -50,6 +65,7 @@ end
 
 function GetVoiceMaxDistance()
     local proximity = MumbleGetTalkerProximity()
+
     return ConvertProximityToUnits(proximity)
 end
 
@@ -87,29 +103,31 @@ local data = {
 }
 
 CreateThread(function()
-    if Config.Voice.CallEffects then
-        speakerEffect = CreateAudioSubmix("phonespeaker")
-        SetAudioSubmixEffectRadioFx(speakerEffect, 0)
-        SetAudioSubmixEffectParamInt(speakerEffect, 0, `default`, 1)
-
-        callEffect = CreateAudioSubmix("phonecall")
-        SetAudioSubmixEffectRadioFx(callEffect, 0)
-        SetAudioSubmixEffectParamInt(callEffect, 0, `default`, 1)
-
-        for hash, value in pairs(data) do
-            SetAudioSubmixEffectParamFloat(speakerEffect, 0, hash, value)
-            SetAudioSubmixEffectParamFloat(callEffect, 0, hash, value)
-        end
-
-        SetAudioSubmixEffectParamFloat(speakerEffect, 0, `rm_mix`, 0.15)
-        SetAudioSubmixEffectParamFloat(callEffect, 0, `rm_mix`, 0.05)
-
-        SetAudioSubmixOutputVolumes(speakerEffect, 0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
-        SetAudioSubmixOutputVolumes(callEffect, 0, 0.25, 1.0, 0.0, 0.0, 1.0, 1.0)
-
-        AddAudioSubmixOutput(speakerEffect, 0)
-        AddAudioSubmixOutput(callEffect, 0)
+    if not Config.Voice.CallEffects then
+        return
     end
+
+    speakerEffect = CreateAudioSubmix("phonespeaker")
+    SetAudioSubmixEffectRadioFx(speakerEffect, 0)
+    SetAudioSubmixEffectParamInt(speakerEffect, 0, `default`, 1)
+
+    callEffect = CreateAudioSubmix("phonecall")
+    SetAudioSubmixEffectRadioFx(callEffect, 0)
+    SetAudioSubmixEffectParamInt(callEffect, 0, `default`, 1)
+
+    for hash, value in pairs(data) do
+        SetAudioSubmixEffectParamFloat(speakerEffect, 0, hash, value)
+        SetAudioSubmixEffectParamFloat(callEffect, 0, hash, value)
+    end
+
+    SetAudioSubmixEffectParamFloat(speakerEffect, 0, `rm_mix`, 0.15)
+    SetAudioSubmixEffectParamFloat(callEffect, 0, `rm_mix`, 0.05)
+
+    SetAudioSubmixOutputVolumes(speakerEffect, 0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
+    SetAudioSubmixOutputVolumes(callEffect, 0, 0.25, 1.0, 0.0, 0.0, 1.0, 1.0)
+
+    AddAudioSubmixOutput(speakerEffect, 0)
+    AddAudioSubmixOutput(callEffect, 0)
 end)
 
 local voiceTargets = {}

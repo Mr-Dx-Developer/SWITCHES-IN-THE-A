@@ -125,10 +125,6 @@ UploadMethods = {
             headers = {
                 ["Authorization"] = "API_KEY"
             },
-            error = {
-                path = "success",
-                value = false
-            },
             success = {
                 path = "url"
             },
@@ -139,10 +135,6 @@ UploadMethods = {
             headers = {
                 ["Authorization"] = "API_KEY"
             },
-            error = {
-                path = "success",
-                value = false
-            },
             success = {
                 path = "url"
             }
@@ -152,10 +144,6 @@ UploadMethods = {
             field = "recording",
             headers = {
                 ["Authorization"] = "API_KEY"
-            },
-            error = {
-                path = "success",
-                value = false
             },
             success = {
                 path = "url"

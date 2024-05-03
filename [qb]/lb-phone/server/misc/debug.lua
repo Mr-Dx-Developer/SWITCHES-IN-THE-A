@@ -13,7 +13,9 @@ RegisterCommand("notifyeveryone", function()
 
         if phoneNumber then
             exports["lb-phone"]:SendNotification(phoneNumber, {
-                -- put your notification options here
+                app = "Wallet",
+                title = "Test Notification",
+                content = "This is a test notification.",
             })
         end
     end

@@ -313,14 +313,18 @@ if IsDuplicityVersion() then
                 return cb(defaultReturn)
             end
 
+            if not Config.Debug then
+                local result = callback(source, phoneNumber, ...)
+
+                return cb(result)
+            end
+
             local startTime = os.nanotime()
             local result = callback(source, phoneNumber, ...)
             local finishTime = os.nanotime()
             local ms = (finishTime - startTime) / 1e6
 
-            if Config.Debug then
-                debugprint(("Callback ^5%s^7 took %.4fms"):format(event, ms))
-            end
+            debugprint(("Callback ^5%s^7 took %.4fms"):format(event, ms))
 
             return cb(result)
         end)

@@ -72,7 +72,7 @@ CREATE TABLE IF NOT EXISTS `phone_notes` (
 ) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 CREATE TABLE IF NOT EXISTS `phone_notifications` (
-    `id` VARCHAR(10) NOT NULL,
+    `id` INT NOT NULL AUTO_INCREMENT,
     `phone_number` VARCHAR(15) NOT NULL,
 
     `app` VARCHAR(50) NOT NULL,
@@ -506,36 +506,44 @@ CREATE TABLE IF NOT EXISTS `phone_tinder_messages` (
     FOREIGN KEY (`recipient`) REFERENCES `phone_phones`(`phone_number`) ON DELETE CASCADE ON UPDATE CASCADE
 ) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
--- IMESSAGE
+-- MESSAGES
 CREATE TABLE IF NOT EXISTS `phone_message_channels` (
-    `channel_id` VARCHAR(50) NOT NULL,
+    `id` INT NOT NULL AUTO_INCREMENT,
+
     `is_group` BOOLEAN NOT NULL DEFAULT FALSE,
     `name` VARCHAR(50) DEFAULT NULL,
     `last_message` VARCHAR(50) NOT NULL DEFAULT "",
     `last_message_timestamp` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 
-    PRIMARY KEY (`channel_id`)
+    PRIMARY KEY (`id`)
 ) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 CREATE TABLE IF NOT EXISTS `phone_message_members` (
-    `channel_id` VARCHAR(50) NOT NULL,
+    `channel_id` INT NOT NULL,
     `phone_number` VARCHAR(15) NOT NULL,
+
     `is_owner` BOOLEAN NOT NULL DEFAULT FALSE,
     `deleted` BOOLEAN NOT NULL DEFAULT FALSE, -- if the member has deleted the channel
     `unread` INT NOT NULL DEFAULT 0,
 
-    PRIMARY KEY (`channel_id`, `phone_number`)
+    PRIMARY KEY (`channel_id`, `phone_number`),
+    FOREIGN KEY (`channel_id`) REFERENCES `phone_message_channels`(`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (`phone_number`) REFERENCES `phone_phones`(`phone_number`) ON DELETE CASCADE ON UPDATE CASCADE
 ) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 CREATE TABLE IF NOT EXISTS `phone_message_messages` (
-    `id` VARCHAR(10) NOT NULL,
-    `channel_id` VARCHAR(50) NOT NULL,
+    `id` INT NOT NULL AUTO_INCREMENT,
+
+    `channel_id` INT NOT NULL,
+
     `sender` VARCHAR(15) NOT NULL,
     `content` VARCHAR(1000),
     `attachments` TEXT, -- json array of attachments
     `timestamp` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
-    PRIMARY KEY (`id`)
+    PRIMARY KEY (`id`),
+    FOREIGN KEY (`channel_id`) REFERENCES `phone_message_channels`(`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (`sender`) REFERENCES `phone_phones`(`phone_number`) ON DELETE CASCADE ON UPDATE CASCADE
 ) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 -- DARKCHAT
@@ -688,6 +696,15 @@ CREATE TABLE IF NOT EXISTS `phone_mail_messages` (
     `timestamp` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
     PRIMARY KEY (`id`)
+) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS `phone_mail_deleted` (
+    `message_id` VARCHAR(10) NOT NULL,
+    `address` VARCHAR(100) NOT NULL,
+
+    PRIMARY KEY (`message_id`, `address`),
+    FOREIGN KEY (`message_id`) REFERENCES `phone_mail_messages`(`id`) ON DELETE CASCADE,
+    FOREIGN KEY (`address`) REFERENCES `phone_mail_accounts`(`address`) ON DELETE CASCADE
 ) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 -- COMPANIES APP

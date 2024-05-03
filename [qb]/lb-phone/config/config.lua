@@ -13,10 +13,12 @@ Config.Framework = "auto"
         * esx: es_extended, https://github.com/esx-framework/esx-legacy
         * qb: qb-core, https://github.com/qbcore-framework/qb-core
         * ox: ox_core, https://github.com/overextended/ox_core
+        * vrp2: vrp 2.0 (ONLY THE OFFICIAL vRP 2.0, NOT CUSTOM VERSIONS)
         * standalone: no framework, note that framework specific apps will not work unless you implement the functions
 ]]
 Config.CustomFramework = false -- if set to true and you use standalone, you will be able to use framework specific apps
 Config.QBMailEvent = true -- if you want this script to listen for qb email events, enable this.
+Config.QBOldJobMethod = false -- use the old method to check job in qb-core? this is slower, and only needed if you use an outdated version of qb-core.
 
 Config.Item = {}
 Config.Item.Require = true -- require a phone item to use the phone
@@ -45,7 +47,11 @@ Config.PhoneOffset = vector3(0.0, -0.005, 0.0) -- the offset of the phone when a
 Config.DynamicIsland = true -- if enabled, the phone will have a Iphone 14 Pro inspired Dynamic Island.
 Config.SetupScreen = true -- if enabled, the phone will have a setup screen when the player first uses the phone.
 
-Config.AutoDeleteNotifications = false -- notifications that are more than X hours old, will be deleted. set to false to disable. if set to true, it will delete 1 week old notifications.
+Config.AutoDeleteNotifications = true -- notifications that are more than X hours old, will be deleted. set to false to disable. if set to true, it will delete 1 week old notifications.
+Config.MaxNotifications = 100 -- the maximum amount of notifications a player can have. if they have more than this, the oldest notifications will be deleted. set to false to disable
+Config.DisabledNotifications = { -- an array of apps that should not send notifications, note that you should use the app identifier, found in config.json
+    -- "DarkChat",
+}
 
 Config.WhitelistApps = {
     -- ["test-app"] = {"police", "ambulance"}
@@ -58,6 +64,7 @@ Config.BlacklistApps = {
 Config.Companies = {}
 Config.Companies.Enabled = true -- allow players to call companies?
 Config.Companies.MessageOffline = true -- if true, players can message companies even if no one in the company is online
+Config.Companies.DefaultCallsDisabled = false -- should calles be disabled by default?
 Config.Companies.Services = {
     {
         job = "police",
@@ -273,6 +280,10 @@ Config.Locales = { -- languages that the player can choose from when setting up 
         name = "Português (Brasil)"
     },
     {
+        locale = "pt-pt",
+        name = "Português"
+    },
+    {
         locale = "it",
         name = "Italiano"
     }
@@ -303,7 +314,11 @@ Config.Battery.DischargeWhenInactiveInterval = { 80, 120 } -- How many seconds f
 Config.Battery.DischargeWhenInactive = true -- Should the phone remove battery when the phone is closed?
 
 Config.CurrencyFormat = "$%s" -- ($100) Choose the formatting of the currency. %s will be replaced with the amount.
-Config.MaxTransferAmount = 10000000 -- The maximum amount of money that can be transferred at once via wallet / messages.
+Config.MaxTransferAmount = 1000000 -- The maximum amount of money that can be transferred at once via wallet / messages.
+
+Config.TransferLimits = {}
+Config.TransferLimits.Daily = false -- The maximum amount of money that can be transferred in a day. Set to false for unlimited.
+Config.TransferLimits.Weekly = false -- The maximum amount of money that can be transferred in a week. Set to false for unlimited.
 
 Config.EnableMessagePay = true -- Allow players to pay other players via messages?
 Config.EnableVoiceMessages = true -- Allow players to send voice messages?
@@ -314,6 +329,7 @@ Config.CustomTime = false -- NOTE: disable Config.RealTime if using this. you ca
 
 Config.EmailDomain = "lbphone.com"
 Config.AutoCreateEmail = false -- should the phone automatically create an email for the player when they set up the phone?
+Config.DeleteMail = true -- allow players to delete mails in the mail app?
 
 Config.DeleteMessages = true -- allow players to delete messages in the messages app?
 
@@ -321,6 +337,7 @@ Config.SyncFlash = true -- should flashlights be synced across all players? May 
 Config.EndLiveClose = false -- should InstaPic live end when you close the phone?
 
 Config.AllowExternal = { -- allow people to upload external images? (note: this means they can upload nsfw / gore etc)
+    Gallery = true, -- allow importing external links to the gallery?
     Twitter = true, -- set to true to enable external images on that specific app, set to false to disable it.
     Instagram = true,
     Tinder = true,
@@ -330,6 +347,18 @@ Config.AllowExternal = { -- allow people to upload external images? (note: this 
     Mail = true,
     Messages = true,
     Other = true, -- other apps that don't have a specific setting (ex: setting a profile picture for a contact, backgrounds for the phone etc)
+}
+
+-- Blacklisted domains for external images. You will not be able to upload from these domains.
+Config.ExternalBlacklistedDomains = {
+    "imgur.com",
+    "discord.com",
+    "discordapp.com",
+}
+
+-- Whitelisted domains for external images. If this is not empty/nil/false, you will only be able to upload images from these domains.
+Config.ExternalWhitelistedDomains = {
+    -- "fivemanage.com"
 }
 
 Config.WordBlacklist = {}
@@ -372,11 +401,11 @@ Config.Post.InstaPic = true -- Anmnounce new posts on InstaPic?
 Config.Post.Accounts = {
     Birdy = {
         Username = "Birdy",
-        Avatar = "https://cdn.discordapp.com/attachments/1032954560844660756/1112361465438031882/Birdy.png"
+        Avatar = "https://loaf-scripts.com/fivem/lb-phone/icons/Birdy.png"
     },
     InstaPic = {
         Username = "InstaPic",
-        Avatar = "https://cdn.discordapp.com/attachments/1032954560844660756/1112361465219911730/InstaPic.png"
+        Avatar = "https://loaf-scripts.com/fivem/lb-phone/icons/InstaPic.png"
     }
 }
 
@@ -447,7 +476,13 @@ Config.TikTok.TTS = {
     {"Singing - Dramatic", "en_female_ht_f08_wonderful_world"}
 }
 
-Config.ICEServers = false -- ICE Servers for WebRTC (ig live, facetim). If you don't know what you're doing, leave this as false.
+-- ICE Servers for WebRTC (ig live, live video). If you don't know what you're doing, leave this as it is.
+-- see https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/RTCPeerConnection
+-- Config.RTCConfig = {
+--     iceServers = {
+--         { urls = "stun:stun.l.google.com:19302" },
+--     }
+-- }
 
 Config.Crypto = {}
 Config.Crypto.Enabled = true
@@ -526,9 +561,9 @@ Config.UploadMethod = {}
 -- A video tutorial for how to set up Fivemanage can be found here: https://www.youtube.com/watch?v=y3bCaHS6Moc
 -- If you want to host uploads yourself, you can use LBUpload: https://github.com/lbphone/lb-upload
 -- We STRONGLY discourage using Discord as an upload method, as uploaded files may become inaccessible after a while.
-Config.UploadMethod.Video = "Fivemanage" -- "Fivemanage" or "Discord" or "LBUpload" or "Imgur" or "Custom"
-Config.UploadMethod.Image = "Fivemanage" -- "Fivemanage" or "Discord" or "LBUpload" or "Imgur" or "Custom
-Config.UploadMethod.Audio = "Fivemanage" -- "Fivemanage" or "Discord" or "LBUpload" or "Custom"
+Config.UploadMethod.Video = "Fivemanage" -- "Fivemanage" or "LBUpload" or "Custom"
+Config.UploadMethod.Image = "Fivemanage" -- "Fivemanage" or "LBUpload" or "Custom
+Config.UploadMethod.Audio = "Fivemanage" -- "Fivemanage" or "LBUpload" or "Custom"
 
 Config.Video = {}
 Config.Video.Bitrate = 400 -- video bitrate (kbps), increase to improve quality, at the cost of file size
@@ -537,9 +572,5 @@ Config.Video.MaxSize = 25 -- max video size (MB)
 Config.Video.MaxDuration = 60 -- max video duration (seconds)
 
 Config.Image = {}
-Config.Image.Mime = "image/webp"
+Config.Image.Mime = "image/webp" -- image mime type, "image/webp" or "image/png" or "image/jpg"
 Config.Image.Quality = 0.95
-if Config.UploadMethod.Image == "Imgur" then
-    Config.Image.Mime = "image/png"
-    Config.Image.Quality = 1.0
-end

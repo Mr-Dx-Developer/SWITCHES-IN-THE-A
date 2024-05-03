@@ -88,7 +88,7 @@
             "size": 831
         },
         "AppStore": {
-            "name": "App Store",
+            "name": "Apps",
             "removable": false,
             "size": 84000
         },
@@ -136,7 +136,7 @@
             "size": 17400
         },
         "DarkChat": {
-            "name": "DarkChat",
+            "name": "Dark Chat",
             "description": "Anonymous chat rooms",
             "removable": true,
             "size": 98500,
@@ -144,7 +144,7 @@
         },
         "Twitter": {
             "name": "Birdy",
-            "icon": "./assets/img/icons/apps/Birdy.png",
+            "icon": "./assets/img/icons/apps/Birdy.jpg",
             "description": "Live news, sports and chat",
             "removable": true,
             "size": 256700,
@@ -173,7 +173,7 @@
         },
         "Instagram": {
             "name": "InstaPic",
-            "icon": "./assets/img/icons/apps/InstaPic.png",
+            "icon": "./assets/img/icons/apps/InstaPic.jpg",
             "description": "Share photos and videos",
             "removable": true,
             "size": 223000,
@@ -181,7 +181,7 @@
         },
         "Tinder": {
             "name": "Spark",
-            "icon": "./assets/img/icons/apps/Spark.png",
+            "icon": "./assets/img/icons/apps/Spark.jpg",
             "description": "Meet new people",
             "removable": true,
             "size": 187500,
@@ -189,7 +189,7 @@
         },
         "TikTok": {
             "name": "Trendy",
-            "icon": "./assets/img/icons/apps/Trendy.png",
+            "icon": "./assets/img/icons/apps/Trendy.jpg",
             "description": "Share photos and videos",
             "removable": true,
             "size": 223000

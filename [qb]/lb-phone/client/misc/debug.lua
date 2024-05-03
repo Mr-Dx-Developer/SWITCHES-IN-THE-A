@@ -28,7 +28,7 @@ registerDebugCommand("testnotification", function(src, args)
     TriggerEvent("phone:sendNotification", {
         app = args[1] or "Wallet",
         title = "Test Notification",
-        content = "This is a test notification.",
+        -- content = "This is a test notification.",
     })
 end)
 
@@ -164,3 +164,18 @@ end)
 --         DisableControlAction(0, 249, true)
 --     end
 -- end)
+
+if Config.Debug then
+    RegisterCommand("phonescale", function (_, args)
+        local rawScale = tonumber(args[1])
+
+        if not rawScale or rawScale < 50 or rawScale > 120 then
+            print("Invalid scale. Must be between 50 and 120.")
+            return
+        end
+
+        local scale = rawScale / 100
+
+        SendReactMessage("setScale", scale)
+    end, false)
+end

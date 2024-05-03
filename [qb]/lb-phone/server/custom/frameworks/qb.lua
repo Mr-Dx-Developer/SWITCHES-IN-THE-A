@@ -266,7 +266,7 @@ end, "admin")
 QB.Commands.Add("changepassword", "Change a user's password", {
     {
         name = "app",
-        help = "The app: trendy, instapic or birdy"
+        help = "The app: trendy, instapic, birdy or mail"
     },
     {
         name = "username",
@@ -285,7 +285,8 @@ QB.Commands.Add("changepassword", "Change a user's password", {
         ["tiktok"] = true,
         ["birdy"] = true,
         ["trendy"] = true,
-        ["instapic"] = true
+        ["instapic"] = true,
+        ["mail"] = true
     }
 
     if not allowedApps[app:lower()] then
@@ -316,6 +317,34 @@ local jobCounts = {}
 local jobDutyCounts = {}
 
 function RefreshCompanies()
+    if Config.QBOldJobMethod then
+        debugprint("using old method to refresh companies")
+
+        local openJobs = {}
+        local players = QB.Functions.GetQBPlayers()
+
+        for _, v in pairs(players) do
+            if not v?.PlayerData.job.onduty then
+                goto continue
+            end
+
+            local job = v.PlayerData.job.name
+            if not openJobs[job] then
+                openJobs[job] = true
+            end
+
+            ::continue::
+        end
+
+        for i = 1, #Config.Companies.Services do
+            local jobData = Config.Companies.Services[i]
+
+            jobData.open = openJobs[jobData.job] or false
+        end
+
+        return
+    end
+
     for i = 1, #Config.Companies.Services do
         local jobData = Config.Companies.Services[i]
 
@@ -340,6 +369,27 @@ CreateThread(function()
     end
 
     debugprint("qb jobs: initial data", playerJobs, jobCounts, jobDutyCounts)
+end)
+
+AddEventHandler('QBCore:Server:PlayerLoaded', function(Player)
+    local job = Player.PlayerData.job
+    local src = Player.PlayerData.source
+    local jobName = job?.name
+    local onDuty = job?.onduty
+
+    if not jobName then
+        return
+    end
+
+    playerJobs[src] = {
+        name = jobName,
+        onduty = onDuty
+    }
+
+    jobCounts[jobName] = (jobCounts[jobName] or 0) + 1
+    jobDutyCounts[jobName] = (jobDutyCounts[jobName] or 0) + (onDuty and 1 or 0)
+
+    debugprint("qb jobs: player loaded update (src, job, duty)", src, job.name, job.onduty)
 end)
 
 AddEventHandler("QBCore:Server:OnJobUpdate", function(src, job)

@@ -159,7 +159,155 @@ local function validatePhotoAlbums()
 	end
 end
 
+local function validateNotificationsId()
+	local idColumn = tables.phone_notifications?.id
+
+	if idColumn.type == "VARCHAR" then
+		MySQL.rawExecute.await([[
+			ALTER TABLE `phone_notifications`
+			DROP PRIMARY KEY,
+			DROP COLUMN `id`
+		]])
+
+		MySQL.rawExecute.await([[
+			ALTER TABLE `phone_notifications`
+			ADD COLUMN `id` INT NOT NULL AUTO_INCREMENT FIRST,
+			ADD PRIMARY KEY (`id`)
+		]])
+
+		updateChanges = true
+
+		infoprint("success", "Changed id from VARCHAR to INT for phone_notifications.")
+	end
+end
+
+local function validateMessages()
+	local channels = tables.phone_message_channels
+
+	if not channels then
+		return
+	end
+
+	local channelId = channels.channel_id
+	local id = channels.id
+
+	if not channelId or id then
+		return
+	end
+
+	MySQL.rawExecute.await([[
+		ALTER TABLE `phone_message_channels`
+		DROP PRIMARY KEY
+	]])
+
+	MySQL.rawExecute.await([[
+		ALTER TABLE `phone_message_channels`
+		ADD COLUMN `id` INT NOT NULL AUTO_INCREMENT FIRST,
+		ADD PRIMARY KEY (`id`)
+	]])
+
+	MySQL.rawExecute.await([[
+		ALTER TABLE `phone_message_members`
+		RENAME COLUMN `channel_id` TO `channel_id_old`,
+		ADD COLUMN `channel_id` INT NOT NULL AFTER `phone_number`
+	]])
+
+	MySQL.rawExecute.await([[
+		UPDATE `phone_message_members` m
+		JOIN `phone_message_channels` c ON m.channel_id_old = c.channel_id
+		SET m.channel_id = c.id
+	]])
+
+	MySQL.rawExecute.await([[
+		ALTER TABLE `phone_message_members`
+		DROP PRIMARY KEY,
+		DROP COLUMN `channel_id_old`
+	]])
+
+	MySQL.rawExecute.await([[
+		DELETE FROM `phone_message_members`
+		WHERE `channel_id` = 0
+	]])
+
+	MySQL.rawExecute.await([[
+		ALTER TABLE `phone_message_members`
+		ADD FOREIGN KEY (`channel_id`) REFERENCES `phone_message_channels`(`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+		ADD PRIMARY KEY (`phone_number`, `channel_id`)
+	]])
+
+	MySQL.rawExecute.await([[
+		ALTER TABLE `phone_message_messages`
+		DROP PRIMARY KEY,
+		DROP COLUMN `id`
+	]])
+
+	MySQL.rawExecute.await([[
+		ALTER TABLE `phone_message_messages`
+		ADD COLUMN `id` INT NOT NULL AUTO_INCREMENT FIRST,
+		ADD PRIMARY KEY (`id`)
+	]])
+
+	MySQL.rawExecute.await([[
+		ALTER TABLE `phone_message_messages`
+		RENAME COLUMN `channel_id` TO `channel_id_old`,
+		ADD COLUMN `channel_id` INT NOT NULL AFTER `id`
+	]])
+
+	MySQL.rawExecute("DELETE FROM phone_message_channels WHERE channel_id = ''")
+
+	MySQL.rawExecute("ALTER TABLE phone_message_channels ADD UNIQUE KEY `channel_id` (`channel_id`)")
+
+	MySQL.rawExecute.await([[
+		UPDATE `phone_message_messages` m
+		JOIN `phone_message_channels` c ON m.channel_id_old = c.channel_id
+		SET m.channel_id = c.id
+	]])
+
+	MySQL.rawExecute.await([[
+		ALTER TABLE `phone_message_messages`
+		DROP COLUMN `channel_id_old`
+	]])
+
+	MySQL.rawExecute.await([[
+		DELETE FROM `phone_message_messages`
+		WHERE `channel_id` = 0
+	]])
+
+	MySQL.rawExecute.await([[
+		ALTER TABLE `phone_message_messages`
+		ADD FOREIGN KEY (`channel_id`) REFERENCES `phone_message_channels`(`id`) ON DELETE CASCADE ON UPDATE CASCADE
+	]])
+
+	MySQL.rawExecute.await([[
+		ALTER TABLE `phone_message_channels`
+		DROP COLUMN `channel_id`
+	]])
+
+	updateChanges = true
+end
+
+-- Delete mails update
+local function validateDeleteMail()
+	if not tables.phone_mail_deleted then
+		MySQL.rawExecute.await([[
+			CREATE TABLE IF NOT EXISTS `phone_mail_deleted` (
+				`message_id` VARCHAR(10) NOT NULL,
+				`address` VARCHAR(100) NOT NULL,
+
+				PRIMARY KEY (`message_id`, `address`),
+				FOREIGN KEY (`message_id`) REFERENCES `phone_mail_messages`(`id`) ON DELETE CASCADE,
+				FOREIGN KEY (`address`) REFERENCES `phone_mail_accounts`(`address`) ON DELETE CASCADE
+			) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci
+		]])
+
+		updateChanges = true
+	end
+end
+
 validatePhotoAlbums()
+validateNotificationsId()
+validateMessages()
+validateDeleteMail()
 
 if updateChanges then
 	fetchTables()

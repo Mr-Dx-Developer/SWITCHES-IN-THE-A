@@ -20,7 +20,7 @@ if (!window.componentsLoaded) {
 
     let currentPopUpInputCb = null;
 
-    function SetPopUp(data) {
+    function setPopUp(data) {
         currentPopUpInputCb = null;
 
         if (!data?.buttons) return;
@@ -39,9 +39,8 @@ if (!window.componentsLoaded) {
             data.buttons[buttonId].cb();
         });
     }
-    window.setPopUp = SetPopUp;
 
-    function SetContextMenu(data) {
+    function setContextMenu(data) {
         if (!data?.buttons) return;
 
         for (let i = 0; i < data.buttons.length; i++) {
@@ -53,16 +52,14 @@ if (!window.componentsLoaded) {
             data.buttons[buttonId].cb();
         });
     }
-    window.setContextMenu = SetContextMenu;
 
-    function SetContactModal(number) {
+    function setContactModal(number) {
         if (!number) return;
 
         fetchNui('SetContactModal', number, 'lb-phone');
     }
-    window.setContactModal = SetContactModal;
 
-    function UseComponent(cb, data) {
+    function useComponent(cb, data) {
         if (!cb || !data?.component) return;
 
         fetchNui('ShowComponent', data, 'lb-phone')
@@ -74,62 +71,56 @@ if (!window.componentsLoaded) {
                 cb(null);
             });
     }
-    window.useComponent = UseComponent;
 
-    function SelectGallery(data) {
-        UseComponent(data.cb, { ...data, component: 'gallery' });
+    function selectGallery(data) {
+        useComponent(data.cb, { ...data, component: 'gallery' });
     }
-    window.selectGallery = SelectGallery;
 
-    function SelectGIF(cb) {
-        UseComponent(cb, { component: 'gif' });
+    function selectGIF(cb) {
+        useComponent(cb, { component: 'gif' });
     }
-    window.selectGIF = SelectGIF;
 
-    function SelectEmoji(cb) {
-        UseComponent(cb, { component: 'emoji' });
+    function selectEmoji(cb) {
+        useComponent(cb, { component: 'emoji' });
     }
-    window.selectEmoji = SelectEmoji;
 
     function useCamera(cb, data) {
-        UseComponent(cb, { ...data, component: 'camera' });
+        useComponent(cb, { ...data, component: 'camera' });
     }
 
     function colorPicker(cb, data) {
-        UseComponent(cb, { ...data, component: 'colorpicker' });
+        useComponent(cb, { ...data, component: 'colorpicker' });
     }
 
     function contactSelector(cb, data) {
-        UseComponent(cb, { ...data, component: 'contactselector' });
+        useComponent(cb, { ...data, component: 'contactselector' });
     }
 
-    function GetSettings() {
+    function getSettings() {
         return new Promise((resolve, reject) => {
             fetchNui('GetSettings', {}, 'lb-phone').then(resolve).catch(reject);
         });
     }
-    window.getSettings = GetSettings;
 
-    function GetLocale(path, format) {
+    function getLocale(path, format) {
         return new Promise((resolve, reject) => {
             fetchNui('GetLocale', { path, format }, 'lb-phone').then(resolve).catch(reject);
         });
     }
-    window.getLocale = GetLocale;
 
-    function SendNotification(data) {
+    function sendNotification(data) {
         data.app = window.appName;
         if (!data?.title && !data?.content) return console.log('Invalid notification data');
         fetchNui('SendNotification', data, 'lb-phone');
     }
-    window.sendNotification = SendNotification;
 
     let settingListeners = [];
-    function OnSettingsChange(cb) {
+
+    function onSettingsChange(cb) {
         if (!cb) return;
+
         settingListeners.push(cb);
     }
-    window.onSettingsChange = OnSettingsChange;
 
     window.addEventListener('message', (event) => {
         const data = event.data;
@@ -146,12 +137,17 @@ if (!window.componentsLoaded) {
         fetchNui('toggleInput', toggle, 'lb-phone');
     }
 
+    let addedHandlers = [];
+
     function refreshInputs(inputs) {
         inputs.forEach((input) => {
-            input.onfocus = () => toggleInput(true);
-            input.onblur = () => toggleInput(false);
+            if (addedHandlers.includes(input)) return console.log('already added handler for', input);
+
+            input.addEventListener('focus', () => toggleInput(true));
+            input.addEventListener('blur', () => toggleInput(false));
         });
     }
+
     refreshInputs(document.querySelectorAll('input, textarea'));
 
     const observer = new MutationObserver((mutations) => {
@@ -162,7 +158,20 @@ if (!window.componentsLoaded) {
             });
         });
     });
+
     observer.observe(document.body, { childList: true, subtree: true });
+
+    window.SetPopUp = setPopUp;
+    window.SetContextMenu = setContextMenu;
+    window.SetContactModal = setContactModal;
+    window.UseComponent = useComponent;
+    window.SelectGallery = selectGallery;
+    window.SelectGIF = selectGIF;
+    window.SelectEmoji = selectEmoji;
+    window.GetSettings = getSettings;
+    window.GetLocale = getLocale;
+    window.SendNotification = sendNotification;
+    window.OnSettingsChange = onSettingsChange;
 
     window.postMessage('componentsLoaded', '*');
 }

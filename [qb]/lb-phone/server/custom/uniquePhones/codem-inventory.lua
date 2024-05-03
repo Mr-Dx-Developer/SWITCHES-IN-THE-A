@@ -7,11 +7,11 @@ end
 ---@param name string
 ---@return table items
 local function GetItemsByName(source, name)
-    local inventory = exports["codem-inventory"]:GetUserInventory(source)
+    local inventory = exports["codem-inventory"]:GetInventory(false, source)
     local items = {}
     for _, item in pairs(inventory) do
         if item?.name == name then
-            items[#items+1] = item
+            items[#items + 1] = item
         end
     end
 
@@ -27,7 +27,7 @@ function HasPhoneNumber(source, phoneNumber)
     local phones = GetItemsByName(source, Config.Item.Name)
     for i = 1, #phones do
         local phone = phones[i]
-        if phone?.info[1]?.lbPhoneNumber == phoneNumber then
+        if phone?.info?.lbPhoneNumber == phoneNumber then
             debugprint("they do")
             return true
         end
@@ -42,12 +42,12 @@ end
 ---@return boolean success
 function SetPhoneNumber(source, phoneNumber)
     local qPlayer = QB.Functions.GetPlayer(source)
-    local items = exports["codem-inventory"]:GetUserInventory(source)
-    for k,v in pairs(items) do
+    local items = exports["codem-inventory"]:GetInventory(false, source)
+    for k, v in pairs(items) do
         local item = v
-        if item and item.name == Config.Item.Name and item.info[1].lbPhoneNumber == nil then
-            item.info[1].lbPhoneNumber = phoneNumber
-            item.info[1].lbFormattedNumber = FormatNumber(phoneNumber)
+        if item and item.name == Config.Item.Name and item.info.lbPhoneNumber == nil then
+            item.info.lbPhoneNumber = phoneNumber
+            item.info.lbFormattedNumber = FormatNumber(phoneNumber)
             qPlayer.Functions.SetInventory(items)
             return true
         end
@@ -57,12 +57,12 @@ end
 
 function SetItemName(source, phoneNumber, name)
     local qPlayer = QB.Functions.GetPlayer(source)
-    local items = exports["codem-inventory"]:GetUserInventory(source)
-    for k,v in pairs(items) do
+    local items = exports["codem-inventory"]:GetInventory(false, source)
+    for k, v in pairs(items) do
         local item = v
-        if item and item.name == Config.Item.Name and item.info[1].lbPhoneNumber == phoneNumber then
-            item.info[1].lbPhoneName = name
-            item.info[1].lbFormattedNumber = FormatNumber(phoneNumber)
+        if item and item.name == Config.Item.Name and item.info.lbPhoneNumber == phoneNumber then
+            item.info.lbPhoneName = name
+            item.info.lbFormattedNumber = FormatNumber(phoneNumber)
             qPlayer.Functions.SetInventory(items)
             return true
         end

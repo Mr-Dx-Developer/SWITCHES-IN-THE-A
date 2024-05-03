@@ -356,7 +356,8 @@ if ESX.RegisterCommand then
             ["tiktok"] = true,
             ["birdy"] = true,
             ["trendy"] = true,
-            ["instapic"] = true
+            ["instapic"] = true,
+            ["mail"] = true
         }
 
         if not allowedApps[app] then
@@ -377,7 +378,7 @@ if ESX.RegisterCommand then
         arguments = {
             {
                 name = "app",
-                help = "The app: trendy, instapic or birdy",
+                help = "The app: trendy, instapic, birdy or mail",
                 type = "any"
             },
             {

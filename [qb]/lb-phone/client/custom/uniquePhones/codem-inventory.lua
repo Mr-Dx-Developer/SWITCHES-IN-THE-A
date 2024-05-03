@@ -7,7 +7,7 @@ local function GetItemsByName(name)
     local inventory = exports["codem-inventory"]:GetClientPlayerInventory()
     for _, item in pairs(inventory) do
         if item?.name == name then
-            items[#items+1] = item
+            items[#items + 1] = item
         end
     end
     return items
@@ -17,7 +17,7 @@ function GetFirstNumber()
     local phones = GetItemsByName(Config.Item.Name)
     for i = 1, #phones do
         local phone = phones[i]
-        if phone?.info[1]?.lbPhoneNumber then
+        if phone?.info?.lbPhoneNumber then
             return phone.info.lbPhoneNumber
         end
     end
@@ -27,7 +27,7 @@ function HasPhoneNumber(number)
     local phones = GetItemsByName(Config.Item.Name)
     for i = 1, #phones do
         local phone = phones[i]
-        if phone?.info[1]?.lbPhoneNumber == number then
+        if phone?.info?.lbPhoneNumber == number then
             return true
         end
     end
@@ -35,7 +35,7 @@ function HasPhoneNumber(number)
 end
 
 RegisterNetEvent("lb-phone:usePhoneItem", function(data)
-    local number = data.info[1]?.lbPhoneNumber
+    local number = data.info?.lbPhoneNumber
     if number ~= currentPhone or number == nil then
         SetPhone(number, true)
     end

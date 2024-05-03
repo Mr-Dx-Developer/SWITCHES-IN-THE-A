@@ -1,22 +1,27 @@
-local callsDisabled = false
+local callsDisabled = Config.Companies.DefaultCallsDisabled == true
 
-local function GetCompany(company)
+if Config.Companies.DefaultCallsDisabled then
+    TriggerServerEvent("phone:phone:disableCompanyCalls", true)
+end
+
+local function getCompany(company)
     for i = 1, #Config.Companies.Services do
         local jobData = Config.Companies.Services[i]
+
         if jobData.job == company then
             return jobData
         end
     end
 end
 
-local function FormatRecentMessages(messages)
+local function formatRecentMessages(messages)
     for i = 1, #messages do
         local message = messages[i]
-        message.number = message.phone_number
+        local jobData = getCompany(message.company)
 
+        message.number = message.phone_number
         message.lastMessage = message.last_message
 
-        local jobData = GetCompany(message.company)
         if jobData then
             message.company = {
                 icon = jobData.icon,
@@ -32,6 +37,7 @@ end
 local function FormatMessages(messages)
     for i = 1, #messages do
         local message = messages[i]
+
         message.content = message.message
     end
 
@@ -78,7 +84,7 @@ RegisterNUICallback("Services", function(data, cb)
         TriggerServerEvent("phone:phone:disableCompanyCalls", callsDisabled)
         cb(not callsDisabled)
     elseif action == "customIconClick" then
-        local jobData = GetCompany(data.company)
+        local jobData = getCompany(data.company)
         if jobData?.onCustomIconClick then
             jobData.onCustomIconClick()
         end
@@ -89,7 +95,7 @@ RegisterNUICallback("Services", function(data, cb)
         lib.TriggerCallback("phone:services:sendMessage", cb, data.id, data.company, data.content)
     elseif action == "getRecentMessages" then
         lib.TriggerCallback("phone:services:getRecentMessages", function(messages)
-            cb(FormatRecentMessages(messages))
+            cb(formatRecentMessages(messages))
         end, data.page)
     elseif action == "getChannelId" then
         lib.TriggerCallback("phone:services:getChannelId", cb, data.company)
