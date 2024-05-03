@@ -25,7 +25,7 @@ Config = {
 	Menu = "ox",
 	Notify = "ox",
 
-	Fuel = "LegacyFuel", -- Set this to your fuel script folder
+	Fuel = "cdn-fuel", -- Set this to your fuel script folder
 
 	CarDespawn = false, -- Sends the vehicle to hell (removal animation)
 

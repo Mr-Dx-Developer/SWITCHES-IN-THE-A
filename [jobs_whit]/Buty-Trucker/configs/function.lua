@@ -1,9 +1,9 @@
 if Config.UseFuel == true then
     function fuel()
-        exports["LegacyFuel"]:SetFuel(vehicle, 100)
+        exports["cdn-fuel"]:SetFuel(vehicle, 100)
     end
     function fuel2()
-        exports["LegacyFuel"]:SetFuel(vehicle2, 100)
+        exports["cdn-fuel"]:SetFuel(vehicle2, 100)
     end
 end
 

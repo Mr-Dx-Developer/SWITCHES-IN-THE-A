@@ -27,7 +27,7 @@ Config = {
 	Menu = "qb",
 	Notify = "qb",
 
-	Fuel = "LegacyFuel", -- Set this to your fuel script folder
+	Fuel = "cdn-fuel", -- Set this to your fuel script folder
 
 	CarDespawn = true, -- Sends the vehicle to hell (removal animation)
 

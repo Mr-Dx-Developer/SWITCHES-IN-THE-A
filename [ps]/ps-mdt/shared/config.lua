@@ -22,7 +22,7 @@ Config.QBManagementUse = false
 Config.InventoryForWeaponsImages = "qb-inventory"
 
 -- "LegacyFuel", "lj-fuel", "ps-fuel"
-Config.Fuel = "LegacyFuel"
+Config.Fuel = "cdn-fuel"
 
 -- Google Docs Link
 Config.sopLink = {
