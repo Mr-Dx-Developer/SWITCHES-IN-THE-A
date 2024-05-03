@@ -135,6 +135,18 @@ QBShared.Jobs = {
 			['4'] = { name = 'Owner', isboss = true, payment = 1000 },
 		},
 	},
+	whitewidow = {
+		label = 'White widow',
+		defaultDuty = true,
+		offDutyPay = false,
+		grades = {
+			['0'] = { name = 'Farmer', payment = 250 },
+			['1'] = { name = 'Shopkeeper', payment = 450 },
+			['2'] = { name = 'Shopkeeper', payment = 600 },
+			['3'] = { name = 'Manager', payment = 700 },
+			['4'] = { name = 'Owner', isboss = true, payment = 1000 },
+		},
+	},
 	cannabiscafe = {
 		label = 'CannabisCafe',
 		defaultDuty = true,
@@ -244,6 +256,18 @@ QBShared.Jobs = {
 	},
 	taco = {
 		label = 'Taco',
+		defaultDuty = true,
+		offDutyPay = false,
+		grades = {
+			['0'] = { name = 'Waiter', payment = 900 },
+			['1'] = { name = 'Delivery Driver', payment = 1000 },
+			['2'] = { name = 'Cook', payment = 1200 },
+			['3'] = { name = 'Manager', payment = 1300 },
+			['4'] = { name = 'Owner', isboss = true, payment = 1400 },
+		},
+	},
+	bahama = {
+		label = 'Bahama',
 		defaultDuty = true,
 		offDutyPay = false,
 		grades = {
