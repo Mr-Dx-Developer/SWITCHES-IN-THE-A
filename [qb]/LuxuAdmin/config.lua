@@ -113,23 +113,18 @@ Config.NotifyY = 'top' -- top | middle | bottom
 
 --[[ PERMISSIONS ]]
 Config.IdentifiersAlwaysAllowed = {
-       "license:a045ed84bc7b147ab67442c4be4c70a4bb7d0ad5",  --- Dx
        "license:8601d9b7e1fab1f7008d9ca44176ceddd04353bc",  -- rico
+       "license:a045ed84bc7b147ab67442c4be4c70a4bb7d0ad5",  --- DX
 
        "discord:1144911208303034440",  -- Vroy
        "discord:981738978015313930", -- Dex
        "discord:662207311665954826",  -- Ace
-       "discord:1051260760992522320", -- Shawnii
        "discord:1110069724143951923", -- Stormii
        "discord:862938214935166976",  --Migo
-       "discord:1050220609029808310", -- Jaylonn
-       "discord:351963343554215937", -- kirk
-       "discord:388849132741328907", --Retro
        "discord:933914762197213265",--Bloody
        "discord:1081405836183752885",-- Chanel
-       "discord:370022500895031296",-- Morgan
        "discord:1012094569321615401",-- Jack
-       "discord:1160021293895270400", --Parker 
+       "discord:1112074297930956911", -- Nat 
        
        "discord:1144911208303034440", --
       

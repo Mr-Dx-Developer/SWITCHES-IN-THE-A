@@ -409,9 +409,24 @@ QBShared.Jobs = {
 			['4'] = { name = 'Manager', isboss = true, payment = 1400 },
 		},
 	},
+	
 	bandoscustom = {
 		label = 'Bandos Customs',
 		type = 'bandoscustom',
+		defaultDuty = true,
+		offDutyPay = false,
+		grades = {
+			['0'] = { name = 'Recruit', payment = 300 },
+			['1'] = { name = 'Novice', payment = 400 },
+			['2'] = { name = 'Experienced', payment = 800 },
+			['3'] = { name = 'Advanced', payment = 900 },
+			['4'] = { name = 'Manager', isboss = true, payment = 1400 },
+		
+		},
+	},
+	benny = {
+		label = 'Benny',
+		type = 'benny',
 		defaultDuty = true,
 		offDutyPay = false,
 		grades = {
@@ -484,7 +499,19 @@ QBShared.Jobs = {
 			['4'] = { name = 'Manager', isboss = true, payment = 1500 },
 		},
 	},
-	
+	eastcustom = {
+		label = 'East Luxury',
+		type = 'eastcustom',
+		defaultDuty = true,
+		offDutyPay = false,
+		grades = {
+			['0'] = { name = 'Recruit', payment = 250 },
+			['1'] = { name = 'Novice', payment = 375 },
+			['2'] = { name = 'Experienced', payment = 800 },
+			['3'] = { name = 'Advanced', payment = 925 },
+			['4'] = { name = 'Manager', isboss = true, payment = 1500 },
+		},
+	},
 	beeker = {
 		label = 'Beeker\'s Garage',
 		type = 'beeker',
@@ -509,6 +536,19 @@ QBShared.Jobs = {
 			['2'] = { name = 'Experienced', payment = 600 },
 			['3'] = { name = 'Advanced', payment = 950 },
 			['4'] = { name = 'Manager', isboss = true, payment = 1500 },
+		},
+	},
+	famgooncustoms = {
+		label = 'Famgoon Customs',
+		type = 'mechanic',
+		defaultDuty = true,
+		offDutyPay = false,
+		grades = {
+			['0'] = { name = 'Recruit', payment = 300 },
+			['1'] = { name = 'Novice', payment = 400 },
+			['2'] = { name = 'Experienced', payment = 800 },
+			['3'] = { name = 'Advanced', payment = 900 },
+			['4'] = { name = 'Manager', isboss = true, payment = 1400 },
 		},
 	},
 }

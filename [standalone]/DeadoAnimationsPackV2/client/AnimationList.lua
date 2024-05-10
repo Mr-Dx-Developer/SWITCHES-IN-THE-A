@@ -1305,6 +1305,931 @@ DP.Shared = {
 
 DP.Dances = {
 
+
+     --SALON V3 Animation
+   ["fmdbundlesbox"] = {"boxpursesanimation", "boxpurse_anim", "~y~5MDevs~c~ Bundles Box", AnimationOptions =
+   {
+       Prop = 'fmd_bundleboxempty',
+       PropBone = 18905,
+       PropPlacement = {0.17, 0.02, 0.09, -156.0, 126.0, 1.0},
+       SecondProp = 'fmd_bundleboxempty',
+       SecondPropBone = 57005,
+       SecondPropPlacement = {0.16, 0.02, -0.11, -171.0, 77.0, 6.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   ["bundlesbox2"] = {"anim@move_f@waitress", "idle", "~y~5MDevs~c~ Exit Bundles Box", AnimationOptions =
+   {
+       Prop = 'fmd_bundleboxempty',
+       PropBone = 58866,
+       PropPlacement = {0.09, -0.04, 0.0, -268.0, 82.0, 101.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},    
+   ["rbundlesdye1"] = {"leafystiranimation", "leafstir_anim", "~y~5MDevs~c~ Collecting Red Dye", AnimationOptions =
+   {
+        Prop = 'fmd_grabdyebowl',
+        PropBone = 18905,
+        PropPlacement = {0.12, -0.01, 0.01, 25.0, 15.0, -111.0},
+        SecondProp = 'fmd_grabdyebaser', 
+        SecondPropBone = 18905,
+        SecondPropPlacement = {0.12, -0.01, 0.01, 25.0, 15.0, -111.0},
+        EmoteLoop = true,
+        EmoteMoving = true,
+   }},
+   ["pbundlesdye1"] = {"missheistdockssetup1clipboard@base", "base", "~y~5MDevs~c~ Collecting Pink Dye", AnimationOptions =
+   {
+       Prop = 'fmd_grabdyebowl',
+        PropBone = 18905,
+        PropPlacement = {0.12, -0.01, 0.01, 25.0, 15.0, -111.0},
+        SecondProp = 'fmd_grabdyebaseccp',
+        SecondPropBone = 18905,
+        SecondPropPlacement = { 0.12, -0.01, 0.01, 25.0, 15.0, -111.0},
+        EmoteLoop = true,
+        EmoteMoving = true,
+   }},   
+   ["bbundlesdye1"] = {"missheistdockssetup1clipboard@base", "base", "~y~5MDevs~c~ Collecting Blonde Dye", AnimationOptions =
+   {
+        Prop = 'fmd_grabdyebowl',
+        PropBone = 18905,
+        PropPlacement = {0.12, -0.01, 0.01, 25.0, 15.0, -111.0},
+        SecondProp = 'fmd_grabdyebaseblo',
+        SecondPropBone = 18905,
+        SecondPropPlacement = { 0.12, -0.01, 0.01, 25.0, 15.0, -111.0},
+        EmoteLoop = true,
+        EmoteMoving = true,
+   }},  
+   
+   ["ftbundlesdye1"] = {"leafystiranimation", "leafstir_anim", "~y~5MDevs~c~ Collecting Red Dye", AnimationOptions =
+   {
+        Prop = 'fmd_grabdyebowl',
+        PropBone = 18905,
+        PropPlacement = {0.12, -0.01, 0.01, 25.0, 15.0, -111.0},
+        SecondProp = 'fmd_grabdyebase427', 
+        SecondPropBone = 18905,
+        SecondPropPlacement = { 0.12, -0.01, 0.01, 25.0, 15.0, -111.0},
+        EmoteLoop = true,
+        EmoteMoving = true,
+   }},
+   ["aubbundlesdye1"] = {"missheistdockssetup1clipboard@base", "base", "~y~5MDevs~c~ Collecting Pink Dye", AnimationOptions =
+   {
+        Prop = 'fmd_grabdyebowl',
+        PropBone = 18905,
+        PropPlacement = {0.12, -0.01, 0.01, 25.0, 15.0, -111.0},
+        SecondProp = 'fmd_grabdyebaseau',
+        SecondPropBone = 18905,
+        SecondPropPlacement = { 0.12, -0.01, 0.01, 25.0, 15.0, -111.0},
+        EmoteLoop = true,
+        EmoteMoving = true,
+   }},   
+   ["blabundlesdye1"] = {"missheistdockssetup1clipboard@base", "base", "~y~5MDevs~c~ Collecting Blonde Dye", AnimationOptions =
+   {
+        Prop = 'fmd_grabdyebowl',
+        PropBone = 18905,
+        PropPlacement = {0.12, -0.01, 0.01, 25.0, 15.0, -111.0},
+        SecondProp = 'fmd_grabdyebaseb',
+        SecondPropBone = 18905,
+        SecondPropPlacement = { 0.12, -0.01, 0.01, 25.0, 15.0, -111.0},
+        EmoteLoop = true,
+        EmoteMoving = true,
+   }}, 
+   ["brobundlesdye1"] = {"leafystiranimation", "leafstir_anim", "~y~5MDevs~c~ Collecting Red Dye", AnimationOptions =
+   {
+        Prop = 'fmd_grabdyebowl',
+        PropBone = 18905,
+        PropPlacement = {0.12, -0.01, 0.01, 25.0, 15.0, -111.0},
+        SecondProp = 'fmd_grabdyebasebr', 
+        SecondPropBone = 18905,
+        SecondPropPlacement = { 0.12, -0.01, 0.01, 25.0, 15.0, -111.0},
+        EmoteLoop = true,
+        EmoteMoving = true,
+   }},
+   ["platbbundlesdye1"] = {"missheistdockssetup1clipboard@base", "base", "~y~5MDevs~c~ Collecting Pink Dye", AnimationOptions =
+   {
+       Prop = 'fmd_grabdyebowl',
+        PropBone = 18905,
+        PropPlacement = {0.12, -0.01, 0.01, 25.0, 15.0, -111.0},
+        SecondProp = 'fmd_grabdyebasepl',
+        SecondPropBone = 18905,
+        SecondPropPlacement = { 0.12, -0.01, 0.01, 25.0, 15.0, -111.0},
+        EmoteLoop = true,
+        EmoteMoving = true,
+   }},   
+
+   ["ccbbundlesdye1"] = {"leafystiranimation", "leafstir_anim", "~y~5MDevs~c~ Collecting Red Dye", AnimationOptions =
+   {
+        Prop = 'fmd_grabdyebowl',
+        PropBone = 18905,
+        PropPlacement = {0.12, -0.01, 0.01, 25.0, 15.0, -111.0},
+        SecondProp = 'fmd_grabdyebaseccblue', 
+        SecondPropBone = 18905,
+        SecondPropPlacement = { 0.12, -0.01, 0.01, 25.0, 15.0, -111.0},
+        EmoteLoop = true,
+        EmoteMoving = true,
+   }},
+   ["lgbundlesdye1"] = {"missheistdockssetup1clipboard@base", "base", "~y~5MDevs~c~ Collecting Pink Dye", AnimationOptions =
+   {
+        Prop = 'fmd_grabdyebowl',
+        PropBone = 18905,
+        PropPlacement = {0.12, -0.01, 0.01, 25.0, 15.0, -111.0},
+        SecondProp = 'fmd_grabdyebaselg',
+        SecondPropBone = 18905,
+        SecondPropPlacement = { 0.12, -0.01, 0.01, 25.0, 15.0, -111.0},
+        EmoteLoop = true,
+        EmoteMoving = true,
+   }},   
+   ["purpbundlesdye1"] = {"missheistdockssetup1clipboard@base", "base", "~y~5MDevs~c~ Collecting Blonde Dye", AnimationOptions =
+   {
+       Prop = 'fmd_grabdyebowl',
+        PropBone = 18905,
+        PropPlacement = {0.12, -0.01, 0.01, 25.0, 15.0, -111.0},
+        SecondProp = 'fmd_grabdyebasep',
+        SecondPropBone = 18905,
+        SecondPropPlacement = { 0.12, -0.01, 0.01, 25.0, 15.0, -111.0},
+        EmoteLoop = true,
+        EmoteMoving = true,
+   }}, 
+   ["mbbundlesdye1"] = {"leafystiranimation", "leafstir_anim", "~y~5MDevs~c~ Collecting Red Dye", AnimationOptions =
+   {
+        Prop = 'fmd_grabdyebowl',
+        PropBone = 18905,
+        PropPlacement = {0.12, -0.01, 0.01, 25.0, 15.0, -111.0},
+        SecondProp = 'fmd_grabdyebasenb', 
+        SecondPropBone = 18905,
+        SecondPropPlacement = { 0.12, -0.01, 0.01, 25.0, 15.0, -111.0},
+        EmoteLoop = true,
+        EmoteMoving = true,
+   }},
+
+   ["bkbbundlesdye1"] = {"missheistdockssetup1clipboard@base", "base", "~y~5MDevs~c~ Collecting Pink Dye", AnimationOptions =
+   {
+        Prop = 'fmd_grabdyebowl',
+        PropBone = 18905,
+        PropPlacement = {0.12, -0.01, 0.01, 25.0, 15.0, -111.0},
+        SecondProp = 'fmd_grabdyebaseb',
+        SecondPropBone = 18905,
+        SecondPropPlacement = { 0.12, -0.01, 0.01, 25.0, 15.0, -111.0},
+        EmoteLoop = true,
+        EmoteMoving = true,
+   }},   
+   ["kblubundlesdye1"] = {"missheistdockssetup1clipboard@base", "base", "~y~5MDevs~c~ Collecting Blonde Dye", AnimationOptions =
+   {
+        Prop = 'fmd_grabdyebowl',
+        PropBone = 18905,
+        PropPlacement = {0.12, -0.01, 0.01, 25.0, 15.0, -111.0},
+        SecondProp = 'fmd_grabdyebaseccblue',
+        SecondPropBone = 18905,
+        SecondPropPlacement = { 0.12, -0.01, 0.01, 25.0, 15.0, -111.0},
+        EmoteLoop = true,
+        EmoteMoving = true,
+   }},  
+   ["kbbundlesdye1"] = {"missheistdockssetup1clipboard@base", "base", "~y~5MDevs~c~ Collecting Blonde Dye", AnimationOptions =
+   {
+        Prop = 'fmd_grabdyebowl',
+        PropBone = 18905,
+        PropPlacement = {0.12, -0.01, 0.01, 25.0, 15.0, -111.0},
+        SecondProp = 'fmd_grabdyebaseblo',
+        SecondPropBone = 18905,
+        SecondPropPlacement = { 0.12, -0.01, 0.01, 25.0, 15.0, -111.0},
+        EmoteLoop = true,
+        EmoteMoving = true,
+   }}, 
+   ["bundlesdyesinkr"] = {"missheist_agency3aig_23", "urinal_sink_loop", "~y~5MDevs~c~ Dying Red Bundles", AnimationOptions =
+   {
+        Prop = 'fmd_bundlesconditioner',
+        PropBone = 18905,
+        PropPlacement = {0.14, 0.11, -0.02, 115.0, 70.0, 8.0},
+        EmoteLoop = true,
+        EmoteMoving = true,
+   }},
+   ["pbundlesdye"] = {"missheist_agency3aig_23", "urinal_sink_loop", "~y~5MDevs~c~ Dying Pink Bundles", AnimationOptions =
+   {
+        Prop = 'fmd_bundlesccpink',
+        PropBone = 18905,
+        PropPlacement = {0.1, -0.1, 0.0, -80.0, 0.0, 0.0},
+        EmoteLoop = true,
+        EmoteMoving = true,
+   }},   
+   ["bbundlesdye"] = {"missheist_agency3aig_23", "urinal_sink_loop", "~y~5MDevs~c~ Dying Blonde Bundles", AnimationOptions =
+   {
+        Prop = 'fmd_bundlesblonde',
+        PropBone = 18905,
+        PropPlacement = {0.1, -0.1, 0.0, -80.0, 0.0, 0.0},
+        EmoteLoop = true,
+        EmoteMoving = true,
+   }},
+
+
+   ["rbundlessink"] = {"leafyshampooanimation", "shampoo_anim", "~y~5MDevs~c~ Exit Sink Red Bundles", AnimationOptions =
+   {
+       Prop = 'fmd_developer40',
+       PropBone = 57005,
+       PropPlacement = {0.17, 0.14, 0.0, 118.0, -1.0, -22.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   ["bundlessinkdye"] = {"leafyshampooanimation", "shampoo_anim", "~y~5MDevs~c~ Exit Sink Red Bundles", AnimationOptions =
+   {
+       Prop = 'fmd_grabdyebowl',
+       PropBone = 57005,
+       PropPlacement = {0.19, 0.04, -0.06, 135.0, 25.0, -111.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   ["pbundlessink"] = {"leafyshampooanimation", "shampoo_anim", "~y~5MDevs~c~ Exit Sink Pink Bundles", AnimationOptions =
+   {
+       Prop = 'fmd_developer30',
+       PropBone = 57005,
+       PropPlacement = { 0.17, 0.14, 0.0, 118.0, -1.0, -22.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   ["bbundlessink"] = {"leafyshampooanimation", "shampoo_anim", "~y~5MDevs~c~ Exit Sink Blonde Bundles", AnimationOptions =
+   {
+       Prop = 'fmd_developer20',
+       PropBone = 57005,
+       PropPlacement = {0.17, 0.14, 0.0, 118.0, -1.0, -22.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   ["bundlessinkdyer"] = {"leafyshampooanimation", "shampoo_anim", "~y~5MDevs~c~ Exit Sink Red Bundles", AnimationOptions =
+   {
+       Prop = 'fmd_grabdyebowl',
+       PropBone = 57005,
+       PropPlacement = {0.19, 0.04, -0.06, 135.0, 25.0, -111.0},
+       SecondProp = 'fmd_grabdyemixedr',
+       SecondPropBone = 57005,
+       SecondPropPlacement = {0.19, 0.04, -0.06, 135.0, 25.0, -111.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},  
+   ["bundlessinkdyebl"] = {"leafyshampooanimation", "shampoo_anim", "~y~5MDevs~c~ Exit Sink Red Bundles", AnimationOptions =
+   {
+       Prop = 'fmd_grabdyebowl',
+       PropBone = 57005,
+       PropPlacement = {0.19, 0.04, -0.06, 135.0, 25.0, -111.0},
+       SecondProp = 'fmd_grabdyemixedblo',
+       SecondPropBone = 57005,
+       SecondPropPlacement = {0.19, 0.04, -0.06, 135.0, 25.0, -111.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   
+   ["bundlessinkdyeft"] = {"leafyshampooanimation", "shampoo_anim", "~y~5MDevs~c~ Exit Sink Red Bundles", AnimationOptions =
+   {
+       Prop = 'fmd_grabdyebowl',
+       PropBone = 57005,
+       PropPlacement = {0.19, 0.04, -0.06, 135.0, 25.0, -111.0},
+       SecondProp = 'fmd_grabdyemixed427',
+       SecondPropBone = 57005,
+       SecondPropPlacement = {0.19, 0.04, -0.06, 135.0, 25.0, -111.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   ["bundlessinkdyeau"] = {"leafyshampooanimation", "shampoo_anim", "~y~5MDevs~c~ Exit Sink Red Bundles", AnimationOptions =
+   {
+       Prop = 'fmd_grabdyebowl',
+       PropBone = 57005,
+       PropPlacement = {0.19, 0.04, -0.06, 135.0, 25.0, -111.0},
+       SecondProp = 'fmd_grabdyemixedau',
+       SecondPropBone = 57005,
+       SecondPropPlacement = {0.19, 0.04, -0.06, 135.0, 25.0, -111.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   ["bundlessinkdyeb"] = {"leafyshampooanimation", "shampoo_anim", "~y~5MDevs~c~ Exit Sink Red Bundles", AnimationOptions =
+   {
+       Prop = 'fmd_grabdyebowl',
+       PropBone = 57005,
+       PropPlacement = {0.19, 0.04, -0.06, 135.0, 25.0, -111.0},
+       SecondProp = 'fmd_grabdyemixedb',
+       SecondPropBone = 57005,
+       SecondPropPlacement = {0.19, 0.04, -0.06, 135.0, 25.0, -111.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   ["bundlessinkdyeblo"] = {"leafyshampooanimation", "shampoo_anim", "~y~5MDevs~c~ Exit Sink Red Bundles", AnimationOptions =
+   {
+       Prop = 'fmd_grabdyebowl',
+       PropBone = 57005,
+       PropPlacement = {0.19, 0.04, -0.06, 135.0, 25.0, -111.0},
+       SecondProp = 'fmd_grabdyemixedblo',
+       SecondPropBone = 57005,
+       SecondPropPlacement = {0.19, 0.04, -0.06, 135.0, 25.0, -111.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   ["bundlessinkdyebr"] = {"leafyshampooanimation", "shampoo_anim", "~y~5MDevs~c~ Exit Sink Red Bundles", AnimationOptions =
+   {
+       Prop = 'fmd_grabdyebowl',
+       PropBone = 57005,
+       PropPlacement = {0.19, 0.04, -0.06, 135.0, 25.0, -111.0},
+       SecondProp = 'fmd_grabdyemixedbr',
+       SecondPropBone = 57005,
+       SecondPropPlacement = {0.19, 0.04, -0.06, 135.0, 25.0, -111.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   ["bundlessinkdyeccb"] = {"leafyshampooanimation", "shampoo_anim", "~y~5MDevs~c~ Exit Sink Red Bundles", AnimationOptions =
+   {
+       Prop = 'fmd_grabdyebowl',
+       PropBone = 57005,
+       PropPlacement = {0.19, 0.04, -0.06, 135.0, 25.0, -111.0},
+       SecondProp = 'fmd_grabdyemixedccblue',
+       SecondPropBone = 57005,
+       SecondPropPlacement = {0.19, 0.04, -0.06, 135.0, 25.0, -111.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   ["bundlessinkdyeccp"] = {"leafyshampooanimation", "shampoo_anim", "~y~5MDevs~c~ Exit Sink Red Bundles", AnimationOptions =
+   {
+       Prop = 'fmd_grabdyebowl',
+       PropBone = 57005,
+       PropPlacement = {0.19, 0.04, -0.06, 135.0, 25.0, -111.0},
+       SecondProp = 'fmd_grabdyemixedccp',
+       SecondPropBone = 57005,
+       SecondPropPlacement = {0.19, 0.04, -0.06, 135.0, 25.0, -111.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   ["bundlessinkdyelg"] = {"leafyshampooanimation", "shampoo_anim", "~y~5MDevs~c~ Exit Sink Red Bundles", AnimationOptions =
+   {
+       Prop = 'fmd_grabdyebowl',
+       PropBone = 57005,
+       PropPlacement = {0.19, 0.04, -0.06, 135.0, 25.0, -111.0},
+       SecondProp = 'fmd_grabdyemixedlg',
+       SecondPropBone = 57005,
+       SecondPropPlacement = {0.19, 0.04, -0.06, 135.0, 25.0, -111.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   ["bundlessinkdyenb"] = {"leafyshampooanimation", "shampoo_anim", "~y~5MDevs~c~ Exit Sink Red Bundles", AnimationOptions =
+   {
+       Prop = 'fmd_grabdyebowl',
+       PropBone = 57005,
+       PropPlacement = {0.19, 0.04, -0.06, 135.0, 25.0, -111.0},
+       SecondProp = 'fmd_grabdyemixednb',
+       SecondPropBone = 57005,
+       SecondPropPlacement = {0.19, 0.04, -0.06, 135.0, 25.0, -111.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   ["bundlessinkdyep"] = {"leafyshampooanimation", "shampoo_anim", "~y~5MDevs~c~ Exit Sink Red Bundles", AnimationOptions =
+   {
+       Prop = 'fmd_grabdyebowl',
+       PropBone = 57005,
+       PropPlacement = {0.19, 0.04, -0.06, 135.0, 25.0, -111.0},
+       SecondProp = 'fmd_grabdyemixed',
+       SecondPropBone = 57005,
+       SecondPropPlacement = {0.19, 0.04, -0.06, 135.0, 25.0, -111.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   ["bundlessinkdyepl"] = {"leafyshampooanimation", "shampoo_anim", "~y~5MDevs~c~ Exit Sink Red Bundles", AnimationOptions =
+   {
+       Prop = 'fmd_grabdyebowl',
+       PropBone = 57005,
+       PropPlacement = {0.19, 0.04, -0.06, 135.0, 25.0, -111.0},
+       SecondProp = 'fmd_grabdyemixedpl',
+       SecondPropBone = 57005,
+       SecondPropPlacement = {0.19, 0.04, -0.06, 135.0, 25.0, -111.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+
+   ["rbundlesboxes"] = {"boxpursesanimation", "boxpurse_anim", "~y~5MDevs~c~ Boxing Red Bundles", AnimationOptions =
+   {
+       Prop = 'fmd_bundleboxempty',
+       PropBone = 18905,
+       PropPlacement = {0.21, 0.05, 0.09, -23.0, -60.0, -40.0},
+       SecondProp = 'fmd_bundlesred',
+       SecondPropBone = 57005,
+       SecondPropPlacement = {0.11, -0.05, -0.1, 15.0, 40.0, 0.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   ["pbundlesboxes"] = {"boxpursesanimation", "boxpurse_anim", "~y~5MDevs~c~ Boxing Pink Bundles", AnimationOptions =
+   {
+       Prop = 'fmd_bundleboxempty',
+       PropBone = 18905,
+       PropPlacement = {0.2, 0.0, 0.1, -40.0, -60.0, 0.0},
+       SecondProp = 'fmd_bundlesccpink',
+       SecondPropBone = 57005,
+       SecondPropPlacement = {0.11, -0.05, -0.1, 15.0, 40.0, 0.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   ["bbundlesboxes"] = {"boxpursesanimation", "boxpurse_anim", "~y~5MDevs~c~ Boxing Blonde Bundles", AnimationOptions =
+   {
+       Prop = 'fmd_bundleboxempty',
+       PropBone = 18905,
+       PropPlacement = {0.2, 0.0, 0.1, -40.0, -60.0, 0.0},
+       SecondProp = 'fmd_bundlesblonde',
+       SecondPropBone = 57005,
+       SecondPropPlacement = {0.11, -0.05, -0.1, 15.0, 40.0, 0.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},    
+   ["ftbundlesboxes"] = {"boxpursesanimation", "boxpurse_anim", "~y~5MDevs~c~ Boxing Red Bundles", AnimationOptions =
+   {
+       Prop = 'fmd_bundleboxempty',
+       PropBone = 18905,
+       PropPlacement = {0.21, 0.05, 0.09, -23.0, -60.0, -40.0},
+       SecondProp = 'fmd_bundles427',
+       SecondPropBone = 57005,
+       SecondPropPlacement = {0.11, -0.05, -0.1, 15.0, 40.0, 0.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   ["aubundlesboxes"] = {"boxpursesanimation", "boxpurse_anim", "~y~5MDevs~c~ Boxing Pink Bundles", AnimationOptions =
+   {
+       Prop = 'fmd_bundleboxempty',
+       PropBone = 18905,
+       PropPlacement = {0.2, 0.0, 0.1, -40.0, -60.0, 0.0},
+       SecondProp = 'fmd_bundlesauburn',
+       SecondPropBone = 57005,
+       SecondPropPlacement = {0.11, -0.05, -0.1, 15.0, 40.0, 0.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   ["blabundlesboxes"] = {"boxpursesanimation", "boxpurse_anim", "~y~5MDevs~c~ Boxing Blonde Bundles", AnimationOptions =
+   {
+       Prop = 'fmd_bundleboxempty',
+       PropBone = 18905,
+       PropPlacement = {0.2, 0.0, 0.1, -40.0, -60.0, 0.0},
+       SecondProp = 'fmd_bundlesblack',
+       SecondPropBone = 57005,
+       SecondPropPlacement = {0.11, -0.05, -0.1, 15.0, 40.0, 0.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }}, 
+   ["brbundlesboxes"] = {"boxpursesanimation", "boxpurse_anim", "~y~5MDevs~c~ Boxing Red Bundles", AnimationOptions =
+   {
+       Prop = 'fmd_bundleboxempty',
+       PropBone = 18905,
+       PropPlacement = {0.21, 0.05, 0.09, -23.0, -60.0, -40.0},
+       SecondProp = 'fmd_bundlesbrown',
+       SecondPropBone = 57005,
+       SecondPropPlacement = {0.11, -0.05, -0.1, 15.0, 40.0, 0.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   ["plbundlesboxes"] = {"boxpursesanimation", "boxpurse_anim", "~y~5MDevs~c~ Boxing Pink Bundles", AnimationOptions =
+   {
+       Prop = 'fmd_bundleboxempty',
+       PropBone = 18905,
+       PropPlacement = {0.2, 0.0, 0.1, -40.0, -60.0, 0.0},
+       SecondProp = 'fmd_bundlesplatinum',
+       SecondPropBone = 57005,
+       SecondPropPlacement = {0.11, -0.05, -0.1, 15.0, 40.0, 0.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   ["ccbbundlesboxes"] = {"boxpursesanimation", "boxpurse_anim", "~y~5MDevs~c~ Boxing Blonde Bundles", AnimationOptions =
+   {
+       Prop = 'fmd_bundleboxempty',
+       PropBone = 18905,
+       PropPlacement = {0.2, 0.0, 0.1, -40.0, -60.0, 0.0},
+       SecondProp = 'fmd_bundlesblondeccblue',
+       SecondPropBone = 57005,
+       SecondPropPlacement = {0.11, -0.05, -0.1, 15.0, 40.0, 0.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   ["lgbundlesboxes"] = {"boxpursesanimation", "boxpurse_anim", "~y~5MDevs~c~ Boxing Red Bundles", AnimationOptions =
+   {
+       Prop = 'fmd_bundleboxempty',
+       PropBone = 18905,
+       PropPlacement = {0.21, 0.05, 0.09, -23.0, -60.0, -40.0},
+       SecondProp = 'fmd_bundleslime',
+       SecondPropBone = 57005,
+       SecondPropPlacement = {0.11, -0.05, -0.1, 15.0, 40.0, 0.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   ["pubundlesboxes"] = {"boxpursesanimation", "boxpurse_anim", "~y~5MDevs~c~ Boxing Pink Bundles", AnimationOptions =
+   {
+       Prop = 'fmd_bundleboxempty',
+       PropBone = 18905,
+       PropPlacement = {0.2, 0.0, 0.1, -40.0, -60.0, 0.0},
+       SecondProp = 'fmd_bundlespurp',
+       SecondPropBone = 57005,
+       SecondPropPlacement = {0.11, -0.05, -0.1, 15.0, 40.0, 0.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   ["nbbundlesboxes"] = {"boxpursesanimation", "boxpurse_anim", "~y~5MDevs~c~ Boxing Blonde Bundles", AnimationOptions =
+   {
+       Prop = 'fmd_bundleboxempty',
+       PropBone = 18905,
+       PropPlacement = {0.2, 0.0, 0.1, -40.0, -60.0, 0.0},
+       SecondProp = 'fmd_bundlesniteblue',
+       SecondPropBone = 57005,
+       SecondPropPlacement = {0.11, -0.05, -0.1, 15.0, 40.0, 0.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},       
+   ["kblabundlesboxes"] = {"boxpursesanimation", "boxpurse_anim", "~y~5MDevs~c~ Boxing Red Bundles", AnimationOptions =
+   {
+       Prop = 'fmd_bundleboxempty',
+       PropBone = 18905,
+       PropPlacement = {0.21, 0.05, 0.09, -23.0, -60.0, -40.0},
+       SecondProp = 'fmd_bundleskinkyblack',
+       SecondPropBone = 57005,
+       SecondPropPlacement = { 0.16, 0.03, -0.1, 15.0, 40.0, 0.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   ["kblobundlesboxes"] = {"boxpursesanimation", "boxpurse_anim", "~y~5MDevs~c~ Boxing Pink Bundles", AnimationOptions =
+   {
+       Prop = 'fmd_bundleboxempty',
+       PropBone = 18905,
+       PropPlacement = {0.2, 0.0, 0.1, -40.0, -60.0, 0.0},
+       SecondProp = 'fmd_bundleskinkyblonde',
+       SecondPropBone = 57005,
+       SecondPropPlacement = { 0.16, 0.03, -0.1, 15.0, 40.0, 0.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   ["kblubundlesboxes"] = {"boxpursesanimation", "boxpurse_anim", "~y~5MDevs~c~ Boxing Blonde Bundles", AnimationOptions =
+   {
+       Prop = 'fmd_bundleboxempty',
+       PropBone = 18905,
+       PropPlacement = {0.2, 0.0, 0.1, -40.0, -60.0, 0.0},
+       SecondProp = 'fmd_bundleskinkyblue',
+       SecondPropBone = 57005,
+       SecondPropPlacement = { 0.16, 0.03, -0.1, 15.0, 40.0, 0.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},    
+   
+   
+   ["rbundlesend"] = {"anim@move_f@waitress", "idle", "~y~5MDevs~c~ Done Boxing Red Bundles", AnimationOptions =
+   {
+       Prop = 'fmd_bundleboxred',
+       PropBone = 58866,
+       PropPlacement = {0.09, -0.04, 0.0, -268.0, 82.0, 101.0},
+	   SecondProp = 'fmd_bundlebag',
+       SecondPropBone = 18905,
+       SecondPropPlacement = {0.65, -0.04, 0.07, -232.0, 33.0, 262.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   ["pbundlesend"] = {"anim@move_f@waitress", "idle", "~y~5MDevs~c~ Done Boxing Pink Bundles", AnimationOptions =
+   {
+       Prop = 'fmd_bundleboxccpink',
+       PropBone = 58866,
+       PropPlacement = {0.09, -0.04, 0.0, -268.0, 82.0, 101.0},
+	   SecondProp = 'fmd_bundlebag',
+       SecondPropBone = 18905,
+       SecondPropPlacement = {0.65, -0.04, 0.07, -232.0, 33.0, 262.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   ["bbundlesend"] = {"anim@move_f@waitress", "idle", "~y~5MDevs~c~ Done Boxing Blonde Bundles", AnimationOptions =
+   {
+       Prop = 'fmd_bundleboxblonde',
+       PropBone = 58866,
+       PropPlacement = {0.09, -0.04, 0.0, -268.0, 82.0, 101.0},
+	   SecondProp = 'fmd_bundlebag',
+       SecondPropBone = 18905,
+       SecondPropPlacement = {0.65, -0.04, 0.07, -232.0, 33.0, 262.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+
+
+
+
+
+
+
+
+
+
+
+
+--5M DEVS DESIGNER PURSE ANIMATIONS
+["gbalbox"] = {"mp_am_hold_up", "purchase_beerbox_shopkeeper", "~y~5MDevs~c~ Grab Balenciaga Box", AnimationOptions =
+{
+    Prop = 'fmd_balbox',
+    PropBone = 18905,
+    PropPlacement = {0.2, 0.0, -0.1, -120.0, 90.0, -10.0},
+    EmoteLoop = true,
+    EmoteMoving = true,
+}},
+["gbirbox"] = {"mp_am_hold_up", "purchase_beerbox_shopkeeper", "~y~5MDevs~c~ Grab Birkin Box", AnimationOptions =
+{
+    Prop = 'fmd_birkinbox',
+    PropBone = 18905,
+    PropPlacement = {0.3, 0.08, 0.2, -120.0, 36.0, 24.0},
+    EmoteLoop = true,
+    EmoteMoving = true,
+}},
+["gchabox"] = {"mp_am_hold_up", "purchase_beerbox_shopkeeper", "~y~5MDevs~c~ Grab Chanel Box", AnimationOptions =
+{
+    Prop = 'fmd_chanelbox',
+    PropBone = 18905,
+    PropPlacement = {0.3, 0.08, 0.2, -120.0, 36.0, 24.0},
+    EmoteLoop = true,
+    EmoteMoving = true,
+}},
+["gdiorbox"] = {"mp_am_hold_up", "purchase_beerbox_shopkeeper", "~y~5MDevs~c~ Grab Dior Box", AnimationOptions =
+{
+    Prop = 'fmd_diorbox',
+    PropBone = 18905,
+    PropPlacement = {0.26, 0.16, 0.24, -136.0, 36.0, 24.0},
+    EmoteLoop = true,
+    EmoteMoving = true,
+}},
+["glvbox"] = {"mp_am_hold_up", "purchase_beerbox_shopkeeper", "~y~5MDevs~c~ Grab Louis Vuitton Box", AnimationOptions =
+{
+    Prop = 'fmd_lvbox',
+    PropBone = 18905,
+    PropPlacement = {0.38, 0.24, 0.2, -120.0, 28.0, 48.0},
+    EmoteLoop = true,
+    EmoteMoving = true,
+}},
+["gclasp"] = {"mp_am_hold_up", "purchase_energydrink_shopkeeper", "~y~5MDevs~c~ Grab Clasp", AnimationOptions =
+{
+    Prop = 'fmd_purseclasp',
+    PropBone = 57005,
+    PropPlacement = {0.14, 0.08, 0.0, -120.0, 28.0, 48.0},
+    EmoteLoop = true,
+    EmoteMoving = true,
+}},
+["gthread"] = {"mp_am_hold_up", "purchase_energydrink_shopkeeper", "~y~5MDevs~c~ Grab Thread", AnimationOptions =
+{
+    Prop = 'fmd_pursethread',
+    PropBone = 57005,
+    PropPlacement = {0.12, 0.0, -0.1, -120.0, 144.0, 48.0},
+    EmoteLoop = true,
+    EmoteMoving = true,
+}},
+["gpsbal"] = {"missheistdockssetup1clipboard@base", "base", "~y~5MDevs~c~ Grab Balenciaga Purse Sheet", AnimationOptions =
+{
+    Prop = 'fmd_pursesheetbal',
+    PropBone = 57005,
+    PropPlacement = {0.07, 0.04, -0.11, -36.0, 14.0, 193.0},
+    EmoteLoop = true,
+    EmoteMoving = true,
+}},
+["gpsbir"] = {"missheistdockssetup1clipboard@base", "base", "~y~5MDevs~c~ Grab Birkin Purse Sheet", AnimationOptions =
+{
+    Prop = 'fmd_pursesheetbirkin',
+    PropBone = 57005,
+    PropPlacement = {0.07, 0.04, -0.11, -36.0, 14.0, 193.0},
+    EmoteLoop = true,
+    EmoteMoving = true,
+}},
+["gpscha"] = {"missheistdockssetup1clipboard@base", "base", "~y~5MDevs~c~ Grab Chanel Purse Sheet", AnimationOptions =
+{
+    Prop = 'fmd_pursesheetchanel',
+    PropBone = 57005,
+    PropPlacement = {0.07, 0.04, -0.11, -36.0, 14.0, 193.0},
+    EmoteLoop = true,
+    EmoteMoving = true,
+}},
+["gpsdior"] = {"missheistdockssetup1clipboard@base", "base", "~y~5MDevs~c~ Grab Dior Purse Sheet", AnimationOptions =
+{
+    Prop = 'fmd_pursesheetdior',
+    PropBone = 57005,
+    PropPlacement = {0.07, 0.04, -0.11, -36.0, 14.0, 193.0},
+    EmoteLoop = true,
+    EmoteMoving = true,
+}},
+["gpslv"] = {"missheistdockssetup1clipboard@base", "base", "~y~5MDevs~c~ Grab Louis Vuitton Purse Sheet", AnimationOptions =
+{
+    Prop = 'fmd_pursesheetlv',
+    PropBone = 57005,
+    PropPlacement = {0.07, 0.04, -0.11, -36.0, 14.0, 193.0},
+    EmoteLoop = true,
+    EmoteMoving = true,
+}},
+["gfani"] = {"mp_am_hold_up", "purchase_beerbox_shopkeeper", "~y~5MDevs~c~ Grab Animal Fabric", AnimationOptions =
+{
+    Prop = 'fmd_fabricanimal',
+    PropBone = 18905,
+    PropPlacement = {0.13, 0.18, 0.24, -39.0, 56.0, 224.0},
+    EmoteLoop = true,
+    EmoteMoving = true,
+}},
+["gfbla"] = {"mp_am_hold_up", "purchase_beerbox_shopkeeper", "~y~5MDevs~c~ Grab Black Fabric", AnimationOptions =
+{
+    Prop = 'fmd_fabricblack',
+    PropBone = 18905,
+    PropPlacement = {0.13, 0.18, 0.24, -39.0, 56.0, 224.0},
+    EmoteLoop = true,
+    EmoteMoving = true,
+}},
+["gflv"] = {"mp_am_hold_up", "purchase_beerbox_shopkeeper", "~y~5MDevs~c~ Grab Louis Vuitton Fabric", AnimationOptions =
+{
+    Prop = 'fmd_fabriclv',
+    PropBone = 18905,
+    PropPlacement = {0.13, 0.18, 0.24, -39.0, 56.0, 224.0},
+    EmoteLoop = true,
+    EmoteMoving = true,
+}},
+["gfpink"] = {"mp_am_hold_up", "purchase_beerbox_shopkeeper", "~y~5MDevs~c~ Grab Pink Fabric", AnimationOptions =
+{
+    Prop = 'fmd_fabricpink',
+    PropBone = 18905,
+    PropPlacement = {0.13, 0.18, 0.24, -39.0, 56.0, 224.0},
+    EmoteLoop = true,
+    EmoteMoving = true,
+}},
+["gfpss"] = {"mp_am_hold_up", "purchase_beerbox_shopkeeper", "~y~5MDevs~c~ Grab Pink Snake Skin Fabric", AnimationOptions =
+{
+    Prop = 'fmd_fabricsnake',
+    PropBone = 18905,
+    PropPlacement = {0.13, 0.18, 0.24, -39.0, 56.0, 224.0},
+    EmoteLoop = true,
+    EmoteMoving = true,
+}},
+["gfwhi"] = {"mp_am_hold_up", "purchase_beerbox_shopkeeper", "~y~5MDevs~c~ Grab White Fabric", AnimationOptions =
+{
+    Prop = 'fmd_fabricwhite',
+    PropBone = 18905,
+    PropPlacement = {0.13, 0.18, 0.24, -39.0, 56.0, 224.0},
+    EmoteLoop = true,
+    EmoteMoving = true,
+}},   
+["pcraft"] = {"mini@repair", "fixing_a_ped", "~y~5MDevs~c~ Craft Purse", AnimationOptions =
+{
+    Prop = 'fmd_purseneedle',
+    PropBone = 57005,
+    PropPlacement = {0.13, 0.08, 0.04, -39.0, 56.0, 224.0},
+    EmoteLoop = true,
+    EmoteMoving = true,
+}},
+["bbalhp"] = {"boxpursesanimation", "boxpurse_anim", "~y~5MDevs~c~ Box Balenciaga Hourglass Pink", AnimationOptions =
+{
+    Prop = 'fmd_balhourglasspink',
+    PropBone = 57005,
+    PropPlacement = { 0.17, -0.01, 0.19, -108.0, -69.0, 15.0},
+    EmoteLoop = true,
+    EmoteMoving = true,
+}},
+["bbalhps"] = {"boxpursesanimation", "boxpurse_anim", "~y~5MDevs~c~ Box Balenciaga Hourglass Pink Snake Skin", AnimationOptions =
+{
+    Prop = 'fmd_balhourglasspinksn',
+    PropBone = 18905,
+    PropPlacement = { 0.17, -0.01, 0.19, -108.0, -69.0, 15.0},
+    EmoteLoop = true,
+    EmoteMoving = true,
+}},
+["bbaltb"] = {"boxpursesanimation", "boxpurse_anim", "~y~5MDevs~c~ Box Balenciaga Tote Black", AnimationOptions =
+{
+    Prop = 'fmd_baltoteblack',
+    PropBone = 18905,
+    PropPlacement = { 0.14, -0.11, 0.24, -113.0, -65.0, 15.0},
+    EmoteLoop = true,
+    EmoteMoving = true,
+}},
+["bbalww"] = {"issheistdockssetup1clipboard@base", "base", "~y~5MDevs~c~ Box Balenciaga Wallet White", AnimationOptions =
+{
+    Prop = 'fmd_balwalletw',
+    PropBone = 18905,
+    PropPlacement = {0.15, 0.04, -0.11, -33.0, 27.0, 206.0},
+    EmoteLoop = true,
+    EmoteMoving = true,
+}},
+["bbirani"] = {"boxpursesanimation", "boxpurse_anim", "~y~5MDevs~c~ Box Birkin Animal Print", AnimationOptions =
+{
+    Prop = 'fmd_birkinanimal',
+    PropBone = 18905,
+    PropPlacement = { 0.12, -0.12, 0.29, -113.0, -64.0, 15.0},
+    EmoteLoop = true,
+    EmoteMoving = true,
+}},
+["bbirbl"] = {"boxpursesanimation", "boxpurse_anim", "~y~5MDevs~c~ Box Birkin Black", AnimationOptions =
+{
+    Prop = 'fmd_birkinblack',
+    PropBone = 18905,
+    PropPlacement = { 0.19, -0.12, 0.25, -92.0, -69.0, 7.0},
+    EmoteLoop = true,
+    EmoteMoving = true,
+}},
+["bbirp"] = {"boxpursesanimation", "boxpurse_anim", "~y~5MDevs~c~ Box Birkin Ruby Pink", AnimationOptions =
+{
+    Prop = 'fmd_birkinrpink',
+    PropBone = 18905,
+    PropPlacement = { 0.19, -0.12, 0.25, -92.0, -69.0, 7.0},
+    EmoteLoop = true,
+    EmoteMoving = true,
+}},   
+["bbirps"] = {"boxpursesanimation", "boxpurse_anim", "~y~5MDevs~c~ Box Birkin Pink Snake Skin", AnimationOptions =
+{
+    Prop = 'fmd_birkinpinksnake',
+    PropBone = 18905,
+    PropPlacement = { 0.17, -0.12, 0.22, -102.0, -69.0, 7.0},
+    EmoteLoop = true,
+    EmoteMoving = true,
+}},  
+["bchabbl"] = {"boxpursesanimation", "boxpurse_anim", "~y~5MDevs~c~ Box Chanel Backpack Black", AnimationOptions =
+{
+    Prop = 'fmd_chanelcraftbackpackb',
+    PropBone = 18905,
+    PropPlacement = {0.2, -0.08, 0.29, -81.0, 116.0, -45.0},
+    EmoteLoop = true,
+    EmoteMoving = true,
+}},
+["bchabp"] = {"boxpursesanimation", "boxpurse_anim", "~y~5MDevs~c~ Box Chanel Backpack Pink", AnimationOptions =
+{
+    Prop = 'fmd_chanelcraftbackpackp',
+    PropBone = 18905,
+    PropPlacement = {0.2, -0.08, 0.29, -81.0, 116.0, -45.0},
+    EmoteLoop = true,
+    EmoteMoving = true,
+}},
+["bchabw"] = {"boxpursesanimation", "boxpurse_anim", "~y~5MDevs~c~ Box Chanel Backpack White", AnimationOptions =
+{
+    Prop = 'fmd_chanelcraftbackpackw',
+    PropBone = 18905,
+    PropPlacement = {0.2, -0.08, 0.29, -81.0, 116.0, -45.0},
+    EmoteLoop = true,
+    EmoteMoving = true,
+}},   
+["bdiorlani"] = {"boxpursesanimation", "boxpurse_anim", "~y~5MDevs~c~ Box Dior Lady Animal Print", AnimationOptions =
+{
+    Prop = 'fmd_diorladyanimal',
+    PropBone = 18905,
+    PropPlacement = { 0.16, -0.12, 0.22, -77.0, 111.0, -13.0},
+    EmoteLoop = true,
+    EmoteMoving = true,
+}},
+["bdiorlbl"] = {"boxpursesanimation", "boxpurse_anim", "~y~5MDevs~c~ Box Dior Lady Black", AnimationOptions =
+{
+    Prop = 'fmd_diorladyblack',
+    PropBone = 18905,
+    PropPlacement = { 0.16, -0.12, 0.22, -77.0, 111.0, -13.0},
+    EmoteLoop = true,
+    EmoteMoving = true,
+}},
+["bdiorlp"] = {"boxpursesanimation", "boxpurse_anim", "~y~5MDevs~c~ Box Dior Lady Pink", AnimationOptions =
+{
+    Prop = 'fmd_diorladypink',
+    PropBone = 18905,
+    PropPlacement = { 0.16, -0.12, 0.22, -77.0, 111.0, -13.0},
+    EmoteLoop = true,
+    EmoteMoving = true,
+}},
+["bdiortani"] = {"boxpursesanimation", "boxpurse_anim", "~y~5MDevs~c~ Box Dior Tote Animal Print", AnimationOptions =
+{
+    Prop = 'fmd_diortoteanimal',
+    PropBone = 18905,
+    PropPlacement = {0.31, -0.17, 0.42, -97.0, 111.0, -93.0},
+    EmoteLoop = true,
+    EmoteMoving = true,
+}},
+["bdiortps"] = {"boxpursesanimation", "boxpurse_anim", "~y~5MDevs~c~ Box Dior Tote Pink Snake Skin", AnimationOptions =
+{
+    Prop = 'fmd_diortotepinksnake',
+    PropBone = 18905,
+    PropPlacement = {0.31, -0.17, 0.42, -97.0, 111.0, -93.0},
+    EmoteLoop = true,
+    EmoteMoving = true,
+}},
+
+["blvtlv"] = {"boxpursesanimation", "boxpurse_anim", "~y~5MDevs~c~ Box Louis Vuitton Tote", AnimationOptions =
+{
+    Prop = 'fmd_lvtotelv',
+    PropBone = 18905,
+    PropPlacement = { 0.27, -0.28, 0.36, -92.0, 111.0, -45.0},
+    EmoteLoop = true,
+    EmoteMoving = true,
+}},
+["blvtani"] = {"boxpursesanimation", "boxpurse_anim", "~y~5MDevs~c~ Box Louis Vuitton Tote Animal Print", AnimationOptions =
+{
+    Prop = 'fmd_lvtoteanimal',
+    PropBone = 18905,
+    PropPlacement = { 0.27, -0.28, 0.36, -92.0, 111.0, -45.0},
+    EmoteLoop = true,
+    EmoteMoving = true,
+}},
+["blvcb"] = {"issheistdockssetup1clipboard@base", "base", "~y~5MDevs~c~ Box Louis Vuitton Crossbody", AnimationOptions =
+{
+    Prop = 'fmd_lvcraftcrossbody',
+    PropBone = 18905,
+    PropPlacement = {-0.54, -0.57, -1.37, -26.0, 43.0, 389.0},
+    EmoteLoop = true,
+    EmoteMoving = true,
+}},
+["blvwallet"] = {"issheistdockssetup1clipboard@base", "base", "~y~5MDevs~c~ Box Louis Vuitton Wallet", AnimationOptions =
+{
+    Prop = 'fmd_lvwallet',
+    PropBone = 18905,
+    PropPlacement = {0.16, -0.02, -0.07, -76.0, 43.0, 389.0},
+    EmoteLoop = true,
+    EmoteMoving = true,
+}},
+
+
+
+
+
+
+
     ["dance2"] = {
         "anim@amb@nightclub@mini@dance@dance_solo@male@var_b@",
         "high_center_down",
@@ -7387,924 +8312,7 @@ DP.Emotes = {
 
 --- EMOTES WITH 1 OR 2 PROPS ---
 DP.PropEmotes = {
-    --SALON V3 Animation
-   ["fmdbundlesbox"] = {"boxpursesanimation", "boxpurse_anim", "~y~5MDevs~c~ Bundles Box", AnimationOptions =
-   {
-       Prop = 'fmd_bundleboxempty',
-       PropBone = 18905,
-       PropPlacement = {0.17, 0.02, 0.09, -156.0, 126.0, 1.0},
-       SecondProp = 'fmd_bundleboxempty',
-       SecondPropBone = 57005,
-       SecondPropPlacement = {0.16, 0.02, -0.11, -171.0, 77.0, 6.0},
-       EmoteLoop = true,
-       EmoteMoving = true,
-   }},
-   ["bundlesbox2"] = {"anim@move_f@waitress", "idle", "~y~5MDevs~c~ Exit Bundles Box", AnimationOptions =
-   {
-       Prop = 'fmd_bundleboxempty',
-       PropBone = 58866,
-       PropPlacement = {0.09, -0.04, 0.0, -268.0, 82.0, 101.0},
-       EmoteLoop = true,
-       EmoteMoving = true,
-   }},    
-   ["rbundlesdye1"] = {"leafystiranimation", "leafstir_anim", "~y~5MDevs~c~ Collecting Red Dye", AnimationOptions =
-   {
-        Prop = 'fmd_grabdyebowl',
-        PropBone = 18905,
-        PropPlacement = {0.12, -0.01, 0.01, 25.0, 15.0, -111.0},
-        SecondProp = 'fmd_grabdyebaser', 
-        SecondPropBone = 18905,
-        SecondPropPlacement = {0.12, -0.01, 0.01, 25.0, 15.0, -111.0},
-        EmoteLoop = true,
-        EmoteMoving = true,
-   }},
-   ["pbundlesdye1"] = {"missheistdockssetup1clipboard@base", "base", "~y~5MDevs~c~ Collecting Pink Dye", AnimationOptions =
-   {
-       Prop = 'fmd_grabdyebowl',
-        PropBone = 18905,
-        PropPlacement = {0.12, -0.01, 0.01, 25.0, 15.0, -111.0},
-        SecondProp = 'fmd_grabdyebaseccp',
-        SecondPropBone = 18905,
-        SecondPropPlacement = { 0.12, -0.01, 0.01, 25.0, 15.0, -111.0},
-        EmoteLoop = true,
-        EmoteMoving = true,
-   }},   
-   ["bbundlesdye1"] = {"missheistdockssetup1clipboard@base", "base", "~y~5MDevs~c~ Collecting Blonde Dye", AnimationOptions =
-   {
-        Prop = 'fmd_grabdyebowl',
-        PropBone = 18905,
-        PropPlacement = {0.12, -0.01, 0.01, 25.0, 15.0, -111.0},
-        SecondProp = 'fmd_grabdyebaseblo',
-        SecondPropBone = 18905,
-        SecondPropPlacement = { 0.12, -0.01, 0.01, 25.0, 15.0, -111.0},
-        EmoteLoop = true,
-        EmoteMoving = true,
-   }},  
    
-   ["ftbundlesdye1"] = {"leafystiranimation", "leafstir_anim", "~y~5MDevs~c~ Collecting Red Dye", AnimationOptions =
-   {
-        Prop = 'fmd_grabdyebowl',
-        PropBone = 18905,
-        PropPlacement = {0.12, -0.01, 0.01, 25.0, 15.0, -111.0},
-        SecondProp = 'fmd_grabdyebase427', 
-        SecondPropBone = 18905,
-        SecondPropPlacement = { 0.12, -0.01, 0.01, 25.0, 15.0, -111.0},
-        EmoteLoop = true,
-        EmoteMoving = true,
-   }},
-   ["aubbundlesdye1"] = {"missheistdockssetup1clipboard@base", "base", "~y~5MDevs~c~ Collecting Pink Dye", AnimationOptions =
-   {
-        Prop = 'fmd_grabdyebowl',
-        PropBone = 18905,
-        PropPlacement = {0.12, -0.01, 0.01, 25.0, 15.0, -111.0},
-        SecondProp = 'fmd_grabdyebaseau',
-        SecondPropBone = 18905,
-        SecondPropPlacement = { 0.12, -0.01, 0.01, 25.0, 15.0, -111.0},
-        EmoteLoop = true,
-        EmoteMoving = true,
-   }},   
-   ["blabundlesdye1"] = {"missheistdockssetup1clipboard@base", "base", "~y~5MDevs~c~ Collecting Blonde Dye", AnimationOptions =
-   {
-        Prop = 'fmd_grabdyebowl',
-        PropBone = 18905,
-        PropPlacement = {0.12, -0.01, 0.01, 25.0, 15.0, -111.0},
-        SecondProp = 'fmd_grabdyebaseb',
-        SecondPropBone = 18905,
-        SecondPropPlacement = { 0.12, -0.01, 0.01, 25.0, 15.0, -111.0},
-        EmoteLoop = true,
-        EmoteMoving = true,
-   }}, 
-   ["brobundlesdye1"] = {"leafystiranimation", "leafstir_anim", "~y~5MDevs~c~ Collecting Red Dye", AnimationOptions =
-   {
-        Prop = 'fmd_grabdyebowl',
-        PropBone = 18905,
-        PropPlacement = {0.12, -0.01, 0.01, 25.0, 15.0, -111.0},
-        SecondProp = 'fmd_grabdyebasebr', 
-        SecondPropBone = 18905,
-        SecondPropPlacement = { 0.12, -0.01, 0.01, 25.0, 15.0, -111.0},
-        EmoteLoop = true,
-        EmoteMoving = true,
-   }},
-   ["platbbundlesdye1"] = {"missheistdockssetup1clipboard@base", "base", "~y~5MDevs~c~ Collecting Pink Dye", AnimationOptions =
-   {
-       Prop = 'fmd_grabdyebowl',
-        PropBone = 18905,
-        PropPlacement = {0.12, -0.01, 0.01, 25.0, 15.0, -111.0},
-        SecondProp = 'fmd_grabdyebasepl',
-        SecondPropBone = 18905,
-        SecondPropPlacement = { 0.12, -0.01, 0.01, 25.0, 15.0, -111.0},
-        EmoteLoop = true,
-        EmoteMoving = true,
-   }},   
-
-   ["ccbbundlesdye1"] = {"leafystiranimation", "leafstir_anim", "~y~5MDevs~c~ Collecting Red Dye", AnimationOptions =
-   {
-        Prop = 'fmd_grabdyebowl',
-        PropBone = 18905,
-        PropPlacement = {0.12, -0.01, 0.01, 25.0, 15.0, -111.0},
-        SecondProp = 'fmd_grabdyebaseccblue', 
-        SecondPropBone = 18905,
-        SecondPropPlacement = { 0.12, -0.01, 0.01, 25.0, 15.0, -111.0},
-        EmoteLoop = true,
-        EmoteMoving = true,
-   }},
-   ["lgbundlesdye1"] = {"missheistdockssetup1clipboard@base", "base", "~y~5MDevs~c~ Collecting Pink Dye", AnimationOptions =
-   {
-        Prop = 'fmd_grabdyebowl',
-        PropBone = 18905,
-        PropPlacement = {0.12, -0.01, 0.01, 25.0, 15.0, -111.0},
-        SecondProp = 'fmd_grabdyebaselg',
-        SecondPropBone = 18905,
-        SecondPropPlacement = { 0.12, -0.01, 0.01, 25.0, 15.0, -111.0},
-        EmoteLoop = true,
-        EmoteMoving = true,
-   }},   
-   ["purpbundlesdye1"] = {"missheistdockssetup1clipboard@base", "base", "~y~5MDevs~c~ Collecting Blonde Dye", AnimationOptions =
-   {
-       Prop = 'fmd_grabdyebowl',
-        PropBone = 18905,
-        PropPlacement = {0.12, -0.01, 0.01, 25.0, 15.0, -111.0},
-        SecondProp = 'fmd_grabdyebasep',
-        SecondPropBone = 18905,
-        SecondPropPlacement = { 0.12, -0.01, 0.01, 25.0, 15.0, -111.0},
-        EmoteLoop = true,
-        EmoteMoving = true,
-   }}, 
-   ["mbbundlesdye1"] = {"leafystiranimation", "leafstir_anim", "~y~5MDevs~c~ Collecting Red Dye", AnimationOptions =
-   {
-        Prop = 'fmd_grabdyebowl',
-        PropBone = 18905,
-        PropPlacement = {0.12, -0.01, 0.01, 25.0, 15.0, -111.0},
-        SecondProp = 'fmd_grabdyebasenb', 
-        SecondPropBone = 18905,
-        SecondPropPlacement = { 0.12, -0.01, 0.01, 25.0, 15.0, -111.0},
-        EmoteLoop = true,
-        EmoteMoving = true,
-   }},
-
-   ["bkbbundlesdye1"] = {"missheistdockssetup1clipboard@base", "base", "~y~5MDevs~c~ Collecting Pink Dye", AnimationOptions =
-   {
-        Prop = 'fmd_grabdyebowl',
-        PropBone = 18905,
-        PropPlacement = {0.12, -0.01, 0.01, 25.0, 15.0, -111.0},
-        SecondProp = 'fmd_grabdyebaseb',
-        SecondPropBone = 18905,
-        SecondPropPlacement = { 0.12, -0.01, 0.01, 25.0, 15.0, -111.0},
-        EmoteLoop = true,
-        EmoteMoving = true,
-   }},   
-   ["kblubundlesdye1"] = {"missheistdockssetup1clipboard@base", "base", "~y~5MDevs~c~ Collecting Blonde Dye", AnimationOptions =
-   {
-        Prop = 'fmd_grabdyebowl',
-        PropBone = 18905,
-        PropPlacement = {0.12, -0.01, 0.01, 25.0, 15.0, -111.0},
-        SecondProp = 'fmd_grabdyebaseccblue',
-        SecondPropBone = 18905,
-        SecondPropPlacement = { 0.12, -0.01, 0.01, 25.0, 15.0, -111.0},
-        EmoteLoop = true,
-        EmoteMoving = true,
-   }},  
-   ["kbbundlesdye1"] = {"missheistdockssetup1clipboard@base", "base", "~y~5MDevs~c~ Collecting Blonde Dye", AnimationOptions =
-   {
-        Prop = 'fmd_grabdyebowl',
-        PropBone = 18905,
-        PropPlacement = {0.12, -0.01, 0.01, 25.0, 15.0, -111.0},
-        SecondProp = 'fmd_grabdyebaseblo',
-        SecondPropBone = 18905,
-        SecondPropPlacement = { 0.12, -0.01, 0.01, 25.0, 15.0, -111.0},
-        EmoteLoop = true,
-        EmoteMoving = true,
-   }}, 
-   ["bundlesdyesinkr"] = {"missheist_agency3aig_23", "urinal_sink_loop", "~y~5MDevs~c~ Dying Red Bundles", AnimationOptions =
-   {
-        Prop = 'fmd_bundlesconditioner',
-        PropBone = 18905,
-        PropPlacement = {0.14, 0.11, -0.02, 115.0, 70.0, 8.0},
-        EmoteLoop = true,
-        EmoteMoving = true,
-   }},
-   ["pbundlesdye"] = {"missheist_agency3aig_23", "urinal_sink_loop", "~y~5MDevs~c~ Dying Pink Bundles", AnimationOptions =
-   {
-        Prop = 'fmd_bundlesccpink',
-        PropBone = 18905,
-        PropPlacement = {0.1, -0.1, 0.0, -80.0, 0.0, 0.0},
-        EmoteLoop = true,
-        EmoteMoving = true,
-   }},   
-   ["bbundlesdye"] = {"missheist_agency3aig_23", "urinal_sink_loop", "~y~5MDevs~c~ Dying Blonde Bundles", AnimationOptions =
-   {
-        Prop = 'fmd_bundlesblonde',
-        PropBone = 18905,
-        PropPlacement = {0.1, -0.1, 0.0, -80.0, 0.0, 0.0},
-        EmoteLoop = true,
-        EmoteMoving = true,
-   }},
-
-
-   ["rbundlessink"] = {"leafyshampooanimation", "shampoo_anim", "~y~5MDevs~c~ Exit Sink Red Bundles", AnimationOptions =
-   {
-       Prop = 'fmd_developer40',
-       PropBone = 57005,
-       PropPlacement = {0.17, 0.14, 0.0, 118.0, -1.0, -22.0},
-       EmoteLoop = true,
-       EmoteMoving = true,
-   }},
-   ["bundlessinkdye"] = {"leafyshampooanimation", "shampoo_anim", "~y~5MDevs~c~ Exit Sink Red Bundles", AnimationOptions =
-   {
-       Prop = 'fmd_grabdyebowl',
-       PropBone = 57005,
-       PropPlacement = {0.19, 0.04, -0.06, 135.0, 25.0, -111.0},
-       EmoteLoop = true,
-       EmoteMoving = true,
-   }},
-   ["pbundlessink"] = {"leafyshampooanimation", "shampoo_anim", "~y~5MDevs~c~ Exit Sink Pink Bundles", AnimationOptions =
-   {
-       Prop = 'fmd_developer30',
-       PropBone = 57005,
-       PropPlacement = { 0.17, 0.14, 0.0, 118.0, -1.0, -22.0},
-       EmoteLoop = true,
-       EmoteMoving = true,
-   }},
-   ["bbundlessink"] = {"leafyshampooanimation", "shampoo_anim", "~y~5MDevs~c~ Exit Sink Blonde Bundles", AnimationOptions =
-   {
-       Prop = 'fmd_developer20',
-       PropBone = 57005,
-       PropPlacement = {0.17, 0.14, 0.0, 118.0, -1.0, -22.0},
-       EmoteLoop = true,
-       EmoteMoving = true,
-   }},
-   ["bundlessinkdyer"] = {"leafyshampooanimation", "shampoo_anim", "~y~5MDevs~c~ Exit Sink Red Bundles", AnimationOptions =
-   {
-       Prop = 'fmd_grabdyebowl',
-       PropBone = 57005,
-       PropPlacement = {0.19, 0.04, -0.06, 135.0, 25.0, -111.0},
-       SecondProp = 'fmd_grabdyemixedr',
-       SecondPropBone = 57005,
-       SecondPropPlacement = {0.19, 0.04, -0.06, 135.0, 25.0, -111.0},
-       EmoteLoop = true,
-       EmoteMoving = true,
-   }},  
-   ["bundlessinkdyebl"] = {"leafyshampooanimation", "shampoo_anim", "~y~5MDevs~c~ Exit Sink Red Bundles", AnimationOptions =
-   {
-       Prop = 'fmd_grabdyebowl',
-       PropBone = 57005,
-       PropPlacement = {0.19, 0.04, -0.06, 135.0, 25.0, -111.0},
-       SecondProp = 'fmd_grabdyemixedblo',
-       SecondPropBone = 57005,
-       SecondPropPlacement = {0.19, 0.04, -0.06, 135.0, 25.0, -111.0},
-       EmoteLoop = true,
-       EmoteMoving = true,
-   }},
-   
-   ["bundlessinkdyeft"] = {"leafyshampooanimation", "shampoo_anim", "~y~5MDevs~c~ Exit Sink Red Bundles", AnimationOptions =
-   {
-       Prop = 'fmd_grabdyebowl',
-       PropBone = 57005,
-       PropPlacement = {0.19, 0.04, -0.06, 135.0, 25.0, -111.0},
-       SecondProp = 'fmd_grabdyemixed427',
-       SecondPropBone = 57005,
-       SecondPropPlacement = {0.19, 0.04, -0.06, 135.0, 25.0, -111.0},
-       EmoteLoop = true,
-       EmoteMoving = true,
-   }},
-   ["bundlessinkdyeau"] = {"leafyshampooanimation", "shampoo_anim", "~y~5MDevs~c~ Exit Sink Red Bundles", AnimationOptions =
-   {
-       Prop = 'fmd_grabdyebowl',
-       PropBone = 57005,
-       PropPlacement = {0.19, 0.04, -0.06, 135.0, 25.0, -111.0},
-       SecondProp = 'fmd_grabdyemixedau',
-       SecondPropBone = 57005,
-       SecondPropPlacement = {0.19, 0.04, -0.06, 135.0, 25.0, -111.0},
-       EmoteLoop = true,
-       EmoteMoving = true,
-   }},
-   ["bundlessinkdyeb"] = {"leafyshampooanimation", "shampoo_anim", "~y~5MDevs~c~ Exit Sink Red Bundles", AnimationOptions =
-   {
-       Prop = 'fmd_grabdyebowl',
-       PropBone = 57005,
-       PropPlacement = {0.19, 0.04, -0.06, 135.0, 25.0, -111.0},
-       SecondProp = 'fmd_grabdyemixedb',
-       SecondPropBone = 57005,
-       SecondPropPlacement = {0.19, 0.04, -0.06, 135.0, 25.0, -111.0},
-       EmoteLoop = true,
-       EmoteMoving = true,
-   }},
-   ["bundlessinkdyeblo"] = {"leafyshampooanimation", "shampoo_anim", "~y~5MDevs~c~ Exit Sink Red Bundles", AnimationOptions =
-   {
-       Prop = 'fmd_grabdyebowl',
-       PropBone = 57005,
-       PropPlacement = {0.19, 0.04, -0.06, 135.0, 25.0, -111.0},
-       SecondProp = 'fmd_grabdyemixedblo',
-       SecondPropBone = 57005,
-       SecondPropPlacement = {0.19, 0.04, -0.06, 135.0, 25.0, -111.0},
-       EmoteLoop = true,
-       EmoteMoving = true,
-   }},
-   ["bundlessinkdyebr"] = {"leafyshampooanimation", "shampoo_anim", "~y~5MDevs~c~ Exit Sink Red Bundles", AnimationOptions =
-   {
-       Prop = 'fmd_grabdyebowl',
-       PropBone = 57005,
-       PropPlacement = {0.19, 0.04, -0.06, 135.0, 25.0, -111.0},
-       SecondProp = 'fmd_grabdyemixedbr',
-       SecondPropBone = 57005,
-       SecondPropPlacement = {0.19, 0.04, -0.06, 135.0, 25.0, -111.0},
-       EmoteLoop = true,
-       EmoteMoving = true,
-   }},
-   ["bundlessinkdyeccb"] = {"leafyshampooanimation", "shampoo_anim", "~y~5MDevs~c~ Exit Sink Red Bundles", AnimationOptions =
-   {
-       Prop = 'fmd_grabdyebowl',
-       PropBone = 57005,
-       PropPlacement = {0.19, 0.04, -0.06, 135.0, 25.0, -111.0},
-       SecondProp = 'fmd_grabdyemixedccblue',
-       SecondPropBone = 57005,
-       SecondPropPlacement = {0.19, 0.04, -0.06, 135.0, 25.0, -111.0},
-       EmoteLoop = true,
-       EmoteMoving = true,
-   }},
-   ["bundlessinkdyeccp"] = {"leafyshampooanimation", "shampoo_anim", "~y~5MDevs~c~ Exit Sink Red Bundles", AnimationOptions =
-   {
-       Prop = 'fmd_grabdyebowl',
-       PropBone = 57005,
-       PropPlacement = {0.19, 0.04, -0.06, 135.0, 25.0, -111.0},
-       SecondProp = 'fmd_grabdyemixedccp',
-       SecondPropBone = 57005,
-       SecondPropPlacement = {0.19, 0.04, -0.06, 135.0, 25.0, -111.0},
-       EmoteLoop = true,
-       EmoteMoving = true,
-   }},
-   ["bundlessinkdyelg"] = {"leafyshampooanimation", "shampoo_anim", "~y~5MDevs~c~ Exit Sink Red Bundles", AnimationOptions =
-   {
-       Prop = 'fmd_grabdyebowl',
-       PropBone = 57005,
-       PropPlacement = {0.19, 0.04, -0.06, 135.0, 25.0, -111.0},
-       SecondProp = 'fmd_grabdyemixedlg',
-       SecondPropBone = 57005,
-       SecondPropPlacement = {0.19, 0.04, -0.06, 135.0, 25.0, -111.0},
-       EmoteLoop = true,
-       EmoteMoving = true,
-   }},
-   ["bundlessinkdyenb"] = {"leafyshampooanimation", "shampoo_anim", "~y~5MDevs~c~ Exit Sink Red Bundles", AnimationOptions =
-   {
-       Prop = 'fmd_grabdyebowl',
-       PropBone = 57005,
-       PropPlacement = {0.19, 0.04, -0.06, 135.0, 25.0, -111.0},
-       SecondProp = 'fmd_grabdyemixednb',
-       SecondPropBone = 57005,
-       SecondPropPlacement = {0.19, 0.04, -0.06, 135.0, 25.0, -111.0},
-       EmoteLoop = true,
-       EmoteMoving = true,
-   }},
-   ["bundlessinkdyep"] = {"leafyshampooanimation", "shampoo_anim", "~y~5MDevs~c~ Exit Sink Red Bundles", AnimationOptions =
-   {
-       Prop = 'fmd_grabdyebowl',
-       PropBone = 57005,
-       PropPlacement = {0.19, 0.04, -0.06, 135.0, 25.0, -111.0},
-       SecondProp = 'fmd_grabdyemixed',
-       SecondPropBone = 57005,
-       SecondPropPlacement = {0.19, 0.04, -0.06, 135.0, 25.0, -111.0},
-       EmoteLoop = true,
-       EmoteMoving = true,
-   }},
-   ["bundlessinkdyepl"] = {"leafyshampooanimation", "shampoo_anim", "~y~5MDevs~c~ Exit Sink Red Bundles", AnimationOptions =
-   {
-       Prop = 'fmd_grabdyebowl',
-       PropBone = 57005,
-       PropPlacement = {0.19, 0.04, -0.06, 135.0, 25.0, -111.0},
-       SecondProp = 'fmd_grabdyemixedpl',
-       SecondPropBone = 57005,
-       SecondPropPlacement = {0.19, 0.04, -0.06, 135.0, 25.0, -111.0},
-       EmoteLoop = true,
-       EmoteMoving = true,
-   }},
-
-   ["rbundlesboxes"] = {"boxpursesanimation", "boxpurse_anim", "~y~5MDevs~c~ Boxing Red Bundles", AnimationOptions =
-   {
-       Prop = 'fmd_bundleboxempty',
-       PropBone = 18905,
-       PropPlacement = {0.21, 0.05, 0.09, -23.0, -60.0, -40.0},
-       SecondProp = 'fmd_bundlesred',
-       SecondPropBone = 57005,
-       SecondPropPlacement = {0.11, -0.05, -0.1, 15.0, 40.0, 0.0},
-       EmoteLoop = true,
-       EmoteMoving = true,
-   }},
-   ["pbundlesboxes"] = {"boxpursesanimation", "boxpurse_anim", "~y~5MDevs~c~ Boxing Pink Bundles", AnimationOptions =
-   {
-       Prop = 'fmd_bundleboxempty',
-       PropBone = 18905,
-       PropPlacement = {0.2, 0.0, 0.1, -40.0, -60.0, 0.0},
-       SecondProp = 'fmd_bundlesccpink',
-       SecondPropBone = 57005,
-       SecondPropPlacement = {0.11, -0.05, -0.1, 15.0, 40.0, 0.0},
-       EmoteLoop = true,
-       EmoteMoving = true,
-   }},
-   ["bbundlesboxes"] = {"boxpursesanimation", "boxpurse_anim", "~y~5MDevs~c~ Boxing Blonde Bundles", AnimationOptions =
-   {
-       Prop = 'fmd_bundleboxempty',
-       PropBone = 18905,
-       PropPlacement = {0.2, 0.0, 0.1, -40.0, -60.0, 0.0},
-       SecondProp = 'fmd_bundlesblonde',
-       SecondPropBone = 57005,
-       SecondPropPlacement = {0.11, -0.05, -0.1, 15.0, 40.0, 0.0},
-       EmoteLoop = true,
-       EmoteMoving = true,
-   }},    
-   ["ftbundlesboxes"] = {"boxpursesanimation", "boxpurse_anim", "~y~5MDevs~c~ Boxing Red Bundles", AnimationOptions =
-   {
-       Prop = 'fmd_bundleboxempty',
-       PropBone = 18905,
-       PropPlacement = {0.21, 0.05, 0.09, -23.0, -60.0, -40.0},
-       SecondProp = 'fmd_bundles427',
-       SecondPropBone = 57005,
-       SecondPropPlacement = {0.11, -0.05, -0.1, 15.0, 40.0, 0.0},
-       EmoteLoop = true,
-       EmoteMoving = true,
-   }},
-   ["aubundlesboxes"] = {"boxpursesanimation", "boxpurse_anim", "~y~5MDevs~c~ Boxing Pink Bundles", AnimationOptions =
-   {
-       Prop = 'fmd_bundleboxempty',
-       PropBone = 18905,
-       PropPlacement = {0.2, 0.0, 0.1, -40.0, -60.0, 0.0},
-       SecondProp = 'fmd_bundlesauburn',
-       SecondPropBone = 57005,
-       SecondPropPlacement = {0.11, -0.05, -0.1, 15.0, 40.0, 0.0},
-       EmoteLoop = true,
-       EmoteMoving = true,
-   }},
-   ["blabundlesboxes"] = {"boxpursesanimation", "boxpurse_anim", "~y~5MDevs~c~ Boxing Blonde Bundles", AnimationOptions =
-   {
-       Prop = 'fmd_bundleboxempty',
-       PropBone = 18905,
-       PropPlacement = {0.2, 0.0, 0.1, -40.0, -60.0, 0.0},
-       SecondProp = 'fmd_bundlesblack',
-       SecondPropBone = 57005,
-       SecondPropPlacement = {0.11, -0.05, -0.1, 15.0, 40.0, 0.0},
-       EmoteLoop = true,
-       EmoteMoving = true,
-   }}, 
-   ["brbundlesboxes"] = {"boxpursesanimation", "boxpurse_anim", "~y~5MDevs~c~ Boxing Red Bundles", AnimationOptions =
-   {
-       Prop = 'fmd_bundleboxempty',
-       PropBone = 18905,
-       PropPlacement = {0.21, 0.05, 0.09, -23.0, -60.0, -40.0},
-       SecondProp = 'fmd_bundlesbrown',
-       SecondPropBone = 57005,
-       SecondPropPlacement = {0.11, -0.05, -0.1, 15.0, 40.0, 0.0},
-       EmoteLoop = true,
-       EmoteMoving = true,
-   }},
-   ["plbundlesboxes"] = {"boxpursesanimation", "boxpurse_anim", "~y~5MDevs~c~ Boxing Pink Bundles", AnimationOptions =
-   {
-       Prop = 'fmd_bundleboxempty',
-       PropBone = 18905,
-       PropPlacement = {0.2, 0.0, 0.1, -40.0, -60.0, 0.0},
-       SecondProp = 'fmd_bundlesplatinum',
-       SecondPropBone = 57005,
-       SecondPropPlacement = {0.11, -0.05, -0.1, 15.0, 40.0, 0.0},
-       EmoteLoop = true,
-       EmoteMoving = true,
-   }},
-   ["ccbbundlesboxes"] = {"boxpursesanimation", "boxpurse_anim", "~y~5MDevs~c~ Boxing Blonde Bundles", AnimationOptions =
-   {
-       Prop = 'fmd_bundleboxempty',
-       PropBone = 18905,
-       PropPlacement = {0.2, 0.0, 0.1, -40.0, -60.0, 0.0},
-       SecondProp = 'fmd_bundlesblondeccblue',
-       SecondPropBone = 57005,
-       SecondPropPlacement = {0.11, -0.05, -0.1, 15.0, 40.0, 0.0},
-       EmoteLoop = true,
-       EmoteMoving = true,
-   }},
-   ["lgbundlesboxes"] = {"boxpursesanimation", "boxpurse_anim", "~y~5MDevs~c~ Boxing Red Bundles", AnimationOptions =
-   {
-       Prop = 'fmd_bundleboxempty',
-       PropBone = 18905,
-       PropPlacement = {0.21, 0.05, 0.09, -23.0, -60.0, -40.0},
-       SecondProp = 'fmd_bundleslime',
-       SecondPropBone = 57005,
-       SecondPropPlacement = {0.11, -0.05, -0.1, 15.0, 40.0, 0.0},
-       EmoteLoop = true,
-       EmoteMoving = true,
-   }},
-   ["pubundlesboxes"] = {"boxpursesanimation", "boxpurse_anim", "~y~5MDevs~c~ Boxing Pink Bundles", AnimationOptions =
-   {
-       Prop = 'fmd_bundleboxempty',
-       PropBone = 18905,
-       PropPlacement = {0.2, 0.0, 0.1, -40.0, -60.0, 0.0},
-       SecondProp = 'fmd_bundlespurp',
-       SecondPropBone = 57005,
-       SecondPropPlacement = {0.11, -0.05, -0.1, 15.0, 40.0, 0.0},
-       EmoteLoop = true,
-       EmoteMoving = true,
-   }},
-   ["nbbundlesboxes"] = {"boxpursesanimation", "boxpurse_anim", "~y~5MDevs~c~ Boxing Blonde Bundles", AnimationOptions =
-   {
-       Prop = 'fmd_bundleboxempty',
-       PropBone = 18905,
-       PropPlacement = {0.2, 0.0, 0.1, -40.0, -60.0, 0.0},
-       SecondProp = 'fmd_bundlesniteblue',
-       SecondPropBone = 57005,
-       SecondPropPlacement = {0.11, -0.05, -0.1, 15.0, 40.0, 0.0},
-       EmoteLoop = true,
-       EmoteMoving = true,
-   }},       
-   ["kblabundlesboxes"] = {"boxpursesanimation", "boxpurse_anim", "~y~5MDevs~c~ Boxing Red Bundles", AnimationOptions =
-   {
-       Prop = 'fmd_bundleboxempty',
-       PropBone = 18905,
-       PropPlacement = {0.21, 0.05, 0.09, -23.0, -60.0, -40.0},
-       SecondProp = 'fmd_bundleskinkyblack',
-       SecondPropBone = 57005,
-       SecondPropPlacement = { 0.16, 0.03, -0.1, 15.0, 40.0, 0.0},
-       EmoteLoop = true,
-       EmoteMoving = true,
-   }},
-   ["kblobundlesboxes"] = {"boxpursesanimation", "boxpurse_anim", "~y~5MDevs~c~ Boxing Pink Bundles", AnimationOptions =
-   {
-       Prop = 'fmd_bundleboxempty',
-       PropBone = 18905,
-       PropPlacement = {0.2, 0.0, 0.1, -40.0, -60.0, 0.0},
-       SecondProp = 'fmd_bundleskinkyblonde',
-       SecondPropBone = 57005,
-       SecondPropPlacement = { 0.16, 0.03, -0.1, 15.0, 40.0, 0.0},
-       EmoteLoop = true,
-       EmoteMoving = true,
-   }},
-   ["kblubundlesboxes"] = {"boxpursesanimation", "boxpurse_anim", "~y~5MDevs~c~ Boxing Blonde Bundles", AnimationOptions =
-   {
-       Prop = 'fmd_bundleboxempty',
-       PropBone = 18905,
-       PropPlacement = {0.2, 0.0, 0.1, -40.0, -60.0, 0.0},
-       SecondProp = 'fmd_bundleskinkyblue',
-       SecondPropBone = 57005,
-       SecondPropPlacement = { 0.16, 0.03, -0.1, 15.0, 40.0, 0.0},
-       EmoteLoop = true,
-       EmoteMoving = true,
-   }},    
-   
-   
-   ["rbundlesend"] = {"anim@move_f@waitress", "idle", "~y~5MDevs~c~ Done Boxing Red Bundles", AnimationOptions =
-   {
-       Prop = 'fmd_bundleboxred',
-       PropBone = 58866,
-       PropPlacement = {0.09, -0.04, 0.0, -268.0, 82.0, 101.0},
-	   SecondProp = 'fmd_bundlebag',
-       SecondPropBone = 18905,
-       SecondPropPlacement = {0.65, -0.04, 0.07, -232.0, 33.0, 262.0},
-       EmoteLoop = true,
-       EmoteMoving = true,
-   }},
-   ["pbundlesend"] = {"anim@move_f@waitress", "idle", "~y~5MDevs~c~ Done Boxing Pink Bundles", AnimationOptions =
-   {
-       Prop = 'fmd_bundleboxccpink',
-       PropBone = 58866,
-       PropPlacement = {0.09, -0.04, 0.0, -268.0, 82.0, 101.0},
-	   SecondProp = 'fmd_bundlebag',
-       SecondPropBone = 18905,
-       SecondPropPlacement = {0.65, -0.04, 0.07, -232.0, 33.0, 262.0},
-       EmoteLoop = true,
-       EmoteMoving = true,
-   }},
-   ["bbundlesend"] = {"anim@move_f@waitress", "idle", "~y~5MDevs~c~ Done Boxing Blonde Bundles", AnimationOptions =
-   {
-       Prop = 'fmd_bundleboxblonde',
-       PropBone = 58866,
-       PropPlacement = {0.09, -0.04, 0.0, -268.0, 82.0, 101.0},
-	   SecondProp = 'fmd_bundlebag',
-       SecondPropBone = 18905,
-       SecondPropPlacement = {0.65, -0.04, 0.07, -232.0, 33.0, 262.0},
-       EmoteLoop = true,
-       EmoteMoving = true,
-   }},
-
-
-
-
-
-
-
-
-
-
-
-
---5M DEVS DESIGNER PURSE ANIMATIONS
-["gbalbox"] = {"mp_am_hold_up", "purchase_beerbox_shopkeeper", "~y~5MDevs~c~ Grab Balenciaga Box", AnimationOptions =
-{
-    Prop = 'fmd_balbox',
-    PropBone = 18905,
-    PropPlacement = {0.2, 0.0, -0.1, -120.0, 90.0, -10.0},
-    EmoteLoop = true,
-    EmoteMoving = true,
-}},
-["gbirbox"] = {"mp_am_hold_up", "purchase_beerbox_shopkeeper", "~y~5MDevs~c~ Grab Birkin Box", AnimationOptions =
-{
-    Prop = 'fmd_birkinbox',
-    PropBone = 18905,
-    PropPlacement = {0.3, 0.08, 0.2, -120.0, 36.0, 24.0},
-    EmoteLoop = true,
-    EmoteMoving = true,
-}},
-["gchabox"] = {"mp_am_hold_up", "purchase_beerbox_shopkeeper", "~y~5MDevs~c~ Grab Chanel Box", AnimationOptions =
-{
-    Prop = 'fmd_chanelbox',
-    PropBone = 18905,
-    PropPlacement = {0.3, 0.08, 0.2, -120.0, 36.0, 24.0},
-    EmoteLoop = true,
-    EmoteMoving = true,
-}},
-["gdiorbox"] = {"mp_am_hold_up", "purchase_beerbox_shopkeeper", "~y~5MDevs~c~ Grab Dior Box", AnimationOptions =
-{
-    Prop = 'fmd_diorbox',
-    PropBone = 18905,
-    PropPlacement = {0.26, 0.16, 0.24, -136.0, 36.0, 24.0},
-    EmoteLoop = true,
-    EmoteMoving = true,
-}},
-["glvbox"] = {"mp_am_hold_up", "purchase_beerbox_shopkeeper", "~y~5MDevs~c~ Grab Louis Vuitton Box", AnimationOptions =
-{
-    Prop = 'fmd_lvbox',
-    PropBone = 18905,
-    PropPlacement = {0.38, 0.24, 0.2, -120.0, 28.0, 48.0},
-    EmoteLoop = true,
-    EmoteMoving = true,
-}},
-["gclasp"] = {"mp_am_hold_up", "purchase_energydrink_shopkeeper", "~y~5MDevs~c~ Grab Clasp", AnimationOptions =
-{
-    Prop = 'fmd_purseclasp',
-    PropBone = 57005,
-    PropPlacement = {0.14, 0.08, 0.0, -120.0, 28.0, 48.0},
-    EmoteLoop = true,
-    EmoteMoving = true,
-}},
-["gthread"] = {"mp_am_hold_up", "purchase_energydrink_shopkeeper", "~y~5MDevs~c~ Grab Thread", AnimationOptions =
-{
-    Prop = 'fmd_pursethread',
-    PropBone = 57005,
-    PropPlacement = {0.12, 0.0, -0.1, -120.0, 144.0, 48.0},
-    EmoteLoop = true,
-    EmoteMoving = true,
-}},
-["gpsbal"] = {"missheistdockssetup1clipboard@base", "base", "~y~5MDevs~c~ Grab Balenciaga Purse Sheet", AnimationOptions =
-{
-    Prop = 'fmd_pursesheetbal',
-    PropBone = 57005,
-    PropPlacement = {0.07, 0.04, -0.11, -36.0, 14.0, 193.0},
-    EmoteLoop = true,
-    EmoteMoving = true,
-}},
-["gpsbir"] = {"missheistdockssetup1clipboard@base", "base", "~y~5MDevs~c~ Grab Birkin Purse Sheet", AnimationOptions =
-{
-    Prop = 'fmd_pursesheetbirkin',
-    PropBone = 57005,
-    PropPlacement = {0.07, 0.04, -0.11, -36.0, 14.0, 193.0},
-    EmoteLoop = true,
-    EmoteMoving = true,
-}},
-["gpscha"] = {"missheistdockssetup1clipboard@base", "base", "~y~5MDevs~c~ Grab Chanel Purse Sheet", AnimationOptions =
-{
-    Prop = 'fmd_pursesheetchanel',
-    PropBone = 57005,
-    PropPlacement = {0.07, 0.04, -0.11, -36.0, 14.0, 193.0},
-    EmoteLoop = true,
-    EmoteMoving = true,
-}},
-["gpsdior"] = {"missheistdockssetup1clipboard@base", "base", "~y~5MDevs~c~ Grab Dior Purse Sheet", AnimationOptions =
-{
-    Prop = 'fmd_pursesheetdior',
-    PropBone = 57005,
-    PropPlacement = {0.07, 0.04, -0.11, -36.0, 14.0, 193.0},
-    EmoteLoop = true,
-    EmoteMoving = true,
-}},
-["gpslv"] = {"missheistdockssetup1clipboard@base", "base", "~y~5MDevs~c~ Grab Louis Vuitton Purse Sheet", AnimationOptions =
-{
-    Prop = 'fmd_pursesheetlv',
-    PropBone = 57005,
-    PropPlacement = {0.07, 0.04, -0.11, -36.0, 14.0, 193.0},
-    EmoteLoop = true,
-    EmoteMoving = true,
-}},
-["gfani"] = {"mp_am_hold_up", "purchase_beerbox_shopkeeper", "~y~5MDevs~c~ Grab Animal Fabric", AnimationOptions =
-{
-    Prop = 'fmd_fabricanimal',
-    PropBone = 18905,
-    PropPlacement = {0.13, 0.18, 0.24, -39.0, 56.0, 224.0},
-    EmoteLoop = true,
-    EmoteMoving = true,
-}},
-["gfbla"] = {"mp_am_hold_up", "purchase_beerbox_shopkeeper", "~y~5MDevs~c~ Grab Black Fabric", AnimationOptions =
-{
-    Prop = 'fmd_fabricblack',
-    PropBone = 18905,
-    PropPlacement = {0.13, 0.18, 0.24, -39.0, 56.0, 224.0},
-    EmoteLoop = true,
-    EmoteMoving = true,
-}},
-["gflv"] = {"mp_am_hold_up", "purchase_beerbox_shopkeeper", "~y~5MDevs~c~ Grab Louis Vuitton Fabric", AnimationOptions =
-{
-    Prop = 'fmd_fabriclv',
-    PropBone = 18905,
-    PropPlacement = {0.13, 0.18, 0.24, -39.0, 56.0, 224.0},
-    EmoteLoop = true,
-    EmoteMoving = true,
-}},
-["gfpink"] = {"mp_am_hold_up", "purchase_beerbox_shopkeeper", "~y~5MDevs~c~ Grab Pink Fabric", AnimationOptions =
-{
-    Prop = 'fmd_fabricpink',
-    PropBone = 18905,
-    PropPlacement = {0.13, 0.18, 0.24, -39.0, 56.0, 224.0},
-    EmoteLoop = true,
-    EmoteMoving = true,
-}},
-["gfpss"] = {"mp_am_hold_up", "purchase_beerbox_shopkeeper", "~y~5MDevs~c~ Grab Pink Snake Skin Fabric", AnimationOptions =
-{
-    Prop = 'fmd_fabricsnake',
-    PropBone = 18905,
-    PropPlacement = {0.13, 0.18, 0.24, -39.0, 56.0, 224.0},
-    EmoteLoop = true,
-    EmoteMoving = true,
-}},
-["gfwhi"] = {"mp_am_hold_up", "purchase_beerbox_shopkeeper", "~y~5MDevs~c~ Grab White Fabric", AnimationOptions =
-{
-    Prop = 'fmd_fabricwhite',
-    PropBone = 18905,
-    PropPlacement = {0.13, 0.18, 0.24, -39.0, 56.0, 224.0},
-    EmoteLoop = true,
-    EmoteMoving = true,
-}},   
-["pcraft"] = {"mini@repair", "fixing_a_ped", "~y~5MDevs~c~ Craft Purse", AnimationOptions =
-{
-    Prop = 'fmd_purseneedle',
-    PropBone = 57005,
-    PropPlacement = {0.13, 0.08, 0.04, -39.0, 56.0, 224.0},
-    EmoteLoop = true,
-    EmoteMoving = true,
-}},
-["bbalhp"] = {"boxpursesanimation", "boxpurse_anim", "~y~5MDevs~c~ Box Balenciaga Hourglass Pink", AnimationOptions =
-{
-    Prop = 'fmd_balhourglasspink',
-    PropBone = 57005,
-    PropPlacement = { 0.17, -0.01, 0.19, -108.0, -69.0, 15.0},
-    EmoteLoop = true,
-    EmoteMoving = true,
-}},
-["bbalhps"] = {"boxpursesanimation", "boxpurse_anim", "~y~5MDevs~c~ Box Balenciaga Hourglass Pink Snake Skin", AnimationOptions =
-{
-    Prop = 'fmd_balhourglasspinksn',
-    PropBone = 18905,
-    PropPlacement = { 0.17, -0.01, 0.19, -108.0, -69.0, 15.0},
-    EmoteLoop = true,
-    EmoteMoving = true,
-}},
-["bbaltb"] = {"boxpursesanimation", "boxpurse_anim", "~y~5MDevs~c~ Box Balenciaga Tote Black", AnimationOptions =
-{
-    Prop = 'fmd_baltoteblack',
-    PropBone = 18905,
-    PropPlacement = { 0.14, -0.11, 0.24, -113.0, -65.0, 15.0},
-    EmoteLoop = true,
-    EmoteMoving = true,
-}},
-["bbalww"] = {"issheistdockssetup1clipboard@base", "base", "~y~5MDevs~c~ Box Balenciaga Wallet White", AnimationOptions =
-{
-    Prop = 'fmd_balwalletw',
-    PropBone = 18905,
-    PropPlacement = {0.15, 0.04, -0.11, -33.0, 27.0, 206.0},
-    EmoteLoop = true,
-    EmoteMoving = true,
-}},
-["bbirani"] = {"boxpursesanimation", "boxpurse_anim", "~y~5MDevs~c~ Box Birkin Animal Print", AnimationOptions =
-{
-    Prop = 'fmd_birkinanimal',
-    PropBone = 18905,
-    PropPlacement = { 0.12, -0.12, 0.29, -113.0, -64.0, 15.0},
-    EmoteLoop = true,
-    EmoteMoving = true,
-}},
-["bbirbl"] = {"boxpursesanimation", "boxpurse_anim", "~y~5MDevs~c~ Box Birkin Black", AnimationOptions =
-{
-    Prop = 'fmd_birkinblack',
-    PropBone = 18905,
-    PropPlacement = { 0.19, -0.12, 0.25, -92.0, -69.0, 7.0},
-    EmoteLoop = true,
-    EmoteMoving = true,
-}},
-["bbirp"] = {"boxpursesanimation", "boxpurse_anim", "~y~5MDevs~c~ Box Birkin Ruby Pink", AnimationOptions =
-{
-    Prop = 'fmd_birkinrpink',
-    PropBone = 18905,
-    PropPlacement = { 0.19, -0.12, 0.25, -92.0, -69.0, 7.0},
-    EmoteLoop = true,
-    EmoteMoving = true,
-}},   
-["bbirps"] = {"boxpursesanimation", "boxpurse_anim", "~y~5MDevs~c~ Box Birkin Pink Snake Skin", AnimationOptions =
-{
-    Prop = 'fmd_birkinpinksnake',
-    PropBone = 18905,
-    PropPlacement = { 0.17, -0.12, 0.22, -102.0, -69.0, 7.0},
-    EmoteLoop = true,
-    EmoteMoving = true,
-}},  
-["bchabbl"] = {"boxpursesanimation", "boxpurse_anim", "~y~5MDevs~c~ Box Chanel Backpack Black", AnimationOptions =
-{
-    Prop = 'fmd_chanelcraftbackpackb',
-    PropBone = 18905,
-    PropPlacement = {0.2, -0.08, 0.29, -81.0, 116.0, -45.0},
-    EmoteLoop = true,
-    EmoteMoving = true,
-}},
-["bchabp"] = {"boxpursesanimation", "boxpurse_anim", "~y~5MDevs~c~ Box Chanel Backpack Pink", AnimationOptions =
-{
-    Prop = 'fmd_chanelcraftbackpackp',
-    PropBone = 18905,
-    PropPlacement = {0.2, -0.08, 0.29, -81.0, 116.0, -45.0},
-    EmoteLoop = true,
-    EmoteMoving = true,
-}},
-["bchabw"] = {"boxpursesanimation", "boxpurse_anim", "~y~5MDevs~c~ Box Chanel Backpack White", AnimationOptions =
-{
-    Prop = 'fmd_chanelcraftbackpackw',
-    PropBone = 18905,
-    PropPlacement = {0.2, -0.08, 0.29, -81.0, 116.0, -45.0},
-    EmoteLoop = true,
-    EmoteMoving = true,
-}},   
-["bdiorlani"] = {"boxpursesanimation", "boxpurse_anim", "~y~5MDevs~c~ Box Dior Lady Animal Print", AnimationOptions =
-{
-    Prop = 'fmd_diorladyanimal',
-    PropBone = 18905,
-    PropPlacement = { 0.16, -0.12, 0.22, -77.0, 111.0, -13.0},
-    EmoteLoop = true,
-    EmoteMoving = true,
-}},
-["bdiorlbl"] = {"boxpursesanimation", "boxpurse_anim", "~y~5MDevs~c~ Box Dior Lady Black", AnimationOptions =
-{
-    Prop = 'fmd_diorladyblack',
-    PropBone = 18905,
-    PropPlacement = { 0.16, -0.12, 0.22, -77.0, 111.0, -13.0},
-    EmoteLoop = true,
-    EmoteMoving = true,
-}},
-["bdiorlp"] = {"boxpursesanimation", "boxpurse_anim", "~y~5MDevs~c~ Box Dior Lady Pink", AnimationOptions =
-{
-    Prop = 'fmd_diorladypink',
-    PropBone = 18905,
-    PropPlacement = { 0.16, -0.12, 0.22, -77.0, 111.0, -13.0},
-    EmoteLoop = true,
-    EmoteMoving = true,
-}},
-["bdiortani"] = {"boxpursesanimation", "boxpurse_anim", "~y~5MDevs~c~ Box Dior Tote Animal Print", AnimationOptions =
-{
-    Prop = 'fmd_diortoteanimal',
-    PropBone = 18905,
-    PropPlacement = {0.31, -0.17, 0.42, -97.0, 111.0, -93.0},
-    EmoteLoop = true,
-    EmoteMoving = true,
-}},
-["bdiortps"] = {"boxpursesanimation", "boxpurse_anim", "~y~5MDevs~c~ Box Dior Tote Pink Snake Skin", AnimationOptions =
-{
-    Prop = 'fmd_diortotepinksnake',
-    PropBone = 18905,
-    PropPlacement = {0.31, -0.17, 0.42, -97.0, 111.0, -93.0},
-    EmoteLoop = true,
-    EmoteMoving = true,
-}},
-
-["blvtlv"] = {"boxpursesanimation", "boxpurse_anim", "~y~5MDevs~c~ Box Louis Vuitton Tote", AnimationOptions =
-{
-    Prop = 'fmd_lvtotelv',
-    PropBone = 18905,
-    PropPlacement = { 0.27, -0.28, 0.36, -92.0, 111.0, -45.0},
-    EmoteLoop = true,
-    EmoteMoving = true,
-}},
-["blvtani"] = {"boxpursesanimation", "boxpurse_anim", "~y~5MDevs~c~ Box Louis Vuitton Tote Animal Print", AnimationOptions =
-{
-    Prop = 'fmd_lvtoteanimal',
-    PropBone = 18905,
-    PropPlacement = { 0.27, -0.28, 0.36, -92.0, 111.0, -45.0},
-    EmoteLoop = true,
-    EmoteMoving = true,
-}},
-["blvcb"] = {"issheistdockssetup1clipboard@base", "base", "~y~5MDevs~c~ Box Louis Vuitton Crossbody", AnimationOptions =
-{
-    Prop = 'fmd_lvcraftcrossbody',
-    PropBone = 18905,
-    PropPlacement = {-0.54, -0.57, -1.37, -26.0, 43.0, 389.0},
-    EmoteLoop = true,
-    EmoteMoving = true,
-}},
-["blvwallet"] = {"issheistdockssetup1clipboard@base", "base", "~y~5MDevs~c~ Box Louis Vuitton Wallet", AnimationOptions =
-{
-    Prop = 'fmd_lvwallet',
-    PropBone = 18905,
-    PropPlacement = {0.16, -0.02, -0.07, -76.0, 43.0, 389.0},
-    EmoteLoop = true,
-    EmoteMoving = true,
-}},
-
 
 
 

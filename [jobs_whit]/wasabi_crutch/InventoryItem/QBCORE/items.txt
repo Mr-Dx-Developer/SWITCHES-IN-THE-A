@@ -1,3 +1,0 @@
--- Add to qb-core/shared/items.lua
-	['crutch'] 		 			 = {['name'] = 'crutch', 					['label'] = 'Crutch', 				['weight'] = 650, 		['type'] = 'item', 		['image'] = 'crutch.png', 			['unique'] = false, 	['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'A device used to assist with walking.'},
-	['wheelchair'] 		 			 = {['name'] = 'wheelchair', 					['label'] = 'Wheelchair', 				['weight'] = 850, 		['type'] = 'item', 		['image'] = 'wheelchair.png', 			['unique'] = false, 	['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'A device used to assist with mobility.'},

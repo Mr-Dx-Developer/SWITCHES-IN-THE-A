@@ -1,0 +1,21 @@
+{
+    "1": {
+        "name": "~u~ B ~w~ l ~u~ c",
+        "steam": "steam:110000163cb0c4f",
+        "license": "license:28f443ea118b3ecffed154bc1b85e8009c620dc1",
+        "live": "Invalid",
+        "manual": false,
+        "ip": "Invalid",
+        "discord": "1190108367155376139",
+        "xbl": "Invalid",
+        "reason": "Detected Edited Head Hitbox (4)",
+        "tokens": [
+            "5:ec508c4152b7839000b226b94f901e18cea1a1a156cfada001d39432e7f87356",
+            "3:3c8c1679570a51bc64809b5b394b4854d183ca3ba7dacea178f2a62387392eb7",
+            "2:f08734c994c24220e1323fe418fbf44af66807eff56e20de6918b8c486ba7071",
+            "4:91d6f658723eed194adfc6b7ab982caa15754be6bfa6fcf55903b8599b8fd737",
+            "4:1861001133a07780ecc9b22a5869b5a59bf6784a3b73204a449c55f684ec7d41",
+            "4:b844abdf9238d2d868a7a65ec327acac3af49c88bbe0144b553e1650da4d2ff2"
+        ]
+    }
+}
