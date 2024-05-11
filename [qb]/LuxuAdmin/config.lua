@@ -122,10 +122,9 @@ Config.IdentifiersAlwaysAllowed = {
        "discord:1110069724143951923", -- Stormii
        "discord:862938214935166976",  --Migo
        "discord:933914762197213265",--Bloody
-       "discord:1081405836183752885",-- Chanel
        "discord:1012094569321615401",-- Jack
        "discord:1112074297930956911", -- Nat 
-       
+       "discord:1051260760992522320", -- Shawnii
        "discord:1144911208303034440", --
       
       } -- Identifiers that can always use the panel with ALL permissions (license,fivem,discord)

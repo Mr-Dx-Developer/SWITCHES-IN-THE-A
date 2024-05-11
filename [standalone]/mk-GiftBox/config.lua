@@ -7,9 +7,7 @@ Config.Rewards = {
     {Name = "bandage", Amount = 10},
     {Name = "lockpick", Amount = 5},
     {Name = "rccar", Amount = 1},
-    {Name = "weed_bag", Amount = 500},
-    {Name = "weapon_g19x", Amount = 1},
-    {Name = "pistol_ammo", Amount = 50},
+    {Name = "weed_bag", Amount = 200},
     {Name = "radio", Amount = 1}
 }
 
