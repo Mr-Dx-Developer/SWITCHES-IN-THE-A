@@ -77,8 +77,8 @@ Config.Drugs = {
     },
     
     [10] = {
-        Label = '101 Cups',
-        Item = '101_cups',
+        Label = 'Famgoon Lean',
+        Item = 'famgoon_lean',
         Price = 4000, 
         RequiredAmount = 1,
         DenyChance = 0
