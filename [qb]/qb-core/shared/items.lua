@@ -881,7 +881,7 @@ QBShared.Items = {
 	["axleparts"]=          {["name"] = "axleparts",        ["label"] = "Axle Parts",			["weight"] = 0, ["type"] = "item",  ["image"] = "axleparts.png",        ["unique"] = false, ["useable"] = false,["shouldClose"] = false,["description"] = ""},
 	["sparetire"]=          {["name"] = "sparetire",        ["label"] = "Spare Tire",			["weight"] = 0, ["type"] = "item",  ["image"] = "sparetire.png",        ["unique"] = true,  ["useable"] = false,["shouldClose"] = false,["description"] = ""},
  ]]
-
+ ['boombox'] 		 			 = {['name'] = 'boombox', 					['label'] = 'Boombox', 				['weight'] = 650, 		['type'] = 'item', 		['image'] = 'boombox.png', 			['unique'] = false, 	['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'boombox.'},
  --5M DEVS FOOD V1
  ['fmdfuapplesauce']                 = {['name'] = 'fmdfuapplesauce',                   ['label'] = 'Applesauce',   								['weight'] = 2,          ['type'] = 'item',         ['image'] = 'fmdfuapplesauce.png',       ['unique'] = false,         ['useable'] = true,     ['shouldClose'] = true,       ['combinable'] = nil,   ['description'] = 'Applesauce'},
  ['fmdfucinnroll']                   = {['name'] = 'fmdfucinnroll',                     ['label'] = 'Cinnamon Roll',                    			['weight'] = 2,          ['type'] = 'item',         ['image'] = 'fmdfucinnroll.png',         ['unique'] = false,         ['useable'] = true,     ['shouldClose'] = true,       ['combinable'] = nil,   ['description'] = 'Cinnamon Roll'},

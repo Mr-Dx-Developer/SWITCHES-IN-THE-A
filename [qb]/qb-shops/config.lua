@@ -2193,6 +2193,14 @@ Config.Products = {
             type = "item",
             slot = 144,
         },
+        [145] = {
+            name = "boombox",
+            price = 25, 
+            amount = 10,
+            info = {},
+            type = "item",
+            slot = 145,
+        },
 
 
 
@@ -2204,7 +2212,7 @@ Config.Products = {
 
 
 
-
+        
 
 
 
