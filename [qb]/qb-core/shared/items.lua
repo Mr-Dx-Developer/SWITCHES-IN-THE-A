@@ -20,7 +20,7 @@ QBShared.Items = {
     ['weapon_galilarv2'] = {['name'] = 'weapon_galilarv2', ['label'] = 'GALILARV2 Black Gang', ['weight'] = 1000, ['type'] = 'weapon', ['ammotype'] = 'AMMO_RIFLE', ['image'] = 'weapon_galilarv2.png', ['unique'] = true, ['useable'] = false, ['description'] = 'Weapon GALILARV2 Black Gang'},
     ['weapon_m4asiimov'] 		         = {['name'] = 'weapon_m4asiimov', 	 	            ['label'] = 'M4 Asiimov', 			        ['weight'] = 1000, 		['type'] = 'weapon', 	['ammotype'] = 'AMMO_RIFLE',			['image'] = 'M4ASIIMOV_R.png', 	    ['unique'] = true, 		['useable'] = false, 	['description'] = 'M4 Asiimov Weapon'},
     ['weapon_m47v2'] = {['name'] = 'weapon_m47v2', ['label'] = 'M47V2', ['weight'] = 1000, ['type'] = 'weapon', ['ammotype'] = 'AMMO_RIFLE', ['image'] = 'WEAPON_M47V2_R.png', ['unique'] = true, ['useable'] = false, ['description'] = 'M47V2'},
-    ['weapon_nv_rifle_purple'] = {['name'] = 'weapon_nv_rifle_purple', ['label'] = 'NV Rifle Purple Gang', ['weight'] = 1000, ['type'] = 'weapon', ['ammotype'] = 'AMMO_RIFLE', ['image'] = 'WEAPON_NVRIFLE_PURPLE.png', ['unique'] = true, ['useable'] = false, ['description'] = 'Weapon FNV Rifle Purple Gang'},
+    ['weapon_nvifle_purple'] = {['name'] = 'weapon_nvifle_purple', ['label'] = 'NV Rifle Purple Gang', ['weight'] = 1000, ['type'] = 'weapon', ['ammotype'] = 'AMMO_RIFLE', ['image'] = 'WEAPON_NVRIFLE_PURPLE.png', ['unique'] = true, ['useable'] = false, ['description'] = 'Weapon FNV Rifle Purple Gang'},
 
 
     weapon_kayslimeswitchb              = { name = 'weapon_kayslimeswitchb', label = 'KaySlimeSwitch Black', weight = 1000, type = 'weapon', ammotype = 'AMMO_PISTOL', image = 'weapon_kayslimeswitchb.png', unique = true, useable = false, description = 'A handheld light weight machine gun' },
