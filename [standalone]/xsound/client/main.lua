@@ -31,20 +31,6 @@ function UpdatePlayerPositionInNUI()
     })
 end
 
-function CheckForCloseMusic()
-    local ped = PlayerPedId()
-    local playerPos = GetEntityCoords(ped)
-    isPlayerCloseToMusic = false
-    for k, v in pairs(soundInfo) do
-        if v.position ~= nil and v.isDynamic then
-            if #(v.position - playerPos) < v.distance + config.distanceBeforeUpdatingPos then
-                isPlayerCloseToMusic = true
-                break
-            end
-        end
-    end
-end
-
 -- updating position on html side so we can count how much volume the sound needs.
 CreateThread(function()
     local refresh = config.RefreshTime
@@ -82,9 +68,21 @@ end)
 
 -- checking if player is close to sound so we can switch bool value to true.
 CreateThread(function()
+    local ped = PlayerPedId()
+    local playerPos = GetEntityCoords(ped)
     while true do
         Wait(500)
-        CheckForCloseMusic()
+        ped = PlayerPedId()
+        playerPos = GetEntityCoords(ped)
+        isPlayerCloseToMusic = false
+        for k, v in pairs(soundInfo) do
+            if v.position ~= nil and v.isDynamic then
+                if #(v.position - playerPos) < v.distance + config.distanceBeforeUpdatingPos then
+                    isPlayerCloseToMusic = true
+                    break
+                end
+            end
+        end
     end
 end)
 

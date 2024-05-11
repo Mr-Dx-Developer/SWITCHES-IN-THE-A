@@ -21,6 +21,11 @@ function isReady(divId, howler){
             if(sound.loaded() == false){
 
                 sound.setLoaded(true);
+                $.post('https://xsound/events', JSON.stringify(
+                {
+                    type: "onPlay",
+                    id: sound.getName(),
+                }));
 
                 var time = 0;
                 if(sound.getAudioPlayer() != null){time = sound.getAudioPlayer()._duration;}
@@ -31,12 +36,6 @@ function isReady(divId, howler){
                 {
                     time: time,
                     type: "maxDuration",
-                    id: sound.getName(),
-                }));
-
-                $.post('https://xsound/events', JSON.stringify(
-                {
-                    type: "onPlay",
                     id: sound.getName(),
                 }));
 		    
@@ -51,6 +50,12 @@ function isReady(divId, howler){
 	{
 		var sound = soundList[soundName];
         if(sound.getDivId() === divId){
+            $.post('https://xsound/events', JSON.stringify(
+            {
+                type: "onPlay",
+                id: sound.getName(),
+            }));
+
             var time = 0;
             if(sound.getYoutubePlayer() != null){time = sound.getYoutubePlayer().getDuration();}
 			if(sound.isDynamic()) sound.setVolume(0);
@@ -60,12 +65,6 @@ function isReady(divId, howler){
             {
                 time: time,
                 type: "maxDuration",
-                id: sound.getName(),
-            }));
-
-            $.post('https://xsound/events', JSON.stringify(
-            {
-                type: "onPlay",
                 id: sound.getName(),
             }));
 
