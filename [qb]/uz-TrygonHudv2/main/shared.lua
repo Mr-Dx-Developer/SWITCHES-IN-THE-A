@@ -8,7 +8,7 @@ Config.Hud = "hudmenu"
 Config.JobLabel = false  -- true | false (true:Officer  -  false: Police)
 Config.Location = false -- false | true 
 Config.HudSettingsOpen = ''
-Config.ServerName = "ODM"
+Config.ServerName = "ODM ATL V3"
 
 -- Stress Mechanics
 Config.StressChance = 0.1  -- Default: 10% -- Percentage Stress Chance When Shooting (0-1)
@@ -35,12 +35,12 @@ Config.AddStress = {
     ["on_shoot"] = {
         min = 1,
         max = 3,
-        enable = true,
+        enable = false,
     },
     ["on_fastdrive"] = {
         min = 1,
         max = 3,
-        enable = true,
+        enable = false,
     },
 }
 
@@ -69,8 +69,8 @@ Config.RemoveStress = {
 }
 
 -- Speed-Based Stress
-Config.MinimumSpeed = 10  -- Going Over This Speed Will Cause Stress
-Config.MinimumSpeedUnbuckled = 50  -- Going Over This Speed Will Cause Stress
+Config.MinimumSpeed = 1000  -- Going Over This Speed Will Cause Stress
+Config.MinimumSpeedUnbuckled = 5000  -- Going Over This Speed Will Cause Stress
 Config.DisablePoliceStress = true  -- If true, will disable stress for people with the police job
 
 -- Stress Intensity Levels
