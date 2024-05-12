@@ -1,0 +1,265 @@
+* {
+    font-family: 'Titillium Web', sans-serif;
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    color: rgb(255, 255, 255);
+	font-weight: 300;
+}
+
+html {overflow: hidden;}
+p {margin: 0 !important;}
+body {background: linear-gradient(12deg, rgb(40, 40, 46) 5%, transparent 38%, transparent 68%, rgb(40, 40, 46) 95%);}
+
+.main-container {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 75px;
+    height: 30%;
+    border-radius: 1.125vh;
+    transform: translate(0px, -50%);
+    text-shadow: 0px 0px 10px #000000a6;
+}
+
+i {
+	color: #ededed;
+}
+
+.character-box {
+	display: flex;
+    right: 0px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    line-height: 1.55rem;
+    height: calc(100vh - 48rem);
+    width: 20rem;
+    padding: 1rem;
+}
+
+.font_description {
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 400;
+}
+
+.character-info {
+    width: 30vw;
+}
+
+.character-info-name {
+    margin-bottom: 25px !important
+}
+
+.font_charname {
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 700;
+    font-size: 38px;
+    border-bottom: 1px solid white;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+}
+
+.main-screen {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background: radial-gradient(transparent 40%, rgb(0, 0, 0) 110%);
+    left: 0;
+    z-index: 100;
+}
+
+.characters-list {
+    position: absolute;
+    width: 22%;
+    left: 37%;
+    bottom: 6%;
+    border-radius: 0.8vh;
+    padding: 30px;
+}
+
+.characters {
+    width: fit-content;
+    display: flex;
+    margin: auto auto;
+    margin-bottom: 10px;
+}
+
+.character {
+    position: relative;
+    width: 2vw;
+    height: 2vw;
+    margin-top: 15px;
+    transition: all 0.1s linear 0s;
+    cursor: pointer;
+    border-radius: 8px;
+    rotate: 45deg;
+    margin-inline: 8px;
+    border: 2px solid #242424;
+    background-color: rgba(13, 13, 13, 0.49);
+}
+
+.character:hover {
+    border: 2px solid #dfdfdfc5;
+}
+
+#cid {
+    color: #ededed;
+    position: relative;
+    float: right;
+    font-size: 1.5vh;
+    right: 35px;
+    line-height: 80px;
+}
+
+.char-selected {
+    border: 2px solid #dfdfdf !important;
+}
+
+#slot-name {
+    font-family: 'Titillium Web', sans-serif;
+    line-height: 2vw;
+    text-align: center;
+    width: 100%;
+    rotate: -45deg;
+    font-size: 1.35vw;
+    font-weight: 700;
+    color: rgb(203 203 203);
+    margin: -2px;
+}
+
+#slot-name > i {
+    font-size: 1.0vw;
+    line-height: 2vw;
+}
+
+.character-btn {
+    position: static;
+    height: 5.0vh;
+    top: 65%;
+    transition: 0.2s;
+    float: left;
+    margin-top: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+    width: -webkit-fill-available;
+    overflow: visible !important;
+}
+
+.character-btn > p {
+    color: #ededed;
+    letter-spacing: .1vh;
+    text-align: center;
+    font-size: 2vh;
+    text-transform: uppercase;
+    line-height: 5vh;
+    font-weight: bold;
+}
+
+#play-text {
+    text-shadow: rgb(15 15 15 / 50%) 0px 0px 5px;
+}
+
+#play {
+    display: none;
+    background: rgb(47, 228, 153);
+    border-radius: 1.4vh;
+    transition: all 0.2s ease;
+    box-shadow: 0px 0px 8px rgb(15, 15, 15);
+}
+
+#play:hover {
+    background: rgb(39, 187, 125);
+    box-shadow: 0px 0px 10px rgba(39, 187, 125, 0.527);
+}
+
+#delete-text {
+    text-shadow: rgb(15 15 15 / 50%) 0px 0px 5px;
+}
+
+#delete {
+    display: none;
+    background: #ff0039;
+    border-radius: 1.4vh;
+    transition: all 0.2s ease;
+    box-shadow: 0px 0px 8px rgb(15, 15, 15);
+}
+
+#delete:hover {
+    background: rgb(182, 0, 39);
+    box-shadow: 0px 0px 10px rgba(182, 0, 39, 0.527);
+}
+
+.manage_buttons {
+    display: flex;
+}
+
+.character-delete {
+    display: none;
+    position: absolute;
+    width: 33vh;
+    height: 12vh;
+    top: 40.3vh;
+    right: 19vh;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 0.8vh;
+    padding: 30px;
+    color: rgb(237, 237, 237);
+    font-family: Poppins, sans-serif;
+}
+
+.character-delete > p {
+    font-size: 1.65vh;
+    text-align: center;
+}
+
+.characters-delete-block-header {
+    width: inherit;
+    text-align: center;
+    font-size: 2vh;
+    line-height: 29px;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.characters-delete-block-header > p {
+    font-weight: 700;
+    font-size: 1.27vw;
+    text-align: center;
+}
+
+.character-acceptdel-btn {
+    width: 40%;
+    margin: auto;
+    background: rgb(47, 228, 153);
+    border-radius: 7px;
+    margin-block: 14px;
+    transition: all 0.2s ease;
+}
+
+.character-acceptdel-btn:hover {
+    background: rgb(39, 187, 125);
+    box-shadow: 0px 0px 10px rgba(39, 187, 125, 0.527);
+}
+
+.character-canceldel-btn {
+    width: 40%;
+    margin: auto;
+    background: #ff0039;
+    border-radius: 7px;
+    transition: all 0.2s ease;
+}
+
+.character-canceldel-btn:hover {
+    background: rgb(182, 0, 39);
+    box-shadow: 0px 0px 10px rgba(182, 0, 39, 0.527);
+}
+
+.character-acceptdel-btn > p, .character-canceldel-btn > p {
+    text-align: center;
+    letter-spacing: 0.1vh;
+    font-weight: bold;
+    text-transform: uppercase;
+}

@@ -1,0 +1,250 @@
+* {
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+    font-family: 'Titillium Web', sans-serif;
+	font-weight: 400;
+	box-sizing: border-box;
+}
+  
+body {
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(12deg, rgb(40, 40, 46) 5%, transparent 50%, rgb(40, 40, 46) 95%);
+	z-index: -1;
+	display: none;
+}
+  
+.label {
+	font-weight: 100;
+    text-align: left;
+    margin-bottom: 3px;
+    font-size: 12px;
+    color: #ffffffc9;
+    text-transform: uppercase;
+}
+
+.login-form {
+	width: 450px;
+	background: transparent;
+	height: 810px;
+	padding: 40px 40px;
+	border-radius: 30px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+}
+
+.modal-icon {
+	width: 60px;
+	margin-left: 40%;
+	margin-bottom: 20px;
+}
+
+.login-form h1 {
+	text-align: center;
+    color: #ffffff;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+	font-weight: 700;
+    font-size: 50px;
+    margin-top: -25px;
+}
+  
+.txtb {
+	position: relative;
+    text-align: center;
+    margin: 30px 0;
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+  
+.txtb input {
+	font-size: 15px;
+	font-weight: 600;
+    color: rgb(255, 255, 255);
+    width: 100%;
+    padding: 0 12px;
+    height: 45px;
+	background-color: rgba(13, 13, 13, 0.49);
+    border-radius: 8px;
+	border: 2px solid rgb(36, 36, 36);
+	transition: 0.3s;
+}
+
+input:focus { 
+    outline: none !important;
+    border: 2px solid #dfdfdfc5;
+}
+
+option {
+	font-size: 15px;
+	font-weight: 700;
+    color: rgb(225 225 225);
+    background: rgb(255 255 255 / 9%);
+}
+  
+.txtb span::before {
+	content: attr(data-placeholder);
+	position: absolute;
+	top: 50%;
+	left: 5px;
+	color: #8b8b8b;
+	transform: translateY(-50%);
+	z-index: -1;
+	transition: .5s;
+}
+  
+.visina {
+	border-bottom: 2px solid #ffffff;
+	position: relative;
+	margin: 30px 0;
+}
+  
+.visina input {
+	font-size: 15px;
+	color: #333;
+	border: none;
+	width: 100%;
+	outline: none;
+	background: none;
+	padding: 0 5px;
+	height: 10px;
+}
+  
+.visina span::before {
+	content: attr(data-placeholder);
+	position: absolute;
+	top: 50%;
+	left: 5px;
+	color: #adadad;
+	transform: translateY(-50%);
+	z-index: -1;
+	transition: .5s;
+}
+  
+.logbtn {
+	width: 2.6vw;
+    height: 2.6vw;
+    color: rgb(255 255 255);
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 22px;
+    margin: auto;
+    transition: all 0.2s ease;
+    box-shadow: 0px 0px 8px rgb(15 15 15);
+    display: block;
+    rotate: 45deg;
+    border-radius: 8px;
+    border: 2px solid #242424;
+    background-color: rgba(13, 13, 13, 0.49);
+    transition: 0.3s;
+}
+  
+.logbtn:hover {
+    border: 2px solid #dfdfdfc5;
+}
+
+.logbtn > i {
+	rotate: -45deg;
+    transform: translate(0.2vw, 0vh);
+    transition: 0.3s;
+    margin-left: 0.8vw;
+    font-size: 1.2vw;
+    margin-top: 0.8vw;
+}
+
+.logbtn:hover > i {
+	scale: 1.5;
+}
+
+.cntr {
+	margin: auto;
+}
+  
+.btn-radio {
+	margin: 20px 0px 26px 89px;
+	vertical-align: top;
+	cursor: pointer;
+	display: inline-block;
+	float: revert;
+}
+  
+.btn-radio:not(:first-child) {
+	margin-left: 20px;
+}
+
+@media screen and (max-width: 480px) {
+	.btn-radio {
+	  	display: block;
+	  	float: none;
+	}
+	.btn-radio:not(:first-child) {
+	  	margin-left: 0;
+	  	margin-top: 15px;
+	}
+}
+
+.btn-radio svg {
+	fill: none;
+	vertical-align: middle;
+}
+
+.btn-radio svg circle {
+	stroke-width: 2;
+	stroke: #C8CCD4;
+}
+
+.btn-radio svg path {
+	stroke: #ffffff;
+}
+
+.btn-radio svg path.inner {
+	stroke-width: 6;
+	stroke-dasharray: 19;
+	stroke-dashoffset: 19;
+}
+
+.btn-radio svg path.outer {
+	stroke-width: 2;
+	stroke-dasharray: 57;
+	stroke-dashoffset: 57;
+}
+
+.btn-radio input {
+	vertical-align: top;
+	display: none;
+	border-radius: 8px;
+}
+
+.btn-radio input:checked + svg path {
+	transition: all 0.4s ease;
+}
+
+.btn-radio input:checked + svg path.inner {
+	stroke-dashoffset: 38;
+	transition-delay: 0.3s;
+}
+
+.btn-radio input:checked + svg path.outer {
+	stroke-dashoffset: 0;
+}
+
+.btn-radio span {
+	display: inline-block;
+	color: #ffffff;
+	vertical-align: middle;
+}
+  
+.pomoc {
+	margin-top: 60px;
+	text-align: center;
+	font-size: 13px;
+	display: none;
+}
+  
+.logo {
+	margin-left: 6.25%;
+	margin-right: auto;
+}

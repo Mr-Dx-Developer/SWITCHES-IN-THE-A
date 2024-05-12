@@ -63,7 +63,7 @@ Config.Drugs = {
     [8] = {
         Label = 'WHAM PACK',
         Item = 'wham_pack',
-        Price = 2500, 
+        Price = 9500, 
         RequiredAmount = 1,
         DenyChance = 0
     },
@@ -86,7 +86,7 @@ Config.Drugs = {
     [11] = {
         Label = 'Gumbo SnowBall',
         Item = 'gumbo_snowball',
-        Price = 1200, 
+        Price = 2750, 
         RequiredAmount = 1,
         DenyChance = 0
     },
@@ -100,7 +100,7 @@ Config.Drugs = {
     [13] = {
         Label = 'WhyPhy',
         Item = 'whyphy',
-        Price = 2500, 
+        Price = 3500, 
         RequiredAmount = 1,
         DenyChance = 0
     },

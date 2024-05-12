@@ -1,0 +1,60 @@
+<html>
+	<head>
+		<script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <script src="/config/translation.js" type="text/javascript"></script>
+		<link href="css/style.css" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	</head>
+	<body>
+		<form id="register" action="index.html" class="login-form">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" style="width: 60px;margin-left: 40%;margin-bottom: 20px;">
+				<path fill="#fff" d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0S96 57.3 96 128s57.3 128 128 128zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"/>
+			</svg>
+			<h1 class="label_createcharacter"></h1>
+			<div class="txtb">
+			  <div class="label label_firstname"></div>
+			  <input id="firstname" class="inputButton" type="text" required>
+			</div>
+			<div class="txtb">
+			  <div class="label label_lastname"></div>
+			  <input id="lastname" class="inputButton" type="text" required>
+			</div>
+			<div class="txtb">
+			  <div class="label label_height"></div>
+			  <input id="height" class="inputButton" type="number" required>
+			</div>
+			<div class="txtb">
+			  <div class="label label_dob"></div>
+			  <input id="dateofbirth" class="inputButton" type="date" required>
+			</div>
+			<div class="cntr">
+			  <label for="rdo-1" class="btn-radio">
+				<input type="radio" name="sex" id="rdo-1" value="m">
+				<svg width="22px" height="22px" viewBox="0 0 20 20">
+				  <circle cx="10" cy="10" r="9"></circle>
+				  <path d="M10,7 C8.34314575,7 7,8.34314575 7,10 C7,11.6568542 8.34314575,13 10,13 C11.6568542,13 13,11.6568542 13,10 C13,8.34314575 11.6568542,7 10,7 Z" class="inner"></path>
+				  <path d="M10,1 L10,1 L10,1 C14.9705627,1 19,5.02943725 19,10 L19,10 L19,10 C19,14.9705627 14.9705627,19 10,19 L10,19 L10,19 C5.02943725,19 1,14.9705627 1,10 L1,10 L1,10 C1,5.02943725 5.02943725,1 10,1 L10,1 Z" class="outer"></path>
+				</svg>
+				<span class="label_male"></span>
+			  </label>
+				<label for="rdo-2" class="btn-radio">
+				  <input type="radio" name="sex" id="rdo-2" value="f">
+				  <svg width="22px" height="22px" viewBox="0 0 20 20">
+					<circle cx="10" cy="10" r="9"></circle>
+					<path d="M10,7 C8.34314575,7 7,8.34314575 7,10 C7,11.6568542 8.34314575,13 10,13 C11.6568542,13 13,11.6568542 13,10 C13,8.34314575 11.6568542,7 10,7 Z" class="inner"></path>
+					<path d="M10,1 L10,1 L10,1 C14.9705627,1 19,5.02943725 19,10 L19,10 L19,10 C19,14.9705627 14.9705627,19 10,19 L10,19 L10,19 C5.02943725,19 1,14.9705627 1,10 L1,10 L1,10 C1,5.02943725 5.02943725,1 10,1 L10,1 Z" class="outer"></path>
+				  </svg>
+				  <span class="label_female"></span>
+				</label>
+			  </div>
+			  <div id="submit" type="submit" class="logbtn label_register">
+				<i class="fa-solid fa-play"></i>
+			  </div>
+			</form>
+
+		<script src="js/script.js" type="text/javascript"></script>
+	</body>
+</html>

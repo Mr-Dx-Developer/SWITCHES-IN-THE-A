@@ -5176,8 +5176,8 @@ Config.Products = {
     -- Hardware Store Locations
     ["hardware"] = {
         ["label"] = "Hardware Store",
-        ["coords"] = vector4(28.167036056518555,-1769.5648193359375,29.5494384765625,45.35432815551758),
-        ["ped"] = 'mp_m_waremech_01',
+        ["coords"] = vector4(28.32527732849121, -1769.208740234375, 29.5494384765625, 53.85826873779297),
+        ["ped"] = 'mp_m_shopkeep_01',
         ["scenario"] = "WORLD_HUMAN_CLIPBOARD",
         ["radius"] = 1.5,
         ["targetIcon"] = "fas fa-wrench",
@@ -5187,13 +5187,13 @@ Config.Products = {
         ["blipsprite"] = 402,
         ["blipscale"] = 0.8,
         ["blipcolor"] = 0,
-        ["delivery"] = vector4(28.167036056518555,-1769.5648193359375,29.5494384765625,45.35432815551758)
+        ["delivery"] = vector4(28.32527732849121, -1769.208740234375, 29.5494384765625, 53.85826873779297)
     },
 
     ["hardware2"] = {
         ["label"] = "Hardware Store",
         ["coords"] = vector4(2747.71, 3472.85, 55.67, 255.08),
-        ["ped"] = 'mp_m_waremech_01',
+        ["ped"] = 'mp_m_shopkeep_01',
         ["scenario"] = "WORLD_HUMAN_CLIPBOARD",
         ["radius"] = 1.5,
         ["targetIcon"] = "fas fa-wrench",
@@ -5209,7 +5209,7 @@ Config.Products = {
     ["hardware3"] = {
         ["label"] = "Hardware Store",
         ["coords"] = vector4(-421.83, 6136.13, 31.88, 228.2),
-        ["ped"] = 'mp_m_waremech_01',
+        ["ped"] = 'mp_m_shopkeep_01',
         ["scenario"] = "WORLD_HUMAN_CLIPBOARD",
         ["radius"] = 1.5,
         ["targetIcon"] = "fas fa-wrench",
