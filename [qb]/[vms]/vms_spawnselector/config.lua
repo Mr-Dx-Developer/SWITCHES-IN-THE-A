@@ -12,14 +12,14 @@ end
 
 Config.Notification = function(message, time, type)
     if type == "error" then
-       -- exports['vms_notify']:Notification('SPAWN SELECTOR', message, time, '#f52a2a', 'fa-solid fa-map-pin')
-        -- ESX.ShowNotification(message)
+      --  exports['vms_notify']:Notification('SPAWN SELECTOR', message, time, '#f52a2a', 'fa-solid fa-map-pin')
+      -- ESX.ShowNotification(message)
         QBCore.Functions.Notify(message, 'error', time)
     end
 end
 
 Config.Translate = {
-    ['cannot_spawn_on_dead'] = "Your previous game ended in death, you must be reborn in the last location."
+    ['cannot_spawn_on_dead'] = "Estas inconsciente, debes renacer en la última ubicación."
 }
 
 Config.Hud = {

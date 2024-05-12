@@ -9,10 +9,10 @@ Config.SkinManager = "illenium-appearance" -- "qb-clothing" / "fivem-appearance"
 
 Config.SelectFirstChar = true -- it will select first possible player character by first connection on the server
 
-Config.UseCustomSkinCreator = true -- if you use qb-clothing for character creator set it to false, if you use custom character creator set it to true and change in @vms_multichars/config/config_client.lua function openCharacterCreator(skin)
+Config.UseCustomSkinCreator = false -- if you use qb-clothing for character creator set it to false, if you use custom character creator set it to true and change in @vms_multichars/config/config_client.lua function openCharacterCreator(skin)
 Config.RelogCommand = true -- @vms_multichars/config/config_client.lua:60
 
-Config.UseCustomSpawnSelector = false -- @vms_multichars/config/config_server.lua function openSpawnSelector()
+Config.UseCustomSpawnSelector = true -- @vms_multichars/config/config_server.lua function openSpawnSelector()
 Config.SkipSpawnSelector = false -- Skip the spawn selection and spawns the player at the last location.
 
 Config.ToLeft = vector3(912.74, 0.01, 110.28) -- This coords is on the Diamond Casino, if you didnt have build with this, its not works, you need to change the coords
@@ -20,10 +20,10 @@ Config.Spawn = vector4(915.43, -0.22, 110.28, 146.93) -- This coords is on the D
 Config.FromRight = vector3(916.96, -2.41, 110.28) -- This coords is on the Diamond Casino, if you didnt have build with this, its not works, you need to change the coords
 Config.CameraZHeight = 1.5 -- + 1.5
 
-Config.SpawnLocation = vector3(190.24, -858.05, 30.5) -- here you can set the coordinates in which the player will spawn after creating a character ! IMPORTANT, if you use Config.UseCustomSkinCreator, it won't work, you need to set in charcreator e.g. vms_charcreator !
+Config.SpawnLocation = vector3(-1888.12, 639.31, 130.00) -- here you can set the coordinates in which the player will spawn after creating a character ! IMPORTANT, if you use Config.UseCustomSkinCreator, it won't work, you need to set in charcreator e.g. vms_charcreator !
 
 Config.ChangeCharacterPoint = {
-	enable = true,
+	enable = false,
 	coords = vector3(-1045.07, -2750.11, 21.36),
 	marker = {
 		id = 2,
@@ -42,11 +42,11 @@ Config.ChangeCharacterPoint = {
 Config.Notification = function(message, time, type)
 	if type == "success" then
 		--exports["vms_notify"]:Notification("MULTICHARACTERS", message, time, "#27FF09", "fa-solid fa-users")
-		 TriggerEvent('QBCore:Notify', message, 'success', time)
+		TriggerEvent('QBCore:Notify', message, 'success', time)
 		
 	elseif type == "error" then
 		--exports["vms_notify"]:Notification("MULTICHARACTERS", message, time, "#FF0909", "fa-solid fa-users")
-		 TriggerEvent('QBCore:Notify', message, 'error', time)
+		TriggerEvent('QBCore:Notify', message, 'error', time)
 
 	end
 end

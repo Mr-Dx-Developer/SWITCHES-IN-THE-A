@@ -1,4 +1,4 @@
 const translate = new Object();
 
-translate.spawn = 'SPAWN'
-translate.select_last_position = 'Select Last Position'
+translate.spawn = 'Spawn'
+translate.select_last_position = 'Last Location'

