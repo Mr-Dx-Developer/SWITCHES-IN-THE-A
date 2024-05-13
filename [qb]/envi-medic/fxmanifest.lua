@@ -3,48 +3,27 @@ fx_version 'cerulean'
 
 game 'gta5'
 lua54 'yes'
+use_experimental_fxv2_oal 'yes'
 
-version '1.4.8'
+version '1.5.0-hotfix'
  
 client_scripts {
-    'bridge/bridge.lua',
-	'client/*.lua',
+    'client/*.lua',
 }
- 
-server_scripts {
-    'bridge/bridge.lua',
-	'server/*.lua',
+shared_scripts {
+    '@envi-bridge/bridge.lua',
+    'shared/*.lua',
 }
 
-shared_scripts {
-	'config.lua',
-    '@ox_lib/init.lua',
+server_scripts {
+    'server/*.lua',
 }
 
 escrow_ignore {
-    'bridge/database/oxmysql/*.lua',
-    'bridge/framework/esx/*.lua',
-    'bridge/framework/qb/*.lua',
-    'bridge/framework/vrp/*.lua',
-    'bridge/framework/qbox/*.lua',
-    'bridge/inventory/ox_inventory/*.lua',
-    'bridge/inventory/qb-inventory/*.lua',
-    'bridge/inventory/qs-inventory/*.lua',
-    'bridge/shared/*.lua',
-    'bridge/utils/*.lua',
-    'bridge/*.lua',
-    'bridge/zone/ox_lib/*.lua',
-    'bridge/zone/polyzone/*.lua',
-    'bridge/target/qb-target/*.lua',
-    'bridge/target/ox_target/*.lua',
-    'bridge/target/qtarget/*.lua',
-	'config.lua',
+    'shared/*.lua',
 }
 
- 
-files {
-    'bridge/**/**/client.lua',
-    'bridge/**/*.lua',
-}
 dependency '/assetpacks'
+
+bridge 'envi-bridge'
 dependency '/assetpacks'

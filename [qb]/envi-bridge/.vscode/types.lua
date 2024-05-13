@@ -1,0 +1,304 @@
+---@meta
+
+---Bridge Framework
+---@class Bridge
+---@field Resource string Current Resource Name
+---@field Name string Bridge Resource Name
+---@field Version string Current Bridge Version
+---@field Context 'server' | 'client' Current Context
+---@field DebugMode boolean Is Bridge In Debug Mode
+---@field Debug fun(type : string, name : string, version : string) Bridge Debug Message
+---@field Locale string Bridge Locale
+---@field Disabled? { [string]: boolean } Bridge Disabled Modules
+---@field Framework? string Bridge Framework
+---@field FrameworkName? string Bridge Framework Name
+---@field FrameworkEvent? string Bridge Framework Event
+---@field FrameworkPrefix? string Bridge Framework Prefix
+---@field Inventory? string Bridge Inventory
+---@field InventoryName? string Bridge Inventory Name
+---@field InventoryImagePath? string Bridge Inventory Image Path
+---@field Target? string Bridge Target
+---@field TargetName? string Bridge Target Name
+---@field Zone? string Bridge Zone
+---@field ZoneName? string Bridge Zone Name
+---@field Database? string Bridge Database
+---@field DatabaseName? string Bridge Database Name
+Bridge = {}
+
+---Framework Item
+---@class Item
+---@field name string -- Item Name
+---@field label string -- Item Label
+---@field weight number -- Item Weight
+---@field slot number -- Item Slot
+---@field count number -- Item Count
+---@field type string -- Item Type
+---@field metadata { [string]: any } -- Item Metadata
+---@field image? string -- Item Image
+---@field description? string -- Item Description
+---@field stack? boolean -- Item Stack
+---@field close? boolean -- Item Close
+
+---Player Job
+---@class Job
+---@field Name string -- Player Job Name
+---@field Label string -- Player Job Label
+---@field Duty boolean -- Player Job Duty
+---@field Boss boolean -- Is Player Boss
+---@field Grade Grade -- Player Job Grade
+
+---Player Gang
+---@class Gang
+---@field Name string -- Player Gang Name
+---@field Label string -- Player Gang Label
+---@field Boss boolean -- Is Player Boss
+---@field Grade Grade -- Player Gang Grade
+
+---@class Grade
+---@field Name string -- Player Job Grade Name
+---@field Level number -- Player Job Grade Level
+
+---ProgressBar Options
+---@class ProgressBarOptions
+---@field duration number
+---@field label string
+---@field canCancel? boolean
+---@field useWhileDead? boolean
+---@field anim? { dict? : string, clip? : string, flag? : number, scenario? : string }
+---@field disable? {move? : boolean, vehicle? : boolean, combat? : boolean, mouse? : boolean }
+---@field props? { model : string, bone? : number, pos : vector3, rot : vector3 }[] | { model : string, bone? : number, pos : vector3, rot : vector3 }
+---@field onFinish? fun()
+---@field onCancel? fun()
+
+---Framework Player
+---@class Player
+---@field source number -- <b>SERVER</b><br> Player Source
+---@field Identifier string -- Player Identifier
+---@field Name string -- Player Name
+---@field Firstname string -- Player First Name
+---@field Lastname string -- Player Last Name
+---@field DateOfBirth string -- Player Date Of Birth
+---@field Gender string -- Player Gender
+---@field Job Job -- Player Job
+---@field Gang Gang -- Player Gang
+---@field Metadata table -- Player Metadata
+---@field SetJob fun(job : string, grade : string | number) : boolean -- Set Player Job
+---@field SetGang fun(gang : string, grade : string | number) : boolean -- Set Player Gang
+---@field AddMoney fun(type : 'cash' | 'bank' | 'other', amount : string | number) : boolean -- Add Money
+---@field RemoveMoney fun(type : 'cash' | 'bank' | 'other', amount : string | number) : boolean -- Remove Money
+---@field GetMoney fun(type : 'cash' | 'bank' | 'other') : number -- Get Money
+---@field Accounts { [string]: number }  -- <b>CLIENT</b><br> Get Account Balance
+---@field GetStatus fun(key : string) : number -- Get Status
+---@field SetStatus fun(key : string, value : number) -- Set Status
+---@field GetMetaData fun(key? : string) -- Get Player MetaData
+---@field SetMetaData fun(key : string, value : any) -- Set Player MetaData
+---@field HasLicense fun(name : string) : boolean -- Check If Player Has License
+---@field GetLicenses fun() : table<string, boolean> -- Get Player Licenses
+---@field AddLicense fun(name : string) -- Add License To Player
+---@field RemoveLicense fun(name : string)  -- Remove License From Player
+
+---Framework API Bridge
+---@class Framework
+---@field OnPlayerLoaded fun() -- <b>CLIENT</b><br> Player loading into the server
+---@field OnPlayerUnload fun() -- <b>CLIENT</b><br> Player unloading from server
+---@field OnJobUpdate fun() -- <b>CLIENT</b><br> Player job has been updated
+---@field OnJobDutyUpdate fun() -- <b>CLIENT</b><br> Player job duty has changed
+---@field OnGangUpdate fun() -- <b>CLIENT</b><br> Player gang has been updated
+---@field OnPlayerLoaded fun(source : number) -- <b>SERVER</b><br> Player loading into the server
+---@field OnPlayerUnload fun(source : number) -- <b>SERVER</b><br> Player unloading from server
+---@field OnJobUpdate fun(source : number) -- <b>SERVER</b><br> Player job has been updated
+---@field OnJobDutyUpdate fun(source : number) -- <b>SERVER</b><br> Player job duty has changed
+---@field OnGangUpdate fun(source : number) -- <b>SERVER</b><br> Player gang has been updated
+---@field CreateCallback fun(name : string, cb : fun(cb : function, ...)) -- <b>CLIENT</b><br> Create Client Callback
+---@field CreateCallback fun(name : string, cb : fun(source : number, cb:function, ...)) -- <b>SERVER</b><br> Create Server Callback
+---@field TriggerCallback fun(name : string, cb : fun(...), ...) -- <b>CLIENT</b><br> Trigger Server Callback
+---@field TriggerCallback fun(source : number, name : string, cb : fun(...), ...) -- <b>SERVER</b><br> Trigger Client Callback
+---@field SpawnVehicle fun(cb : fun(netid), model : number | string, coords? : vector, warp? : boolean) -- <b>CLIENT</b><br> Spawn Vehicle
+---@field ToggleDuty fun() -- <b>CLIENT</b><br> Toggle Job Duty
+---@field Notify fun(message : string, type : "info" | "success" | "error", length : number) -- <b>CLIENT</b><br>Show Notification Message
+---@field Notify fun(source : number, message : string, type : "info" | "success" | "error", length : number) -- <b>SERVER</b><br>Show Notification Message
+---@field IsPlayerDead fun() : boolean -- <b>CLIENT</b><br> Is Player Dead
+---@field IsPlayerDead fun(source : number) : boolean -- <b>SERVER</b><br> Is Player Dead
+---@field GetStatus fun(key : string) : number -- <b>CLIENT</b><br> Get Status
+---@field CreateUseableItem fun(name : string, cb : fun(source : number, item : string, data : { weight : number, count : number, slot : number, name : string, metadata : { [string]: any }, label : string })) -- <b>SERVER</b><br> Create Useable Item
+---@field Player Player -- <b>CLIENT</b><br> Get Player
+---@field GetPlayer fun(source : number) : Player? -- <b>SERVER</b><br> Get Player
+---@field GetPlayerByIdentifier fun(identifier : string) : Player? -- <b>SERVER</b><br> Get Player By Identifier
+---@field DoesJobExist fun(job : string, grade : string | number) : boolean -- <b>SERVER</b><br> Does Job Exist
+---@field DoesGangExist fun(gang : string, grade : string | number) : boolean -- <b>SERVER</b><br> Does Gang Exist
+---@field RegisterSociety fun(name : string, type : "job" | "gang") -- <b>SERVER</b><br> Register Society
+---@field OpenSociety fun(name : string, type : "job" | "gang") -- <b>CLIENT</b><br> Open Society
+---@field SocietyGetMoney fun(name : string, type : "job" | "gang") : number -- <b>SERVER</b><br> Get Society Balance
+---@field SocietyAddMoney fun(name : string, type : "job" | "gang", amount : number) : boolean -- <b>SERVER</b><br> Add Money To Society
+---@field SocietyRemoveMoney fun(name : string, type : "job" | "gang", amount : number) : boolean -- <b>SERVER</b><br> Remove Money From Society
+---@field HasJob fun(job : string | table, player : Player) : boolean -- Check If Player Has Job or Job and Grade
+---@field HasGang fun(gang : string | table, player : Player) : boolean -- Check If Player Has Gang or Gang and Grade
+---@field OpenStash fun(name : string) -- <b>CLIENT</b><br> Open Inventory Stash
+---@field OpenShop fun(name : string) -- <b>CLIENT</b><br> Open Shop
+---@field CloseInventory fun() -- <b>CLIENT</b><br> Close Player Inventory
+---@field Items Item[]? -- Framework Items
+---@field HasItem fun(items : string | string[] | table<string, number>, count? : number, metadata? : table | string, strict? : boolean) : boolean -- <b>CLIENT</b><br> Has Item
+---@field AddItem fun(inventory : number | string, item : string, count : number, metadata? : table, slot? : number | boolean) : boolean -- <b>SERVER</b><br> Add Item To Inventory
+---@field RemoveItem fun(inventory : number | string, item : string, count : number, metadata? : table, slot? : number | boolean) : boolean -- <b>SERVER</b><br> Remove Item From Inventory
+---@field GetItem fun(inventory : number | string, item : string, metadata? : table, strict? : boolean) : Item[] -- <b>SERVER</b><br> Get Item From Inventory
+---@field GetItem fun(item : string, metadata? : table, strict? : boolean) : Item[] -- <b>CLIENT</b><br> Get Item From Inventory
+---@field GetItemCount fun(inventory : number | string, item : string, metadata? : table | string, strict? : boolean) : number -- <b>SERVER</b><br> Get Item Count From Inventory
+---@field HasItem fun(inventory : number | string, items : string | string[] | table<string, number>, count? : number, metadata? : table | string, strict? : boolean) -- <b>SERVER</b><br> Has Item
+---@field LockInventory fun() -- <b>CLIENT</b><br> Lock Inventory
+---@field UnlockInventory fun() -- <b>CLIENT</b><br> Unlock Inventory
+---@field GetItemMetadata fun(inventory : number | string, slot : number | boolean) : table -- <b>SERVER</b><br> Get Item Metadata
+---@field SetItemMetadata fun(inventory : number | string, slot : number, metadata : table) -- <b>SERVER</b><br> Set Item Metadata
+---@field GetInventory fun(inventory : number | string) : Item[]? -- <b>SERVER</b><br> Returns Inventory
+---@field ClearInventory fun(inventory : number | string, keep : string | string[]) -- <b>SERVER</b><br> Clear Inventory
+---@field RegisterStash fun(name : string, slots : number, weight : number, owner? : string | boolean, groups? : table) -- <b>SERVER</b><br> Register Inventory Stash
+---@field RegisterShop fun(name : string, data : {name: string, items : { name : string, price : number, count? : number, metadata? : table }[] }, groups?: string | string[] | table<string, number>) -- <b>SERVER</b><br> Register Shop
+---@field ConfiscateInventory fun(source : number) -- <b>SERVER</b> Clears a players inventory
+---@field ReturnInventory fun(source : number) -- <b>SERVER</b> Returns players confiscated inventory
+---@field LoadModel fun(model : number | string) -- <b>CLIENT</b><br> Load a model when called from a thread it will yield until loaded
+---@field LoadAnimDict fun(animDict : string) -- <b>CLIENT</b><br> Load a animation dictionary when called from a thread it will yield until loaded
+---@field LoadAnimSet fun(animSet : string) -- <b>CLIENT</b><br> Load a animation clipset when called from a thread it will yield until loaded
+---@field LoadAmbientAudioBank fun(bank : string) -- <b>CLIENT</b><br> Load a Ambient Audio Bank when called from a thread it will yield until loaded
+---@field LoadMissionAudioBank fun(bank : string) -- <b>CLIENT</b><br> Load a Mission Audio Bank when called from a thread it will yield until loaded
+---@field LoadScriptAudioBank fun(bank : string) -- <b>CLIENT</b><br> Load a Script Audio Bank when called from a thread it will yield until loaded
+---@field Round fun(value : number, decimals? : number) : number -- Round number
+---@field FirstToUpper fun(str : string) : string -- Set First Character to uppercase
+---@field RandomString fun(num : number) : string -- Returns A Random String
+---@field RandomInteger fun(num : number) : string -- Returns A Random Integer
+---@field GetPeds fun() -- <b>CLIENT</b><br> Get peds game pool
+---@field GetObjects fun() -- <b>CLIENT</b><br> Get objects game pool
+---@field GetVehicles fun() -- <b>CLIENT</b><br> Get vehicles game pool
+---@field GetPickups fun() -- <b>CLIENT</b><br> Get pickups game pool
+---@field GetClosestPed fun(coords : vector3, distance : number) : number?, vector3? -- <b>CLIENT</b><br> Get the closest ped near coords
+---@field GetClosestPlayer fun(coords : vector3, distance : number, includeLocal : boolean) : number?, number?, vector3? -- <b>CLIENT</b><br> Get the closest player near coords
+---@field GetClosestObject fun(coords : vector3, distance : number) : number?, vector3? -- <b>CLIENT</b><br> Get the closest object near coords
+---@field GetClosestVehicle fun(coords : vector3, distance : number, includeLocal : boolean) : number?, vector3? -- <b>CLIENT</b><br> Get the closest vehicle near coords
+---@field GetClosestPickup fun(coords : vector3, distance : number) : number?, vector3? -- <b>CLIENT</b><br> Get the closest pickup near coords
+---@field GetNearbyPeds fun(coords, distance) : { ped : number, coords : vector3 }[] -- <b>CLIENT</b><br> Get peds near coords
+---@field GetNearbyPlayers fun(coords, distance, includeLocal) : { id : number, ped : number, coords : vector3 }[] -- <b>CLIENT</b><br> Get players near coords
+---@field GetNearbyObjects fun(coords, distance) : { object : number, coords : vector3 }[] -- <b>CLIENT</b><br> Get objects near coords
+---@field GetNearbyVehicles fun(coords, distance, includeLocal) : { vehicle : number, coords : vector3 }[] -- <b>CLIENT</b><br> Get vehicles near coords
+---@field GetNearbyPickups fun(coords, distance) : { pickup : number, coords : vector3 }[] -- <b>CLIENT</b><br> Get pickups near coords
+---@field ProgressBar fun(data : ProgressBarOptions) -- <b>CLIENT</b><br> Progress Bar
+---@field NetworkRequestControlOfNetworkId fun(netid : number) -- <b>CLIENT</b><br> Request network control of network id 
+---@field NetworkRequestControlOfEntity fun(entity : number) -- <b>CLIENT</b><br> Request network control of entity
+---@field NetworkRequestControlOfDoor fun(door : number) -- <b>CLIENT</b><br> Request network control of door
+---@field Locale fun(key : string, params? : table) : string -- Get Language String
+---@field Locales fun() : table -- Get Language Table
+Framework = {}
+
+---@class TargetOptions
+---@field label string
+---@field icon? string
+---@field distance? number
+---@field job? string | string[] | table<string, number>
+---@field gang? string | string[] | table<string, number>
+---@field items? string | string[] | table<string, number>
+---@field canInteract? fun(entity?: number): boolean?
+---@field onSelect? fun(data: table)
+---@field export? string
+---@field event? string
+---@field serverEvent? string
+---@field command? string
+---@field [string] any
+
+---@class TargetSphereOptions
+---@field debug? boolean
+---@field name string
+---@field coords vector3
+---@field radius number
+---@field options TargetOptions | TargetOptions[]
+
+---@class TargetBoxZoneOptions
+---@field debug? boolean
+---@field name string
+---@field coords vector3
+---@field size vector3
+---@field rotation number
+---@field options TargetOptions | TargetOptions[]
+
+---@class TargetPolyZoneOptions
+---@field debug? boolean
+---@field name string
+---@field height? number
+---@field points vector3[]
+---@field options TargetOptions | TargetOptions[]
+
+---Target API Bridge
+---@class Target
+---@field DisableTarget fun(state : boolean) -- <b>CLIENT</b><br> Disable Target
+---@field AddGlobalObject fun(options : TargetOptions | TargetOptions[]) -- <b>CLIENT</b><br> Create Global Object Target
+---@field RemoveGlobalObject fun(labels : string | string[]) -- <b>CLIENT</b><br> Remove Global Object Target
+---@field AddGlobalPed fun(options : TargetOptions | TargetOptions[]) -- <b>CLIENT</b><br> Create Global Ped Target
+---@field RemoveGlobalPed fun(labels : string | string[]) -- <b>CLIENT</b><br> Remove Global Ped Target
+---@field AddGlobalPlayer fun(options : TargetOptions | TargetOptions[]) -- <b>CLIENT</b><br> Create Global Player Target
+---@field RemoveGlobalPlayer fun(labels : string | string[]) -- <b>CLIENT</b><br> Remove Global Player Target
+---@field AddGlobalVehicle fun(options : TargetOptions | TargetOptions[]) -- <b>CLIENT</b><br> Create Global Vehicle Target
+---@field RemoveGlobalVehicle fun(labels : string | string[]) -- <b>CLIENT</b><br> Remove Global Vehicle Target
+---@field AddModel fun(models : number | string | table<number | string>, options : TargetOptions | TargetOptions[]) -- <b>CLIENT</b><br> Create Model Target
+---@field RemoveModel fun(models : number | string | table<number | string>, labels : string | string[]) -- <b>CLIENT</b><br> Remove Model Target
+---@field AddEntity fun(entities : number | table, options : TargetOptions | TargetOptions[]) -- <b>CLIENT</b><br> Create Entity Target
+---@field RemoveEntity fun(entities : number | table, labels : string | string[]) -- <b>CLIENT</b><br> Remove Entity Target
+---@field AddBone fun(bones : string | table, options : TargetOptions | TargetOptions[]) -- <b>CLIENT</b><br> Create Bone Target
+---@field RemoveBone fun(bones : string | table, labels : string | string[]) -- <b>CLIENT</b><br> Remove Bone Target
+---@field AddSphereZone fun(data : TargetSphereOptions) : number | string -- <b>CLIENT</b><br> Create Target Sphere
+---@field AddBoxZone fun(data : TargetBoxZoneOptions) : number | string -- <b>CLIENT</b><br> Create Target BoxZone
+---@field AddPolyZone fun(data : TargetPolyZoneOptions) : number | string -- <b>CLIENT</b><br> Create Target PolyZone
+---@field RemoveZone fun(id : number | string) -- <b>CLIENT</b><br> Remove Zone
+Target = {}
+
+---@class CZone
+---@field id number
+---@field coords fun() : vector3
+---@field distance fun() : number
+---@field remove fun()
+---@field contains fun(coords: vector3): boolean
+---@field [string] any
+
+---@class PolyZone
+---@field debug? boolean
+---@field height? number
+---@field points vector3[]
+---@field onEnter fun(self: CZone)?
+---@field onExit fun(self: CZone)?
+---@field inside fun(self: CZone)?
+---@field [string] any
+---@return CZone
+
+---@class BoxZone
+---@field debug? boolean
+---@field coords vector3
+---@field size vector3
+---@field rotation number
+---@field onEnter fun(self: CZone)?
+---@field onExit fun(self: CZone)?
+---@field inside fun(self: CZone)?
+---@field [string] any
+---@return CZone
+
+---@class SphereZone
+---@field debug? boolean
+---@field coords vector3
+---@field radius number
+---@field onEnter fun(self: CZone)?
+---@field onExit fun(self: CZone)?
+---@field inside fun(self: CZone)?
+---@field [string] any
+---@return CZone
+
+---Zones API Bridge
+---@class Zone
+---@field PolyZone fun(data : PolyZone) : CZone -- <b>CLIENT</b><br> Create PolyZone
+---@field BoxZone fun(data : BoxZone) : CZone -- <b>CLIENT</b><br> Create BoxZone
+---@field SphereZone fun(data : SphereZone) : CZone -- <b>CLIENT</b><br> Create SphereZone
+Zone = {}
+
+---Database API Bridge
+---@class Database
+---@field insert fun(query : string, data? : table, cb? : fun(result : number)) : number? -- <b>SERVER</b><br> Insert new row into table
+---@field prepare fun(query : string, data? : table, cb? : fun(result : table)) : table? -- <b>SERVER</b><br> Prepare query for optimizing performance and frequently called queries
+---@field query fun(query : string, data? : table, cb? : fun(result : table)) : table? -- <b>SERVER</b><br> Returns all
+---@field scalar fun(query : string, data? : table, cb? : fun(result : any)) : any? -- <b>SERVER</b><br> Returns the first column for a single row
+---@field single fun(query : string, data? : table, cb? : fun(result : table)) : table? -- <b>SERVER</b><br> Returns all selected columns for a single row
+---@field transaction fun(queries : table, cb? : fun(result : boolean)) : boolean? -- <b>SERVER</b><br> Transaction executes multiple queries and commits them only if all succeed
+---@field update fun(query : string, data? : table, cb? : fun(result : number?)) : number? -- <b>SERVER</b><br> Returns the number of rows affected by the query
+Database = {}
