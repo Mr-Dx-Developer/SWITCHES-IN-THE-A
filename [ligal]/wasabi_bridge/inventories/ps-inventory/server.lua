@@ -9,8 +9,8 @@ if found ~= 'started' and found ~= 'starting' then return end
 WSB.inventory = {}
 WSB.inventorySystem = 'ps-inventory'
 
-function WSB.inventory.getItemSlot(source, itemName, _metadata)
-    return GetQBItemSlot(source, itemName) or false
+function WSB.inventory.getItemSlot(source, itemName)
+    return GetItemSlot(source, itemName) or false
 end
 
 function WSB.inventory.getItemMetadata(source, slot)
