@@ -304,10 +304,38 @@ local function validateDeleteMail()
 	end
 end
 
+-- Remove phone_number foreign keys from phone_message_x
+local function validateMessageForeignKeyNumbers()
+	if not Config.DatabaseChecker.AutoFix then
+		return
+	end
+
+	local membersFk = MySQL.scalar.await([[
+		SELECT `CONSTRAINT_NAME` FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE
+		WHERE `TABLE_SCHEMA` = ? AND `TABLE_NAME` = "phone_message_members" AND `COLUMN_NAME` = "phone_number" AND `CONSTRAINT_NAME` != "PRIMARY"
+	]], { database })
+
+	local messagesFk = MySQL.scalar.await([[
+		SELECT `CONSTRAINT_NAME` FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE
+		WHERE `TABLE_SCHEMA` = ? AND `TABLE_NAME` = "phone_message_messages" AND `COLUMN_NAME` = "sender" AND `CONSTRAINT_NAME` != "PRIMARY"
+	]], { database })
+
+	if membersFk then
+		MySQL.rawExecute.await("ALTER TABLE `phone_message_members` DROP FOREIGN KEY `" .. membersFk .. "`")
+		infoprint("info", "Found & removed foreign key phone_message_members(phone_number) - " .. membersFk)
+	end
+
+	if messagesFk then
+		MySQL.rawExecute.await("ALTER TABLE `phone_message_messages` DROP FOREIGN KEY `" .. messagesFk .. "`")
+		infoprint("info", "Found & removed foreign key phone_message_messages(sender) - " .. messagesFk)
+	end
+end
+
 validatePhotoAlbums()
 validateNotificationsId()
 validateMessages()
 validateDeleteMail()
+validateMessageForeignKeyNumbers()
 
 if updateChanges then
 	fetchTables()

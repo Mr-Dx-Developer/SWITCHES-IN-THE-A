@@ -352,6 +352,8 @@ Config.AllowExternal = { -- allow people to upload external images? (note: this 
 -- Blacklisted domains for external images. You will not be able to upload from these domains.
 Config.ExternalBlacklistedDomains = {
     "imgur.com",
+    "discord.com",
+    "discordapp.com",
 }
 
 -- Whitelisted domains for external images. If this is not empty/nil/false, you will only be able to upload images from these domains.

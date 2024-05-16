@@ -163,6 +163,24 @@ function contains(t, v)
     return false
 end
 
+function table.compare(t1, t2)
+    if type(t1) ~= "table" or type(t2) ~= "table" then
+        return false
+    end
+
+    for k, v in pairs(t1) do
+        if type(v) == "table" then
+            if not table.compare(v, t2[k]) then
+                return false
+            end
+        elseif t2[k] ~= v then
+            return false
+        end
+    end
+
+    return true
+end
+
 local function GenerateLocales(localesFile)
     local tempLocals = {}
 
