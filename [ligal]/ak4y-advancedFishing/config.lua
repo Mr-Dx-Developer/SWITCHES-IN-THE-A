@@ -86,10 +86,10 @@ Config.fishBaits = { -- FISH BAITS AND FEED TYPES
 
 -- MUST START WITH TABLE 1 - TABLE 1 ACTUALLY POINTS TO LEVEL 2 FISHING ROD
 Config.upgradeRodPrices = { -- PRICE LIST FOR FISHING ROD UPGRADE
-    [1] = 1500, -- LEVEL 2 
-    [2] = 3000, -- LEVEL 3
-    [3] = 6000, -- LEVEL 4 
-    [4] = 12000, -- LEVEL 5
+    [1] = 15000, -- LEVEL 2 
+    [2] = 30000, -- LEVEL 3
+    [3] = 60000, -- LEVEL 4 
+    [4] = 120000, -- LEVEL 5
 }
 
 Config.fishMenuArea = { -- GO NEXT TO IT AND PRESS E TO OPEN THE /FISH MENU
@@ -180,9 +180,9 @@ Config.marketArea = { -- MARKET AREAS (BUYING AND SELLING)
 }
 
 Config.buyMarketItems = { -- LIST OF ITEMS SOLD IN THE FISH MARKET (BUY MENU)
-    {itemId = 1, itemName = "fishingrod1", itemLabel = "Fishingrod 1Lv.", itemPrice = 50, image = './css/imgs/fishingrod.png'},
-    {itemId = 2, itemName = "fishbait", itemLabel = "Fish Bait", itemPrice = 5, image = './css/imgs/fishbait.png'},
-    {itemId = 3, itemName = "illegalfishbait", itemLabel = "Illegal Fish Bait", itemPrice = 30, image = './css/imgs/illegalfishbait.png'},
+    {itemId = 1, itemName = "fishingrod1", itemLabel = "Fishingrod 1Lv.", itemPrice = 550, image = './css/imgs/fishingrod.png'},
+    {itemId = 2, itemName = "fishbait", itemLabel = "Fish Bait", itemPrice = 75, image = './css/imgs/fishbait.png'},
+    {itemId = 3, itemName = "illegalfishbait", itemLabel = "Illegal Fish Bait", itemPrice = 100, image = './css/imgs/illegalfishbait.png'},
 }
 
 Config.Zones = { -- FISHING AREAS
@@ -285,8 +285,8 @@ Config.Tasks = { -- TASKS APPEARING ON THE FISH MENU
         taskName = "40 Küçük Lüfer Yakala", -- NAME OF THE TASK AS IT APPEARS IN THE MENU
         itemName = "smallbluefish", -- ITEM OF TASK
         moneyRewards = 20000, -- TASK'S PRIZE MONEY
-        xpRewards = 500, -- TASK'S XP REWARD
-        requiredCount = 40, -- NUMBER OF FISH CATCHES REQUIRED TO COMPLETE THE TASK
+        xpRewards = 50, -- TASK'S XP REWARD
+        requiredCount = 140, -- NUMBER OF FISH CATCHES REQUIRED TO COMPLETE THE TASK
         taskDescription = "Görevi başarıyla tamamladıktan sonra ödülünüzü alın.",
     },
     {
@@ -294,8 +294,8 @@ Config.Tasks = { -- TASKS APPEARING ON THE FISH MENU
         taskName = "30 Lüfer Yakala", -- NAME OF THE TASK AS IT APPEARS IN THE MENU
         itemName = "bluefish", -- ITEM OF TASK
         moneyRewards = 30000, -- TASK'S PRIZE MONEY
-        xpRewards = 500, -- TASK'S XP REWARD
-        requiredCount = 30, -- NUMBER OF FISH CATCHES REQUIRED TO COMPLETE THE TASK
+        xpRewards = 100, -- TASK'S XP REWARD
+        requiredCount = 160, -- NUMBER OF FISH CATCHES REQUIRED TO COMPLETE THE TASK
         taskDescription = "Görevi başarıyla tamamladıktan sonra ödülünüzü alın.",
     },
     {
@@ -303,8 +303,8 @@ Config.Tasks = { -- TASKS APPEARING ON THE FISH MENU
         taskName = "20 Palamut Yakala", -- NAME OF THE TASK AS IT APPEARS IN THE MENU
         itemName = "bonitosfish", -- ITEM OF TASK
         moneyRewards = 40000, -- TASK'S PRIZE MONEY
-        xpRewards = 500, -- TASK'S XP REWARD
-        requiredCount = 20, -- NUMBER OF FISH CATCHES REQUIRED TO COMPLETE THE TASK
+        xpRewards = 150, -- TASK'S XP REWARD
+        requiredCount = 200, -- NUMBER OF FISH CATCHES REQUIRED TO COMPLETE THE TASK
         taskDescription = "Görevi başarıyla tamamladıktan sonra ödülünüzü alın.",
     },
     {
@@ -312,8 +312,8 @@ Config.Tasks = { -- TASKS APPEARING ON THE FISH MENU
         taskName = "15 Zargana Yakala", -- NAME OF THE TASK AS IT APPEARS IN THE MENU
         itemName = "garfish", -- ITEM OF TASK
         moneyRewards = 50000, -- TASK'S PRIZE MONEY
-        xpRewards = 500, -- TASK'S XP REWARD
-        requiredCount = 15, -- NUMBER OF FISH CATCHES REQUIRED TO COMPLETE THE TASK
+        xpRewards = 200, -- TASK'S XP REWARD
+        requiredCount = 215, -- NUMBER OF FISH CATCHES REQUIRED TO COMPLETE THE TASK
         taskDescription = "Görevi başarıyla tamamladıktan sonra ödülünüzü alın.",
     },
     {
@@ -321,17 +321,17 @@ Config.Tasks = { -- TASKS APPEARING ON THE FISH MENU
         taskName = "10 Levrek Yakala", -- NAME OF THE TASK AS IT APPEARS IN THE MENU
         itemName = "perch", -- ITEM OF TASK
         moneyRewards = 60000, -- TASK'S PRIZE MONEY
-        xpRewards = 500, -- TASK'S XP REWARD
-        requiredCount = 10, -- NUMBER OF FISH CATCHES REQUIRED TO COMPLETE THE TASK
+        xpRewards = 250, -- TASK'S XP REWARD
+        requiredCount = 250, -- NUMBER OF FISH CATCHES REQUIRED TO COMPLETE THE TASK
         taskDescription = "Görevi başarıyla tamamladıktan sonra ödülünüzü alın.",
     },
     {
         taskId = 6, -- TASK NUMBER (ALL TASKS MUST BE NUMBERED DIFFERENTLY AND SEQUENTIALLY)
         taskName = "20 Köpekbalığı Yakala", -- NAME OF THE TASK AS IT APPEARS IN THE MENU
         itemName = "sharkfish", -- ITEM OF TASK
-        moneyRewards = 75000, -- TASK'S PRIZE MONEY
+        moneyRewards = 175000, -- TASK'S PRIZE MONEY
         xpRewards = 500, -- TASK'S XP REWARD
-        requiredCount = 20, -- NUMBER OF FISH CATCHES REQUIRED TO COMPLETE THE TASK
+        requiredCount = 300, -- NUMBER OF FISH CATCHES REQUIRED TO COMPLETE THE TASK
         taskDescription = "Görevi başarıyla tamamladıktan sonra ödülünüzü alın.",
     },
 }

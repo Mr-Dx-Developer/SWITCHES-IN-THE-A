@@ -5,7 +5,7 @@ Config = {}
 --           /callmedic (when SelfRevive is set to true)
 --          /cancelmedic (to cancel the ambulance if it is on the way to you)
 
-Config.CallMedicCommand = 'emscall' -- Command to call the ambulance
+Config.CallMedicCommand = 'ems' -- Command to call the ambulance
 Config.CancelMedicCommand = 'emscancel' -- Command to cancel the ambulance if it is on the way to you
 
 -- Client Exports:
@@ -96,8 +96,8 @@ Config.JobToCheckAmountOnline = 1 -- If there is this amount of people online wi
 
 Config.PaymentType = 'bank'   -- 'cash' / 'bank'
 
-Config.ReviveCostSuccessfulSkillCheck  = 3000      -- How much it costs to be revived if you spawn back in the hospital (if AlwaysTakeToHosptial is set to true and you pass the minigame)
-Config.ReviveCostFailedSkillCheck  = 5000      -- How much it costs to be revived if you spawn back in the hospital (if you fail the minigame)  -- will default to this if you do not use skillcheck or if AlwaysTakeToHosptial is set to false
+Config.ReviveCostSuccessfulSkillCheck  = 300      -- How much it costs to be revived if you spawn back in the hospital (if AlwaysTakeToHosptial is set to true and you pass the minigame)
+Config.ReviveCostFailedSkillCheck  = 500      -- How much it costs to be revived if you spawn back in the hospital (if you fail the minigame)  -- will default to this if you do not use skillcheck or if AlwaysTakeToHosptial is set to false
 
 
 Config.CinematicMode = true -- Set to true if you want the camera to go into cinematic mode when you are being revived
@@ -111,7 +111,7 @@ Config.MiniGame = false -- Set to true if you want to use the minigame when you 
 Config.QBVehicleKeys = true -- Set to true if you want to use the QBVehicleKeys script to lock/unlock the ambulance
                              -- Set to false if you want to use the custom lock/unlock functions below
 
-Config.AlwaysTakeToHosptial = true -- Set to true if you want to always take the player to the closest hospital when they are revived
+Config.AlwaysTakeToHosptial = false -- Set to true if you want to always take the player to the closest hospital when they are revived
                                     -- Set to false if you want to take the player to be revived on the spot and free to walk away
 
 Config.DeleteAmbulanceTimer = 30 -- Time in seconds before the ambulance is deleted after the player has been revived
