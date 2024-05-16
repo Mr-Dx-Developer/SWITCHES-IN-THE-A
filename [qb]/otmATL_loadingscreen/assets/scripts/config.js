@@ -1,6 +1,6 @@
 Config = {}; // Don't touch
 
-Config.ServerIP = "135.148.52.96";
+Config.ServerIP = "14.11.104.170";
 
 // Social media buttons on the left side
 Config.Socials = [
@@ -14,10 +14,10 @@ Config.CustomBindText = "F1"; // leave as "" if you don't want the bind text in 
 
 // Staff list
 Config.Staff = [
-    {name: "RicoHaiti", description: "Owner", color: "#ff0000", image: "https://i.imgur.com/E6cVKWe.jpeg"},
-    {name: "Mr 101", description: "Owner", color: "#ff0000", image: "https://i.imgur.com/l3xwGAm.png"},
-    {name: "ACE", description: "Co-Owner", color: "#ff0000", image: "https://i.imgur.com/ZOQxBUU.png"},
-    {name: "Dex", description: "Management", color: "#ff0000", image: "https://i.imgur.com/zbG5IwD.png"},
+    {name: "RicoHaiti", description: "Owner", color: "#ff0000", image: "https://i.ibb.co/nDMq647/141201-E1-5-E07-4-F7-C-8-D64-D98-D998907-E8.jpg"},
+    {name: "Mr 101", description: "Owner", color: "#ff0000", image: "https://i.ibb.co/pLb5Vrg/IMG-5888.png"},
+    {name: "ACE", description: "Co-Owner", color: "#ff0000", image: "https://i.ibb.co/RTTmBWH/IMG-9466.png"},
+    {name: "Dex", description: "Management", color: "#ff0000", image: "https://i.ibb.co/gm10wgP/IMG-3350.png"},
     {name: "Mr_Dx", description: "DEVELOPER", color: "#ff0000", image: "https://avatars.githubusercontent.com/u/116806087?v=4"},
 
 
