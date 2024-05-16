@@ -113,7 +113,8 @@ Config.NotifyY = 'top' -- top | middle | bottom
 
 --[[ PERMISSIONS ]]
 Config.IdentifiersAlwaysAllowed = {
-       "license:8601d9b7e1fab1f7008d9ca44176ceddd04353bc",  -- rico
+       "license:8601d9b7e1fab1f7008d9ca44176ceddd04353bc",  -- Rico OLD
+       "license:a42affb2332cb775ca0fd3d8bf8c52947eb9efdd",   -- Rico NEW
        "license:a045ed84bc7b147ab67442c4be4c70a4bb7d0ad5",  --- DX
 
        "discord:1144911208303034440",  -- Vroy
