@@ -32,11 +32,11 @@ function WSB.getAllJobs()
     local jobs = ESX and ESX.Jobs or nil
     local returnTb = {}
     if not jobs or #jobs < 1 then return end
-    for k,v in pairs(jobs) do
+    for k, v in pairs(jobs) do
         returnTb[k] = { label = v.label }
-        for a,b in pairs(v.grades) do
+        for a, b in pairs(v.grades) do
             if not returnTb[k].grades then returnTb[k].grades = {} end
-            
+
             returnTb[k].grades[a] = {
                 payment = b and b.salary or nil,
                 name = b.name,
@@ -127,7 +127,7 @@ function WSB.toggleDuty(source, job, grade)
         player.setJob(onDuty, grade)
         return 'on'
     else
-        player.setJob('off'..job, grade)
+        player.setJob('off' .. job, grade)
         return 'off'
     end
 end
@@ -158,14 +158,15 @@ function WSB.hasItem(source, _item)
     local player = WSB.getPlayer(source)
     if not player then return end
     local item = player.getInventoryItem(_item)
-    return item?.count or 0
+    return item?.amount or item?.count or 0
 end
 
 function WSB.addItem(source, item, count, slot, metadata)
     local player = WSB.getPlayer(source)
     if not player then return end
     if metadata and not WSB.inventory then
-        print('^0[^3WARNING^0] wasabi_bridge has had an item passed with metadata but did not detect your inventory! Issues may occur!')
+        print(
+        '^0[^3WARNING^0] wasabi_bridge has had an item passed with metadata but did not detect your inventory! Issues may occur!')
     end
     return player.addInventoryItem(item, count, metadata, slot)
 end
@@ -220,9 +221,9 @@ function WSB.revokeLicense(source, license)
     local identifier = WSB.getIdentifier(source)
     if not identifier then return false end
     local revoked = ''
-	MySQL.update('DELETE FROM user_licenses WHERE type = ? AND owner = ?', {license, identifier}, function(rowsChanged)
-		revoked = rowsChanged
-	end)
+    MySQL.update('DELETE FROM user_licenses WHERE type = ? AND owner = ?', { license, identifier }, function(rowsChanged)
+        revoked = rowsChanged
+    end)
     while revoked == '' do Wait(100) end
     return revoked
 end
@@ -273,7 +274,7 @@ function WSB.getVehicleOwner(plate)
                 ['@identifier'] = identifier
             }, function(result2)
                 if result2[1] then
-                    owner = result2[1].firstname..' '..result2[1].lastname
+                    owner = result2[1].firstname .. ' ' .. result2[1].lastname
                 else
                     owner = false
                 end

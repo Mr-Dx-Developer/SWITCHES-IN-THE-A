@@ -7,7 +7,7 @@ lua54 'yes'
 
 description 'A library of functions used to ease the bridge between Wasabi Scripts'
 author 'wasabirobby'
-version '1.2.0'
+version '1.2.1'
 
 shared_script 'config.lua'
 
