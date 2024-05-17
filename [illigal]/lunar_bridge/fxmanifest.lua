@@ -5,7 +5,7 @@ lua54 'yes'
 
 author 'Lunar Scripts'
 description 'Bridge module'
-version '1.2.3'
+version '1.2.5'
 
 -- What to run
 escrow_ignore {
@@ -20,6 +20,8 @@ files {
     'framework/**/*.lua',
     'web/**/*'
 }
+
+ui_page 'web/index.html'
 
 shared_scripts {
     '@ox_lib/init.lua',

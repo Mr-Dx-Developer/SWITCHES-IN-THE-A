@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 * {
   box-sizing: border-box;
   margin: 0px;
   padding: 0px;
-  font-family: 'Inter', sans-serif;
   color: #e3e6ec;
   font-weight: bold;
 }
@@ -17,6 +17,10 @@ body {
   overflow: hidden;
   width: 100%;
   height: 100%;
+  /* background: black; */
+  font-family: 'Inter', sans-serif;
+  /* background: url('https://media.discordapp.net/attachments/793081015433560075/1229132869801218223/image_37.png?ex=662e9230&is=661c1d30&hm=7b114523633412a8ed1e39a773821bf56d5edf9390fcb2e75fa0eaf24cad8288&=&format=webp&quality=lossless&width=1193&height=671'), url('https://cdn.discordapp.com/attachments/793081015433560075/1225471215829909504/image.png?ex=66214002&is=660ecb02&hm=d90a10b15c47391ef7a16a168835cd6888cee5b75d27d8a6c78651cfd15bcfd7&'); */
+  /* background: url('https://cdn.discordapp.com/attachments/793081015433560075/1225471215829909504/image.png?ex=66214002&is=660ecb02&hm=d90a10b15c47391ef7a16a168835cd6888cee5b75d27d8a6c78651cfd15bcfd7&'); */
 }
 
 #prompt {
@@ -80,4 +84,52 @@ i {
   height: 40px;
   transition: all 0.4s;
   color: #cfd2da;
+}
+
+#objective {
+  position: absolute;
+  top: 45.0%;
+  left: 20px;
+  width: 250px;
+  border-radius: 10px;
+  opacity: 1.0;
+  transition: all linear 300ms;
+  font-family: 'Poppins';
+}
+
+#objective .hidden {
+  opacity: 0.0;
+  transition: all linear 300ms;
+}
+
+#objective .title {
+  font-weight: 600;
+  font-size: 24px;
+  text-align: center;
+  background: linear-gradient(180deg, #cfcfff 0%, #A0A0FF 80%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0px 0px 10px #5b5baaa1) drop-shadow(0px 0px 5px #9e9effa1) drop-shadow(0px 0px 5px #1d1d2db9) ; /* Darker and more opaque */
+}
+
+#objective .separator {
+  border: solid 1px #A0A0FF;
+  box-shadow: 0px 0px 7px 5px #6565cda1; /* Adjusted to match the title's visibility */
+  margin: 11px 30px;
+  margin-bottom: 22px;
+}
+
+#objective .content {
+  text-align: center;
+  font-weight: 500;
+  font-size: 14px;
+  white-space: break-spaces;
+  width: 250px;
+  padding: 10px 8px;
+  line-height: 28px;
+  color: #ffffffe6;
+  background: rgba(150, 150, 150, 0.352);
+  border: solid rgba(181, 181, 181, 0.356) 1px;
+  border-radius: 6px;
 }

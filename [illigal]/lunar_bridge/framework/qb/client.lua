@@ -50,8 +50,13 @@ function Framework.spawnLocalVehicle(model, coords, heading, cb)
 end
 
 Framework.getIdentifier = function()
-    local playerData = sharedObject.GetPlayerData()
+    local playerData = sharedObject.Functions.GetPlayerData()
     return playerData.citizenid
+end
+
+Framework.getCharacterName = function()
+    local playerData = sharedObject.Functions.GetPlayerData()
+    return playerData.charinfo.firstname .. ' ' .. playerData.charinfo.lastname
 end
 
 Framework.deleteVehicle = sharedObject.Functions.DeleteVehicle

@@ -69,6 +69,11 @@ Framework.getIdentifier = function()
     return playerData.identifier
 end
 
+Framework.getCharacterName = function()
+    local playerData = sharedObject.GetPlayerData()
+    return playerData.firstName .. ' ' .. playerData.lastName
+end
+
 Framework.getInventory = function()
     return sharedObject.GetPlayerData().inventory
 end

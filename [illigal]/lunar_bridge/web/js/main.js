@@ -113,4 +113,12 @@ window.addEventListener('message', ({ data }) => {
             options.replaceChildren();
         }, 100);
     }
+    else if (data.action === 'show_objective') {
+        document.getElementById('objective').classList.remove('hidden');
+        document.getElementsByClassName('title')[0].textContent = data.title;
+        document.getElementsByClassName('content')[0].textContent = data.content;
+    }
+    else if (data.action === 'hide_objective') {
+        document.getElementById('objective').classList.add('hidden');
+    }
 });

@@ -43,3 +43,19 @@ end
 function CancelProgress()
     lib.cancelProgress()
 end
+
+---@param title string
+---@param content string
+function ShowObjective(title, content)
+    SendNUIMessage({
+        action = 'show_objective',
+        title = title,
+        content = content
+    })
+end
+
+function HideObjective()
+    SendNUIMessage({
+        action = 'hide_objective'
+    })
+end
