@@ -245,6 +245,16 @@ Config.Drugs = {
         RequiredAmount = 1,
         DenyChance = 0
     },
+
+
+
+    [34] = {
+        Label = 'Jack Runtz',
+        Item = 'jack_runtz',
+        Price = 3200, 
+        RequiredAmount = 1,
+        DenyChance = 0
+    },
     
     
 }
