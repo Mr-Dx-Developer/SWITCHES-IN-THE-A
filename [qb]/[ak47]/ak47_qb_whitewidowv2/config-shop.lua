@@ -134,7 +134,7 @@ Config.Shop = {
                     reward = 1,
                 }
             },
-            jefe = {                        -- The item ID
+            --[[ jefe = {                        -- The item ID
                 name = "Jefe",              -- The item display name
                 page = 1,                    -- Set on which page this item will appear
                 process = {
@@ -145,7 +145,7 @@ Config.Shop = {
                     processTime = 10000,
                     reward = 1,
                 }
-            },
+            }, ]]
             white_runtz = {                 -- The item ID
                 name = "White Runtz",       -- The item display name
                 page = 1,                    -- Set on which page this item will appear
@@ -194,7 +194,7 @@ Config.Shop = {
                     reward = 1,
                 }
             },
-            fine_china = {                    -- The item ID
+            --[[ fine_china = {                    -- The item ID
                 name = "Fine China",          -- The item display name
                 page = 1,                    -- Set on which page this item will appear
                 process = {
@@ -205,7 +205,7 @@ Config.Shop = {
                     processTime = 10000,
                     reward = 1,
                 }
-            },
+            }, ]]
             pink_sandy = {                    -- The item ID
                 name = "Oink Sandy",          -- The item display name
                 page = 1,                    -- Set on which page this item will appear
@@ -290,7 +290,7 @@ Config.Shop = {
                     reward = 1,
                 }
             },
-            pirckly_pear = {                    -- The item ID
+            --[[ pirckly_pear = {                    -- The item ID
                 name = "Pirckly Pear",          -- The item display name
                 page = 1,                    -- Set on which page this item will appear
                 process = {
@@ -301,7 +301,7 @@ Config.Shop = {
                     processTime = 10000,
                     reward = 1,
                 }
-            },
+            }, ]]
             runtz_og = {                    -- The item ID
                 name = "Runtz OG",          -- The item display name
                 page = 1,                    -- Set on which page this item will appear
@@ -386,7 +386,7 @@ Config.Shop = {
                     reward = 1,
                 }
             },
-            la_confidential = {                    -- The item ID
+            --[[ la_confidential = {                    -- The item ID
                 name = "LA Confidential",          -- The item display name
                 page = 1,                    -- Set on which page this item will appear
                 process = {
@@ -409,7 +409,7 @@ Config.Shop = {
                     processTime = 10000,
                     reward = 1,
                 }
-            },
+            }, ]]
             moon_rock = {                    -- The item ID
                 name = "Moon Rock",          -- The item display name
                 page = 1,                    -- Set on which page this item will appear
