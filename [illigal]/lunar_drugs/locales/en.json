@@ -1,6 +1,6 @@
 {
-    "laboratory_prompt": "[%s] - Laboratory",
-    "exit_prompt": "[%s] - Exit",
+    "laboratory_prompt": "Laboratory",
+    "exit_prompt": "Exit",
     "cancel_prompt": "[%s] - Cancel",
     "not_in_city": "You can't sell here!",
     "nothing_sell": "You have nothing to sell!",

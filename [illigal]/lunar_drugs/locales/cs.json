@@ -1,6 +1,6 @@
 {
-    "laboratory_prompt": "[%s] - Laboratoř",
-    "exit_prompt": "[%s] - Odejít",
+    "laboratory_prompt": "Laboratoř",
+    "exit_prompt": "Odejít",
     "cancel_prompt": "[%s] - Přerušit",
     "not_in_city": "Zde nemůžeš prodávat!",
     "nothing_sell": "Nemáš nic na prodej!",

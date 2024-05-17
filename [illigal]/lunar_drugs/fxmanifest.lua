@@ -5,7 +5,7 @@ lua54 'yes'
 
 author 'Lunar Scripts'
 description 'Advanced drug system'
-version '1.2.3'
+version '1.3.1'
 
 -- What to run
 escrow_ignore {
