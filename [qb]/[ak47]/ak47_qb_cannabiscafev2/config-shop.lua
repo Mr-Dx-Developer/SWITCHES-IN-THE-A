@@ -132,7 +132,7 @@ Config.Shop = {
                 }
             },
             jefe = {                        -- The item ID
-                name = "Jefe",              -- The item display name
+                name = "Truffle Scotti",              -- The item display name
                 page = 1,                    -- Set on which page this item will appear
                 process = {
                     required = {
@@ -192,7 +192,7 @@ Config.Shop = {
                 }
             },
             fine_china = {                    -- The item ID
-                name = "Fine China",          -- The item display name
+                name = "7 Cities Gumbo",          -- The item display name
                 page = 1,                    -- Set on which page this item will appear
                 process = {
                     required = {
@@ -288,7 +288,7 @@ Config.Shop = {
                 }
             },
             pirckly_pear = {                    -- The item ID
-                name = "Pirckly Pear",          -- The item display name
+                name = "Nicki Gumbo",          -- The item display name
                 page = 1,                    -- Set on which page this item will appear
                 process = {
                     required = {
@@ -384,7 +384,7 @@ Config.Shop = {
                 }
             },
             la_confidential = {                    -- The item ID
-                name = "LA Confidential",          -- The item display name
+                name = "Obama Runtz",          -- The item display name
                 page = 1,                    -- Set on which page this item will appear
                 process = {
                     required = {
@@ -396,7 +396,7 @@ Config.Shop = {
                 }
             },
             marshmallow_og = {                    -- The item ID
-                name = "Marshmallow OG",          -- The item display name
+                name = "MoneyBag Runtz",          -- The item display name
                 page = 1,                    -- Set on which page this item will appear
                 process = {
                     required = {
