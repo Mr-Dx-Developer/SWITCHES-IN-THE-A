@@ -663,7 +663,7 @@ local drawables = {
 	},
 	["Shoes"] = {
 		Drawable = 6,
-		Table = {Standalone = true, male = 34, female = 35},
+		Table = {Standalone = true, male = 135, female = 135},
 		Emote = {Dict = "random@domestic", Anim = "pickup_low", Move = 0, Dur = 1200}
 	},
 	["Neck"] = {
@@ -698,7 +698,7 @@ local Extras = {
 	["Shirt"] = {
 		Drawable = 11,
 		Table = {
-			Standalone = true, male = 252, female = 74,
+			Standalone = true, male = 15, female = 15,
 			Extra = {
 				{Drawable = 8, Id = 15, Tex = 0, Name = "Extra Undershirt"},
 				{Drawable = 3, Id = 15, Tex = 0, Name = "Extra Gloves"},
@@ -709,7 +709,7 @@ local Extras = {
 	},
 	["Pants"] = {
 		Drawable = 4,
-		Table = {Standalone = true, male = 61, female = 14},
+		Table = {Standalone = true, male = 133, female = 133},
 		Emote = {Dict = "re@construction", Anim = "out_of_breath", Move = 51, Dur = 1300}
 	},
 	["Bagoff"] = {
