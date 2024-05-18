@@ -469,7 +469,7 @@ Config.Shop = {
                 page = 2                    -- Set on which page this item will appear
             },
             jefe_joint = {                        -- The item ID
-                name = "Jefe Joint",              -- The item display name
+                name = "Truffle Scotti Joint",              -- The item display name
                 page = 2                    -- Set on which page this item will appear
             },
             white_runtz_joint = {                 -- The item ID
@@ -489,7 +489,7 @@ Config.Shop = {
                 page = 2                    -- Set on which page this item will appear
             },
             fine_china_joint = {                    -- The item ID
-                name = "Fine China Joint",          -- The item display name
+                name = "7 Cities Gumbo Joint",          -- The item display name
                 page = 2                    -- Set on which page this item will appear
             },
             pink_sandy_joint = {                    -- The item ID
@@ -521,7 +521,7 @@ Config.Shop = {
                 page = 2                    -- Set on which page this item will appear
             },
             pirckly_pear_joint = {                    -- The item ID
-                name = "Pirckly Pear Joint",          -- The item display name
+                name = "Nicki Gumbo Joint",          -- The item display name
                 page = 2                    -- Set on which page this item will appear
             },
             runtz_og_joint = {                    -- The item ID
@@ -553,11 +553,11 @@ Config.Shop = {
                 page = 2                    -- Set on which page this item will appear
             },
             la_confidential_joint = {                    -- The item ID
-                name = "LA Confidential Joint",          -- The item display name
+                name = "Obama Runtz Joint",          -- The item display name
                 page = 2                    -- Set on which page this item will appear
             },
             marshmallow_og_joint = {                    -- The item ID
-                name = "Marshmallow OG Joint",          -- The item display name
+                name = "MoneyBag Runtz Joint",          -- The item display name
                 page = 2                    -- Set on which page this item will appear
             },
             moon_rock_joint = {                    -- The item ID
