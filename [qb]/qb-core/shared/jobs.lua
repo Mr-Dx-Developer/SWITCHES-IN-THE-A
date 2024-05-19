@@ -396,6 +396,18 @@ QBShared.Jobs = {
 			['4'] = { name = 'Manager', isboss = true, payment = 650 },
 		},
 	},
+	pdm = {
+		label = 'PDM Dealer',
+		defaultDuty = true,
+		offDutyPay = false,
+		grades = {
+			['0'] = { name = 'Recruit', payment = 250 },
+			['1'] = { name = 'Showroom Sales', payment = 350 },
+			['2'] = { name = 'Business Sales', payment = 450 },
+			['3'] = { name = 'Finance', payment = 550 },
+			['4'] = { name = 'Manager', isboss = true, payment = 650 },
+		},
+	},
 	mechanic = {
 		label = 'LS Customs',
 		type = 'mechanic',

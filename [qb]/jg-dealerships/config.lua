@@ -68,7 +68,7 @@ Config.Categories = {
 
 Config.DealershipLocations = {
   ["pdm"] = {
-    type = "self-service", -- or "owned", "self-service"
+    type = "owned", -- or "owned", "self-service"
     openShowroom = vector3(-37.64, -1088.28, 26.44),
     openManagement = vector3(-30.8, -1117.12, 26.44),
     purchaseSpawn = vector4(-13.68, -1092.31, 26.67, 159.82),
@@ -97,7 +97,7 @@ Config.DealershipLocations = {
     societyPurchaseJobWhitelist = {},
     societyPurchaseGangWhitelist = {},
     disableShowroomPurchase = false,
-    job = "cardealer", -- Owned dealerships only
+    job = "pdm", -- Owned dealerships only
     directSaleDistance = 50,
   },
   ["luxury"] = {
