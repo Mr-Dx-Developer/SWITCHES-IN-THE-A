@@ -5485,9 +5485,9 @@ Config.Products = {
     },
 
     --- New 
-    ["247supermarketn1"] = {
+    ["247supermarketn1"] = {             ---- legion
         ["label"] = "24/7 Supermarket",
-        ["coords"] = vector4(240.1431, -897.5628, 29.6232, 153.8666),
+        ["coords"] = vector4(188.87472534179688, -888.7780151367188, 30.7120361328125, 252.28346252441406),
         ["ped"] = 'mp_m_shopkeep_01',
         ["scenario"] = "WORLD_HUMAN_STAND_MOBILE",
         ["radius"] = 1.5,
@@ -5498,7 +5498,7 @@ Config.Products = {
         ["blipsprite"] = 52,
         ["blipscale"] = 0.6,
         ["blipcolor"] = 0,
-        ["delivery"] = vector4(240.1431, -897.5628, 29.6232, 153.8666)
+        ["delivery"] = vector4(188.87472534179688, -888.7780151367188, 30.7120361328125, 252.28346252441406)
     },
      --[[ Removed. Rockstar and FiveM Terms of services changed. can't use real life brands
     ["mcdonalds"] = {
