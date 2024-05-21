@@ -8,7 +8,7 @@ QBCore.Commands.Add('id', 'Check Your ID #', {}, false, function(source)
     TriggerClientEvent('QBCore:Notify', source, 'ID: ' .. source)
 end)
 
-QBCore.Functions.CreateUseableItem('harness', function(source, item)
+--[[ QBCore.Functions.CreateUseableItem('harness', function(source, item)
     TriggerClientEvent('seatbelt:client:UseHarness', source, item)
 end)
 
@@ -42,7 +42,7 @@ RegisterNetEvent('seatbelt:DoHarnessDamage', function(hp, data)
         Player.PlayerData.items[data.slot].info.uses -= 1
         Player.Functions.SetInventory(Player.PlayerData.items)
     end
-end)
+end) ]]
 
 RegisterNetEvent('qb-carwash:server:washCar', function()
     local src = source

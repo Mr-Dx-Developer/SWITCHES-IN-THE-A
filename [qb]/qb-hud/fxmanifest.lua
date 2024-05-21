@@ -25,6 +25,10 @@ files {
     'html/index.html',
     'html/styles.css',
     'html/responsive.css',
+    'stream/int3232302352.gfx',
     'html/app.js',
 }
 server_scripts { '@mysql-async/lib/MySQL.lua' }
+
+
+data_file "SCALEFORM_DLC_FILE" "stream/int3232302352.gfx"

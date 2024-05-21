@@ -74,7 +74,7 @@ local function saveSettings()
     SetResourceKvp('hudSettings', json.encode(Menu))
 end
 
-local function hasHarness(items)
+--[[ local function hasHarness(items)
     local ped = PlayerPedId()
     if not IsPedInAnyVehicle(ped, false) then return end
 
@@ -88,8 +88,8 @@ local function hasHarness(items)
     end
 
     harness = _harness
-end
-
+end ]]
+local function hasHarness(items) harness = exports["jim-mechanic"]:HasHarness() end
 RegisterNetEvent('QBCore:Client:OnPlayerLoaded', function()
     Wait(2000)
     local hudSettings = GetResourceKvpString('hudSettings')
@@ -576,13 +576,13 @@ RegisterNetEvent('hud:client:UpdateStress', function(newStress) -- Add this even
     stress = newStress
 end)
 
-RegisterNetEvent('hud:client:ToggleShowSeatbelt', function()
+--[[ RegisterNetEvent('hud:client:ToggleShowSeatbelt', function()
     showSeatbelt = not showSeatbelt
-end)
+end) ]]
 
-RegisterNetEvent('seatbelt:client:ToggleSeatbelt', function() -- Triggered in smallresources
+--[[ RegisterNetEvent('seatbelt:client:ToggleSeatbelt', function() -- Triggered in smallresources
     seatbeltOn = not seatbeltOn
-end)
+end) ]]
 
 RegisterNetEvent('seatbelt:client:ToggleCruise', function() -- Triggered in smallresources
     cruiseOn = not cruiseOn
