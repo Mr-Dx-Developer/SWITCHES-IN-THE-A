@@ -62,6 +62,24 @@ Config.Elevators = {
             },
         }
     },
+    ["new"] = {
+        Name = "Without Sound & Restricted Floor",
+        Floors = {
+            [1] = {
+                Label = "Lift 1",
+                FloorDesc = "Lift 1",
+                Coords = vector3(-1992.57, -228.5, 34.92),
+                ExitHeading = "325"
+            },
+            [2] = {
+                Label = "Lift 2",
+                FloorDesc = "Lift 2",
+                Coords = vector3(-1982.99, -223.8, 84.96),
+                ExitHeading = "325"
+            },
+            
+        }
+    },
     
 }
 
