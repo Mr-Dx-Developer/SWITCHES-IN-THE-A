@@ -53,6 +53,10 @@ Config.BossMenus = {
     ['famgooncustoms'] = {
         vector3(-574.71, -937.34, 23.88),
     },
+
+    ['popeyes'] = {
+        vector3(1297.6614990234375, -753.89013671875, 65.79345703125),
+    },
     
     
 }
@@ -104,6 +108,10 @@ Config.BossMenuZones = {
     },
     ['famgooncustoms'] = {
         { coords = vector3(-574.71, -937.34, 23.88), length = 1.15, width = 2.6, heading = 0.0, minZ = 23.02, maxZ = 24.02 },
+    },
+
+    ['popeyes'] = {
+        { coords = vector3(1297.6614990234375, -753.89013671875, 65.79345703125), length = 1.15, width = 2.6, heading = 0.0, minZ = 327.02, maxZ = 329.02 },
     },
 }
 
