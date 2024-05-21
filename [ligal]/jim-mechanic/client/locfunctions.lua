@@ -18,7 +18,7 @@ onPlayerLoaded(function()
 		end
 		onDuty = false
 	end
-	Wait(3000)
+	Wait(5000)
 	makeLocs()
 end)
 
@@ -60,6 +60,7 @@ function makeLocs()
 	if loc.Enabled then
 	--Zone Creation
 		Config.Locations[k].designatedName = "MechZone-"..k.."-"..loc.job
+		local bossroles = makeBossRoles(loc.job or loc.gang)
 		createPoly({
 			points = loc.zones,
 			name = Config.Locations[k].designatedName,
@@ -129,11 +130,10 @@ function makeLocs()
 				if loc.payments then
 					for l, b in pairs(loc.payments) do local name = "MechReceipt: "..k..l
 						if l ~= "img" then
-							local bossroles = makeBossRoles(loc.job or loc.gang)
 							local options = {
 								{ action = function() TriggerEvent("jim-payments:client:Charge", { job = loc.job, img = loc.payments.img }) end, icon = "fas fa-credit-card", label = Loc[Config.Lan]["payments"].charge, job = loc.job, },
 								(Config.General.showClockInTill and { action = function() toggleDuty() end, job = loc.job, gang = loc.gang, icon = "fas fa-user-check", label = "Duty Toggle", } or nil),
-								(Config.General.showBossMenuTill and { action = function() TriggerEvent("qb-bossmenu:client:OpenMenu") end, job = bossroles, gang = bossroles, icon = "fas fa-list", label = "Open Bossmenu", } or nil),
+								(Config.General.showBossMenuTill and { action = function() TriggerEvent("qb-bossmenu:client:OpenMenu") end, job = loc.job and bossroles, gang = loc.gang and bossroles, icon = "fas fa-list", label = "Open Bossmenu", } or nil),
 							}
 							if b.prop then
 								Prop[name] = makeProp({prop = "prop_till_03", coords = vec4(b.coords.x, b.coords.y, b.coords.z+1.03, b.coords.w+180.0)}, 1, false)
@@ -171,42 +171,21 @@ function makeLocs()
 				if loc.clockin then
 					for l, b in pairs(loc.clockin) do local name = "MechClock: "..k..l
 						if type(b) ~= "boolean" then
-							local bossrole = {}
 							if loc.job then
 								if Jobs and not Jobs[loc.job] then print("^5Debug^7: ^1Can't find the job ^7'^6"..loc.job.."^7' ^1in the core shared files^7") else
-									bossrole = makeBossRoles(loc.job)
 									local options = {
 										{ action = function() toggleDuty() end, icon = "fas fa-clipboard", label = "Duty Toggle", job = loc.job },
-										{ action = function() TriggerEvent("qb-bossmenu:client:OpenMenu") end, icon = "fas fa-list", label = "Open Bossmenu", job = bossrole, },
+										{ action = function() TriggerEvent("qb-bossmenu:client:OpenMenu") end, icon = "fas fa-list", label = "Open Bossmenu", job = loc.job and bossroles, gang = loc.gang and bossroles, },
 									}
 									if b.prop then
 										Prop[name] = makeProp({prop = "prop_laptop_01a", coords = vec4(b.coords.x, b.coords.y, b.coords.z+1.03, b.coords.w+180.0)}, 1, false)
 										createEntityTarget(Prop[name], options, 2.0)
 									else
-
 										Targets[name] =
-										exports['qb-target']:AddBoxZone(name, b.coords.xyz, (b.w or 0.45), (b.d or 0.4), { name=name, heading = b.coords.w, debugPoly=Config.System.Debug, minZ=b.coords.z-0.1, maxZ=b.coords.z+0.4 },
-											{ options = options, distance = 2.0 })
+										createBoxTarget({name, b.coords.xyz, (b.w or 0.45), (b.d or 0.4), { name=name, heading = b.coords.w, debugPoly=Config.System.Debug, minZ=b.coords.z-0.1, maxZ=b.coords.z+0.4 }}, options, 2.0)
 									end
 								end
 							end
-						end
-					end
-				end
-
-				--Manual Repair Bench
-				if loc.manualRepair then
-					for l, b in pairs(loc.manualRepair) do local name = "RepairBench: "..k..l
-						local options = {
-							{ action = function() TriggerEvent("jim-mechanic:client:Manual:Menu", { society = loc.job }) end, icon = "fas fa-cogs", label = Loc[Config.Lan]["police"].userepair, },
-						}
-						if b.prop then
-							Prop[name] = makeProp({coords = vec4(b.coords.x, b.coords.y, b.coords.z-1.37, b.coords.w), prop = "gr_prop_gr_bench_03a"}, 1, 0)
-							createEntityTarget(Prop[name], options, 5.0 )
-						else
-							Targets[name] =
-							createBoxTarget({name, vec3(b.coords.x, b.coords.y, b.coords.z-1), (b.w or 1.2), (b.d or 4.2), { name=name, heading = b.coords.w, debugPoly=Config.System.Debug, minZ=b.coords.z-1, maxZ=b.coords.z+0.4 },},
-								options, 5.0 )
 						end
 					end
 				end
@@ -354,11 +333,36 @@ function makeLocs()
 			end,
 			debug = Config.System.Debug
 		})
+		--Manual Repair Bench
+		if loc.manualRepair then
+			for l, b in pairs(loc.manualRepair) do local name = "RepairBench: "..k..l
+				local options = {
+					{ action = function() TriggerEvent("jim-mechanic:client:Manual:Menu", { society = loc.job }) end, icon = "fas fa-cogs", label = Loc[Config.Lan]["police"].userepair, },
+				}
+				if b.prop then
+					Prop[name] = makeProp({coords = vec4(b.coords.x, b.coords.y, b.coords.z-1.37, b.coords.w), prop = type(b.prop) == "boolean" and "gr_prop_gr_bench_03a" or b.prop}, 1, 0)
+					createEntityTarget(Prop[name], options, 5.0 )
+				else
+					Targets[name] =
+					createBoxTarget({name, vec3(b.coords.x, b.coords.y, b.coords.z-1), (b.w or 1.2), (b.d or 4.2), { name=name, heading = b.coords.w, debugPoly=Config.System.Debug, minZ=b.coords.z-1, maxZ=b.coords.z+0.4 },},
+						options, 5.0 )
+				end
+			end
+		end
 		--Blip Creation
 		if loc.blip then
 			local blip = loc.blip
 			if Config.Main.LocationBlips then
-				makeBlip({ coords = blip.coords, sprite = blip.sprite or 446, col = blip.color, scale = blip.scale, disp = blip.disp, category = blip.cat, name = blip.label })
+				makeBlip({
+					coords = blip.coords,
+					sprite = blip.sprite or 446,
+					col = blip.color,
+					scale = blip.scale,
+					disp = blip.disp,
+					category = blip.cat,
+					name = blip.label,
+					preview = (blip.previewImg and blip.previewImg) or (loc.payments.img and loc.payments.img) or nil,
+				})
 			end
 		end
 		if loc.garage then TriggerServerEvent("jim-jobgarage:server:syncAddLocations", { job = loc.job, garage = loc.garage }) end
@@ -432,7 +436,7 @@ RegisterNetEvent('jim-mechanic:client:NosRefill', function(data) local Ped = Pla
 			cash = Config.NOS.NosRefillCharge
 		end
 	else
-		cash = triggerCallback('jim-mechanic:checkCash')
+		cash = getPlayer().Cash
 	end
 	if cash >= Config.NOS.NosRefillCharge then
 		refilling = true

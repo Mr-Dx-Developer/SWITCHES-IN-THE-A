@@ -33,7 +33,7 @@ RegisterNetEvent('jim-mechanic:client:Manual:Menu', function(data) local Ped = P
 	end
 
 	if GetPedInVehicleSeat(vehicle, -1) ~= Ped then return end
-	local cash = triggerCallback('jim-mechanic:checkCash')
+	local cash = getPlayer().cash
 
 	local headertxt =
 		"Class: "..searchCar(vehicle).class..br..(isOx() and br or "")..

@@ -1,32 +1,1056 @@
-<html>
-  <head>
-    <script src="nui://game/ui/jquery.js" type="text/javascript"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/npm/quasar@2.1.0/dist/quasar.prod.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-    <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.prod.js" defer ></script>
-    <script src="https://cdn.jsdelivr.net/npm/quasar@2.1.0/dist/quasar.umd.prod.js" defer ></script>
-    <script src="drawtext.js" ></script>
-    <link rel="stylesheet" href="drawtext.css">
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.1/howler.min.js" type="text/javascript"></script>
-    <script>
-      let audioPlayer = null;
-      window.addEventListener('message', function (event) {
+
+    <style>
+        @font-face {
+            font-family: 'DigitalFont';
+            src: url('img/DIGITALDREAMFATNARROW.ttf') format('truetype');
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        #hud, #speedometer {
+            position: absolute;
+            display: none;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 5px;
+            align-items: center;
+            justify-content: space-between;
+            opacity: 0;
+        }
+        .canvas-container {
+            position: relative;
+            margin-right: 1px;
+            z-index: 0;
+            flex-direction: row-reverse;
+        }
+        .canvas-text {
+            position: absolute;
+            width: 100%;
+            text-align: left;
+            z-index: 1;
+        }
+        .marker, .marker-high {
+            position: absolute;
+            width: 2px;
+            height: 10px;
+            background-color: white;
+        }
+        .smaller-marker {
+            width: 2px;
+            height: 5px;
+        }
+        .speed-number {
+            position: absolute;
+            color: white;
+        }
+        .number-container {
+            position: absolute;
+            top: 84%;
+            left: 50%;
+            transform-origin: 0px -4.9vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #speedometer-needle {
+            position: absolute;
+            z-index: 10;
+            bottom: 50%;
+            left: 50%;
+            height: 40%;
+            transform-origin: 50% 100%;
+            transform: rotate(-135deg);
+        }
+
+        #fuel-meter {
+            left: 4.3vh;
+            position: absolute;
+        }
+        #fuel-needle {
+            position: absolute;
+            z-index: 10;
+            bottom: 50%;
+            left: 50%;
+            height: 40%;
+            transform-origin: 50% 100%;
+            transform: rotate(-135deg);
+        }
+        .fuelmeterCanvas {
+            position: absolute;
+            z-index: 0;
+        }
+
+        #rpm-meter {
+            position: absolute;
+            left: 4.3vh;
+        }
+        #rpm-needle {
+            position: absolute;
+            z-index: 10;
+            bottom: 50%;
+            left: 50%;
+            height: 40%;
+            transform-origin: 50% 100%;
+            transform: rotate(-135deg);
+        }
+
+        #gear-display {
+            position: absolute;
+            bottom: 15%;
+            left: 18%;
+            color: white;
+            text-align: center;
+            width: 3em;
+        }
+        #speed-display {
+            position: absolute;
+            font-size: 1.1vh;
+            color: white;
+            text-align: center;
+            width: 3em;
+        }
+
+        #speedArc, #fuelArc, #rpmArc {
+            margin-left: -0.34vh;
+            margin-top: -0.15vh;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="speedometer" style="opacity: 0; display: none;">
+        <canvas id="speedArc" width="300" height="300"></canvas>
+            <div id="fuel-meter">
+            <canvas id="fuelArc" width="300" height="300"></canvas>
+            <div id="fuel-needle"></div>
+            <canvas id="fuelmeterCanvas"></canvas>
+        </div>
+        <div id="speed-display"></div>
+        <div id="speedometer-needle"></div>
+        <div id="rpm-meter">
+            <canvas id="rpmArc" width="300" height="300"></canvas>
+            <div id="gear-display"></div>
+            <div id="rpm-needle"></div>
+        </div>
+    </div>
+
+    <div id="hud" style="opacity: 0; display: none; position: absolute; top: 10px; left: 10px; background-color: rgba(0, 0, 0, 0.5); box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);">
+        <!-- You can rearrange these how ever you want, but it needs to be done here for now -->
+        <!-- Engine Light -->           <div class="canvas-container" id="engineContainer">     <canvas id="engineCanvas"></canvas>     <div class="canvas-text"></div></div>
+        <!-- Body Damage -->            <div class="canvas-container" id="bodyContainer">       <canvas id="bodyCanvas"></canvas>       <div class="canvas-text"></div></div>
+        <!-- Axle Damage -->            <div class="canvas-container" id="axleContainer">       <canvas id="axleCanvas"></canvas>       <div class="canvas-text"></div></div>
+        <!-- Battery Damage -->         <div class="canvas-container" id="batteryContainer">    <canvas id="batteryCanvas"></canvas>    <div class="canvas-text"></div></div>
+        <!-- Oil Light -->              <div class="canvas-container" id="oilContainer">        <canvas id="oilCanvas"></canvas>        <div class="canvas-text"></div></div>
+        <!-- Spark Plug Light -->       <div class="canvas-container" id="sparkContainer">      <canvas id="sparkCanvas"></canvas>      <div class="canvas-text"></div></div>
+        <!-- Spark Plug Light -->       <div class="canvas-container" id="fuelContainer">       <canvas id="fuelCanvas"></canvas>       <div class="canvas-text"></div></div>
+        <!-- Manual Transmission -->    <div class="canvas-container" id="manualContainer">     <canvas id="manualCanvas"></canvas>     <div class="canvas-text"></div></div>
+        <!-- Mileage Text -->           <div id="mileageText"></div>
+        <!-- Low Fuel Light -->         <div class="canvas-container" id="lowfuelContainer">    <canvas id="lowfuelCanvas"></canvas>    <div class="canvas-text"></div></div>
+        <!-- SeatBelt Light -->         <div class="canvas-container" id="seatbeltContainer">   <canvas id="seatbeltCanvas"></canvas>   <div class="canvas-text"></div></div>
+        <!-- Harness Light -->          <div class="canvas-container" id="harnessContainer">    <canvas id="harnessCanvas"></canvas>    <div class="canvas-text"></div></div>
+        <!-- Antilag Light -->          <div class="canvas-container" id="antilagContainer">    <canvas id="antilagCanvas"></canvas>    <div class="canvas-text"></div></div>
+        <!-- Headlights -->             <div class="canvas-container" id="headlightContainer">  <canvas id="headlightCanvas"></canvas>  <div class="canvas-text"></div></div>
+        <!-- Underglow Light -->        <div class="canvas-container" id="underglowContainer">  <canvas id="underglowCanvas"></canvas>  <div class="canvas-text"></div></div>
+        <!-- Door Open Light -->        <div class="canvas-container" id="doorsContainer">      <canvas id="doorsCanvas"></canvas>      <div class="canvas-text"></div></div>
+        <!-- Wheel Lights -->           <div class="canvas-container" id="wheelContainer">      <canvas id="wheelCanvas"></canvas>      <div class="canvas-text"></div></div>
+        <!-- NOS Light -->              <div class="canvas-container" id="nosContainer">        <canvas id="nosCanvas"></canvas>        <div class="canvas-text"></div></div>
+        <!-- Purge Lights -->           <div class="canvas-container" id="purgeContainer">      <canvas id="purgeCanvas"></canvas>      <div class="canvas-text"></div></div>
+    </div>
+<script>
+    let audioPlayer = null;
+    window.addEventListener('message', function(event) {
+        if (event.data.updateHUD) { updateHUD(event.data); }
+        else if (event.data.showHUD) { fadeIn('hud'); }
+        else if (event.data.hideHUD) { fadeOut('hud'); }
+        else if (event.data.showSpeed) { fadeIn('speedometer'); }
+        else if (event.data.hideSpeed) { fadeOut('speedometer'); }
         if (event.data.transactionType == "play") {
-          if (audioPlayer != null) { audioPlayer.pause(); }
-          audioPlayer = new Howl({ src: ["./snd/" + event.data.transactionFile + ".ogg"] });
-          audioPlayer.volume(event.data.transactionVolume);
-          audioPlayer.play();
+            if (audioPlayer != null) { audioPlayer.pause(); }
+            audioPlayer = new Howl({ src: ["./snd/" + event.data.transactionFile + ".ogg"] });
+            audioPlayer.volume(event.data.transactionVolume);
+            audioPlayer.play();
         }
         if (event.data.transactionType == "vol") { audioPlayer.volume(event.data.transactionVolume); }
-      });
-    </script>
-  </head>
-  <body style="font-family: 'Poppins', sans-serif">
-    <div id="q-app" style="min-height: 50vh" ></div>
-    <div id="drawtext-container">
-      <div id="text" class="text"></div>
-    </div>
-  </body>
+        if (event.data.updateSpeedometer) { updateSpeedometer(event.data); }
+    });
+
+    let preloadedImages = {};
+
+    function preloadImages() {
+        const imagesToLoad = [
+            'engine', 'body', 'axle', 'battery', 'oil', 'spark',
+            'nos', 'fuel', 'manual', 'doors', 'purge', 'antilag', 'wheel',
+            'underglow1', 'underglow2', 'underglow3', 'underglow4',
+            'headlight1', 'headlight2', 'seatbelt', 'harness', 'lowfuel', 'electric',
+        ];
+
+        imagesToLoad.forEach(function(imageName) {
+            const img = new Image();
+            img.onload = function() {
+                preloadedImages[imageName] = img;
+            };
+            img.src = `img/${imageName}.png`;
+        });
+    }
+
+    window.onload = preloadImages;
+
+    var setmaxSpeed = 0;
+
+    let previousSpeed = 0;
+    let previousRPM = 0;
+    let previousFuel = 0;
+
+    let speedometerNeedleAngle = { current: 135, target: 135 };
+    let rpmNeedleAngle = { current: 135, target: 135 };
+    let fuelNeedleAngle = { current: 135, target: 135 };
+
+    function updateSpeedometer(data) {
+        let speedDiff = data.speed - previousSpeed;
+        let rpmDiff = data.rpm - previousRPM;
+        let fuelDiff = data.fuel - previousFuel;
+
+        var SpeedLocation = data.SpeedLocation || { top: '73%', left: '88%' };
+
+        var speedometer = document.getElementById('speedometer');
+        Object.assign(speedometer.style, {
+            position: 'absolute',
+            top: SpeedLocation.top,
+            left: SpeedLocation.left,
+            height: data.SpeedSize,
+            width: data.SpeedSize,
+            border: `${data.BorderWidth || '0.2vh'} ${data.BorderStyle || 'solid'} ${data.BorderCol || 'rgba(255, 255, 255, 1.0)'}`,
+            borderRadius: '50%',
+            borderBottom: 'none',
+            boxSizing: 'border-box',
+            backgroundColor: data.BackgroundCol || 'rgba(0, 0, 0, 1.0)',
+            boxShadow: `${data.BackgroundShadow || '0 0 10px'} ${data.BackgroundShadowColor || 'rgba(255, 255, 255, 0.6)'}`,
+            transition: 'transform 0.03s ease-out',
+        });
+        let newSpeedometerAngle = calculateSpeedAngle(data.speed, data.maxSpeed);
+        speedometerNeedleAngle.target = newSpeedometerAngle;
+        animateNeedle('speedometer-needle', speedometerNeedleAngle);
+
+        var speeddisp = document.getElementById('speed-display');
+        speeddisp.textContent = data.ShowDigitalSpeed == true ? Math.floor(data.speed) : '',
+        Object.assign(speeddisp.style, {
+            position: 'absolute',
+            fontFamily: data.font,
+            fontSize: data.digitalSpeedSize,
+            top: `${data.digitalSpeedLoc.top}%`,
+            left: `${data.digitalSpeedLoc.left}%`,
+        });
+
+        var rpmmeter = document.getElementById('rpm-meter');
+        if (data.showRpmMeter === true) {
+            Object.assign(rpmmeter.style, {
+                position: 'absolute',
+                height: data.rpmMeterSize,
+                width: data.rpmMeterSize,
+                transform: data.rpmMeterLocation || 'translate(80%, 20%)',
+                border: `${data.BorderWidth || '0.2vh'} ${ data.BorderStyle || 'solid' } ${data.BorderCol || 'rgba(255, 255, 255, 1.0)'}`,
+                borderRadius: '50%',
+                borderBottom: 'none',
+                boxSizing: 'border-box',
+                backgroundColor: data.BackgroundCol || 'rgba(0, 0, 0, 1.0)',
+                boxShadow: `${data.BackgroundShadow || '0 0 10px'} ${data.BackgroundShadowColor || 'rgba(255, 255, 255, 0.6)'}`,
+                transition: 'transform 0.03s ease-out',
+            });
+            document.querySelectorAll('.rpm-number-container').forEach(container => {
+                const marker = container.querySelector('.rpm-marker');
+                const markerhigh = container.querySelector('.marker-high');
+                if (marker) {
+                    marker.style.backgroundColor = markerhigh ? (data.MarkerColourHigh || 'rgba(255, 0, 0, ' + data.BorderTrans + ')') : (data.MarkerColour || 'rgba(255, 255, 255, ' + data.BorderTrans + ')');
+                }
+            });
+            if (data.isPlane) {
+                let newrpmNeedleAngle = calculateSpeedAngle(data.rpm, 750);
+                rpmNeedleAngle.target = newrpmNeedleAngle;
+                animateNeedle('rpm-needle', rpmNeedleAngle);
+            } else  {
+                let newrpmNeedleAngle = calculateRpmAngle(data.rpm);
+                rpmNeedleAngle.target = newrpmNeedleAngle;
+                animateNeedle('rpm-needle', rpmNeedleAngle);
+            }
+        } else {
+            rpmmeter.style.dispaly = 'none';
+            document.getElementById('rpm-needle').style.display = 'none';
+            document.getElementById('gear-display').style.display = 'none';
+        }
+
+        var fuelmeter = document.getElementById('fuel-meter');
+        if (data.showFuelMeter === true) {
+            Object.assign(fuelmeter.style, {
+                position: 'absolute',
+                height: data.fuelMeterSize,
+                width: data.fuelMeterSize,
+                transform: data.fuelMeterLocation || 'translate(-80%, 20%)',
+                border: `${data.BorderWidth || '0.2vh'} ${data.BorderStyle || 'solid'} ${data.BorderCol || 'rgba(255, 255, 255, 1.0)'}`,
+                borderRadius: '50%',
+                borderBottom: 'none',
+                boxSizing: 'border-box',
+                backgroundColor: data.BackgroundCol || 'rgba(0, 0, 0, 1.0)',
+                boxShadow: `${data.BackgroundShadow || '0 0 10px'} ${data.BackgroundShadowColor || 'rgba(255, 255, 255, 0.6)'}`,
+                transition: 'transform 0.03s ease-out',
+            });
+            let newfuelNeedleAngle = calculateFuelAngle(data.fuel);
+            fuelNeedleAngle.target = newfuelNeedleAngle;
+            animateNeedle('fuel-needle', fuelNeedleAngle);
+            var fuelmeterCanvas = document.getElementById("fuelmeterCanvas");
+            if (fuelmeterCanvas) {
+                fuelmeterCanvas.height = window.innerHeight * (0.20 / 10);
+                fuelmeterCanvas.width = fuelmeterCanvas.height;
+                fuelmeterCanvas.style.position = 'absolute';
+                fuelmeterCanvas.style.left = `calc(50% - ${fuelmeterCanvas.width / 2}px)`;
+                fuelmeterCanvas.style.bottom = '0.3vh';
+            }
+            var ctx = fuelmeterCanvas.getContext('2d');
+            var img = "";
+            if (data.isElectric === true) { img = preloadedImages["electric"]; } else { img = preloadedImages["lowfuel"]; }
+            ctx.drawImage(img, 0, 0, fuelmeterCanvas.width, fuelmeterCanvas.height);
+            ctx.globalCompositeOperation = 'source-atop';
+            ctx.fillStyle = 'rgba(255, 255, 255, 1.0)';
+            ctx.fillRect(0, 0, fuelmeterCanvas.width, fuelmeterCanvas.height);
+            ctx.globalCompositeOperation = 'source-over';
+        } else {
+            fuelmeter.style.dispaly = 'none';
+            document.getElementById('fuel-needle').style.display = 'none';
+        }
+
+        var geardisp = document.getElementById('gear-display');
+        geardisp.textContent = data.isPlane ? data.rpm : data.gear;
+        geardisp.style.fontFamily = data.font;
+        geardisp.style.color = data.isPlane ? data.TextColour : (data.gear === data.maxGear) ? data.ColourHigh : data.TextColour;
+        geardisp.style.fontSize = rpmmeter.style.height.replace("vh", "") * 0.2 + "vh";
+
+        let styleElement = document.getElementById('needle-dynamic-styles');
+        if (!styleElement) {
+            styleElement = document.createElement('style');
+            styleElement.id = 'needle-dynamic-styles';
+            document.head.appendChild(styleElement);
+        }
+
+        if (data.NeedleType === 1) {
+            styleElement.textContent = `
+                #speedometer-needle::before {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 50%;
+                    border-left: 0.2vh solid transparent;
+                    border-right: ${data.SpeedNeedleWidth} solid transparent;
+                    border-top: ${data.SpeedNeedleLength} solid ${data.SpeedNeedleCol};
+                    transform: translateX(-50%) rotate(180deg);
+                    filter: drop-shadow( ${data.SpeedNeedleShadow} ${data.SpeedNeedleShadowCol} );
+                }
+                #speedometer-needle::after {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 50%;
+                    background-color: ${data.SpeedNeedleCol};
+                    border-radius: 50%;
+                    transform: translate(-50%, 10px);
+                    filter: drop-shadow( ${data.SpeedNeedleShadow} ${data.SpeedNeedleShadowCol} );
+                }`
+            styleElement.textContent += `
+                #rpm-needle::before {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 50%;
+                    border-left: 0.2vh solid transparent;
+                    border-right: ${data.rpmNeedleWidth} solid transparent;
+                    border-top: ${data.rpmNeedleLength} solid ${data.rpmNeedleCol};
+                    transform: translateX(-50%) rotate(180deg);
+                    filter: drop-shadow( $data.{rpmNeedleShadow} ${data.rpmNeedleShadowCol} );
+                }
+                #rpm-needle::after {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 0%;
+                    background-color: ${data.rpmNeedleCol};
+                    border-radius: 50%;
+                    transform: translate(-50%, 2px);
+                    filter: drop-shadow( ${data.rpmNeedleShadow} ${data.rpmNeedleShadowCol} );
+                }`
+            styleElement.textContent += `
+                #fuel-needle::before {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 50%;
+                    border-left: 0.2vh solid transparent;
+                    border-right: ${data.fuelNeedleWidth} solid transparent;
+                    border-top: ${data.fuelNeedleLength} solid ${data.fuelNeedleCol};
+                    transform: translateX(-50%) rotate(180deg);
+                    filter: drop-shadow( ${data.fuelNeedleShadow} ${data.fuelNeedleShadowCol} );
+                }
+                #fuel-needle::after {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 0%;
+                    background-color: ${data.fuelNeedleCol};
+                    border-radius: 50%;
+                    transform: translate(-50%, 2px);
+                    filter: drop-shadow( ${data.fuelNeedleShadow} ${data.fuelNeedleShadowCol} );
+                }
+            `;
+
+            let speedCircleSize = parseFloat(data.SpeedNeedleWidth.replace('vh', '')) * 1.5;
+            let rpmCircleSize = parseFloat(data.rpmNeedleWidth.replace('vh', '')) * 1.5;
+            let fuelCircleSize = parseFloat(data.fuelNeedleWidth.replace('vh', '')) * 1.5;
+            styleElement.textContent += `
+                #speedometer-needle::after {
+                    width: ${speedCircleSize}vh;
+                    height: ${speedCircleSize * 2}vh;
+                }
+                #rpm-needle::after {
+                    width: ${rpmCircleSize}vh;
+                    height: ${rpmCircleSize * 2}vh;
+                }
+                #fuel-needle::after {
+                    width: ${fuelCircleSize}vh;
+                    height: ${fuelCircleSize * 2}vh;
+                }
+            `;
+
+            createSpeedMarkers(data);
+            if (data.showRpmMeter === true) { createRpmMarkers(data); }
+            if (data.showFuelMeter === true) { createFuelMarkers(data); }
+        } else if (data.NeedleType === 2) {
+            styleElement.textContent = `
+                #speedometer-needle::before {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 50%;
+                    width: ${data.SpeedNeedleWidth.replace("vh", "") * 2 + "vh"};
+                    height: ${data.SpeedNeedleLength};
+                    background: linear-gradient(to top, transparent 15%, ${data.SpeedNeedleCol} 60%);
+                    transform: translateX(-50%);
+                    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+                    filter: drop-shadow(${data.SpeedNeedleShadow} ${data.SpeedNeedleShadowCol});
+                }
+
+                #rpm-needle::before {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 50%;
+                    width: ${data.rpmNeedleWidth.replace("vh", "") * 2 + "vh"};
+                    height: ${data.rpmNeedleLength};
+                    background: linear-gradient(to top, transparent 15%, ${data.rpmNeedleCol} 60%);
+                    transform: translateX(-50%);
+                    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+                    filter: drop-shadow(${data.rpmNeedleShadow} ${data.rpmNeedleShadowCol});
+                }
+
+                #fuel-needle::before {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 50%;
+                    width: ${data.fuelNeedleWidth.replace("vh", "") * 2 + "vh"};
+                    height: ${data.fuelNeedleLength};
+                    background: linear-gradient(to top, transparent 15%, ${data.fuelNeedleCol} 60%);
+                    transform: translateX(-50%);
+                    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+                    filter: drop-shadow(${data.fuelNeedleShadow} ${data.fuelNeedleShadowCol});
+                }
+            `;
+            createSpeedMarkers(data);
+            if (data.showRpmMeter === true) { createRpmMarkers(data); }
+            if (data.showFuelMeter === true) { createFuelMarkers(data); }
+        } else if (data.NeedleType === 3) {
+            updateArcAngle('speedArc', data.speed, data.maxSpeed, data);
+            document.querySelectorAll('.marker').forEach(marker => marker.remove());
+            document.querySelectorAll('.number-container').forEach(marker => marker.remove());
+            adjustCanvas('speedArc', 'speedometer');
+            if (data.showFuelMeter === true) {
+                document.querySelectorAll('.fuel-marker').forEach(marker => marker.remove());
+                updateArcAngle('fuelArc', data.fuel, 100.0, data);
+                adjustCanvas('fuelArc', 'fuel-meter');
+                document.getElementById("fuelmeterCanvas").style.bottom = '1.4vh';
+            }
+            if (data.showRpmMeter === true) {
+                document.querySelectorAll('.rpm-marker').forEach(marker => marker.remove());
+                geardisp.style.bottom = '40%';
+                //geardisp.style.left = '45%';
+                //geardisp.style.fontSize = '1.5vh';
+                adjustCanvas('rpmArc', 'rpm-meter');
+                updateArcAngle('rpmArc', data.rpm, data.isPlane ? 750 : 1.0, data);
+            }
+        }
+    }
+
+    let speedArcAngle = { current: 10.0, target: -Math.PI / 4 };
+    let fuelArcAngle = { current: 10, target: -Math.PI / 4 };
+    let rpmArcAngle = { current: 10, target: -Math.PI / 4 };
+    function updateArcAngle(canvasId, current, max, data) {
+        var currentAngle = "";
+        if (canvasId === 'speedArc') { currentAngle = speedArcAngle; }
+        if (canvasId === 'fuelArc') { currentAngle = fuelArcAngle; }
+        if (canvasId === 'rpmArc') { currentAngle = rpmArcAngle; }
+        currentAngle.target = ((current / max) * 1.5 * Math.PI) + (Math.PI * 0.75);
+        requestAnimationFrame(() => animateArc(canvasId, currentAngle, data));
+    }
+    const transitionSpeed = 0.05;
+    function animateArc(canvasId, angleState, data) {
+        const angleDifference = angleState.target - angleState.current;
+        if (Math.abs(angleDifference) < 0.01) {
+            angleState.current = angleState.target;
+        } else {
+            angleState.current += angleDifference * transitionSpeed;
+            requestAnimationFrame(() => animateArc(canvasId, angleState, data));
+        }
+        drawArcWithAngle(canvasId, angleState, data);
+    }
+    function adjustCanvas(canvasId, containerId) {
+        var leftOffset = 2.25;
+        var topOffset = -0.5;
+        const container = document.getElementById(containerId);
+        const canvas = document.getElementById(canvasId);
+        if (!container || !canvas) return;
+        const sizeRatio = 0.9;
+        const width = container.offsetWidth * sizeRatio;
+        const height = container.offsetHeight * sizeRatio;
+
+        canvas.width = width;
+        canvas.height = height;
+
+        canvas.style.position = 'absolute';
+        const offsetX = (container.offsetWidth - width) / 2 + leftOffset;
+        const offsetY = (container.offsetHeight - height) / 2 + topOffset;
+        canvas.style.left = `${offsetX}px`;
+        canvas.style.top = `${offsetY}px`;
+    }
+    let centerXOffset = 0;
+    let centerYOffset = 0;
+    function drawArcWithAngle(canvasId, angleState, data) {
+        const canvas = document.getElementById(canvasId);
+        if (!canvas || !canvas.getContext) return;
+        const ctx = canvas.getContext('2d');
+        const size = Math.min(canvas.width, canvas.height);
+        ctx.clearRect(0, 0, size, size);
+        const centerX = size / 2;
+        const centerY = size / 2;
+        const radius = size * 0.44 ;
+        ctx.beginPath();
+        ctx.arc(centerX, centerY, radius, Math.PI * 0.75, Math.PI * 2.25, false);
+        ctx.strokeStyle = 'rgba(150, 150, 150, 0.5)';
+        ctx.lineWidth = size * 0.1;
+        ctx.setLineDash([3, 3]);
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.arc(centerX, centerY, radius, Math.PI * 0.75, angleState.current, false);
+        ctx.strokeStyle = data.SpeedNeedleCol;
+        ctx.filter = 'blur(2px)';
+        ctx.stroke();
+        ctx.filter = 'none';
+    }
+
+    function animateNeedle(needleId, needleState) {
+        const needle = document.getElementById(needleId);
+        if (!needle) return;
+        needleState.current += (needleState.target - needleState.current) * 0.01;
+        needle.style.transform = `rotate(${needleState.current}deg)`;
+        if (Math.abs(needleState.current - needleState.target) > 0.01) {
+            requestAnimationFrame(() => animateNeedle(needleId, needleState));
+        }
+    }
+
+    function calculateSpeedAngle(speed, maxSpeed) { return ((speed / maxSpeed) * 270) - 135; }
+    function calculateRpmAngle(rpm) { return (rpm * 270) - 135; }
+    function calculateFuelAngle(fuel) { return ((fuel / 100) * 270) - 135; }
+
+    function createSpeedMarkers(data) {
+        const remainder = data.maxSpeed % 100;
+        if ([10, 30, 50, 70, 90].includes(remainder)) {
+            data.maxSpeed += 10;
+        }
+        const mainInterval = 10;
+        const smallInterval = 2
+        const totalMainMarkers = Math.floor(data.maxSpeed / mainInterval);
+        const totalSmallMarkers = Math.floor(data.maxSpeed / smallInterval);
+        const startAngle = 226.5;
+        const endAngle = startAngle - 268;
+        document.querySelectorAll('.number-container').forEach(marker => marker.remove());
+        const angleIncrementSmall = (endAngle - startAngle) / totalSmallMarkers;
+
+        for (let i = 0; i <= totalSmallMarkers; i++) {
+            const speed = i * smallInterval;
+            const angle = startAngle - (angleIncrementSmall * i);
+            if (speed % mainInterval === 0) {
+                createMarker(speed, angle, data, i, false);
+            } else {
+                createMarker(speed, angle, data, i, true);
+            }
+        }
+    }
+
+    function createMarker(speed, angle, data, index, isSmallMarker) {
+        const meter = document.getElementById('speedometer');
+        const containerSize = meter.offsetWidth;
+        const container = document.createElement('div');
+        container.className = 'number-container';
+        container.style.transform = `rotate(${angle}deg)`;
+        container.style.transformOrigin = "center";
+        container.style.position = 'absolute';
+        container.style.left = '50%';
+        container.style.top = '49%';
+
+        const baseDistanceFromCenter = (containerSize / 2) * 0.9;
+        const marker = document.createElement('span');
+        marker.style.position = 'absolute';
+        marker.style.left = '50%';
+
+        const shouldBeHigh = (data.highlights.speed && data.speed >= speed) || (data.highlights.high && speed >= (data.maxSpeed * 0.8));
+        marker.style.backgroundColor = shouldBeHigh ? (data.MarkerColourHigh || 'rgba(255, 0, 0, ' + data.BorderTrans + ')') : (data.MarkerColour || 'rgba(255, 255, 255, ' + data.BorderTrans + ')');
+        if (isSmallMarker) {
+            marker.className = shouldBeHigh ? 'marker smaller-marker marker-high' : 'marker smaller-marker';
+            marker.style.bottom = `${baseDistanceFromCenter}px`;
+            marker.style.transform = `translateX(-50%)`;
+        } else {
+            marker.className = shouldBeHigh ? 'marker marker-high' : 'marker';
+            const extendedDistance = baseDistanceFromCenter * 0.05;
+            marker.style.bottom = `${baseDistanceFromCenter - extendedDistance}px`;
+            marker.style.transform = `translateX(-50%)`;
+            const numberDistance = baseDistanceFromCenter * 0.25;
+
+            const number = document.createElement('div');
+            number.textContent = speed % 20 === 0 ? `${speed}` : '';
+            number.style.fontSize = data.maxSpeed >= 300 ? data.TextSize.replace("vh", "") *0.75+"vh" : data.TextSize;
+            number.style.position = 'absolute';
+            number.style.fontFamily = data.font;
+            number.style.left = '50%';
+            number.style.transform = `translateX(-50%) translateY(-${baseDistanceFromCenter - numberDistance}px) rotate(-${angle}deg)`;
+            number.style.transformOrigin = '60% 30%';
+            number.className = shouldBeHigh ? 'speed-number high-speed' : 'speed-number';
+            number.style.color = shouldBeHigh ? (data.ColourHigh || 'rgba(255, 0, 0)') : (data.TextColour || 'rgba(255, 255, 255)');
+            number.style.textShadow = '0 0 3px #000000, 0 0 5px #000000';
+            container.appendChild(number);
+        }
+        container.appendChild(marker);
+        meter.appendChild(container);
+    }
+
+    var markersMade = false
+    function createRpmMarkers(data) {
+        if (markersMade != true) {
+            const rpmMeter = document.getElementById('rpm-meter');
+            rpmMeter.querySelectorAll('.rpm-number-container').forEach(el => el.remove());
+            const maxRpmValue = data.rpmMeterSize.replace("vh", "") > 10 ? 12 : 6;
+            const interval = 1;
+            const totalMarkers = maxRpmValue / interval;
+            const startAngle = 226.5;
+            const endAngle = startAngle + 268;
+            for (let i = 0; i <= totalMarkers; i++) {
+                const rpm = i * interval;
+                const angle = ((rpm / maxRpmValue) * (endAngle - startAngle)) + startAngle;
+                createRpmMarker(rpm, angle, maxRpmValue, data);
+            }
+        }
+    }
+    function createRpmMarker(rpm, angle, max, data) {
+        const rpmMeter = document.getElementById('rpm-meter');
+        const containerSize = rpmMeter.offsetWidth;
+        const container = document.createElement('div');
+        container.className = 'rpm-number-container';
+        container.style.transform = `rotate(${angle}deg)`;
+        container.style.transformOrigin = "center";
+        container.style.position = 'absolute';
+        container.style.left = '50%';
+        container.style.top = '49%';
+
+        const baseDistanceFromCenter = (containerSize / 2) * 0.85;
+        const marker = document.createElement('span');
+        marker.style.left = '50%';
+
+        const isLastTwo = rpm === max - 1 || rpm === max;
+        marker.className = isLastTwo ? 'rpm-marker marker-high' : 'rpm-marker';
+        marker.style.backgroundColor = isLastTwo ? (data.MarkerColourHigh || 'rgba(255, 0, 0, ' + data.BorderTrans + ')') : (data.MarkerColour || 'rgba(255, 255, 255, ' + data.BorderTrans + ')');
+        marker.style.bottom = `${baseDistanceFromCenter}px`;
+        marker.style.transform = `translateX(-50%)`;
+        marker.style.position = 'absolute';
+        marker.style.width = rpmMeter.style.height.replace("vh", "") * 0.02 + "vh";
+        marker.style.height = rpmMeter.style.height.replace("vh", "") * 0.05 + "vh";
+        container.appendChild(marker);
+        rpmMeter.appendChild(container);
+    }
+
+    function createFuelMarkers(data) {
+        if (markersMade != true) {
+            const fuelMeter = document.getElementById('fuel-meter');
+            fuelMeter.querySelectorAll('.fuel-number-container').forEach(el => el.remove());
+            const maxFuelValue = 10;
+            const interval = 1;
+            const totalMarkers = maxFuelValue / interval;
+            const startAngle = 226.5;
+            const endAngle = startAngle + 268;
+            for (let i = 0; i <= totalMarkers; i++) {
+                const fuel = i * interval;
+                const angle = ((fuel / maxFuelValue) * (endAngle - startAngle)) + startAngle;
+                createFuelMarker(fuel, angle, data);
+            }
+        }
+    }
+    function createFuelMarker(fuel, angle, data) {
+        const fuelMeter = document.getElementById('fuel-meter');
+        const containerSize = fuelMeter.offsetWidth;
+        const container = document.createElement('div');
+        container.className = 'fuel-number-container';
+        container.style.transform = `rotate(${angle}deg)`;
+        container.style.transformOrigin = "center";
+        container.style.position = 'absolute';
+        container.style.left = '50%';
+        container.style.top = '49%';
+
+        const baseDistanceFromCenter = (containerSize / 2) * 0.85;
+        const marker = document.createElement('span');
+        marker.style.left = '50%';
+        marker.style.zIndex = 0;
+        const isLastTwo = fuel === 0 || fuel === 1 || fuel === 2;
+        marker.style.backgroundColor = isLastTwo ? (data.MarkerColourHigh || 'rgba(255, 0, 0, ' + data.BorderTrans + ')') : (data.MarkerColour || 'rgba(255, 255, 255, ' + data.BorderTrans + ')');
+        marker.style.bottom = `${baseDistanceFromCenter}px`;
+        marker.style.transform = `translateX(-50%)`;
+        marker.style.position = 'absolute';
+        marker.style.width = fuelMeter.style.height.replace("vh", "") * 0.02 + "vh";
+        marker.style.height = fuelMeter.style.height.replace("vh", "") * 0.05 + "vh";
+        container.appendChild(marker);
+        fuelMeter.appendChild(container);
+        markersMade = true;
+    }
+
+    function updateCanvasContainer(data) {
+        var containerName = data.canvasId.replace('Canvas', 'Container');
+        var container = document.getElementById(containerName);
+        var textElement = container.querySelector('.canvas-text');
+        if (textElement) {
+            if (data.isVisible === true) {
+                textElement.innerText = data.inlayText || '';
+                textElement.style.fontFamily = data.font;
+                textElement.style.fontSize = data.inlayTextSize;
+                textElement.style.color = data.inlayTextColor;
+                textElement.style.textShadow = data.inlayTextGlow;
+
+                textElement.style.top = data.inlayTextPosition.top;
+                textElement.style.left = data.inlayTextPosition.left;
+            } else {
+                textElement.innerText = '';
+                textElement.style.fontSize = '0vh';
+            }
+        }
+    }
+
+    let componentVisibility = {
+        engine: true,
+        body: true,
+        axle: true,
+        battery: true,
+        oil: true,
+        spark: true,
+        fuel: true,
+        nos: true,
+        purge: true,
+        headlight: true,
+        seatbelt: true,
+        harness: true,
+        underglow: true,
+        manual: true,
+        doors: true,
+        wheel: true,
+        antilag: true,
+        lowfuel: true,
+    };
+
+    function updateHUD(data) {
+        var positionPercent = data.positionPercent || { top: 10, left: 10 };
+        var size = data.isVisible ? data.size : { width: 0, depth: 0 };
+        var underLights = data.underLights;
+        var underCol = data.underCol || 'rgba(255, 255, 255, 1.0)';
+
+        componentVisibility[data.canvasId.replace('Canvas', '').toLowerCase()] = data.isVisible;
+        var hud = document.getElementById('hud');
+        hud.style.top = `${(positionPercent.top / 100) * window.innerHeight}px`;
+        hud.style.left = `${(positionPercent.left / 100) * window.innerWidth}px`;
+        hud.style.backgroundColor = data.bgColor;
+        hud.style.boxShadow = data.boxShadow;
+        hud.style.border = `${data.borderWidth} solid ${data.borderColor}`
+        hud.style.borderRadius = data.cornerRadius;
+
+        updateCanvasContainer(data)
+        var canvas = document.getElementById(data.canvasId);
+        var ctx = canvas.getContext('2d');
+
+        if (canvas) {
+            canvas.width = window.innerHeight * (size / 10);
+            canvas.height = window.innerHeight * (size / 10);
+        }
+        if (data.isVisible) {
+            var minRGB = data.iconColorMin.match(/\d+/g).map(Number);
+            var maxRGB = data.iconColorMax.match(/\d+/g).map(Number);
+
+            var red = Math.round(minRGB[0] + (maxRGB[0] - minRGB[0]) * data.health / 1000);
+            var green = Math.round(minRGB[1] + (maxRGB[1] - minRGB[1]) * data.health / 1000);
+            var blue = Math.round(minRGB[2] + (maxRGB[2] - minRGB[2]) * data.health / 1000);
+
+            if (data.canvasId === 'manualCanvas') {
+                var imageName = data.canvasId.replace('Canvas', '').toLowerCase();
+                var img = preloadedImages[imageName]
+                ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+                if (data.iconGlow) {
+                    ctx.filter = 'blur(5px)';
+                    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+                    ctx.filter = 'none';
+                }
+
+            } else if (data.canvasId === 'doorsCanvas') {
+                var imageName = data.canvasId.replace('Canvas', '').toLowerCase();
+                var img = preloadedImages[imageName]
+                ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+                if (data.iconGlow) {
+                    ctx.filter = 'blur(5px)';
+                    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+                    ctx.filter = 'none';
+                }
+                ctx.globalCompositeOperation = 'source-atop';
+                ctx.fillStyle = data.iconColorMin;
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                ctx.globalCompositeOperation = 'source-over';
+
+            } else if (data.canvasId === 'purgeCanvas') {
+                var imageName = data.canvasId.replace('Canvas', '').toLowerCase();
+                var img = preloadedImages[imageName]
+                ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+                if (data.iconGlow) {
+                    ctx.filter = 'blur(5px)';
+                    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+                    ctx.filter = 'none';
+                }
+                ctx.globalCompositeOperation = 'source-atop';
+                ctx.fillStyle = underCol;
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                ctx.globalCompositeOperation = 'source-over';
+
+            } else if (data.canvasId === 'antilagCanvas') {
+                var imageName = data.canvasId.replace('Canvas', '').toLowerCase();
+                var img = preloadedImages[imageName]
+                ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+                if (data.iconGlow) {
+                    ctx.filter = 'blur(5px)';
+                    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+                    ctx.filter = 'none';
+                }
+                ctx.globalCompositeOperation = 'source-atop';
+                ctx.fillStyle = data.iconColorMax;
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                ctx.globalCompositeOperation = 'source-over';
+
+            } else if (data.canvasId === 'wheelCanvas') {
+                var imageName = data.canvasId.replace('Canvas', '').toLowerCase();
+                var img = preloadedImages[imageName]
+                ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+                if (data.iconGlow) {
+                    ctx.filter = 'blur(5px)';
+                    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+                    ctx.filter = 'none';
+                }
+                ctx.globalCompositeOperation = 'source-atop';
+                ctx.fillStyle = data.iconColorMin;
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                ctx.globalCompositeOperation = 'source-over';
+
+            } else if (data.canvasId === 'underglowCanvas') {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                const drawAndApplyColor = (image, condition, color, ctx) => {
+                    let offscreenCanvas = document.createElement('canvas');
+                    offscreenCanvas.width = canvas.width;
+                    offscreenCanvas.height = canvas.height;
+                    let offCtx = offscreenCanvas.getContext('2d');
+                    offCtx.drawImage(image, 0, 0, offscreenCanvas.width, offscreenCanvas.height);
+                    if (condition) {
+                        offCtx.filter = 'blur(5px)';
+                        offCtx.drawImage(image, 0, 0, offscreenCanvas.width, offscreenCanvas.height);
+                        offCtx.filter = 'none';
+                        offCtx.globalCompositeOperation = 'source-atop';
+                        offCtx.fillStyle = color;
+                        offCtx.fillRect(0, 0, offscreenCanvas.width, offscreenCanvas.height);
+                        offCtx.globalCompositeOperation = 'source-over';
+                    }
+                    ctx.drawImage(offscreenCanvas, 0, 0);
+                };
+
+                let underglowParts = [
+                    { image: preloadedImages["underglow1"], condition: underLights.left },
+                    { image: preloadedImages["underglow2"], condition: underLights.right },
+                    { image: preloadedImages["underglow3"], condition: underLights.back },
+                    { image: preloadedImages["underglow4"], condition: underLights.front }
+                ];
+
+                underglowParts.forEach(part => {
+                    drawAndApplyColor(part.image, part.condition, underCol, ctx);
+                });
+
+            } else if (data.canvasId === 'headlightCanvas') {
+                var headlightImageName = data.headlightToggle ? 'headlight2' : 'headlight1';
+                var img = preloadedImages[headlightImageName]
+                if (data.iconGlow) {
+                    ctx.filter = 'blur(5px)';
+                    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+                    ctx.filter = 'none';
+                }
+                ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+                if (data.headlightColor && !data.nitrousBoost) {
+                    ctx.globalCompositeOperation = 'source-atop';
+                    ctx.fillStyle = data.headlightColor;
+                    ctx.fillRect(0, 0, canvas.width, canvas.height);
+                    ctx.globalCompositeOperation = 'source-over';
+                }
+            } else if (data.canvasId === 'seatbeltCanvas') {
+                var seatbeltColor = data.seatbeltToggle ? data.iconColorMax : data.iconColorMin;
+                var imageName = data.canvasId.replace('Canvas', '').toLowerCase();
+                var img = preloadedImages[imageName]
+                if (data.iconGlow) {
+                    ctx.filter = 'blur(5px)';
+                    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+                    ctx.filter = 'none';
+                }
+                ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+                ctx.globalCompositeOperation = 'source-atop';
+                ctx.fillStyle = seatbeltColor;
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                ctx.globalCompositeOperation = 'source-over';
+
+            } else if (data.canvasId === 'harnessCanvas') {
+                var harnessColor = data.harnessToggle ? data.iconColorMax : data.iconColorMin;
+                var imageName = data.canvasId.replace('Canvas', '').toLowerCase();
+                var img = preloadedImages[imageName]
+                if (data.iconGlow) {
+                    ctx.filter = 'blur(5px)';
+                    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+                    ctx.filter = 'none';
+                }
+                ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+                ctx.globalCompositeOperation = 'source-atop';
+                ctx.fillStyle = harnessColor;
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                ctx.globalCompositeOperation = 'source-over';
+
+            } else if (data.canvasId === 'lowfuelCanvas') {
+                var imageName = data.canvasId.replace('Canvas', '').toLowerCase();
+                var img = preloadedImages[imageName]
+                if (data.iconGlow) {
+                    ctx.filter = 'blur(4px)';
+                    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+                    ctx.filter = 'none';
+                }
+                ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+                ctx.globalCompositeOperation = 'source-atop';
+                ctx.fillStyle = 'rgba(255, 102, 0, 1.0)';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                ctx.globalCompositeOperation = 'source-over';
+
+            } else {
+                var imageName = data.canvasId.replace('Canvas', '').toLowerCase();
+                var img = preloadedImages[imageName]
+                if (img) {
+                    if (data.iconGlow) {
+                        ctx.filter = 'blur(5px)';
+                        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+                        ctx.filter = 'none';
+                    }
+                    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+                    if (!data.nitrousBoost) {
+                        ctx.globalCompositeOperation = 'source-atop';
+                        if (data.damageColor) {
+                            ctx.fillStyle = data.damageColor;
+                        } else {
+                            ctx.fillStyle = 'rgba(' + red + ',' + green + ',' + blue + ')';
+                        }
+                        ctx.fillRect(0, 0, canvas.width, canvas.height);
+                        ctx.globalCompositeOperation = 'source-over';
+                    }
+                } else {
+                    console.error(`Image ${imageName} not preloaded.`);
+                }
+            }
+        }
+
+        var mileageTextElement = document.getElementById('mileageText');
+        if (mileageTextElement && data.showMilage) {
+            mileageTextElement.innerText = data.mileageText;
+            mileageTextElement.style.fontFamily = data.font;
+            mileageTextElement.style.fontSize = data.mileageText !== "" ? data.mileagetextSize : '0px';
+            mileageTextElement.style.color = data.mileagetextColor;
+            mileageTextElement.style.textShadow = data.mileagetextGlow;
+            mileageTextElement.style.padding = data.mileageText !== "" ? '1.1% 2px' : '0px 0px';
+            mileageTextElement.style.marginRight = "1px";
+            mileageTextElement.style.marginBottom = "5px";
+            if (data.iconBoxShadow) {
+                data.mileageTextElement.style.borderRadius = data.iconBoxShadowCorners;
+                mileageTextElement.style.boxShadow = data.iconBoxShadowStyle;
+            }
+        }
+        if (data.iconBoxShadow) {
+            canvas.style.borderRadius = data.iconBoxShadowCorners;
+            canvas.style.boxShadow = data.iconBoxShadowStyle;
+        }
+        checkAndToggleHUDVisibility(data);
+    }
+
+    function checkAndToggleHUDVisibility(data) {
+        const allInvisible = Object.values(componentVisibility).every(isVisible => !isVisible);
+        const hud = document.getElementById('hud');
+        if (allInvisible && data.milageText === '') {
+            hud.style.display = 'none';
+        } else {
+            hud.style.display = 'flex';
+        }
+    }
+
+    function fadeIn(element) {
+        var hud = document.getElementById(element);
+        hud.style.display = 'flex';
+
+        var opacity = 0;
+        if (hud.style.opacity < 1) {
+            var fadeInInterval = setInterval(function() {
+                if (opacity < 1) {
+                    opacity += 0.05;
+                    hud.style.opacity = opacity;
+                } else {
+                    clearInterval(fadeInInterval);
+                }
+            }, 50);
+        }
+    }
+    function fadeOut(element) {
+        var hud = document.getElementById(element);
+        var opacity = 1;
+        if (hud.style.opacity > 0) {
+            var fadeOutInterval = setInterval(function() {
+                if (opacity > 0) {
+                    opacity -= 0.05;
+                    hud.style.opacity = opacity;
+                } else {
+                    hud.style.display = 'none';
+                    clearInterval(fadeOutInterval);
+                }
+            }, 50);
+        }
+    }
+
+</script>
+</body>
 </html>

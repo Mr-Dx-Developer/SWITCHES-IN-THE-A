@@ -38,6 +38,8 @@ RegisterNetEvent('jim-mechanic:client:Menu', function(editable)
 		[10] = { lock = true, part = "bprooftires", head = Loc[Config.Lan]["check"].label9.." "..Loc[Config.Lan]["common"].notinstall, hide = true  },
 		[11] = { lock = true, part = "antilag", head = Loc[Config.Lan]["check"].label50.." "..Loc[Config.Lan]["common"].notinstall, hide = true  },
 		[12] = { lock = true, part = "harness", head = Loc[Config.Lan]["check"].label51.." "..Loc[Config.Lan]["common"].notinstall, hide = true  },
+		[13] = { lock = true, part = "manual", head = Items["manual"].label.." "..Loc[Config.Lan]["common"].notinstall, hide = true  },
+		[14] = { lock = true, part = "underglow", head = Items["underglow"].label.." "..Loc[Config.Lan]["common"].notinstall, hide = true  },
 	}
 
 	--NOS--
@@ -109,6 +111,15 @@ RegisterNetEvent('jim-mechanic:client:Menu', function(editable)
 	end
 	--Anitlag
 	if not IsThisModelABicycle(GetEntityModel(vehicle)) then
+		if VehicleStatus[plate].manual == 1 then CheckTable[13].head = Items[CheckTable[13].part].label
+			CheckTable[13].desc = Loc[Config.Lan]["common"].installed:gsub("!","")
+			CheckTable[13].icon = invImg(CheckTable[13].part) CheckTable[13].lock = false
+		end
+
+		if VehicleStatus[plate].underglow == 1 then CheckTable[14].head = Items[CheckTable[14].part].label
+			CheckTable[14].desc = Loc[Config.Lan]["common"].installed:gsub("!","")
+			CheckTable[14].icon = invImg(CheckTable[14].part) CheckTable[14].lock = false
+		end
 		if VehicleStatus[plate].antiLag == 1 then CheckTable[11].head = Items[CheckTable[11].part].label
 			CheckTable[11].desc = Loc[Config.Lan]["common"].installed:gsub("!","")
 			CheckTable[11].icon = invImg(CheckTable[11].part) CheckTable[11].lock = false
@@ -324,6 +335,16 @@ RegisterNetEvent('jim-mechanic:client:Menu:Remove', function(data) local plate =
 			icon = invImg("antilag"),
 			head = Items["antilag"].label,
 			event = function() TriggerEvent("jim-mechanic:client:applyAntiLag", { client = { remove = true } }) end,
+		},
+		["manual"] = {
+			icon = invImg("manual"),
+			head = Items["manual"].label,
+			event = function() TriggerEvent("jim-mechanic:client:applyManual", { client = { remove = true } }) end,
+		},
+		["underglow"] = {
+			icon = invImg("underglow"),
+			head = Items["underglow"].label,
+			event = function() TriggerEvent("jim-mechanic:client:applyUnderglow", { client = { remove = true } }) end,
 		},
 	}
 	local CheckMenu = { }

@@ -65,8 +65,8 @@ local Previewing, xenonColour, VehicleNitrous, nosColour, dutyList = {}, {}, {},
 		end
 	end)
 
----==[[ SAVE EXTRA DAMAGES ]]==---
-	RegisterNetEvent("jim-mechanic:updateVehicle", function(props, plate)
+---==[[ SAVE MODS ]]==---
+	RegisterNetEvent("jim-mechanic:updateVehicle", function(props)
 		if IsVehicleOwned(props.plate) then
 			if Config.System.Debug then print("^5Debug^7: ^3updateVehicle^7: [^3"..props.model.."^7] - [^3"..props.plate.."^7]") end
 			if GetResourceState(ESXExport):find("start") then
@@ -84,16 +84,15 @@ local Previewing, xenonColour, VehicleNitrous, nosColour, dutyList = {}, {}, {},
 		end
 	end)
 
+---==[[ SAVE EXTRA DAMAGES ]]==---
 	RegisterNetEvent('jim-mechanic:server:saveStatus', function(mechDamages, plate, engine, body)
-		if IsVehicleOwned(plate) then
-			if Config.System.Debug then print("^5Debug^7: ^3saveStatus^7: ^2Save Extra Damages^7 - [^6"..plate.."^7]: "..json.encode(mechDamages)) end
-			if GetResourceState(ESXExport):find("start") then
-				MySQL.Async.execute('UPDATE '..vehDatabase..' SET status = ? WHERE plate = ?', { json.encode(mechDamages), plate})
-			elseif GetResourceState(OXCoreExport):find("start") then
-				MySQL.Async.execute('UPDATE '..vehDatabase..' SET status = ? WHERE plate = ?', { json.encode(mechDamages), plate})
-			elseif GetResourceState(QBExport):find("start") or GetResourceState(QBXExport):find("start") then
-				MySQL.Async.execute('UPDATE '..vehDatabase..' SET status = ?, engine = ?, body = ? WHERE plate = ?', {json.encode(mechDamages), engine, body, plate})
-			end
+		if Config.System.Debug then print("^5Debug^7: ^3saveStatus^7: ^2Save Extra Damages^7 - [^6"..plate.."^7]: "..json.encode(mechDamages)) end
+		if GetResourceState(ESXExport):find("start") then
+			MySQL.Async.execute('UPDATE '..vehDatabase..' SET status = ? WHERE plate = ?', { json.encode(mechDamages), plate})
+		elseif GetResourceState(OXCoreExport):find("start") then
+			MySQL.Async.execute('UPDATE '..vehDatabase..' SET status = ? WHERE plate = ?', { json.encode(mechDamages), plate})
+		elseif GetResourceState(QBExport):find("start") or GetResourceState(QBXExport):find("start") then
+			MySQL.Async.execute('UPDATE '..vehDatabase..' SET status = ?, engine = ?, body = ? WHERE plate = ?', {json.encode(mechDamages), engine, body, plate})
 		end
 	end)
 
@@ -398,7 +397,7 @@ end
 				if Config.System.Debug then print("^5Debug^7: ^2Found vehicleStatus ^7- '^6"..v.plate.."^7'", "'^3"..type(json.decode(v.status)).."^7'") end
 				VehicleStatus[v.plate] = json.decode(v.status)
 				--Create a table and apply values at the same time, this will help if its retreived errornous info from database
-				for _, name in pairs({"oillevel", "shaftlevel", "cylinderlevel", "cablelevel", "fuellevel", "harness", "antiLag", "carwax"}) do
+				for _, name in pairs({"oillevel", "shaftlevel", "cylinderlevel", "cablelevel", "fuellevel", "harness", "antiLag", "carwax", "manual", "underglow" }) do
 					VehicleStatus[v.plate][name] = VehicleStatus[v.plate][name] or 0
 				end
 				for _, name in pairs({"oil", "axle", "spark", "battery", "fuel"}) do
@@ -414,7 +413,6 @@ end
 		end
 	end)
 
-
 	function setupVehicleStatus(netId)
 		local veh = NetworkGetEntityFromNetworkId(netId)
 		local defaultStatus = {}
@@ -426,12 +424,20 @@ end
 		for _, name in pairs({"oil", "axle", "spark", "battery", "fuel"}) do
 			defaultStatus[name] = 100.0
 		end
-		for _, name in pairs({"oillevel", "shaftlevel", "cylinderlevel", "cablelevel", "fuellevel"}) do
+		for _, name in pairs({
+			"oillevel",
+			"shaftlevel",
+			"cylinderlevel",
+			"cablelevel",
+			"fuellevel",
+			"harness",
+			"antiLag",
+			"carwax",
+			"manual",
+			"underglow"
+		}) do
 			defaultStatus[name] = 0
 		end
-		defaultStatus["harness"] = 0
-		defaultStatus["antiLag"] = 0
-		defaultStatus["carwax"] = 0
 		if IsVehicleOwned(plate) then
 			VehicleStatus[plate] = 	GetVehicleStatus(plate) or defaultStatus
 			for k in pairs(defaultStatus) do
@@ -447,6 +453,7 @@ end
 		local vehicle = NetworkGetEntityFromNetworkId(netId)
 		if vehicle == 0 then return end
 		local plate = trim(GetVehicleNumberPlateText(vehicle))
+		if Config.System.Debug then print("^5Debug^7: ^2Updating ^4VehicleStatus ^7", plate) end
 		if VehicleStatus[plate] then
 			local partValue = level
 			if partValue < 0 then partValue = 0
@@ -461,6 +468,13 @@ end
 		end
 	end)
 
+	local LastToRefresh = nil
+	RegisterNetEvent("jim-mechanic:EnsureServerFreshStatus", function(netId)
+		local vehicle = NetworkGetEntityFromNetworkId(netId)
+		local plate = trim(GetVehicleNumberPlateText(vehicle))
+		Entity(vehicle).state.jim_updateAllVehiclePart = { plate = plate, status = VehicleStatus[plate] }
+	end)
+
 	RegisterNetEvent('jim-mechanic:server:fixAllPart', function(plate) local src = source
 		if VehicleStatus[plate] then
 			VehicleStatus[plate]["oil"] = 100
@@ -473,12 +487,8 @@ end
 	end)
 
 
-	RegisterNetEvent("jim-mechanic:server:getStatusList", function(player, plate) local src = source
-		if plate then -- if receive a plate, only send this to the player
-			TriggerClientEvent("jim-mechanic:client:setVehicleStatus", src, plate, VehicleStatus[plate])
-		else
-			TriggerClientEvent("jim-mechanic:client:getStatusList", player and src or -1, VehicleStatus)
-		end
+	RegisterNetEvent("jim-mechanic:server:getStatusList", function(player, plate, vehilce) local src = source
+		TriggerClientEvent("jim-mechanic:client:getStatusList", player and src or -1, VehicleStatus)
 	end)
 
 	--- HARNESS Stuff --
@@ -522,8 +532,8 @@ if GetResourceState(OXLibExport):find("start") then
 	createCallback("jim-mechanic:distGrab", function(source, plate)
 		if IsVehicleOwned(plate) then
 			local result = MySQL.scalar.await('SELECT traveldistance FROM '..vehDatabase..' WHERE plate = ?', {plate})
-			if result then return result else return "" end
-		else return "" end
+			if result then return result else return 0 end
+		else return 0 end
 	end)
 
 	createCallback("jim-mechanic:checkWax", function(source, plate)
@@ -597,16 +607,6 @@ elseif GetResourceState(QBExport):find("start") or GetResourceState(ESXExport):f
 		end
 	end)
 end
-
--- MultiFramework callbacks
-createCallback("jim-mechanic:checkCash", function(source, cb) local src = source
-	local Player = getPlayer(src)
-	if Config.System.Debug then
-		print("^5Debug^7: ^3checkCash^7: ^2Player^7(^6"..src.."^7) ^2cash ^7- $^6"..Player.cash.."^7")
-	end
-	if GetResourceState(OXLibExport):find("start") then return Player.cash
-	else cb(Player.cash) end
-end)
 
 createCallback('jim-mechanic:mechCheck', function(source, cb)
 	local result = false

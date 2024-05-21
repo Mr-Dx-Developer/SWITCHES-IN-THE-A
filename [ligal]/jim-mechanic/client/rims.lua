@@ -13,16 +13,36 @@ RegisterNetEvent('jim-mechanic:client:Rims:Apply', function(data)
 	local vehicle = getClosest(GetEntityCoords(Ped)) pushVehicle(vehicle) local above = isVehicleLift(vehicle)
 	if not above and not lookAtWheel(vehicle) then return end
 	local emote = { anim = above and "idle_b" or "machinic_loop_mechandplayer", dict = above and "amb@prop_human_movie_bulb@idle_a" or "anim@amb@clubhouse@tutorial@bkr_tut_ig3@", flag = above and 1 or 8 }
-	local cam = createTempCam(Ped, GetEntityCoords(vehicle))
+	local cam = createTempCam(GetOffsetFromEntityInWorldCoords(vehicle, 0, 0, 2.0), GetEntityCoords(Ped))
 	if progressBar({label = Loc[Config.Lan]["common"].installing..item.label, time = math.random(3000,5000), cancel = true, anim = emote.anim, dict = emote.dict, flag = emote.flag, cam = cam }) then SetVehicleModKit(vehicle, 0)
 		SetVehicleWheelType(vehicle, tonumber(data.wheeltype))
-		if not data.bike then SetVehicleMod(vehicle, 23, tonumber(data.mod), true)
+		if not data.bike then SetVehicleMod(vehicle, 23, tonumber(data.mod), GetVehicleModVariation(vehicle, 23))
 		else SetVehicleMod(vehicle, 24, tonumber(data.mod), false) end
 		updateCar(vehicle)
 		if Config.Overrides.CosmeticItemRemoval then removeItem("rims", 1) else
 			if data.mod == -1 then TriggerEvent('jim-mechanic:client:Rims:Check', data) else TriggerEvent('jim-mechanic:client:Rims:SubMenu', data) end
 		end
 		qblog("`rims - "..item.label.."` changed [**"..trim(GetVehicleNumberPlateText(vehicle)).."**]")
+		triggerNotify(nil, item.label.." "..Loc[Config.Lan]["common"].installed, "success")
+	else
+		triggerNotify(nil, item.label.." "..Loc[Config.Lan]["common"].instfail, "error")
+	end
+	emptyHands(Ped)
+end)
+
+RegisterNetEvent('jim-mechanic:client:Rims:ApplyCustomTires', function()
+	removePropHoldCoolDown() Wait(10)
+	local Ped = PlayerPedId()
+	local item = Items["rims"]
+	local vehicle = getClosest(GetEntityCoords(Ped)) pushVehicle(vehicle) local above = isVehicleLift(vehicle)
+	if not above and not lookAtWheel(vehicle) then return end
+	local emote = { anim = above and "idle_b" or "machinic_loop_mechandplayer", dict = above and "amb@prop_human_movie_bulb@idle_a" or "anim@amb@clubhouse@tutorial@bkr_tut_ig3@", flag = above and 1 or 8 }
+	local cam = createTempCam(GetOffsetFromEntityInWorldCoords(vehicle, 0, 0, 2.0), GetEntityCoords(Ped))
+	if progressBar({label = Loc[Config.Lan]["common"].installing..item.label, time = math.random(3000,5000), cancel = true, anim = emote.anim, dict = emote.dict, flag = emote.flag, cam = cam }) then
+		SetVehicleModKit(vehicle, 0)
+		SetVehicleMod(vehicle, 23, GetVehicleMod(vehicle, 23), not GetVehicleModVariation(vehicle, 23))
+		updateCar(vehicle)
+		TriggerEvent('jim-mechanic:client:Rims:Check')
 		triggerNotify(nil, item.label.." "..Loc[Config.Lan]["common"].installed, "success")
 	else
 		triggerNotify(nil, item.label.." "..Loc[Config.Lan]["common"].instfail, "error")
@@ -41,19 +61,28 @@ RegisterNetEvent('jim-mechanic:client:Rims:Check', function() local Menu, Ped = 
 	if not above and not lookAtWheel(vehicle) then return end
     if not enforceClassRestriction(searchCar(vehicle).class) then return end
 	if DoesEntityExist(vehicle) then
-		local cycle = false
-		getDefStats(vehicle, trim(GetVehicleNumberPlateText(vehicle)))
-		if IsThisModelABike(GetEntityModel(vehicle)) then cycle = true else cycle = false end
+		local cycle = IsThisModelABike(GetEntityModel(vehicle))
 		local headertxt =
 		(not cycle and br..Loc[Config.Lan]["common"].current..": "..br..(isOx() and br or "")..
 		(GetVehicleMod(vehicle, 23) == -1 and Loc[Config.Lan]["common"].stock or GetLabelText(GetModTextLabel(vehicle, 23, GetVehicleMod(vehicle, 23)))).." - ("..wheelType[(GetVehicleWheelType(vehicle))]..")" or "")
 		if not cycle then
 			Menu[#Menu + 1] = { -- Set to "Stock" button
 				icon = GetVehicleMod(vehicle, 23) ~= -1 and "fa-solid fa-rotate-left" or nil,
-				isMenuHeader = (GetVehicleMod(vehicle, 23) == -1),
+				isMenuHeader = (GetVehicleMod(vehicle, 23) == -1 and GetVehicleMod(vehicle, 24) == -1),
 				header = Loc[Config.Lan]["common"].stock, txt = (GetVehicleMod(vehicle, 23) == -1) and Loc[Config.Lan]["common"].current,
 				onSelect = function() TriggerEvent("jim-mechanic:client:Rims:Apply", { mod = -1, wheeltype = 0, }) end,
 			}
+			getDefStats(vehicle, trim(GetVehicleNumberPlateText(vehicle)))
+			if GetVehicleMod(vehicle, 23) ~= -1 then
+				Menu[#Menu + 1] = {
+					isMenuHeader = (GetVehicleMod(vehicle, 23) == -1 and GetVehicleMod(vehicle, 24) == -1),
+					header = "Custom Tires",
+					txt = GetVehicleModVariation(vehicle, 23) and Loc[Config.Lan]["common"].installed:gsub("%!", "") or Loc[Config.Lan]["common"].notinstall,
+					onSelect = function()
+						TriggerEvent("jim-mechanic:client:Rims:ApplyCustomTires")
+					end,
+				}
+			end
 			for k, v in pairs(wheelType) do
 				Menu[#Menu+1] = { arrow = true,	header = v,
 					onSelect = function() TriggerEvent("jim-mechanic:client:Rims:Choose", { wheeltype = k, bike = false }) end,

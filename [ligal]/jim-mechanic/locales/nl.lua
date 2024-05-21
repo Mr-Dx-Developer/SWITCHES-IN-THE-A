@@ -24,6 +24,18 @@ Loc["nl"] = {
 		closer = "Ga dichter bij de koplampen staan",
 		harness = "Raceharnas bevestigen..",
 	},
+    progressbar = {
+        progress_washing = "Washing hands",
+        progress_mix = "Mixing a ",
+        progress_pour = "Pouring a ",
+        progress_drink = "Drinking a ",
+        progress_eat = "Eating a ",
+        progress_make = "Making a ",
+    },
+	error = {
+		not_clockedin = "Not On Duty",
+		cancelled = "Cancelled",
+	},
 	tires = {
 		swap = "Kogelweerende Banden verwijderd!",
 		swap2 = "Kogelvrije Banden verwijderd!",

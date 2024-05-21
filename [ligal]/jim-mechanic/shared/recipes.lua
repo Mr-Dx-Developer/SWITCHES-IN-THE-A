@@ -48,7 +48,8 @@ Crafting = {
 			{ ["toolbox"] = {
 				["iron"] = 3,
 				["steel"] = 1,
-				["plastic"] = 1, },
+				["plastic"] = 1,
+			},
 				["amount"] = 1,
 			},
 			{ ["paintcan"] = { ["aluminum"] = 1, },
@@ -196,6 +197,10 @@ Crafting = {
 			{ ["antilag"] = { ["steel"] = 1, },
 				["amount"] = 1,
 			},
+
+			{ ["manual"] = { ["steel"] = 1, },
+				["amount"] = 1,
+			},
 		},
 	},
 	Cosmetic = {
@@ -245,6 +250,9 @@ Crafting = {
 				["amount"] = 1,
 			},
 			{ ["rims"] = { ["iron"] = 1, },
+				["amount"] = 1,
+			},
+			{ ["underglow"] = { ["plastic"] = 1, },
 				["amount"] = 1,
 			},
 			{ ["rollcage"] = { ["steel"] = 1, },
@@ -331,6 +339,8 @@ Stores = {
 
 			{ name = "harness", price = 0, amount = 50, info = {}, type = "item", },
 			{ name = "antilag", price = 0, amount = 50, info = {}, type = "item", },
+
+			{ name = "manual", price = 0, amount = 50, info = {}, type = "item", },
 		},
 	},
 	CosmeticItems = {
@@ -352,7 +362,128 @@ Stores = {
 			{ name = "headlights", price = 0, amount = 50, info = {}, type = "item", },
 			{ name = "rims", price = 0, amount = 100, info = {}, type = "item", },
 			{ name = "rollcage", price = 0, amount = 50, info = {}, type = "item", },
+			{ name = "underglow", price = 0, amount = 50, info = {}, type = "item", },
 		},
+	},
+}
+
+MaterialRecieve = {
+	turbo = {
+		steel = 1,
+	},
+	car_armor = {
+		plastic = 1,
+	},
+	engine1 = {
+		steel = 1,
+	},
+	engine2 = {
+		steel = 1,
+	},
+	engine3 = {
+		steel = 1,
+	},
+	engine4 = {
+		steel = 1,
+	},
+	engine5 = {
+		steel = 1,
+	},
+	transmission1 = {
+		steel = 1,
+	},
+	transmission2 = {
+		steel = 1,
+	},
+	transmission3 = {
+		steel = 1,
+	},
+	transmission4 = {
+		steel = 1,
+	},
+	brakes1 = {
+		steel = 1,
+	},
+	brakes2 = {
+		steel = 1,
+	},
+	brakes3 = {
+		steel = 1,
+	},
+	suspension1 = {
+		steel = 1,
+	},
+	suspension2 = {
+		steel = 1,
+	},
+	suspension3 = {
+		steel = 1,
+	},
+	suspension4 = {
+		steel = 1,
+	},
+	suspension5 = {
+		steel = 1,
+	},
+	bprooftires = {
+		rubber = 1,
+	},
+	drifttires = {
+		rubber = 1,
+	},
+	oilp1 = {
+		steel = 1,
+	},
+	oilp2 = {
+		steel = 1,
+	},
+	oilp3 = {
+		steel = 1,
+	},
+	drives1 = {
+		steel = 1,
+	},
+	drives2 = {
+		steel = 1,
+	},
+	drives3 = {
+		steel = 1,
+	},
+	cylind1 = {
+		steel = 1,
+	},
+	cylind2 = {
+		steel = 1,
+	},
+	cylind3 = {
+		steel = 1,
+	},
+	cables1 = {
+		steel = 1,
+	},
+	cables2 = {
+		steel = 1,
+	},
+	cables3 = {
+		steel = 1,
+	},
+	fueltank1 = {
+		steel = 1,
+	},
+	fueltank2 = {
+		steel = 1,
+	},
+	fueltank3 = {
+		steel = 1,
+	},
+	harness = {
+		steel = 1,
+	},
+	antilag = {
+		steel = 1,
+	},
+	manual = {
+		steel = 1,
 	},
 }
 

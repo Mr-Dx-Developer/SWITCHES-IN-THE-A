@@ -18,9 +18,9 @@ Full Credit to wildbrick142 for the inclusion of the Chameleon Paints Mod
 
 - Add the chosen images to your inventory folder eg. `qb-inventory > html > images`
 
-- If using `ox_inventory` add the `items_ox.lua` to your `ox_inventory > data > items.lua`
+- If using `ox_inventory` add the `ox_items.txt` to your `ox_inventory > data > items.lua`
 
-- If using `qb-inventory` or similar, add the lines from `items_qb.lua` to your `qb-core > shared > items.lua`
+- If using `qb-inventory` or similar, add the lines from `qb_items.txt` to your `qb-core > shared > items.lua`
 
 ----------------------
 # Dependancies

@@ -4,8 +4,8 @@ local br = Config.System.Menu == "ox" and "\n" or "<br>"
 if not Config.Main.ItemRequiresJob or Config.Repairs.FreeRepair then Config.Repairs.StashRepair = false end
 
 RegisterNetEvent('jim-mechanic:client:Repair:Apply', function(data) local Ped = PlayerPedId()
+	removePropHoldCoolDown()
 	local stashName, stashItems = repairStashName, {}
-	emptyHands(Ped)
 	if not repairing then repairing = true else return end
 	local vehicle = nil
 	local above = isVehicleLift(vehicle)
@@ -21,12 +21,16 @@ RegisterNetEvent('jim-mechanic:client:Repair:Apply', function(data) local Ped = 
 		["fuel"] = { dict = "anim@amb@clubhouse@tutorial@bkr_tut_ig3@", anim = "machinic_loop_mechandplayer", flags = 1, },
 		["wheels"] = { dict = "anim@amb@clubhouse@tutorial@bkr_tut_ig3@", anim = "machinic_loop_mechandplayer", bartext = Loc[Config.Lan]["repair"].changing },
 	}
+
 	if isVehicleLift(vehicle) then
 		for k in pairs(repairTable) do repairTable[k].task = nil repairTable[k].dict = "amb@prop_human_movie_bulb@idle_a" repairTable[k].anim = "idle_b" repairTable[k].flags = 32 end
 	end
+	if GetEntityModel(Ped) ~= `mp_f_freemode_01` and GetEntityModel(Ped) ~= `mp_m_freemode_01` then
+		for k in pairs(repairTable) do repairTable[k].task = nil repairTable[k].dict = nil repairTable[k].anim = nil repairTable[k].flags = nil end
+	end
 	--Specific Actions/Animations
 	if data.part == "engine" then
-		cam = createTempCam(Ped, GetEntityCoords(vehicle))
+		cam = createTempCam(GetOffsetFromEntityInWorldCoords(vehicle, 0, 0, 2.0), GetEntityCoords(Ped))
 		if Config.Overrides.DoorAnimations then SetVehicleDoorOpen(vehicle, 4, false, true) end
 		if #(GetEntityCoords(Ped) - GetWorldPositionOfEntityBone(vehicle, GetEntityBoneIndexByName(vehicle, "engine"))) >= 1.5 then
 			TaskGoStraightToCoord(Ped, GetWorldPositionOfEntityBone(vehicle, GetEntityBoneIndexByName(vehicle, "engine")), 1.0, -1, GetEntityHeading(Ped), 0)
@@ -36,10 +40,10 @@ RegisterNetEvent('jim-mechanic:client:Repair:Apply', function(data) local Ped = 
 		Wait(100)
 		SetEntityHeading(Ped, GetEntityHeading(Ped)-180.0)
 	elseif data.part == "body" then
-		cam = createTempCam(Ped, GetEntityCoords(vehicle))
+		cam = createTempCam(GetOffsetFromEntityInWorldCoords(vehicle, 0, 0, 2.0), GetEntityCoords(Ped))
 		if Config.Overrides.DoorAnimations then SetVehicleDoorOpen(vehicle, 4, false, true) end
 	elseif data.part == "oil" then
-		cam = createTempCam(Ped, GetEntityCoords(vehicle))
+		cam = createTempCam(GetOffsetFromEntityInWorldCoords(vehicle, 0, 0, 2.0), GetEntityCoords(Ped))
 		if Config.Overrides.DoorAnimations then SetVehicleDoorOpen(vehicle, 4, false, true) end
 		if #(GetEntityCoords(Ped) - GetWorldPositionOfEntityBone(vehicle, GetEntityBoneIndexByName(vehicle, "engine"))) >= 1.5 then
 			TaskGoStraightToCoord(Ped, GetWorldPositionOfEntityBone(vehicle, GetEntityBoneIndexByName(vehicle, "engine")), 1.0, -1, GetEntityHeading(Ped), 0)
@@ -47,7 +51,7 @@ RegisterNetEvent('jim-mechanic:client:Repair:Apply', function(data) local Ped = 
 		end
 		lookEnt(GetWorldPositionOfEntityBone(vehicle, GetEntityBoneIndexByName(vehicle, "engine")))
 	elseif data.part == "wheels" then
-		cam = createTempCam(Ped, GetEntityCoords(vehicle))
+		cam = createTempCam(GetOffsetFromEntityInWorldCoords(vehicle, 0, 0, 2.0), GetEntityCoords(Ped))
 		local coord = nil
 		for _, v in pairs({"wheel_lf", "wheel_rf", "wheel_lm1", "wheel_rm1", "wheel_lm2", "wheel_rm2", "wheel_lm3", "wheel_rm3", "wheel_lr", "wheel_rr"}) do
 			if #(GetEntityCoords(Ped) - GetWorldPositionOfEntityBone(vehicle, GetEntityBoneIndexByName(vehicle, v))) <= 1.5 then
@@ -57,7 +61,7 @@ RegisterNetEvent('jim-mechanic:client:Repair:Apply', function(data) local Ped = 
 		end
 		lookEnt(coord)
 	elseif data.part == "battery" then
-		cam = createTempCam(Ped, GetEntityCoords(vehicle))
+		cam = createTempCam(GetOffsetFromEntityInWorldCoords(vehicle, 0, 0, 2.0), GetEntityCoords(Ped))
 		if Config.Overrides.DoorAnimations then SetVehicleDoorOpen(vehicle, 4, false, true) end
 		if #(GetEntityCoords(Ped) - GetWorldPositionOfEntityBone(vehicle, GetEntityBoneIndexByName(vehicle, "engine"))) >= 1.5 then
 			TaskGoStraightToCoord(Ped, GetWorldPositionOfEntityBone(vehicle, GetEntityBoneIndexByName(vehicle, "engine")), 1.0, -1, GetEntityHeading(Ped), 0)
@@ -70,29 +74,28 @@ RegisterNetEvent('jim-mechanic:client:Repair:Apply', function(data) local Ped = 
 		cam = createTempCam(Ped, GetEntityCoords(vehicle))
 		local coord = nil
 		for _, v in pairs({"wheel_lf", "wheel_rf", "wheel_lm1", "wheel_rm1", "wheel_lm2", "wheel_rm2", "wheel_lm3", "wheel_rm3", "wheel_lr", "wheel_rr"}) do
-			if #(GetEntityCoords(PlayerPedId()) - GetWorldPositionOfEntityBone(vehicle, GetEntityBoneIndexByName(vehicle, v))) <= 1.5 then
+			if #(GetEntityCoords(Ped) - GetWorldPositionOfEntityBone(vehicle, GetEntityBoneIndexByName(vehicle, v))) <= 1.5 then
 				coord = GetWorldPositionOfEntityBone(vehicle, GetEntityBoneIndexByName(vehicle, v))
 				break
 			end
 		end
 		lookEnt(coord)
 		Wait(100)
-		SetEntityHeading(PlayerPedId(), GetEntityHeading(PlayerPedId())-180.0)
+		SetEntityHeading(Ped, GetEntityHeading(PlayerPedId())-180.0)
 	else
-		cam = createTempCam(Ped, GetEntityCoords(vehicle))
+		cam = createTempCam(GetOffsetFromEntityInWorldCoords(vehicle, 0, 0, 2.0), GetEntityCoords(Ped))
 		lookEnt(vehicle)
 	end
 
 	if Config.Repairs.StashRepair and not Config.Repairs.FreeRepair then
 		stashItems = triggerCallback('jim-mechanic:server:GetStashItems', stashName)
 	end
-	emptyHands(Ped)
 	if (Config.Repairs.StashRepair and stashhasItem(stashItems, data.cost ) ) or not Config.Repairs.StashRepair then
 		if progressBar({label = bartext..data.partname, time =  math.random(8000,10000), cancel = true, dict = repairTable[data.part].dict, anim = repairTable[data.part].anim, flag = repairTable[data.part].flags, task = repairTable[data.part].task, icon = "mechanic_tools", cam = cam }) then
 			repairing = false
 			if data.part == "body" then
 				local tirehealth = {}
-				enhealth = GetVehicleEngineHealth(vehicle)
+				local enhealth = GetVehicleEngineHealth(vehicle)
 				for _, v in pairs({0, 1, 2, 3, 4, 5, 45, 47}) do
 					tirehealth[v] = { health = GetVehicleWheelHealth(vehicle, v) }
 					if IsVehicleTyreBurst(vehicle, v, false) == 1 or IsVehicleTyreBurst(vehicle, v, true) == 1 then
@@ -105,6 +108,7 @@ RegisterNetEvent('jim-mechanic:client:Repair:Apply', function(data) local Ped = 
 				SetVehicleDeformationFixed(vehicle)
 				SetVehicleEngineHealth(vehicle, enhealth)
 				if GetResourceState("qs-advancedgarages"):find("start") then exports["qs-advancedgarages"]:RepairNearestVehicle() end
+				SetVehicleUndriveable(vehicle, false)
 				if Config.Repairs.RepairWheelsWithBody then
 					for _, v in pairs({0, 1, 2, 3, 4, 5, 45, 47}) do
 						if getoff[v] then SetVehicleWheelXOffset(vehicle, v, getoff[v]) end
@@ -120,6 +124,7 @@ RegisterNetEvent('jim-mechanic:client:Repair:Apply', function(data) local Ped = 
 				end
 			elseif data.part == "engine" then
 				SetVehicleEngineHealth(vehicle, 1000.0) SetVehiclePetrolTankHealth(vehicle, 1000.0) SetVehicleOilLevel(vehicle, 1000.0)
+				SetVehicleUndriveable(vehicle, false)
 				if Config.Repairs.RepairWheelsWithEngine then
 					for _, v in pairs({0, 1, 2, 3, 4, 5, 45, 47}) do
 						if getoff[v] then SetVehicleWheelXOffset(vehicle, v, getoff[v]) end
@@ -160,7 +165,6 @@ RegisterNetEvent('jim-mechanic:client:Repair:Apply', function(data) local Ped = 
 		return
 	end
 	SetVehicleFuelLevel(vehicle, currentFuel)
-	--emptyHands(Ped)
 end)
 
 local prevVehicle = nil

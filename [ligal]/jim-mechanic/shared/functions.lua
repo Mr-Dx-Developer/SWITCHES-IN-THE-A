@@ -18,53 +18,52 @@ end
 
 local updateDelay = {}
 function updateCar(vehicle)
-	if DoesEntityExist(vehicle) and vehicle ~= 0 and vehicle ~= nil then
-		updateDelay[vehicle] = { delay = (Config.Overrides.updateServerDelay / 10) or 2, mods = getVehicleProperties(vehicle) }
-		if Config.System.Debug then
-			print("^5Debug^7: ^2Updating database timer started/reset^7: '^6" ..updateDelay[vehicle].mods.plate.."^7' - ^4"..(updateDelay[vehicle].delay * 10).." ^2Seconds^7.")
-		end
-	else
-		if Config.System.Debug then
-			print("^5Debug^7: ^1ERROR^7 - ^2Attempted to add vehicle to update timer but vehicle entity recieved was ^7'^1nil^7'")
-		end
-	end
+    if DoesEntityExist(vehicle) and vehicle ~= 0 and vehicle ~= nil then
+		local newProps = getVehicleProperties(vehicle)
+		setVehicleProperties(vehicle, newProps)
+        updateDelay[vehicle] = { delay = (Config.Overrides.updateServerDelay / 10) or 2, mods = newProps }
+        if Config.System.Debug then
+            print("^5Debug^7: ^2Updating database timer started/reset^7: '^6" ..updateDelay[vehicle].mods.plate.."^7' - ^4"..(updateDelay[vehicle].delay * 10).." ^2Seconds^7.")
+        end
+    else
+        if Config.System.Debug then
+            print("^5Debug^7: ^1ERROR^7 - ^2Attempted to add vehicle to update timer but vehicle entity recieved was ^7'^1nil^7'")
+        end
+    end
 end
 
 function forceUpdateCar(vehicle, mods)
-	if IsVehicleOwned(mods.plate) then
-		-- Attempt to update database mods
-		TriggerServerEvent('jim-mechanic:updateVehicle', mods, trim(mods.plate))
-		if Config.System.Debug then print("^5Debug^7: ^2Updating database mods of vehicle^7: '^6" ..mods.plate.."^7'") end
-		-- Attempt to update status damages
-		saveStatus(vehicle)
-	end
-	--Update everyone with the new changes (helps syncing)
-	TriggerServerEvent("jim-mechanic:server:updateCar", VehToNet(vehicle), mods)
+    if IsVehicleOwned(mods.plate) then
+        TriggerServerEvent('jim-mechanic:updateVehicle', mods, trim(mods.plate)) -- Attempt to update database mods
+        if Config.System.Debug then print("^5Debug^7: ^2Updating database mods of vehicle^7: '^6" ..mods.plate.."^7'") end
+        saveStatus(vehicle) -- Attempt to update status damages
+    end
+    TriggerServerEvent("jim-mechanic:server:updateCar", VehToNet(vehicle), mods) --Update everyone with the new changes (helps syncing)
 end
 
 CreateThread(function()
-	while true do
-		for veh in pairs(updateDelay) do
-			if updateDelay[veh].delay then updateDelay[veh].delay -= 1
-				if updateDelay[veh].delay <= 0 then
-					if DoesEntityExist(veh) and veh ~= 0 and veh ~= nil then
-						forceUpdateCar(veh, updateDelay[veh].mods)
-					end
-					updateDelay[veh] = nil
-				end
-			end
-		end
-		Wait(10000)
-	end
+    while true do
+        for veh in pairs(updateDelay) do
+            if updateDelay[veh].delay then updateDelay[veh].delay -= 1
+                if updateDelay[veh].delay <= 0 then
+                    if DoesEntityExist(veh) and veh ~= 0 and veh ~= nil then
+                        forceUpdateCar(veh, updateDelay[veh].mods)
+                    end
+                    updateDelay[veh] = nil
+                end
+            end
+        end
+        Wait(10000)
+    end
 end)
 
 RegisterNetEvent("jim-mechanic:forceProperties", function(vehicle, props, src) -- This forces updates of the vehicle from the person who updated it
-	if src ~= GetPlayerServerId(PlayerId()) then
-		local netID = ensureNetToVeh(vehicle)
-		if netID ~= 0 and DoesEntityExist(netID) then
-			setVehicleProperties(netID, props)
-		end
-	end
+    if src ~= GetPlayerServerId(PlayerId()) then
+        local netID = ensureNetToVeh(vehicle)
+        if netID ~= 0 and DoesEntityExist(netID) then
+            setVehicleProperties(netID, props)
+        end
+    end
 end)
 
 function inCar()
@@ -109,7 +108,6 @@ function locationChecks()
 	end
 	return check
 end
-
 
 function previewLocationChecks()
 	if not inpreview then triggerNotify(nil, "Can't Check Mods Here", "error") end
@@ -184,16 +182,6 @@ function lookAtEngine(vehicle)
 end
 
 function trim(value) if not value then return nil end return (string.gsub(value, '^%s*(.-)%s*$', '%1')) end
-
-RegisterNetEvent('jim-mechanic:client:Menu:Close', function() local Ped = PlayerPedId()
-	emptyHands(PlayerPedId())
-	FreezeEntityPosition(PlayerPedId(), false)
-	local vehicle = nil
-	if IsPedSittingInAnyVehicle(PlayerPedId()) then	vehicle = GetVehiclePedIsIn(PlayerPedId(), false)
-	else vehicle = getClosest(GetEntityCoords(PlayerPedId())) end
-	for i = 0, 5 do	SetVehicleDoorShut(vehicle, i, false, true) end
-	exports['qb-menu']:closeMenu()
-end)
 
 function emptyHands(playerPed, dpemote)
 	if dpemote ~= nil then ExecuteCommand("c") ClearPedTasks(playerPed)
@@ -375,13 +363,15 @@ end)
 
 if Config.vehFailure.repairKits then
 	RegisterNetEvent('jim-mechanic:vehFailure:RepairVehicle', function(data)
-		local item = data.client.item
-		local full = data.client.full
-		local vehicle = vehChecks()
+		local item, full = data.client.item, data.client.full
+		local vehicle = nil
+		local Ped = PlayerPedId()
+		if not IsPedInAnyVehicle(Ped, false) then vehicle = getClosest(GetEntityCoords(Ped)) pushVehicle(vehicle) end
+		if lockedCar(vehicle) then return end
 		if #(GetEntityCoords(PlayerPedId()) - GetWorldPositionOfEntityBone(vehicle, GetEntityBoneIndexByName(vehicle, "engine"))) >= 2.0 then return end
 		SetVehicleDoorOpen(vehicle, 4, false, false)
-		local cam = createTempCam(PlayerPedId(), vehicle)
-		if progressBar({ label = Loc[Config.Lan]["repair"].repairing, time = 10000, cancel = true, dict = 'mini@repair', anim = 'fixing_a_player', flag = 1, icon = item.name, cam = cam }) then
+		local cam = createTempCam(GetOffsetFromEntityInWorldCoords(vehicle, 0, 0, 2.0), GetEntityCoords(Ped))
+		if progressBar({ label = Loc[Config.Lan]["repair"].repairing, time = 10000, cancel = true, dict = 'mini@repair', anim = 'fixing_a_player', flag = 1, icon = item, cam = cam }) then
 			if full then
 				SetVehicleEngineHealth(vehicle, 1000.0)
 				SetVehicleBodyHealth(vehicle, 1000.0)
@@ -393,7 +383,7 @@ if Config.vehFailure.repairKits then
 				SetVehicleEngineHealth(vehicle, GetVehicleEngineHealth(vehicle) + 100)
 				SetVehicleBodyHealth(vehicle, GetVehicleBodyHealth(vehicle) + 100)
 			end
-			removeItem(item.name, 1)
+			removeItem(item, 1)
 			ClearPedTasks(PlayerPedId())
 		else
 			ClearPedTasks(PlayerPedId())
@@ -421,8 +411,17 @@ if Config.vehFailure.fixCommand then
 		for i = 0, 5 do SetVehicleTyreFixed(vehicle, i) end
 		for i = 0, 7 do FixVehicleWindow(vehicle, i) end
 		SetVehicleFuelLevel(vehicle, 100.0)
-		TriggerServerEvent("jim-mechanic:server:fixEverything", trim(GetVehicleNumberPlateText(vehicle)))
+		TriggerServerEvent("jim-mechanic:server:fixEverything", trim(GetVehicleNumberPlateText(vehicle)), ensureNetToVeh(vehicle))
 		saveStatus(vehicle)
 		pushVehicle(vehicle)
 	end)
+end
+
+function addMaterials(item)
+	for recItem, recAmount in pairs(MaterialRecieve[item]) do
+		local math = math.random(math.floor((recAmount/2)+0.5), recAmount)
+		if math ~= 0 then
+			addItem(recItem, math)
+		end
+	end
 end

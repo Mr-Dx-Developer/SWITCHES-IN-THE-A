@@ -204,10 +204,10 @@ RegisterNetEvent('jim-mechanic:client:Cosmetic:Apply', function(data) local Ped 
     --Specific Modifiers to adjust for specifc GTA bullshit
 	local vehicle = getClosest(GetEntityCoords(Ped)) pushVehicle(vehicle) lookEnt(vehicle)
     local above = isVehicleLift(vehicle)
-    local cam = createTempCam(Ped, GetEntityCoords(vehicle))
+    local cam = createTempCam(GetOffsetFromEntityInWorldCoords(vehicle, 0, 0, 2.0), GetEntityCoords(Ped))
     local modName = GetLabelText(GetModTextLabel(vehicle, tonumber(data.id), tonumber(data.mod)))
 	if modName == "NULL" or (data.plate or data.oldLiv or data.roof or data.window) then modName = Loc[Config.Lan]["exterior"].stockMod end
-    if (data.plate or data.oldLiv or data.roof or data.window) then modName = data.name end
+    if (data.plate or data.oldLiv or data.roof or data.window) then modName = data.name or "" end
 	if data.id and GetVehicleMod(vehicle, tonumber(data.id)) == tonumber(data.mod) then
         triggerNotify(nil, modName..Loc[Config.Lan]["common"].already, "error") TriggerEvent('jim-mechanic:client:Cosmetic:Check', data.part)
 	else
@@ -323,8 +323,9 @@ RegisterNetEvent('jim-mechanic:client:Tires:Check', function() local Ped = Playe
 end)
 
 RegisterNetEvent('jim-mechanic:client:Tires:Apply', function(data) local item = Items["tires"] local Ped = PlayerPedId()
+    removePropHoldCoolDown() Wait(10)
 	local vehicle = getClosest(GetEntityCoords(Ped)) pushVehicle(vehicle)
-    local cam = createTempCam(Ped, GetEntityCoords(vehicle))
+    local cam = createTempCam(GetOffsetFromEntityInWorldCoords(vehicle, 0, 0, 2.0), GetEntityCoords(Ped))
 	spraying = true
 	local r, g, b = GetVehicleTyreSmokeColor(vehicle)
 	if r == data.R and g == data.G and b == data.B then

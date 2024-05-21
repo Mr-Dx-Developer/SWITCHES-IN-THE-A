@@ -1,5 +1,152 @@
 # Changelog
 
+## 3.4.2
+
+    Fix:
+        - Current Gear Text location is now better placed - `index.html`
+        - Support for planes and helicopters - `drawtext.lua`, `index.html`
+            - Replaces info on the rpm meter with altitude
+        - Refactored some of the js code - `index.html`
+        - Boats and JetSki's getting waterlogged - `extras.lua`
+        - Prop staying stuck in hand longer when it should when applying drift tire colours - `cosmetics.lua`
+
+    Changes:
+        - Changed angles of a lot of custom cameras
+            - they now start at the top of the vehicle and face the player, instead of the other way round
+            - `cosmetics.lua`, `damages.lua`, `extras.lua`, `nos.lua`, `performance.lua`, `repair.lua`, `rims.lua`, `functions.lua`
+
+## 3.4.1
+
+    Fix:
+        - Hopefully fixed stuttering fade in/out of the hud - `extras.lua`, `index.html`
+        - Fix SetGravity Spam when deleting vehicles - `extras.lua`
+        - Fix harness/seatbelt spam if you delete a vehicle while seatbelt is on - `extras.lua`
+        - Made speedometer not show in planes and helis and it doesn't fully support it for now - `extras.lua`
+        - Added scaling options to the speedometer, the markers should place and scale accordingly now - `index.html`, `drawtext.lua`, `config.lua`
+
+## 3.4
+
+    Fix:
+        - Typo making cars stay drivable after engine level going too low - `extras.lua`
+        - Forgot to add `createUseableItem` events for the two new items - `main.lua`
+        - A chance variables may get messed up with old ejection system - `extras.lua`
+        - Hopefully fix Repair animations ending too early - `repairs.lua`
+        - When changing the xenon colours/underglow colours the car will start so they can be shown - `xenons.lua`
+        - Players being able to skip harness progressbars - `extras.lua`
+        - Custom Tires now default to off (no more text), but can be toggled - `rims.lua`, `preview.lua`, `emergency.lua`
+        - `17mov_hud` causing esx errors on any server type if you have it installed - `extras.lua`
+        - Left over `qb-target` function, changed to jim_bridge's `createBoxTarget` - `locfunctions.lua`
+
+    Changes:
+        - Attempt to optimize GetVehicleStatus() by using statebags instead of callbacks - `damages.lua`, `functions.lua`, `functionserver.lua` `encfunctionserver.lua`
+            - Not sure if this will help but deserves testing
+        - Attempt to bring down `ms` when driving as much as possible - `extras.lua`
+            - Theres a lot of information being processed by the script
+            - When you stop the vehicle it brings down the loop speeds
+            - When you drive it speeds them up to track things better like when to eject.
+            - `preventRoll` now sets raises vehicle gravity to stop, instead of looping disable controls
+            - seatbelt/harnesseasyleave now checks if you are leaving the vehicle and forces you back to your seat
+            - To bring this down further you need to disable elements of the script
+            - Hightly recommend using the betaEjection system mentioned in previous patch notes to bring it down more
+        - Removed callback `jim-mechanic:checkCash` and now using `getPlayer().cash` from `jim_bridge` - `manualrepair.lua`, `emergency.lua`, `functionserver.lua`
+        - Lowered default antilagcooldown, you will hear them more often now - `extras.lua`
+        - Repairkits not longer require a vehicle to be owned - `functions.lua`
+        - Added new Custom tires button to toggle the text variation on wheels - `rims.lua`, `preview.lua`, `emergency.lua`
+            - This will only show if you have non-stock wheels on cars as they can't be applied without custom rims
+        - Raised wait after onPlayerLoaded to help loading of some props - `locfunctions.lua`
+        - Moved the manualRepair benches back out of the "enter location" checks, so they should always be visible - `locfunctions.lua`
+        - New/AlteredIcons
+            - Some icons have been redone and some have been replaced
+            - Optimized Item Images, can help loading speeds of inventories and menus (thank you havek) - `/.install`
+
+    New:
+        - Added when a vehicle is underwater, it becomes undriveable until a mechanic repairs the engine - `extras.lua`, `repair.lua`
+
+        - Override Option called `receiveMaterials` - `config.lua`, `performance.lua`, `damages.lua`, `functions.lua`, `recipes.lua`
+            - When removing performance parts, players recieve materials instead
+            - What they recieve is specified in the new table at bottom of `recipes.lua`
+            - By default they receive between: half the amount and the full amount
+            - You can add multiple items to be received
+            - When set to false the performance items will be recieved as the full parts again
+
+        - Complete rewrite of odometer code `drawtext.lua`, `index.html', `config.lua`,  `extras.lua`, `shared.lua`, `nos.lua` `xenons.lua`, `/html`
+        - Now a lot more customisable through the config.lua
+        - Custom font for milage to simulate an actual car dashboard
+        - Option to only show seatbelt/harness images for passengers
+        - More Icon's
+            - Door open warning, Manual Transmission, Underglow, Antilag, Fuel Tank damage
+        - Icon colours
+            - Added a customisable gradient system to gradually change the colour of damages
+            - Underglow, Headlights and NosPurge match the colour you have set on the car
+            - NosBoost lights up when its in use
+            - Seatbelt/Harness are hidable when buckled if you toggle it in config
+
+        - Brand new customisable Speedometer
+            - Comes in 3 different variations
+            - Customisable via config.lua
+
+        - Hides if the engine is off or the pause menu is open
+
+        - `Share your presets!`
+
+## 3.3.6
+
+    New:
+        - Add support for `vlad-gears`
+        - Two new items, `manual`, `underglow` - `ox_items.lua`, `qb_items.lua`
+            - `underglow` is now required to install enable underglow lighting on a vehicle - `functionserver.lua`, `check_tunes.lua`, `xenons.lua`, `shared.lua`
+            - `manual` enables manual transmission through the script `vlad-gears` and `GameBuild 3095` (does nothing otherwise) - `performance.lua`, `extras.lua`, `check_tunes.lua`, `shared.lua`
+            - `https://vlad-laboratory.tebex.io/package/6113070`
+        - `AltEjection` - `extras.lua`, `config.lua`
+            - Testing a alternate car crash ejection system
+            - It is enabled through the config in the Harness Section
+            - To make use of this add these lines to your server.cfg
+            - setr game_enableFlyThroughWindscreen true
+            - setr game_enablePlayerRagdollOnCollision true
+        - Support for custom blip preview images in the pause menu map. - `locations.lua` `locfunctions.lua`
+            - This requires the script blip_info to be running in your server
+            - If you dont have one added it will default to the payment logo image, if that isnt set it wont show anything.
+            - Custom images can be any size but recommended to be 512x256 png's
+
+    Changes:
+        - Adjust ejection logic slightly and add config options to allow users to customise it - `extras.lua`, `config.lua`
+            - `If you, as the driver, gets ejected under the minimum crash speed limit, you may have another script trying to eject you`
+        - Move manual repair benches back out of polyzone creation, this will make them show up at player load in - `locfunctions.lua`
+
+    Fix:
+        - Revert `updateCar` changes, people were reporting issues with saving - `functions.lua`
+        - Fix `nil HasHarness()` error if not using built in seatbelts `extras.lua`
+        - Fix default rising sun polyzone causing errors with ox_lib - `locations.lua`
+        - Remove debug print - `functionserver.lua`
+        - Checking for phone items when previewing not checking the whole list - `previews.lua`
+
+## 3.3.5
+
+    Changes:
+        - Rearrange "jim_updateVehiclePart" to not skip if you can't see the entity as it wasn't needing to - `damages.lua`
+        - Attempt to reduce server callbacks of `jim-mechanic:server:GetStatus` (the above ^ helps with this) - `damages.lua`
+        - Rearrange functions based around saving and syncing vehicle mods to help issues some have - `functionserver.lua`
+            - This should sync vehicles between players earlier and attempt to save them after
+            - In theory this could help saving mods as the vehicle should be synced better and more likely to save mods correctly
+
+    Fix:
+        - Kicking players if they used repairkits or advancedrepairkits - `functions.lua`
+        - Remove double plate grab from `DamageRandomComponent` - `damages.lua`
+        - Possible error with `modName` when applying cosmetics - `cosmetics.lua`
+        - Fix `vehicle death simulator (debug only)` option not damaging the extras - `emergency.lua`
+        - BossRoles for targets getting confused - `locfunctions.lua`
+            - It was checking for the gang role and locking players from eeing the bossmenu options
+        - Server side item checks for repair items now checks correctly with new changes - `main.lua`
+
+    New:
+        - Added support for custom Manual Repair bench props - `locfunctions.lua`
+            - in locations.lua change `prop = true` to your prop model
+            - eg. `prop = "gr_prop_gr_bench_03a"`
+        - Added Config option to old previous `preview` `preview.lua`, `config.lua`
+        - Multi Phone script support with new event `sendNewMail` through `jim_bridge - 1.0.10` - `previews.lua`
+            - As of this update, supported phones are:
+            - `gks-phone`, `yflip-phone`, `qs-smartphone`, `qs-smartphone-pro`, `roadphone`, `lbphone`, `qb-phone`
+
 ## 3.3.4
 
     Changes:

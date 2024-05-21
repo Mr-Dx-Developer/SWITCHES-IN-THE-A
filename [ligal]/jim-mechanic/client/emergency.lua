@@ -443,9 +443,10 @@ end)
 RegisterNetEvent('jim-mechanic:client:Emergency:Damage', function(data)
 	local vehicle = GetVehiclePedIsIn(PlayerPedId(), false)
 
-	SetVehicleEngineHealth(vehicle, 50.0) SetVehicleBodyHealth(vehicle, 200.0)
+	SetVehicleEngineHealth(vehicle, 40.0)
+    SetVehicleBodyHealth(vehicle, 200.0)
 	SetVehicleDirtLevel(vehicle, 14.5)
-    SetVehicleFuelLevel(vehicle, 1.0)
+    SetVehicleFuelLevel(vehicle, 10.0)
 
     SetVehicleTyreBurst(vehicle, 0, true, 990.0)
     SetVehicleTyreBurst(vehicle, 1, false, 990.0)
@@ -469,7 +470,7 @@ RegisterNetEvent('jim-mechanic:client:Emergency:Damage', function(data)
 	if Config.Repairs.ExtraDamages == true then
 		local DamageComponents = { "oil", "axle", "battery", "fuel", "spark", }
 		for _, name in pairs(DamageComponents) do
-			SetVehicleStatus(carMeta.plate, name, 20.0, true)
+			SetVehicleStatus(vehicle, name, 20.0, true)
 		end
 	end
 	TriggerEvent('jim-mechanic:client:Emergency:Menu')
@@ -603,7 +604,7 @@ RegisterNetEvent('jim-mechanic:client:Emergency:Rims:Apply', function(data) loca
 	if progressBar({label = Loc[Config.Lan]["common"].installing, time = 1000, cancel = true }) then
         SetVehicleWheelType(vehicle, tonumber(data.wheeltype))
         if not data.bike then
-            SetVehicleMod(vehicle, 23, tonumber(data.mod), true) else SetVehicleMod(vehicle, 24, tonumber(data.mod), false)
+            SetVehicleMod(vehicle, 23, tonumber(data.mod), GetVehicleModVariation(vehicle, 23)) else SetVehicleMod(vehicle, 24, tonumber(data.mod), false)
         end
     else
     end
@@ -612,9 +613,18 @@ RegisterNetEvent('jim-mechanic:client:Emergency:Rims:Apply', function(data) loca
     end
 end)
 
+RegisterNetEvent('jim-mechanic:client:Emergency:Rims:ApplyCustomTires', function(data) local Ped = PlayerPedId()
+	if IsPedInAnyVehicle(Ped, false) then vehicle = GetVehiclePedIsIn(Ped, false) end
+	if progressBar({label = Loc[Config.Lan]["common"].installing, time = 1000, cancel = true }) then
+        SetVehicleMod(vehicle, 23, GetVehicleMod(vehicle, 23), not GetVehicleModVariation(vehicle, 23))
+    else
+    end
+    TriggerEvent('jim-mechanic:client:Emergency:Rims:Check')
+end)
+
 RegisterNetEvent('jim-mechanic:client:Emergency:Rims:Check', function() local Menu, Ped = {}, PlayerPedId() local vehicle = nil
 	if IsPedInAnyVehicle(Ped, false) then vehicle = GetVehiclePedIsIn(Ped, false) end
-	if IsThisModelABike(GetEntityModel(vehicle)) then cycle = true else cycle = false end
+    local cycle = IsThisModelABike(GetEntityModel(vehicle))
 
 	if not cycle then
 		Menu[#Menu + 1] = {
@@ -624,6 +634,16 @@ RegisterNetEvent('jim-mechanic:client:Emergency:Rims:Check', function() local Me
 			txt = (GetVehicleMod(vehicle, 23) == -1) and Loc[Config.Lan]["common"].current or "",
 			onSelect = function() TriggerEvent("jim-mechanic:client:Emergency:Rims:Apply", { mod = -1 , wheeltype = 0 }) end,
 		}
+        if GetVehicleMod(vehicle, 23) ~= -1 then
+            Menu[#Menu + 1] = {
+                isMenuHeader = (GetVehicleMod(vehicle, 23) == -1 and GetVehicleMod(vehicle, 24) == -1),
+                header = "Custom Tires",
+                txt = GetVehicleModVariation(vehicle, 23) and Loc[Config.Lan]["common"].installed:gsub("%!", "") or Loc[Config.Lan]["common"].notinstall,
+                onSelect = function()
+                    TriggerEvent("jim-mechanic:client:Emergency:Rims:ApplyCustomTires")
+                end,
+            }
+        end
 		for k, v in pairs(wheelType) do
 			Menu[#Menu+1] = { arrow = true, header = v,
 				onSelect = function() TriggerEvent("jim-mechanic:client:Emergency:Rims:Choose", { wheeltype = k, bike = false }) end,

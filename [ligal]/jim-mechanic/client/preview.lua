@@ -1,4 +1,4 @@
-local previewing, stoppreview, properties, carMeta = false, false, nil, {}
+local previewing, stoppreview, properties, carMeta, oldMenu = false, false, nil, {}, (not Config.Previews.oldOxLibMenu)
 
 local function printDifferences(vehicle, properties, newproperties)
 	local veh = carMeta["search"]
@@ -146,24 +146,18 @@ local function printDifferences(vehicle, properties, newproperties)
 
 	-- FINIALIZE AND MAKE LIST --
 	local hasPhone = false
-	for _, v in pairs(Config.Previews.PhoneItems) do if Items[v] and hasItem(v) then hasPhone = true break end end
+	for _, v in pairs(Config.Previews.PhoneItems) do if Items[v] and hasItem(v) then hasPhone = true break end Wait(10) end
     if Config.Previews.PreviewPhone and hasPhone then
-		if vehlist[1] then local newlist = ""
-			local eventTable = {
-				["gks"] = "gksphone:NewMail",
-				["qs"] = "qs-smartphone:server:sendNewMail",
-				["qb"] = "qb-phone:server:sendNewMail",
-				["roadphone"] = "roadphone:receiveMail",
-			}
-			local br = Config.Previews.PhoneMail == "roadphone" and "\n" or "<br>"
-			for i = 1, #vehlist do newlist = newlist..br..vehlist[i] end
-			TriggerServerEvent(eventTable[Config.Previews.PhoneMail], {
+		if vehlist[1] then
+			local newlist = ""
+			for i = 1, #vehlist do newlist = newlist.."<br>"..vehlist[i] end
+			local mailData = {
 				sender = vehplate,
 				subject = veh,
-				image = "/html/static/img/icons/mail.png",
-				message = veh..br..Loc[Config.Lan]["police"].plates..": "..vehplate..br..br..Loc[Config.Lan]["previews"].changes..#vehlist..br.." ----------------------- "..br..newlist,
-				button = {}
-			})
+				image = "http://clipart-library.com/image_gallery2/Spanner-PNG-Image.png",
+				message = veh.."<br>"..Loc[Config.Lan]["police"].plates..": "..vehplate.."<br>".."<br>"..Loc[Config.Lan]["previews"].changes..#vehlist.."<br>".." ----------------------- ".."<br>"..newlist,
+			}
+			sendPhoneMail(mailData)
 		end
 	elseif not Config.Previews.PreviewPhone or not hasPhone then
 		if vehlist[1] then
@@ -211,7 +205,7 @@ RegisterNetEvent("jim-mechanic:client:giveList", function(item)
 		header = item.info["veh"],
 		headertxt = item.info["vehplate"]..br..Loc[Config.Lan]["previews"].changes..(#item.info["vehlist"]),
 		canClose = true,
-		onSelected = true,
+		onSelected = oldMenu,
 	})
 end)
 
@@ -394,7 +388,7 @@ RegisterNetEvent('jim-mechanic:client:Preview:Menu', function() local validMods,
 		if not IsThisModelABike(GetEntityModel(vehicle)) then
 			Menu[#Menu+1] = { arrow = true, header = "", txt = Loc[Config.Lan]["windows"].menuheader, onSelect = function() TriggerEvent("jim-mechanic:client:Preview:Windows:Check") end, }
 		end
-		openMenu(Menu, { header = carMeta["search"], onSelected = true, })
+		openMenu(Menu, { header = carMeta["search"], onSelected = oldMenu, })
 		preview(Ped, vehicle)
 	end
 end)
@@ -437,7 +431,7 @@ RegisterNetEvent("jim-mechanic:client:Preview:Multi", function(data) local valid
 		header = carMeta["search"],
 		headertxt = data.name.." "..Loc[Config.Lan]["common"].amountoption..(#validMods+1).." ]",
 		onBack = function() TriggerEvent("jim-mechanic:client:Preview:Menu") end,
-		onSelected = true,
+		onSelected = oldMenu,
 	})
 end)
 
@@ -510,7 +504,7 @@ RegisterNetEvent('jim-mechanic:client:Preview:Livery', function(data) local stoc
 		header = carMeta["search"],
 		headertxt = Loc[Config.Lan]["police"].livery.." - [ "..Loc[Config.Lan]["common"].amountoption..amountMods.." ]",
 		onBack = function() TriggerEvent("jim-mechanic:client:Preview:Menu") end,
-		onSelected = true,
+		onSelected = oldMenu,
 	})
 end)
 
@@ -570,7 +564,7 @@ RegisterNetEvent('jim-mechanic:client:Preview:Plates', function() local PlateMen
 			openMenu(PlateMenu, {
 				header = carMeta["search"],
 				onBack = function() TriggerEvent("jim-mechanic:client:Preview:Menu") end,
-				onSelected = true,
+				onSelected = oldMenu,
 			})
 		end
 	end
@@ -639,7 +633,7 @@ RegisterNetEvent('jim-mechanic:client:Preview:Paint', function() local vehicle, 
 		header = carMeta["search"],
 		headertxt = Loc[Config.Lan]["paint"].menuheader,
 		onBack = function() TriggerEvent("jim-mechanic:client:Preview:Menu") end,
-		onSelected = true,
+		onSelected = oldMenu,
 	})
 end)
 
@@ -673,7 +667,7 @@ RegisterNetEvent('jim-mechanic:client:Preview:Paints:Choose', function(data) loc
 		header = carMeta["search"],
 		headertxt = Loc[Config.Lan]["paint"].menuheader..br..(isOx() and br or "")..data,
 		onBack = function() TriggerEvent("jim-mechanic:client:Preview:Paint") end,
-		onSelected = true,
+		onSelected = oldMenu,
 	})
 end)
 
@@ -716,7 +710,7 @@ RegisterNetEvent('jim-mechanic:client:Preview:Paints:Choose:Colour', function(da
 		header = carMeta["search"],
 		headertxt = Loc[Config.Lan]["paint"].menuheader..br..(isOx() and br or "")..data.finish.." "..data.paint,
 		onBack = function() TriggerEvent("jim-mechanic:client:Preview:Paints:Choose", data.paint) end,
-		onSelected = true,
+		onSelected = oldMenu,
 	})
 end)
 
@@ -744,13 +738,19 @@ local wheelType = {
 RegisterNetEvent('jim-mechanic:client:Preview:Rims:Apply', function(data) local Ped = PlayerPedId()
 	if IsPedInAnyVehicle(Ped, false) then vehicle = GetVehiclePedIsIn(Ped, false) end
 	SetVehicleWheelType(vehicle, tonumber(data.wheeltype))
-	if not data.bike then SetVehicleMod(vehicle, 23, tonumber(data.mod), true) else SetVehicleMod(vehicle, 24, tonumber(data.mod), false) end
+	if not data.bike then SetVehicleMod(vehicle, 23, tonumber(data.mod), GetVehicleModVariation(vehicle, 23)) else SetVehicleMod(vehicle, 24, tonumber(data.mod), false) end
 	if data.mod == -1 then TriggerEvent('jim-mechanic:client:Preview:Rims:Check', data) else TriggerEvent('jim-mechanic:client:Preview:Rims:SubMenu', data) end
+end)
+
+RegisterNetEvent('jim-mechanic:client:Preview:Rims:ApplyCustomTires', function(data) local Ped = PlayerPedId()
+	if IsPedInAnyVehicle(Ped, false) then vehicle = GetVehiclePedIsIn(Ped, false) end
+	SetVehicleMod(vehicle, 23, GetVehicleMod(vehicle, 23), not GetVehicleModVariation(vehicle, 23))
+	TriggerEvent('jim-mechanic:client:Preview:Rims:Check', data)
 end)
 
 RegisterNetEvent('jim-mechanic:client:Preview:Rims:Check', function() local Menu, Ped = {}, PlayerPedId()
 	if IsPedInAnyVehicle(Ped, false) then	vehicle = GetVehiclePedIsIn(Ped, false) end
-	if IsThisModelABike(GetEntityModel(vehicle)) then cycle = true else cycle = false end
+	local cycle = IsThisModelABike(GetEntityModel(vehicle))
 
 	if IsCamActive(camTable[currentCam]) then
 		Menu[#Menu+1] = { icon = "fas fa-camera", header = "",
@@ -766,6 +766,16 @@ RegisterNetEvent('jim-mechanic:client:Preview:Rims:Check', function() local Menu
 			txt = (GetVehicleMod(vehicle, 23) == -1) and Loc[Config.Lan]["common"].current or "",
 			onSelect = function() TriggerEvent("jim-mechanic:client:Preview:Rims:Apply", { mod = -1 , wheeltype = 0 }) end,
 		}
+		if GetVehicleMod(vehicle, 23) ~= -1 then
+			Menu[#Menu + 1] = {
+				isMenuHeader = (GetVehicleMod(vehicle, 23) == -1 and GetVehicleMod(vehicle, 24) == -1),
+				header = "Custom Tires",
+				txt = GetVehicleModVariation(vehicle, 23) and Loc[Config.Lan]["common"].installed:gsub("%!", "") or Loc[Config.Lan]["common"].notinstall,
+				onSelect = function()
+					TriggerEvent("jim-mechanic:client:Preview:Rims:ApplyCustomTires")
+				end,
+			}
+		end
 		for k, v in pairs(wheelType) do
 			Menu[#Menu+1] = { arrow = true, header = v,
 				onSelect = function() TriggerEvent("jim-mechanic:client:Preview:Rims:Choose", { wheeltype = k, bike = false }) end,
@@ -787,7 +797,7 @@ RegisterNetEvent('jim-mechanic:client:Preview:Rims:Check', function() local Menu
 		header = carMeta["search"],
 		headertxt = headertxt,
 		onBack = function() TriggerEvent("jim-mechanic:client:Preview:Menu") end,
-		onSelected = true,
+		onSelected = oldMenu,
 	})
 end)
 
@@ -849,7 +859,7 @@ RegisterNetEvent('jim-mechanic:client:Preview:Rims:Choose', function(data) local
 		header = carMeta["search"],
 		headertxt = headertxt,
 		onBack = function() TriggerEvent("jim-mechanic:client:Preview:Rims:Check") end,
-		onSelected = true,
+		onSelected = oldMenu,
 	})
 end)
 
@@ -883,7 +893,7 @@ RegisterNetEvent('jim-mechanic:client:Preview:Rims:SubMenu', function(data)	loca
 		header = carMeta["search"],
 		headertxt = headertxt,
 		onBack = function() TriggerEvent("jim-mechanic:client:Preview:Rims:Choose", { wheeltype = data.wheeltype, bike = data.bike } ) end,
-		onSelected = true,
+		onSelected = oldMenu,
 	})
 end)
 
@@ -926,7 +936,7 @@ RegisterNetEvent('jim-mechanic:client:Preview:Windows:Check', function(data) loc
 		header = carMeta["search"],
 		headertxt = Loc[Config.Lan]["windows"].menuheader,
 		onBack = function() TriggerEvent("jim-mechanic:client:Preview:Menu") end,
-		onSelected = true,
+		onSelected = oldMenu,
 	})
 end)
 
@@ -973,6 +983,6 @@ RegisterNetEvent('jim-mechanic:client:Preview:Extras:Check', function(data) loca
 	openMenu(Menu, {
 		header = carMeta["search"],
 		onBack = function() TriggerEvent("jim-mechanic:client:Preview:Menu") end,
-		onSelected = true,
+		onSelected = oldMenu,
 	})
 end)
