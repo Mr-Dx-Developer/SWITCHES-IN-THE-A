@@ -42,8 +42,8 @@ Config.MagicPedModel = `ig_chrisformage` -- Model to spawn for the magic ped [ m
 Config.DisablePlayerControls = true -- Set to true if you want to disable player controls when they are being revived and transported to the hospital
                                     -- Set to false if you want to allow players to move around when they are being transported to the hospital
 
-Config.Timeout = 10 -- Time in mins before the ambulance is despawned if it is does not arrive
-Config.Cooldown = 60 -- Time in mins before you can call the ambulance again
+Config.Timeout = 1 -- Time in mins before the ambulance is despawned if it is does not arrive
+Config.Cooldown = 10 -- Time in mins before you can call the ambulance again
 
 Config.SpawnDistance = 200.0 -- How far away you want the ambulance to spawn from the player
 Config.SafeDistance = 15 -- Distance to check for players when spawning Ambulance - to prevent it spawning infront of people
@@ -121,7 +121,7 @@ Config.Society = 'ambulance' -- Name of Society to send funds to  - set to false
 Config.CheckPlayerIsDead = true -- Set to true if you want to check if the player is dead before sending the ambulance
                                 -- Set to false if you want to call the ambulance regardless if the player is dead or not
 
-Config.CheckForPhone = true -- Set to true if you want to check if the player has a phone before they can call for help
+Config.CheckForPhone = false -- Set to true if you want to check if the player has a phone before they can call for help
                             -- Set to false if you want to allow anyone to call for help regardless if they have a phone or not
 Config.PhoneItems = { 'phone', 'phone2', } -- Items to check for if CheckForPhone is set to true (supports multiple items)
 
