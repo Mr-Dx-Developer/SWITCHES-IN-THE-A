@@ -4,7 +4,7 @@ lua54 'yes'
 
 author 'vames™️'
 description 'vms_spawnselector'
-version '1.0.2'
+version '4.0.2'
 
 shared_script 'config.lua'
 

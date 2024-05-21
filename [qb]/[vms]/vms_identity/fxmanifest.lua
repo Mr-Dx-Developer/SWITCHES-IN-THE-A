@@ -3,7 +3,7 @@ game 'gta5'
 lua54 'yes'
 author 'vames™️#1400'
 description 'vms_identity'
-version '1.0.6'
+version '3.0.6'
 
 shared_script {
 	'config/config.lua',
