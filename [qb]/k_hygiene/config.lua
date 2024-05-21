@@ -43,6 +43,10 @@ Config.Variables = {
     },
     bathModels = {
         "apa_mp_h_bathtub_01",
+        "v_res_mbath",
+        "prop_birdbath2",
+        "v_res_mbath",
+        "prop_birdbath1",
     },
     UsingKDiseases = true, diseaseResourceName = 'k_diseases',
     ShowerBlips = {
