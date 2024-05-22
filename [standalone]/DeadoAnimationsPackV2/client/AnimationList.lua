@@ -394,6 +394,81 @@ DP.Shared = {
     -- targetemote is used for animations that have a corresponding animation to the other player, ie Carry and Be Carried --
     -- Emotes will work with either SyncOffset or Attachto. We can attach players either in front of us, to a specific bone, or either side of us. --
 
+    ["Duo Male"] = {
+        "duomale@damian",
+        "non_clip",
+        "Duo Male",
+        AnimationOptions = {
+            EmoteLoop = true
+        }
+    },
+    ["Duo Female"] = {
+        "duofem@damian",
+        "non_clip",
+        "Dou Female",
+        AnimationOptions = {
+            EmoteLoop = true
+        }
+    },
+    ["Duo Male 2"] = {
+        "duomale2@damian",
+        "non_clip",
+        "Duo Male #2",
+        AnimationOptions = {
+            EmoteLoop = true
+        }
+    },
+    ["Duo Female 2"] = {
+        "duofem2@damian",
+        "non_clip",
+        "Duo Female #2",
+        AnimationOptions = {
+            EmoteLoop = true
+        }
+    },
+    ["Duo Male 3"] = {
+        "duomale3@damian",
+        "non_clip",
+        "Duo Male #3",
+        AnimationOptions = {
+            EmoteLoop = true
+        }
+    },
+    ["Duo Male 4"] = {
+        "duomale4@damian",
+        "non_clip",
+        "Duo Male #4",
+        AnimationOptions = {
+            EmoteLoop = true
+        }
+    },
+    ["Duo Female 4"] = {
+        "duofem4@damian",
+        "non_clip",
+        "Duo Female #4",
+        AnimationOptions = {
+            EmoteLoop = true
+        }
+    },
+    ["Duo 5a"] = {
+        "duo5@damian",
+        "non_clip",
+        "Duo #5a",
+        AnimationOptions = {
+            EmoteLoop = true
+        }
+    },
+    ["Duo 5b"] = {
+        "duod5@damian",
+        "non_clip",
+        "Duo #5b",
+        AnimationOptions = {
+            EmoteLoop = true
+        }
+    },
+
+
+    
     ["kiss5"] = {
         "tigerle@custom@couple@kissing1a",
         "tigerle_couple_kissing1a",
