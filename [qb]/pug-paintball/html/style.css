@@ -1,0 +1,777 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --main-font-size: 1.6vh;  
+}
+
+.container {
+    height: 100vh;
+    opacity: 1.0;
+}
+
+.ui {
+    position: absolute;
+    width: 30vh;
+    height: 0vh;
+    bottom: 70.0vh;
+    border-radius: 0vh;
+    left: 45.0vh;
+}
+
+.background {
+    border: thick double #00000069;
+    position: absolute;
+    top: 20.0vh;
+    bottom: 0.0vh;
+    left: 0.0vh;
+    right: 0.5vh;
+    width: 85vh;
+    height: 38.1vh;
+    background-color: #40698196;
+}
+
+.background2 {
+    border: thick double #00000069;
+    position: absolute;
+    top: -43.0vh;
+    bottom: 0.0vh;
+    left: -0.5vh;
+    right: 0.0vh;
+    width: 85vh;
+    height: 37.8vh;
+    background-color: #81404096;
+}
+
+/* Red grid below */
+.grid1 {
+    border: thick double #00000069;
+    position: absolute;
+    top: -42.8vh;
+    bottom: 0.0vh;
+    left: -0.5vh;
+    right: 0.0vh;
+    width: 85vh;
+    height: 3vh;
+    background-color: #b6797948;
+}
+.grid2 {
+    border: thick double #00000069;
+    position: absolute;
+    top: -39.6vh;
+    bottom: 0.0vh;
+    left: -0.5vh;
+    right: 0.0vh;
+    width: 85vh;
+    height: 3vh;
+    background-color: #81404059;
+}
+.grid3 {
+    border: thick double #00000069;
+    position: absolute;
+    top: -36.4vh;
+    bottom: 0.0vh;
+    left: -0.5vh;
+    right: 0.0vh;
+    width: 85vh;
+    height: 3vh;
+    background-color: #b6797948;
+}
+.grid4 {
+    border: thick double #00000069;
+    position: absolute;
+    top: -33.2vh;
+    bottom: 0.0vh;
+    left: -0.5vh;
+    right: 0.0vh;
+    width: 85vh;
+    height: 3vh;
+    background-color: #81404059;
+}
+.grid5 {
+    border: thick double #00000069;
+    position: absolute;
+    top: -30.0vh;
+    bottom: 0.0vh;
+    left: -0.5vh;
+    right: 0.0vh;
+    width: 85vh;
+    height: 3vh;
+    background-color: #b6797948;
+}
+.grid6 {
+    border: thick double #00000069;
+    position: absolute;
+    top: -27.0vh;
+    bottom: 0.0vh;
+    left: -0.5vh;
+    right: 0.0vh;
+    width: 85vh;
+    height: 3vh;
+    background-color: #81404059;
+}
+.grid7 {
+    border: thick double #00000069;
+    position: absolute;
+    top: -24.0vh;
+    bottom: 0.0vh;
+    left: -0.5vh;
+    right: 0.0vh;
+    width: 85vh;
+    height: 3vh;
+    background-color: #b6797948;
+}
+.grid8 {
+    border: thick double #00000069;
+    position: absolute;
+    top: -21.0vh;
+    bottom: 0.0vh;
+    left: -0.5vh;
+    right: 0.0vh;
+    width: 85vh;
+    height: 3vh;
+    background-color: #81404059;
+}
+.grid9 {
+    border: thick double #00000069;
+    position: absolute;
+    top: -18.0vh;
+    bottom: 0.0vh;
+    left: -0.5vh;
+    right: 0.0vh;
+    width: 85vh;
+    height: 3vh;
+    background-color: #b6797948;
+}
+.grid10 {
+    border: thick double #00000069;
+    position: absolute;
+    top: -15.0vh;
+    bottom: 0.0vh;
+    left: -0.5vh;
+    right: 0.0vh;
+    width: 85vh;
+    height: 3vh;
+    background-color: #81404059;
+}
+.grid11 {
+    border: thick double #00000069;
+    position: absolute;
+    top: -12.0vh;
+    bottom: 0.0vh;
+    left: -0.5vh;
+    right: 0.0vh;
+    width: 85vh;
+    height: 3vh;
+    background-color: #b6797948;
+}
+.grid12 {
+    border: thick double #00000069;
+    position: absolute;
+    top: -8.5vh;
+    bottom: 0.0vh;
+    left: -0.5vh;
+    right: 0.0vh;
+    width: 85vh;
+    height: 3vh;
+    background-color: #81404059;
+}
+
+
+
+/* Blue grid below */
+.grid13 {
+    border: thick double #00000069;
+    position: absolute;
+    top: 0.0vh;
+    bottom: 0.0vh;
+    left: -0.5vh;
+    right: 0.0vh;
+    width: 85vh;
+    height: 3vh;
+    background-color: #79aecc3b;
+}
+.grid14 {
+    border: thick double #00000069;
+    position: absolute;
+    top: 3.5vh;
+    bottom: 0.0vh;
+    left: -0.5vh;
+    right: 0.0vh;
+    width: 85vh;
+    height: 3vh;
+    background-color: #40698167;
+}
+.grid15 {
+    border: thick double #00000069;
+    position: absolute;
+    top: 7.0vh;
+    bottom: 0.0vh;
+    left: -0.5vh;
+    right: 0.0vh;
+    width: 85vh;
+    height: 3vh;
+    background-color: #79aecc3b;
+}
+.grid16 {
+    border: thick double #00000069;
+    position: absolute;
+    top: 10.5vh;
+    bottom: 0.0vh;
+    left: -0.5vh;
+    right: 0.0vh;
+    width: 85vh;
+    height: 3vh;
+    background-color: #40698167;
+}
+.grid17 {
+    border: thick double #00000069;
+    position: absolute;
+    top: 13.5vh;
+    bottom: 0.0vh;
+    left: -0.5vh;
+    right: 0.0vh;
+    width: 85vh;
+    height: 3vh;
+    background-color: #79aecc3b;
+}
+.grid18 {
+    border: thick double #00000069;
+    position: absolute;
+    top: 16.5vh;
+    bottom: 0.0vh;
+    left: -0.5vh;
+    right: 0.0vh;
+    width: 85vh;
+    height: 3vh;
+    background-color: #40698167;
+}
+.grid19 {
+    border: thick double #00000069;
+    position: absolute;
+    top: 19.5vh;
+    bottom: 0.0vh;
+    left: -0.5vh;
+    right: 0.0vh;
+    width: 85vh;
+    height: 3vh;
+    background-color: #79aecc3b;
+}
+.grid20 {
+    border: thick double #00000069;
+    position: absolute;
+    top: 22.5vh;
+    bottom: 0.0vh;
+    left: -0.5vh;
+    right: 0.0vh;
+    width: 85vh;
+    height: 3vh;
+    background-color: #40698167;
+}
+.grid21 {
+    border: thick double #00000069;
+    position: absolute;
+    top: 25.5vh;
+    bottom: 0.0vh;
+    left: -0.5vh;
+    right: 0.0vh;
+    width: 85vh;
+    height: 3vh;
+    background-color: #79aecc3b;
+}
+.grid22 {
+    border: thick double #00000069;
+    position: absolute;
+    top: 28.5vh;
+    bottom: 0.0vh;
+    left: -0.5vh;
+    right: 0.0vh;
+    width: 85vh;
+    height: 3vh;
+    background-color: #40698167;
+}
+.grid23 {
+    border: thick double #00000069;
+    position: absolute;
+    top: 31.5vh;
+    bottom: 0.0vh;
+    left: -0.5vh;
+    right: 0.0vh;
+    width: 85vh;
+    height: 3vh;
+    background-color: #79aecc3b;
+}
+.grid24 {
+    border: thick double #00000069;
+    position: absolute;
+    top: 34.5vh;
+    bottom: 0.0vh;
+    left: -0.5vh;
+    right: 0.0vh;
+    width: 85vh;
+    height: 3vh;
+    background-color: #40698167;
+}
+
+/* end of scoreboard grid */
+
+/* scoreboard details */
+
+.pball {
+    display: none;
+}
+
+#pball-mode {
+    text-align: center;
+    white-space: nowrap;
+    position: absolute;
+    left: 30vh;
+    top: 16.5vh;
+    font-size: 3vh;
+    font-family: sans-serif;
+    font-weight: bold;
+    color: white;
+    text-shadow: 1px 1px 0px #000000;
+    right: 0.5vh;
+}
+#pball-player {
+    text-align: center;
+    white-space: nowrap;
+    position: absolute;
+    left: 0vh;
+    top: -25vh;
+    font-family: sans-serif;
+    font-size: var(--main-font-size);
+    font-weight: bold;
+    color: white;
+    text-shadow: 1px 1px 0px #000000;
+    right: 4.5vh;
+}
+
+#pball-kills {
+    text-align: center;
+    white-space: nowrap;
+    position: absolute;
+    left: 30vh;
+    top: -25vh;
+    font-family: sans-serif;
+    font-size: var(--main-font-size);
+    font-weight: bold;
+    color: white;
+    text-shadow: 1px 1px 0px #000000;
+    right: 0.5vh;
+}
+#pball-deaths {
+    text-align: center;
+    white-space: nowrap;
+    position: absolute;
+    left: 46vh;
+    top: -25vh;
+    font-family: sans-serif;
+    font-size: var(--main-font-size);
+    font-weight: bold;
+    color: white;
+    text-shadow: 1px 1px 0px #000000;
+    right: 0.5vh;
+}
+
+#pball-points {
+    text-align: center;
+    white-space: nowrap;
+    position: absolute;
+    left: 63.5vh;
+    top: -25vh;
+    font-family: sans-serif;
+    font-size: var(--main-font-size);
+    font-weight: bold;
+    color: white;
+    text-shadow: 1px 1px 0px #000000;
+    right: 0.5vh;
+}
+
+/* Red Team */
+#pball-firstplacer {
+    white-space: pre;
+    word-spacing: 7.4vh;
+    position: absolute;
+    color: white;
+    font-size: var(--main-font-size);
+    font-family: 'Roboto', sans-serif !important;
+    font-weight: 600;
+    left: 10vh;
+    top: -21.7vh;
+    float: left;
+    text-transform: normal;
+}
+
+
+#pball-secondplacer {
+    white-space: pre;
+    word-spacing: 7.4vh;
+    position: absolute;
+    color: white;
+    font-size: var(--main-font-size);
+    font-family: 'Roboto', sans-serif !important;
+    font-weight: 600;
+    left: 10vh;
+    top: -18.3vh;
+    float: left;
+    text-transform: normal;
+}
+
+#pball-thirdplacer {
+    white-space: pre;
+    word-spacing: 7.4vh;
+    position: absolute;
+    color: white;
+    font-size: var(--main-font-size);
+    font-family: 'Roboto', sans-serif !important;
+    font-weight: 600;
+    left: 10vh;
+    top: -15.3vh;
+    float: left;
+    text-transform: normal;
+}
+
+#pball-fourthplacer {
+    white-space: pre;
+    word-spacing: 7.4vh;
+    position: absolute;
+    color: white;
+    font-size: var(--main-font-size);
+    font-family: 'Roboto', sans-serif !important;
+    font-weight: 600;
+    left: 10vh;
+    top: -12.0vh;
+    float: left;
+    text-transform: normal;
+}
+
+#pball-fithplacer {
+    white-space: pre;
+    word-spacing: 7.4vh;
+    position: absolute;
+    color: white;
+    font-size: var(--main-font-size);
+    font-family: 'Roboto', sans-serif !important;
+    font-weight: 600;
+    left: 10vh;
+    top: -8.8vh;
+    float: left;
+    text-transform: normal;
+}
+
+#pball-sixthplacer {
+    white-space: pre;
+    word-spacing: 7.4vh;
+    position: absolute;
+    color: white;
+    font-size: var(--main-font-size);
+    font-family: 'Roboto', sans-serif !important;
+    font-weight: 600;
+    left: 10vh;
+    top: -5.6vh;
+    float: left;
+    text-transform: normal;
+}
+
+#pball-seventhplacer {
+    white-space: pre;
+    word-spacing: 7.4vh;
+    position: absolute;
+    color: white;
+    font-size: var(--main-font-size);
+    font-family: 'Roboto', sans-serif !important;
+    font-weight: 600;
+    left: 10vh;
+    top: -2.8vh;
+    float: left;
+    text-transform: normal;
+}
+
+
+#pball-eigthplacer {
+    white-space: pre;
+    word-spacing: 7.4vh;
+    position: absolute;
+    color: white;
+    font-size: var(--main-font-size);
+    font-family: 'Roboto', sans-serif !important;
+    font-weight: 600;
+    left: 10vh;
+    top: 0.2vh;
+    float: left;
+    text-transform: normal;
+}
+
+#pball-ninethplacer {
+    white-space: pre;
+    word-spacing: 7.4vh;
+    position: absolute;
+    color: white;
+    font-size: var(--main-font-size);
+    font-family: 'Roboto', sans-serif !important;
+    font-weight: 600;
+    left: 10vh;
+    top: 3.2vh;
+    float: left;
+    text-transform: normal;
+}
+
+#pball-tenthplacer {
+    white-space: pre;
+    word-spacing: 7.4vh;
+    position: absolute;
+    color: white;
+    font-size: var(--main-font-size);
+    font-family: 'Roboto', sans-serif !important;
+    font-weight: 600;
+    left: 10vh;
+    top: 6.2vh;
+    float: left;
+    text-transform: normal;
+}
+
+#pball-elleventhplacer {
+    white-space: pre;
+    word-spacing: 7.4vh;
+    position: absolute;
+    color: white;
+    font-size: var(--main-font-size);
+    font-family: 'Roboto', sans-serif !important;
+    font-weight: 600;
+    left: 10vh;
+    top: 9.4vh;
+    float: left;
+    text-transform: normal;
+}
+
+#pball-twelveplacer {
+    white-space: pre;
+    word-spacing: 7.4vh;
+    position: absolute;
+    color: white;
+    font-size: var(--main-font-size);
+    font-family: 'Roboto', sans-serif !important;
+    font-weight: 600;
+    left: 10vh;
+    top: 12.6vh;
+    float: left;
+    text-transform: normal;
+}
+
+/* Blue Team */
+#pball-firstplaceb {
+    white-space: pre;
+    word-spacing: 7.4vh;
+    position: absolute;
+    color: white;
+    font-size: var(--main-font-size);
+    font-family: 'Roboto', sans-serif !important;
+    font-weight: 600;
+    left: 10vh;
+    top: 21.1vh;
+    float: left;
+    text-transform: normal;
+}
+
+#pball-secondplaceb {
+    white-space: pre;
+    word-spacing: 7.4vh;
+    position: absolute;
+    color: white;
+    font-size: var(--main-font-size);
+    font-family: 'Roboto', sans-serif !important;
+    font-weight: 600;
+    left: 10vh;
+    top: 24.7vh;
+    float: left;
+    text-transform: normal;
+}
+
+#pball-thirdplaceb {
+    white-space: pre;
+    word-spacing: 7.4vh;
+    position: absolute;
+    color: white;
+    font-size: var(--main-font-size);
+    font-family: 'Roboto', sans-serif !important;
+    font-weight: 600;
+    left: 10vh;
+    top: 28.2vh;
+    float: left;
+    text-transform: normal;
+}
+
+#pball-fourthplaceb {
+    white-space: pre;
+    word-spacing: 7.4vh;
+    position: absolute;
+    color: white;
+    font-size: var(--main-font-size);
+    font-family: 'Roboto', sans-serif !important;
+    font-weight: 600;
+    left: 10vh;
+    top: 31.6vh;
+    float: left;
+    text-transform: normal;
+}
+
+#pball-fithplaceb {
+    white-space: pre;
+    word-spacing: 7.4vh;
+    position: absolute;
+    color: white;
+    font-size: var(--main-font-size);
+    font-family: 'Roboto', sans-serif !important;
+    font-weight: 600;
+    left: 10vh;
+    top: 34.6vh;
+    float: left;
+    text-transform: normal;
+}
+
+#pball-sixthplaceb {
+    white-space: pre;
+    word-spacing: 7.4vh;
+    position: absolute;
+    color: white;
+    font-size: var(--main-font-size);
+    font-family: 'Roboto', sans-serif !important;
+    font-weight: 600;
+    left: 10vh;
+    top: 37.6vh;
+    float: left;
+    text-transform: normal;
+}
+
+#pball-seventhplaceb {
+    white-space: pre;
+    word-spacing: 7.4vh;
+    position: absolute;
+    color: white;
+    font-size: var(--main-font-size);
+    font-family: 'Roboto', sans-serif !important;
+    font-weight: 600;
+    left: 10vh;
+    top: 40.6vh;
+    float: left;
+    text-transform: normal;
+}
+
+
+#pball-eigthplaceb {
+    white-space: pre;
+    word-spacing: 7.4vh;
+    position: absolute;
+    color: white;
+    font-size: var(--main-font-size);
+    font-family: 'Roboto', sans-serif !important;
+    font-weight: 600;
+    left: 10vh;
+    top: 43.6vh;
+    float: left;
+    text-transform: normal;
+}
+
+#pball-ninethplaceb {
+    white-space: pre;
+    word-spacing: 7.4vh;
+    position: absolute;
+    color: white;
+    font-size: var(--main-font-size);
+    font-family: 'Roboto', sans-serif !important;
+    font-weight: 600;
+    left: 10vh;
+    top: 46.6vh;
+    float: left;
+    text-transform: normal;
+}
+
+#pball-tenthplaceb {
+    white-space: pre;
+    word-spacing: 7.4vh;
+    position: absolute;
+    color: white;
+    font-size: var(--main-font-size);
+    font-family: 'Roboto', sans-serif !important;
+    font-weight: 600;
+    left: 10vh;
+    top: 49.6vh;
+    float: left;
+    text-transform: normal;
+}
+
+#pball-elleventhplaceb {
+    white-space: pre;
+    word-spacing: 7.4vh;
+    position: absolute;
+    color: white;
+    font-size: var(--main-font-size);
+    font-family: 'Roboto', sans-serif !important;
+    font-weight: 600;
+    left: 10vh;
+    top: 52.6vh;
+    float: left;
+    text-transform: normal;
+}
+
+#pball-twelveplaceb {
+    white-space: pre;
+    word-spacing: 7.4vh;
+    position: absolute;
+    color: white;
+    font-size: var(--main-font-size);
+    font-family: 'Roboto', sans-serif !important;
+    font-weight: 600;
+    left: 10vh;
+    top: 55.6vh;
+    float: left;
+    text-transform: normal;
+}
+
+#pball-RedScore {
+    white-space: nowrap;
+    text-align: center;
+    position: absolute;
+    left: -30vh;
+    top: -11.0vh;
+    font-family: sans-serif;
+    font-size: 10vh;
+    font-weight: bold;
+    color: white;
+    text-shadow: 1px 1px 0px #000000;
+    right: 10vh;
+}
+
+#pball-BlueScore {
+    white-space: nowrap;
+    text-align: center;
+    position: absolute;
+    left: -30vh;
+    top: 32.0vh;
+    font-family: sans-serif;
+    font-size: 10vh;
+    font-weight: bold;
+    color: white;
+    text-shadow: 1px 1px 0px #000000;
+    right: 10vh;
+}
+
+#pball-time {
+    white-space: nowrap;
+    text-align: center;
+    position: absolute;
+    left: 10vh;
+    top: -3.0vh;
+    font-family: sans-serif;
+    font-size: var(--main-font-size);
+    font-weight: bold;
+    color: white;
+    text-shadow: 1px 1px 0px #000000;
+    right: 10vh;
+}
