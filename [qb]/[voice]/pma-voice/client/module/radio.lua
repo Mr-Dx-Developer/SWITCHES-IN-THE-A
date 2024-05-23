@@ -228,3 +228,11 @@ function handleRadioEnabledChanged(radioEnabledVal)
         removePlayerFromRadio(playerServerId)
     end
 end
+
+
+
+local function GetRadioChannel()
+	return radioChannel
+end
+
+exports('GetRadioChannel', GetRadioChannel)
