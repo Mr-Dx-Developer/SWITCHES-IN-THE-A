@@ -4786,6 +4786,37 @@ Config.Products = {
         ["delivery"] = vector4(1251.7978515625,-699.2175903320312,64.93408203125,277.7952880859375)
     },
 
+    ["FMDFOODw"] = {
+        ["label"] = "Food Shop",
+        ["coords"] = vector4(vector4(-1350.3956298828125, -1064.4923095703125, 11.4527587890625, 212.59841918945312)),
+        ["ped"] = 'a_m_y_beach_01',
+        ["scenario"] = "WORLD_HUMAN_STAND_MOBILE_CLUBHOUSE",
+        ["radius"] = 3.5,
+        ["targetIcon"] = "fas fa-leaf",
+        ["targetLabel"] = "Open Menu",
+        ["products"] = Config.Products["FMDFOOD"],
+        ["showblip"] = false,
+        ["blipsprite"] = 52,
+        ["blipscale"] = 0.6,
+        ["blipcolor"] = 0,
+        ["delivery"] = vector4(vector4(-1350.3956298828125, -1064.4923095703125, 11.4527587890625, 212.59841918945312))
+    },
+
+    ["FMDDRINKS2"] = {
+        ["label"] = "Drinks Shop",
+        ["coords"] = vector4(-1348.18017578125,-1063.147216796875,11.4527587890625,212.59841918945312),
+        ["ped"] = 'a_m_y_beach_01',
+        ["scenario"] = "WORLD_HUMAN_STAND_MOBILE_CLUBHOUSE",
+        ["radius"] = 3.5,
+        ["targetIcon"] = "fas fa-leaf",
+        ["targetLabel"] = "Open Menu",
+        ["products"] = Config.Products["FMDDRINKS"],
+        ["showblip"] = true,
+        ["blipsprite"] = 52,
+        ["blipscale"] = 0.7,
+        ["blipcolor"] = 7,
+        ["delivery"] = vector4(-1348.18017578125,-1063.147216796875,11.4527587890625,212.59841918945312)
+    },
 --5M DEVS FOOD SHOP
     ["FMDFOOD"] = {
         ["label"] = "Food Shop",
@@ -5009,6 +5040,21 @@ Config.Products = {
         ["blipscale"] = 0.6,
         ["blipcolor"] = 0,
         ["delivery"] = vector4(287.0637512207031,-1273.859375,29.3809814453125,82.20472717285156)
+    },
+    ["247supermarket13"] = {
+        ["label"] = "24/7 Supermarket",
+        ["coords"] = vector4(-1352.00439453125,-1056.4615478515625,3.4996337890625,195.59054565429688),
+        ["ped"] = 'mp_m_shopkeep_01',
+        ["scenario"] = "WORLD_HUMAN_STAND_MOBILE",
+        ["radius"] = 1.5,
+        ["targetIcon"] = "fas fa-shopping-basket",
+        ["targetLabel"] = "Open Shop",
+        ["products"] = Config.Products["normal"],
+        ["showblip"] = true,
+        ["blipsprite"] = 52,
+        ["blipscale"] = 0.6,
+        ["blipcolor"] = 0,
+        ["delivery"] = vector4(-1352.00439453125,-1056.4615478515625,3.4996337890625,195.59054565429688)
     },
 
     -- LTD Gasoline Locations
