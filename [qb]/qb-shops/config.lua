@@ -4768,6 +4768,21 @@ Config.Products = {
         ["delivery"] = vector4(-1380.052734375,-596.7164916992188,30.20654296875,110.55118560791016)
     },
 
+    ["FMDDRINKS3"] = {
+        ["label"] = "Wings Store",
+        ["coords"] = vector4(-1341.876953125,-1068.804443359375,6.970703125,42.519683837890625),
+        ["ped"] = 'a_m_y_beach_01',
+        ["scenario"] = "WORLD_HUMAN_STAND_MOBILE_CLUBHOUSE",
+        ["radius"] = 3.5,
+        ["targetIcon"] = "fas fa-leaf",
+        ["targetLabel"] = "Open Menu",
+        ["products"] = Config.Products["FMDDRINKS"],
+        ["showblip"] = true,
+        ["blipsprite"] = 52,
+        ["blipscale"] = 0.7,
+        ["blipcolor"] = 7,
+        ["delivery"] = vector4(-1341.876953125,-1068.804443359375,6.970703125,42.519683837890625)
+    },
 
 
     ["FMDSNSW"] = {
@@ -4801,7 +4816,21 @@ Config.Products = {
         ["blipcolor"] = 0,
         ["delivery"] = vector4(vector4(-1350.3956298828125, -1064.4923095703125, 11.4527587890625, 212.59841918945312))
     },
-
+    ["FMDFOOD3"] = {
+        ["label"] = "Food Shop",
+        ["coords"] = vector4(-1341.771484375,-1069.96484375,6.970703125,209.76377868652344),
+        ["ped"] = 'a_m_y_beach_01',
+        ["scenario"] = "WORLD_HUMAN_STAND_MOBILE_CLUBHOUSE",
+        ["radius"] = 3.5,
+        ["targetIcon"] = "fas fa-leaf",
+        ["targetLabel"] = "Open Menu",
+        ["products"] = Config.Products["FMDFOOD"],
+        ["showblip"] = false,
+        ["blipsprite"] = 52,
+        ["blipscale"] = 0.6,
+        ["blipcolor"] = 0,
+        ["delivery"] = vector4(-1341.771484375,-1069.96484375,6.970703125,209.76377868652344)
+    },
     ["FMDDRINKS2"] = {
         ["label"] = "Drinks Shop",
         ["coords"] = vector4(-1348.18017578125,-1063.147216796875,11.4527587890625,212.59841918945312),
