@@ -23,6 +23,31 @@ Config.Throwables = {
 }
 
 Config.DurabilityMultiplier = {
+    -- Kyros Weapon Pack Mafia [A]
+    weapon_bloodsglock 	         = 0.15,
+    weapon_cripsglock 	         = 0.15,
+    weapon_cartelglock 		     = 0.15,
+    weapon_bmglock 	             = 0.15,
+    weapon_familiasglock	     = 0.15,
+    weapon_bloodsarp 	         = 0.15,
+    weapon_cripsarp 		     = 0.15,
+    weapon_cartelarp	         = 0.15,
+    weapon_bmarp 	             = 0.15,
+    weapon_familiasarp 	         = 0.15,
+
+
+ -- Kyros Weapon Pack Mafia [B]
+ weapon_playboyglock 	     = 0.15,
+ weapon_hooverglock 	         = 0.15,
+ weapon_grapeglock 		     = 0.15,
+ weapon_latinglock 	         = 0.15,
+ weapon_mobglock	             = 0.15,
+ weapon_playboyarp            = 0.15,
+ weapon_hooverarp 		     = 0.15,
+ weapon_grapearp	             = 0.15,
+ weapon_latinarp 	         = 0.15,
+ weapon_mobarp 	             = 0.15,
+
     weapon_galilar          = 0.15,
     weapon_jrbak          = 0.15,
     ['weapon_neva'] 		= 0.15,
@@ -363,6 +388,18 @@ WeaponAttachments = {
         weapon_marksmanrifle = `COMPONENT_MARKSMANRIFLE_CLIP_02`,
         weapon_marksmanrifle_mk2 = `COMPONENT_MARKSMANRIFLE_MK2_CLIP_02`,
         weapon_heavysniper_mk2 = `COMPONENT_HEAVYSNIPER_MK2_CLIP_02`,
+
+        weapon_cartelglock = `COMPONENT_CARTELGLOCK_CLIP_EXTENDED`, -- mafia [A]
+        weapon_cripsglock = `COMPONENT_CRIPSGLOCK_CLIP_EXTENDED`, -- mafia [A]
+        weapon_bloodsglock = `COMPONENT_BLOODSGLOCK_CLIP_EXTENDED`, -- mafia [A]
+        weapon_bmglock = `COMPONENT_BMGLOCK_CLIP_EXTENDED`, -- mafia [A]
+        weapon_familiasglock = `COMPONENT_FAMILIASGLOCK_CLIP_EXTENDED`, -- mafia [A]
+        weapon_playboyglock = `COMPONENT_PLAYBOYGLOCK_CLIP_EXTENDED`, -- mafia [B]
+        weapon_mobglock = `COMPONENT_MOBGLOCK_CLIP_EXTENDED`, -- mafia [B]
+        weapon_grapeglock = `COMPONENT_GRAPEGLOCK_CLIP_EXTENDED`, -- mafia [B]
+        weapon_hooverglock = `COMPONENT_HOOVERGLOCK_CLIP_EXTENDED`, -- mafia [B]
+        weapon_latinglock = `COMPONENT_KINGZGLOCK_CLIP_EXTENDED`, -- mafia [B]
+
         weapon_ddm4v7 = `COMPONENT_DDM4V7_CLIP_02`, -- v3
 		weapon_g2c = `COMPONENT_G2C_CLIP_02`, -- v3
         weapon_tglock = `COMPONENT_TGLOCK_CLIP_02`, -- v3
@@ -916,6 +953,19 @@ WeaponAttachments = {
         weapon_tglock19 = `COMPONENT_TGLOCK19_CLIP_03`, -- v5
         weapon_midasglock = `COMPONENT_MIDASGLOCK_CLIP_03`, -- v5
 
+
+        
+        weapon_cartelglock = `COMPONENT_CARTELGLOCK_CLIP_DRUM`, -- mafia [A]
+        weapon_cripsglock = `COMPONENT_CRIPSGLOCK_CLIP_DRUM`, -- mafia [A]
+        weapon_bloodsglock = `COMPONENT_BLOODSGLOCK_CLIP_DRUM`, -- mafia [A]
+        weapon_bmglock = `COMPONENT_BMGLOCK_CLIP_DRUM`, -- mafia [A] 
+        weapon_familiasglock = `COMPONENT_FAMILIASGLOCK_CLIP_DRUM`, -- mafia [A]
+        weapon_playboyglock = `COMPONENT_PLAYBOYGLOCK_CLIP_DRUM`, -- mafia [B]
+        weapon_mobglock = `COMPONENT_MOBGLOCK_CLIP_DRUM`, -- mafia [B]
+        weapon_grapeglock = `COMPONENT_GRAPEGLOCK_CLIP_DRUM`, -- mafia [B]
+        weapon_hooverglock = `COMPONENT_HOOVERGLOCK_CLIP_DRUM`, -- mafia [B]
+        weapon_latinglock = `COMPONENT_KINGZGLOCK_CLIP_DRUM`, -- mafia [B]
+
     },
     at_clip_100_pistol = { 
         weapon_glock40 = `COMPONENT_GLOCK40_CLIP_04`, -- v4
@@ -938,7 +988,134 @@ WeaponAttachments = {
         weapon_mgglock = `COMPONENT_MGGLOCK_CLIP_05`, -- v5
         weapon_tglock19 = `COMPONENT_TGLOCK19_CLIP_05`, -- v5
         weapon_midasglock = `COMPONENT_MIDASGLOCK_CLIP_05`, -- v5
-        weapon_redarp = `COMPONENT_REDARP_CLIP_04`, -- v5
+        weapon_cartelglock = `COMPONENT_CARTELGLOCK_CLIP_CLEAR`, -- mafia [A]
+        weapon_cripsglock = `COMPONENT_CRIPSGLOCK_CLIP_CLEAR`, -- mafia [A]
+        weapon_bloodsglock = `COMPONENT_BLOODSGLOCK_CLIP_CLEAR`, -- mafia [A]
+        weapon_bmglock = `COMPONENT_BMGLOCK_CLIP_CLEAR`, -- mafia [A]
+        weapon_familiasglock = `COMPONENT_FAMILIASGLOCK_CLIP_CLEAR`, -- mafia [A]
+        weapon_playboyglock = `COMPONENT_PLAYBOYGLOCK_CLIP_CLEAR`, -- mafia [B]
+        weapon_mobglock = `COMPONENT_MOBGLOCK_CLIP_CLEAR`, -- mafia [B]
+        weapon_grapeglock = `COMPONENT_GRAPEGLOCK_CLIP_CLEAR`, -- mafia [B]
+        weapon_hooverglock = `COMPONENT_HOOVERGLOCK_CLIP_CLEAR`, -- mafia [B]
+        weapon_latinglock = `COMPONENT_KINGZGLOCK_CLIP_CLEAR`, -- mafia [B]
+    },
+    at_clip_100_black = { 
+        weapon_cartelglock = `COMPONENT_CARTELGLOCK_CLIP_BLACK`, -- mafia [A]
+        weapon_cripsglock = `COMPONENT_CRIPSGLOCK_CLIP_BLACK`, -- mafia [A]
+        weapon_bloodsglock = `COMPONENT_BLOODSGLOCK_CLIP_BLACK`, -- mafia [A]
+        weapon_bmglock = `COMPONENT_BMGLOCK_CLIP_BLACK`, -- mafia [A]
+        weapon_familiasglock = `COMPONENT_FAMILIASGLOCK_CLIP_BLACK`, -- mafia [A]
+    },
+    at_clip_100_red = { 
+        weapon_cartelglock = `COMPONENT_CARTELGLOCK_CLIP_RED`, -- mafia [A]
+        weapon_bloodsglock = `COMPONENT_BLOODSGLOCK_CLIP_RED`, -- mafia [A]
+        weapon_bmglock = `COMPONENT_BMGLOCK_CLIP_RED`, -- mafia [A]
+    },
+    at_clip_100_white = { 
+        weapon_cartelglock = `COMPONENT_CARTELGLOCK_CLIP_WHITE`, -- mafia [A]
+        weapon_cripsglock = `COMPONENT_CRIPSGLOCK_CLIP_WHITE`, -- mafia [A]
+        weapon_bloodsglock = `COMPONENT_BLOODSGLOCK_CLIP_WHITE`, -- mafia [A]
+        weapon_bmglock = `COMPONENT_BMGLOCK_CLIP_WHITE`, -- mafia [A]
+        weapon_familiasglock = `COMPONENT_FAMILIASGLOCK_CLIP_WHITE`, -- mafia [A]
+    },
+    at_clip_100_blue = { 
+        weapon_cartelglock = `COMPONENT_CRIPSGLOCK_CLIP_BLUE`, -- mafia [A]
+    },
+    at_clip_100_green = { 
+        weapon_familiasglock = `COMPONENT_FAMILIASGLOCK_CLIP_GREEN`, -- mafia [A]
+    },
+    at_clip_bandana_black = { 
+        weapon_bmarp = `COMPONENT_BMARP_CLIP_BLACK`, -- mafia [A]
+        weapon_familiasarp = `COMPONENT_FAMILIASARP_CLIP_BLACK`, -- mafia [A]
+        weapon_cartelarp = `COMPONENT_CARTELARP_CLIP_BLACK`, -- mafia [A]
+        weapon_cripsarp = `COMPONENT_CRIPSARP_CLIP_BLACK`, -- mafia [A]
+        weapon_bloodsarp = `COMPONENT_BLOODSARP_CLIP_BLACK`, -- mafia [A]
+    },
+    at_clip_bandana_red = { 
+        weapon_bmarp = `COMPONENT_BMARP_CLIP_RED`, -- mafia [A]
+        weapon_familiasarp = `COMPONENT_FAMILIASARP_CLIP_RED`, -- mafia [A]
+        weapon_cartelarp = `COMPONENT_CARTELARP_CLIP_RED`, -- mafia [A]
+        weapon_cripsarp = `COMPONENT_CRIPSARP_CLIP_RED`, -- mafia [A]
+        weapon_bloodsarp = `COMPONENT_BLOODSARP_CLIP_RED`, -- mafia [A]
+    },
+    at_clip_bandana_blue = { 
+        weapon_bmarp = `COMPONENT_BMARP_CLIP_BLUE`, -- mafia [A]
+        weapon_familiasarp = `COMPONENT_FAMILIASARP_CLIP_BLUE`, -- mafia [A]
+        weapon_cartelarp = `COMPONENT_CARTELARP_CLIP_BLUE`, -- mafia [A]
+        weapon_cripsarp = `COMPONENT_CRIPSARP_CLIP_BLUE`, -- mafia [A]
+        weapon_bloodsarp = `COMPONENT_BLOODSARP_CLIP_BLUE`, -- mafia [A]
+    },
+    at_clip_bandana_green = { 
+        weapon_bmarp = `COMPONENT_BMARP_CLIP_GREEN`, -- mafia [A]
+        weapon_familiasarp = `COMPONENT_FAMILIASARP_CLIP_GREEN`, -- mafia [A]
+        weapon_cartelarp = `COMPONENT_CARTELARP_CLIP_GREEN`, -- mafia [A]
+        weapon_cripsarp = `COMPONENT_CRIPSARP_CLIP_GREEN`, -- mafia [A]
+        weapon_bloodsarp = `COMPONENT_BLOODSARP_CLIP_GREEN`, -- mafia [A]
+    },
+    at_clip_bandana_white = { 
+        weapon_bmarp = `COMPONENT_BMARP_CLIP_WHITE`, -- mafia [A]
+        weapon_familiasarp = `COMPONENT_FAMILIASARP_CLIP_WHITE`, -- mafia [A]
+        weapon_cartelarp = `COMPONENT_CARTELARP_CLIP_WHITE`, -- mafia [A]
+        weapon_cripsarp = `COMPONENT_CRIPSARP_CLIP_WHITE`, -- mafia [A]
+        weapon_bloodsarp = `COMPONENT_BLOODSARP_CLIP_WHITE`, -- mafia [A]
+    },
+    at_clip_100_yellow = { 
+        weapon_latinglock = `COMPONENT_KINGZGLOCK_CLIP_YELLOW`, -- mafia [B]
+        weapon_grapeglock = `COMPONENT_GRAPEGLOCK_CLIP_YELLOW`, -- mafia [B]
+        weapon_hooverglock = `COMPONENT_HOOVERGLOCK_CLIP_YELLOW`, -- mafia [B]
+        weapon_mobglock = `COMPONENT_MOBGLOCK_CLIP_YELLOW`, -- mafia [B]
+    },
+    at_clip_100_pink = { 
+        weapon_playboyglock = `COMPONENT_PLAYBOYGLOCK_CLIP_PINK`, -- mafia [B]
+        weapon_grapeglock = `COMPONENT_GRAPEGLOCK_CLIP_PINK`, -- mafia [B]
+    },
+    at_clip_100_brown = { 
+        weapon_mobglock = `COMPONENT_MOBGLOCK_CLIP_BROWN`, -- mafia [B]
+        weapon_latinglock = `COMPONENT_KINGZGLOCK_CLIP_BROWN`, -- mafia [B]
+    },
+    at_clip_100_orange = { 
+        weapon_mobglock = `COMPONENT_MOBGLOCK_CLIP_ORANGE`, -- mafia [B]
+        weapon_latinglock = `COMPONENT_KINGZGLOCK_CLIP_ORANGE`, -- mafia [B]
+        weapon_hooverglock = `COMPONENT_HOOVERGLOCK_CLIP_ORANGE`, -- mafia [B]
+    },
+    at_clip_100_purple = { 
+        weapon_playboyglock = `COMPONENT_PLAYBOYGLOCK_CLIP_PURPLE`, -- mafia [B]
+        weapon_grapeglock = `COMPONENT_GRAPEGLOCK_CLIP_PURPLE`, -- mafia [B]
+    },
+    at_clip_bandana_pink = { 
+        weapon_playboyarp = `COMPONENT_PLAYBOYARP_CLIP_PINK`, -- mafia [B]
+        weapon_mobarp = `COMPONENT_MOBARP_CLIP_PINK`, -- mafia [B]
+        weapon_grapearp = `COMPONENT_GRAPEARP_CLIP_PINK`, -- mafia [B]
+        weapon_hooverarp = `COMPONENT_HOOVERARP_CLIP_PINK`, -- mafia [B]
+        weapon_latinarp = `COMPONENT_LATINARP_CLIP_PINK`, -- mafia [B]
+    },
+    at_clip_bandana_brown = { 
+        weapon_playboyarp = `COMPONENT_PLAYBOYARP_CLIP_BROWN`, -- mafia [B]
+        weapon_mobarp = `COMPONENT_MOBARP_CLIP_BROWN`, -- mafia [B]
+        weapon_grapearp = `COMPONENT_GRAPEARP_CLIP_BROWN`, -- mafia [B]
+        weapon_hooverarp = `COMPONENT_HOOVERARP_CLIP_BROWN`, -- mafia [B]
+        weapon_latinarp = `COMPONENT_LATINARP_CLIP_BROWN`, -- mafia [B]
+    },
+    at_clip_bandana_orange = { 
+        weapon_playboyarp = `COMPONENT_PLAYBOYARP_CLIP_ORANGE`, -- mafia [B]
+        weapon_mobarp = `COMPONENT_MOBARP_CLIP_ORANGE`, -- mafia [B]
+        weapon_grapearp = `COMPONENT_GRAPEARP_CLIP_ORANGE`, -- mafia [B]
+        weapon_hooverarp = `COMPONENT_HOOVERARP_CLIP_ORANGE`, -- mafia [B]
+        weapon_latinarp = `COMPONENT_LATINARP_CLIP_ORANGE`, -- mafia [B]
+    },
+    at_clip_bandana_yellow = { 
+        weapon_playboyarp = `COMPONENT_PLAYBOYARP_CLIP_YELLOW`, -- mafia [B]
+        weapon_mobarp = `COMPONENT_MOBARP_CLIP_YELLOW`, -- mafia [B]
+        weapon_grapearp = `COMPONENT_GRAPEARP_CLIP_YELLOW`, -- mafia [B]
+        weapon_hooverarp = `COMPONENT_HOOVERARP_CLIP_YELLOW`, -- mafia [B]
+        weapon_latinarp = `COMPONENT_LATINARP_CLIP_YELLOW`, -- mafia [B]
+    },
+    at_clip_bandana_purple = { 
+        weapon_playboyarp = `COMPONENT_PLAYBOYARP_CLIP_PURPLE`, -- mafia [B]
+        weapon_mobarp = `COMPONENT_MOBARP_CLIP_PURPLE`, -- mafia [B]
+        weapon_grapearp = `COMPONENT_GRAPEARP_CLIP_PURPLE`, -- mafia [B]
+        weapon_hooverarp = `COMPONENT_HOOVERARP_CLIP_PURPLE`, -- mafia [B]
+        weapon_latinarp = `COMPONENT_LATINARP_CLIP_PURPLE`, -- mafia [B]
     },
 }
 

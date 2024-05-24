@@ -30,6 +30,33 @@ QBShared.Weapons = {
 	[`weapon_kayslimeswitchr`]              = { name = 'weapon_kayslimeswitchr', label = 'KaySlimeSwitch Red', weapontype = 'Pistol', ammotype = 'AMMO_PISTOL', damagereason = 'Pistoled / Blasted / Plugged / Bust a cap in' },
 	[`weapon_kayslimeswitchy`]              = { name = 'weapon_kayslimeswitchy', label = 'KaySlimeSwitch Yellow', weapontype = 'Pistol', ammotype = 'AMMO_PISTOL', damagereason = 'Pistoled / Blasted / Plugged / Bust a cap in' },
 
+
+
+
+	--Kyros Weapon Pack Mafia [A]
+	[`weapon_bmarp`]                 = { name = 'weapon_bmarp',         label = 'BLK MAFIA ARP',     weapontype = 'Assault Rifle', ammotype = 'AMMO_RIFLE', damagereason = 'Ended / Rifled / Shot down / Floored' },
+	[`weapon_familiasarp`]           = { name = 'weapon_familiasarp',   label = 'FAMILAS ARP',       weapontype = 'Assault Rifle', ammotype = 'AMMO_RIFLE', damagereason = 'Ended / Rifled / Shot down / Floored' },
+	[`weapon_cartelarp`]             = { name = 'weapon_cartelarp',     label = 'CARTEL ARP',        weapontype = 'Assault Rifle', ammotype = 'AMMO_RIFLE', damagereason = 'Ended / Rifled / Shot down / Floored' },
+	[`weapon_cripsarp`]              = { name = 'weapon_cripsarp',      label = 'CRIPS ARP',         weapontype = 'Assault Rifle', ammotype = 'AMMO_RIFLE', damagereason = 'Ended / Rifled / Shot down / Floored' },
+	[`weapon_bloodsarp`]             = { name = 'weapon_bloodsarp',     label = 'BLOODS ARP',        weapontype = 'Assault Rifle', ammotype = 'AMMO_RIFLE', damagereason = 'Ended / Rifled / Shot down / Floored' },
+	[`weapon_bmglock`]               = { name = 'weapon_bmglock',       label = 'BLK MAFIA GLOCK',   weapontype = 'Pistol', ammotype = 'AMMO_PISTOL', damagereason = 'Pistoled / Blasted / Plugged / Bust a cap in' },
+	[`weapon_familiasglock`]         = { name = 'weapon_familiasglock', label = 'FAMILIAS GLOCK',    weapontype = 'Pistol', ammotype = 'AMMO_PISTOL', damagereason = 'Pistoled / Blasted / Plugged / Bust a cap in' },
+	[`weapon_cartelglock`]           = { name = 'weapon_cartelglock',   label = 'CARTEL GLOCK',      weapontype = 'Pistol', ammotype = 'AMMO_PISTOL', damagereason = 'Pistoled / Blasted / Plugged / Bust a cap in' },
+	[`weapon_cripsglock`]            = { name = 'weapon_cripsglock',    label = 'CRIPS GLOCK',       weapontype = 'Pistol', ammotype = 'AMMO_PISTOL', damagereason = 'Pistoled / Blasted / Plugged / Bust a cap in' },
+	[`weapon_bloodsglock`]           = { name = 'weapon_bloodsglock',   label = 'BLOODS GLOCK',      weapontype = 'Pistol', ammotype = 'AMMO_PISTOL', damagereason = 'Pistoled / Blasted / Plugged / Bust a cap in' },
+
+--Kyros Weapon Pack Mafia [B]
+[`weapon_playboyarp`]            = { name = 'weapon_playboyarp',    label = 'PLAYBOY ARP',       weapontype = 'Assault Rifle', ammotype = 'AMMO_RIFLE', damagereason = 'Ended / Rifled / Shot down / Floored' },
+[`weapon_hooverarp`]             = { name = 'weapon_hooverarp',     label = 'HOOVER ARP',        weapontype = 'Assault Rifle', ammotype = 'AMMO_RIFLE', damagereason = 'Ended / Rifled / Shot down / Floored' },
+[`weapon_grapearp`]              = { name = 'weapon_grapearp',      label = 'GRAPE ST. ARP',     weapontype = 'Assault Rifle', ammotype = 'AMMO_RIFLE', damagereason = 'Ended / Rifled / Shot down / Floored' },
+[`weapon_latinarp`]              = { name = 'weapon_latinarp',      label = 'LTN-KINGZ ARP',     weapontype = 'Assault Rifle', ammotype = 'AMMO_RIFLE', damagereason = 'Ended / Rifled / Shot down / Floored' },
+[`weapon_mobarp`]                = { name = 'weapon_mobarp',        label = 'MOB ARP',           weapontype = 'Assault Rifle', ammotype = 'AMMO_RIFLE', damagereason = 'Ended / Rifled / Shot down / Floored' },
+[`weapon_playboyglock`]          = { name = 'weapon_playboyglock',  label = 'PLAYBOY GLOCK',     weapontype = 'Pistol', ammotype = 'AMMO_PISTOL', damagereason = 'Pistoled / Blasted / Plugged / Bust a cap in' },
+[`weapon_hooverglock`]           = { name = 'weapon_hooverglock',   label = 'HOOVER GLOCK',      weapontype = 'Pistol', ammotype = 'AMMO_PISTOL', damagereason = 'Pistoled / Blasted / Plugged / Bust a cap in' },
+[`weapon_grapeglock`]            = { name = 'weapon_grapeglock',    label = 'GRAPE ST. GLOCK',   weapontype = 'Pistol', ammotype = 'AMMO_PISTOL', damagereason = 'Pistoled / Blasted / Plugged / Bust a cap in' },
+[`weapon_latinglock`]            = { name = 'weapon_latinglock',    label = 'LTN-KINGZ GLOCK',   weapontype = 'Pistol', ammotype = 'AMMO_PISTOL', damagereason = 'Pistoled / Blasted / Plugged / Bust a cap in' },
+[`weapon_mobglock`]              = { name = 'weapon_mobglock',      label = 'MOB GLOCK',         weapontype = 'Pistol', ammotype = 'AMMO_PISTOL', damagereason = 'Pistoled / Blasted / Plugged / Bust a cap in' },
+
 	--Kyros Weapon Pack V3
 	[`weapon_ddm4v7`]                = { name = 'weapon_ddm4v7',      label = 'DDM4V7 AR15',       weapontype = 'Assault Rifle', ammotype = 'AMMO_RIFLE', damagereason = 'Ended / Rifled / Shot down / Floored' },
 	[`weapon_scar`]                  = { name = 'weapon_scar',        label = 'SCAR',              weapontype = 'Assault Rifle', ammotype = 'AMMO_RIFLE', damagereason = 'Ended / Rifled / Shot down / Floored' },

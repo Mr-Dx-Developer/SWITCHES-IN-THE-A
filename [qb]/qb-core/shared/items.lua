@@ -33,6 +33,62 @@ QBShared.Items = {
 
 
     weapon_kayslimeswitch         = { name = 'weapon_kayslimeswitch', label = '101 Switch', weight = 1000, type = 'weapon', ammotype = 'AMMO_PISTOL', image = '101_switch.png', unique = true, useable = false, description = 'A rapid-fire, magazine-fed automatic rifle designed for infantry use' },
+    
+
+    --Kyros Weapon Pack Mafia [A]
+    weapon_bmarp                 = { name = 'weapon_bmarp',           label = 'BLK MAFIA ARP',      weight = 3500, type = 'weapon', ammotype = 'AMMO_RIFLE', image = 'WEAPON_BMARP.png', unique = true, useable = false, description = '' },
+    weapon_familiasarp           = { name = 'weapon_familiasarp',     label = 'FAMILAS ARP',        weight = 3500, type = 'weapon', ammotype = 'AMMO_RIFLE', image = 'WEAPON_FAMILIASARP.png', unique = true, useable = false, description = '' },
+    weapon_cartelarp             = { name = 'weapon_cartelarp',       label = 'CARTEL ARP',         weight = 3500, type = 'weapon', ammotype = 'AMMO_RIFLE', image = 'WEAPON_CARTELARP.png', unique = true, useable = false, description = '' },
+    weapon_cripsarp              = { name = 'weapon_cripsarp',        label = 'CRIPS ARP',          weight = 3500, type = 'weapon', ammotype = 'AMMO_RIFLE', image = 'WEAPON_CRIPSARP.png', unique = true, useable = false, description = '' },
+    weapon_bloodsarp             = { name = 'weapon_bloodsarp',       label = 'BLOODS ARP',         weight = 3500, type = 'weapon', ammotype = 'AMMO_RIFLE', image = 'WEAPON_BLOODSARP.png', unique = true, useable = false, description = '' },
+    weapon_bmglock               = { name = 'weapon_bmglock',         label = 'BLK MAFIA GLOCK',    weight = 2000, type = 'weapon', ammotype = 'AMMO_PISTOL', image = 'WEAPON_BMGLOCK.png', unique = true, useable = false, description = '' }, 
+    weapon_familiasglock         = { name = 'weapon_familiasglock',   label = 'FAMILIAS GLOCK',   weight = 2000, type = 'weapon', ammotype = 'AMMO_PISTOL', image = 'WEAPON_FAMILIASGLOCK.png', unique = true, useable = false, description = '' }, 
+    weapon_cartelglock           = { name = 'weapon_cartelglock',     label = 'CARTEL GLOCK',       weight = 2000, type = 'weapon', ammotype = 'AMMO_PISTOL', image = 'WEAPON_CARTELGLOCK.png', unique = true, useable = false, description = '' }, 
+    weapon_cripsglock            = { name = 'weapon_cripsglock',      label = 'CRIPS GLOCK',         weight = 2000, type = 'weapon', ammotype = 'AMMO_PISTOL', image = 'WEAPON_CRIPSGLOCK.png', unique = true, useable = false, description = '' }, 
+    weapon_bloodsglock           = { name = 'weapon_bloodsglock',     label = 'BLOODS GLOCK',       weight = 2000, type = 'weapon', ammotype = 'AMMO_PISTOL', image = 'WEAPON_BLOODSGLOCK.png', unique = true, useable = false, description = '' }, 
+
+    -- Extra Attachments aka Custom | Make sure you don't create duplicates
+    at_clip_drum_pistol          = { name = 'at_clip_drum_pistol',    label = '50 Round Drum',   weight = 1250, type = 'item', image = 'at_clip_drum_pistol.png', unique = false, useable = true, shouldClose = true, combinable = nil, description = 'A 50 Round Drum' },
+    at_clip_clear                = { name = 'at_clip_clear',          label = 'Clear Round Mag', weight = 1000, type = 'item', image = 'at_clip_clear.png', unique = false, useable = true, shouldClose = true, combinable = nil, description = 'Clear Weapon Mag' },
+
+    at_clip_100_black            = { name = 'at_clip_100_black',      label = 'BLK 100R DRUM',   weight = 2000, type = 'item', image = 'at_clip_bandana_black.png', unique = false, useable = true, shouldClose = true, combinable = nil, description = 'A 100 Round Drum' },
+    at_clip_100_red              = { name = 'at_clip_100_red',        label = 'RED 100R DRUM',   weight = 2000, type = 'item', image = 'at_clip_bandana_red.png', unique = false, useable = true, shouldClose = true, combinable = nil, description = 'A 100 Round Drum' },
+    at_clip_100_blue             = { name = 'at_clip_100_blue',       label = 'BLUE 100R DRUM',  weight = 2000, type = 'item', image = 'at_clip_bandana_blue.png', unique = false, useable = true, shouldClose = true, combinable = nil, description = 'A 100 Round Drum' },
+    at_clip_100_green            = { name = 'at_clip_100_green',      label = 'GRN 100R DRUM',   weight = 2000, type = 'item', image = 'at_clip_bandana_green.png', unique = false, useable = true, shouldClose = true, combinable = nil, description = 'A 100 Round Drum' },
+    at_clip_100_white            = { name = 'at_clip_100_white',      label = 'WT 100R DRUM',    weight = 2000, type = 'item', image = 'at_clip_bandana_white.png', unique = false, useable = true, shouldClose = true, combinable = nil, description = 'A 100 Round Drum' },
+    at_clip_bandana_black        = { name = 'at_clip_bandana_black',  label = 'BLK BANDANA DRUM',   weight = 2000, type = 'item', image = 'at_clip_bandana_black.png', unique = false, useable = true, shouldClose = true, combinable = nil, description = 'A 60 Round Drum' },
+    at_clip_bandana_red          = { name = 'at_clip_bandana_red',    label = 'RED BANDANA DRUM',   weight = 2000, type = 'item', image = 'at_clip_bandana_red.png', unique = false, useable = true, shouldClose = true, combinable = nil, description = 'A 60 Round Drum' },
+    at_clip_bandana_blue         = { name = 'at_clip_bandana_blue',   label = 'BLUE BANDANA DRUM',  weight = 2000, type = 'item', image = 'at_clip_bandana_blue.png', unique = false, useable = true, shouldClose = true, combinable = nil, description = 'A 60 Round Drum' },
+    at_clip_bandana_green        = { name = 'at_clip_bandana_green',  label = 'GRN BANDANA DRUM',   weight = 2000, type = 'item', image = 'at_clip_bandana_green.png', unique = false, useable = true, shouldClose = true, combinable = nil, description = 'A 60 Round Drum' },
+    at_clip_bandana_white        = { name = 'at_clip_bandana_white',  label = 'WT BANDANA DRUM',    weight = 2000, type = 'item', image = 'at_clip_bandana_white.png', unique = false, useable = true, shouldClose = true, combinable = nil, description = 'A 60 Round Drum' },
+    
+    --Kyros Weapon Pack Mafia [B]
+    weapon_playboyarp            = { name = 'weapon_playboyarp',      label = 'PLAYBOY ARP',        weight = 3500, type = 'weapon', ammotype = 'AMMO_RIFLE', image = 'WEAPON_PLAYBOYARP.png', unique = true, useable = false, description = '' },
+    weapon_hooverarp             = { name = 'weapon_hooverarp',       label = 'HOOVER ARP',         weight = 3500, type = 'weapon', ammotype = 'AMMO_RIFLE', image = 'WEAPON_HOOVERARP.png', unique = true, useable = false, description = '' },
+    weapon_grapearp              = { name = 'weapon_grapearp',        label = 'GRAPE ST. ARP',      weight = 3500, type = 'weapon', ammotype = 'AMMO_RIFLE', image = 'WEAPON_GRAPEARP.png', unique = true, useable = false, description = '' },
+    weapon_latinarp              = { name = 'weapon_latinarp',        label = 'LTN-KINGZ ARP',      weight = 3500, type = 'weapon', ammotype = 'AMMO_RIFLE', image = 'WEAPON_LATINARP.png', unique = true, useable = false, description = '' },
+    weapon_mobarp                = { name = 'weapon_mobarp',          label = 'MOB ARP',            weight = 3500, type = 'weapon', ammotype = 'AMMO_RIFLE', image = 'WEAPON_MOBARP.png', unique = true, useable = false, description = '' },
+    weapon_playboyglock          = { name = 'weapon_playboyglock',    label = 'PLAYBOY GLOCK',      weight = 2000, type = 'weapon', ammotype = 'AMMO_PISTOL', image = 'WEAPON_PLAYBOYGLOCK.png', unique = true, useable = false, description = '' }, 
+    weapon_hooverglock           = { name = 'weapon_hooverglock',     label = 'HOOVER GLOCK',       weight = 2000, type = 'weapon', ammotype = 'AMMO_PISTOL', image = 'WEAPON_HOOVERGLOCK.png', unique = true, useable = false, description = '' }, 
+    weapon_grapeglock            = { name = 'weapon_grapeglock',      label = 'GRAPE ST. GLOCK',    weight = 2000, type = 'weapon', ammotype = 'AMMO_PISTOL', image = 'WEAPON_GRAPEGLOCK.png', unique = true, useable = false, description = '' }, 
+    weapon_latinglock            = { name = 'weapon_latinglock',      label = 'LTN-KINGZ GLOCK',    weight = 2000, type = 'weapon', ammotype = 'AMMO_PISTOL', image = 'WEAPON_LATINGLOCK.png', unique = true, useable = false, description = '' }, 
+    weapon_mobglock              = { name = 'weapon_mobglock',        label = 'MOB GLOCK',          weight = 2000, type = 'weapon', ammotype = 'AMMO_PISTOL', image = 'WEAPON_MOBGLOCK.png', unique = true, useable = false, description = '' }, 
+
+    -- Extra Attachments aka Custom | Make sure you don't create duplicates
+    at_clip_drum_pistol          = { name = 'at_clip_drum_pistol',    label = '50 Round Drum',      weight = 1250, type = 'item', image = 'at_clip_drum_pistol.png', unique = false, useable = true, shouldClose = true, combinable = nil, description = 'A 50 Round Drum' },
+    at_clip_clear                = { name = 'at_clip_clear',          label = 'Clear Round Mag',    weight = 1000, type = 'item', image = 'at_clip_clear.png', unique = false, useable = true, shouldClose = true, combinable = nil, description = 'Clear Weapon Mag' },
+
+    at_clip_100_yellow           = { name = 'at_clip_100_yellow',      label = 'YEL 100R DRUM',     weight = 2000, type = 'item', image = 'at_clip_100_yellow.png', unique = false, useable = true, shouldClose = true, combinable = nil, description = 'A 100 Round Drum' },
+    at_clip_100_pink             = { name = 'at_clip_100_pink',        label = 'PNK 100R DRUM',     weight = 2000, type = 'item', image = 'at_clip_100_pink.png', unique = false, useable = true, shouldClose = true, combinable = nil, description = 'A 100 Round Drum' },
+    at_clip_100_brown            = { name = 'at_clip_100_brown',       label = 'BRN 100R DRUM',     weight = 2000, type = 'item', image = 'at_clip_100_brown.png', unique = false, useable = true, shouldClose = true, combinable = nil, description = 'A 100 Round Drum' },
+    at_clip_100_orange           = { name = 'at_clip_100_orange',      label = 'ORG 100R DRUM',     weight = 2000, type = 'item', image = 'at_clip_100_orange.png', unique = false, useable = true, shouldClose = true, combinable = nil, description = 'A 100 Round Drum' },
+    at_clip_100_purple           = { name = 'at_clip_100_purple',      label = 'PUR 100R DRUM',     weight = 2000, type = 'item', image = 'at_clip_100_purple.png', unique = false, useable = true, shouldClose = true, combinable = nil, description = 'A 100 Round Drum' },
+    at_clip_bandana_pink         = { name = 'at_clip_bandana_pink',    label = 'PNK BANDANA DRUM',  weight = 2000, type = 'item', image = 'at_clip_bandana_pink.png', unique = false, useable = true, shouldClose = true, combinable = nil, description = 'A 60 Round Drum' },
+    at_clip_bandana_brown        = { name = 'at_clip_bandana_brown',   label = 'BRN BANDANA DRUM',  weight = 2000, type = 'item', image = 'at_clip_bandana_brown.png', unique = false, useable = true, shouldClose = true, combinable = nil, description = 'A 60 Round Drum' },
+    at_clip_bandana_orange       = { name = 'at_clip_bandana_orange',  label = 'ORG BANDANA DRUM',  weight = 2000, type = 'item', image = 'at_clip_bandana_orange.png', unique = false, useable = true, shouldClose = true, combinable = nil, description = 'A 60 Round Drum' },
+    at_clip_bandana_yellow       = { name = 'at_clip_bandana_yellow',  label = 'YEL BANDANA DRUM',  weight = 2000, type = 'item', image = 'at_clip_bandana_yellow.png', unique = false, useable = true, shouldClose = true, combinable = nil, description = 'A 60 Round Drum' },
+    at_clip_bandana_purple       = { name = 'at_clip_bandana_purple',  label = 'PUR BANDANA DRUM',  weight = 2000, type = 'item', image = 'at_clip_bandana_purple.png', unique = false, useable = true, shouldClose = true, combinable = nil, description = 'A 60 Round Drum' },
+    
     --Kyros Weapon Pack V3
     weapon_ddm4v7                = { name = 'weapon_ddm4v7',    label = 'DDM4V7 AR15',      weight = 6500, type = 'weapon', ammotype = 'AMMO_RIFLE', image = 'WEAPON_DDM4V7.png', unique = true, useable = false, description = 'DDM4V7' },
     weapon_scar                  = { name = 'weapon_scar',      label = 'SCAR',             weight = 5500, type = 'weapon', ammotype = 'AMMO_RIFLE', image = 'WEAPON_SCAR.png', unique = true, useable = false, description = 'SCAR' },
