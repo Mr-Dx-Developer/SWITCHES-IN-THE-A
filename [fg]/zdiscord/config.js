@@ -12,7 +12,7 @@ const LanguageLocaleCode = "en";
 
 // PUBLIC VALUES
 const FiveMServerName = "v3";
-const DiscordInviteLink = "/https://discord.gg/odmatlantav3";
+const DiscordInviteLink = "/https://discord.gg/switchesinthea";
 const FiveMServerIP = "127.0.0.1";
 
 // This spams the console, only enable for testing if needed

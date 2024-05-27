@@ -1,0 +1,14 @@
+{
+    "Lua.diagnostics.globals": [
+        "lib",
+        "qtarget",
+        "zoneExited",
+        "zoneEntered",
+        "onZoneEnter",
+        "onZoneExit",
+        "cache",
+        "SetBlipColor",
+        "AddTextComponentString",
+        "image"
+    ]
+}

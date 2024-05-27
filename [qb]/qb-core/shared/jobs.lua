@@ -15,7 +15,7 @@ QBShared.Jobs = {
 	fisher = { label = 'Fisher', defaultDuty = true, offDutyPay = false, grades = { ['0'] = { name = 'Fisher', payment = 200 } } },
 	cargo = { label = 'Cargo Delivery', defaultDuty = true, offDutyPay = false, grades = { ['0'] = { name = 'Cargo Delivery', payment = 200 } } },
 	scrap = { label = 'Scrap Miner', defaultDuty = true, offDutyPay = false, grades = { ['0'] = { name = 'Scrap Miner', payment = 200 } } },
-
+	skydive = { label = 'skydive', defaultDuty = true, offDutyPay = false, grades = { ['0'] = { name = 'Instructor', payment = 200 } } },
 
 	police = {
 		label = 'Law Enforcement',
@@ -51,6 +51,7 @@ QBShared.Jobs = {
 			['7'] = { name = 'Captain', payment = 1500 },
 			['8'] = { name = 'Assistant Chief', isboss = true, payment = 1150 },
 			['9'] = { name = 'Chief of EMS', isboss = true, payment = 2150 },
+			['10'] = { name = 'OBGYN', isboss = true, payment = 2500 },
 		},
 	},
 	

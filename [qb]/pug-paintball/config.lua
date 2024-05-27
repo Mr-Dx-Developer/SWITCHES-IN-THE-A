@@ -41,7 +41,7 @@ Config.PaintballIsABusiness = false -- Make this true if you want 15% of every g
 Config.RemoveAllItemsForPlayer = false -- Make this true if you want players to have all of their items removed when the game starts. (This is here because some inventories do not lock being able to use hotbar when inventory is locked)
 Config.UsingCrossHairByDefault = false -- This was requested for server that have crosshair on always. If you are one of those servers then make this true or else just leave it.
 ------------------------------
-Config.PedLocation = vector4(-282.17, -2031.36, 29.23, 293.96) -- The location of the ped where join the game.
+Config.PedLocation = vector4(-252.29010009765625, -1890.0791015625, 27.7464599609375, 317.4803161621094) -- The location of the ped where join the game.
 Config.ArenaPed = 'cs_stevehains' -- The model of the ped where you join the game at.
 ------------------------------
 Config.UsingPmaVoice = 'pma-voice' -- If you changed your pma voice script file name put it here. (make this false if you do not use pma-voice or if you want to remove the radio feature)

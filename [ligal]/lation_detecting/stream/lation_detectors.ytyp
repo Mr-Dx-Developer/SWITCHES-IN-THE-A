@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<CMapTypes>
+  <extensions/>
+  <archetypes>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="60.00000000"/>
+      <flags value="32"/>
+      <specialAttribute value="0"/>
+      <bbMin x="-0.10927360" y="-0.65445140" z="0.00106028"/>
+      <bbMax x="0.10892850" y="0.26486160" z="1.02633500"/>
+      <bsCentre x="-0.00017255" y="-0.19479490" z="0.51369780"/>
+      <bsRadius value="0.69712580"/>
+      <hdTextureDist value="40.00000000"/>
+      <name>black_metaldetector</name>
+      <textureDictionary>black_metaldetector</textureDictionary>
+      <clipDictionary/>
+      <drawableDictionary/>
+      <physicsDictionary>0xD097AF85</physicsDictionary>
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>black_metaldetector</assetName>
+      <extensions/>
+    </Item>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="60.00000000"/>
+      <flags value="32"/>
+      <specialAttribute value="0"/>
+      <bbMin x="-0.10927360" y="-0.65445140" z="0.00106028"/>
+      <bbMax x="0.10892850" y="0.26486160" z="1.02633500"/>
+      <bsCentre x="-0.00017255" y="-0.19479490" z="0.51369780"/>
+      <bsRadius value="0.69712580"/>
+      <hdTextureDist value="40.00000000"/>
+      <name>green_metaldetector</name>
+      <textureDictionary>green_metaldetector</textureDictionary>
+      <clipDictionary/>
+      <drawableDictionary/>
+      <physicsDictionary>0xD097AF85</physicsDictionary>
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>green_metaldetector</assetName>
+      <extensions/>
+    </Item>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="60.00000000"/>
+      <flags value="32"/>
+      <specialAttribute value="0"/>
+      <bbMin x="-0.10927360" y="-0.65445140" z="0.00106028"/>
+      <bbMax x="0.10892850" y="0.26486160" z="1.02633500"/>
+      <bsCentre x="-0.00017255" y="-0.19479490" z="0.51369780"/>
+      <bsRadius value="0.69712580"/>
+      <hdTextureDist value="40.00000000"/>
+      <name>red_metaldetector</name>
+      <textureDictionary>red_metaldetector</textureDictionary>
+      <clipDictionary/>
+      <drawableDictionary/>
+      <physicsDictionary>0xD097AF85</physicsDictionary>
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>red_metaldetector</assetName>
+      <extensions/>
+    </Item>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="60.00000000"/>
+      <flags value="32"/>
+      <specialAttribute value="0"/>
+      <bbMin x="-0.10927360" y="-0.65445140" z="0.00106028"/>
+      <bbMax x="0.10892850" y="0.26486160" z="1.02633500"/>
+      <bsCentre x="-0.00017255" y="-0.19479490" z="0.51369780"/>
+      <bsRadius value="0.69712580"/>
+      <hdTextureDist value="40.00000000"/>
+      <name>orange_metaldetector</name>
+      <textureDictionary>orange_metaldetector</textureDictionary>
+      <clipDictionary/>
+      <drawableDictionary/>
+      <physicsDictionary>0xD097AF85</physicsDictionary>
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>orange_metaldetector</assetName>
+      <extensions/>
+    </Item>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="60.00000000"/>
+      <flags value="32"/>
+      <specialAttribute value="0"/>
+      <bbMin x="-0.10927360" y="-0.65445140" z="0.00106028"/>
+      <bbMax x="0.10892850" y="0.26486160" z="1.02633500"/>
+      <bsCentre x="-0.00017255" y="-0.19479490" z="0.51369780"/>
+      <bsRadius value="0.69712580"/>
+      <hdTextureDist value="40.00000000"/>
+      <name>blue_metaldetector</name>
+      <textureDictionary>blue_metaldetector</textureDictionary>
+      <clipDictionary/>
+      <drawableDictionary/>
+      <physicsDictionary>0xD097AF85</physicsDictionary>
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>blue_metaldetector</assetName>
+      <extensions/>
+    </Item>
+  </archetypes>
+  <name>lation_detectors</name>
+  <dependencies/>
+  <compositeEntityTypes/>
+</CMapTypes>

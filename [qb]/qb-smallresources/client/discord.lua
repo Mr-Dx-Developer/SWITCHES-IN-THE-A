@@ -33,7 +33,7 @@ local image2 = 'logo'
 local prevtime = GetGameTimer()
 local prevframes = GetFrameCount()
 local fps = -1
-local disocrd = 'https://discord.gg/odmatlantav3'
+local disocrd = 'https://discord.gg/switchesinthea'
 local fivem = "fivem://connect/cfx.re/join/4v33yo"
 
 function location()
@@ -46,7 +46,7 @@ function SetRP()
     SetDiscordAppId(appid)
     SetDiscordRichPresenceAsset(image1)
     SetDiscordRichPresenceAssetSmall(image2)
-    SetDiscordRichPresenceAssetText('discord.gg/odmatlantav3')
+    SetDiscordRichPresenceAssetText('discord.gg/switchesinthea')
 end
 
 CreateThread(function()

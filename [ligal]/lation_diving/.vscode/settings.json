@@ -1,0 +1,33 @@
+{
+    "Lua.diagnostics.globals": [
+        "locale",
+        "lib",
+        "startJobNPC",
+        "jobNPC",
+        "cache",
+        "Locales",
+        "_U",
+        "giveKeys",
+        "setFuel",
+        "notify",
+        "tankObj",
+        "maskObj",
+        "AddTextComponentString",
+        "spawnCrate",
+        "startDivingJob",
+        "checkPlayerDistance",
+        "foundCrate",
+        "assignCrate",
+        "startScubaCooldown",
+        "cb",
+        "onCrateSpawn",
+        "onCratePickup",
+        "onCrateReward",
+        "onCrateFind",
+        "applyTarget",
+        "removeTarget",
+        "progressType",
+        "name",
+        "ped"
+    ]
+}

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+        <link rel="stylesheet" type="text/css" href="./css/style.css" media="screen"/>
+        <link href="http://fonts.cdnfonts.com/css/chalet" rel="stylesheet">
+        <link href="https://db.onlinewebfonts.com/c/d42a1bf156fad170b6a41140da92c69c?family=Chalet" rel="stylesheet" type="text/css"/>
+        <link href="http://fonts.cdnfonts.com/css/signpainter" rel="stylesheet">
+        <script src="./scripts/vue.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js'></script>
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:500" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+              integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+                integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+                crossorigin="anonymous"></script>
+        <script src="./scripts/bootstrap-notify.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/gsap.min.js"></script>
+    </head>
+
+    <body style="background: transparent !important;">
+
+    <div id="close_players" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Choose player you want to challeng! Git gud scrub!</h5>
+                </div>
+                <div class="modal-body">
+
+                    <table class="table">
+                        <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">ID</th>
+                            <th scope="col"></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr v-for="item, index in ClosestPlayers">
+                            <td>{{item.name}}</td>
+                            <td>{{item.id}}</td>
+                            <td>
+                                <button type="button" class="btn btn-primary" data-dismiss="modal"
+                                        style="float: right;" @click="selectPlayer(item.id)">
+                                    Select
+                                </button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" onclick="Close()">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="textboard" tabindex="-1" role="dialog" aria-hidden="true" data-keyboard="false"
+         data-backdrop="static">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="textboard_header">Result</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="Close()">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <textarea class="textarea" style="min-height: 28vw;min-width: 100%;"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="Close()">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <div id = "breath_tester" style="display:none;">
+            <div id = "container_tester">
+                <div id = "breath_warning">
+                    <div class = "breath_warning_text">
+                        Low
+                        <div class = "green_dot"></div>
+                    </div>
+                    <div class = "breath_warning_text">
+                        Med
+                        <div class = "orange_dot"></div>
+                    </div>
+                    <div class = "breath_warning_text">
+                        High
+                        <div class = "red_dot"></div>
+                    </div>
+                </div>
+
+                <div id = "tester_numbers">{{animatedDrunk}}</div>
+                <div id = "bottom_Text">rcore tester</div>
+            </div>
+        </div>
+
+        <div id = "notification" style = "display:none;">
+            <div id = "text-notification"><span id = "officerText"></span> <span style="color: orange;"><img src="./css/Y_Key_Light.png"><img src="./css/N_Key_Light.png"></span></div>
+        </div>
+
+        <div id = "hud">
+            <div v-if="Enabled">
+                <!--head-->
+                <transition name="slide-fade">
+                    <div class = "box" v-if="CurrentHeadache >= 0.1 && CurrentDrunk <= 0.01">
+                        <svg viewBox="0 0 512 512" class = "iconProgress"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M208 175.1c-8.836 0-16 7.162-16 16c0 8.836 7.163 15.1 15.1 15.1s16-7.164 16-16C224 183.2 216.8 175.1 208 175.1zM272 239.1c-8.836 0-15.1 7.163-15.1 16c0 8.836 7.165 16 16 16s16-7.164 16-16C288 247.2 280.8 239.1 272 239.1zM509.2 275c-20.94-47.13-48.46-151.7-73.1-186.8C397.7 33.59 334.6 0 266.1 0H192C85.95 0 0 85.95 0 192c0 56.8 24.8 107.7 64 142.8L64 512h256l-.0044-64h63.99c35.34 0 63.1-28.65 63.1-63.1V320h31.98C503.1 320 518.6 296.2 509.2 275zM368 240h-12.12c-28.51 0-42.79 34.47-22.63 54.63l8.576 8.576c6.25 6.25 6.25 16.38 0 22.62c-3.125 3.125-7.219 4.688-11.31 4.688s-8.188-1.562-11.31-4.688l-8.576-8.576c-20.16-20.16-54.63-5.881-54.63 22.63V352c0 8.844-7.156 16-16 16s-16-7.156-16-16v-12.12c0-28.51-34.47-42.79-54.63-22.63l-8.576 8.576c-3.125 3.125-7.219 4.688-11.31 4.688c-4.096 0-8.188-1.562-11.31-4.688c-6.25-6.25-6.25-16.38 0-22.62l8.577-8.576C166.9 274.5 152.6 240 124.1 240H112c-8.844 0-16-7.156-16-16s7.157-16 16-16L124.1 208c28.51 0 42.79-34.47 22.63-54.63L138.2 144.8c-6.25-6.25-6.25-16.38 0-22.62s16.38-6.25 22.63 0L169.4 130.7c20.16 20.16 54.63 5.881 54.63-22.63V96c0-8.844 7.156-16 16-16S256 87.16 256 96v12.12c0 28.51 34.47 42.79 54.63 22.63l8.576-8.576c6.25-6.25 16.38-6.25 22.63 0s6.25 16.38 0 22.62L333.3 153.4C313.1 173.5 327.4 208 355.9 208l12.12-.0004c8.844 0 15.1 7.157 15.1 16S376.8 240 368 240z"/></svg>
+                        <svg viewBox="0 0 512 512" v-bind:style = "{ ['clip-path']: 'inset(' + (90 - animatedHeadache) + '% 0px 0px 0px)' }" class = "iconProgress colored"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M208 175.1c-8.836 0-16 7.162-16 16c0 8.836 7.163 15.1 15.1 15.1s16-7.164 16-16C224 183.2 216.8 175.1 208 175.1zM272 239.1c-8.836 0-15.1 7.163-15.1 16c0 8.836 7.165 16 16 16s16-7.164 16-16C288 247.2 280.8 239.1 272 239.1zM509.2 275c-20.94-47.13-48.46-151.7-73.1-186.8C397.7 33.59 334.6 0 266.1 0H192C85.95 0 0 85.95 0 192c0 56.8 24.8 107.7 64 142.8L64 512h256l-.0044-64h63.99c35.34 0 63.1-28.65 63.1-63.1V320h31.98C503.1 320 518.6 296.2 509.2 275zM368 240h-12.12c-28.51 0-42.79 34.47-22.63 54.63l8.576 8.576c6.25 6.25 6.25 16.38 0 22.62c-3.125 3.125-7.219 4.688-11.31 4.688s-8.188-1.562-11.31-4.688l-8.576-8.576c-20.16-20.16-54.63-5.881-54.63 22.63V352c0 8.844-7.156 16-16 16s-16-7.156-16-16v-12.12c0-28.51-34.47-42.79-54.63-22.63l-8.576 8.576c-3.125 3.125-7.219 4.688-11.31 4.688c-4.096 0-8.188-1.562-11.31-4.688c-6.25-6.25-6.25-16.38 0-22.62l8.577-8.576C166.9 274.5 152.6 240 124.1 240H112c-8.844 0-16-7.156-16-16s7.157-16 16-16L124.1 208c28.51 0 42.79-34.47 22.63-54.63L138.2 144.8c-6.25-6.25-6.25-16.38 0-22.62s16.38-6.25 22.63 0L169.4 130.7c20.16 20.16 54.63 5.881 54.63-22.63V96c0-8.844 7.156-16 16-16S256 87.16 256 96v12.12c0 28.51 34.47 42.79 54.63 22.63l8.576-8.576c6.25-6.25 16.38-6.25 22.63 0s6.25 16.38 0 22.62L333.3 153.4C313.1 173.5 327.4 208 355.9 208l12.12-.0004c8.844 0 15.1 7.157 15.1 16S376.8 240 368 240z"/></svg>
+                    </div>
+                </transition>
+
+                <!--beer-->
+                <transition name="slide-fade">
+                    <div class = "box" v-if="CurrentDrunk >= 0.1">
+                        <div class = "box" v-if="CurrentDrunk >= 0.1">
+                            <svg class = "iconProgress" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M432 96H384V64c0-17.67-14.33-32-32-32H64C46.33 32 32 46.33 32 64v352c0 35.35 28.65 64 64 64h224c35.35 0 64-28.65 64-64v-32.08l80.66-35.94C493.5 335.1 512 306.5 512 275V176C512 131.8 476.2 96 432 96zM160 368C160 376.9 152.9 384 144 384S128 376.9 128 368v-224C128 135.1 135.1 128 144 128S160 135.1 160 144V368zM224 368C224 376.9 216.9 384 208 384S192 376.9 192 368v-224C192 135.1 199.1 128 208 128S224 135.1 224 144V368zM288 368c0 8.875-7.125 16-16 16S256 376.9 256 368v-224C256 135.1 263.1 128 272 128S288 135.1 288 144V368zM448 275c0 6.25-3.75 12-9.5 14.62L384 313.9V160h48C440.9 160 448 167.1 448 176V275z"/></svg>
+                            <svg class = "iconProgress colored" v-bind:style = "{ ['clip-path']: 'inset(' + (90 - animatedDrunk) + '% 0px 0px 0px)' }" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M432 96H384V64c0-17.67-14.33-32-32-32H64C46.33 32 32 46.33 32 64v352c0 35.35 28.65 64 64 64h224c35.35 0 64-28.65 64-64v-32.08l80.66-35.94C493.5 335.1 512 306.5 512 275V176C512 131.8 476.2 96 432 96zM160 368C160 376.9 152.9 384 144 384S128 376.9 128 368v-224C128 135.1 135.1 128 144 128S160 135.1 160 144V368zM224 368C224 376.9 216.9 384 208 384S192 376.9 192 368v-224C192 135.1 199.1 128 208 128S224 135.1 224 144V368zM288 368c0 8.875-7.125 16-16 16S256 376.9 256 368v-224C256 135.1 263.1 128 272 128S288 135.1 288 144V368zM448 275c0 6.25-3.75 12-9.5 14.62L384 313.9V160h48C440.9 160 448 167.1 448 176V275z"/></svg>
+                        </div>
+                    </div>
+                </transition>
+            </div>
+        </div>
+    </body>
+
+    <script src="./scripts/listener.js" type="text/javascript"></script>
+</html>

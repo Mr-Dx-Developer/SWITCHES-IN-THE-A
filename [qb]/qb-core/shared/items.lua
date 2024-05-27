@@ -432,6 +432,72 @@ QBShared.Items = {
     ['weapon_fireextinguisher']         = {['name'] = 'weapon_fireextinguisher',           ['label'] = 'Fire Extinguisher',         ['weight'] = 1000,         ['type'] = 'weapon',     ['ammotype'] = nil,                        ['image'] = 'weapon_fireextinguisher.png',   ['unique'] = true,         ['useable'] = false,     ['description'] = 'A portable device that discharges a jet of water, foam, gas, or other material to extinguish a fire'},
     ['weapon_hazardcan']                = {['name'] = 'weapon_hazardcan',                  ['label'] = 'Hazardous Jerry Can',       ['weight'] = 1000,         ['type'] = 'weapon',     ['ammotype'] = 'AMMO_PETROLCAN',           ['image'] = 'weapon_hazardcan.png',          ['unique'] = true,         ['useable'] = true,      ['description'] = 'Weapon Hazardcan'},
 
+    -- Add items into [qb]/qb-core/shared/items.lua
+
+scuba_gear = { name = 'scuba_gear', label = 'Scuba Gear', weight = 4750, type = 'item', image = 'scuba_gear.png', unique = false, useable = true, shouldClose = true, combinable = nil, description = 'This looks useful' },
+diving_crate = { name = 'diving_crate', label = 'Crate', weight = 1500, type = 'item', image = 'diving_crate.png', unique = false, useable = true, shouldClose = true, combinable = nil, description = 'I wonder what is in here' },
+
+
+blue_metaldetector = { name = 'blue_metaldetector', label = 'Beginner\'s Beacon', weight = 475, type = 'item', image = 'blue_metaldetector.png', unique = false, useable = true, shouldClose = true, combinable = nil, description = nil },
+green_metaldetector = { name = 'green_metaldetector', label = 'Lustrous Locator', weight = 475, type = 'item', image = 'green_metaldetector.png', unique = false, useable = true, shouldClose = true, combinable = nil, description = nil },
+red_metaldetector = { name = 'red_metaldetector', label = 'Treasure Trove Tracker', weight = 475, type = 'item', image = 'red_metaldetector.png', unique = false, useable = true, shouldClose = true, combinable = nil, description = nil },
+orange_metaldetector = { name = 'orange_metaldetector', label = 'Goldseeker\'s Grail', weight = 475, type = 'item', image = 'orange_metaldetector.png', unique = false, useable = true, shouldClose = true, combinable = nil, description = nil },
+black_metaldetector = { name = 'black_metaldetector', label = 'Archaeo Ace', weight = 475, type = 'item', image = 'black_metaldetector.png', unique = false, useable = true, shouldClose = true, combinable = nil, description = nil },
+md_shovel = { name = 'md_shovel', label = 'Shovel', weight = 55, type = 'item', image = 'md_shovel.png', unique = false, useable = true, shouldClose = true, combinable = nil, description = nil },
+md_bottlecap = { name = 'md_bottlecap', label = 'Bottle Cap', weight = 25, type = 'item', image = 'md_bottlecap.png', unique = false, useable = false, shouldClose = true, combinable = nil, description = nil },
+md_brokenjunk = { name = 'md_brokenjunk', label = 'Broken Junk', weight = 25, type = 'item', image = 'md_brokenjunk.png', unique = false, useable = false, shouldClose = true, combinable = nil, description = nil },
+md_crushedcan = { name = 'md_crushedcan', label = 'Crushed Can', weight = 25, type = 'item', image = 'md_crushedcan.png', unique = false, useable = false, shouldClose = true, combinable = nil, description = nil },
+md_lighter = { name = 'md_lighter', label = 'Lighter', weight = 25, type = 'item', image = 'md_lighter.png', unique = false, useable = false, shouldClose = true, combinable = nil, description = nil },
+md_metalcan = { name = 'md_metalcan', label = 'Metal Can', weight = 25, type = 'item', image = 'md_metalcan.png', unique = false, useable = false, shouldClose = true, combinable = nil, description = nil },
+md_nails = { name = 'md_nails', label = 'Nails', weight = 25, type = 'item', image = 'md_nails.png', unique = false, useable = false, shouldClose = true, combinable = nil, description = nil },
+md_needle = { name = 'md_needle', label = 'Needle', weight = 25, type = 'item', image = 'md_needle.png', unique = false, useable = false, shouldClose = true, combinable = nil, description = nil },
+md_nickle = { name = 'md_nickle', label = 'Nickle', weight = 25, type = 'item', image = 'md_nickle.png', unique = false, useable = false, shouldClose = true, combinable = nil, description = nil },
+md_nut = { name = 'md_nut', label = 'Nut', weight = 25, type = 'item', image = 'md_nut.png', unique = false, useable = false, shouldClose = true, combinable = nil, description = nil },
+md_oldshotgunshell = { name = 'md_oldshotgunshell', label = 'Old Shotgun Shell', weight = 25, type = 'item', image = 'md_oldshotgunshell.png', unique = false, useable = false, shouldClose = true, combinable = nil, description = nil },
+md_paperclip = { name = 'md_paperclip', label = 'Paper Clip', weight = 25, type = 'item', image = 'md_paperclip.png', unique = false, useable = false, shouldClose = true, combinable = nil, description = nil },
+md_pulltab = { name = 'md_pulltab', label = 'Pull Tab', weight = 25, type = 'item', image = 'md_pulltab.png', unique = false, useable = false, shouldClose = true, combinable = nil, description = nil },
+md_quarter = { name = 'md_quarter', label = 'Quarter', weight = 25, type = 'item', image = 'md_quarter.png', unique = false, useable = false, shouldClose = true, combinable = nil, description = nil },
+md_rustyball = { name = 'md_rustyball', label = 'Rusty Ball', weight = 25, type = 'item', image = 'md_rustyball.png', unique = false, useable = false, shouldClose = true, combinable = nil, description = nil },
+md_rustyironball = { name = 'md_rustyironball', label = 'Rusty Iron Ball', weight = 25, type = 'item', image = 'md_rustyironball.png', unique = false, useable = false, shouldClose = true, combinable = nil, description = nil },
+md_rustyjunk = { name = 'md_rustyjunk', label = 'Rusty Junk', weight = 25, type = 'item', image = 'md_rustyjunk.png', unique = false, useable = false, shouldClose = true, combinable = nil, description = nil },
+md_rustynails = { name = 'md_rustynails', label = 'Rusty Nails', weight = 25, type = 'item', image = 'md_rustynails.png', unique = false, useable = false, shouldClose = true, combinable = nil, description = nil },
+md_rustypliers = { name = 'md_rustypliers', label = 'Rusty Pliers', weight = 25, type = 'item', image = 'md_rustypliers.png', unique = false, useable = false, shouldClose = true, combinable = nil, description = nil },
+md_rustyring = { name = 'md_rustyring', label = 'Rusty Ring', weight = 25, type = 'item', image = 'md_rustyring.png', unique = false, useable = false, shouldClose = true, combinable = nil, description = nil },
+md_rustyscissors = { name = 'md_rustyscissors', label = 'Rusty Scissors', weight = 25, type = 'item', image = 'md_rustyscissors.png', unique = false, useable = false, shouldClose = true, combinable = nil, description = nil },
+md_rustyscrewdriver = { name = 'md_rustyscrewdriver', label = 'Rusty Screwdriver', weight = 25, type = 'item', image = 'md_rustyscrewdriver.png', unique = false, useable = false, shouldClose = true, combinable = nil, description = nil },
+md_rustyspring = { name = 'md_rustyspring', label = 'Rusty Spring', weight = 25, type = 'item', image = 'md_rustyspring.png', unique = false, useable = false, shouldClose = true, combinable = nil, description = nil },
+md_screw = { name = 'md_screw', label = 'Rusty Screw', weight = 25, type = 'item', image = 'md_screw.png', unique = false, useable = false, shouldClose = true, combinable = nil, description = nil },
+md_wheatpenny = { name = 'md_wheatpenny', label = 'Wheat Penny', weight = 25, type = 'item', image = 'md_wheatpenny.png', unique = false, useable = false, shouldClose = true, combinable = nil, description = nil },
+md_ancientcoin = { name = 'md_ancientcoin', label = 'Ancient Coin', weight = 25, type = 'item', image = 'md_ancientcoin.png', unique = false, useable = false, shouldClose = true, combinable = nil, description = nil },
+md_blackwatch = { name = 'md_blackwatch', label = 'Black Watch', weight = 25, type = 'item', image = 'md_blackwatch.png', unique = false, useable = false, shouldClose = true, combinable = nil, description = nil },
+md_coppernugget = { name = 'md_coppernugget', label = 'Copper Nugget', weight = 25, type = 'item', image = 'md_coppernugget.png', unique = false, useable = false, shouldClose = true, combinable = nil, description = nil },
+md_diamondearings = { name = 'md_diamondearings', label = 'Diamond Earrings', weight = 25, type = 'item', image = 'md_diamondearings.png', unique = false, useable = false, shouldClose = true, combinable = nil, description = nil },
+md_diamondnecklace = { name = 'md_diamondnecklace', label = 'Diamond Necklace', weight = 25, type = 'item', image = 'md_diamondnecklace.png', unique = false, useable = false, shouldClose = true, combinable = nil, description = nil },
+md_diamondring = { name = 'md_diamondring', label = 'Diamond Ring', weight = 25, type = 'item', image = 'md_diamondring.png', unique = false, useable = false, shouldClose = true, combinable = nil, description = nil },
+md_earpod = { name = 'md_earpod', label = 'Ear Pod', weight = 25, type = 'item', image = 'md_earpod.png', unique = false, useable = false, shouldClose = true, combinable = nil, description = nil },
+md_golddollar = { name = 'md_golddollar', label = 'Gold Dollar', weight = 25, type = 'item', image = 'md_golddollar.png', unique = false, useable = false, shouldClose = true, combinable = nil, description = nil },
+md_goldearings = { name = 'md_goldearings', label = 'Gold Earrings', weight = 25, type = 'item', image = 'md_goldearings.png', unique = false, useable = false, shouldClose = true, combinable = nil, description = nil },
+md_goldnecklace = { name = 'md_goldnecklace', label = 'Gold Necklace', weight = 25, type = 'item', image = 'md_goldnecklace.png', unique = false, useable = false, shouldClose = true, combinable = nil, description = nil },
+md_goldnugget = { name = 'md_goldnugget', label = 'Gold Nugget', weight = 25, type = 'item', image = 'md_goldnugget.png', unique = false, useable = false, shouldClose = true, combinable = nil, description = nil },
+md_goldounce = { name = 'md_goldounce', label = '1oz Gold Bar', weight = 25, type = 'item', image = 'md_goldounce.png', unique = false, useable = false, shouldClose = true, combinable = nil, description = nil },
+md_goldring = { name = 'md_goldring', label = 'Gold Ring', weight = 25, type = 'item', image = 'md_goldring.png', unique = false, useable = false, shouldClose = true, combinable = nil, description = nil },
+md_halfdollar = { name = 'md_halfdollar', label = 'Half Dollar', weight = 25, type = 'item', image = 'md_halfdollar.png', unique = false, useable = false, shouldClose = true, combinable = nil, description = nil },
+md_ironnugget = { name = 'md_ironnugget', label = 'Iron Nugget', weight = 25, type = 'item', image = 'md_ironnugget.png', unique = false, useable = false, shouldClose = true, combinable = nil, description = nil },
+md_platinumnugget = { name = 'md_platinumnugget', label = 'Platinum Nugget', weight = 25, type = 'item', image = 'md_platinumnugget.png', unique = false, useable = false, shouldClose = true, combinable = nil, description = nil },
+md_presidentialwatch = { name = 'md_presidentialwatch', label = 'Presidential Watch', weight = 25, type = 'item', image = 'md_presidentialwatch.png', unique = false, useable = false, shouldClose = true, combinable = nil, description = nil },
+md_relicrevolver = { name = 'md_relicrevolver', label = 'Relic Revolver', weight = 25, type = 'item', image = 'md_relicrevolver.png', unique = false, useable = false, shouldClose = true, combinable = nil, description = nil },
+md_silverdime = { name = 'md_silverdime', label = 'Silver Dime', weight = 25, type = 'item', image = 'md_silverdime.png', unique = false, useable = false, shouldClose = true, combinable = nil, description = nil },
+md_silverearings = { name = 'md_silverearings', label = 'Silver Earrings', weight = 25, type = 'item', image = 'md_silverearings.png', unique = false, useable = false, shouldClose = true, combinable = nil, description = nil },
+md_silverounce = { name = 'md_silverounce', label = '1oz Silver Bar', weight = 25, type = 'item', image = 'md_silverounce.png', unique = false, useable = false, shouldClose = true, combinable = nil, description = nil },
+md_silverring = { name = 'md_silverring', label = 'Silver Ring', weight = 25, type = 'item', image = 'md_silverring.png', unique = false, useable = false, shouldClose = true, combinable = nil, description = nil },
+
+
+-- Add items into [qb]/qb-core/shared/items.lua
+auto_parts = { name = 'auto_parts', label = 'Auto Parts', weight = 5, type = 'item', image = 'auto_parts.png', unique = false, useable = false, shouldClose = true, combinable = nil, description = nil },
+chop_lockpick = { name = 'chop_lockpick', label = 'Lockpick', weight = 150, type = 'item', image = 'chop_lockpick.png', unique = false, useable = false, shouldClose = true, combinable = nil, description = nil },
+chop_torch = { name = 'chop_torch', label = 'Torch', weight = 275, type = 'item', image = 'chop_torch.png', unique = false, useable = false, shouldClose = true, combinable = nil, description = nil },
+chop_lugwrench = { name = 'chop_lugwrench', label = 'Lug Wrench', weight = 225, type = 'item', image = 'chop_lugwrench.png', unique = false, useable = false, shouldClose = true, combinable = nil, description = nil },
+
     -- PISTOL ATTACHMENTS
     ['pistol_defaultclip']              = {['name'] = 'pistol_defaultclip',                ['label'] = 'Pistol Clip',               ['weight'] = 1000,         ['type'] = 'item',         ['image'] = 'pistol_extendedclip.png',     ['unique'] = false,         ['useable'] = true,     ['shouldClose'] = true,       ['combinable'] = nil,   ['description'] = 'Pistol Default Clip'},
     ['pistol_extendedclip']             = {['name'] = 'pistol_extendedclip',               ['label'] = 'Pistol EXT Clip',           ['weight'] = 1000,         ['type'] = 'item',         ['image'] = 'pistol_extendedclip.png',     ['unique'] = false,         ['useable'] = true,     ['shouldClose'] = true,       ['combinable'] = nil,   ['description'] = 'Pistol Extended Clip'},
@@ -938,6 +1004,29 @@ QBShared.Items = {
 	["axleparts"]=          {["name"] = "axleparts",        ["label"] = "Axle Parts",			["weight"] = 0, ["type"] = "item",  ["image"] = "axleparts.png",        ["unique"] = false, ["useable"] = false,["shouldClose"] = false,["description"] = ""},
 	["sparetire"]=          {["name"] = "sparetire",        ["label"] = "Spare Tire",			["weight"] = 0, ["type"] = "item",  ["image"] = "sparetire.png",        ["unique"] = true,  ["useable"] = false,["shouldClose"] = false,["description"] = ""},
  ]]
+
+
+
+ watering_can = { name = 'watering_can', label = 'Watering Can', weight = 300, type = 'item', image = 'watering_can.png', unique = false, useable = false, shouldClose = true, combinable = nil, description = 'Looks pretty expensive to me' },
+fertilizer = { name = 'fertilizer', label = 'Fertilizer', weight = 125, type = 'item', image = 'fertilizer.png', unique = false, useable = false, shouldClose = true, combinable = nil, description = 'Looks a little dirty' },
+plant_pot = { name = 'plant_pot', label = 'Plant Pot', weight = 25, type = 'item', image = 'plant_pot.png', unique = false, useable = false, shouldClose = true, combinable = nil, description = 'I could plant something in here' },
+plant_shovel = { name = 'plant_shovel', label = 'Plant Shovel', weight = 75, type = 'item', image = 'plant_shovel.png', unique = false, useable = false, shouldClose = true, combinable = nil, description = 'This would be a nice weapon..' },
+plant_shears = { name = 'plant_shears', label = 'Plant Shears', weight = 15, type = 'item', image = 'plant_shears.png', unique = false, useable = false, shouldClose = true, combinable = nil, description = 'Seems useful' },
+rolling_paper = { name = 'rolling_paper', label = 'Rolling Paper', weight = 10, type = 'item', image = 'rolling_paper.png', unique = false, useable = false, shouldClose = true, combinable = nil, description = nil },
+regweed_seed = { name = 'regweed_seed', label = 'Weed Seed', weight = 10, type = 'item', image = 'regweed_seed.png', unique = false, useable = true, shouldClose = true, combinable = nil, description = 'I should plant this' },
+purplehaze_seed = { name = 'purplehaze_seed', label = 'Purple Haze Seed', weight = 10, type = 'item', image = 'purplehaze_seed.png', unique = false, useable = true, shouldClose = true, combinable = nil, description = 'I should plant this' },
+bluedream_seed = { name = 'bluedream_seed', label = 'Blue Dream Seed', weight = 10, type = 'item', image = 'bluedream_seed.png', unique = false, useable = true, shouldClose = true, combinable = nil, description = 'I should plant this' },
+bananakush_seed = { name = 'bananakush_seed', label = 'Banana Kush Seed', weight = 10, type = 'item', image = 'bananakush_seed.png', unique = false, useable = true, shouldClose = true, combinable = nil, description = 'I should plant this' },
+regweed_bud = { name = 'regweed_bud', label = 'Weed Bud', weight = 15, type = 'item', image = 'regweed_bud.png', unique = false, useable = false, shouldClose = true, combinable = nil, description = 'Is this legal?' },
+purplehaze_bud = { name = 'purplehaze_bud', label = 'Purple Haze Bud', weight = 15, type = 'item', image = 'purplehaze_bud.png', unique = false, useable = false, shouldClose = true, combinable = nil, description = 'Is this legal?' },
+bluedream_bud = { name = 'bluedream_bud', label = 'Blue Dream Bud', weight = 15, type = 'item', image = 'bluedream_bud.png', unique = false, useable = false, shouldClose = true, combinable = nil, description = 'Is this legal?' },
+bananakush_bud = { name = 'bananakush_bud', label = 'Banana Kush Bud', weight = 15, type = 'item', image = 'bananakush_bud.png', unique = false, useable = false, shouldClose = true, combinable = nil, description = 'Is this legal?' },
+regweed_joint = { name = 'regweed_joint', label = 'Weed Joint', weight = 10, type = 'item', image = 'regweed_joint.png', unique = false, useable = true, shouldClose = true, combinable = nil, description = 'Sell or smoke.. I cannot decide' },
+bananakush_joint = { name = 'bananakush_joint', label = 'Banana Kush Joint', weight = 10, type = 'item', image = 'bananakush_joint.png', unique = false, useable = true, shouldClose = true, combinable = nil, description = 'Sell or smoke.. I cannot decide' },
+purplehaze_joint = { name = 'purplehaze_joint', label = 'Purple Haze Joint', weight = 10, type = 'item', image = 'purplehaze_joint.png', unique = false, useable = true, shouldClose = true, combinable = nil, description = 'Sell or smoke.. I cannot decide' },
+bluedream_joint = { name = 'bluedream_joint', label = 'Blue Dream Joint', weight = 10, type = 'item', image = 'bluedream_joint.png', unique = false, useable = true, shouldClose = true, combinable = nil, description = 'Sell or smoke.. I cannot decide' },
+lab_access_card = { name = 'lab_access_card', label = 'Access Card', weight = 10, type = 'item', image = 'lab_access_card.png', unique = false, useable = false, shouldClose = true, combinable = nil, description = 'Seems useful' },
+
  ['boombox'] 		 			 = {['name'] = 'boombox', 					['label'] = 'Boombox', 				['weight'] = 650, 		['type'] = 'item', 		['image'] = 'boombox.png', 			['unique'] = false, 	['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'boombox.'},
  --5M DEVS FOOD V1
  ['fmdfuapplesauce']                 = {['name'] = 'fmdfuapplesauce',                   ['label'] = 'Applesauce',   								['weight'] = 2,          ['type'] = 'item',         ['image'] = 'fmdfuapplesauce.png',       ['unique'] = false,         ['useable'] = true,     ['shouldClose'] = true,       ['combinable'] = nil,   ['description'] = 'Applesauce'},
@@ -1461,7 +1550,83 @@ fentanyl                                = { name = 'fentanyl', label = 'Fentanyl
 	['burgershot_icecreamcone'] = { ['name'] = 'burgershot_icecreamcone', ['label'] = 'Empty Cone', ['weight'] = 100, ['type'] = 'item', ['image'] = 'burgershot_icecreamcone.png', ['unique'] = true,['useable'] = true, ['shouldClose'] = true, 	['combinable'] = nil, ['description'] = "Cone", },
    
 
-
+    ['supervodka'] = {
+        ['name'] = 'supervodka',
+        ['label'] = 'supervodka',
+        ['weight'] = 500,
+        ['type'] = 'item',
+        ['image'] = 'supervodka.png',
+        ['unique'] = false,
+        ['useable'] = true,
+        ['shouldClose'] = true,
+        ['combinable'] = nil,
+        ['description'] = 'Super strong vodka for challing your friend!'
+    },
+    
+    ['breath_alcohol_tester'] = {
+        ['name'] = 'breath_alcohol_tester',
+        ['label'] = 'breath_alcohol_tester',
+        ['weight'] = 500,
+        ['type'] = 'item',
+        ['image'] = 'breath_alcohol_tester.png',
+        ['unique'] = false,
+        ['useable'] = true,
+        ['shouldClose'] = true,
+        ['combinable'] = nil,
+        ['description'] = 'Why would I test if I can drive? Police cannot even catch me! I will drive fast!'
+    },
+    
+    ['beer'] = {
+        ['name'] = 'beer',
+        ['label'] = 'beer',
+        ['weight'] = 500,
+        ['type'] = 'item',
+        ['image'] = 'beer.png',
+        ['unique'] = false,
+        ['useable'] = true,
+        ['shouldClose'] = true,
+        ['combinable'] = nil,
+        ['description'] = 'Alcoholic drink'
+    },
+    
+    ['vodka'] = {
+        ['name'] = 'vodka',
+        ['label'] = 'vodka',
+        ['weight'] = 500,
+        ['type'] = 'item',
+        ['image'] = 'vodka.png',
+        ['unique'] = false,
+        ['useable'] = true,
+        ['shouldClose'] = true,
+        ['combinable'] = nil,
+        ['description'] = 'Alcoholic drink'
+    },
+    
+    ['whiskey'] = {
+        ['name'] = 'whiskey',
+        ['label'] = 'whiskey',
+        ['weight'] = 500,
+        ['type'] = 'item',
+        ['image'] = 'whiskey.png',
+        ['unique'] = false,
+        ['useable'] = true,
+        ['shouldClose'] = true,
+        ['combinable'] = nil,
+        ['description'] = 'Alcoholic drink'
+    },
+    
+    ['wine'] = {
+        ['name'] = 'wine',
+        ['label'] = 'wine',
+        ['weight'] = 500,
+        ['type'] = 'item',
+        ['image'] = 'wine.png',
+        ['unique'] = false,
+        ['useable'] = true,
+        ['shouldClose'] = true,
+        ['combinable'] = nil,
+        ['description'] = 'Alcoholic drink'
+    },
     --5M DEVS GAS STATION SNACKS V2
     ['fmdgsfjaj']     					= {['name'] = 'fmdgsfjaj',                         ['label'] = 'Fruit Juice Apple',           				['weight'] = 2,        	['type'] = 'item',         ['image'] = 'fmdgsfjaj.png',         	['unique'] = true,          ['useable'] = true,      ['shouldClose'] = true,      ['combinable'] = nil,   ['description'] =  'Fruit Juice Apple'},
     ['fmdgsfjcar']     					= {['name'] = 'fmdgsfjcar',                        ['label'] = 'Fruit Juice Cranberry Apple Raspberry',     ['weight'] = 2,        	['type'] = 'item',         ['image'] = 'fmdgsfjcar.png',         	['unique'] = true,          ['useable'] = true,      ['shouldClose'] = true,      ['combinable'] = nil,   ['description'] =  'Fruit Juice Cranberry Apple Raspberry'},	
@@ -2050,6 +2215,18 @@ briefcaselockpicker          = { name = "briefcaselockpicker", label = "Briefcas
 
 
 
+    ['skytracker'] = {
+        ['name'] = 'skytracker',
+        ['label'] = 'Skydiving Tracker',
+        ['weight'] = 500,
+        ['type'] = 'item',
+        ['image'] = 'fitbit.png',
+        ['unique'] = true,
+        ['useable'] = false,
+        ['shouldClose'] = true,
+        ['combinable'] = nil,
+        ['description'] = 'Gives skydiving team radar'
+    },
 
 
     ['fertilizer'] = {['name'] = 'fertilizer', ['label'] = 'Fertilizer', ['weight'] = 100, ['type'] = 'item', ['image'] = 'fertilizer.png', ['unique'] = false, ['useable'] = true, ['shouldClose'] = true, ['combinable'] = nil, ['description'] = 'Your description here'},

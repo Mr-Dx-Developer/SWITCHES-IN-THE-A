@@ -34,10 +34,10 @@ Config.InsurancePrice = {
 -- Health Insurance
 Config.HealthInsuranceSettings = {
     Blip = { 
-        [1] = { enable = true, coords = vector3(311.38, -594.21, 43.28), sprite = 107, colour = 5, scale = 0.8, name = "Health Insurance" },
+        [1] = { enable = true, coords = vector3(310.0615539550781, -597.7450561523438, 43.2652587890625), sprite = 107, colour = 5, scale = 0.8, name = "Health Insurance" },
     },
     Peds = {
-        [1] = { coords = vector3(311.38, -594.21, 43.28), pedModel = "s_m_m_doctor_01", heading = 341.31},
+        [1] = { coords = vector3(310.0615539550781, -597.7450561523438, 43.2652587890625), pedModel = "s_m_m_doctor_01", heading = 351.4960632324219},
     }
 }
 

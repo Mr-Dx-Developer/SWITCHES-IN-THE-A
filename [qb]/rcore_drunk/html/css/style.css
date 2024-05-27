@@ -1,0 +1,148 @@
+@font-face {
+    font-family: 'digital-7regular';
+    src: url('digital-7.regular-webfont.woff2') format('woff2'),
+         url('digital-7.regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+#breath_tester{
+    position: absolute;
+    bottom: 0vw;
+    right: 3vw;
+    width: 23vw;
+    height: 29vw;
+    background-image: url(drunk.png);
+    background-size: cover;
+    overflow: hidden;
+}
+
+#tester_numbers{
+    font-family: 'digital-7regular';
+    color: #960000;
+    font-size: 3.8vw;
+    width: 8.44vw;
+    position: relative;
+    left: 0.125vw;
+    bottom: 0.7vw;
+    text-align: center;
+}
+
+#container_tester{
+    height: 10vw;
+    width: 8.7vw;
+    position: relative;
+    top: 5.5vw;
+    left: 10.9vw;
+}
+
+#breath_warning{
+    height: 2vw;
+}
+
+.breath_warning_text{
+    font-size: 0.836vw;
+    margin: 0px 0.5vw;
+    float: left;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.green_dot{
+    border-radius: 100%;
+    background: greenyellow;
+    width: 0.7vw;
+    height: 0.7vw;
+    position: relative;
+    left: 0.5vw;
+    top: 0.2vw;
+}
+
+.orange_dot{
+    border-radius: 100%;
+    background: orange;
+    width: 0.7vw;
+    height: 0.7vw;
+    position: relative;
+    left: 0.5vw;
+    top: 0.2vw;
+}
+
+.red_dot{
+    border-radius: 100%;
+    background: red;
+    width: 0.7vw;
+    height: 0.7vw;
+    position: relative;
+    left: 0.5vw;
+    top: 0.2vw;
+}
+
+#bottom_Text{
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    position: relative;
+    font-size: 1vw;
+    left: 1.3vw;
+}
+
+#notification{
+    position: absolute;
+    right: 4vw;
+    bottom: 2vw;
+    font-family: sans-serif;
+    background: #ffffff;
+    min-width: 13.8vw;
+    border-radius: 1vw;
+    box-shadow: 0 5px 26px rgb(0 0 0 / 51%), 0 5px 10px rgb(0 0 0 / 55%);
+    font-size: 0.86vw;
+    font-family: Montserrat, sans-serif;
+}
+
+#text-notification img{
+    height: 2vw;
+    position: relative;
+    bottom: 0.15vw;
+}
+
+#text-notification{
+    padding: 0.65vw;
+}
+
+#hud{
+    position: absolute;
+    bottom: 0.4vw;
+    left: 1vw;
+}
+
+.iconProgress{
+    position: fixed;
+    height: 2.5vw;
+    fill: white;
+}
+
+.iconProgress.colored{
+    height: 2.55vw;
+    fill: orange;
+}
+
+.box{
+    height: 2.5vw;
+    width: 2.7vw;
+    float: right;
+    margin: 0.2vw;
+}
+
+/* Enter and leave animations can use different */
+/* durations and timing functions.              */
+.slide-fade-enter-active {
+    transition: all .15s ease;
+}
+.slide-fade-leave-active {
+    transition: all .4s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-fade-enter, .slide-fade-leave-to
+/* .slide-fade-leave-active below version 2.1.8 */ {
+    transform: translateX(1vw);
+    opacity: 0;
+}

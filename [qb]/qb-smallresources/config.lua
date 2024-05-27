@@ -1,7 +1,7 @@
 Config = {}
 
 Config.UseTarget = GetConvar('UseTarget', 'false') == 'true' -- Use qb-target interactions (don't change this, go to your server.cfg and add `setr UseTarget true` to use this and just that from true to false or the other way around)
-Config.PauseMapText = 'ODM Atlanta V3'                                     -- Text shown above the map when ESC is pressed. If left empty 'FiveM' will appear
+Config.PauseMapText = 'Switches In The A RP'                                     -- Text shown above the map when ESC is pressed. If left empty 'FiveM' will appear
 Config.HarnessUses = 20
 Config.DamageNeeded = 100.0                                  -- amount of damage till you can push your vehicle. 0-1000
 
@@ -65,7 +65,7 @@ Config.AIResponse = {
         },
         {
             text = 'DISCORD!',
-            url = 'https://discord.gg/odmatlantav3'
+            url = 'https://discord.gg/switchesinthea'
         }
     }
 }
@@ -559,7 +559,7 @@ Config.Background = "background_projectsloth"
 Config.Opacity = 60
 Config.Header = {
     -- LEFT MENU CONFIG
-    ["TITLE"] = "ODM ATL v3",
+    ["TITLE"] = "Switches In The A RP",
     ["SUBTITLE"] = "Life where everything is vartual",
 
     ["MAP"] = "Map",
@@ -574,7 +574,7 @@ Config.Header = {
     ["EDITOR"] = "Rockstar Editor",
 
     -- RIGHT MENU CONFIG
-    ["SERVER_NAME"] = "ODM ATL v3",
-    ["SERVER_TEXT"] = "ODM ATL V3 ROLEPLAY",
-    ["SERVER_DISCORD"] = "ODM ATL V3"
+    ["SERVER_NAME"] = "Switches In The A RP",
+    ["SERVER_TEXT"] = "Switches In The A ROLEPLAY",
+    ["SERVER_DISCORD"] = "Switches In The A RP"
 }

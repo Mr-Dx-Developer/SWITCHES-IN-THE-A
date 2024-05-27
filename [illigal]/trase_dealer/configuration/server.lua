@@ -41,7 +41,7 @@ Config.Drugs = {
     [5] = {
         Label = '101 Brick',
         Item = '101_brick',
-        Price = 8000, 
+        Price = 10000, 
         RequiredAmount = 1,
         DenyChance = 0
     },
@@ -140,108 +140,149 @@ Config.Drugs = {
         DenyChance = 0
     },
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
     [19] = {
         Label = 'fmdblonde_bundlesbox',
         Item = 'fmdblonde_bundlesbox',
-        Price = 800, 
+        Price = 2500, 
         RequiredAmount = 1,
         DenyChance = 0
     },
     [20] = {
         Label = 'fmdred_bodywavebox',
         Item = 'fmdred_bodywavebox',
-        Price = 800, 
+        Price = 2500, 
         RequiredAmount = 1,
         DenyChance = 0
     },
     [21] = {
         Label = 'fmdbbrown_bundlesbox',
         Item = 'fmdbbrown_bundlesbox',
-        Price = 800, 
+        Price = 2500, 
         RequiredAmount = 1,
         DenyChance = 0
     },
     [22] = {
         Label = 'fmdccpink_bundlesbox',
         Item = 'fmdccpink_bundlesbox',
-        Price = 800, 
+        Price = 2500, 
         RequiredAmount = 1,
         DenyChance = 0
     },
     [23] = {
         Label = 'fmdauburn_bundlesbox',
         Item = 'fmdauburn_bundlesbox',
-        Price = 800, 
+        Price = 2500, 
         RequiredAmount = 1,
         DenyChance = 0
     },
     [24] = {
         Label = 'fmdblack_bundlesbox',
         Item = 'fmdblack_bundlesbox',
-        Price = 800, 
+        Price = 2500, 
         RequiredAmount = 1,
         DenyChance = 0
     },
     [25] = {
         Label = 'fmdbrown_bundlesbox',
         Item = 'fmdbrown_bundlesbox',
-        Price = 800, 
+        Price = 2500, 
         RequiredAmount = 1,
         DenyChance = 0
     },
     [26] = {
         Label = 'fmdplatinum_bundlesbox',
         Item = 'fmdplatinum_bundlesbox',
-        Price = 800, 
+        Price = 2500, 
         RequiredAmount = 1,
         DenyChance = 0
     },
     [27] = {
         Label = 'fmdccblue_bundlesbox',
         Item = 'fmdccblue_bundlesbox',
-        Price = 800, 
+        Price = 2500, 
         RequiredAmount = 1,
         DenyChance = 0
     },
     [28] = {
         Label = 'fmdlime_bundlesbox',
         Item = 'fmdlime_bundlesbox',
-        Price = 800, 
+        Price = 2500, 
         RequiredAmount = 1,
         DenyChance = 0
     },
     [29] = {
         Label = 'fmdpurple_bundlesbox',
         Item = 'fmdpurple_bundlesbox',
-        Price = 800, 
+        Price = 2500, 
         RequiredAmount = 1,
         DenyChance = 0
     },
     [30] = {
         Label = 'fmdmidb_bundlesbox',
         Item = 'fmdmidb_bundlesbox',
-        Price = 800, 
+        Price = 2500, 
         RequiredAmount = 1,
         DenyChance = 0
     },
     [31] = {
         Label = 'fmdkblack_bundlesbox',
         Item = 'fmdkblack_bundlesbox',
-        Price = 800, 
+        Price = 2500, 
         RequiredAmount = 1,
         DenyChance = 0
     },
     [32] = {
         Label = 'fmdkblonde_bundlesbox',
         Item = 'fmdkblonde_bundlesbox',
-        Price = 800, 
+        Price = 2500, 
         RequiredAmount = 1,
         DenyChance = 0
     },
     [33] = {
         Label = 'fmdkblue_bundlesbox',
         Item = 'fmdkblue_bundlesbox',
-        Price = 800, 
+        Price = 2500, 
         RequiredAmount = 1,
         DenyChance = 0
     },
@@ -250,140 +291,140 @@ Config.Drugs = {
     [34] = {
         Label = 'fmdbaltotebox',
         Item = 'fmdbaltotebox',
-        Price = 800, 
+        Price = 2500, 
         RequiredAmount = 1,
         DenyChance = 0
     },
     [35] = {
         Label = 'fmdbalwwalletbox',
         Item = 'fmdbalwwalletbox',
-        Price = 800, 
+        Price = 2500, 
         RequiredAmount = 1,
         DenyChance = 0
     },
     [36] = {
         Label = 'fmdbalpsbagbox',
         Item = 'fmdbalpsbagbox',
-        Price = 800, 
+        Price = 2500, 
         RequiredAmount = 1,
         DenyChance = 0
     },
     [37] = {
         Label = 'fmdbalpbagbox',
         Item = 'fmdbalpbagbox',
-        Price = 800, 
+        Price = 2500, 
         RequiredAmount = 1,
         DenyChance = 0
     },
     [38] = {
         Label = 'fmdchpbox',
         Item = 'fmdchpbox',
-        Price = 800, 
+        Price = 2500, 
         RequiredAmount = 1,
         DenyChance = 0
     },
     [39] = {
         Label = 'fmdchwbox',
         Item = 'fmdchwbox',
-        Price = 800, 
+        Price = 2500, 
         RequiredAmount = 1,
         DenyChance = 0
     },
     [40] = {
         Label = 'fmdchbbox',
         Item = 'fmdchbbox',
-        Price = 800, 
+        Price = 2500, 
         RequiredAmount = 1,
         DenyChance = 0
     },
     [41] = {
         Label = 'fmdbirpsbox',
         Item = 'fmdbirpsbox',
-        Price = 800, 
+        Price = 2500, 
         RequiredAmount = 1,
         DenyChance = 0
     },
     [42] = {
         Label = 'fmdbirbbox',
         Item = 'fmdbirbbox',
-        Price = 800, 
+        Price = 2500, 
         RequiredAmount = 1,
         DenyChance = 0
     },
     [43] = {
         Label = 'fmdbirapbox',
         Item = 'fmdbirapbox',
-        Price = 800, 
+        Price = 2500, 
         RequiredAmount = 1,
         DenyChance = 0
     },
     [44] = {
         Label = 'fmdbirpinkbox',
         Item = 'fmdbirpinkbox',
-        Price = 800, 
+        Price = 2500, 
         RequiredAmount = 1,
         DenyChance = 0
     },
     [45] = {
         Label = 'fmdlvcbbox',
         Item = 'fmdlvcbbox',
-        Price = 800, 
+        Price = 2500, 
         RequiredAmount = 1,
         DenyChance = 0
     },
     [46] = {
         Label = 'fmdlvtotebox',
         Item = 'fmdlvtotebox',
-        Price = 800, 
+        Price = 2500, 
         RequiredAmount = 1,
         DenyChance = 0
     },
     [47] = {
         Label = 'fmdlvwalletbox',
         Item = 'fmdlvwalletbox',
-        Price = 800, 
+        Price = 2500, 
         RequiredAmount = 1,
         DenyChance = 0
     },
     [48] = {
         Label = 'fmdlvjunglebox',
         Item = 'fmdlvjunglebox',
-        Price = 800, 
+        Price = 2500, 
         RequiredAmount = 1,
         DenyChance = 0
     },
     [49] = {
         Label = 'fmddiorapbox',
         Item = 'fmddiorapbox',
-        Price = 800, 
+        Price = 2500, 
         RequiredAmount = 1,
         DenyChance = 0
     },
     [50] = {
         Label = 'fmddiorbbox',
         Item = 'fmddiorbbox',
-        Price = 800, 
+        Price = 2500, 
         RequiredAmount = 1,
         DenyChance = 0
     },
     [51] = {
         Label = 'fmddiorplbox',
         Item = 'fmddiorplbox',
-        Price = 800, 
+        Price = 2500, 
         RequiredAmount = 1,
         DenyChance = 0
     },
     [52] = {
         Label = 'fmddiortotebox',
         Item = 'fmddiortotebox',
-        Price = 800, 
+        Price = 2500, 
         RequiredAmount = 1,
         DenyChance = 0
     },
     [53] = {
         Label = 'fmddiorptotebox',
         Item = 'fmddiorptotebox',
-        Price = 800, 
+        Price = 2500, 
         RequiredAmount = 1,
         DenyChance = 0
     },

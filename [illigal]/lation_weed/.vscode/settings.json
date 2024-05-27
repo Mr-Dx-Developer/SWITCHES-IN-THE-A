@@ -1,0 +1,18 @@
+{
+    "Lua.diagnostics.globals": [
+        "MySQL",
+        "lib",
+        "canHarvest",
+        "harvestPlant",
+        "spawnOrUpgradePlant",
+        "cache",
+        "destroyPlant",
+        "harvestWeedPlant",
+        "openWeedMenu",
+        "getClosestPlant",
+        "ensureValidQuantity",
+        "EnsureValidQuantity",
+        "newTable",
+        "progressType"
+    ]
+}

@@ -1,0 +1,1521 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<CMapTypes>
+  <extensions/>
+  <archetypes>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="100.00000000"/>
+      <flags value="537002016"/>
+      <specialAttribute value="0"/>
+      <bbMin x="-0.26006600" y="-0.25728400" z="-0.00010700"/>
+      <bbMax x="0.24927700" y="0.22931800" z="0.99669000"/>
+      <bsCentre x="-0.00539449" y="-0.01398300" z="0.49829150"/>
+      <bsRadius value="0.61029010"/>
+      <hdTextureDist value="5.00000000"/>
+      <name>shoe_shuffler_prop_weed_01_small_green_01a</name>
+      <textureDictionary>shoe_shuffler_prop_weed_green</textureDictionary>
+      <clipDictionary/>
+      <drawableDictionary/>
+      <physicsDictionary>mp_biker_weed</physicsDictionary>
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>shoe_shuffler_prop_weed_01_small_green_01a</assetName>
+      <extensions/>
+    </Item>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="100.00000000"/>
+      <flags value="537002016"/>
+      <specialAttribute value="0"/>
+      <bbMin x="-0.26006600" y="-0.25728400" z="-0.00010700"/>
+      <bbMax x="0.24927700" y="0.22931800" z="0.99669000"/>
+      <bsCentre x="-0.00539449" y="-0.01398300" z="0.49829150"/>
+      <bsRadius value="0.61029010"/>
+      <hdTextureDist value="5.00000000"/>
+      <name>shoe_shuffler_prop_weed_01_small_green_01b</name>
+      <textureDictionary>shoe_shuffler_prop_weed_green</textureDictionary>
+      <clipDictionary/>
+      <drawableDictionary/>
+      <physicsDictionary>mp_biker_weed</physicsDictionary>
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>shoe_shuffler_prop_weed_01_small_green_01b</assetName>
+      <extensions/>
+    </Item>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="100.00000000"/>
+      <flags value="537002016"/>
+      <specialAttribute value="0"/>
+      <bbMin x="-0.26006600" y="-0.25728400" z="-0.00010700"/>
+      <bbMax x="0.24927700" y="0.22931800" z="0.99669000"/>
+      <bsCentre x="-0.00539449" y="-0.01398300" z="0.49829150"/>
+      <bsRadius value="0.61029010"/>
+      <hdTextureDist value="5.00000000"/>
+      <name>shoe_shuffler_prop_weed_01_small_green_01c</name>
+      <textureDictionary>shoe_shuffler_prop_weed_green</textureDictionary>
+      <clipDictionary/>
+      <drawableDictionary/>
+      <physicsDictionary>mp_biker_weed</physicsDictionary>
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>shoe_shuffler_prop_weed_01_small_green_01c</assetName>
+      <extensions/>
+    </Item>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="100.00000000"/>
+      <flags value="537002016"/>
+      <specialAttribute value="0"/>
+      <bbMin x="-0.26006600" y="-0.25728400" z="-0.00010700"/>
+      <bbMax x="0.24927700" y="0.22931800" z="0.99669000"/>
+      <bsCentre x="-0.00539449" y="-0.01398300" z="0.49829150"/>
+      <bsRadius value="0.61029010"/>
+      <hdTextureDist value="5.00000000"/>
+      <name>shoe_shuffler_prop_weed_med_green_01a</name>
+      <textureDictionary>shoe_shuffler_prop_weed_green</textureDictionary>
+      <clipDictionary/>
+      <drawableDictionary/>
+      <physicsDictionary>mp_biker_weed</physicsDictionary>
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>shoe_shuffler_prop_weed_med_green_01a</assetName>
+      <extensions/>
+    </Item>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="100.00000000"/>
+      <flags value="537002016"/>
+      <specialAttribute value="0"/>
+      <bbMin x="-0.26006600" y="-0.25728400" z="-0.00010700"/>
+      <bbMax x="0.24927700" y="0.22931800" z="0.99669000"/>
+      <bsCentre x="-0.00539449" y="-0.01398300" z="0.49829150"/>
+      <bsRadius value="0.61029010"/>
+      <hdTextureDist value="5.00000000"/>
+      <name>shoe_shuffler_prop_weed_med_green_01b</name>
+      <textureDictionary>shoe_shuffler_prop_weed_green</textureDictionary>
+      <clipDictionary/>
+      <drawableDictionary/>
+      <physicsDictionary>mp_biker_weed</physicsDictionary>
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>shoe_shuffler_prop_weed_med_green_01b</assetName>
+      <extensions/>
+    </Item>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="100.00000000"/>
+      <flags value="537002016"/>
+      <specialAttribute value="0"/>
+      <bbMin x="-0.26006600" y="-0.25728400" z="-0.00010700"/>
+      <bbMax x="0.24927700" y="0.22931800" z="0.99669000"/>
+      <bsCentre x="-0.00539449" y="-0.01398300" z="0.49829150"/>
+      <bsRadius value="0.61029010"/>
+      <hdTextureDist value="5.00000000"/>
+      <name>shoe_shuffler_prop_weed_lrg_green_01a</name>
+      <textureDictionary>shoe_shuffler_prop_weed_green</textureDictionary>
+      <clipDictionary/>
+      <drawableDictionary/>
+      <physicsDictionary>mp_biker_weed</physicsDictionary>
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>shoe_shuffler_prop_weed_lrg_green_01a</assetName>
+      <extensions/>
+    </Item>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="100.00000000"/>
+      <flags value="537002016"/>
+      <specialAttribute value="0"/>
+      <bbMin x="-0.26006600" y="-0.25728400" z="-0.00010700"/>
+      <bbMax x="0.24927700" y="0.22931800" z="0.99669000"/>
+      <bsCentre x="-0.00539449" y="-0.01398300" z="0.49829150"/>
+      <bsRadius value="0.61029010"/>
+      <hdTextureDist value="5.00000000"/>
+      <name>shoe_shuffler_prop_weed_lrg_green_01b</name>
+      <textureDictionary>shoe_shuffler_prop_weed_green</textureDictionary>
+      <clipDictionary/>
+      <drawableDictionary/>
+      <physicsDictionary>mp_biker_weed</physicsDictionary>
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>shoe_shuffler_prop_weed_lrg_green_01b</assetName>
+      <extensions/>
+    </Item>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="100.00000000"/>
+      <flags value="537002016"/>
+      <specialAttribute value="0"/>
+      <bbMin x="-0.26006600" y="-0.25728400" z="-0.00010700"/>
+      <bbMax x="0.24927700" y="0.22931800" z="0.99669000"/>
+      <bsCentre x="-0.00539449" y="-0.01398300" z="0.49829150"/>
+      <bsRadius value="0.61029010"/>
+      <hdTextureDist value="5.00000000"/>
+      <name>shoe_shuffler_prop_weed_01_small_blackred_01a</name>
+      <textureDictionary>shoe_shuffler_prop_weed_blackred</textureDictionary>
+      <clipDictionary/>
+      <drawableDictionary/>
+      <physicsDictionary>mp_biker_weed</physicsDictionary>
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>shoe_shuffler_prop_weed_01_small_blackred_01a</assetName>
+      <extensions/>
+    </Item>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="100.00000000"/>
+      <flags value="537002016"/>
+      <specialAttribute value="0"/>
+      <bbMin x="-0.26006600" y="-0.25728400" z="-0.00010700"/>
+      <bbMax x="0.24927700" y="0.22931800" z="0.99669000"/>
+      <bsCentre x="-0.00539449" y="-0.01398300" z="0.49829150"/>
+      <bsRadius value="0.61029010"/>
+      <hdTextureDist value="5.00000000"/>
+      <name>shoe_shuffler_prop_weed_01_small_blackred_01b</name>
+      <textureDictionary>shoe_shuffler_prop_weed_blackred</textureDictionary>
+      <clipDictionary/>
+      <drawableDictionary/>
+      <physicsDictionary>mp_biker_weed</physicsDictionary>
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>shoe_shuffler_prop_weed_01_small_blackred_01b</assetName>
+      <extensions/>
+    </Item>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="100.00000000"/>
+      <flags value="537002016"/>
+      <specialAttribute value="0"/>
+      <bbMin x="-0.26006600" y="-0.25728400" z="-0.00010700"/>
+      <bbMax x="0.24927700" y="0.22931800" z="0.99669000"/>
+      <bsCentre x="-0.00539449" y="-0.01398300" z="0.49829150"/>
+      <bsRadius value="0.61029010"/>
+      <hdTextureDist value="5.00000000"/>
+      <name>shoe_shuffler_prop_weed_01_small_blackred_01c</name>
+      <textureDictionary>shoe_shuffler_prop_weed_blackred</textureDictionary>
+      <clipDictionary/>
+      <drawableDictionary/>
+      <physicsDictionary>mp_biker_weed</physicsDictionary>
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>shoe_shuffler_prop_weed_01_small_blackred_01c</assetName>
+      <extensions/>
+    </Item>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="100.00000000"/>
+      <flags value="537002016"/>
+      <specialAttribute value="0"/>
+      <bbMin x="-0.26006600" y="-0.25728400" z="-0.00010700"/>
+      <bbMax x="0.24927700" y="0.22931800" z="0.99669000"/>
+      <bsCentre x="-0.00539449" y="-0.01398300" z="0.49829150"/>
+      <bsRadius value="0.61029010"/>
+      <hdTextureDist value="5.00000000"/>
+      <name>shoe_shuffler_prop_weed_med_blackred_01a</name>
+      <textureDictionary>shoe_shuffler_prop_weed_blackred</textureDictionary>
+      <clipDictionary/>
+      <drawableDictionary/>
+      <physicsDictionary>mp_biker_weed</physicsDictionary>
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>shoe_shuffler_prop_weed_med_blackred_01a</assetName>
+      <extensions/>
+    </Item>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="100.00000000"/>
+      <flags value="537002016"/>
+      <specialAttribute value="0"/>
+      <bbMin x="-0.26006600" y="-0.25728400" z="-0.00010700"/>
+      <bbMax x="0.24927700" y="0.22931800" z="0.99669000"/>
+      <bsCentre x="-0.00539449" y="-0.01398300" z="0.49829150"/>
+      <bsRadius value="0.61029010"/>
+      <hdTextureDist value="5.00000000"/>
+      <name>shoe_shuffler_prop_weed_med_blackred_01b</name>
+      <textureDictionary>shoe_shuffler_prop_weed_blackred</textureDictionary>
+      <clipDictionary/>
+      <drawableDictionary/>
+      <physicsDictionary>mp_biker_weed</physicsDictionary>
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>shoe_shuffler_prop_weed_med_blackred_01b</assetName>
+      <extensions/>
+    </Item>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="100.00000000"/>
+      <flags value="537002016"/>
+      <specialAttribute value="0"/>
+      <bbMin x="-0.26006600" y="-0.25728400" z="-0.00010700"/>
+      <bbMax x="0.24927700" y="0.22931800" z="0.99669000"/>
+      <bsCentre x="-0.00539449" y="-0.01398300" z="0.49829150"/>
+      <bsRadius value="0.61029010"/>
+      <hdTextureDist value="5.00000000"/>
+      <name>shoe_shuffler_prop_weed_lrg_blackred_01a</name>
+      <textureDictionary>shoe_shuffler_prop_weed_blackred</textureDictionary>
+      <clipDictionary/>
+      <drawableDictionary/>
+      <physicsDictionary>mp_biker_weed</physicsDictionary>
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>shoe_shuffler_prop_weed_lrg_blackred_01a</assetName>
+      <extensions/>
+    </Item>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="100.00000000"/>
+      <flags value="537002016"/>
+      <specialAttribute value="0"/>
+      <bbMin x="-0.26006600" y="-0.25728400" z="-0.00010700"/>
+      <bbMax x="0.24927700" y="0.22931800" z="0.99669000"/>
+      <bsCentre x="-0.00539449" y="-0.01398300" z="0.49829150"/>
+      <bsRadius value="0.61029010"/>
+      <hdTextureDist value="5.00000000"/>
+      <name>shoe_shuffler_prop_weed_lrg_blackred_01b</name>
+      <textureDictionary>shoe_shuffler_prop_weed_blackred</textureDictionary>
+      <clipDictionary/>
+      <drawableDictionary/>
+      <physicsDictionary>mp_biker_weed</physicsDictionary>
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>shoe_shuffler_prop_weed_lrg_blackred_01b</assetName>
+      <extensions/>
+    </Item>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="100.00000000"/>
+      <flags value="537002016"/>
+      <specialAttribute value="0"/>
+      <bbMin x="-0.26006600" y="-0.25728400" z="-0.00010700"/>
+      <bbMax x="0.24927700" y="0.22931800" z="0.99669000"/>
+      <bsCentre x="-0.00539449" y="-0.01398300" z="0.49829150"/>
+      <bsRadius value="0.61029010"/>
+      <hdTextureDist value="5.00000000"/>
+      <name>shoe_shuffler_prop_weed_01_small_black_01a</name>
+      <textureDictionary>shoe_shuffler_prop_weed_black</textureDictionary>
+      <clipDictionary/>
+      <drawableDictionary/>
+      <physicsDictionary>mp_biker_weed</physicsDictionary>
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>shoe_shuffler_prop_weed_01_small_black_01a</assetName>
+      <extensions/>
+    </Item>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="100.00000000"/>
+      <flags value="537002016"/>
+      <specialAttribute value="0"/>
+      <bbMin x="-0.26006600" y="-0.25728400" z="-0.00010700"/>
+      <bbMax x="0.24927700" y="0.22931800" z="0.99669000"/>
+      <bsCentre x="-0.00539449" y="-0.01398300" z="0.49829150"/>
+      <bsRadius value="0.61029010"/>
+      <hdTextureDist value="5.00000000"/>
+      <name>shoe_shuffler_prop_weed_01_small_black_01b</name>
+      <textureDictionary>shoe_shuffler_prop_weed_black</textureDictionary>
+      <clipDictionary/>
+      <drawableDictionary/>
+      <physicsDictionary>mp_biker_weed</physicsDictionary>
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>shoe_shuffler_prop_weed_01_small_black_01b</assetName>
+      <extensions/>
+    </Item>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="100.00000000"/>
+      <flags value="537002016"/>
+      <specialAttribute value="0"/>
+      <bbMin x="-0.26006600" y="-0.25728400" z="-0.00010700"/>
+      <bbMax x="0.24927700" y="0.22931800" z="0.99669000"/>
+      <bsCentre x="-0.00539449" y="-0.01398300" z="0.49829150"/>
+      <bsRadius value="0.61029010"/>
+      <hdTextureDist value="5.00000000"/>
+      <name>shoe_shuffler_prop_weed_01_small_black_01c</name>
+      <textureDictionary>shoe_shuffler_prop_weed_black</textureDictionary>
+      <clipDictionary/>
+      <drawableDictionary/>
+      <physicsDictionary>mp_biker_weed</physicsDictionary>
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>shoe_shuffler_prop_weed_01_small_black_01c</assetName>
+      <extensions/>
+    </Item>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="100.00000000"/>
+      <flags value="537002016"/>
+      <specialAttribute value="0"/>
+      <bbMin x="-0.26006600" y="-0.25728400" z="-0.00010700"/>
+      <bbMax x="0.24927700" y="0.22931800" z="0.99669000"/>
+      <bsCentre x="-0.00539449" y="-0.01398300" z="0.49829150"/>
+      <bsRadius value="0.61029010"/>
+      <hdTextureDist value="5.00000000"/>
+      <name>shoe_shuffler_prop_weed_med_black_01a</name>
+      <textureDictionary>shoe_shuffler_prop_weed_black</textureDictionary>
+      <clipDictionary/>
+      <drawableDictionary/>
+      <physicsDictionary>mp_biker_weed</physicsDictionary>
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>shoe_shuffler_prop_weed_med_black_01a</assetName>
+      <extensions/>
+    </Item>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="100.00000000"/>
+      <flags value="537002016"/>
+      <specialAttribute value="0"/>
+      <bbMin x="-0.26006600" y="-0.25728400" z="-0.00010700"/>
+      <bbMax x="0.24927700" y="0.22931800" z="0.99669000"/>
+      <bsCentre x="-0.00539449" y="-0.01398300" z="0.49829150"/>
+      <bsRadius value="0.61029010"/>
+      <hdTextureDist value="5.00000000"/>
+      <name>shoe_shuffler_prop_weed_med_black_01b</name>
+      <textureDictionary>shoe_shuffler_prop_weed_black</textureDictionary>
+      <clipDictionary/>
+      <drawableDictionary/>
+      <physicsDictionary>mp_biker_weed</physicsDictionary>
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>shoe_shuffler_prop_weed_med_black_01b</assetName>
+      <extensions/>
+    </Item>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="100.00000000"/>
+      <flags value="537002016"/>
+      <specialAttribute value="0"/>
+      <bbMin x="-0.26006600" y="-0.25728400" z="-0.00010700"/>
+      <bbMax x="0.24927700" y="0.22931800" z="0.99669000"/>
+      <bsCentre x="-0.00539449" y="-0.01398300" z="0.49829150"/>
+      <bsRadius value="0.61029010"/>
+      <hdTextureDist value="5.00000000"/>
+      <name>shoe_shuffler_prop_weed_lrg_black_01a</name>
+      <textureDictionary>shoe_shuffler_prop_weed_black</textureDictionary>
+      <clipDictionary/>
+      <drawableDictionary/>
+      <physicsDictionary>mp_biker_weed</physicsDictionary>
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>shoe_shuffler_prop_weed_lrg_black_01a</assetName>
+      <extensions/>
+    </Item>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="100.00000000"/>
+      <flags value="537002016"/>
+      <specialAttribute value="0"/>
+      <bbMin x="-0.26006600" y="-0.25728400" z="-0.00010700"/>
+      <bbMax x="0.24927700" y="0.22931800" z="0.99669000"/>
+      <bsCentre x="-0.00539449" y="-0.01398300" z="0.49829150"/>
+      <bsRadius value="0.61029010"/>
+      <hdTextureDist value="5.00000000"/>
+      <name>shoe_shuffler_prop_weed_lrg_black_01b</name>
+      <textureDictionary>shoe_shuffler_prop_weed_black</textureDictionary>
+      <clipDictionary/>
+      <drawableDictionary/>
+      <physicsDictionary>mp_biker_weed</physicsDictionary>
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>shoe_shuffler_prop_weed_lrg_black_01b</assetName>
+      <extensions/>
+    </Item>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="100.00000000"/>
+      <flags value="537002016"/>
+      <specialAttribute value="0"/>
+      <bbMin x="-0.26006600" y="-0.25728400" z="-0.00010700"/>
+      <bbMax x="0.24927700" y="0.22931800" z="0.99669000"/>
+      <bsCentre x="-0.00539449" y="-0.01398300" z="0.49829150"/>
+      <bsRadius value="0.61029010"/>
+      <hdTextureDist value="5.00000000"/>
+      <name>shoe_shuffler_prop_weed_01_small_blackwhite_01a</name>
+      <textureDictionary>shoe_shuffler_prop_weed_blackwhite</textureDictionary>
+      <clipDictionary/>
+      <drawableDictionary/>
+      <physicsDictionary>mp_biker_weed</physicsDictionary>
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>shoe_shuffler_prop_weed_01_small_blackwhite_01a</assetName>
+      <extensions/>
+    </Item>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="100.00000000"/>
+      <flags value="537002016"/>
+      <specialAttribute value="0"/>
+      <bbMin x="-0.26006600" y="-0.25728400" z="-0.00010700"/>
+      <bbMax x="0.24927700" y="0.22931800" z="0.99669000"/>
+      <bsCentre x="-0.00539449" y="-0.01398300" z="0.49829150"/>
+      <bsRadius value="0.61029010"/>
+      <hdTextureDist value="5.00000000"/>
+      <name>shoe_shuffler_prop_weed_01_small_blackwhite_01b</name>
+      <textureDictionary>shoe_shuffler_prop_weed_blackwhite</textureDictionary>
+      <clipDictionary/>
+      <drawableDictionary/>
+      <physicsDictionary>mp_biker_weed</physicsDictionary>
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>shoe_shuffler_prop_weed_01_small_blackwhite_01b</assetName>
+      <extensions/>
+    </Item>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="100.00000000"/>
+      <flags value="537002016"/>
+      <specialAttribute value="0"/>
+      <bbMin x="-0.26006600" y="-0.25728400" z="-0.00010700"/>
+      <bbMax x="0.24927700" y="0.22931800" z="0.99669000"/>
+      <bsCentre x="-0.00539449" y="-0.01398300" z="0.49829150"/>
+      <bsRadius value="0.61029010"/>
+      <hdTextureDist value="5.00000000"/>
+      <name>shoe_shuffler_prop_weed_01_small_blackwhite_01c</name>
+      <textureDictionary>shoe_shuffler_prop_weed_blackwhite</textureDictionary>
+      <clipDictionary/>
+      <drawableDictionary/>
+      <physicsDictionary>mp_biker_weed</physicsDictionary>
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>shoe_shuffler_prop_weed_01_small_blackwhite_01c</assetName>
+      <extensions/>
+    </Item>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="100.00000000"/>
+      <flags value="537002016"/>
+      <specialAttribute value="0"/>
+      <bbMin x="-0.26006600" y="-0.25728400" z="-0.00010700"/>
+      <bbMax x="0.24927700" y="0.22931800" z="0.99669000"/>
+      <bsCentre x="-0.00539449" y="-0.01398300" z="0.49829150"/>
+      <bsRadius value="0.61029010"/>
+      <hdTextureDist value="5.00000000"/>
+      <name>shoe_shuffler_prop_weed_med_blackwhite_01a</name>
+      <textureDictionary>shoe_shuffler_prop_weed_blackwhite</textureDictionary>
+      <clipDictionary/>
+      <drawableDictionary/>
+      <physicsDictionary>mp_biker_weed</physicsDictionary>
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>shoe_shuffler_prop_weed_med_blackwhite_01a</assetName>
+      <extensions/>
+    </Item>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="100.00000000"/>
+      <flags value="537002016"/>
+      <specialAttribute value="0"/>
+      <bbMin x="-0.26006600" y="-0.25728400" z="-0.00010700"/>
+      <bbMax x="0.24927700" y="0.22931800" z="0.99669000"/>
+      <bsCentre x="-0.00539449" y="-0.01398300" z="0.49829150"/>
+      <bsRadius value="0.61029010"/>
+      <hdTextureDist value="5.00000000"/>
+      <name>shoe_shuffler_prop_weed_med_blackwhite_01b</name>
+      <textureDictionary>shoe_shuffler_prop_weed_blackwhite</textureDictionary>
+      <clipDictionary/>
+      <drawableDictionary/>
+      <physicsDictionary>mp_biker_weed</physicsDictionary>
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>shoe_shuffler_prop_weed_med_blackwhite_01b</assetName>
+      <extensions/>
+    </Item>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="100.00000000"/>
+      <flags value="537002016"/>
+      <specialAttribute value="0"/>
+      <bbMin x="-0.26006600" y="-0.25728400" z="-0.00010700"/>
+      <bbMax x="0.24927700" y="0.22931800" z="0.99669000"/>
+      <bsCentre x="-0.00539449" y="-0.01398300" z="0.49829150"/>
+      <bsRadius value="0.61029010"/>
+      <hdTextureDist value="5.00000000"/>
+      <name>shoe_shuffler_prop_weed_lrg_blackwhite_01a</name>
+      <textureDictionary>shoe_shuffler_prop_weed_blackwhite</textureDictionary>
+      <clipDictionary/>
+      <drawableDictionary/>
+      <physicsDictionary>mp_biker_weed</physicsDictionary>
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>shoe_shuffler_prop_weed_lrg_blackwhite_01a</assetName>
+      <extensions/>
+    </Item>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="100.00000000"/>
+      <flags value="537002016"/>
+      <specialAttribute value="0"/>
+      <bbMin x="-0.26006600" y="-0.25728400" z="-0.00010700"/>
+      <bbMax x="0.24927700" y="0.22931800" z="0.99669000"/>
+      <bsCentre x="-0.00539449" y="-0.01398300" z="0.49829150"/>
+      <bsRadius value="0.61029010"/>
+      <hdTextureDist value="5.00000000"/>
+      <name>shoe_shuffler_prop_weed_lrg_blackwhite_01b</name>
+      <textureDictionary>shoe_shuffler_prop_weed_blackwhite</textureDictionary>
+      <clipDictionary/>
+      <drawableDictionary/>
+      <physicsDictionary>mp_biker_weed</physicsDictionary>
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>shoe_shuffler_prop_weed_lrg_blackwhite_01b</assetName>
+      <extensions/>
+    </Item>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="100.00000000"/>
+      <flags value="537002016"/>
+      <specialAttribute value="0"/>
+      <bbMin x="-0.26006600" y="-0.25728400" z="-0.00010700"/>
+      <bbMax x="0.24927700" y="0.22931800" z="0.99669000"/>
+      <bsCentre x="-0.00539449" y="-0.01398300" z="0.49829150"/>
+      <bsRadius value="0.61029010"/>
+      <hdTextureDist value="5.00000000"/>
+      <name>shoe_shuffler_prop_weed_01_small_sunkissed_01a</name>
+      <textureDictionary>shoe_shuffler_prop_weed_sunkissed</textureDictionary>
+      <clipDictionary/>
+      <drawableDictionary/>
+      <physicsDictionary>mp_biker_weed</physicsDictionary>
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>shoe_shuffler_prop_weed_01_small_sunkissed_01a</assetName>
+      <extensions/>
+    </Item>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="100.00000000"/>
+      <flags value="537002016"/>
+      <specialAttribute value="0"/>
+      <bbMin x="-0.26006600" y="-0.25728400" z="-0.00010700"/>
+      <bbMax x="0.24927700" y="0.22931800" z="0.99669000"/>
+      <bsCentre x="-0.00539449" y="-0.01398300" z="0.49829150"/>
+      <bsRadius value="0.61029010"/>
+      <hdTextureDist value="5.00000000"/>
+      <name>shoe_shuffler_prop_weed_01_small_sunkissed_01b</name>
+      <textureDictionary>shoe_shuffler_prop_weed_sunkissed</textureDictionary>
+      <clipDictionary/>
+      <drawableDictionary/>
+      <physicsDictionary>mp_biker_weed</physicsDictionary>
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>shoe_shuffler_prop_weed_01_small_sunkissed_01b</assetName>
+      <extensions/>
+    </Item>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="100.00000000"/>
+      <flags value="537002016"/>
+      <specialAttribute value="0"/>
+      <bbMin x="-0.26006600" y="-0.25728400" z="-0.00010700"/>
+      <bbMax x="0.24927700" y="0.22931800" z="0.99669000"/>
+      <bsCentre x="-0.00539449" y="-0.01398300" z="0.49829150"/>
+      <bsRadius value="0.61029010"/>
+      <hdTextureDist value="5.00000000"/>
+      <name>shoe_shuffler_prop_weed_01_small_sunkissed_01c</name>
+      <textureDictionary>shoe_shuffler_prop_weed_sunkissed</textureDictionary>
+      <clipDictionary/>
+      <drawableDictionary/>
+      <physicsDictionary>mp_biker_weed</physicsDictionary>
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>shoe_shuffler_prop_weed_01_small_sunkissed_01c</assetName>
+      <extensions/>
+    </Item>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="100.00000000"/>
+      <flags value="537002016"/>
+      <specialAttribute value="0"/>
+      <bbMin x="-0.26006600" y="-0.25728400" z="-0.00010700"/>
+      <bbMax x="0.24927700" y="0.22931800" z="0.99669000"/>
+      <bsCentre x="-0.00539449" y="-0.01398300" z="0.49829150"/>
+      <bsRadius value="0.61029010"/>
+      <hdTextureDist value="5.00000000"/>
+      <name>shoe_shuffler_prop_weed_med_sunkissed_01a</name>
+      <textureDictionary>shoe_shuffler_prop_weed_sunkissed</textureDictionary>
+      <clipDictionary/>
+      <drawableDictionary/>
+      <physicsDictionary>mp_biker_weed</physicsDictionary>
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>shoe_shuffler_prop_weed_med_sunkissed_01a</assetName>
+      <extensions/>
+    </Item>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="100.00000000"/>
+      <flags value="537002016"/>
+      <specialAttribute value="0"/>
+      <bbMin x="-0.26006600" y="-0.25728400" z="-0.00010700"/>
+      <bbMax x="0.24927700" y="0.22931800" z="0.99669000"/>
+      <bsCentre x="-0.00539449" y="-0.01398300" z="0.49829150"/>
+      <bsRadius value="0.61029010"/>
+      <hdTextureDist value="5.00000000"/>
+      <name>shoe_shuffler_prop_weed_med_sunkissed_01b</name>
+      <textureDictionary>shoe_shuffler_prop_weed_sunkissed</textureDictionary>
+      <clipDictionary/>
+      <drawableDictionary/>
+      <physicsDictionary>mp_biker_weed</physicsDictionary>
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>shoe_shuffler_prop_weed_med_sunkissed_01b</assetName>
+      <extensions/>
+    </Item>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="100.00000000"/>
+      <flags value="537002016"/>
+      <specialAttribute value="0"/>
+      <bbMin x="-0.26006600" y="-0.25728400" z="-0.00010700"/>
+      <bbMax x="0.24927700" y="0.22931800" z="0.99669000"/>
+      <bsCentre x="-0.00539449" y="-0.01398300" z="0.49829150"/>
+      <bsRadius value="0.61029010"/>
+      <hdTextureDist value="5.00000000"/>
+      <name>shoe_shuffler_prop_weed_lrg_sunkissed_01a</name>
+      <textureDictionary>shoe_shuffler_prop_weed_sunkissed</textureDictionary>
+      <clipDictionary/>
+      <drawableDictionary/>
+      <physicsDictionary>mp_biker_weed</physicsDictionary>
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>shoe_shuffler_prop_weed_lrg_sunkissed_01a</assetName>
+      <extensions/>
+    </Item>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="100.00000000"/>
+      <flags value="537002016"/>
+      <specialAttribute value="0"/>
+      <bbMin x="-0.26006600" y="-0.25728400" z="-0.00010700"/>
+      <bbMax x="0.24927700" y="0.22931800" z="0.99669000"/>
+      <bsCentre x="-0.00539449" y="-0.01398300" z="0.49829150"/>
+      <bsRadius value="0.61029010"/>
+      <hdTextureDist value="5.00000000"/>
+      <name>shoe_shuffler_prop_weed_lrg_sunkissed_01b</name>
+      <textureDictionary>shoe_shuffler_prop_weed_sunkissed</textureDictionary>
+      <clipDictionary/>
+      <drawableDictionary/>
+      <physicsDictionary>mp_biker_weed</physicsDictionary>
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>shoe_shuffler_prop_weed_lrg_sunkissed_01b</assetName>
+      <extensions/>
+    </Item>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="100.00000000"/>
+      <flags value="537002016"/>
+      <specialAttribute value="0"/>
+      <bbMin x="-0.26006600" y="-0.25728400" z="-0.00010700"/>
+      <bbMax x="0.24927700" y="0.22931800" z="0.99669000"/>
+      <bsCentre x="-0.00539449" y="-0.01398300" z="0.49829150"/>
+      <bsRadius value="0.61029010"/>
+      <hdTextureDist value="5.00000000"/>
+      <name>shoe_shuffler_prop_weed_01_small_red_01a</name>
+      <textureDictionary>shoe_shuffler_prop_weed_red</textureDictionary>
+      <clipDictionary/>
+      <drawableDictionary/>
+      <physicsDictionary>mp_biker_weed</physicsDictionary>
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>shoe_shuffler_prop_weed_01_small_red_01a</assetName>
+      <extensions/>
+    </Item>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="100.00000000"/>
+      <flags value="537002016"/>
+      <specialAttribute value="0"/>
+      <bbMin x="-0.26006600" y="-0.25728400" z="-0.00010700"/>
+      <bbMax x="0.24927700" y="0.22931800" z="0.99669000"/>
+      <bsCentre x="-0.00539449" y="-0.01398300" z="0.49829150"/>
+      <bsRadius value="0.61029010"/>
+      <hdTextureDist value="5.00000000"/>
+      <name>shoe_shuffler_prop_weed_01_small_red_01b</name>
+      <textureDictionary>shoe_shuffler_prop_weed_red</textureDictionary>
+      <clipDictionary/>
+      <drawableDictionary/>
+      <physicsDictionary>mp_biker_weed</physicsDictionary>
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>shoe_shuffler_prop_weed_01_small_red_01b</assetName>
+      <extensions/>
+    </Item>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="100.00000000"/>
+      <flags value="537002016"/>
+      <specialAttribute value="0"/>
+      <bbMin x="-0.26006600" y="-0.25728400" z="-0.00010700"/>
+      <bbMax x="0.24927700" y="0.22931800" z="0.99669000"/>
+      <bsCentre x="-0.00539449" y="-0.01398300" z="0.49829150"/>
+      <bsRadius value="0.61029010"/>
+      <hdTextureDist value="5.00000000"/>
+      <name>shoe_shuffler_prop_weed_01_small_red_01c</name>
+      <textureDictionary>shoe_shuffler_prop_weed_red</textureDictionary>
+      <clipDictionary/>
+      <drawableDictionary/>
+      <physicsDictionary>mp_biker_weed</physicsDictionary>
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>shoe_shuffler_prop_weed_01_small_red_01c</assetName>
+      <extensions/>
+    </Item>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="100.00000000"/>
+      <flags value="537002016"/>
+      <specialAttribute value="0"/>
+      <bbMin x="-0.26006600" y="-0.25728400" z="-0.00010700"/>
+      <bbMax x="0.24927700" y="0.22931800" z="0.99669000"/>
+      <bsCentre x="-0.00539449" y="-0.01398300" z="0.49829150"/>
+      <bsRadius value="0.61029010"/>
+      <hdTextureDist value="5.00000000"/>
+      <name>shoe_shuffler_prop_weed_med_red_01a</name>
+      <textureDictionary>shoe_shuffler_prop_weed_red</textureDictionary>
+      <clipDictionary/>
+      <drawableDictionary/>
+      <physicsDictionary>mp_biker_weed</physicsDictionary>
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>shoe_shuffler_prop_weed_med_red_01a</assetName>
+      <extensions/>
+    </Item>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="100.00000000"/>
+      <flags value="537002016"/>
+      <specialAttribute value="0"/>
+      <bbMin x="-0.26006600" y="-0.25728400" z="-0.00010700"/>
+      <bbMax x="0.24927700" y="0.22931800" z="0.99669000"/>
+      <bsCentre x="-0.00539449" y="-0.01398300" z="0.49829150"/>
+      <bsRadius value="0.61029010"/>
+      <hdTextureDist value="5.00000000"/>
+      <name>shoe_shuffler_prop_weed_med_red_01b</name>
+      <textureDictionary>shoe_shuffler_prop_weed_red</textureDictionary>
+      <clipDictionary/>
+      <drawableDictionary/>
+      <physicsDictionary>mp_biker_weed</physicsDictionary>
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>shoe_shuffler_prop_weed_med_red_01b</assetName>
+      <extensions/>
+    </Item>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="100.00000000"/>
+      <flags value="537002016"/>
+      <specialAttribute value="0"/>
+      <bbMin x="-0.26006600" y="-0.25728400" z="-0.00010700"/>
+      <bbMax x="0.24927700" y="0.22931800" z="0.99669000"/>
+      <bsCentre x="-0.00539449" y="-0.01398300" z="0.49829150"/>
+      <bsRadius value="0.61029010"/>
+      <hdTextureDist value="5.00000000"/>
+      <name>shoe_shuffler_prop_weed_lrg_red_01a</name>
+      <textureDictionary>shoe_shuffler_prop_weed_red</textureDictionary>
+      <clipDictionary/>
+      <drawableDictionary/>
+      <physicsDictionary>mp_biker_weed</physicsDictionary>
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>shoe_shuffler_prop_weed_lrg_red_01a</assetName>
+      <extensions/>
+    </Item>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="100.00000000"/>
+      <flags value="537002016"/>
+      <specialAttribute value="0"/>
+      <bbMin x="-0.26006600" y="-0.25728400" z="-0.00010700"/>
+      <bbMax x="0.24927700" y="0.22931800" z="0.99669000"/>
+      <bsCentre x="-0.00539449" y="-0.01398300" z="0.49829150"/>
+      <bsRadius value="0.61029010"/>
+      <hdTextureDist value="5.00000000"/>
+      <name>shoe_shuffler_prop_weed_lrg_red_01b</name>
+      <textureDictionary>shoe_shuffler_prop_weed_red</textureDictionary>
+      <clipDictionary/>
+      <drawableDictionary/>
+      <physicsDictionary>mp_biker_weed</physicsDictionary>
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>shoe_shuffler_prop_weed_lrg_red_01b</assetName>
+      <extensions/>
+    </Item>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="100.00000000"/>
+      <flags value="537002016"/>
+      <specialAttribute value="0"/>
+      <bbMin x="-0.26006600" y="-0.25728400" z="-0.00010700"/>
+      <bbMax x="0.24927700" y="0.22931800" z="0.99669000"/>
+      <bsCentre x="-0.00539449" y="-0.01398300" z="0.49829150"/>
+      <bsRadius value="0.61029010"/>
+      <hdTextureDist value="5.00000000"/>
+      <name>shoe_shuffler_prop_weed_01_small_yellow_01a</name>
+      <textureDictionary>shoe_shuffler_prop_weed_yellow</textureDictionary>
+      <clipDictionary/>
+      <drawableDictionary/>
+      <physicsDictionary>mp_biker_weed</physicsDictionary>
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>shoe_shuffler_prop_weed_01_small_yellow_01a</assetName>
+      <extensions/>
+    </Item>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="100.00000000"/>
+      <flags value="537002016"/>
+      <specialAttribute value="0"/>
+      <bbMin x="-0.26006600" y="-0.25728400" z="-0.00010700"/>
+      <bbMax x="0.24927700" y="0.22931800" z="0.99669000"/>
+      <bsCentre x="-0.00539449" y="-0.01398300" z="0.49829150"/>
+      <bsRadius value="0.61029010"/>
+      <hdTextureDist value="5.00000000"/>
+      <name>shoe_shuffler_prop_weed_01_small_yellow_01b</name>
+      <textureDictionary>shoe_shuffler_prop_weed_yellow</textureDictionary>
+      <clipDictionary/>
+      <drawableDictionary/>
+      <physicsDictionary>mp_biker_weed</physicsDictionary>
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>shoe_shuffler_prop_weed_01_small_yellow_01b</assetName>
+      <extensions/>
+    </Item>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="100.00000000"/>
+      <flags value="537002016"/>
+      <specialAttribute value="0"/>
+      <bbMin x="-0.26006600" y="-0.25728400" z="-0.00010700"/>
+      <bbMax x="0.24927700" y="0.22931800" z="0.99669000"/>
+      <bsCentre x="-0.00539449" y="-0.01398300" z="0.49829150"/>
+      <bsRadius value="0.61029010"/>
+      <hdTextureDist value="5.00000000"/>
+      <name>shoe_shuffler_prop_weed_01_small_yellow_01c</name>
+      <textureDictionary>shoe_shuffler_prop_weed_yellow</textureDictionary>
+      <clipDictionary/>
+      <drawableDictionary/>
+      <physicsDictionary>mp_biker_weed</physicsDictionary>
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>shoe_shuffler_prop_weed_01_small_yellow_01c</assetName>
+      <extensions/>
+    </Item>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="100.00000000"/>
+      <flags value="537002016"/>
+      <specialAttribute value="0"/>
+      <bbMin x="-0.26006600" y="-0.25728400" z="-0.00010700"/>
+      <bbMax x="0.24927700" y="0.22931800" z="0.99669000"/>
+      <bsCentre x="-0.00539449" y="-0.01398300" z="0.49829150"/>
+      <bsRadius value="0.61029010"/>
+      <hdTextureDist value="5.00000000"/>
+      <name>shoe_shuffler_prop_weed_med_yellow_01a</name>
+      <textureDictionary>shoe_shuffler_prop_weed_yellow</textureDictionary>
+      <clipDictionary/>
+      <drawableDictionary/>
+      <physicsDictionary>mp_biker_weed</physicsDictionary>
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>shoe_shuffler_prop_weed_med_yellow_01a</assetName>
+      <extensions/>
+    </Item>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="100.00000000"/>
+      <flags value="537002016"/>
+      <specialAttribute value="0"/>
+      <bbMin x="-0.26006600" y="-0.25728400" z="-0.00010700"/>
+      <bbMax x="0.24927700" y="0.22931800" z="0.99669000"/>
+      <bsCentre x="-0.00539449" y="-0.01398300" z="0.49829150"/>
+      <bsRadius value="0.61029010"/>
+      <hdTextureDist value="5.00000000"/>
+      <name>shoe_shuffler_prop_weed_med_yellow_01b</name>
+      <textureDictionary>shoe_shuffler_prop_weed_yellow</textureDictionary>
+      <clipDictionary/>
+      <drawableDictionary/>
+      <physicsDictionary>mp_biker_weed</physicsDictionary>
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>shoe_shuffler_prop_weed_med_yellow_01b</assetName>
+      <extensions/>
+    </Item>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="100.00000000"/>
+      <flags value="537002016"/>
+      <specialAttribute value="0"/>
+      <bbMin x="-0.26006600" y="-0.25728400" z="-0.00010700"/>
+      <bbMax x="0.24927700" y="0.22931800" z="0.99669000"/>
+      <bsCentre x="-0.00539449" y="-0.01398300" z="0.49829150"/>
+      <bsRadius value="0.61029010"/>
+      <hdTextureDist value="5.00000000"/>
+      <name>shoe_shuffler_prop_weed_lrg_yellow_01a</name>
+      <textureDictionary>shoe_shuffler_prop_weed_yellow</textureDictionary>
+      <clipDictionary/>
+      <drawableDictionary/>
+      <physicsDictionary>mp_biker_weed</physicsDictionary>
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>shoe_shuffler_prop_weed_lrg_yellow_01a</assetName>
+      <extensions/>
+    </Item>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="100.00000000"/>
+      <flags value="537002016"/>
+      <specialAttribute value="0"/>
+      <bbMin x="-0.26006600" y="-0.25728400" z="-0.00010700"/>
+      <bbMax x="0.24927700" y="0.22931800" z="0.99669000"/>
+      <bsCentre x="-0.00539449" y="-0.01398300" z="0.49829150"/>
+      <bsRadius value="0.61029010"/>
+      <hdTextureDist value="5.00000000"/>
+      <name>shoe_shuffler_prop_weed_lrg_yellow_01b</name>
+      <textureDictionary>shoe_shuffler_prop_weed_yellow</textureDictionary>
+      <clipDictionary/>
+      <drawableDictionary/>
+      <physicsDictionary>mp_biker_weed</physicsDictionary>
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>shoe_shuffler_prop_weed_lrg_yellow_01b</assetName>
+      <extensions/>
+    </Item>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="100.00000000"/>
+      <flags value="537002016"/>
+      <specialAttribute value="0"/>
+      <bbMin x="-0.26006600" y="-0.25728400" z="-0.00010700"/>
+      <bbMax x="0.24927700" y="0.22931800" z="0.99669000"/>
+      <bsCentre x="-0.00539449" y="-0.01398300" z="0.49829150"/>
+      <bsRadius value="0.61029010"/>
+      <hdTextureDist value="5.00000000"/>
+      <name>shoe_shuffler_prop_weed_01_small_cyan_01a</name>
+      <textureDictionary>shoe_shuffler_prop_weed_cyan</textureDictionary>
+      <clipDictionary/>
+      <drawableDictionary/>
+      <physicsDictionary>mp_biker_weed</physicsDictionary>
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>shoe_shuffler_prop_weed_01_small_cyan_01a</assetName>
+      <extensions/>
+    </Item>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="100.00000000"/>
+      <flags value="537002016"/>
+      <specialAttribute value="0"/>
+      <bbMin x="-0.26006600" y="-0.25728400" z="-0.00010700"/>
+      <bbMax x="0.24927700" y="0.22931800" z="0.99669000"/>
+      <bsCentre x="-0.00539449" y="-0.01398300" z="0.49829150"/>
+      <bsRadius value="0.61029010"/>
+      <hdTextureDist value="5.00000000"/>
+      <name>shoe_shuffler_prop_weed_01_small_cyan_01b</name>
+      <textureDictionary>shoe_shuffler_prop_weed_cyan</textureDictionary>
+      <clipDictionary/>
+      <drawableDictionary/>
+      <physicsDictionary>mp_biker_weed</physicsDictionary>
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>shoe_shuffler_prop_weed_01_small_cyan_01b</assetName>
+      <extensions/>
+    </Item>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="100.00000000"/>
+      <flags value="537002016"/>
+      <specialAttribute value="0"/>
+      <bbMin x="-0.26006600" y="-0.25728400" z="-0.00010700"/>
+      <bbMax x="0.24927700" y="0.22931800" z="0.99669000"/>
+      <bsCentre x="-0.00539449" y="-0.01398300" z="0.49829150"/>
+      <bsRadius value="0.61029010"/>
+      <hdTextureDist value="5.00000000"/>
+      <name>shoe_shuffler_prop_weed_01_small_cyan_01c</name>
+      <textureDictionary>shoe_shuffler_prop_weed_cyan</textureDictionary>
+      <clipDictionary/>
+      <drawableDictionary/>
+      <physicsDictionary>mp_biker_weed</physicsDictionary>
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>shoe_shuffler_prop_weed_01_small_cyan_01c</assetName>
+      <extensions/>
+    </Item>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="100.00000000"/>
+      <flags value="537002016"/>
+      <specialAttribute value="0"/>
+      <bbMin x="-0.26006600" y="-0.25728400" z="-0.00010700"/>
+      <bbMax x="0.24927700" y="0.22931800" z="0.99669000"/>
+      <bsCentre x="-0.00539449" y="-0.01398300" z="0.49829150"/>
+      <bsRadius value="0.61029010"/>
+      <hdTextureDist value="5.00000000"/>
+      <name>shoe_shuffler_prop_weed_med_cyan_01a</name>
+      <textureDictionary>shoe_shuffler_prop_weed_cyan</textureDictionary>
+      <clipDictionary/>
+      <drawableDictionary/>
+      <physicsDictionary>mp_biker_weed</physicsDictionary>
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>shoe_shuffler_prop_weed_med_cyan_01a</assetName>
+      <extensions/>
+    </Item>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="100.00000000"/>
+      <flags value="537002016"/>
+      <specialAttribute value="0"/>
+      <bbMin x="-0.26006600" y="-0.25728400" z="-0.00010700"/>
+      <bbMax x="0.24927700" y="0.22931800" z="0.99669000"/>
+      <bsCentre x="-0.00539449" y="-0.01398300" z="0.49829150"/>
+      <bsRadius value="0.61029010"/>
+      <hdTextureDist value="5.00000000"/>
+      <name>shoe_shuffler_prop_weed_med_cyan_01b</name>
+      <textureDictionary>shoe_shuffler_prop_weed_cyan</textureDictionary>
+      <clipDictionary/>
+      <drawableDictionary/>
+      <physicsDictionary>mp_biker_weed</physicsDictionary>
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>shoe_shuffler_prop_weed_med_cyan_01b</assetName>
+      <extensions/>
+    </Item>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="100.00000000"/>
+      <flags value="537002016"/>
+      <specialAttribute value="0"/>
+      <bbMin x="-0.26006600" y="-0.25728400" z="-0.00010700"/>
+      <bbMax x="0.24927700" y="0.22931800" z="0.99669000"/>
+      <bsCentre x="-0.00539449" y="-0.01398300" z="0.49829150"/>
+      <bsRadius value="0.61029010"/>
+      <hdTextureDist value="5.00000000"/>
+      <name>shoe_shuffler_prop_weed_lrg_cyan_01a</name>
+      <textureDictionary>shoe_shuffler_prop_weed_cyan</textureDictionary>
+      <clipDictionary/>
+      <drawableDictionary/>
+      <physicsDictionary>mp_biker_weed</physicsDictionary>
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>shoe_shuffler_prop_weed_lrg_cyan_01a</assetName>
+      <extensions/>
+    </Item>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="100.00000000"/>
+      <flags value="537002016"/>
+      <specialAttribute value="0"/>
+      <bbMin x="-0.26006600" y="-0.25728400" z="-0.00010700"/>
+      <bbMax x="0.24927700" y="0.22931800" z="0.99669000"/>
+      <bsCentre x="-0.00539449" y="-0.01398300" z="0.49829150"/>
+      <bsRadius value="0.61029010"/>
+      <hdTextureDist value="5.00000000"/>
+      <name>shoe_shuffler_prop_weed_lrg_cyan_01b</name>
+      <textureDictionary>shoe_shuffler_prop_weed_cyan</textureDictionary>
+      <clipDictionary/>
+      <drawableDictionary/>
+      <physicsDictionary>mp_biker_weed</physicsDictionary>
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>shoe_shuffler_prop_weed_lrg_cyan_01b</assetName>
+      <extensions/>
+    </Item>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="100.00000000"/>
+      <flags value="537002016"/>
+      <specialAttribute value="0"/>
+      <bbMin x="-0.26006600" y="-0.25728400" z="-0.00010700"/>
+      <bbMax x="0.24927700" y="0.22931800" z="0.99669000"/>
+      <bsCentre x="-0.00539449" y="-0.01398300" z="0.49829150"/>
+      <bsRadius value="0.61029010"/>
+      <hdTextureDist value="5.00000000"/>
+      <name>shoe_shuffler_prop_weed_01_small_purple_01a</name>
+      <textureDictionary>shoe_shuffler_prop_weed_purple</textureDictionary>
+      <clipDictionary/>
+      <drawableDictionary/>
+      <physicsDictionary>mp_biker_weed</physicsDictionary>
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>shoe_shuffler_prop_weed_01_small_purple_01a</assetName>
+      <extensions/>
+    </Item>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="100.00000000"/>
+      <flags value="537002016"/>
+      <specialAttribute value="0"/>
+      <bbMin x="-0.26006600" y="-0.25728400" z="-0.00010700"/>
+      <bbMax x="0.24927700" y="0.22931800" z="0.99669000"/>
+      <bsCentre x="-0.00539449" y="-0.01398300" z="0.49829150"/>
+      <bsRadius value="0.61029010"/>
+      <hdTextureDist value="5.00000000"/>
+      <name>shoe_shuffler_prop_weed_01_small_purple_01b</name>
+      <textureDictionary>shoe_shuffler_prop_weed_purple</textureDictionary>
+      <clipDictionary/>
+      <drawableDictionary/>
+      <physicsDictionary>mp_biker_weed</physicsDictionary>
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>shoe_shuffler_prop_weed_01_small_purple_01b</assetName>
+      <extensions/>
+    </Item>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="100.00000000"/>
+      <flags value="537002016"/>
+      <specialAttribute value="0"/>
+      <bbMin x="-0.26006600" y="-0.25728400" z="-0.00010700"/>
+      <bbMax x="0.24927700" y="0.22931800" z="0.99669000"/>
+      <bsCentre x="-0.00539449" y="-0.01398300" z="0.49829150"/>
+      <bsRadius value="0.61029010"/>
+      <hdTextureDist value="5.00000000"/>
+      <name>shoe_shuffler_prop_weed_01_small_purple_01c</name>
+      <textureDictionary>shoe_shuffler_prop_weed_purple</textureDictionary>
+      <clipDictionary/>
+      <drawableDictionary/>
+      <physicsDictionary>mp_biker_weed</physicsDictionary>
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>shoe_shuffler_prop_weed_01_small_purple_01c</assetName>
+      <extensions/>
+    </Item>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="100.00000000"/>
+      <flags value="537002016"/>
+      <specialAttribute value="0"/>
+      <bbMin x="-0.26006600" y="-0.25728400" z="-0.00010700"/>
+      <bbMax x="0.24927700" y="0.22931800" z="0.99669000"/>
+      <bsCentre x="-0.00539449" y="-0.01398300" z="0.49829150"/>
+      <bsRadius value="0.61029010"/>
+      <hdTextureDist value="5.00000000"/>
+      <name>shoe_shuffler_prop_weed_med_purple_01a</name>
+      <textureDictionary>shoe_shuffler_prop_weed_purple</textureDictionary>
+      <clipDictionary/>
+      <drawableDictionary/>
+      <physicsDictionary>mp_biker_weed</physicsDictionary>
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>shoe_shuffler_prop_weed_med_purple_01a</assetName>
+      <extensions/>
+    </Item>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="100.00000000"/>
+      <flags value="537002016"/>
+      <specialAttribute value="0"/>
+      <bbMin x="-0.26006600" y="-0.25728400" z="-0.00010700"/>
+      <bbMax x="0.24927700" y="0.22931800" z="0.99669000"/>
+      <bsCentre x="-0.00539449" y="-0.01398300" z="0.49829150"/>
+      <bsRadius value="0.61029010"/>
+      <hdTextureDist value="5.00000000"/>
+      <name>shoe_shuffler_prop_weed_med_purple_01b</name>
+      <textureDictionary>shoe_shuffler_prop_weed_purple</textureDictionary>
+      <clipDictionary/>
+      <drawableDictionary/>
+      <physicsDictionary>mp_biker_weed</physicsDictionary>
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>shoe_shuffler_prop_weed_med_purple_01b</assetName>
+      <extensions/>
+    </Item>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="100.00000000"/>
+      <flags value="537002016"/>
+      <specialAttribute value="0"/>
+      <bbMin x="-0.26006600" y="-0.25728400" z="-0.00010700"/>
+      <bbMax x="0.24927700" y="0.22931800" z="0.99669000"/>
+      <bsCentre x="-0.00539449" y="-0.01398300" z="0.49829150"/>
+      <bsRadius value="0.61029010"/>
+      <hdTextureDist value="5.00000000"/>
+      <name>shoe_shuffler_prop_weed_lrg_purple_01a</name>
+      <textureDictionary>shoe_shuffler_prop_weed_purple</textureDictionary>
+      <clipDictionary/>
+      <drawableDictionary/>
+      <physicsDictionary>mp_biker_weed</physicsDictionary>
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>shoe_shuffler_prop_weed_lrg_purple_01a</assetName>
+      <extensions/>
+    </Item>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="100.00000000"/>
+      <flags value="537002016"/>
+      <specialAttribute value="0"/>
+      <bbMin x="-0.26006600" y="-0.25728400" z="-0.00010700"/>
+      <bbMax x="0.24927700" y="0.22931800" z="0.99669000"/>
+      <bsCentre x="-0.00539449" y="-0.01398300" z="0.49829150"/>
+      <bsRadius value="0.61029010"/>
+      <hdTextureDist value="5.00000000"/>
+      <name>shoe_shuffler_prop_weed_lrg_purple_01b</name>
+      <textureDictionary>shoe_shuffler_prop_weed_purple</textureDictionary>
+      <clipDictionary/>
+      <drawableDictionary/>
+      <physicsDictionary>mp_biker_weed</physicsDictionary>
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>shoe_shuffler_prop_weed_lrg_purple_01b</assetName>
+      <extensions/>
+    </Item>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="100.00000000"/>
+      <flags value="537002016"/>
+      <specialAttribute value="0"/>
+      <bbMin x="-0.26006600" y="-0.25728400" z="-0.00010700"/>
+      <bbMax x="0.24927700" y="0.22931800" z="0.99669000"/>
+      <bsCentre x="-0.00539449" y="-0.01398300" z="0.49829150"/>
+      <bsRadius value="0.61029010"/>
+      <hdTextureDist value="5.00000000"/>
+      <name>shoe_shuffler_prop_weed_01_small_haze_01a</name>
+      <textureDictionary>shoe_shuffler_prop_weed_haze</textureDictionary>
+      <clipDictionary/>
+      <drawableDictionary/>
+      <physicsDictionary>mp_biker_weed</physicsDictionary>
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>shoe_shuffler_prop_weed_01_small_haze_01a</assetName>
+      <extensions/>
+    </Item>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="100.00000000"/>
+      <flags value="537002016"/>
+      <specialAttribute value="0"/>
+      <bbMin x="-0.26006600" y="-0.25728400" z="-0.00010700"/>
+      <bbMax x="0.24927700" y="0.22931800" z="0.99669000"/>
+      <bsCentre x="-0.00539449" y="-0.01398300" z="0.49829150"/>
+      <bsRadius value="0.61029010"/>
+      <hdTextureDist value="5.00000000"/>
+      <name>shoe_shuffler_prop_weed_01_small_haze_01b</name>
+      <textureDictionary>shoe_shuffler_prop_weed_haze</textureDictionary>
+      <clipDictionary/>
+      <drawableDictionary/>
+      <physicsDictionary>mp_biker_weed</physicsDictionary>
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>shoe_shuffler_prop_weed_01_small_haze_01b</assetName>
+      <extensions/>
+    </Item>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="100.00000000"/>
+      <flags value="537002016"/>
+      <specialAttribute value="0"/>
+      <bbMin x="-0.26006600" y="-0.25728400" z="-0.00010700"/>
+      <bbMax x="0.24927700" y="0.22931800" z="0.99669000"/>
+      <bsCentre x="-0.00539449" y="-0.01398300" z="0.49829150"/>
+      <bsRadius value="0.61029010"/>
+      <hdTextureDist value="5.00000000"/>
+      <name>shoe_shuffler_prop_weed_01_small_haze_01c</name>
+      <textureDictionary>shoe_shuffler_prop_weed_haze</textureDictionary>
+      <clipDictionary/>
+      <drawableDictionary/>
+      <physicsDictionary>mp_biker_weed</physicsDictionary>
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>shoe_shuffler_prop_weed_01_small_haze_01c</assetName>
+      <extensions/>
+    </Item>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="100.00000000"/>
+      <flags value="537002016"/>
+      <specialAttribute value="0"/>
+      <bbMin x="-0.26006600" y="-0.25728400" z="-0.00010700"/>
+      <bbMax x="0.24927700" y="0.22931800" z="0.99669000"/>
+      <bsCentre x="-0.00539449" y="-0.01398300" z="0.49829150"/>
+      <bsRadius value="0.61029010"/>
+      <hdTextureDist value="5.00000000"/>
+      <name>shoe_shuffler_prop_weed_med_haze_01a</name>
+      <textureDictionary>shoe_shuffler_prop_weed_haze</textureDictionary>
+      <clipDictionary/>
+      <drawableDictionary/>
+      <physicsDictionary>mp_biker_weed</physicsDictionary>
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>shoe_shuffler_prop_weed_med_haze_01a</assetName>
+      <extensions/>
+    </Item>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="100.00000000"/>
+      <flags value="537002016"/>
+      <specialAttribute value="0"/>
+      <bbMin x="-0.26006600" y="-0.25728400" z="-0.00010700"/>
+      <bbMax x="0.24927700" y="0.22931800" z="0.99669000"/>
+      <bsCentre x="-0.00539449" y="-0.01398300" z="0.49829150"/>
+      <bsRadius value="0.61029010"/>
+      <hdTextureDist value="5.00000000"/>
+      <name>shoe_shuffler_prop_weed_med_haze_01b</name>
+      <textureDictionary>shoe_shuffler_prop_weed_haze</textureDictionary>
+      <clipDictionary/>
+      <drawableDictionary/>
+      <physicsDictionary>mp_biker_weed</physicsDictionary>
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>shoe_shuffler_prop_weed_med_haze_01b</assetName>
+      <extensions/>
+    </Item>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="100.00000000"/>
+      <flags value="537002016"/>
+      <specialAttribute value="0"/>
+      <bbMin x="-0.26006600" y="-0.25728400" z="-0.00010700"/>
+      <bbMax x="0.24927700" y="0.22931800" z="0.99669000"/>
+      <bsCentre x="-0.00539449" y="-0.01398300" z="0.49829150"/>
+      <bsRadius value="0.61029010"/>
+      <hdTextureDist value="5.00000000"/>
+      <name>shoe_shuffler_prop_weed_lrg_haze_01a</name>
+      <textureDictionary>shoe_shuffler_prop_weed_haze</textureDictionary>
+      <clipDictionary/>
+      <drawableDictionary/>
+      <physicsDictionary>mp_biker_weed</physicsDictionary>
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>shoe_shuffler_prop_weed_lrg_haze_01a</assetName>
+      <extensions/>
+    </Item>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="100.00000000"/>
+      <flags value="537002016"/>
+      <specialAttribute value="0"/>
+      <bbMin x="-0.26006600" y="-0.25728400" z="-0.00010700"/>
+      <bbMax x="0.24927700" y="0.22931800" z="0.99669000"/>
+      <bsCentre x="-0.00539449" y="-0.01398300" z="0.49829150"/>
+      <bsRadius value="0.61029010"/>
+      <hdTextureDist value="5.00000000"/>
+      <name>shoe_shuffler_prop_weed_lrg_haze_01b</name>
+      <textureDictionary>shoe_shuffler_prop_weed_haze</textureDictionary>
+      <clipDictionary/>
+      <drawableDictionary/>
+      <physicsDictionary>mp_biker_weed</physicsDictionary>
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>shoe_shuffler_prop_weed_lrg_haze_01b</assetName>
+      <extensions/>
+    </Item>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="100.00000000"/>
+      <flags value="537002016"/>
+      <specialAttribute value="0"/>
+      <bbMin x="-0.26006600" y="-0.25728400" z="-0.00010700"/>
+      <bbMax x="0.24927700" y="0.22931800" z="0.99669000"/>
+      <bsCentre x="-0.00539449" y="-0.01398300" z="0.49829150"/>
+      <bsRadius value="0.61029010"/>
+      <hdTextureDist value="5.00000000"/>
+      <name>shoe_shuffler_prop_weed_01_small_cyannew_01a</name>
+      <textureDictionary>shoe_shuffler_prop_weed_cyannew</textureDictionary>
+      <clipDictionary/>
+      <drawableDictionary/>
+      <physicsDictionary>mp_biker_weed</physicsDictionary>
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>shoe_shuffler_prop_weed_01_small_cyannew_01a</assetName>
+      <extensions/>
+    </Item>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="100.00000000"/>
+      <flags value="537002016"/>
+      <specialAttribute value="0"/>
+      <bbMin x="-0.26006600" y="-0.25728400" z="-0.00010700"/>
+      <bbMax x="0.24927700" y="0.22931800" z="0.99669000"/>
+      <bsCentre x="-0.00539449" y="-0.01398300" z="0.49829150"/>
+      <bsRadius value="0.61029010"/>
+      <hdTextureDist value="5.00000000"/>
+      <name>shoe_shuffler_prop_weed_01_small_cyannew_01b</name>
+      <textureDictionary>shoe_shuffler_prop_weed_cyannew</textureDictionary>
+      <clipDictionary/>
+      <drawableDictionary/>
+      <physicsDictionary>mp_biker_weed</physicsDictionary>
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>shoe_shuffler_prop_weed_01_small_cyannew_01b</assetName>
+      <extensions/>
+    </Item>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="100.00000000"/>
+      <flags value="537002016"/>
+      <specialAttribute value="0"/>
+      <bbMin x="-0.26006600" y="-0.25728400" z="-0.00010700"/>
+      <bbMax x="0.24927700" y="0.22931800" z="0.99669000"/>
+      <bsCentre x="-0.00539449" y="-0.01398300" z="0.49829150"/>
+      <bsRadius value="0.61029010"/>
+      <hdTextureDist value="5.00000000"/>
+      <name>shoe_shuffler_prop_weed_01_small_cyannew_01c</name>
+      <textureDictionary>shoe_shuffler_prop_weed_cyannew</textureDictionary>
+      <clipDictionary/>
+      <drawableDictionary/>
+      <physicsDictionary>mp_biker_weed</physicsDictionary>
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>shoe_shuffler_prop_weed_01_small_cyannew_01c</assetName>
+      <extensions/>
+    </Item>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="100.00000000"/>
+      <flags value="537002016"/>
+      <specialAttribute value="0"/>
+      <bbMin x="-0.26006600" y="-0.25728400" z="-0.00010700"/>
+      <bbMax x="0.24927700" y="0.22931800" z="0.99669000"/>
+      <bsCentre x="-0.00539449" y="-0.01398300" z="0.49829150"/>
+      <bsRadius value="0.61029010"/>
+      <hdTextureDist value="5.00000000"/>
+      <name>shoe_shuffler_prop_weed_med_cyannew_01a</name>
+      <textureDictionary>shoe_shuffler_prop_weed_cyannew</textureDictionary>
+      <clipDictionary/>
+      <drawableDictionary/>
+      <physicsDictionary>mp_biker_weed</physicsDictionary>
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>shoe_shuffler_prop_weed_med_cyannew_01a</assetName>
+      <extensions/>
+    </Item>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="100.00000000"/>
+      <flags value="537002016"/>
+      <specialAttribute value="0"/>
+      <bbMin x="-0.26006600" y="-0.25728400" z="-0.00010700"/>
+      <bbMax x="0.24927700" y="0.22931800" z="0.99669000"/>
+      <bsCentre x="-0.00539449" y="-0.01398300" z="0.49829150"/>
+      <bsRadius value="0.61029010"/>
+      <hdTextureDist value="5.00000000"/>
+      <name>shoe_shuffler_prop_weed_med_cyannew_01b</name>
+      <textureDictionary>shoe_shuffler_prop_weed_cyannew</textureDictionary>
+      <clipDictionary/>
+      <drawableDictionary/>
+      <physicsDictionary>mp_biker_weed</physicsDictionary>
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>shoe_shuffler_prop_weed_med_cyannew_01b</assetName>
+      <extensions/>
+    </Item>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="100.00000000"/>
+      <flags value="537002016"/>
+      <specialAttribute value="0"/>
+      <bbMin x="-0.26006600" y="-0.25728400" z="-0.00010700"/>
+      <bbMax x="0.24927700" y="0.22931800" z="0.99669000"/>
+      <bsCentre x="-0.00539449" y="-0.01398300" z="0.49829150"/>
+      <bsRadius value="0.61029010"/>
+      <hdTextureDist value="5.00000000"/>
+      <name>shoe_shuffler_prop_weed_lrg_cyannew_01a</name>
+      <textureDictionary>shoe_shuffler_prop_weed_cyannew</textureDictionary>
+      <clipDictionary/>
+      <drawableDictionary/>
+      <physicsDictionary>mp_biker_weed</physicsDictionary>
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>shoe_shuffler_prop_weed_lrg_cyannew_01a</assetName>
+      <extensions/>
+    </Item>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="100.00000000"/>
+      <flags value="537002016"/>
+      <specialAttribute value="0"/>
+      <bbMin x="-0.26006600" y="-0.25728400" z="-0.00010700"/>
+      <bbMax x="0.24927700" y="0.22931800" z="0.99669000"/>
+      <bsCentre x="-0.00539449" y="-0.01398300" z="0.49829150"/>
+      <bsRadius value="0.61029010"/>
+      <hdTextureDist value="5.00000000"/>
+      <name>shoe_shuffler_prop_weed_lrg_cyannew_01b</name>
+      <textureDictionary>shoe_shuffler_prop_weed_cyannew</textureDictionary>
+      <clipDictionary/>
+      <drawableDictionary/>
+      <physicsDictionary>mp_biker_weed</physicsDictionary>
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>shoe_shuffler_prop_weed_lrg_cyannew_01b</assetName>
+      <extensions/>
+    </Item>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="100.00000000"/>
+      <flags value="537002016"/>
+      <specialAttribute value="0"/>
+      <bbMin x="-0.26006600" y="-0.25728400" z="-0.00010700"/>
+      <bbMax x="0.24927700" y="0.22931800" z="0.99669000"/>
+      <bsCentre x="-0.00539449" y="-0.01398300" z="0.49829150"/>
+      <bsRadius value="0.61029010"/>
+      <hdTextureDist value="5.00000000"/>
+      <name>shoe_shuffler_prop_weed_01_small_can_01a</name>
+      <textureDictionary>shoe_shuffler_prop_weed_can</textureDictionary>
+      <clipDictionary/>
+      <drawableDictionary/>
+      <physicsDictionary>mp_biker_weed</physicsDictionary>
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>shoe_shuffler_prop_weed_01_small_can_01a</assetName>
+      <extensions/>
+    </Item>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="100.00000000"/>
+      <flags value="537002016"/>
+      <specialAttribute value="0"/>
+      <bbMin x="-0.26006600" y="-0.25728400" z="-0.00010700"/>
+      <bbMax x="0.24927700" y="0.22931800" z="0.99669000"/>
+      <bsCentre x="-0.00539449" y="-0.01398300" z="0.49829150"/>
+      <bsRadius value="0.61029010"/>
+      <hdTextureDist value="5.00000000"/>
+      <name>shoe_shuffler_prop_weed_01_small_can_01b</name>
+      <textureDictionary>shoe_shuffler_prop_weed_can</textureDictionary>
+      <clipDictionary/>
+      <drawableDictionary/>
+      <physicsDictionary>mp_biker_weed</physicsDictionary>
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>shoe_shuffler_prop_weed_01_small_can_01b</assetName>
+      <extensions/>
+    </Item>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="100.00000000"/>
+      <flags value="537002016"/>
+      <specialAttribute value="0"/>
+      <bbMin x="-0.26006600" y="-0.25728400" z="-0.00010700"/>
+      <bbMax x="0.24927700" y="0.22931800" z="0.99669000"/>
+      <bsCentre x="-0.00539449" y="-0.01398300" z="0.49829150"/>
+      <bsRadius value="0.61029010"/>
+      <hdTextureDist value="5.00000000"/>
+      <name>shoe_shuffler_prop_weed_01_small_can_01c</name>
+      <textureDictionary>shoe_shuffler_prop_weed_can</textureDictionary>
+      <clipDictionary/>
+      <drawableDictionary/>
+      <physicsDictionary>mp_biker_weed</physicsDictionary>
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>shoe_shuffler_prop_weed_01_small_can_01c</assetName>
+      <extensions/>
+    </Item>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="100.00000000"/>
+      <flags value="537002016"/>
+      <specialAttribute value="0"/>
+      <bbMin x="-0.26006600" y="-0.25728400" z="-0.00010700"/>
+      <bbMax x="0.24927700" y="0.22931800" z="0.99669000"/>
+      <bsCentre x="-0.00539449" y="-0.01398300" z="0.49829150"/>
+      <bsRadius value="0.61029010"/>
+      <hdTextureDist value="5.00000000"/>
+      <name>shoe_shuffler_prop_weed_med_can_01a</name>
+      <textureDictionary>shoe_shuffler_prop_weed_can</textureDictionary>
+      <clipDictionary/>
+      <drawableDictionary/>
+      <physicsDictionary>mp_biker_weed</physicsDictionary>
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>shoe_shuffler_prop_weed_med_can_01a</assetName>
+      <extensions/>
+    </Item>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="100.00000000"/>
+      <flags value="537002016"/>
+      <specialAttribute value="0"/>
+      <bbMin x="-0.26006600" y="-0.25728400" z="-0.00010700"/>
+      <bbMax x="0.24927700" y="0.22931800" z="0.99669000"/>
+      <bsCentre x="-0.00539449" y="-0.01398300" z="0.49829150"/>
+      <bsRadius value="0.61029010"/>
+      <hdTextureDist value="5.00000000"/>
+      <name>shoe_shuffler_prop_weed_med_can_01b</name>
+      <textureDictionary>shoe_shuffler_prop_weed_can</textureDictionary>
+      <clipDictionary/>
+      <drawableDictionary/>
+      <physicsDictionary>mp_biker_weed</physicsDictionary>
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>shoe_shuffler_prop_weed_med_can_01b</assetName>
+      <extensions/>
+    </Item>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="100.00000000"/>
+      <flags value="537002016"/>
+      <specialAttribute value="0"/>
+      <bbMin x="-0.26006600" y="-0.25728400" z="-0.00010700"/>
+      <bbMax x="0.24927700" y="0.22931800" z="0.99669000"/>
+      <bsCentre x="-0.00539449" y="-0.01398300" z="0.49829150"/>
+      <bsRadius value="0.61029010"/>
+      <hdTextureDist value="5.00000000"/>
+      <name>shoe_shuffler_prop_weed_lrg_can_01a</name>
+      <textureDictionary>shoe_shuffler_prop_weed_can</textureDictionary>
+      <clipDictionary/>
+      <drawableDictionary/>
+      <physicsDictionary>mp_biker_weed</physicsDictionary>
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>shoe_shuffler_prop_weed_lrg_can_01a</assetName>
+      <extensions/>
+    </Item>
+    <Item type="CBaseArchetypeDef">
+      <lodDist value="100.00000000"/>
+      <flags value="537002016"/>
+      <specialAttribute value="0"/>
+      <bbMin x="-0.26006600" y="-0.25728400" z="-0.00010700"/>
+      <bbMax x="0.24927700" y="0.22931800" z="0.99669000"/>
+      <bsCentre x="-0.00539449" y="-0.01398300" z="0.49829150"/>
+      <bsRadius value="0.61029010"/>
+      <hdTextureDist value="5.00000000"/>
+      <name>shoe_shuffler_prop_weed_lrg_can_01b</name>
+      <textureDictionary>shoe_shuffler_prop_weed_can</textureDictionary>
+      <clipDictionary/>
+      <drawableDictionary/>
+      <physicsDictionary>mp_biker_weed</physicsDictionary>
+      <assetType>ASSET_TYPE_DRAWABLE</assetType>
+      <assetName>shoe_shuffler_prop_weed_lrg_can_01b</assetName>
+      <extensions/>
+    </Item>
+  </archetypes>
+  <name>shoe_shuffler_weed</name>
+  <dependencies/>
+  <compositeEntityTypes/>
+</CMapTypes>
