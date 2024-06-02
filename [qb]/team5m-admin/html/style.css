@@ -1,0 +1,1996 @@
+@font-face {
+    font-family: MonumentExtended;
+    src: url(fonts/MonumentExtended-Regular.otf);
+}
+
+@font-face {
+    font-family: Gilroy;
+    src: url(fonts/Gilroy-Regular.ttf);
+}
+
+@font-face {
+    font-family: GilroyBold;
+    src: url(fonts/Gilroy-Semibold.ttf);
+}
+
+body{
+    display: block;
+}
+
+#seven_admin{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left:0;
+    display: none;
+}
+
+#logo{
+    position: absolute;
+    top:2.4vw;
+    left:3vw;
+    width: 3.8vw;
+    height: 3.8vw;
+}
+
+#menu{
+    position: absolute;
+    width: 60.6vw;
+    height: 40.1vw;
+    left: 18.3vw;
+    top: 6.5vw;
+    background-color: #1b1c23ea;
+    border: 5px solid #007054;
+    transition:0.3s
+}
+
+.dark{
+    filter: blur(0.3vw)brightness(30%);
+}
+
+#title{
+    position: absolute;
+    width: 8vw;
+    left: 7.4vw;
+    top: 1.1vw;
+
+    font-family: 'MonumentExtended';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 1.6vw;
+    line-height: 96.5%;
+
+    background: radial-gradient(91.94% 98.34% at 50% 50%, #40ffd6 0%, #00af5d 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+
+    text-shadow: 0px 4px 50px rgba(64, 131, 255, 0.25);
+}
+
+#buttonArea{
+    position: absolute;
+    width: 50vw;
+    height: 4vw;
+    top:2vw;
+    left:14.3vw
+}
+
+.button{
+    position: relative;
+    left: 0vw;
+    top: 1.5vw;
+
+
+    border: 5px solid #007054;
+    border-radius: 0.5vw;
+
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.67vw;
+    line-height: 1.5vw;
+    text-align: center;
+
+    color: rgba(0, 255, 200, 0.55);
+    float: left;
+    margin: 0 0 0 0.9vw;
+
+    padding: 0 0.8vw 0 0.8vw;
+}
+
+.button:hover{
+    background: linear-gradient(180deg, #40ff89 0%, #00ae74 100%);
+    border: 0.1vw solid #40ffb6;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.active{
+    background: linear-gradient(180deg, #40ffff 0%, #00ae91 100%);
+    border: 0.1vw solid rgba(255, 255, 255, 0.25);
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.active:hover{
+    border: 0.1vw solid rgba(255, 255, 255, 0.25);
+}
+
+#exit{
+    position: absolute;
+    right: 1.9vw;
+    top:2.35vw;
+    width: 5vw;
+    height: 4.7vw;
+    transition: 0.3s;
+}
+
+#exit:hover{
+    transform: scale(0.9);
+}
+
+.page{
+    position: absolute;
+    width: 56vw;
+    height: 33vw;
+    left: 3vw;
+    top:6.5vw
+}
+
+.title{
+    position: absolute;
+
+    font-family: 'GilroyBold';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1vw;
+
+    color: #40ffbf;
+}
+
+.description{
+    position: absolute;
+    width: 13vw;
+
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.65vw;
+    line-height: 110.5%;
+
+    color: rgba(255, 255, 255, 0.38);
+}
+
+#mainTitle{
+    left: 0.4vw;
+    top: -0.7vw;
+}
+
+#mainDescription{
+    left: 0.4vw;
+    top: 0.85vw;
+}
+
+#mainSelectionTitle{
+    left: 15.5vw;
+    top: -0.7vw;
+}
+
+#mainSelectionDescription{
+    left: 15.5vw;
+    top: 0.85vw;
+}
+
+#mainInfoArea{
+    width: 15vw;
+    height: 28vw;
+    top:3.4vw;
+    position: absolute;
+}
+
+#mainProfileArea{
+    position: absolute;
+    width: 13.5vw;
+    height: 6.2vw;
+    left: 0.3vw;
+    top: 0.54vw;
+
+    background-color: #1b1c23;
+    border: 5px solid #007054;
+}
+
+#mainAvatarFrame{
+    position: absolute;
+    width: 3.8vw;
+    height: 3.6vw;
+    left: 1.1vw;
+    top: 1.3vw;
+
+    border: 0.1vw solid rgba(255, 255, 255, 0.13);
+    border-radius: 0.3vw;
+}
+
+#mainAvatar{
+    position: absolute;
+    width: 3.2vw;
+    height: 3.2vw;
+    left:0.3vw;
+    top:0.2vw
+}
+
+#mainAvatarName{
+    position: absolute;
+    width: 3vw;
+    left:6vw;
+    top:0.5vw;
+
+    font-family: 'GilroyBold';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 0.8vw;
+
+    color: #40ffc6;
+}
+
+#mainAvatarSex{
+    position: absolute;
+    width: 2.9vw;
+    height: 1vw;
+    left: 6vw;
+    top: 3.7vw;
+
+
+    border-radius: 0.3vw;
+
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 0.6vw;
+    line-height: 1vw;
+    text-align: center;
+}
+
+.female{
+    background: radial-gradient(119.05% 177.55% at 50% 50%, rgba(255, 43, 208, 0.25) 0%, rgba(255, 43, 208, 0) 100%);
+    border: 0.1vw solid #FF2BD0;
+    box-shadow: 0px 4px 16px -2px rgba(255, 43, 208, 0.25);
+    color: #FF2BD0;
+}
+
+.male{
+    background: radial-gradient(119.05% 177.55% at 50% 50%, rgba(46, 154, 241, 0.25) 0%, rgba(255, 43, 208, 0) 100%);
+    border: 0.1vw solid #4495ff;
+    box-shadow: 0px 4px 16px -2px rgba(46, 152, 252, 0.25);
+    color: #4495ff;
+}
+
+.mainInfoBox{
+    position: relative;
+    float: left;
+    width: 6.5vw;
+    height: 6.2vw;
+    left: -0.15vw;
+    top: 6.9vw;
+    margin: 0.45vw 0 0 0.45vw;
+
+    background-color: #1b1c23;
+    border: 5px solid #007054;
+    transition: 0.3s;
+}
+
+.mainInfoBox:hover{
+    transform: scale(0.95);
+}
+
+.mainInfoIcon{
+    position: absolute;
+    width: 1.4vw;
+    height: 1.4vw;
+    top:0.8vw;
+    left:0.8vw
+}
+
+.mainInfoTitle{
+    position: absolute;
+    width: 1vw;
+    left:0.8vw;
+    top:3.1vw;
+
+    font-family: 'GilroyBold';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 0.8vw;
+
+    color: #40ffbf;
+}
+
+.mainInfoDescription{
+    position: absolute;
+    left:0.8vw;
+    top:4.1vw;
+
+    font-family: 'GilroyBold';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 0.65vw;
+
+    color: #FFFFFF;
+}
+
+#selectionArea{
+    width: 40vw;
+    height: 28vw;
+    top:3.4vw;
+    left: 15vw;
+    position: absolute;
+}
+
+.mainSelectionBox{
+    position: relative;
+    float: left;
+    width: 12.3vw;
+    height: 8.1vw;
+    left: -0.1vw;
+    top: -0.26vw;
+    margin: 0.8vw 0 0 0.67vw;
+
+    background-color: #1b1c23;
+    border: 5px solid #007054;
+    transition: 0.3s;
+}
+
+.mainSelectionBox:hover{
+    transform: scale(0.95);
+}
+
+.mainSelectionTitle{
+    position: absolute;
+    left:0.95vw;
+    top:-0.3vw;
+
+    font-family: 'GilroyBold';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 0.8vw;
+
+    color: white;
+}
+
+.mainSelectionDescription{
+    position: absolute;
+    width: 6vw;
+    left:0.9vw;
+    top:1vw;
+
+    font-family: 'GilroyBold';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 0.65vw;
+
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.mainSelectionIcon{
+    position: absolute;
+    width: 2.5vw;
+    height: 2.5vw;
+    top:0.7vw;
+    left:9vw
+}
+
+#mainSelectionDutyBox{
+    position: absolute;
+    width: 3.5vw;
+    height: 1.4vw;
+    top:5.9vw;
+    left:1vw;
+
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 0.6vw;
+    text-align: center;
+    line-height: 1.4vw;
+    border-radius: 0.3vw;
+}
+
+#mainSelectionDutyButton{
+    position: absolute;
+    float: left;
+    width: 2.7vw;
+    height: 1.4vw;
+    left: 8.8vw;
+    top: 5.9vw;
+
+    background: radial-gradient(80% 80% at 50% 50%, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 100%);
+    border-radius: 0.3vw;
+    border: 0.1vw solid rgba(255, 255, 255, 0.13)}
+
+.onduty{
+    color: #BBFF2B;
+    background: rgba(187, 255, 43, 0.15);
+    text-shadow: 0px 0px 4px rgba(187, 255, 43, 0.25);
+}
+
+.offduty{
+    color: #f79393;
+    background: rgba(253, 41, 41, 0.411);
+    text-shadow: 0px 0px 4px rgba(228, 0, 0, 0.747);
+}
+
+#mainSelectionDuty{
+    position: relative;
+    float: left;
+    width: 0.9vw;
+    height: 0.9vw;
+    top: 0.27vw;
+
+    border-radius: 0.2vw;
+    transition: 0.5s;
+}
+
+.off{
+    background: #FF3737;;
+    left: 0.3vw;
+}
+
+.on{
+    background: #2cdf14;;
+    left: 1.5vw;
+}
+
+.mainSelectionButton{
+    position: absolute;
+    height: 1.4vw;
+    top:5.9vw;
+    left:1vw;
+    padding-left: 0.6vw;
+    padding-right: 0.6vw;
+
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 0.6vw;
+    text-align: center;
+    line-height: 1.4vw;
+    border-radius: 0.3vw;
+
+    color: rgba(244, 244, 255, 0.55);
+    border: 0.1vw solid rgba(255, 255, 255, 0.13)
+}
+
+.mainSelectionButton:hover{
+    color: #BBFF2B;
+    background: rgba(187, 255, 43, 0.15);
+    text-shadow: 0px 0px 4px rgba(187, 255, 43, 0.25);
+}
+
+img {
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
+}
+
+*:not(input):not(textarea) {
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    -ms-user-select: none;
+    user-select: none
+}
+
+#mainPage{
+    display: block;
+}
+
+#playersMainTitle{
+    left: 0.4vw;
+    top: -0.7vw;
+}
+
+#playersMainDescription{
+    left: 0.4vw;
+    top: 0.85vw;
+}
+
+#playersListTitle{
+    left: 23vw;
+    top: -0.7vw;
+}
+
+#playersListDescription{
+    left: 23vw;
+    top: 0.85vw;
+}
+
+#playersManageTitle{
+    left: 39.3vw;
+    top: -0.7vw;
+}
+
+#playersManageDescription{
+    left: 39.3vw;
+    top: 0.85vw;
+}
+
+#playersInfoArea{
+    position: absolute;
+    top:3vw;
+    width: 22vw;
+    height: 29vw;
+}
+
+#playersProfileArea{
+    position: absolute;
+    width: 20.6vw;
+    height: 6.2vw;
+    left: 0.3vw;
+    top: 0.7vw;
+
+    background-color: #1b1c23;
+    border: 5px solid #007054;
+}
+
+#playersAvatarSex{
+    position: absolute;
+    width: 4.6vw;
+    height: 1vw;
+    left: 6vw;
+    top: 3.7vw;
+
+
+    border-radius: 0.3vw;
+
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 0.6vw;
+    line-height: 1vw;
+    text-align: center;
+
+    background: radial-gradient(119.05% 177.55% at 50% 50%, rgba(255, 43, 43, 0.25) 0%, rgba(255, 43, 43, 0) 100%);
+    border: 0.1vw solid #FF2B2B;
+    box-shadow: 0px 4px 16px -2px rgba(255, 43, 43, 0.25);
+    color: #FF2B2B;
+}
+
+#mainAvatarDiscord{
+    position: absolute;
+    left:12.5vw;
+    top:0.65vw;
+
+    font-family: 'GilroyBold';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 0.8vw;
+
+    color: #40ffc6;
+}
+
+#mainAvatarDiscordText{
+    position: absolute;
+    left:12.5vw;
+    top:1.8vw;
+
+    font-family: 'GilroyBold';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 0.6vw;
+
+    color: white;
+}
+
+#mainAvatarDisordButton{
+    position: absolute;
+    height: 1vw;
+    left: 12.45vw;
+    top: 3.7vw;
+
+    padding-left: 0.5vw;
+    padding-right: 0.55vw;
+
+    border-radius: 0.3vw;
+
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 0.6vw;
+    line-height: 1.1vw;
+    text-align: center;
+    transition: 0.3s;
+}
+
+#mainAvatarDisordButton:hover{
+    transform: scale(0.95);
+}
+
+.activeDiscord{
+    background: radial-gradient(119.05% 177.55% at 50% 50%, rgba(187, 255, 43, 0.25) 0%, rgba(187, 255, 43, 0) 100%);
+    border: 0.1vw solid #BBFF2B;
+    box-shadow: 0px 4px 16px -2px rgba(187, 255, 43, 0.25);
+    color: #BBFF2B;
+}
+
+.offlineDiscord{
+    background: radial-gradient(119.05% 177.55% at 50% 50%, rgba(255, 43, 43, 0.25) 0%, rgba(255, 43, 43, 0) 100%);
+    border: 0.1vw solid #FF2B2B;
+    box-shadow: 0px 4px 16px -2px rgba(255, 43, 43, 0.25);
+    color: #FF2B2B;
+}
+
+.playersInfoBox{
+    position: relative;
+    float: left;
+    width: 6.4vw;
+    height: 6.1vw;
+    left: -0.3vw;
+    top: 6.9vw;
+    margin: 0.6vw 0 0 0.62vw;
+
+    background-color: #1b1c23;
+    border: 5px solid #007054;
+    transition: 0.3s;
+}
+
+.playersInfoBox:hover{
+    transform: scale(0.95);
+}
+
+#playersList{
+    position: absolute;
+    width: 14.8vw;
+    height: 27vw;
+    left:22.8vw;
+    top:3.6vw;
+    overflow-x: hidden;
+}
+
+#playersList::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+#playersList::-webkit-scrollbar
+{
+	width: 0.3vw;
+}
+
+#playersList::-webkit-scrollbar-thumb
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: rgba(255, 255, 255, 0.11);;
+
+}
+
+.player{
+    position: relative;
+    top:0.1.5vw;
+    left:0.14vw;
+    width: 14.2vw;
+    height: 2.9vw;
+    background: rgba(255, 0, 0, 0);
+    margin-top:0.2vw;
+    transition: 0.3s;
+}
+
+.player:hover{
+    transform: scale(0.95);
+}
+
+.playerAvatar{
+    position: absolute;
+    left:0.7vw;
+    top:0.6vw;
+    width: 1.6vw;
+    height: 1.6vw;
+}
+
+.playerId{
+    position: absolute;
+    width: 2.7vw;
+    height: 1.5vw;
+    top:0.1vw;
+    left:2.8vw;
+    border-radius: 0.2vw;
+
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 0.6vw;
+    line-height: 1.5vw;
+    text-align: center;
+
+    background: rgba(255, 145, 43, 0.15);
+    color: #FF902B;
+}
+
+.selectId{
+    background: radial-gradient(91.67% 162% at 50% 50%, rgba(255, 145, 43, 0.55) 0%, rgba(255, 145, 43, 0) 100%);
+    color: #FF902B;
+}
+
+.playerName{
+    position: absolute;
+    width: 6vw;
+    left:6.66vw;
+    top:0.5vw;
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 0.6vw;
+    line-height: 110.5%;
+    color: #FFFFFF;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.playerSelect{
+    background: rgba(250, 208, 60, 0.17);
+}
+
+.one{
+    background: radial-gradient(80% 80% at 50% 50%, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 100%)
+}
+
+.two {
+    background: radial-gradient(80% 80% at 50% 50%, rgba(255, 255, 255, 0.01) 0%, rgba(255, 255, 255, 0) 100%)
+}
+
+#playerManage{
+    position: absolute;
+    width: 16vw;
+    height: 28vw;
+    left:39vw;
+    top:3.5vw
+}
+
+.manageButton{
+    position: relative;
+    top:-0.15vw;
+    left:-0.15vw;
+    width: 7.1vw;
+    height: 2.5vw;
+    background: radial-gradient(80% 80% at 50% 50%, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 100%);
+    border: 0.1vw solid rgba(255, 255, 255, 0.13);
+
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 0.6vw;
+    line-height: 2.7vw;
+    text-align: center;
+    color: #FFFFFF;
+
+    float: left;
+    margin: 0.4vw 0 0 0.45vw;
+    transition: 0.3s;
+}
+
+.manageButton:hover{
+    transform: scale(0.95);
+}
+
+#playersPage{
+    display: none;
+}
+
+#vehicleTitle{
+    left: 4.55vw;
+    top: -0.7vw;
+}
+
+#vehicleDescription{
+    left: 4.55vw;
+    top: 0.80vw;
+}
+
+#vehicleInfo{
+    position: absolute;
+    width: 20.6vw;
+    height: 6.2vw;
+    left: 3.8vw;
+    top: 3.1vw;
+    margin: 0.6vw 0 0 0.62vw;
+
+    background-color: #1b1c23;
+    border: 5px solid #007054;
+    transition: 0.3s;
+}
+
+.vehicleImage{
+    position: absolute;
+    top:-0.7vw;
+    left:0vw;
+    width:17rem;
+    height:10rem !important;
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url("images/vehicles/caddy.png");
+    overflow:hidden;
+    filter: drop-shadow(0px 4px 8px #000000);
+    z-index:5;
+    transition:0.2s
+}
+
+
+
+.vehicleName{
+    position: absolute;
+    width: 5vw;
+    left:13.7vw;
+    top:1.5vw;
+
+    font-family: 'GilroyBold';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 0.8vw;
+
+    color: #40ffc6;
+}
+
+#vehicleDelete{
+    position: absolute;
+    width: 12.2vw;
+    height: 6.2vw;
+    left: 25.3vw;
+    top: 3.1vw;
+    margin: 0.6vw 0 0 0.62vw;
+
+    background-color: #1b1c23;
+    border: 5px solid #007054;
+    transition: 0.3s;
+}
+
+#vehicleDeleteTitle{
+    position: absolute;
+    left:0.75vw;
+    top:-0.06vw;
+
+    font-family: 'GilroyBold';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 0.8vw;
+
+    color: white
+}
+
+#vehicleDeleteDescription{
+    position: absolute;
+    width:6.5vw;
+    left:0.75vw;
+    top:1.2vw;
+
+    font-family: 'GilroyBold';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 0.65vw;
+
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.vehicleIcon{
+    position: absolute;
+    width: 2.5vw;
+    height: 2.5vw;
+    top:0.8vw;
+    right:0.5vw
+}
+
+.vehicleButton{
+    position: absolute;
+    height: 1.4vw;
+    top:3.3vw;
+    left:0.8vw;
+    padding-left: 0.6vw;
+    padding-right: 0.6vw;
+
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 0.6vw;
+    text-align: center;
+    line-height: 1.4vw;
+    border-radius: 0.3vw;
+
+    color: rgba(244, 244, 255, 0.55);
+    border: 0.1vw solid rgba(255, 255, 255, 0.13)
+}
+
+#vehicleRepair{
+    position: absolute;
+    width: 12.2vw;
+    height: 6.2vw;
+    left: 38.4vw;
+    top: 3.1vw;
+    margin: 0.6vw 0 0 0.62vw;
+
+    background-color: #1b1c23;
+    border: 5px solid #007054;
+    transition: 0.3s;
+}
+
+#vehicleSpawn{
+    position: absolute;
+    width: 12.2vw;
+    height: 8.2vw;
+    left: 3.9vw;
+    top: 10.3vw;
+    margin: 0.6vw 0 0 0.62vw;
+
+    background-color: #1b1c23;
+    border: 5px solid #007054;
+    transition: 0.3s;
+}
+
+#vehicleSpawnTitle{
+    position: relative;
+    width: 14vw;
+    left:0.75vw;
+    top:-0.2vw;
+    font-family: 'GilroyBold';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 0.8vw;
+    color: white;
+}
+
+#vehicleAdd #vehicleSpawnTitle {
+    width: 13vw;
+}
+
+#vehicleSpawnDescription{
+    position: absolute;
+    width:7vw;
+    left:0.75vw;
+    top:1.1vw;
+
+    font-family: 'GilroyBold';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 0.65vw;
+
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.vehicleSpawnButton{
+    position: absolute;
+    height: 1.4vw;
+    top:5.3vw;
+    left:0.8vw;
+    padding-left: 0.6vw;
+    padding-right: 0.6vw;
+
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 0.6vw;
+    text-align: center;
+    line-height: 1.4vw;
+    border-radius: 0.3vw;
+
+    color: rgba(244, 244, 255, 0.55);
+    border: 0.1vw solid rgba(255, 255, 255, 0.13)
+}
+
+.vehicleSpawnButton:hover{
+    color: #BBFF2B;
+    background: rgba(187, 255, 43, 0.15);
+    text-shadow: 0px 0px 4px rgba(187, 255, 43, 0.25);
+}
+
+.vehicleButton:hover{
+    color: #BBFF2B;
+    background: rgba(187, 255, 43, 0.15);
+    text-shadow: 0px 0px 4px rgba(187, 255, 43, 0.25);
+}
+
+#vehicleGod{
+    position: absolute;
+    width: 12.2vw;
+    height: 8.2vw;
+    left: 17.18vw;
+    top: 10.3vw;
+    margin: 0.6vw 0 0 0.62vw;
+
+    background-color: #1b1c23;
+    border: 5px solid #007054;
+    transition: 0.3s;
+}
+
+#vehicleDrift{
+    position: absolute;
+    width: 12.2vw;
+    height: 8.2vw;
+    left: 30.2vw;
+    top: 10.3vw;
+    margin: 0.6vw 0 0 0.62vw;
+
+    background-color: #1b1c23;
+    border: 5px solid #007054;
+    transition: 0.3s;
+}
+
+#vehicleFlip{
+    position: absolute;
+    width: 12.2vw;
+    height: 8.2vw;
+    left: 3.9vw;
+    top: 19.45vw;
+    margin: 0.6vw 0 0 0.62vw;
+
+    background-color: #1b1c23;
+    border: 5px solid #007054;
+    transition: 0.3s;
+}
+
+#vehicleLicense{
+    position: absolute;
+    width: 12.2vw;
+    height: 8.2vw;
+    left: 17.1vw;
+    top: 19.45vw;
+    margin: 0.6vw 0 0 0.62vw;
+
+    background-color: #1b1c23;
+    border: 5px solid #007054;
+    transition: 0.3s;
+}
+
+#vehicleAdd{
+    position: absolute;
+    height: 8.2vw;
+    left: 39vw;
+    top: 19.45vw;
+    margin: 0.6vw 0 0 0.62vw;
+
+    background-color: #1b1c23;
+    border: 5px solid #007054;
+    transition: 0.3s;
+}
+
+#vehicleShortDescription{
+    position: absolute;
+    width:7vw;
+    left:0.75vw;
+    top:2.2vw;
+
+    font-family: 'GilroyBold';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 0.65vw;
+
+    color: rgba(255, 255, 255, 0.55);
+}
+
+#vehicleDel{
+    position: absolute;
+    width: 8vw;
+    height: 8.2vw;
+    left: 30.2vw;
+    top: 19.45vw;
+    margin: 0.6vw 0 0 0.62vw;
+
+    background-color: #1b1c23;
+    border: 5px solid #007054;
+    transition: 0.3s;
+}
+
+#vehiclePage{
+    display: none;
+}
+
+#personalInfoArea{
+    position: absolute;
+    top:3.5vw;
+    width: 14.5vw;
+    height: 28vw;
+}
+
+.personalInfoBox{
+    position: relative;
+    float: left;
+    width: 6.5vw;
+    height: 6.2vw;
+    left: -0.15vw;
+    top: 6.7vw;
+    margin: 0.45vw 0 0 0.45vw;
+
+    background-color: #1b1c23;
+    border: 5px solid #007054;
+    transition: 0.3s;
+}
+
+.personalInfoBox:hover{
+    transform: scale(0.95);
+}
+
+#personalSettinsArea{
+    width: 40vw;
+    height: 28vw;
+    top:3.2vw;
+    left:14.4vw;
+    position: absolute;
+}
+
+#personalGod{
+    position: absolute;
+    width: 12.2vw;
+    height: 8.2vw;
+    left: 0.68vw;
+    top: 0.58vw;
+
+    background-color: #1b1c23;
+    border: 5px solid #007054;
+    transition: 0.3s;
+}
+
+#personalInvisible{
+    position: absolute;
+    width: 12.2vw;
+    height: 8.2vw;
+    left: 13.8vw;
+    top: 0.58vw;
+
+    background-color: #1b1c23;
+    border: 5px solid #007054;
+    transition: 0.3s;
+}
+
+#personalHeal{
+    position: absolute;
+    width: 14vw;
+    height: 8.2vw;
+    left: 26.9vw;
+    top: 0.58vw;
+
+    background-color: #1b1c23;
+    border: 5px solid #007054;
+    transition: 0.3s;
+}
+
+#personalArmor{
+    position: absolute;
+    width: 12.2vw;
+    height: 8.2vw;
+    left: 0.68vw;
+    top: 9.75vw;
+
+    background-color: #1b1c23;
+    border: 5px solid #007054;
+    transition: 0.3s;
+}
+
+#personalBank{
+    position: absolute;
+    width: 12.2vw;
+    height: 8.2vw;
+    left: 0.68vw;
+    top: 18.88vw;
+
+    background-color: #1b1c23;
+    border: 5px solid #007054;
+    transition: 0.3s;
+}
+
+#personalBlackMoney{
+    position: absolute;
+    width: 12.2vw;
+    height: 8.2vw;
+    left: 13.8vw;
+    top: 18.88vw;
+
+    background-color: #1b1c23;
+    border: 5px solid #007054;
+    transition: 0.3s;
+}
+
+#personalGiveItem{
+    position: absolute;
+    width: 14vw;
+    height: 8.2vw;
+    left: 26.95vw;
+    top: 18.88vw;
+
+    background-color: #1b1c23;
+    border: 5px solid #007054;
+    transition: 0.3s;
+}
+
+#personalCoords{
+    position: absolute;
+    width: 9.3vw;
+    height: 8.2vw;
+    left: 13.8vw;
+    top: 9.75vw;
+    background-color: #1b1c23;
+    border: 5px solid #007054;
+    transition: 0.3s;
+}
+
+#personalJob{
+    position: absolute;
+    width: 8vw;
+    height: 8.2vw;
+    left: 24vw;
+    top: 9.75vw;
+    background-color: #1b1c23;
+    border: 5px solid #007054;
+    transition: 0.3s;
+}
+
+#personalNoclip{
+    position: absolute;
+    width: 8vw;
+    height: 8.2vw;
+    left: 32.9vw;
+    top: 9.75vw;
+    background-color: #1b1c23;
+    border: 5px solid #007054;
+    transition: 0.3s;
+}
+
+#personalPage{
+    display: none;
+}
+
+#weaponInfo{
+    position: absolute;
+    width: 20.6vw;
+    height: 6.2vw;
+    left: 4.4vw;
+    top: 3.7vw;
+    background-color: #1b1c23;
+    border: 5px solid #007054;
+    transition: 0.3s;
+}
+
+.weaponImage{
+    position: absolute;
+    width: 10vw;
+    height: 5vw;
+    left:2vw;
+    top:1vw;
+    display: none;
+}
+
+.weaponName{
+    position: absolute;
+    width: 5vw;
+    left:13.7vw;
+    top:1.5vw;
+
+    font-family: 'GilroyBold';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 0.8vw;
+
+    color: #40ffc6;
+}
+
+#weaponDelete{
+    position: absolute;
+    width: 12.1vw;
+    height: 6vw;
+    left: 26vw;
+    top:3.8vw;
+    background-color: #1b1c23;
+    border: 5px solid #007054;
+    transition: 0.3s;
+}
+
+.weaponButton{
+    position: absolute;
+    height: 1.4vw;
+    top:3.2vw;
+    left:0.7vw;
+    padding-left: 0.6vw;
+    padding-right: 0.6vw;
+
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 0.6vw;
+    text-align: center;
+    line-height: 1.4vw;
+    border-radius: 0.3vw;
+
+    color: rgba(244, 244, 255, 0.55);
+    border: 0.1vw solid rgba(255, 255, 255, 0.13)
+}
+
+.weaponButton:hover{
+    color: #BBFF2B;
+    background: rgba(187, 255, 43, 0.15);
+    text-shadow: 0px 0px 4px rgba(187, 255, 43, 0.25);
+}
+
+#weaponPlayerDelete{
+    position: absolute;
+    height: 6vw;
+    left: 39.1vw;
+    top:3.8vw;
+    background-color: #1b1c23;
+    border: 5px solid #007054;
+    transition: 0.3s;
+}
+
+#weaponAdd{
+    position: absolute;
+    height: 8.2vw;
+    left: 17.5vw;
+    top:10.8vw;
+    background-color: #1b1c23;
+    border: 5px solid #007054;
+    transition: 0.3s;
+}
+
+#weaponPlayerDelete{
+    position: absolute;
+    height: 8.2vw;
+    left: 32.4vw;
+    top:10.8vw;
+    background-color: #1b1c23;
+    border: 5px solid #007054;
+    transition: 0.3s;
+}
+
+#weaponFulltune{
+    position: absolute;
+    width: 8.1vw;
+    height: 8.2vw;
+    left: 47.4vw;
+    top:10.8vw;
+    background-color: #1b1c23;
+    border: 5px solid #007054;
+    transition: 0.3s;
+}
+
+#weaponSpawn{
+    position: absolute;
+    width: 12.3vw;
+    height: 8.2vw;
+    left: 4.4vw;
+    top:10.8vw;
+    background-color: #1b1c23;
+    border: 5px solid #007054;
+    transition: 0.3s;
+}
+
+#weaponSelect{
+    position: absolute;
+    width: 6.4vw;
+    height: 1.35vw;
+    top:6vw;
+    left:5vw;
+    background: rgba(255, 255, 255, 0.13);
+    border: 0.1vw solid rgba(255, 255, 255, 0.25);
+    border-radius: 0.3vw;
+    font-size: 0.6vw;
+    font-family: 'Gilroy';
+    font-style: normal;
+    color: rgba(244, 244, 255, 0.55);
+}
+
+#weaponSelect p{
+    position: absolute;
+    left:0.5vw;
+    top:-0.3vw;
+}
+
+#weaponSelectBox{
+    position: absolute;
+    width: 0.35vw;
+    height: 0.3vw;
+    left:10.65vw;
+    top:6.65vw;
+}
+
+#weaponList{
+    position: absolute;
+    width: 7vw;
+    height: 5vw;
+    left:9.2vw;
+    top:19.5vw;
+}
+
+.weaponBox{
+    position: relative;
+    width: 6.4vw;
+    height: 1.35vw;
+    top:0vw;
+    left:0.3vw;
+    background: rgba(255, 255, 255, 0.13);
+    border: 0.1vw solid rgba(255, 255, 255, 0.25);
+    border-radius: 0.3vw;
+    font-size: 0.6vw;
+    font-family: 'Gilroy';
+    font-style: normal;
+    text-align: center;
+    color: rgba(244, 244, 255, 0.55);
+    line-height:1.3vw;
+
+    margin-top: 0.3vw;
+    display: none;
+}
+
+.activeWeapon{
+    background: radial-gradient(228.2% 440.38% at 50% 50%, rgba(187, 255, 43, 0.55) 0%, rgba(187, 255, 43, 0) 100%);
+    border: 0.1vw solid #BBFF2B;
+    backdrop-filter: blur(5.5px);
+}
+
+#weaponPage{
+    display: none;
+}
+
+#chatArea{
+    position: relative;
+    top:3.4vw;
+    left:4vw;
+    width: 48.5vw;
+    height: 24.3vw;
+    overflow-x: hidden;
+}
+
+#chatArea::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+#chatArea::-webkit-scrollbar
+{
+	width: 0.3vw;
+}
+
+#chatArea::-webkit-scrollbar-thumb
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: rgba(255, 255, 255, 0.11);;
+
+}
+.myMessage{
+    margin-left:30.3vw;
+    margin-top: 0.3vw;
+}
+
+.chat{
+    position: relative;
+    width: 16.67vw;
+    top:0.3vw;
+    left:0.3vw;
+    background: radial-gradient(80% 80% at 50% 50%, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 100%);
+    border: 0.1vw solid rgba(255, 255, 255, 0.027);
+    border-radius: 5px;
+    font-size: 0.6vw;
+    font-family: 'Gilroy';
+    font-style: normal;
+    text-align: center;
+    color: rgba(244, 244, 255, 0.55);
+    line-height:1.3vw;
+    padding-bottom:2.3vw;
+    margin-top:1vw
+}
+
+.chatFrame{
+    position: absolute;
+    left:1vw;
+    top:1vw;
+    width: 2.85vw;
+    height: 2.9vw;
+}
+
+.chatAvatar{
+    position: absolute;
+    left:1.2vw;
+    top:1.244vw;
+    width: 2.4vw;
+    height: 2.4vw;
+}
+
+.chatName{
+    position: absolute;
+    left:4.4vw;
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 0.8vw;
+
+
+    color: #FFFFFF;
+}
+
+.chatMessage{
+    position: relative;
+    left:4.4vw;
+    top:1.3vw;
+    width: 8vw;
+
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.65vw;
+    line-height: 110.5%;
+
+    color: rgba(255, 255, 255, 0.38);
+    text-align: left;
+}
+
+.chatRank{
+    position: absolute;
+    left:13vw;
+    top:0.8vw;
+    width: 3vw;
+    height: 1vw;
+    background: rgba(255, 55, 55, 0.25);
+    box-shadow: 0px 7px 17px rgba(255, 55, 55, 0.25);
+    border-radius: 0.3vw;
+    border: 0.1vw solid #FF3737;
+
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.6vw;
+    line-height: 1.1vw;
+    color: #FF3737;
+}
+
+.rankPlayer {
+    background: radial-gradient(119.05% 177.55% at 50% 50%, rgba(187, 255, 43, 0.25) 0%, rgba(187, 255, 43, 0) 100%);
+    border: 0.1vw solid #BBFF2B;
+    box-shadow: 0px 4px 16px -2px rgba(187, 255, 43, 0.25);
+    color: #BBFF2B;
+}
+
+#chatInput {
+    position: absolute;
+    width: 47vw;
+    height: 2.7vw;
+    top: 28vw;
+    left: 4.3vw;
+
+    padding-left: 0.9vw;
+
+    border-radius: 0.5vw;
+    text-align: left;
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.6vw;
+
+    border: none;
+    outline: none;
+    color: rgba(244, 244, 255, 0.55);
+
+    background: radial-gradient(80% 80% at 50% 50%, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 100%);
+    border: 0.1vw solid rgba(255, 255, 255, 0.027);
+}
+
+#chatSend{
+    position: absolute;
+    width: 1.3vw;
+    height: 1.3vw;
+    
+    left: 49.5vw;
+    top:28.7vw;
+    z-index: 55242;
+}
+
+#chatPage{
+    display: none;
+}
+
+#inputArea{
+    position: absolute;
+    width: 20vw;
+    background: red;
+    left:40vw;
+    top:21vw;
+
+    background-color: #1b1c23;
+    border: 5px solid #007054;
+
+    padding-bottom: 3.5vw;
+    display: none;
+}
+
+#inputTitle{
+    text-align: center;
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 0.95vw;
+    line-height: 1.2vw;
+    border-radius: 0.3vw;
+
+    color: rgba(244, 244, 255, 0.55);
+}
+
+#inputAccept{
+    position: absolute;
+    height: 1.4vw;
+    bottom:1vw;
+    left:1vw;
+    padding-left: 0.6vw;
+    padding-right: 0.6vw;
+
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 0.6vw;
+    text-align: center;
+    line-height: 1.4vw;
+    border-radius: 0.3vw;
+
+    color: rgba(244, 244, 255, 0.55);
+    border: 0.1vw solid rgba(255, 255, 255, 0.13)
+}
+
+.input {
+    position: relative;
+    width: 18vw;
+    height: 2.7vw;
+    top: 0vw;
+    left: 1vw;
+
+    padding-left: 0.9vw;
+
+    border-radius: 0.5vw;
+    text-align: left;
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.6vw;
+
+    border: none;
+    outline: none;
+    color: rgba(244, 244, 255, 0.55);
+    
+    background: radial-gradient(80% 80% at 50% 50%, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 100%);
+    border: 0.1vw solid rgba(255, 255, 255, 0.11);
+
+    margin-top: 0.5vw;
+}
+
+.loading {
+    position:absolute;
+    filter: invert(55%) sepia(15%) saturate(2758%) hue-rotate(12deg) brightness(93%) contrast(101%);
+    width:6vw;
+    left:46.5vw;
+    top:25vw;
+    display: none;
+}
+
+#inputAccept:hover{
+    color: #BBFF2B;
+    background: rgba(187, 255, 43, 0.15);
+    text-shadow: 0px 0px 4px rgba(187, 255, 43, 0.25);
+}
+
+#supportChat{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left:0;
+    display: block;
+}
+
+
+#supportMessagePage{
+    position: absolute;
+    width: 56vw;
+    height: 33vw;
+    left: 3vw;
+    top:6.5vw
+}
+
+#supportPage{
+    display: none;
+}
+
+#supportTitle{
+    left: -1vw;
+    top: -6vw;
+}
+
+#supportDescription{
+    left: -1vw;
+    top: -4vw;
+}
+
+.supportButtons{
+    position:relative;
+    width:8.3vw;
+    left: 35vw;
+    top:2.85vw;
+    padding:0.3vw;
+    border-radius:0.5vw;
+
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 0.75vw;
+
+    transition:0.3s;
+    border: 0.1vw solid #E6302E;
+    float:left;
+    margin-left:0.5vw;
+    text-align:center
+}
+
+#supportEnd{
+    color:#E6302E;
+    background:rgba(230, 49, 46, 0.288);
+    padding:0.3vw;
+    border-radius:0.5vw;
+
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 0.75vw;
+
+    transition:0.3s;
+    border: 0.1vw solid #E6302E;
+
+}
+
+#supportEnd:hover{
+    transform:scale(1.1)
+}
+
+#supportList{
+    position:absolute;
+    top:3vw;
+    left:3vw
+}
+
+.support{
+    position: relative;
+    width: 16.67vw;
+    top:0.3vw;
+    left:0.3vw;
+    background: radial-gradient(80% 80% at 50% 50%, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 100%);
+    border: 0.1vw solid rgba(255, 255, 255, 0.027);
+    border-radius: 5px;
+    font-size: 0.6vw;
+    font-family: 'Gilroy';
+    font-style: normal;
+    text-align: center;
+    color: rgba(244, 244, 255, 0.55);
+    line-height:1.3vw;
+    padding-bottom:2.3vw;
+    margin-top:0.5vw;
+    transition:0.3s
+}
+
+.support:hover{
+    transform:scale(1.05)
+}
+
+.support_active{
+    background: radial-gradient(119.05% 177.55% at 50% 50%, rgba(187, 255, 43, 0.25) 0%, rgba(187, 255, 43, 0) 100%);
+    border: 0.1vw solid #BBFF2B;
+    box-shadow: 0px 4px 16px -2px rgba(187, 255, 43, 0.25);
+    color: #BBFF2B;
+}
+
+.support_close{
+    background: radial-gradient(119.05% 177.55% at 50% 50%, rgba(255, 43, 43, 0.25) 0%, rgba(255, 43, 43, 0) 100%);
+    border: 0.1vw solid #FF2B2B;
+    box-shadow: 0px 4px 16px -2px rgba(255, 43, 43, 0.25);
+    color: #FF2B2B;
+}
+
+#supportCreate{
+    position: absolute;
+    width: 15vw;
+    height:7.7vw;
+    background: red;
+    left:40vw;
+    top:21vw;
+
+    background: linear-gradient(180deg, #2B2F34 0%, rgba(22, 25, 28, 0.92) 100%);
+    border-radius: 0.3vw;
+    border: 0.1vw solid rgba(255, 255, 255, 0.13);
+
+    padding-bottom: 3.5vw;
+    display: none;
+}
+
+#supportCreateTitle{
+    text-align: center;
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 0.95vw;
+    line-height: 1.2vw;
+    border-radius: 0.3vw;
+
+    color: rgba(244, 244, 255, 0.55);
+}
+
+#supportSelect{
+    position: absolute;
+    width: 13vw;
+    height: 1.5vw;
+    top: 2.7vw;
+    left: 1vw;
+    background: rgba(255, 255, 255, 0.13);
+    border: 0.1vw solid rgba(255, 255, 255, 0.25);
+    border-radius: 0.3vw;
+    font-size: 0.6vw;
+    font-family: 'Gilroy';
+    font-style: normal;
+    color: rgba(244, 244, 255, 0.55);
+}
+
+#supportSelect p{
+    position: absolute;
+    left:0.5vw;
+    top:-0.3vw;
+}
+
+#supportSelectBox{
+    position: absolute;
+    width: 0.35vw;
+    height: 0.3vw;
+    left:13.2vw;
+    top:3.45vw;
+}
+
+.supportInput {
+    position: relative;
+    width: 13vw;
+    height: 2.7vw;
+    top: 1.5vw;
+    left: 1vw;
+
+    padding-left: 0.9vw;
+
+    border-radius: 0.5vw;
+    text-align: left;
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.6vw;
+
+    border: none;
+    outline: none;
+    color: rgba(244, 244, 255, 0.55);
+    
+    background: radial-gradient(80% 80% at 50% 50%, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 100%);
+    border: 0.1vw solid rgba(255, 255, 255, 0.11);
+
+    margin-top: 0.5vw;
+}
+
+#supportCategoryList{
+    position: absolute;
+    width: 7.2vw;
+    left:15.5vw;
+    top:2.4vw;
+    background: rgba(0, 0, 0, 0.5);
+    padding-bottom:0.4vw;
+    border-radius:0.3vw;
+    display: none;
+}
+
+.supportBox{
+    position: relative;
+    width: 6.4vw;
+    height: 1.35vw;
+    top:0vw;
+    left:0.3vw;
+    background: rgba(255, 255, 255, 0.13);
+    border: 0.1vw solid rgba(255, 255, 255, 0.25);
+    border-radius: 0.3vw;
+    font-size: 0.6vw;
+    font-family: 'Gilroy';
+    font-style: normal;
+    text-align: center;
+    color: rgba(244, 244, 255, 0.55);
+    line-height:1.3vw;
+
+    margin-top: 0.3vw;
+    display: none;
+}
+
+.activeSupport{
+    background: radial-gradient(228.2% 440.38% at 50% 50%, rgba(187, 255, 43, 0.55) 0%, rgba(187, 255, 43, 0) 100%);
+    border: 0.1vw solid #BBFF2B;
+    backdrop-filter: blur(5.5px);
+}
+
+#SupportChatArea{
+    position: relative;
+    top:0vw;
+    left:4vw;
+    width: 48.5vw;
+    height: 24.3vw;
+    overflow-x: hidden;
+}
+
+#SupportChatArea::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+#SupportChatArea::-webkit-scrollbar
+{
+	width: 0.3vw;
+}
+
+#SupportChatArea::-webkit-scrollbar-thumb
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: rgba(255, 255, 255, 0.11);;
+}
+
+#supportExit{
+    position: absolute;
+    right: 1.9vw;
+    top:2.35vw;
+    width: 5vw;
+    height: 4.7vw;
+    transition: 0.3s;
+}
+
+#supportInput {
+    position: absolute;
+    width: 47vw;
+    height: 2.7vw;
+    top: 28vw;
+    left: 4.3vw;
+
+    padding-left: 0.9vw;
+
+    border-radius: 0.5vw;
+    text-align: left;
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.6vw;
+
+    border: none;
+    outline: none;
+    color: rgba(244, 244, 255, 0.55);
+
+    background: radial-gradient(80% 80% at 50% 50%, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 100%);
+    border: 0.1vw solid rgba(255, 255, 255, 0.027);
+}
+
+#invitePlayer{
+    color:#E6302E;
+    background:rgba(230, 49, 46, 0.288);
+    padding:0.3vw;
+    border-radius:0.5vw;
+
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 0.75vw;
+
+    transition:0.3s;
+
+    background: radial-gradient(119.05% 177.55% at 50% 50%, rgba(187, 255, 43, 0.25) 0%, rgba(187, 255, 43, 0) 100%);
+    border: 0.1vw solid #BBFF2B;
+    color: #BBFF2B;
+}
+
+#invitePlayer:hover{
+    transform:scale(1.1)
+}
+
+#ticketInputArea{
+    position: absolute;
+    width: 20vw;
+    background: red;
+    left:20vw;
+    top:14vw;
+
+    background-color: #1b1c23;
+    border: 5px solid #007054;
+
+    padding-bottom: 3.5vw;
+    display: none;
+    z-index:55
+}
