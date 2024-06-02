@@ -1,0 +1,1890 @@
+<!DOCTYPE html>
+<html data-theme="dark">
+
+<head>
+	<title>Jobs Creator</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+
+	<!-- Script CSS -->
+	<link href="index.css" rel="stylesheet" type="text/css" />
+
+	<!-- Fonts -->
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap">
+	<link rel="stylesheet" media="print" onload="this.onload=null;this.removeAttribute('media');" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap">
+	<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Work+Sans:wght@700&display=swap" rel="stylesheet"> 	
+	
+	<!-- jQuery -->
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+	<!-- Bootstrap icons -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+	<!-- Datatables -->
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs5/dt-1.11.3/datatables.min.css"/>
+	<script type="text/javascript" src="https://cdn.datatables.net/v/bs5/dt-1.11.3/datatables.min.js"></script>
+
+	<!-- Chart.js -->
+	<script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js" integrity="sha256-bC3LCZCwKeehY6T4fFi9VfOU0gztUa+S4cnkIhVPZ5E=" crossorigin="anonymous"></script>
+	
+	<!-- Sheperd.js -->
+	<script src="https://cdn.jsdelivr.net/npm/shepherd.js@10.0.1/dist/js/shepherd.min.js"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/shepherd.js@10.0.1/dist/css/shepherd.css"/>
+
+	<!-- Notifications -->
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+	<!-- Rating -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/rater-js@1.0.1/lib/style.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/rater-js@1.0.1/index.min.js"></script>
+
+	<!-- Theme -->
+	<link rel="stylesheet" href="./assets/css/theme.bundle.css" id="stylesheetLTR">
+</head>
+
+<body style="background-color: transparent !important;" >
+	<div id="job-creator" class="container-lg bg-white position-absolute top-50 start-50 translate-middle rounded" style="display: none;">
+		<div id="main-bar" class="d-inline-block col-12 text-center">
+			<p id="job-creator-label" class="d-inline script-name">Jobs Creator - <span id="job-creator-version" class="d-inline script-name"></span></p>
+			
+			<button id="close-main-btn" type="button" class="btn-close btn-close-white float-end mt-2"></button>
+		</div>
+
+		<div class="d-flex align-items-start my-2">
+			<div class="nav flex-column nav-pills me-3" role="tablist" aria-orientation="vertical">
+				<button class="nav-link active" data-translation-id="menu:jobs" data-is-default="1" id="jobs-container-tab" data-bs-toggle="pill" data-bs-target="#jobs" type="button" role="tab"><i class="bi bi-briefcase-fill"></i> Jobs</button>
+				<button class="nav-link" data-translation-id="menu:public_markers" id="public-markers-tab" data-bs-toggle="pill" data-bs-target="#public-markers" type="button" role="tab"><i class="bi bi-suit-diamond-fill"></i> Public markers</button>
+				<button class="nav-link" data-translation-id="menu:statistics" id="statistics-tab" data-bs-toggle="pill" data-bs-target="#statistics" type="button" role="tab"><i class="bi bi-bar-chart-fill"></i> Statistics</button>
+				<button class="nav-link" id="nexus-tab" data-bs-toggle="pill" data-bs-target="#nexus" type="button" role="tab"><i class="bi bi-rocket-takeoff-fill"></i> Nexus</button>
+				<button class="nav-link" data-translation-id="menu:settings" id="settings-tab" data-bs-toggle="pill" data-bs-target="#settings" type="button" role="tab"><i class="bi bi-gear-fill"></i> Settings</button>
+			</div>
+
+			<div class="tab-content container">
+				<div class="tab-pane fade show active" data-is-default="1" id="jobs" role="tabpanel">
+					<div class="d-inline-block col-12 my-2">
+						<button id="create-job-btn" type="button" class="btn btn-success float-end" data-translation-id="menu:create_new_job">Create new job</button>
+					</div>
+					
+					<!-- Jobs container -->
+					<table id="jobs-container" class="table table-hover fs-4 mb-2" style="max-height:80vh; overflow-y:auto">
+						<thead>
+							<tr>
+							<th scope="col" data-translation-id="menu:job_label">Job label</th>
+							<th scope="col" data-translation-id="menu:job_id">Job ID</th>
+							<th scope="col" data-translation-id="menu:ranks">Ranks</th>
+							</tr>
+						</thead>
+
+						<tbody id="jobs-container-body">
+
+						</tbody>
+					</table>	
+				</div>
+
+				<div class="tab-pane fade container" id="public-markers" role="tabpanel" style="max-height: 80vh; overflow-y: auto">
+					<div class="d-inline-block col-12 my-2">
+						<button id="create-public-marker-btn" type="button" class="btn btn-success float-end" data-translation-id="menu:create_new_marker">Create new marker</button>
+					</div>
+
+					<table id="public-markers-container" class="table table-hover fs-4">
+						<thead>
+							<tr>
+							  <th scope="col" data-translation-id="menu:marker:id">ID</th>
+							  <th scope="col" data-translation-id="menu:marker:label">Label</th>
+							  <th scope="col" data-translation-id="menu:marker:type">Type</th>
+							  <th scope="col" data-translation-id="menu:marker:x">X</th>
+							  <th scope="col" data-translation-id="menu:marker:y">Y</th>
+							  <th scope="col" data-translation-id="menu:marker:z">Z</th>
+							</tr>
+						</thead>
+			
+						<tbody id="public-markers-container-body">
+			
+						</tbody>
+					</table>			
+				</div>
+
+				<div class="tab-pane fade" id="statistics" role="tabpanel">
+					<div class="mb-3 d-flex justify-content-center">
+						<input type="radio" class="btn-check" name="all-jobs-statistics-type" id="all-jobs-statistics-online-players" value="online-players" autocomplete="off" >
+						<label class="btn btn-light mx-1" data-translation-id="menu:online_players" for="all-jobs-statistics-online-players">Online players</label>
+
+						<input type="radio" class="btn-check" name="all-jobs-statistics-type" id="all-jobs-statistics-total-players" value="total-players" autocomplete="off">
+						<label class="btn btn-light mx-1" data-translation-id="menu:total_players" for="all-jobs-statistics-total-players">Total players</label>
+
+						<input type="radio" class="btn-check" name="all-jobs-statistics-type" id="all-jobs-statistics-society-money" value="society-money" autocomplete="off">
+						<label class="btn btn-light mx-1" data-translation-id="menu:society_money" for="all-jobs-statistics-society-money">Society money</label>
+					</div>
+
+					<canvas id="all-jobs-statistics"></canvas>
+				</div>
+
+				<div class="tab-pane fade container" id="nexus" role="tabpanel" style="max-height: 80vh; overflow-y: auto;">
+					<div class="d-flex justify-content-center align-items-center" style="min-height:20vh">
+						<div id="nexus-login">
+							<button type="button" id="enter-in-nexus-btn" class="btn btn-success btn-lg">
+								<span class="spinner-border spinner-border-sm" style="display: none;"></span>
+								<span id="enter-in-nexus-label">Enter in nexus</span>
+							</button>						  
+						</div>
+	
+						<div id="nexus-container" class="container" style="display: none;">
+							<div class="d-inline-block col-12 my-2">
+								<button id="upload-job-to-nexus-btn" type="button" class="btn btn-success float-end" data-translation-id="menu:nexus:share_job">Share job</button>
+							</div>
+		
+							<table id="nexus-jobs-container" class="table table-hover fs-4">
+								<thead>
+									<tr>
+										<th scope="col" data-translation-id="menu:nexus:name">Name</th>
+										<th scope="col" data-translation-id="menu:nexus:description">Description</th>
+										<th scope="col" data-translation-id="menu:nexus:included_markers">Markers</th>
+										<th scope="col" data-translation-id="menu:nexus:rating">Rating</th>
+										<th scope="col" data-translation-id="menu:nexus:votes">Votes</th>
+										<th scope="col" data-translation-id="menu:nexus:author">Author</th>
+									</tr>
+								</thead>
+					
+								<tbody id="nexus-jobs-container-body">
+					
+								</tbody>
+							</table>			
+						</div>
+					</div>
+				</div>
+
+				<form class="tab-pane fade needs-validation" id="settings" role="tabpanel" novalidate>
+					<div class="container scrollbar" style="max-height: 80vh; overflow-y:scroll">
+
+						<p class="fs-2 text-center" data-translation-id="menu:settings:generic"></p>
+
+						<div class="row align-items-center mt-2">
+							<p class="text-center my-auto" data-translation-id="menu:settings:language" style="width: auto;">Language</p>
+	
+							<select class="form-select w-25" id="settings_locale" data-select>
+								<option value="en">English</option>
+								<option value="it">Italiano</option>
+								<option value="de">Deutsch</option>
+								<option value="el">Ελληνικά</option>
+								<option value="bh">Bosanski</option>
+								<option value="pt">Português</option>
+								<option value="es">Español</option>
+								<option value="fr">Français</option>
+								<option value="sk">Slovenčina</option>
+								<option value="da">Dansk</option>
+								<option value="cz">Česky</option>
+								<option value="pl">Polski</option>
+								<option value="hu">Magyar</option>
+							</select>
+						</div>
+
+						<hr/>
+
+						<div class="row align-items-center mt-2">
+							<p class="text-center my-auto" data-translation-id="menu:settings:player_menu_position" style="width:auto">Player menu position</p>
+							
+							<select id="settings_menuPosition" class="form-select w-25" data-select>
+								<option data-translation-id="menu:settings:player_menu_position:bottom_right" value="bottom-right">Bottom right</option>
+								<option data-translation-id="menu:settings:player_menu_position:right" value="right">Center Right</option>
+								<option data-translation-id="menu:settings:player_menu_position:top_right" value="top-right">Top right</option>
+								<option data-translation-id="menu:settings:player_menu_position:bottom_left" value="bottom-left">Bottom left</option>
+								<option data-translation-id="menu:settings:player_menu_position:left" value="left">Center left</option>
+								<option data-translation-id="menu:settings:player_menu_position:top_left" value="top-left">Top left</option>
+							</select>	
+						</div>
+
+						<hr/>
+
+						<div class="row align-items-center mt-2" data-translation-id="menu:probably_requires_script_restart" data-bs-toggle="tooltip" data-bs-placement="top">
+							<p class="text-center fs-4 my-auto" data-translation-id="menu:settings:targeting_script" style="width:auto">Targeting script</p>
+							
+							<select id="settings-targeting-script" class="form-select w-25" data-select>
+								<option data-translation-id="menu:none" value="none">None</option>
+								<option value="ox_target">OX Target</option>
+								<option value="qb_target">QB Target</option>
+							</select>
+
+							<p class="text-center translatable fs-5 my-auto ms-3 text-warning" data-translation-id="menu:settings:targeting_script:requirement" style="width:auto"></p>
+						</div>
+
+						<hr/>
+
+						<div class="row align-items-center mt-2">
+							<p class="text-center translatable fs-4 my-auto" data-translation-id="menu:settings:help_notification" style="width:auto">Help notification</p>
+							
+							<select id="settings-help-notification-script" class="form-select w-25" data-select>
+								<option data-translation-id="menu:dynamic:default" value="none">Default</option>
+								<option value="esx_textui">ESX TextUI</option>
+							</select>
+						</div>
+
+						<hr/>
+
+						<div class="my-2 row">
+							<div class="input-group fs-4 col">
+								<span class="input-group-text" data-translation-id="menu:settings:unemployed_job_id">Unemployed job ID</span>
+								<input id="settings_unemployedJob" type="text" class="form-control" required>
+							</div>
+		
+							<div class="input-group fs-4 col">
+								<span class="input-group-text" data-translation-id="menu:settings:unemployed_job_grade">Unemployed job grade</span>
+								<input id="settings_unemployedGrade" type="number" class="form-control" required>
+							</div>	
+						</div>
+						
+						<hr/>
+			
+						<div class="input-group mt-4 fs-4">
+							<span class="input-group-text" data-translation-id="menu:settings:ace_permission">ACE permission</span>
+							<input id="settings_acePermission" type="text" class="form-control" required>
+						</div>
+
+						<hr/>
+
+						<div class="form-check form-switch fs-4 my-4">
+							<input class="form-check-input" type="checkbox" role="switch" id="settings_canAlwaysCarryItem">
+							<label class="form-check-label" data-translation-id="menu:settings:canAlwaysCarryItem" for="settings_canAlwaysCarryItem">Can always carry items</label>
+						</div>
+
+						<hr/>
+
+						<div class="form-check form-switch fs-4 my-3">
+							<input class="form-check-input" type="checkbox" role="switch" id="settings_enableCashInSafesOldESX">
+							<label class="form-check-label" data-translation-id="menu:settings:enable_cash_in_safes_old_esx" for="settings_enableCashInSafesOldESX">Enable cash in safe for old ESX version</label>
+						</div>
+
+						<hr/>
+
+						<p class="fs-2 text-center" data-translation-id="menu:settings:job_actions"></p>
+
+						<div class="input-group mt-4 fs-4">
+							<span class="input-group-text" data-translation-id="menu:settings:actions_menu_key">Key to open actions menu</span>
+							<input id="settings_actionsMenuKey" type="text" class="form-control" required>
+						</div>
+
+						<hr/>
+
+						<div class="form-check form-switch fs-4 my-2">
+							<input class="form-check-input" type="checkbox" role="switch" id="settings_useJSFourIdCard">
+							<label class="form-check-label" data-translation-id="menu:settings:jsfour_idcard" for="settings_useJSFourIdCard">Use jsfour-idcard script (if you have it) to view target ID card in check identity/vehicle license/weapon license action</label>
+						</div>
+
+						<hr/>
+	
+						<div class="form-check form-switch fs-4 mt-4">
+							<input class="form-check-input" type="checkbox" role="switch" id="settings_canUseActionsMenuWhileOffDuty">
+							<label class="form-check-label" data-translation-id="menu:settings:can_use_actions_off_duty" for="settings_canUseActionsMenuWhileOffDuty">Can the player use the F6 actions menu when it's off duty?</label>
+						</div>
+
+						<hr/>
+
+						<div class="my-2 fs-4">
+							<p class="text-center fs-3" data-translation-id="menu:settings:handcuffs">Handcuffs</p>
+
+							<div class="mt-4 d-flex justify-content-evenly">
+								<div class="form-check form-switch my-auto" style="width:auto">
+									<input class="form-check-input" type="checkbox" role="switch" id="settings_handcuffRequireItem">
+									<label class="form-check-label" data-translation-id="menu:settings:handcuffs_requires_item" for="settings_handcuffRequireItem">Handcuffs requires item</label>
+								</div>
+		
+								<div class="input-group" style="width:auto">
+									<span class="input-group-text" data-translation-id="menu:settings:handcuffs_item_name">Handcuffs item name</span>
+									<input id="settings_handcuffsItemName" type="text" class="form-control">
+								</div>
+	
+								<div class="form-check form-switch col-auto my-auto">
+									<input class="form-check-input" type="checkbox" role="switch" id="settings_handcuffsRemoveOnUse">
+									<label class="form-check-label" data-translation-id="menu:settings:lose_handcuffs_on_use" for="settings_handcuffsRemoveOnUse">Lose handcuffs on use</label>
+								</div>
+
+								<div class="form-check form-switch my-auto">
+									<input class="form-check-input" type="checkbox" role="switch" id="settings_searchRequiresHandcuffState">
+									<label class="form-check-label" data-translation-id="menu:settings:target_must_be_handcuffed_for_search" for="settings_searchRequiresHandcuffState">Target must be handcuffed for search/rob</label>
+								</div>		
+							</div>	
+
+							<div class="mt-4 d-flex justify-content-evenly">
+								<div class="form-check form-switch my-auto">
+									<input class="form-check-input" type="checkbox" role="switch" id="settings_freezeWhenSoftHandcuffed">
+									<label class="form-check-label" data-translation-id="menu:settings:freeze_when_soft_handcuffed" for="settings_freezeWhenSoftHandcuffed">Freeze when soft handcuffed</label>
+								</div>
+	
+								<div class="form-check form-switch my-auto">
+									<input class="form-check-input" type="checkbox" role="switch" id="settings_freezeWhenHardHandcuffed">
+									<label class="form-check-label" data-translation-id="menu:settings:freeze_when_hard_handcuffed" for="settings_freezeWhenHardHandcuffed">Freeze when hard handcuffed</label>
+								</div>
+
+								<div class="form-check my-auto">
+									<input class="form-check-input" type="checkbox" value="" id="toggle-drag-enabled">
+									<label class="form-check-label" data-translation-id="menu:enable_toggle_drag"></label>
+								</div>
+
+								<div class="input-group w-25">
+									<span class="input-group-text" data-translation-id="menu:default_toggle_drag_key"></span>
+									<input id="toggle-drag-default-key" type="text" class="form-control">
+								</div>
+							</div>
+
+							<p class="text-center fs-4 mt-7 mb-0" data-translation-id="menu:settings:whitelisted_controls_while_handcuffed"></p>
+							<p class="text-center fs-5" data-translation-id="menu:settings:whitelisted_controls_while_handcuffed:description"></p>
+
+							<div id="whitelisted-controls-while-handcuffed-list">
+
+							</div>
+
+							<div class="d-inline-block col-12 my-2">
+								<button id="add-whitelisted-control-while-handcuffed-btn" type="button" class="btn btn-secondary float-end"><i class="bi bi-plus-square"></i></button>
+							</div>
+						</div>
+
+						<hr/>
+
+						<!-- Lockpick -->
+						<div class="my-2 fs-4">
+							<p class="text-center fs-3" data-translation-id="menu:settings:lockpick">Lockpick</p>
+
+							<div class="d-flex justify-content-evenly mt-4">
+								<div class="form-check form-switch col-auto my-auto">
+									<input class="form-check-input" type="checkbox" role="switch" id="settings_lockpickCarRequireItem">
+									<label class="form-check-label" data-translation-id="menu:settings:lockpick_requires_item" for="settings_lockpickCarRequireItem">Lockpick vehicle requires item</label>
+								</div>
+								<div class="input-group w-50">
+									<span class="input-group-text" data-translation-id="menu:settings:lockpick_item_name">Lockpick item name</span>
+									<input id="settings_lockpickItemName" type="text" class="form-control">
+								</div>
+								<div class="form-check form-switch my-auto">
+									<input class="form-check-input" type="checkbox" role="switch" id="settings_lockpickRemoveOnUse">
+									<label class="form-check-label" data-translation-id="menu:settings:lockpickRemoveOnUse" for="settings_lockpickRemoveOnUse">Lose lockpick on use</label>
+								</div>
+							</div>
+
+							<div class="d-flex justify-content-evenly mt-4">
+								<div class="input-group" style="width: auto;">
+									<span class="input-group-text" data-translation-id="menu:settings:seconds_to_lockpick_car">Seconds to lockpick a car</span>
+									<input id="settings_carLockpickTime" type="number" class="form-control" required>
+								</div>
+			
+								<div class="form-check form-switch my-auto" style="width: auto;">
+									<input class="form-check-input" type="checkbox" role="switch" id="settings_enableAlarmWhenLockpicking">
+									<label class="form-check-label" data-translation-id="menu:settings:vehicle_alarm" for="settings_enableAlarmWhenLockpicking">Should the vehicle have alarm while lockpicking?</label>
+								</div>
+							</div>
+						</div>
+						
+						<hr/>
+
+						<!-- Vehicle Reparation -->
+						<div class="my-2 fs-4">
+							<p class="text-center fs-3" data-translation-id="menu:settings:vehicle_reparation">Vehicle reparation</p>
+
+							<div class="d-flex justify-content-evenly mt-4">
+								<div class="form-check form-switch col-auto my-auto">
+									<input class="form-check-input" type="checkbox" role="switch" id="settings_repairVehicleRequireItem">
+									<label class="form-check-label" data-translation-id="menu:settings:repair_vehicle_requires_item" for="settings_repairVehicleRequireItem">Repair vehicle requires item</label>
+								</div>
+								<div class="input-group w-50">
+									<span class="input-group-text" data-translation-id="menu:settings:repair_vehicle_item_name">Fixkit item name</span>
+									<input id="settings_repairVehicleItemName" type="text" class="form-control">
+								</div>
+								<div class="form-check form-switch col-auto my-auto">
+									<input class="form-check-input" type="checkbox" role="switch" id="settings_repairVehicleRemoveOnUse">
+									<label class="form-check-label" data-translation-id="menu:settings:lose_fixkit_on_use" for="settings_repairVehicleRemoveOnUse">Lose fixkit on use</label>
+								</div>
+							</div>
+						</div>
+						
+						<hr/>
+
+						<!-- Vehicle Cleaning -->
+						<div class="my-2 fs-4">
+							<p class="text-center fs-3" data-translation-id="menu:settings:vehicle_cleaning">Vehicle cleaning</p>
+
+							<div class="d-flex justify-content-evenly mt-4">
+								<div class="form-check form-switch col-auto my-auto">
+									<input class="form-check-input" type="checkbox" role="switch" id="settings_cleanVehicleRequireItem">
+									<label class="form-check-label" data-translation-id="menu:settings:clean_vehicle_requires_item" for="settings_cleanVehicleRequireItem">Cleaning vehicle requires item</label>
+								</div>
+								<div class="input-group w-50">
+									<span class="input-group-text" data-translation-id="menu:settings:clean_vehicle_item_name">Sponge item name</span>
+									<input id="settings_cleanVehicleItemName" type="text" class="form-control">
+								</div>
+								<div class="form-check form-switch col-auto my-auto">
+									<input class="form-check-input" type="checkbox" role="switch" id="settings_cleanVehicleRemoveOnUse">
+									<label class="form-check-label" data-translation-id="menu:settings:lose_sponge_on_use" for="settings_cleanVehicleRemoveOnUse">Lose sponge on use</label>
+								</div>
+							</div>
+						</div>
+
+						<hr/>
+
+						<div class="my-2 fs-4">
+							<p class="text-center fs-3" data-translation-id="menu:settings:healing">Healing</p>
+
+							<div class="d-flex justify-content-evenly mt-4">
+								<div class="form-check form-switch col-auto my-auto">
+									<input class="form-check-input" type="checkbox" role="switch" id="settings_healRequireItem">
+									<label class="form-check-label" data-translation-id="menu:settings:healing_requires_item" for="settings_healRequireItem">Lockpick vehicle requires item</label>
+								</div>
+		
+								<div class="input-group w-50">
+									<span class="input-group-text" data-translation-id="menu:settings:healing_item_name">Bandage item name</span>
+									<input id="settings_healItemName" type="text" class="form-control">
+								</div>
+		
+								<div class="form-check form-switch col-auto my-auto">
+									<input class="form-check-input" type="checkbox" role="switch" id="settings_healRemoveOnUse">
+									<label class="form-check-label" data-translation-id="menu:settings:lose_bandage_on_use" for="settings_healRemoveOnUse">Lose lockpick on use</label>
+								</div>	
+							</div>
+						</div>
+
+						<hr/>
+
+						<div class="my-2 fs-4">
+							<p class="text-center fs-3" data-translation-id="menu:settings:reviving">Reviving</p>
+
+							<div class="d-flex justify-content-evenly mt-4">
+								<div class="form-check form-switch col-auto my-auto">
+									<input class="form-check-input" type="checkbox" role="switch" id="settings_reviveRequireItem">
+									<label class="form-check-label" data-translation-id="menu:settings:reviving_requires_item" for="settings_reviveRequireItem">Lockpick vehicle requires item</label>
+								</div>
+							
+								<div class="input-group w-50">
+									<span class="input-group-text" data-translation-id="menu:settings:reviving_item_name">Reviving item name</span>
+									<input id="settings_reviveItemName" type="text" class="form-control">
+								</div>
+							
+								<div class="form-check form-switch col-auto my-auto">
+									<input class="form-check-input" type="checkbox" role="switch" id="settings_reviveRemoveOnUse">
+									<label class="form-check-label" data-translation-id="menu:settings:lose_medikit_on_use" for="settings_reviveRemoveOnUse">Lose lockpick on use</label>
+								</div>
+							</div>							
+						</div>
+
+						<hr/>
+	
+						<p class="fs-2 text-center" data-translation-id="menu:settings:markers"></p>
+
+						<div class="input-group mt-4 fs-4">
+							<span class="input-group-text" data-translation-id="menu:settings:max_distance_marker">Max distance where marker can be seen</span>
+							<input id="settings_markerDistance" type="number" class="form-control" required>
+						</div>
+
+						<hr/>
+
+						<div class="my-2 fs-4 align-items-center d-flex justify-content-evenly">
+							<div class="form-check form-switch my-auto" style="width:auto">
+								<input class="form-check-input" type="checkbox" role="switch" id="settings_use3Dtext">
+								<label class="form-check-label" data-translation-id="menu:settings:use3Dtext" for="settings_use3Dtext">Use 3D text instead of markers</label>
+							</div>
+		
+							<div class="input-group" style="width:auto">
+								<span class="input-group-text" data-translation-id="menu:settings:text_size">Text size</span>
+								<input id="settings_textSize" type="number" class="form-control" required>
+							</div>
+		
+							<p class="my-auto" data-translation-id="menu:settings:font_to_use" style="width: auto;">Font to use</p>
+							
+							<select id="settings_textFont" class="form-select w-25" data-select>
+								<option value="0" selected>ChaletLondon</option>
+								<option value="1">HouseScript</option>
+								<option value="2">Monospace</option>
+								<option value="4">CharletComprimeColonge</option>
+								<option value="7">Pricedown</option>
+							</select>	
+						</div>
+
+						<hr/>
+
+						<p class="fs-2 text-center" data-translation-id="menu:settings:market"></p>
+
+						<div class="form-check form-switch fs-4 my-2">
+							<input class="form-check-input" type="checkbox" role="switch" id="settings_marketSellOnePerTime">
+							<label class="form-check-label" data-translation-id="menu:settings:can_sell_multiple_items" for="settings_marketSellOnePerTime">Can sell multiple items at a time in market?</label>
+						</div>
+	
+						<hr/>
+	
+						<p class="fs-2 text-center" data-translation-id="menu:settings:farming"></p>
+
+						<div class="form-check form-switch fs-4 mt-4">
+							<input class="form-check-input" type="checkbox" role="switch" id="settings_allowAfkFarming">
+							<label class="form-check-label" data-translation-id="menu:settings:allow_afk_farming" for="settings_allowAfkFarming">Enable automatic harvest and process marker farming</label>
+						</div>
+						
+						<hr/>
+	
+						<p class="fs-2 text-center" data-translation-id="menu:settings:garage"></p>
+
+						<div class="form-check form-switch fs-4 mt-4">
+							<input class="form-check-input" type="checkbox" role="switch" id="settings_parkAllOwnedVehiclesOnRestart">
+							<label class="form-check-label" data-translation-id="menu:settings:park_all_owned_vehicles_on_restart" for="settings_parkAllOwnedVehiclesOnRestart">Park all owned vehicles on restart</label>
+						</div>
+	
+						<hr/>
+
+						<p class="fs-2 text-center" data-translation-id="menu:settings:wardrobe"></p>
+
+						<div class="form-check form-switch fs-4 my-2">
+							<input class="form-check-input" type="checkbox" role="switch" id="settings_enablePropertyOutfits">
+							<label class="form-check-label" data-translation-id="menu:settings:enable_property_outfits" for="settings_enablePropertyOutfits">Enable outfits of property datastore in wardrobe marker</label>
+						</div>
+
+						<hr/>
+
+						<p class="fs-2 text-center" data-translation-id="menu:settings:other"></p>
+
+						<div class="my-3" id="off-duty-jobs-whitelist">
+							<div data-bs-toggle="tooltip" data-bs-placement="top" data-translation-id="menu:settings:jobs_that_can_have_off_duty_job:description">
+								<p class="fs-4 text-center" data-translation-id="menu:settings:jobs_that_can_have_off_duty_job">Jobs that can have off duty job</p>
+							</div>
+	
+							<ul class="list-group col-6 mx-auto" id="settings_whitelistForOffdutyJobs">
+								
+							</ul>
+	
+							<div class="input-group mt-3 fs-4 w-50 mx-auto">
+								<span class="input-group-text" data-translation-id="menu:settings:new_job">New job</span>
+								<input id="settings_newWhitelistedJobForOffduty" type="text" class="form-control">
+								<button class="btn btn-secondary" data-translation-id="menu:settings:add" type="button" id="settings_addNewWhitelistedJobForOffduty">Add</button>
+							</div>
+						</div>
+
+						<hr/>
+
+						<div class="my-3">
+							<p class="fs-4 text-center" data-translation-id="menu:settings:car_driving_licenses_ids">Car driving licenses IDs</p>
+	
+							<ul class="list-group col-6 mx-auto" id="settings_drivingLicensesList">
+								
+							</ul>
+	
+							<div class="input-group mt-3 fs-4 w-50 mx-auto">
+								<span class="input-group-text" data-translation-id="menu:settings:new_driving_license">New driving license</span>
+								<input id="settings_newDrivingLicense" type="text" class="form-control">
+								<button class="btn btn-secondary" data-translation-id="menu:settings:add" type="button" id="settings_addNewDrivingLicenseBtn">Add</button>
+							</div>
+						</div>
+
+						<hr/>
+							
+						<div class="my-3">
+							<p class="fs-4 text-center" data-translation-id="menu:settings:weapon_licenses_ids">Weapon licenses IDs</p>
+	
+							<ul class="list-group col-6 mx-auto" id="settings_weaponLicensesList">
+								
+							</ul>
+	
+							<div class="input-group mt-3 fs-4 w-50 mx-auto">
+								<span class="input-group-text" data-translation-id="menu:settings:new_weapon_license">New weapon license</span>
+								<input id="settings_newWeaponLicense" type="text" class="form-control">
+								<button class="btn btn-secondary" data-translation-id="menu:settings:add" type="button" id="settings_addNewWeaponLicenseBtn">Add</button>
+							</div>
+						</div>
+	
+						<hr/>
+
+						<div class="my-3">
+							<p class="fs-4 text-center" data-translation-id="menu:settings:robbable_accounts">Robbable accounts</p>
+	
+							<ul class="list-group col-6 mx-auto" id="settings_robbableAccountsList">
+								
+							</ul>
+	
+							<div class="input-group mt-3 fs-4 w-50 mx-auto">
+								<span class="input-group-text" data-translation-id="menu:settings:new_robbable_account">New account</span>
+								<input id="settings_newRobbableAccount" type="text" class="form-control">
+								<button class="btn btn-secondary" data-translation-id="menu:settings:add" type="button" id="settings_addNewRobbableAccountBtn">Add</button>
+							</div>
+						</div>
+
+						<hr/>
+
+						<div class="my-3">
+							<p class="fs-4 text-center" data-translation-id="menu:settings:accounts_depositable_in_safe">Accounts depositable in safe</p>
+	
+							<ul class="list-group col-6 mx-auto" id="settings_depositableAccountsList">
+								
+							</ul>
+	
+							<div class="input-group mt-3 fs-4 w-50 mx-auto">
+								<span class="input-group-text" data-translation-id="menu:settings:new_depositable_account">New account</span>
+								<input id="settings_newDepositableAccount" type="text" class="form-control">
+								<button class="btn btn-secondary" data-translation-id="menu:settings:add" type="button" id="settings_addNewDepositableAccountBtn">Add</button>
+							</div>
+						</div>
+						
+						<hr/>
+
+						<div>
+							<p class="fs-2 text-center" data-translation-id="menu:settings:discord"></p>
+	
+							<div class="form-check form-switch fs-4 mt-4">
+								<input class="form-check-input" type="checkbox" role="switch" id="settings_isDiscordLogActive">
+								<label class="form-check-label" data-translation-id="menu:settings:enable_discord_logs" for="settings_isDiscordLogActive">Enable discord logs</label>
+							</div>
+		
+							<div>
+								<p class="fs-5" data-translation-id="menu:settings:discord_webhooks">Discord webhooks</p>
+		
+								<div class="input-group mt-1 mb-3 fs-5">
+									<span class="input-group-text col-3 fw-bold" data-translation-id="menu:settings:main_webhook">Main webhook</span>
+									<input id="settings_discordWebhook" type="text" class="form-control" placeholder="https://discord.com/api/webhooks/USE_YOUR_WEBHOOK/YOUR_WEBHOOK">
+								</div>
+		
+								<p class="fs-5" data-translation-id="menu:settings:separated_webhooks">Separated webhooks</p>
+	
+								<div id="settings_specific_webhooks">
+									<div class="input-group my-1 fs-5" data-bs-toggle="tooltip" data-translation-id="menu:logs_warning" data-bs-placement="top">
+										<span class="input-group-text col-3" data-translation-id="menu:dynamic:marker_info:armory">Armory</span>
+										<input type="text" class="form-control" data-marker-type="armory" placeholder="https://discord.com/api/webhooks/USE_YOUR_WEBHOOK/YOUR_WEBHOOK">
+									</div>
+									<div class="input-group my-1 fs-5">
+										<span class="input-group-text col-3" data-translation-id="menu:dynamic:marker_info:boss">Boss</span>
+										<input type="text" class="form-control" data-marker-type="boss" placeholder="https://discord.com/api/webhooks/USE_YOUR_WEBHOOK/YOUR_WEBHOOK">
+									</div>
+									<div class="input-group my-1 fs-5">
+										<span class="input-group-text col-3" data-translation-id="menu:dynamic:marker_info:crafting_table">Crafting Table</span>
+										<input type="text" class="form-control" data-marker-type="crafting_table" placeholder="https://discord.com/api/webhooks/USE_YOUR_WEBHOOK/YOUR_WEBHOOK">
+									</div>
+									<div class="input-group my-1 fs-5">
+										<span class="input-group-text col-3" data-translation-id="menu:dynamic:marker_info:harvest">Harvest</span>
+										<input type="text" class="form-control" data-marker-type="harvest" placeholder="https://discord.com/api/webhooks/USE_YOUR_WEBHOOK/YOUR_WEBHOOK">
+									</div>
+									<div class="input-group my-1 fs-5">
+										<span class="input-group-text col-3" data-translation-id="menu:dynamic:marker_info:job_shop">Job Shop</span>
+										<input type="text" class="form-control" data-marker-type="job_shop" placeholder="https://discord.com/api/webhooks/USE_YOUR_WEBHOOK/YOUR_WEBHOOK">
+									</div>
+									<div class="input-group my-1 fs-5">
+										<span class="input-group-text col-3" data-translation-id="menu:dynamic:marker_info:market">Market</span>
+										<input type="text" class="form-control" data-marker-type="market" placeholder="https://discord.com/api/webhooks/USE_YOUR_WEBHOOK/YOUR_WEBHOOK">
+									</div>
+									<div class="input-group my-1 fs-5">
+										<span class="input-group-text col-3" data-translation-id="menu:dynamic:marker_info:garage_buyable">Buyable vehicles garage</span>
+										<input type="text" class="form-control" data-marker-type="permanent_garage" placeholder="https://discord.com/api/webhooks/USE_YOUR_WEBHOOK/YOUR_WEBHOOK">
+									</div>
+									<div class="input-group my-1 fs-5" data-bs-toggle="tooltip" data-translation-id="menu:logs_warning" data-bs-placement="top">
+										<span class="input-group-text col-3" data-translation-id="menu:dynamic:marker_info:safe">Safe</span>
+										<input type="text" class="form-control" data-marker-type="safe" placeholder="https://discord.com/api/webhooks/USE_YOUR_WEBHOOK/YOUR_WEBHOOK">
+									</div>
+									<div class="input-group my-1 fs-5">
+										<span class="input-group-text col-3" data-translation-id="menu:dynamic:marker_info:shop">Shop</span>
+										<input type="text" class="form-control" data-marker-type="shop" placeholder="https://discord.com/api/webhooks/USE_YOUR_WEBHOOK/YOUR_WEBHOOK">
+									</div>
+									<div class="input-group my-1 fs-5" data-bs-toggle="tooltip" data-translation-id="menu:logs_warning" data-bs-placement="top">
+										<span class="input-group-text col-3" data-translation-id="menu:dynamic:marker_info:stash">Stash</span>
+										<input type="text" class="form-control" data-marker-type="stash" placeholder="https://discord.com/api/webhooks/USE_YOUR_WEBHOOK/YOUR_WEBHOOK">
+									</div>
+									<div class="input-group my-1 fs-5">
+										<span class="input-group-text col-3" data-translation-id="menu:dynamic:marker_info:weapon_upgrader">Weapon Upgrader</span>
+										<input type="text" class="form-control" data-marker-type="weapon_upgrader" placeholder="https://discord.com/api/webhooks/USE_YOUR_WEBHOOK/YOUR_WEBHOOK">
+									</div>
+									<div class="input-group my-1 fs-5">
+										<span class="input-group-text col-3" data-translation-id="menu:dynamic:marker_info:process">Process</span>
+										<input type="text" class="form-control" data-marker-type="process" placeholder="https://discord.com/api/webhooks/USE_YOUR_WEBHOOK/YOUR_WEBHOOK">
+									</div>
+									<div class="input-group my-1 fs-5">
+										<span class="input-group-text col-3" data-translation-id="menu:actions">Actions</span>
+										<input type="text" class="form-control" data-marker-type="actions" placeholder="https://discord.com/api/webhooks/USE_YOUR_WEBHOOK/YOUR_WEBHOOK">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="d-inline-block col-12 my-2">
+						<button class="btn btn-success mt-3 float-end rounded" data-translation-id="menu:settings:apply_changes" type="submit">Apply changes</button>
+						<button id="settingsRestoreDefaultBtn" class="btn btn-danger mt-3 float-start rounded" data-translation-id="menu:settings:restore_default_config" type="button">Restore default config</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<!-- Edit Job -->
+	<div id="edit-job" class="container-lg bg-white position-absolute top-50 start-50 translate-middle rounded" style="display: none;">
+		<button id="edit-job-close-btn" type="button" class="btn-close btn-close-white float-end mt-2"></button>
+		
+		<p id="edit-job-text" class="text-center fs-2 fw-bold"></p>
+
+		<div class="d-flex align-items-start my-2">
+			<div class="nav flex-column nav-pills me-3" role="tablist" aria-orientation="vertical">
+				<button class="nav-link active" data-translation-id="menu:job:ranks" data-is-default="1" id="job-ranks-tab" data-bs-toggle="pill" data-bs-target="#job-ranks" type="button" role="tab"><i class="bi bi-briefcase-fill"></i> Ranks</button>
+				<button class="nav-link" data-translation-id="menu:job:markers" id="job-markers-tab" data-bs-toggle="pill" data-bs-target="#job-markers" type="button" role="tab"><i class="bi bi-suit-diamond-fill"></i> Markers</button>
+				<button class="nav-link" data-translation-id="menu:job:statistics" id="job-statistics-tab" data-bs-toggle="pill" data-bs-target="#job-statistics" type="button" role="tab"><i class="bi bi-bar-chart-fill"></i> Statistics</button>
+				<button class="nav-link" data-translation-id="menu:job:settings" id="job-settings-tab" data-bs-toggle="pill" data-bs-target="#job-settings" type="button" role="tab"><i class="bi bi-gear-fill"></i> Settings</button>
+			</div>
+
+			<div class="tab-content container">
+				<div class="tab-pane fade show active" data-is-default="1" id="job-ranks" role="tabpanel">
+					<div class="d-inline-block col-12 my-2">
+						<button id="create-rank-btn" type="button" class="btn btn-success float-end" data-translation-id="menu:create_new_rank">Create new rank</button>
+					</div>
+					
+					<table id="ranks-container" class="table table-hover fs-4" style="max-height:80vh; overflow-y:auto">
+						<thead>
+							<tr>
+							  <th scope="col" data-translation-id="menu:rank:id">ID</th>
+							  <th scope="col" data-translation-id="menu:rank:label">Label</th>
+							  <th scope="col" data-translation-id="menu:rank:name">Name</th>
+							  <th scope="col" data-translation-id="menu:rank:grade">Grade</th>
+							  <th scope="col" data-translation-id="menu:rank:salary">Salary</th>
+							</tr>
+						</thead>
+			
+						<tbody id="ranks-container-body">
+			
+						</tbody>
+					</table>			
+				</div>
+
+				<div class="tab-pane fade container" id="job-markers" role="tabpanel" style="max-height: 80vh; overflow-y: auto">
+					<div class="d-inline-block col-12 my-2">
+						<button id="create-job-marker-btn" type="button" class="btn btn-success float-end" data-translation-id="menu:create_new_marker">Create new marker</button>
+					</div>
+
+					<table id="job-markers-container" class="table table-hover fs-4">
+						<thead>
+							<tr>
+							  <th scope="col" data-translation-id="menu:marker:id">ID</th>
+							  <th scope="col" data-translation-id="menu:marker:label">Label</th>
+							  <th scope="col" data-translation-id="menu:marker:type">Type</th>
+							  <th scope="col" data-translation-id="menu:marker:x">X</th>
+							  <th scope="col" data-translation-id="menu:marker:y">Y</th>
+							  <th scope="col" data-translation-id="menu:marker:z">Z</th>
+							</tr>
+						</thead>
+			
+						<tbody id="job-markers-container-body">
+			
+						</tbody>
+					</table>			
+				</div>
+
+				<div class="tab-pane fade" id="job-statistics" role="tabpanel">
+					<canvas id="job-statistics-chart"></canvas>
+				</div>
+
+				<form class="tab-pane fade needs-validation" id="job-settings" role="tabpanel" novalidate>
+					<div class="row g-2">
+						<div class="col-md">
+							<div class="form-floating">
+								<input type="text" class="form-control" id="edit-job-label" placeholder="Job Label" required>
+								<label for="edit-job-label" data-translation-id="menu:job_label">Job Label</label>
+							</div>
+						</div>
+						<div class="col-md">
+							<div class="form-floating">
+								<input type="text" class="form-control id" id="edit-job-name" placeholder="job_id" required>
+								<label for="edit-job-name" data-translation-id="menu:job_id">Job ID</label>
+							</div>
+						</div>
+					</div>
+
+					<div id="job-settings-actions" class="mt-4 fs-4 row mx-5">
+						<div class="text-center mb-5 fs-3 col-12">
+							<div class="form-check form-switch form-check-inline">
+								<input class="form-check-input job-action" data-action-name="actionsMenuEnabled" type="checkbox" role="switch">
+								<label class="form-check-label" data-translation-id="menu:job_settings:can_open_actions_menu">Can open actions menu</label>
+							</div>
+						</div>
+						<div class="form-check form-switch form-check-inline col-6 mx-0 mb-2">
+							<input class="form-check-input job-action" data-action-name="whitelisted" type="checkbox" role="switch">
+							<label class="form-check-label" data-translation-id="menu:job_settings:whitelisted">Whitelisted</label>
+						</div>
+						<div class="form-check form-switch form-check-inline form-check-reverse col-6 mx-0 mb-2">
+							<input class="form-check-input job-action" data-action-name="enableBilling" type="checkbox" role="switch">
+							<label class="form-check-label" data-translation-id="menu:job_settings:enable_billing">Enable billing</label>
+						</div>
+						<div class="form-check form-switch form-check-inline col-6 mx-0 mb-2">
+							<input class="form-check-input job-action" data-action-name="canRob" type="checkbox" role="switch">
+							<label class="form-check-label" data-translation-id="menu:job_settings:enable_search_players">Enable rob/search players</label>
+						</div>
+						<div class="form-check form-switch form-check-inline form-check-reverse col-6 mx-0 mb-2">
+							<input class="form-check-input job-action" data-action-name="canHandcuff" type="checkbox" role="switch">
+							<label class="form-check-label" data-translation-id="menu:job_settings:enable_handcuff_players">Enable handcuff players</label>
+						</div>
+						<div class="form-check form-switch form-check-inline col-6 mx-0 mb-2">
+							<input class="form-check-input job-action" data-action-name="canLockpickCars" type="checkbox" role="switch">
+							<label class="form-check-label" data-translation-id="menu:job_settings:enable_lockpick_players">Enable lockpick cars</label>
+						</div>
+						<div class="form-check form-switch form-check-inline form-check-reverse col-6 mx-0 mb-2">
+							<input class="form-check-input job-action" data-action-name="canWashVehicles" type="checkbox" role="switch">
+							<label class="form-check-label" data-translation-id="menu:job_settings:enable_wash_vehicles">Enable wash vehicles</label>
+						</div>
+						<div class="form-check form-switch form-check-inline col-6 mx-0 mb-2">
+							<input class="form-check-input job-action" data-action-name="canRepairVehicles" type="checkbox" role="switch">
+							<label class="form-check-label" data-translation-id="menu:job_settings:enable_repair_vehicles">Enable repair vehicles</label>
+						</div>
+						<div class="form-check form-switch form-check-inline form-check-reverse col-6 mx-0 mb-2">
+							<input class="form-check-input job-action" data-action-name="canImpoundVehicles" type="checkbox" role="switch">
+							<label class="form-check-label" data-translation-id="menu:job_settings:enable_impound_vehicles">Enable impound vehicles</label>
+						</div>
+						<div class="form-check form-switch form-check-inline col-6 mx-0 mb-2">
+							<input class="form-check-input job-action" data-action-name="canCheckIdentity" type="checkbox" role="switch">
+							<label class="form-check-label" data-translation-id="menu:job_settings:enable_check_identities">Enable check identities</label>
+						</div>
+						<div class="form-check form-switch form-check-inline form-check-reverse col-6 mx-0 mb-2">
+							<input class="form-check-input job-action" data-action-name="canCheckVehicleOwner" type="checkbox" role="switch">
+							<label class="form-check-label" data-translation-id="menu:job_settings:enable_check_vehicle_owner">Enable check vehicle owner</label>
+						</div>
+						<div class="form-check form-switch form-check-inline col-6 mx-0 mb-2">
+							<input class="form-check-input job-action" data-action-name="canCheckDrivingLicense" type="checkbox" role="switch">
+							<label class="form-check-label" data-translation-id="menu:job_settings:enable_check_driving_license">Enable check driving license</label>
+						</div>
+						<div class="form-check form-switch form-check-inline form-check-reverse col-6 mx-0 mb-2">
+							<input class="form-check-input job-action" data-action-name="canCheckWeaponLicense" type="checkbox" role="switch">
+							<label class="form-check-label" data-translation-id="menu:job_settings:enable_check_weapon_license">Enable check weapon license</label>
+						</div>
+						<div class="form-check form-switch form-check-inline col-6 mx-0 mb-2">
+							<input class="form-check-input job-action" data-action-name="canHeal" type="checkbox" role="switch">
+							<label class="form-check-label" data-translation-id="menu:job_settings:enable_heal">Enable heal</label>
+						</div>
+						<div class="form-check form-switch form-check-inline form-check-reverse col-6 mx-0 mb-2">
+							<input class="form-check-input job-action" data-action-name="canRevive" type="checkbox" role="switch">
+							<label class="form-check-label" data-translation-id="menu:job_settings:enable_revive">Enable revive</label>
+						</div>
+					</div>
+
+					<hr class="my-2">
+
+					<div>
+						<p class="text-center fs-3" data-translation-id="menu:job_settings:placeable_objects">Placeable objects</p>
+
+						<div id="job-placeable-objects-list" class="my-2" style="max-height: 25vh; overflow-y: auto; overflow-x:hidden">
+
+						</div>
+
+						<p id="job-placeable-objects-no-objects-text" class="text-center fs-4 mt-3" style="display: none" data-translation-id="menu:job_settings:no_objects_to_place">No objects to place</p>
+
+						<div class="d-inline-block col-12 my-2">
+							<button id="job-placeable-objects-add-btn" type="button" class="btn btn-secondary float-end col-auto" data-translation-id="menu:add_object">Add object</button>
+						</div>
+					</div>
+				
+					<div class="d-inline-block col-12 my-2">
+						<button id="delete-job-btn" type="button" class="btn btn-danger float-start" data-translation-id="menu:job_settings:delete_job">Delete Job</button>
+						<button id="save-job-btn" type="submit" class="btn btn-success float-end" data-translation-id="menu:job_settings:save_changes">Save changes</button>
+					</div>
+				</form>
+			</div>
+		</div>		  
+	</div>
+
+	<div id="create-rank" class="modal fade" tabindex="-1">
+		<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+			<form id="create-rank-form" class="modal-content needs-validation" novalidate>
+				<div class="modal-header">
+					<h5 class="modal-title" data-translation-id="menu:rank_creation:create_rank">Create rank</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<div class="form-floating my-2">
+						<input type="text" class="form-control" id="create-rank-label" placeholder="Rank label" required>
+						<label for="create-rank-label" data-translation-id="menu:rank_creation:label">Label</label>
+					</div>
+
+					<div class="form-floating my-2">
+						<input type="text" class="form-control id" id="create-rank-name" placeholder="Rank name" required>
+						<label for="create-rank-name" data-translation-id="menu:rank_creation:name">Name (id)</label>
+					</div>
+
+					<div class="form-floating my-2">
+						<input type="number" class="form-control" id="create-rank-grade" placeholder="Rank grade" required>
+						<label for="create-rank-grade" data-translation-id="menu:rank_creation:grade">Grade</label>
+					</div>
+
+					<div class="form-floating my-2">
+						<input type="number" class="form-control" id="create-rank-salary" placeholder="Rank grade" min=0 required>
+						<label for="create-rank-salary" data-translation-id="menu:rank_creation:salary">Salary</label>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-translation-id="menu:rank_creation:close" data-bs-dismiss="modal">Close</button>
+					<button type="submit" class="btn btn-success" data-translation-id="menu:rank_creation:create">Create</button>
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<div id="edit-rank" class="modal fade" tabindex="-1">
+		<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+			<form id="edit-rank-form" class="modal-content needs-validation" novalidate>
+				<div class="modal-header">
+					<h5 class="modal-title" data-translation-id="menu:rank_edit:edit">Edit rank</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<div class="form-floating my-2">
+						<input type="text" class="form-control" id="edit-rank-label" placeholder="Rank label" required>
+						<label for="edit-rank-label" data-translation-id="menu:rank_edit:label">Label</label>
+					</div>
+
+					<div class="form-floating my-2">
+						<input type="text" class="form-control id" id="edit-rank-name" placeholder="Rank name" required>
+						<label for="edit-rank-name" data-translation-id="menu:rank_edit:name_id">Name (id)</label>
+					</div>
+
+					<div class="form-floating my-2">
+						<input type="number" class="form-control" id="edit-rank-grade" placeholder="Rank grade" required>
+						<label for="edit-rank-grade" data-translation-id="menu:rank_edit:grade">Grade</label>
+					</div>
+
+					<div class="form-floating my-2">
+						<input type="number" class="form-control" id="edit-rank-salary" placeholder="Rank grade" min=0 required>
+						<label for="edit-rank-salary" data-translation-id="menu:rank_edit:salary">Salary</label>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" id="edit-rank-delete-btn" class="btn btn-danger me-auto" data-translation-id="menu:rank_edit:delete" data-bs-dismiss="modal">Delete</button>
+					<button type="button" class="btn btn-secondary" data-translation-id="menu:rank_edit:close" data-bs-dismiss="modal">Close</button>
+					<button type="submit" class="btn btn-success" data-translation-id="menu:rank_edit:save">Save</button>
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<!-- Edit Marker generic -->
+	<div class="modal fade" id="edit-marker-dialog-modal" tabindex="-1" role="dialog" style="z-index: 1070; overflow: hidden;">
+		<div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+			<form id="edit-marker-form" class="modal-content needs-validation" novalidate>
+				<div class="modal-header">
+					<h5 class="modal-title" data-translation-id="menu:edit_marker:edit_marker">Edit marker</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+
+				<div class="modal-body scrollbar" style="overflow-y: scroll; max-height:80vh">
+					<div class="row gx-2">
+						<div class="col-md">
+							<div class="form-floating">
+								<input type="text" class="form-control" id="edit-marker-label" placeholder="Label" required>
+								<label for="edit-marker-label" data-translation-id="menu:edit_marker:label">Label</label>
+							</div>		
+						</div>
+
+						<div class="col-md">
+							<div class="form-floating">
+								<input type="number" class="form-control" id="edit-marker-type" value="1" required>
+								<label for="marker-type" data-translation-id="menu:edit_marker:marker_type">Marker Type</label>
+							</div>		
+						</div>
+
+						<div class="col-md">
+							<div id="edit-marker-min-grade-form" class="form-floating">
+								<input type="number" class="form-control" id="edit-marker-min-grade" placeholder="Minimum Grade" required>
+								<label for="edit-marker-min-grade" data-translation-id="menu:edit_marker:minimum_grade">Minimum Grade</label>
+							</div>
+
+							<div id="edit-marker-specific-grades-form" class="form-floating">
+								<input type="text" class="form-control" id="edit-marker-specific-grades" disabled>
+								<label for="edit-marker-specific-grades" data-translation-id="menu:edit_marker:specific_grades">Specific grades</label>
+								<button id="edit-marker-specific-grades-choose-btn" type="button" class="btn btn-secondary mt-2 float-end" data-translation-id="menu:edit_marker:choose_grades">Choose grades</button>
+							</div>
+
+							<div id="edit-marker-grade-type" class="mt-1">
+								<div class="form-check form-check-inline">
+									<input class="form-check-input" type="radio" name="markerGradeType" value="minimumGrade">
+									<label class="form-check-label" data-translation-id="menu:edit_marker:use_minimum_grade">Use minimum grade</label>
+								</div>
+
+								<div class="form-check form-check-inline">
+									<input class="form-check-input" type="radio" name="markerGradeType" value="specificGrades">
+									<label class="form-check-label" data-translation-id="menu:edit_marker:use_specific_grades">Use specific grades</label>
+								</div>	
+							</div>
+						</div>
+					</div>
+
+					<hr class="my-3"/>
+
+					<div class="row">
+						<div class="col">
+							<table class="table caption-top">
+								<caption class="fw-bold" data-translation-id="menu:edit_marker:marker_size">Marker size</caption>
+		
+								<thead>
+								  <tr>
+									<th scope="col" data-translation-id="menu:edit_marker:scale_x">Scale X</th>
+									<th scope="col" data-translation-id="menu:edit_marker:scale_y">Scale Y</th>
+									<th scope="col" data-translation-id="menu:edit_marker:scale_z">Scale Z</th>
+								  </tr>
+								</thead>
+								<tbody>
+								  <tr>
+									<td>
+										<input type="number" step="0.1" class="form-control" id="edit-marker-scale-x" placeholder="x" value="1.5" required>
+									</td>
+									<td>
+										<input type="number" step="0.1" class="form-control" id="edit-marker-scale-y" placeholder="y" value="1.5" required>
+									</td>
+									<td>
+										<input type="number" step="0.1" class="form-control" id="edit-marker-scale-z" placeholder="z" value="0.5" required>
+									</td>
+								  </tr>
+								</tbody>
+							</table>	
+						</div>
+	
+						<div class="col">
+							<table class="table caption-top">
+								<caption class="fw-bold" data-translation-id="menu:edit_marker:marker_coordinates">Marker coordinates</caption>
+
+								<thead>
+								  <tr>
+									<th scope="col" data-translation-id="menu:edit_marker:coord_x">Coord X</th>
+									<th scope="col" data-translation-id="menu:edit_marker:coord_y">Coord Y</th>
+									<th scope="col" data-translation-id="menu:edit_marker:coord_z">Coord Z</th>
+								  </tr>
+								</thead>
+								<tbody>
+								  <tr>
+									<td>
+										<input type="number" class="form-control max-two-decimals" id="edit-marker-coord-x" placeholder="Coord X" step="0.00001" required>
+									</td>
+									<td>
+										<input type="number" class="form-control max-two-decimals" id="edit-marker-coord-y" placeholder="Coord Y" step="0.00001" required>
+									</td>
+									<td>
+										<input type="number" class="form-control max-two-decimals" id="edit-marker-coord-z" placeholder="Coord Z" step="0.00001" required>
+									</td>
+								  </tr>
+								</tbody>
+							</table>
+							
+							<button id="edit-marker-current-coords-btn" type="button" class="btn btn-secondary mb-4 float-end" data-translation-id="menu:edit_marker:current_coords">Current coords</button>
+						</div>
+					</div>
+
+					<hr class="my-1"/>
+
+					<div class="row">
+						<div class="col-2 mt-1">
+							<label for="marker-color" class="form-label w-100 text-center fs-4" data-translation-id="menu:edit_marker:marker_color">Marker color</label>
+							<input type="color" class="form-control form-control-color offset-4" id="edit-marker-color" value="#563d7c" title="What color to use for the marker?">			  
+						</div>
+					
+						<div class="col-2 mt-1">
+							<label for="marker-alpha" class="form-label text-center w-100 fs-4" data-translation-id="menu:edit_marker:marker_opacity">Marker opacity</label>
+							<input type="range" class="form-range" id="edit-marker-alpha" min="1" max="255" step="1" value="50">	
+						</div>
+
+						<div class="col mt-1">
+							<div class="form-check form-switch fs-4">
+								<input class="form-check-input" type="checkbox" id="edit-marker-map-blip">
+								<label class="form-check-label" data-translation-id="menu:edit_marker:map_blip" for="edit-marker-map-blip">Map blip</label>
+							</div>
+
+							<div id="edit-marker-map-blip-inputs" class="row gx-1 mt-1">
+								<div class="col-md">
+									<div class="form-floating">
+										<input type="number" class="form-control" id="edit-marker-sprite-id" placeholder="sprite ID">
+										<label for="edit-marker-sprite-id" data-translation-id="menu:edit_marker:blip_sprite">Sprite</label>
+									</div>
+								</div>
+								<div class="col-md">
+									<div class="form-floating">
+										<input type="number" class="form-control" id="edit-marker-blip-color" placeholder="color ID">
+										<label for="edit-marker-blip-color" data-translation-id="menu:edit_marker:blip_color">Color</label>
+									</div>
+								</div>
+								<div class="col-md">
+									<div class="form-floating">
+										<input type="number" step="0.1" class="form-control" id="edit-marker-blip-scale" placeholder="scale">
+										<label for="edit-marker-blip-scale" data-translation-id="menu:edit_marker:blip_scale">Scale</label>
+									</div>
+								</div>
+							</div>
+						</div>
+	
+						<div id="edit-marker-npc-inputs" class="col mt-1">
+							<div class="form-check form-switch fs-4">
+								<input class="form-check-input" type="checkbox" id="edit-marker-npc">
+								<label class="form-check-label" data-translation-id="menu:edit_marker:standing_npc" for="edit-marker-npc">Standing NPC</label>
+							</div>
+		
+							<div class="row gx-1 mt-1">
+								<div class="col-md">
+									<div class="form-floating">
+										<input type="text" class="form-control" placeholder="Model" id="edit-marker-npc-model">
+										<label for="edit-marker-npc-model" data-translation-id="menu:edit_marker:npc_model">Model</label>
+									</div>
+								</div>
+								<div class="col-md">
+									<div class="form-floating">
+										<input type="number" step="0.01" class="form-control max-two-decimals" placeholder="Heading" id="edit-marker-npc-heading">
+										<label for="edit-marker-npc-heading" data-translation-id="menu:edit_marker:npc_heading">Heading</label>
+									</div>
+								</div>
+							</div>
+	
+							<button id="edit-marker-npc-current-heading-btn" type="button" class="btn btn-secondary mt-2 float-end" data-translation-id="menu:edit_marker:npc_current_heading">Current heading</button>
+						</div>
+
+						<div id="edit-marker-object-inputs" class="col mt-1">
+							<div class="form-check form-switch fs-4">
+								<input class="form-check-input" type="checkbox" id="edit-marker-object">
+								<label class="form-check-label" data-translation-id="menu:edit_marker:object" for="edit-marker-object">Object</label>
+							</div>
+
+							<div class="col-md">
+								<div class="form-floating">
+									<input type="text" class="form-control" placeholder="Model" id="edit-marker-object-model">
+									<label for="edit-marker-object-model" data-translation-id="menu:edit_marker:object_model">Model</label>
+								</div>
+							</div>
+
+							<div class="row gx-1 mt-1">
+								<div class="col-md">
+									<div class="form-floating">
+										<input type="number" class="form-control max-two-decimals" step=0.01 placeholder="Heading" id="edit-marker-object-rotation-pitch">
+										<label for="edit-marker-object-rotation-pitch" data-translation-id="menu:edit_marker:object_rotation_pitch">Pitch</label>
+									</div>
+								</div>
+
+								<div class="col-md">
+									<div class="form-floating">
+										<input type="number" class="form-control max-two-decimals" step=0.01 placeholder="Heading" id="edit-marker-object-rotation-roll">
+										<label for="edit-marker-object-rotation-roll" data-translation-id="menu:edit_marker:object_rotation_roll">Roll</label>
+									</div>
+								</div>
+
+								<div class="col-md">
+									<div class="form-floating">
+										<input type="number" class="form-control max-two-decimals" step=0.01 placeholder="Heading" id="edit-marker-object-rotation-yaw">
+										<label for="edit-marker-object-rotation-yaw" data-translation-id="menu:edit_marker:object_rotation_yaw">Yaw</label>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!--
+											
+					░██████╗██████╗░███████╗░█████╗░██╗███████╗██╗░█████╗░  ███╗░░░███╗░█████╗░██████╗░██╗░░██╗███████╗██████╗░
+					██╔════╝██╔══██╗██╔════╝██╔══██╗██║██╔════╝██║██╔══██╗  ████╗░████║██╔══██╗██╔══██╗██║░██╔╝██╔════╝██╔══██╗
+					╚█████╗░██████╔╝█████╗░░██║░░╚═╝██║█████╗░░██║██║░░╚═╝  ██╔████╔██║███████║██████╔╝█████═╝░█████╗░░██████╔╝
+					░╚═══██╗██╔═══╝░██╔══╝░░██║░░██╗██║██╔══╝░░██║██║░░██╗  ██║╚██╔╝██║██╔══██║██╔══██╗██╔═██╗░██╔══╝░░██╔══██╗
+					██████╔╝██║░░░░░███████╗╚█████╔╝██║██║░░░░░██║╚█████╔╝  ██║░╚═╝░██║██║░░██║██║░░██║██║░╚██╗███████╗██║░░██║
+					╚═════╝░╚═╝░░░░░╚══════╝░╚════╝░╚═╝╚═╝░░░░░╚═╝░╚════╝░  ╚═╝░░░░░╚═╝╚═╝░░╚═╝╚═╝░░╚═╝╚═╝░░╚═╝╚══════╝╚═╝░░╚═╝
+
+					░██████╗███████╗████████╗████████╗██╗███╗░░██╗░██████╗░░██████╗
+					██╔════╝██╔════╝╚══██╔══╝╚══██╔══╝██║████╗░██║██╔════╝░██╔════╝
+					╚█████╗░█████╗░░░░░██║░░░░░░██║░░░██║██╔██╗██║██║░░██╗░╚█████╗░
+					░╚═══██╗██╔══╝░░░░░██║░░░░░░██║░░░██║██║╚████║██║░░╚██╗░╚═══██╗
+					██████╔╝███████╗░░░██║░░░░░░██║░░░██║██║░╚███║╚██████╔╝██████╔╝
+					╚═════╝░╚══════╝░░░╚═╝░░░░░░╚═╝░░░╚═╝╚═╝░░╚══╝░╚═════╝░╚═════╝░
+					-->
+					
+					<div id="specific-marker-settings">
+						<hr class="my-1"/>
+						<p id="specific-marker-settings-label" class="text-center fs-4 fw-bold"></p>
+					</div>
+
+					<div class="edit-marker-settings" data-marker-type="garage">
+						<p class="text-center fs-4" data-translation-id="menu:spawnpoints">Spawnpoints</p>
+
+						<div id="temporary-garage-spawnpoints-list">
+
+						</div>
+
+						<div class="col-12 d-inline-block">
+							<button id="temporary-garage-add-spawnpoint" class="btn btn-secondary float-end" data-translation-id="menu:add_spawnpoint" type="button">Add spawnpoint</button>
+						</div>
+						
+						<hr/>
+
+						<table class="table">
+							<thead>
+							  <tr>
+								<th scope="col" class="text-center" data-translation-id="menu:edit_marker:temporary_garage:vehicle_model">Vehicle Model</th>
+								<th scope="col" class="text-center" data-translation-id="menu:edit_marker:temporary_garage:vehicle_name">Vehicle Name</th>
+								<th scope="col" data-translation-id="menu:edit_marker:temporary_garage:vehicle_primary_color">Primary Color</th>
+								<th scope="col" data-translation-id="menu:edit_marker:temporary_garage:vehicle_secondary_color">Secondary Color</th>
+								<th scope="col" data-translation-id="menu:edit_marker:temporary_garage:vehicle_plate">Plate</th>
+								<th scope="col" class="text-center" data-translation-id="menu:edit_marker:temporary_garage:delete">Delete</th>
+							  </tr>
+							</thead>
+							<tbody id="garage-data-model-tbody">
+	
+							</tbody>
+						  </table>
+	
+						<div class="input-group mt-1">
+							<span class="input-group-text" data-translation-id="menu:edit_marker:temporary_garage:new_vehicle_model">New vehicle model</span>
+							<input id="marker-data-vehicle-model" type="text" aria-label="Vehicle model"
+								class="form-control" placeholder="Vehicle Model">
+							<div class="invalid-feedback" data-translation-id="menu:edit_marker:temporary_garage:cant_be_empty">Can't be empty</div>
+						</div>
+	
+						<button id="marker-data-add-vehicle" class="btn btn-info mt-2" data-translation-id="menu:edit_marker:temporary_garage:add_vehicle" type="button">Add vehicle</button>	
+					</div>
+
+					<div class="edit-marker-settings" data-marker-type="boss">
+						<div class="form-check form-switch fs-4 mb-2">
+							<input class="form-check-input" type="checkbox" id="boss-data-washmoney">
+							<label class="form-check-label" data-translation-id="menu:edit_marker:boss:can_wash_money" for="boss-data-washmoney">Can wash money?</label>
+						</div>
+	
+						<div id="boss-data-washmoney-data" class="mb-4">
+							<div class="input-group">
+								<span class="input-group-text" data-translation-id="menu:edit_marker:boss:return_percentage_after_wash">Return percentage after wash</span>
+								<input id="boss-data-washmoney-percentage" type="number" class="form-control" placeholder="80">
+							</div>
+	
+							<div class="form-check form-switch fs-5 mt-1">
+								<input id="boss-data-washmoney-to-society-account" class="form-check-input" type="checkbox">
+								<label class="form-check-label" data-translation-id="menu:edit_marker:boss:add_money_to_society_account">Add money to society account</label>
+							</div>
+						</div>
+	
+						<div class="form-check form-switch form-check-inline col-5 fs-4 mb-2">
+							<input class="form-check-input" type="checkbox" id="boss-data-withdraw">
+							<label class="form-check-label" data-translation-id="menu:edit_marker:boss:can_withdraw_money" for="boss-data-withdraw">Can withdraw money?</label>
+						</div>
+						<div class="form-check form-switch form-check-inline col-5 fs-4 mb-2">
+							<input class="form-check-input" type="checkbox" id="boss-data-deposit">
+							<label class="form-check-label" data-translation-id="menu:edit_marker:boss:can_deposit_money" for="boss-data-deposit">Can deposit money?</label>
+						</div>
+						<div class="form-check form-switch form-check-inline col-5 fs-4 mb-2">
+							<input class="form-check-input" type="checkbox" id="boss-data-employees">
+							<label class="form-check-label" data-translation-id="menu:edit_marker:boss:can_manage_employees" for="boss-data-employees">Can manage employees?</label>
+						</div>
+						<div class="form-check form-switch form-check-inline col-5 fs-4 mb-2">
+							<input class="form-check-input" type="checkbox" id="boss-data-grades">
+							<label class="form-check-label" data-translation-id="menu:edit_marker:boss:can_manage_wages" for="boss-data-grades">Can manage wages/grades?</label>
+						</div>	
+
+						<div class="input-group mt-1">
+							<span class="input-group-text" data-translation-id="menu:edit_marker:boss:maximum_salary">Maximum salary</span>
+							<input id="boss-data-max-salary" min="0" type="number" class="form-control" placeholder="Empty = no maximum">
+						</div>
+					</div>
+
+					<div class="edit-marker-settings" data-marker-type="shop">
+						<div class="input-group mb-3">
+							<input id="shop-data-item-id" type="text" class="form-control" placeholder="Item ID">
+							<button type="button" class="btn btn-secondary" data-translation-id="menu:dialog:choose_item" id="shop-data-choose-item-btn">Choose item</button>
+							<button type="button" class="btn btn-secondary" data-translation-id="menu:dialog:choose_weapon" id="shop-data-choose-weapon-btn">Choose weapon</button>
+							<span class="input-group-text ms-2">$</span>
+							<input id="shop-data-item-price" type="number" class="form-control" placeholder="Item price">
+							<button id="shop-data-add-btn" type="button" class="btn btn-success" data-translation-id="menu:edit_marker:shop:add_to_shop">Add to shop</button>
+						</div>
+	
+						<table class="table fs-5">
+							<thead>
+								<tr class="text-center">
+									<th class="col" data-translation-id="menu:edit_marker:shop:item_id">Item ID</th>
+									<th class="col" data-translation-id="menu:edit_marker:shop:item_price">Item Price</th>
+									<th class="col" data-translation-id="menu:edit_marker:shop:black_money">Black money</th>
+									<th class="col" data-translation-id="menu:edit_marker:shop:remove_item">Remove item</th>
+								</tr>
+							</thead>
+							<tbody id="shop-data-items-container">
+	
+							</tbody>
+						</table>	
+					</div>
+
+					<div class="edit-marker-settings" data-marker-type="garage_buyable">
+						<p class="text-center fs-4" data-translation-id="menu:spawnpoints">Spawnpoints</p>
+
+						<div id="buyable-garage-spawnpoints-list">
+
+						</div>
+
+						<div class="col-12 d-inline-block">
+							<button id="buyable-garage-add-spawnpoint" class="btn btn-secondary float-end" data-translation-id="menu:add_spawnpoint" type="button">Add spawnpoint</button>
+						</div>
+						
+						<hr/>
+	
+						<div id="garage-buyable-vehicles" class="container"></div>
+	
+						<div class="input-group mt-1">
+							<span class="input-group-text" data-translation-id="menu:edit_marker:garage_buyable:new_vehicle_model">New vehicle model</span>
+							<input id="garage-buyable-vehicle-model" type="text" class="form-control"
+								placeholder="Vehicle Model">
+							<span class="input-group-text">$</span>
+							<input id="garage-buyable-vehicle-price" type="number" class="form-control" placeholder="Price">
+						</div>
+	
+						<button id="garage-buyable-add-vehicle" class="btn btn-info mt-2" data-translation-id="menu:edit_marker:garage_buyable:add_vehicle" type="button">Add vehicle</button>	
+					</div>
+
+					<div class="edit-marker-settings" data-marker-type="garage_owned">
+						<p class="text-center fs-4" data-translation-id="menu:spawnpoints">Spawnpoints</p>
+
+						<div id="owned-garage-spawnpoints-list">
+
+						</div>
+
+						<div class="col-12 d-inline-block">
+							<button id="owned-garage-add-spawnpoint" class="btn btn-secondary float-end" data-translation-id="menu:add_spawnpoint" type="button">Add spawnpoint</button>
+						</div>
+						
+						<hr/>
+					</div>
+
+					<div class="edit-marker-settings" data-marker-type="crafting_table">
+						<div id="craftables">
+
+						</div>
+	
+						<button id="crafting-table-new-craft-btn" type="button" class="btn btn-primary mt-4 float-end" data-translation-id="menu:edit_marker:crafting_table:create_new_craft">Create new craft</button>	
+					</div>
+
+					<div class="edit-marker-settings" data-marker-type="armory">
+						<div class="form-check form-switch form-check-inline col fs-4">
+							<input class="form-check-input" type="checkbox" id="armory-is-shared">
+							<label class="form-check-label" data-translation-id="menu:edit_marker:armory:is_armory_shared" for="armory-is-shared">Is armory shared?</label>
+						</div>
+	
+						<div class="form-check form-switch form-check-inline col fs-4">
+							<input class="form-check-input" type="checkbox" id="armory-refill-on-take">
+							<label class="form-check-label" data-translation-id="menu:edit_marker:armory:max_ammo_when_take" for="armory-refill-on-take">Max ammo when take?</label>
+						</div>
+	
+						<button type="button" class="btn btn-danger mt-4 float-end col" data-translation-id="menu:edit_marker:armory:delete_armory_content" id="delete-armory-content">Delete armory content</button>
+					</div>
+
+					<div class="edit-marker-settings" data-marker-type="stash">	
+						<button type="button" class="btn btn-danger mt-4 float-end col" data-translation-id="menu:edit_marker:stash:delete_stash_content" id="delete-stash-inventory">Delete stash content</button>
+					</div>
+
+					<div class="edit-marker-settings" data-marker-type="job_outfit">
+						<div id="job-outfit-outfits">
+						
+						</div>
+	
+						<button type="button" id="job-outfit-new-outfit-btn" class="btn btn-success mt-3 float-end" data-translation-id="menu:edit_marker:job_outfit:create_new_outfit">Create new outfit</button>
+					</div>
+
+					<div class="edit-marker-settings" data-marker-type="teleport">
+						<p class="text-center fs-3" data-translation-id="menu:edit_marker:teleport:teleport_to">Teleport to</p>
+
+						<div class="input-group mb-3 col-6">
+							<span class="input-group-text">x</span>
+							<input type="number" class="form-control max-two-decimals" step="0.01" id="teleport-x" required>
+						</div>
+	
+						<div class="input-group mb-3 col-6">
+							<span class="input-group-text">y</span>
+							<input type="number" class="form-control max-two-decimals" step="0.01" id="teleport-y" required>
+						</div>
+	
+						<div class="input-group mb-3 col-6">
+							<span class="input-group-text">z</span>
+							<input type="number" class="form-control max-two-decimals" step="0.01" id="teleport-z" required>
+						</div>
+	
+						<button type="button" class="btn btn-success" data-translation-id="menu:edit_marker:teleport:current_coords" id="teleport-current-coords-btn">Current coords</button>
+					</div>
+
+					<div class="edit-marker-settings" data-marker-type="market">
+						<p class="text-center fs-5 fst-italic text-warning" data-translation-id="menu:market_info">In the script settings, you can choose whether to sell items one at a time or select the quantity to sell</p>
+
+						<div class="input-group my-3">
+							<span class="input-group-text" data-translation-id="menu:edit_marker_market:society_percentage">Percentage that the society will receive</span>
+							<input type="number" class="form-control" id="market-modal-society-percentage" placeholder="0-100%" min="0" max="100" required>
+						</div>
+
+						<table class="table table-striped text-center">
+							<thead>
+								<tr>
+								  <th scope="col" data-translation-id="menu:edit_marker:market:item_id">Item ID</th>
+								  <td data-translation-id="menu:edit_marker:market:item_min_price">Item min price</td>
+								  <td data-translation-id="menu:edit_marker:market:item_max_price">Item max price</td>
+								  <td data-translation-id="menu:edit_marker:market:black_money">Black money?</td>
+								  <td data-translation-id="menu:edit_marker:market:time_to_sell">Time to sell</td>
+								  <td data-translation-id="menu:edit_marker:market:remove">Remove</td>
+								</tr>
+							</thead>
+							<tbody id="market-modal-items-tbody">
+	
+							</tbody>
+						</table>
+	
+						<div class="input-group mt-3">
+							<input type="text" class="form-control" id="market-modal-new-item-name-input" placeholder="Item ID">
+							<button type="button" class="btn btn-secondary" data-translation-id="menu:dialog:choose_item" id="market-data-choose-item-btn">Choose item</button>
+							<input type="number" class="form-control ms-2" id="market-modal-new-item-min-price-input" placeholder="Item minimum price">
+							<input type="number" class="form-control ms-2" id="market-modal-new-item-max-price-input" placeholder="Item maximum price">
+							<button class="btn btn-success" data-translation-id="menu:edit_marker:market:add_item" type="button" id="market-modal-new-item-btn">Add item</button>
+						</div>
+					</div>
+
+					<div class="edit-marker-settings" data-marker-type="harvest">
+						<div id="harvest-modal-items">
+
+						</div>
+	
+						<div class="form-check form-switch mt-4 fs-5">
+							<input class="form-check-input" type="checkbox" id="harvest-item-requires-tool">
+							<label class="form-check-label" data-translation-id="menu:edit_marker:harvest:requires_a_tool" for="harvest-item-requires-tool">Requires a tool?</label>
+						</div>
+	
+						<div id="harvest-item-tool-div" class="mt-1">
+							<div class="input-group mt-1">
+								<span class="input-group-text" data-translation-id="menu:edit_marker:harvest:tool_to_harvest">Tool to harvest</span>
+								<input id="harvest-item-tool" type="text" class="form-control" placeholder="pickaxe">
+							</div>
+	
+							<div class="form-check form-switch mt-2 fs-5">
+								<input class="form-check-input" type="checkbox" id="harvest-item-tool-lose-on-use">
+								<label class="form-check-label" data-translation-id="menu:edit_marker:harvest:lose_on_use" for="harvest-item-tool-lose-on-use">Lose on use</label>
+							</div>
+	
+							<div id="harvest-item-lose-quantity-div" class="input-group mt-1">
+								<span class="input-group-text" data-translation-id="menu:edit_marker:harvest:quantity_to_lose">Quantity to lose</span>
+								<input id="harvest-item-tool-lose-quantity" type="number" class="form-control" placeholder="1">
+							</div>
+	
+							<div id="harvest-item-lose-probability-div" class="input-group mt-1">
+								<span class="input-group-text" data-translation-id="menu:edit_marker:harvest:probability_to_lose">Probability to lose</span>
+								<input id="harvest-item-tool-lose-probability" type="number" class="form-control" placeholder="100%">
+							</div>
+						</div>
+
+						<div class="form-check form-switch mt-4 fs-5">
+							<input class="form-check-input" type="checkbox" id="harvest-disappear-after-use">
+							<label class="form-check-label" data-translation-id="menu:edit_marker:harvest:disappear_after_use" for="harvest-disappear-after-use">Disappear after use</label>
+						</div>
+	
+						<div class="input-group mt-1">
+							<span class="input-group-text" data-translation-id="menu:edit_marker:harvest:disappear_seconds">Disappear seconds</span>
+							<input id="harvest-disappear-seconds" type="number" class="form-control" placeholder="5">
+						</div>
+
+						<div>
+							<div class="form-check form-switch mt-4 fs-5">
+								<input class="form-check-input" type="checkbox" id="harvest-requires-minimum-account-money">
+								<label class="form-check-label" data-translation-id="menu:edit_marker:requires_minimum_account_money" for="harvest-requires-minimum-account-money">Requires minimum money in account?</label>
+							</div>
+	
+							<div id="harvest-minimum-account-name-div" class="input-group mt-1">
+								<span class="input-group-text" data-translation-id="menu:account_name">Account name</span>
+								<input id="harvest-minimum-account-name" type="text" class="form-control" placeholder="bank">
+
+								<button type="button" id="harvest-choose-account-btn" class="btn btn-secondary col-auto choose-item-btn me-3"><i class="bi bi-list-ul"></i></button>	
+
+								<span class="input-group-text" data-translation-id="menu:minimum_amount">Minimum amount</span>
+								<input id="harvest-minimum-account-amount" type="number" class="form-control" placeholder="50000">
+							</div>
+						</div>
+
+						<button id="harvest-animations-btn" type="button" class="btn btn-secondary mt-3" data-translation-id="menu:edit_marker:harvest:animations">Animations</button>
+						<button id="harvest-add-item-btn" type="button" class="btn btn-primary mt-3" data-translation-id="menu:edit_marker:harvest:add_item">Add item</button>
+					</div>
+
+					<div class="edit-marker-settings" data-marker-type="process">
+						<div class="input-group">
+							<span class="input-group-text" data-translation-id="menu:edit_marker:process:remove_item">Remove item</span>
+							<input id="item-to-remove-name" type="text" class="form-control" placeholder="Item name" required>
+							<button type="button" class="btn btn-secondary" data-translation-id="menu:dialog:choose_item" id="process-data-choose-item-to-remove-btn">Choose item</button>
+							<input id="item-to-remove-quantity" type="number" class="form-control ms-2" placeholder="Quantity" required>
+						</div>
+	
+						<div class="input-group mt-2">
+							<span class="input-group-text" data-translation-id="menu:edit_marker:process:give_item">Give item</span>
+							<input id="item-to-add-name" type="text" class="form-control" placeholder="Item name" required>
+							<button type="button" class="btn btn-secondary" data-translation-id="menu:dialog:choose_item" id="process-data-choose-item-to-give-btn">Choose item</button>
+							<input id="item-to-add-quantity" type="number" class="form-control ms-2" placeholder="Quantity" required>
+						</div>
+	
+						<div class="input-group mt-3">
+							<span class="input-group-text" data-translation-id="menu:edit_marker:process:time_to_process">Time to process</span>
+							<input id="process-time" type="number" class="form-control" placeholder="Seconds" required>
+						</div>
+	
+						<div>
+							<div class="form-check form-switch mt-4 fs-5">
+								<input class="form-check-input" type="checkbox" id="process-requires-minimum-account-money">
+								<label class="form-check-label" data-translation-id="menu:edit_marker:requires_minimum_account_money" for="process-requires-minimum-account-money">Requires minimum money in account?</label>
+							</div>
+	
+							<div id="process-minimum-account-name-div" class="input-group mt-1">
+								<span class="input-group-text" data-translation-id="menu:account_name">Account name</span>
+								<input id="process-minimum-account-name" type="text" class="form-control" placeholder="bank">
+
+								<button type="button" id="process-choose-account-btn" class="btn btn-secondary col-auto choose-item-btn me-3"><i class="bi bi-list-ul"></i></button>	
+
+								<span class="input-group-text" data-translation-id="menu:minimum_amount">Minimum amount</span>
+								<input id="process-minimum-account-amount" type="number" class="form-control" placeholder="50000">
+							</div>
+						</div>
+
+						<button id="process-animations-btn" type="button" class="btn btn-secondary mt-3" data-translation-id="menu:edit_marker:process:animations">Animations</button>
+					</div>
+
+					<div class="edit-marker-settings row" data-marker-type="weapon_upgrader">
+						<div id="weapon-upgrader-components" class="col">
+							<div class="input-group mt-3">
+								<span class="input-group-text" data-translation-id="menu:edit_marker:weapon_upgrader:extended_clip">Extended Clip</span>
+								<input type="number" class="form-control" data-componentname="clip_extended" placeholder="Component Price (empty to disable)" value="500">
+							</div>
+							<div class="input-group mt-3">
+								<span class="input-group-text" data-translation-id="menu:edit_marker:weapon_upgrader:drum_clip">Drum Clip</span>
+								<input type="number" class="form-control" data-componentname="clip_drum" placeholder="Component Price (empty to disable)" value="500">
+							</div>
+							<div class="input-group mt-3">
+								<span class="input-group-text" data-translation-id="menu:edit_marker:weapon_upgrader:flashlight">Flashlight</span>
+								<input type="number" class="form-control" data-componentname="flashlight" placeholder="Component Price (empty to disable)" value="500">
+							</div>
+							<div class="input-group mt-3">
+								<span class="input-group-text" data-translation-id="menu:edit_marker:weapon_upgrader:suppressor">Suppressor</span>
+								<input type="number" class="form-control" data-componentname="suppressor" placeholder="Component Price (empty to disable)" value="500">
+							</div>
+							<div class="input-group mt-3">
+								<span class="input-group-text" data-translation-id="menu:edit_marker:weapon_upgrader:scope">Scope</span>
+								<input type="number" class="form-control" data-componentname="scope" placeholder="Component Price (empty to disable)" value="500">
+							</div>
+							<div class="input-group mt-3">
+								<span class="input-group-text" data-translation-id="menu:edit_marker:weapon_upgrader:advanced_scope">Advanced Scope</span>
+								<input type="number" class="form-control" data-componentname="scope_advanced" placeholder="Component Price (empty to disable)" value="500">
+							</div>
+							<div class="input-group mt-3">
+								<span class="input-group-text" data-translation-id="menu:edit_marker:weapon_upgrader:grip">Grip</span>
+								<input type="number" class="form-control" data-componentname="grip" placeholder="Component Price (empty to disable)" value="500">
+							</div>
+							<div class="input-group mt-3">
+								<span class="input-group-text" data-translation-id="menu:edit_marker:weapon_upgrader:box_clip">Box Clip</span>
+								<input type="number" class="form-control" data-componentname="clip_box" placeholder="Component Price (empty to disable)" value="500">
+							</div>
+							<div class="input-group mt-3">
+								<span class="input-group-text" data-translation-id="menu:edit_marker:weapon_upgrader:luxary_finish">Luxary Finish</span>
+								<input type="number" class="form-control" data-componentname="luxary_finish" placeholder="Component Price (empty to disable)" value="500">
+							</div>
+						</div>
+						
+						<div id="weapon-upgrader-tints" class="col">
+							<div class="input-group mt-3">
+								<span class="input-group-text" data-translation-id="menu:edit_marker:weapon_upgrader:default_tint">Default tint</span>
+								<input type="number" class="form-control" data-tintid="0" placeholder="Tint price (empty to disable)" value="500">
+							</div>
+							<div class="input-group mt-3">
+								<span class="input-group-text" data-translation-id="menu:edit_marker:weapon_upgrader:green_tint">Green tint</span>
+								<input type="number" class="form-control" data-tintid="1" placeholder="Tint price (empty to disable)" value="500">
+							</div>
+							<div class="input-group mt-3">
+								<span class="input-group-text" data-translation-id="menu:edit_marker:weapon_upgrader:gold_tint">Gold tint</span>
+								<input type="number" class="form-control" data-tintid="2" placeholder="Tint price (empty to disable)" value="500">
+							</div>
+							<div class="input-group mt-3">
+								<span class="input-group-text" data-translation-id="menu:edit_marker:weapon_upgrader:pink_tint">Pink tint</span>
+								<input type="number" class="form-control" data-tintid="3" placeholder="Tint price (empty to disable)" value="500">
+							</div>
+							<div class="input-group mt-3">
+								<span class="input-group-text" data-translation-id="menu:edit_marker:weapon_upgrader:army_tint">Army tint</span>
+								<input type="number" class="form-control" data-tintid="4" placeholder="Tint price (empty to disable)" value="500">
+							</div>
+							<div class="input-group mt-3">
+								<span class="input-group-text" data-translation-id="menu:edit_marker:weapon_upgrader:lspd_tint">LSPD tint</span>
+								<input type="number" class="form-control" data-tintid="5" placeholder="Tint price (empty to disable)" value="500">
+							</div>
+							<div class="input-group mt-3">
+								<span class="input-group-text" data-translation-id="menu:edit_marker:weapon_upgrader:orange_tint">Orange tint</span>
+								<input type="number" class="form-control" data-tintid="6" placeholder="Tint price (empty to disable)" value="500">
+							</div>
+							<div class="input-group mt-3">
+								<span class="input-group-text" data-translation-id="menu:edit_marker:weapon_upgrader:platinum_tint">Platinum tint</span>
+								<input type="number" class="form-control" data-tintid="7" placeholder="Tint price (empty to disable)" value="500">
+							</div>
+						</div>
+					</div>
+
+					<div class="edit-marker-settings" data-marker-type="job_shop">
+						<p class="text-center fs-4" data-translation-id="menu:edit_marker:job_shop:job_allowed_to_sell">Job that can put on sale items</p>
+
+						<select class="form-select mt-3" id="job-shop-all-jobs">
+							<option selected value=null data-translation-id="menu:edit_marker:job_shop:allowed_job">Allowed job to sell</option>
+						</select>
+	
+						<select class="form-select mt-3" id="job-shop-all-ranks">
+							<option selected value=null data-translation-id="menu:edit_marker:job_shop:minimum_grade">Minimum grade allowed to sell</option>
+						</select>	
+					</div>
+				</div>
+
+				<div class="modal-footer">
+					<button type="button" id="delete-marker-btn" class="btn btn-danger me-auto" data-translation-id="menu:edit_marker:delete_marker" data-bs-dismiss="modal">Delete marker</button>
+					<button type="button" class="btn btn-secondary" data-translation-id="menu:edit_marker:close" data-bs-dismiss="modal">Close</button>
+					<button id="edit-marker-dialog-confirm" type="submit" class="btn btn-primary" data-translation-id="menu:edit_marker:save">Save</button>
+				</div>
+			</form>
+		</div>
+	</div>
+	
+	<!-- Input Text Dialog -->
+	<div class="modal fade" id="input-text-dialog-modal" tabindex="-1" role="dialog"
+		aria-labelledby="input-text-dialog-title" aria-hidden="true" style="z-index: 1070;">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="input-text-dialog-title"></h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<form></form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-translation-id="menu:input_text:close" data-bs-dismiss="modal">Close</button>
+					<button id="input-text-dialog-confirm" type="button" class="btn btn-primary" data-translation-id="menu:input_text:confirm">Confirm</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Grades input dialog -->
+	<div class="modal fade" id="input-grades-dialog-modal" tabindex="-1" role="dialog" style="z-index: 1070;">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" data-translation-id="menu:grades_dialog:title">Job grades</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<div id="grades-list">
+
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-translation-id="menu:input_text:close" data-bs-dismiss="modal">Close</button>
+					<button id="input-grades-dialog-confirm" type="button" class="btn btn-primary" data-translation-id="menu:input_text:confirm">Confirm</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Items input dialog -->
+	<div class="modal fade" id="input-items-dialog-modal" tabindex="-1" role="dialog" style="z-index: 1070;">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" data-translation-id="menu:items_dialog:title">Items List</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<div class="input-group">
+						<span class="input-group-text" data-translation-id="menu:items_dialog:search_item">Search item</span>
+						<input id="input-item-search" type="text" class="form-control">
+					</div>
+
+					<ul id="items-list" class="list-group mt-2">
+
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Weapons input dialog -->
+	<div class="modal fade" id="input-weapons-dialog-modal" tabindex="-1" role="dialog" style="z-index: 1070;">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" data-translation-id="menu:weapons_dialog:title">Weapons List</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<div class="input-group">
+						<span class="input-group-text" data-translation-id="menu:weapons_dialog:search_weapon">Search weapon</span>
+						<input id="input-weapon-search" type="text" class="form-control">
+					</div>
+
+					<ul id="weapons-list" class="list-group mt-2">
+
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Accounts dialog modal -->
+	<div class="modal fade" id="input-accounts-dialog-modal" tabindex="-1" role="dialog" style="z-index: 1070;">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" data-translation-id="menu:accounts_dialog:title">Accounts List</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<ul id="accounts-list" class="list-group mt-2">
+
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Notification -->
+	<div id="notification-modal" class="modal" tabindex="-1">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" data-translation-id="menu:notification:notification">Notification</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<p id="notification-message">message</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-translation-id="menu:notification:close" data-bs-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Animations Modal -->
+	<div class="modal fade" id="animations-modal" data-bs-backdrop="static" tabindex="-1" role="dialog" aria-hidden="true" style="z-index: 1070;">
+		<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+			<form id="animations-modal-form" class="modal-content needs-validation" novalidate>
+				<div class="modal-header">
+					<h5 class="modal-title" data-translation-id="menu:animations:animations">Animations</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<div id="animations"></div>
+
+					<button id="add-animation-btn" type="button" class="btn btn-secondary mt-3" data-translation-id="menu:animations:add_animation">Add animation</button>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-translation-id="menu:animations:close" data-bs-dismiss="modal">Close</button>
+					<button id="animations-modal-confirm" type="submit" class="btn btn-primary" data-translation-id="menu:animations:save">Save</button>
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<!-- Nexus modal -->
+	<div class="modal fade" id="nexus-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" style="z-index: 1070;">
+		<div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable" role="document">
+			<div id="animations-modal-form" class="modal-content needs-validation" novalidate>
+				<div class="modal-header">
+					<h5 class="modal-title" id="nexus-modal-title-text"></h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+				</div>
+				<div class="modal-body scrollbar">
+					<h1 class="text-center" id="nexus-modal-job-listing-label"></h1>
+					
+					<div class="row mt-4">
+						<div class="container col-7">
+							<h3>
+								<span id="nexus-modal-job-label"></span> - <span id="nexus-modal-job-name"></span>
+							</h3>
+							
+							<div class="mt-3">
+								<h5>Description:</h5>
+								<p id="nexus-modal-job-description"></p>
+							</div>
+						</div>
+
+						<div class="container col-5 fs-4">
+							<p>
+								<span id="nexus-modal-job-average-rating"></span>
+								| 
+								<span><span id="nexus-modal-job-total-votes"></span> <span data-translation-id="menu:nexus:votes"></span></span>
+							</p>
+
+							<p> <span class="fw-bold">Created by: </span> <span id="nexus-modal-job-author"></span> </p>
+						</div>
+					</div>
+
+					<hr/>
+
+					<h2 data-translation-id="menu:actions" class="text-center"></h2>
+
+					<div id="nexus-modal-job-actions-list">
+
+					</div>
+
+					<hr/>
+
+					<h2 data-translation-id="menu:ranks" class="text-center"></h2>
+
+					<div id="nexus-modal-job-ranks-list">
+
+					</div>
+
+					<hr/>
+
+					<h2 data-translation-id="menu:nexus:included_markers" class="text-center"></h2>
+
+					<p>
+						<span data-translation-id="menu:nexus:markers_included_with_this_job"></span>
+						<span id="nexus-modal-job-included-markers-count"></span>
+					</p>
+					
+					<p class="text-warning" data-translation-id="menu:nexus:included_markers_description"></p>
+
+				</div>
+				<div class="modal-footer d-inline-block col-12">
+					<div class="float-start" id="vote-job-rater"></div>
+					<button id="nexus-import-job-btn" type="button" class="btn btn-primary float-end" data-translation-id="menu:nexus:import_job">Import</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="nexus-modal-upload" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" style="z-index: 1070;">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <form id="nexus-upload-form" class="modal-content needs-validation" novalidate>
+                <div class="modal-header">
+                    <h5 class="modal-title" data-translation-id="menu:nexus:share_job"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body">
+					
+					<div class="d-flex mb-3 justify-content-between">
+						<div class="form-floating col-6">
+							<input type="text" class="form-control" id="nexus-upload-label-shared-job-label" disabled>
+							<label data-translation-id="menu:job_label"></label>
+						</div>
+						
+						<div class="form-floating col-6">
+							<input type="text" class="form-control" id="nexus-upload-label-shared-job-id" disabled>
+							<label data-translation-id="menu:job_id"></label>
+						</div>
+					</div>
+
+					<div id="nexus-upload-included-markers-count-div" class="input-group input-group-merge mb-3">
+						<span class="input-group-text" data-translation-id="menu:nexus:included_markers"></span>
+						<input id="nexus-upload-included-markers-count" type="number" class="form-control" placeholder="0" disabled>
+					</div>			  
+
+					<div class="mb-3">
+						<label class="form-label" data-translation-id="menu:nexus:name"></label>
+						<input type="text" class="form-control" id="nexus-upload-label" required>
+					</div>
+
+					<div class="mb-3">
+						<label class="form-label" data-translation-id="menu:nexus:description"></label>
+						<textarea class="form-control" id="nexus-upload-description" rows="3" minlength="5" required></textarea>
+					</div>
+
+					<div class="form-check mt-3">
+						<input type="checkbox" id="nexus-upload-include-job-markers" class="form-check-input">
+						<label class="form-check-label" data-translation-id="menu:nexus:upload:include_job_markers"></label>
+					</div>
+
+					<div class="form-check mt-3">
+						<input type="checkbox" id="nexus-upload-accept-tos" class="form-check-input" required>
+						<label class="form-check-label">I agree to the   <a href="https://documentation.jaksam-scripts.com/jaksams-scripts/nexus-terms" target="_blank" onclick='window.invokeNative("openUrl", "https://documentation.jaksam-scripts.com/jaksams-scripts/nexus-terms")'>Nexus Terms and Privacy Policy</a></label>
+					</div>
+				</div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" data-translation-id="menu:close"></button>
+                    <button type="submit" class="btn btn-success" data-translation-id="menu:nexus:upload"></button>
+                </div>    
+            </form>
+        </div>
+    </div>
+
+	<script src="./assets/js/theme.bundle.js"></script>
+	<script src="index.js"></script>
+	<script src="../utils/dialogs/dialogs.js"></script>
+</body>
+
+</html>

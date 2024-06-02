@@ -1,0 +1,1 @@
+ALTER TABLE job_grades MODIFY COLUMN id INT auto_increment;

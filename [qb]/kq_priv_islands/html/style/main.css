@@ -1,0 +1,370 @@
+/*:root {*/
+/*    --primary: #c4790f;*/
+/*    --primary-light: #c9ad69;*/
+/*    --primary-lighter: #d2bb89;*/
+/*    --primary-lightest: #e5d6b1;*/
+/*    --primary-lightestst: #fff4db;*/
+/*    --primary-darker: #a8690f;*/
+/*    --primary-dark: #8c5200;*/
+/*}*/
+
+/* New colors */
+:root {
+    --primary: #c7965a;
+    --primary-light: #ceb888;
+    --primary-lighter: #cebf99;
+    --primary-lightest: #e0d6c0;
+    --primary-lightestst: #fff4db;
+    --primary-darker: #75614b;
+    --primary-dark: #544737;
+}
+
+@font-face {
+    font-family: "BebasNeue";
+    src: url('../fonts/BebasNeue.ttf') format('truetype');
+}
+@font-face {
+    font-family: "Monoton";
+    src: url('../fonts/Monoton.ttf') format('truetype');
+}
+
+body {
+    font-family: 'BebasNeue', sans-serif !important;
+    user-select: none;
+    overflow: hidden;
+}
+
+.UI-CONTAINER {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    overflow: hidden;
+}
+
+.card {
+    position: absolute;
+    min-width: 40vw;
+    max-width: 65vw;
+    max-height: 80vh;
+    min-height: 52vh;
+    /*border-radius: 0.5vh;*/
+    margin: 1vh;
+
+    background: var(--primary-light);
+    background: linear-gradient(130deg, var(--primary-lightest) 0%, var(--primary-light) 100%);
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+.card.full {
+    width: 100%;
+    height: 100%;
+    margin: 50vh auto auto 50vw;
+    transform: translate(-50%, -50%);
+}
+
+.card.popup {
+    margin: 50vh auto auto 50vw;
+    transform: translate(-50%, -50%);
+    box-shadow: black 0 0 200px;
+    min-width: 28vw;
+    max-width: 60vw;
+    max-height: 70vh;
+    min-height: 22vh;
+}
+
+.card-body {
+    background: white linear-gradient(130deg, rgba(255, 255, 255) 0%, rgb(200, 200, 200) 100%);
+    /*border-radius: 0.5vh;*/
+    width: inherit;
+    height: inherit;
+    min-height: inherit;
+    min-width: inherit;
+    transform: translate(-0.7vh, -0.7vh);
+    position: relative;
+}
+
+.card .card-header {
+    font-size: 3.5vh;
+    color: var(--primary);
+    padding: 1vh;
+}
+
+.tiny-logo {
+    width: 3.5vh;
+    height: auto;
+    float: right;
+}
+
+.card .card-backtext {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(100% - 2vh);
+    width: calc(100% - 2vh);
+    opacity: 25%;
+    overflow: hidden;
+    overflow-wrap: break-word;
+}
+
+.card-backtext span {
+    color: var(--primary);
+    font-size: 4.5vh;
+    text-align: center;
+    font-family: 'Monoton', sans-serif !important;
+    letter-spacing: 2px;
+    z-index: 1;
+}
+
+.card-main {
+    display: flex;
+    z-index: 2;
+    position: absolute;
+    width: calc(100% - 2vh);
+    height: calc(100% - 7vh);
+    padding: 6vh 1vh 1vh;
+    top: 0;
+}
+
+.card-main.big {
+    min-width: 30vw;
+}
+
+.card-main-content {
+    width: calc(100% - 11vw);
+    position: relative;
+    overflow: auto;
+}
+.card-main-purchase {
+    width: calc(100% - 23vw);
+    position: relative;
+    overflow: auto;
+}
+
+.card-purchase-details {
+    float: right;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: inherit;
+    right: 0;
+    width: 22vw;
+    padding: 1vh;
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(2px);
+    border: solid var(--primary-light) 1px;
+    /*border-radius: 0.5vh;*/
+}
+
+.card-purchase-details .title {
+    font-size: 4.0vh;
+    font-family: 'Monoton', sans-serif !important;
+    color: var(--primary);
+}
+
+.card-purchase-details .description {
+    font-size: 2.0vh;
+    color: var(--primary);
+}
+
+.card-purchase-details .buttons {
+    height: 20%;
+    width: 100%;
+}
+.product-overview {
+    height: 80%;
+    overflow: auto;
+}
+
+.confirm-price, .popup-desc {
+    color: var(--primary);
+    font-size: 3vh;
+}
+
+.close-popup-button {
+    justify-self: flex-end;
+}
+
+button.btn-primary {
+    font-family: 'BebasNeue', sans-serif !important;
+    color: var(--primary);
+    border: none;
+    border-left: solid var(--primary) 3px;
+    height: 4.8vh;
+    font-size: 4vh;
+    padding-right: 1vh;
+    display: block;
+    transition: ease-in-out 0.1s;
+    background-color: transparent;
+}
+
+button.btn-primary:disabled {
+    background: var(--primary-lightest);
+}
+
+button.btn-primary.btn-small {
+    height: 2.8vh;
+    font-size: 2.4vh;
+    padding-right: 0.75vh;
+}
+
+button.btn-primary.btn-medium {
+    height: 3.5vh;
+    font-size: 3vh;
+    padding-right: 1vh;
+}
+
+button.btn-primary:hover {
+    background: var(--primary-lightest);
+}
+
+.card-menu {
+    float: right;
+    display: flex;
+    align-items: end;
+    flex-direction: column;
+    right: 0;
+    width: 10vw;
+    padding: 1vh;
+}
+
+.menu-option {
+    background-color: transparent;
+    outline: none;
+    border: none;
+    display: flex;
+    flex-direction: row-reverse;
+}
+.menu-option .menu-option-icon {
+    width: 3.5vh;
+    height: 3.5vh;
+    transition: ease-in-out 0.1s;
+}
+.menu-option .menu-option-icon:hover {
+    transform: scale(1.1) rotate(10deg);
+    transition: ease-in-out 0.1s;
+}
+.button-icon {
+    width: 3.5vh;
+    height: 3.5vh;
+}
+
+button {
+    cursor: pointer;
+}
+
+.menu-option .menu-option-label {
+    font-family: 'BebasNeue', sans-serif !important;
+    color: var(--primary);
+    width: 0;
+    padding-right: 0;
+    overflow: hidden;
+    transition: ease-in-out 0.2s;
+    margin: 0;
+    font-size: 3vh;
+}
+.menu-option:hover .menu-option-label, .menu-option.active .menu-option-label {
+    width: 100%;
+    transition: ease-in-out 0.2s;
+    padding-right: 1vh;
+}
+
+.island {
+    width: calc(100% - 6vh);
+    height: auto;
+    padding: 2vh;
+    margin-bottom: 1vh;
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(2px);
+    /*border-radius: 0.5vh;*/
+    border: solid var(--primary-light) 1px;
+    position: relative;
+    transition-duration: 0.1s;
+}
+
+.island .title {
+    font-size: 3.3vh;
+    font-family: 'Monoton', sans-serif !important;
+    color: var(--primary);
+}
+
+.island .details {
+    font-size: 2.7vh;
+    color: var(--primary);
+}
+.island .details span {
+    width: 20vh;
+    position: relative;
+    display: inline-block;
+}
+
+.island:hover {
+    transform: translateX(1%);
+}
+
+.palm {
+    position: absolute;
+    right: 10%;
+    top: 10%;
+    height: 70%;
+    transition: ease-in-out 0.1s;
+}
+
+.mt-1 {
+    margin-top: 0.5vh;
+}
+.mt-2 {
+    margin-top: 1vh;
+}
+.mt-3 {
+    margin-top: 1.5vh;
+}
+.mt-4 {
+    margin-top: 2vh;
+}
+.mt-6 {
+    margin-top: 3vh;
+}
+.mt-8 {
+    margin-top: 4vh;
+}
+
+.hidden {
+    display: none;
+}
+
+.island:hover .palm {
+    transform: rotate(5deg);
+}
+
+
+::-webkit-scrollbar {
+    width: 4px;
+}
+
+::-webkit-scrollbar-track {
+    background: #CBCBCB;
+    /*border-radius: 10px;*/
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    /*border-radius: 10px;*/
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-dark);
+}
+
+::-moz-selection { /* Code for Firefox */
+    color: black;
+    background: var(--primary-light);
+}
+
+::selection {
+    color: #FFFFFF;
+    background: var(--primary-light);
+}

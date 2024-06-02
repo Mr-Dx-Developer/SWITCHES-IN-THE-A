@@ -30,6 +30,12 @@ QBShared.Weapons = {
 	[`weapon_kayslimeswitchr`]              = { name = 'weapon_kayslimeswitchr', label = 'KaySlimeSwitch Red', weapontype = 'Pistol', ammotype = 'AMMO_PISTOL', damagereason = 'Pistoled / Blasted / Plugged / Bust a cap in' },
 	[`weapon_kayslimeswitchy`]              = { name = 'weapon_kayslimeswitchy', label = 'KaySlimeSwitch Yellow', weapontype = 'Pistol', ammotype = 'AMMO_PISTOL', damagereason = 'Pistoled / Blasted / Plugged / Bust a cap in' },
 
+	[`weapon_sb4s`]              = { name = 'weapon_sb4s', label = 'SB4S', weapontype = 'Submachine Gun', ammotype = 'AMMO_SMG', damagereason = 'Riddled / Drilled / Finished / Submachine Gunned' },
+	[`weapon_slr15`]          = { name = 'weapon_slr15', label = 'SLR15', weapontype = 'Assault Rifle', ammotype = 'AMMO_RIFLE', damagereason = 'Ended / Rifled / Shot down / Floored' },
+	[`weapon_fn42`]          = { name = 'weapon_fn42', label = 'FN42', weapontype = 'Assault Rifle', ammotype = 'AMMO_RIFLE', damagereason = 'Ended / Rifled / Shot down / Floored' },
+	[`weapon_casr`]          = { name = 'weapon_casr', label = 'CASR', weapontype = 'Assault Rifle', ammotype = 'AMMO_RIFLE', damagereason = 'Ended / Rifled / Shot down / Floored' },
+
+	[`weapon_grau`]          = { name = 'weapon_grau', label = 'GRAU', weapontype = 'Assault Rifle', ammotype = 'AMMO_RIFLE', damagereason = 'Ended / Rifled / Shot down / Floored' },
 
 
 

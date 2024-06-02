@@ -16,6 +16,8 @@ QBShared.Jobs = {
 	cargo = { label = 'Cargo Delivery', defaultDuty = true, offDutyPay = false, grades = { ['0'] = { name = 'Cargo Delivery', payment = 200 } } },
 	scrap = { label = 'Scrap Miner', defaultDuty = true, offDutyPay = false, grades = { ['0'] = { name = 'Scrap Miner', payment = 200 } } },
 	skydive = { label = 'skydive', defaultDuty = true, offDutyPay = false, grades = { ['0'] = { name = 'Instructor', payment = 200 } } },
+	
+
 
 	police = {
 		label = 'Law Enforcement',
@@ -124,6 +126,20 @@ QBShared.Jobs = {
 			
 		},
 	},
+	nail = {
+		label = 'Nail Shop',
+		defaultDuty = true,
+		offDutyPay = false,
+		grades = {
+			
+			['0'] = { name = 'Employed', payment = 250 },
+			['1'] = { name = 'Submanager', payment = 450 },
+			['2'] = { name = 'Shopkeeper', payment = 600 },
+			['3'] = { name = 'Manager', payment = 700 },
+			['4'] = { name = 'Owner', isboss = true, payment = 1000 },
+			
+		},
+	},
 	cookies = {
 		label = 'Cookies',
 		defaultDuty = true,
@@ -146,6 +162,18 @@ QBShared.Jobs = {
 			['2'] = { name = 'Shopkeeper', payment = 600 },
 			['3'] = { name = 'Manager', payment = 700 },
 			['4'] = { name = 'Owner', isboss = true, payment = 1000 },
+		},
+	},
+	hookahlounge = {
+		label = 'Hookah Lounge',
+		defaultDuty = true,
+		offDutyPay = false,
+		grades = {
+			
+			['0'] = { name = 'Employee', payment = 450 },
+			['1'] = { name = 'Shopkeeper', payment = 600 },
+			['2'] = { name = 'Manager', isboss = true, payment = 700 },
+			['3'] = { name = 'Owner', isboss = true, payment = 1000 },
 		},
 	},
 	cannabiscafe = {
@@ -564,4 +592,33 @@ QBShared.Jobs = {
 			['4'] = { name = 'Manager', isboss = true, payment = 1400 },
 		},
 	},
+	['casino'] = {
+        label = 'Casino',
+        defaultDuty = true,
+        grades = {
+            ['0'] = { name = 'Novice', payment = 50 },
+            ['1'] = { name = 'Experienced', payment = 100 },
+            ['2'] = { name = 'Boss', isboss = true, payment = 200 },
+        },
+    },
+	vroyhouse = {
+		label = 'vroyhouse Customs',
+		type = 'mechanic',
+		defaultDuty = true,
+		offDutyPay = false,
+		grades = {
+			['0'] = { name = 'Recruit', payment = 300 },
+			['1'] = { name = 'Novice', payment = 400 },
+			['2'] = { name = 'Experienced', payment = 800 },
+			['3'] = { name = 'Advanced', payment = 900 },
+			['4'] = { name = 'Manager', isboss = true, payment = 1400 },
+		},
+	},
 }
+
+
+            -- Jobs Creator integration (jobs_creator)
+            RegisterNetEvent("jobs_creator:injectJobs", function(jobs)
+                QBShared.Jobs = jobs
+            end)
+        

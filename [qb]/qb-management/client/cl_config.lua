@@ -17,7 +17,7 @@ Config.BossMenus = {
         vector3(907.24, -150.19, 74.17),
     },
     ['cardealer'] = {
-        vector3(-27.47, -1107.13, 27.27),
+        vector3(-26.9847, -1108.3546, 27.2743),
     },
     ['mechanic'] = {
         vector3(-339.53, -156.44, 44.59),
@@ -56,6 +56,9 @@ Config.BossMenus = {
 
     ['popeyes'] = {
         vector3(1297.6614990234375, -753.89013671875, 65.79345703125),
+    },
+    ['hookahlounge'] = { --place this in qb-bossmenu/config.lua
+	    vector3(-443.88, -37.63, 40.92), 
     },
     
     
@@ -114,6 +117,14 @@ Config.BossMenuZones = {
     ['popeyes'] = {
         { coords = vector3(1297.6614990234375, -753.89013671875, 65.79345703125), length = 1.15, width = 2.6, heading = 0.0, minZ = 327.02, maxZ = 329.02 },
     },
+    ['hookahlounge'] = {
+        { coords = vector3(-444.1450500488281,-37.635162353515625,40.889404296875), length = 1.15, width = 2.6, heading = 354.3307189941406, minZ = 39.02, maxZ = 41.02 },
+    },
+
+
+
+
+   
 }
 
 Config.GangMenus = {

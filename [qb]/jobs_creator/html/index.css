@@ -1,0 +1,17 @@
+.clickable {
+    cursor: pointer;
+}
+
+.script-name {
+    color: #00dcff;
+    
+    font-family: 'Archivo Black', sans-serif;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 2.5rem!important;
+
+    line-height: 10vh
+}
+
+.swal-overlay--show-modal .swal-modal {
+    will-change: unset !important;
+}

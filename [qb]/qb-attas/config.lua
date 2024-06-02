@@ -23,6 +23,8 @@ Config.Throwables = {
 }
 
 Config.DurabilityMultiplier = {
+    weapon_sb4s              = 0.15,
+
     -- Kyros Weapon Pack Mafia [A]
     weapon_bloodsglock 	         = 0.15,
     weapon_cripsglock 	         = 0.15,
@@ -305,9 +307,10 @@ Config.DurabilityMultiplier = {
 
     weapon_m47v2          = 0.15,
 
-
-
-
+    weapon_slr15          = 0.15,
+    weapon_fn42          = 0.15,
+    weapon_casr          = 0.15,
+    weapon_grau          = 0.15,
 
 
 }
@@ -345,6 +348,12 @@ WeaponAttachments = {
         weapon_galilarv2 = `w_ar_galilarv2_mag2`,
         weapon_m4asiimov = `w_ar_m4_asiimov_mag2`,
         weapon_m47v2 = `w_ar_m47v2_mag2`,
+        weapon_sb4s = `w_sb_sb4s_mag2`,
+        weapon_slr15 = `w_ar_slr15_mag2`,
+        weapon_fn42 = `w_ar_fn42_mag2`,
+        weapon_casr = `w_ar_casr_mag2`,
+        weapon_grau = `w_ar_grau_mag2`,
+
 
         weapon_nvrifle_purple = `w_ar_nvrifle_purple_mag2`,
 
@@ -512,6 +521,13 @@ WeaponAttachments = {
         weapon_m4asiimov = `w_at_m4_asiimov_supp`,
         weapon_m47v2 = `w_at_ar_m47v2_supp`,
         weapon_nvrifle_purple = `w_at_nvrifle_purple_supp`,
+        weapon_sb4s = `w_at_sb_sb4s_supp`,
+        weapon_slr15 = `w_at_ar_slr15_supp`,
+        weapon_fn42 = `w_at_ar_fn42_supp`,
+        weapon_casr = `w_at_ar_casr_supp`,
+        weapon_grau = `w_at_ar_grau_supp`,
+
+
 
 
         weapon_scevo = `w_at_cz_sc_evo_supp`,
@@ -564,6 +580,7 @@ WeaponAttachments = {
         weapon_m4asiimov = `w_at_m4_asiimov_scope_small`,
         weapon_m47v2 = `w_at_m47v2_scope_small`,
         weapon_nvrifle_purple = `w_at_nvrifle_purple_scope_small`,
+        weapon_sb4s = `w_at_sb_sb4s_scope`,
 
 
         weapon_pistol_mk2 = `COMPONENT_AT_PI_RAIL`,
@@ -585,6 +602,7 @@ WeaponAttachments = {
         weapon_carbinerifle_mk2 = `COMPONENT_AT_SCOPE_MACRO_MK2`,
         weapon_advancedrifle = `COMPONENT_AT_SCOPE_SMALL`,
         weapon_grenadelauncher = `COMPONENT_AT_SCOPE_SMALL`,
+
     },
     medscope_attachment = {
         weapon_anarchy = `w_at_ar_anarchy_scope`,
@@ -599,6 +617,11 @@ WeaponAttachments = {
         weapon_fmr = `w_at_ar_fmr_scope`,
         weapon_scarsc = `w_at_ar_scarsc_scope`,
         weapon_galilarv2 = `w_at_ar_galilarv2_scope`,
+        weapon_slr15 = `w_at_ar_slr15_scope`,
+        weapon_fn42 = `w_at_ar_fn42_scope`,
+        weapon_casr = `w_at_ar_casr_scope`,
+        weapon_grau = `w_at_ar_grau_scope`,
+
 
 
         weapon_smg_mk2 = `COMPONENT_AT_SCOPE_SMALL_SMG_MK2`,
@@ -740,6 +763,10 @@ WeaponAttachments = {
         weapon_m4_tactical_red = `w_at_m4_tactical_red_supp`,
         weapon_m4asiimov = `w_at_m4_asiimov_grip`,
         weapon_m47v2 = `w_at_ar_m47v2_grip`,
+        weapon_slr15 = `w_at_ar_slr15_grip`,
+        weapon_grau = `w_at_ar_grau_grip`,
+        weapon_casr = `w_at_ar_casr_grip`,
+
 
         weapon_nvrifle_purple = `w_at_nvrifle_purple_afgrip`,
 

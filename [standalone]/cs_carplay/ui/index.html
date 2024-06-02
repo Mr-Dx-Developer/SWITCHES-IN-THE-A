@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body style="background-color: transparent !important";>
+    <div class="drag-container">
+        <div class="draggable">
+            <div class="wrapper dark-mode">
+                <img class="home-background" src="image/wallpaper/6.jpeg">   
+                <div class="left-slider">
+                    <div class="left-time">
+                        <p class="left-time-text">12:00</p>
+                    </div>
+                    <div class="left-pre-apps">
+                        <img src="image/apps/siri.png" class="siri-icon">
+                        <img src="image/apps/maps.png" class="left-map-icon">
+                        <img src="image/apps/camera.png" class="left-camera-icon">
+                    </div>
+                    <div class="left-home-menu">
+                        <i class="fa-solid fa-bars left-home-menu-btn"></i>
+                    </div>
+                </div>
+                <div class="main-slider-home">
+                    <div class="middle-slider">
+                        <div class="weather-cont">
+                            <div class="location-cont">
+                                <div class="location-title">
+                                    <p class="location-title-text">Los Santos</p>
+                                </div>
+                                <div class="weather-image">
+                                    <div class="weather-logo">
+                                        <div class="cloud front">
+                                          <span class="left-front"></span>
+                                          <span class="right-front"></span>
+                                        </div>
+                                        <span class="sun sunshine"></span>
+                                        <span class="sun"></span>
+                                        <div class="cloud back">
+                                          <span class="left-back"></span>
+                                          <span class="right-back"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="time-cont">
+                                <p class="time-cont-title">12:00</p>
+                                <div class="weather-box">
+                                    <p>Sunny</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="map-cont">
+                            <p class="maps-title">Maps</p>
+                            <img src="image/map-arrow.png" class="map-arrow-image">
+                            <img src="image/Union.png" class="union-arrow-design">
+                            <img src="image/mapzoom.png" class="map-zoom-image">
+                            <p class="maps-distance">
+                                <span>123</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="right-slider">
+                        <div class="short-music-card">
+                            <img class="music-card" src="image/music-note.png">
+                            <div class="song-card-information">
+                                <div class="music-card-title">No Music Playing</div>
+                                <!-- <div class="music-card-sub-artistname">Music Player</div> -->
+                                <div class="song-card-btns">
+                                    <i class="menu-music-back fa-solid fa-backward-step"></i>
+                                    <i class="menu-music-stop fa-solid fa-play"></i>
+                                    <i class="menu-music-skip fa-solid fa-forward-step"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="main-slider-apps animate__animated">
+                    <div class="app home-music-app">
+                        <img src="image/apps/apple-music.png" class="app-icon">
+                        <p class="app-title">Music</p>
+                    </div>
+                    <div class="app home-playlist-app">
+                        <img src="image/apps/files.png" class="app-icon">
+                        <p class="app-title">Playlist</p>
+                    </div>
+                    <div class="app home-timer-app">
+                        <img src="image/apps/clock.png" class="app-icon">
+                        <p class="app-title">Stop Watch</p>
+                    </div>
+                    <div class="app home-settings-app">
+                        <img src="image/apps/settings.png" class="app-icon">
+                        <p class="app-title">Settings</p>
+                    </div>
+                    <div class="app home-carinfo-app">
+                        <img src="image/apps/car-info.png" class="app-icon">
+                        <p class="app-title">Car Info</p>
+                    </div>
+                    <div class="app home-video-app">
+                        <img src="image/apps/youtube.png" class="app-icon">
+                        <p class="app-title">YouTube</p>
+                    </div>
+                    <div class="app home-carcontrol-app">
+                        <img src="image/apps/car.png" class="app-icon">
+                        <p class="app-title">Car Control</p>
+                    </div>
+                    <div class="app home-snake-game">
+                        <img src="image/apps/snakegame.png" class="app-icon">
+                        <p class="app-title">Snake Game</p>
+                    </div>
+                    <div class="app home-dashboard-app">
+                        <img src="image/apps/my-shortcuts.png" class="app-icon">
+                        <p class="app-title">Automation</p>
+                    </div>
+                </div>
+                <div class="music-app" active='true'>
+                    <img src="image/fm.jpeg" class="bg-music-app">
+                    <div class="music-app-header">
+                        <div class="music-back-arrow">
+                            <i class="fa-solid fa-circle-arrow-left"></i>
+                            <p class="back-title">Back</p>
+                        </div>
+                        <div class="music-playlist-btn">
+                            <div class="music-search-field">
+                                <div class="group">
+                                    <svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><g><path d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"></path></g></svg>
+                                    <input placeholder="Search" type="search" class="input">
+                                </div>
+                            </div>
+                            <div class="music-search-play-btn">
+                                <i class="fa-solid fa-play"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="music-app-middle">
+                        <div class="music-song-content">
+                            <marquee class="music-song-title">
+                                <p>No Music Playing</p>
+                            </marquee>
+                            <div class="music-song-subtitle">
+                                <p>Music Player</p>
+                            </div>
+                            <div class="music-song-buttons">
+                                <i class="music-back fa-solid fa-backward"></i>
+                                <i class="music-stop fa-solid fa-play"></i>
+                                <i class="music-skip fa-solid fa-forward"></i>
+                            </div>
+                        </div>
+                        <div class="music-song-thumbnail">
+                            <img src="image/fm.jpeg" class="music-thumbnail">
+                        </div>
+                    </div>
+                    <div class="music-app-sliderbar">
+                        <div class="slider-container">
+                            <div id="time-info">
+                                <span id="start-time">0:00</span>
+                                <span id="end-time" data-duration="300">0:00</span>
+                            </div>
+                            <input type="range" id="slider" class="music-app-slider" min="0" max="100" step="1" value="0" disabled>
+                        </div>
+                    </div>
+                    
+                    <div class="music-app-footer">
+                        <i class="volume-btn fa-solid fa-volume-high"></i>
+                        <div class="volume-bar-cont">
+                            <div class="volume-bar">
+                                <input type="range" class="volume-slider" min="0" max="100" value="100">
+                            </div>
+                        </div>
+                        <i class="like-music fa-solid fa-heart"></i>
+                        <i class="music-loop fa-solid fa-repeat"></i>
+                    </div>
+                </div>
+                <div class="playlist-app">
+                    <div class="playlist-header">
+                        <div class="playlist-back-arrow playlist-back-music">
+                            <i class="fa-solid fa-circle-arrow-left"></i>
+                            <p class="back-title">Back</p>
+                        </div>
+                        <div class="playlist-title-cont">
+                            <p>Saved Playlist</p>
+                        </div>
+                    </div>
+                    <div class="playlist-middle">
+                        <div class="playlist-song">
+                            <div class="playlist-song-img">
+                                <div class="saved-song-img">
+                                    <img src="image/fm.jpeg">
+                                </div>
+                            </div>
+                            <div class="playlist-song-title">
+                                <h1 class="saved-music-title"></h1>
+                                <h4 class="saved-sub-artist"></h4>
+                            </div>
+                            <div class="playlist-song-btns">
+                                <i class="fa-solid fa-play saved-icon-play"></i>
+                                <i class="fa-solid fa-trash-can saved-icon-delete"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="car-details-app">
+                    <div class="car-details-header">
+                        <i class="fa-solid fa-right-from-bracket car-details-exit"></i>
+                    </div>
+                    <div class="car-details-cont">
+                        <div class="car-details">
+                            <i class="fa-solid fa-car-side car-details-icon"></i>
+                            <h3>Body</h3>
+                            <h4 class="body_health">100%</h4>
+                        </div>
+                        <div class="car-details">
+                            <i class="fa-solid fa-gas-pump car-details-icon"></i>
+                            <h3>Fuel</h3>
+                            <h4 class="fuel_health">100%</h4>
+                        </div>
+                        <div class="car-details">
+                            <i class="fa-solid fa-gear car-details-icon"></i>
+                            <h3>Engine</h3>
+                            <h4 class="engine_health">100%</h4>
+                        </div>
+                        <div class="car-details">
+                            <i class="fa-solid fa-temperature-low car-details-icon"></i>
+                            <h3>Temprature</h3>
+                            <h4 class="temp_health">100%</h4>
+                        </div>
+                    </div>
+                    <div class="car-driver-cont">
+                        <div class="car-driver-name">
+                            <p class="car-name-cont"></p>
+                            <div class="car-control-button">Car Control &nbsp <i class="fa-solid fa-caret-right fa-xl"></i></div>
+                        </div>
+                        <div class="car-side-picture">
+                            <img src="image/car-side2.png" class="car-picture">
+                        </div>
+                    </div>
+                </div>
+                <div class="vehicle-control-app">
+                    <div class="car-details-header">
+                        <i class="fa-solid fa-right-from-bracket car-control-exit"></i>
+                    </div>
+                    <div class="vehicle-side-image">
+                        <img src="image/car-side.png" class="vehicle-car-image">
+                    </div>
+                    <div class="vehicle-buttons-cont">
+                        <div class="vehicle-btn-cont1">
+                            <div class="vehicle-buttons-box-2">
+                                <div class="vehicle-icon-container">
+                                    <div class="vehicle-icon-box-2 window0_btn">
+                                        <img src="image/icons/window.png">
+                                    </div>
+                                    <div class="vehicle-icon-box-2 window1_btn">
+                                        <img src="image/icons/window-2.png">
+                                    </div>
+                                </div>
+                                <div class="vehicle-icon-container">
+                                    <div class="vehicle-icon-box-2 window2_btn">
+                                        <img src="image/icons/window.png">
+                                    </div>
+                                    <div class="vehicle-icon-box-2 window3_btn">
+                                        <img src="image/icons/window-2.png">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="vehicle-buttons-name">Car Windows</div>
+                        </div>
+                        <div class="vehicle-btn-cont2">
+                            <div class="vehicle-buttons-box-2">
+                                <div class="vehicle-icon-container">
+                                    <div class="vehicle-icon-box-3 door0_btn">
+                                        <img src="image/icons/car-door.png">
+                                    </div>
+                                    <div class="vehicle-icon-box-3 door4_btn">
+                                        <img src="image/icons/bonnet.png">
+                                    </div>
+                                    <div class="vehicle-icon-box-3 door1_btn">
+                                        <img src="image/icons/car-door-2.png">
+                                    </div>
+                                </div>
+                                <div class="vehicle-icon-container">
+                                    <div class="vehicle-icon-box-3 door2_btn">
+                                        <img src="image/icons/car-door.png">
+                                    </div>
+                                    <div class="vehicle-icon-box-3 door5_btn">
+                                        <img src="image/icons/hood.png">
+                                    </div>
+                                    <div class="vehicle-icon-box-3 door3_btn">
+                                        <img src="image/icons/car-door-2.png">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="vehicle-buttons-name">Car Doors</div>
+                        </div>
+                        <div class="vehicle-btn-cont3">
+                            <div class="vehicle-buttons-box-2">
+                                <div class="vehicle-icon-container">
+                                    <div class="vehicle-icon-box-2 seat10_btn">
+                                        <img src="image/icons/steering-wheel.png">
+                                    </div>
+                                    <div class="vehicle-icon-box-2 seat0_btn">
+                                        <img src="image/icons/seat.png">
+                                    </div>
+                                </div>
+                                <div class="vehicle-icon-container">
+                                    <div class="vehicle-icon-box-2 seat1_btn">
+                                        <img src="image/icons/seat.png">
+                                    </div>
+                                    <div class="vehicle-icon-box-2 seat2_btn">
+                                        <img src="image/icons/seat.png">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="vehicle-buttons-name">Car Seats</div>
+                        </div>
+                    </div>
+                    <div class="vehicle-extra-buttons-cont">
+                        <div class="vehicle-btn-cont4">
+                            <div class="vehicle-buttons-box">
+                                <div class="vehicle-icon-box engine_btn">
+                                    <div class="vehicle-icon">
+                                        <img src="image/icons/switch.png">
+                                    </div>
+                                    <div class="vehicle-icon-bar">
+                                        <div class="icon-active-bar"></div>
+                                    </div>
+                                </div>
+                                <div class="vehicle-icon-box alldoor_btn">
+                                    <div class="vehicle-icon">
+                                        <img src="image/icons/car.png">
+                                    </div>
+                                    <div class="vehicle-icon-bar">
+                                        <div class="icon-active-bar"></div>
+                                    </div>
+                                </div>
+                                <div class="vehicle-icon-box headlight_btn">
+                                    <div class="vehicle-icon">
+                                        <img src="image/icons/headlight.png">
+                                    </div>
+                                    <div class="vehicle-icon-bar">
+                                        <div class="icon-active-bar"></div>
+                                    </div>
+                                </div>
+                                <div class="vehicle-icon-box hazard_btn">
+                                    <div class="vehicle-icon">
+                                        <img src="image/icons/warning.png">
+                                    </div>
+                                    <div class="vehicle-icon-bar">
+                                        <div class="icon-active-bar"></div>
+                                    </div>
+                                </div>
+                                <div class="vehicle-icon-box musicrgb_btn">
+                                    <div class="vehicle-icon">
+                                        <img src="image/icons/led.png">
+                                    </div>
+                                    <div class="vehicle-icon-bar">
+                                        <div class="icon-active-bar"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="vehicle-buttons-name">Car Control Menu</div>
+                        </div>
+                    </div>
+                </div> 
+                <div class="video-app">
+                    <div class="playlist-header">
+                        <div class="playlist-back-arrow video-back-btn">
+                            <i class="fa-solid fa-circle-arrow-left"></i>
+                            <p class="back-title">Back</p>
+                        </div>
+                        <div class="playlist-title-cont">
+                            <p>Video Player</p>&nbsp
+                            <div class="tooltip-container">
+                                <i class="fa-solid fa-circle-info video-player-info"></i>
+                                <div class="tooltip-text">This video is visible to the car owner only.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-player-container">
+                        <h2 class="no-media-text">No Media</h2>
+                        <div class="video-player">
+                            <iframe id="frame" width="100%" height="100%" src="" frameborder="0" allow="autoplay" allowfullscreen=""></iframe>
+                        </div>
+                    </div>
+                    <div class="video-player-buttons-cont">
+                        <div class="video-player-input-box">
+                            <div class="group">
+                                <svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><g><path d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"></path></g></svg>
+                                <input placeholder="Search" type="search" class="input">
+                            </div>
+                        </div>
+                        <div class="video-player-options-btn">
+                            <button class="video-play-btn">Play</button>
+                            <button class="video-stop-btn">Stop</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="settings-app">
+                    <div class="settings-header">
+                        <h1 class="settings-title">Settings</h1>
+                        <div class="playlist-back-arrow settings-back-btn">
+                            <i class="fa-solid fa-circle-arrow-left"></i>
+                            <p class="back-title">Back</p>
+                        </div>
+                    </div>
+                    <div class="settings-middle">
+                        <div class="settings-box login-box" login="false">
+                            <div class="settings-app-name">
+                                <img src="image/apps/user.png" class="settings-app-icon">
+                                <div>
+                                    <h3 class="settings-app-title login-user-title">Welcome, User!</h3>
+                                    <p class="sign-text">Sign in to your Car Play</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="settings-box apperance-box">
+                            <div class="settings-app-name ">
+                                <img src="image/apps/theme.png" class="settings-app-icon">
+                                <h3 class="settings-app-title">Apperance</h3>
+                            </div>
+                            <div class="settings-apps-option-cont">
+                                <i class="fa-solid fa-angle-right settings-arrow"></i>
+                            </div>
+                        </div>
+                        <div class="settings-box wallpaper-set-box">
+                            <div class="settings-app-name">
+                                <img src="image/apps/photos.png" class="settings-app-icon">
+                                <h3 class="settings-app-title">Wallpaper</h3>
+                            </div>
+                            <div class="settings-apps-option-cont">
+                                <i class="fa-solid fa-angle-right settings-arrow"></i>
+                            </div>
+                        </div>
+                        <div class="settings-box siri-setting">
+                            <div class="settings-app-name">
+                                <img src="image/apps/siri.png" class="settings-app-icon">
+                                <h3 class="settings-app-title">Siri in Dashboard</h3>
+                            </div>
+                            <div class="settings-apps-option-cont">
+                                <div class="container">
+                                    <input type="checkbox" class="checkbox" id="checkbox-siri">
+                                    <label class="switch" for="checkbox-siri">
+                                    <span class="slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="settings-box sound-setting">
+                            <div class="settings-app-name">
+                                <img src="image/apps/voice-memos.png" class="settings-app-icon">
+                                <h3 class="settings-app-title">Sounds Effects</h3>
+                            </div>
+                            <div class="settings-apps-option-cont">
+                                <div class="container">
+                                    <input type="checkbox" class="checkbox" id="checkbox-sound">
+                                    <label class="switch" for="checkbox-sound">
+                                    <span class="slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="settings-box rgb-setting">
+                            <div class="settings-app-name">
+                                <img src="image/apps/apple-music.png" class="settings-app-icon">
+                                <h3 class="settings-app-title">Music RGB</h3>
+                            </div>
+                            <div class="settings-apps-option-cont">
+                                <div class="container">
+                                    <input type="checkbox" class="checkbox" id="checkbox-rgb">
+                                    <label class="switch" for="checkbox-rgb">
+                                    <span class="slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="settings-box minimized-setting">
+                            <div class="settings-app-name">
+                                <img src="image/apps/my-shortcuts.png" class="settings-app-icon">
+                                <h3 class="settings-app-title">Music Overlay</h3>
+                            </div>
+                            <div class="settings-apps-option-cont">
+                                <div class="container">
+                                    <input type="checkbox" class="checkbox" id="checkbox-minimized">
+                                    <label class="switch" for="checkbox-minimized">
+                                    <span class="slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="settings-box position-setting">
+                            <div class="settings-app-name">
+                                <img src="image/apps/screen.png" class="settings-app-icon">
+                                <h3 class="settings-app-title">Position UI</h3>
+                            </div>
+                            <div class="settings-apps-option-cont">
+                                <div class="reset-ui-position-btn">Reset</div>
+                                <div class="container">
+                                    <input type="checkbox" class="checkbox" id="checkbox-position">
+                                    <label class="switch" for="checkbox-position">
+                                    <span class="slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="settings-box">
+                            <div class="settings-app-name">
+                                <img src="image/apps/resize.png" class="settings-app-icon">
+                                <h3 class="settings-app-title">Resize</h3>
+                            </div>
+                            <div class="settings-apps-option-cont">
+                                <div class="zoom-buttons">
+                                    <i class="fa-solid fa-square-plus zoomInBtn"></i>
+                                    <div id="zoomLevel">1.0</div>
+                                    <i class="fa-solid fa-square-minus zoomOutBtn"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="settings-box">
+                            <div class="settings-app-name">
+                                <img src="image/apps/resize.png" class="settings-app-icon">
+                                <h3 class="settings-app-title">Resize</h3>
+                            </div>
+                            <div class="settings-apps-option-cont">
+                                <input type="range" min="-10" max="10" id="size_slider"/>
+                            </div>
+                        </div>                     -->
+                        <div class="settings-box factory-reset">
+                            <div class="settings-app-name">
+                                <img src="image/apps/settings.png" class="settings-app-icon">
+                                <h3 class="settings-app-title">Factory Reset</h3>
+                            </div>
+                            <div class="settings-apps-option-cont">
+                                <i class="fa-solid fa-angle-right settings-arrow"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sign-in-confirmation-box">
+                        <div class="sign-in-box">
+                        <div class="sign-in-close">
+                            <i class="fa-solid fa-circle-xmark"></i>
+                        </div> 
+                        <div class="scanner-gif-cont">
+                            <img src="image/fingerprint-screen.png" class="gif-scan">
+                        </div>
+                        <div class="sign-text-box">
+                            <h3 class="touch-id-text">Touch ID</h3>
+                            <h5 class="touch-sub-text">Sign in to your Carplay</h5>
+                        </div>
+                        <div class="sign-in-text">
+                            <p class="sign-in-button">Sign In</p>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="appearance-setting">
+                    <div class="playlist-header">
+                        <div class="playlist-back-arrow appearance-exit">
+                            <i class="fa-solid fa-circle-arrow-left"></i>
+                            <p class="back-title">Settings</p>
+                        </div>
+                        <div class="playlist-title-cont">
+                            <p>Appearance</p>
+                        </div>
+                    </div>
+                    <div class="settings-middle">
+                        <div class="settings-box dark-mode-btn">
+                            <div class="settings-app-name">
+                                <h3 class="settings-app-title">Dark Mode</h3>
+                            </div>
+                            <div class="settings-apps-option-cont">
+                                <i class="fa-solid settings-arrow"></i>
+                            </div>
+                        </div>
+                        <div class="settings-box light-mode-btn">
+                            <div class="settings-app-name">
+                                <h3 class="settings-app-title">Light Mode</h3>
+                            </div>
+                            <div class="settings-apps-option-cont">
+                                <i class="fa-solid settings-arrow"></i>
+                            </div>
+                        </div>
+                        <div class="settings-box">
+                            <div class="settings-app-name">
+                                <h3 class="settings-app-title">Brightness</h3>
+                            </div>
+                            <div class="settings-apps-option-cont">
+                                <div class="brightness-slider-container">
+                                    <input type="range" id="brightslider" min="0" max="100" value="50" step="1">
+                                </div>      
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="wallpaper-settings">
+                    <div class="playlist-header">
+                        <div class="playlist-back-arrow wallpaper-exit">
+                            <i class="fa-solid fa-circle-arrow-left"></i>
+                            <p class="back-title">Settings</p>
+                        </div>
+                        <div class="playlist-title-cont">
+                            <p>Wallpaper</p>
+                        </div>
+                        <div class="wallpaper-upload-btn">
+                            <h3 class="wallpaper-url">Upload URL <i class="fa-solid fa-upload" style="margin-left: 10px;"></i></h3>
+                        </div>
+                    </div>
+                    <div class="wallpaper-insert-url">
+                       <div class="insert-url-box">
+                        <h3 class="insert-wallpaper-title">Insert Wallpaper URL</h3>
+                        <div class="insert-url-input-box">
+                            <input type="text" name="text" class="insert-url-wallpaper" placeholder="Enter URL">
+                        </div>
+                        <div class="insert-url-close-btns">
+                            <div class="save-url-btn">Save</div>
+                            <div class="close-url-btn">Close</div>
+                        </div>
+                       </div>
+                    </div>
+                    <div class="wallpaper-middle">
+                        <div class="wallpaper-box">
+                            <img src="image/wallpaper/1.jpeg" class="wallpaper-image">
+                        </div>
+                        <div class="wallpaper-box">
+                            <img src="image/wallpaper/2.jpeg" class="wallpaper-image">
+                        </div>
+                        <div class="wallpaper-box">
+                            <img src="image/wallpaper/3.jpeg" class="wallpaper-image">
+                        </div>
+                        <div class="wallpaper-box">
+                            <img src="image/wallpaper/4.jpeg" class="wallpaper-image">
+                        </div>
+                        <div class="wallpaper-box">
+                            <img src="image/wallpaper/5.jpeg" class="wallpaper-image">
+                        </div>
+                        <div class="wallpaper-box">
+                            <img src="image/wallpaper/6.jpeg" class="wallpaper-image">
+                        </div>
+                        <div class="wallpaper-box">
+                            <img src="image/wallpaper/7.jpeg" class="wallpaper-image">
+                        </div>
+                    </div>
+                </div>
+                <div class="factory-settings">
+                    <div class="playlist-header">
+                        <div class="playlist-back-arrow reset-exit">
+                            <i class="fa-solid fa-circle-arrow-left"></i>
+                            <p class="back-title">Settings</p>
+                        </div>
+                        <div class="playlist-title-cont">
+                            <p>Factory Reset</p>
+                        </div>
+                    </div>
+                    <div class="settings-middle">
+                        <div class="settings-box reset-playlist">
+                            <div class="settings-app-name">
+                                <h3 class="settings-app-title">Reset Playlist</h3>
+                            </div>
+                            <div class="settings-apps-option-cont">
+                                <i class="fa-solid settings-arrow"></i>
+                            </div>
+                        </div>
+                        <div class="settings-box reset-settings">
+                            <div class="settings-app-name">
+                                <h3 class="settings-app-title">Reset Settings</h3>
+                            </div>
+                            <div class="settings-apps-option-cont">
+                                <i class="fa-solid settings-arrow"></i>
+                            </div>
+                        </div>
+                        <div class="settings-box reset-all">
+                            <div class="settings-app-name">
+                                <h3 class="settings-app-title">Reset All</h3>
+                            </div>
+                            <div class="settings-apps-option-cont">
+                                <i class="fa-solid settings-arrow"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="factory-confirmation-box">
+                        <div class="are-you-sure-box">
+                            <div class="are-you-sure">
+                                <h3>Are you sure you want to proceed?</h3>
+                            </div>
+                            <div class="are-you-options">
+                                <button class="yes-button">Yes</button>
+                                <button class="no-button">No</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="stop-watch-app">
+                    <div class="playlist-header">
+                        <div class="playlist-back-arrow timer-back-btn">
+                            <i class="fa-solid fa-circle-arrow-left"></i>
+                            <p class="back-title">Back</p>
+                        </div>
+                        <div class="playlist-title-cont">
+                            <p>Stop Watch</p>
+                        </div>
+                    </div>
+                    <div class="container-stopwatch">
+                        <div class="face">
+                        <div class="stopwatch">
+                            <div class="timer-wrapper">
+                            <h1 class="timer-stopwatch">00:00.00</h1>
+                            </div>
+                
+                            <div class="controls">
+                            <div class="toggle">
+                                <button class="reset-btn">Reset</button>
+                                <button class="lap-btn">Lap</button>
+                            </div>
+                            <div class="toggle">
+                                <button class="start-btn">Start</button>
+                                <button class="pause-btn">Pause</button>
+                            </div>
+                            </div>
+                            <div class="tracker-wrapper">
+                            <div class="tracker"></div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="snake-game-app"></div>
+                <div class="siri-app">
+                    <div class="siri-qa-cont">
+                        <div class="siri-qa-box"></div>
+                    </div>
+                    <div class="siri-search-cont">
+                        <div class="siri-search">
+                            <input class="siri-input" placeholder="Send a message">
+                            <div class="siri-search-icon"><i class="fa-solid fa-arrow-right"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="dashboard-app">
+                    <div class="playlist-header">
+                        <div class="playlist-back-arrow dashboard-back-btn">
+                            <i class="fa-solid fa-circle-arrow-left"></i>
+                            <p class="back-title">Back</p>
+                        </div>
+                        <div class="playlist-title-cont">
+                            <p>Car Automation</p>
+                        </div>
+                    </div>
+                   <div class="dashboard-middle-container">
+                      <img src="image/dashboard.png" class="dashboard-image">
+                      <div class="dashboard-speed-box">
+                        <h2>0</h2>
+                      </div>
+                      <div class="dashboard-speed-text-box">
+                        <h2>km/h</h2>
+                      </div>
+                      <div class="dashboard-gear-text">
+                        <h2>Gear</h2>
+                      </div>
+                      <div class="dashboard-rpm-box">
+                        <h2>0</h2>
+                      </div>
+                      <div class="dashboard-time-box">
+                        <h4 class="dashboard-time">12:00</h4>
+                      </div>
+                      <div class="dashboard-content-box">
+                        <div class="dashboard-location-box">
+                            <div class="dashboard-location-icon-box-container">
+                                <div class="dashboard-location-icon-box">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                            </div>
+                            <div class="dashboard-location-text">
+                                <div class="dashboard-location-title">Los Santos</div>
+                                <div class="dashboard-location-sub-title">Location</div>
+                            </div>
+                        </div>
+                        <div class="dashboard-distance-box">
+                            <div class="dashboard-distance-time">
+                                <div class="dashboard-distance-title">10km</div>
+                                <div class="dashboard-distance-sub-title">Distance</div>
+                            </div>
+                            <div class="dashboard-distance-stop-container">
+                                <h5 class="dashboard-stop-btn">Stop</h5>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="dashboard-start-container">
+                        <h5>Start Auto Pilot</h5>
+                      </div>
+                   </div>
+                </div>
+                <div class="notification-container animate__animated ">
+                    <div class="car-play-notification">
+                        <div class="car-play-notification-app-icon">
+                            <img src="image/apps/camera.png" class="car-play-notification-icon">
+                        </div>
+                        <div class="car-play-notification-context">
+                           <div class="car-play-notification-context-title">
+                              <h2 class="notify-title"></h2>
+                           </div>
+                           <div class="car-play-notification-context-message">
+                            <h3 class="notify-msg"></h3>
+                           </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mini-ui-draggable dark-mode">
+        <div class="cd-container">
+            <img src="image/fm.jpeg" class="mini-ui-image-rotate">
+            <div class="cd-container-inside-dot"></div>
+        </div>
+        <div class="mini-song-info-cont">
+            <div class="mini-song-title">
+                <span>Music Player</span>
+            </div>
+            <div class="mini-song-bar">
+                <div class="music-app-sliderbar">
+                    <div class="slider-container">
+                        <input type="range" id="slider" class="mini-ui-length" min="0" max="100" step="1" value="0" disabled>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="camera-container">
+        <div class="guidelines-image-cont">
+            <img src="image/guide.png" class="guide-image">
+            <div class="guide-btns">
+                <button class="guide-buttons front-cam"><i class="fa-solid fa-camera"></i><p>Front</p></button>
+                <button class="guide-buttons exit-cam"><i class="fa-solid fa-power-off"></i><p>Exit</p></button>
+                <button class="guide-buttons back-cam"><i class="fa-solid fa-camera"></i><p>Back</p></button>
+            </div>
+        </div>
+    </div>
+    <div class="drag-message">
+        <h3>Move the UI to any desired location on the screen</h3>
+    </div>
+    <div class="assemble-card">
+       <div class="assembled-item-class">
+        <img src="image/install.png" class="car-install-image">
+       </div>
+       <div class="car-assembled-install-button">
+         <h3 class="install-radio-button">Install Radio</h3>
+       </div>
+    </div>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+     <script src="main.js"></script>
+</body>
+</html>

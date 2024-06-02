@@ -22,14 +22,17 @@ QBShared.Items = {
     ['weapon_m47v2'] = {['name'] = 'weapon_m47v2', ['label'] = 'M47V2', ['weight'] = 1000, ['type'] = 'weapon', ['ammotype'] = 'AMMO_RIFLE', ['image'] = 'WEAPON_M47V2_R.png', ['unique'] = true, ['useable'] = false, ['description'] = 'M47V2'},
     ['weapon_nvrifle_purple'] = {['name'] = 'weapon_nvrifle_purple', ['label'] = 'NV Rifle Purple Gang', ['weight'] = 1000, ['type'] = 'weapon', ['ammotype'] = 'AMMO_RIFLE', ['image'] = 'WEAPON_NVRIFLE_PURPLE.png', ['unique'] = true, ['useable'] = false, ['description'] = 'Weapon FNV Rifle Purple Gang'},
 
-
+    weapon_slr15         = { name = 'weapon_slr15', label = 'SLR15', weight = 1000, type = 'weapon', ammotype = 'AMMO_RIFLE', image = 'weapon_slr15.png', unique = true, useable = false, description = 'A rapid-fire, magazine-fed automatic rifle designed for infantry use' },
+    weapon_sb4s              = { name = 'weapon_sb4s', label = 'SB4S', weight = 1000, type = 'weapon', ammotype = 'AMMO_SMG', image = 'weapon_sb4s.png', unique = true, useable = false, description = 'A handheld light weight machine gun' },
     weapon_kayslimeswitchb              = { name = 'weapon_kayslimeswitchb', label = 'KaySlimeSwitch Black', weight = 1000, type = 'weapon', ammotype = 'AMMO_PISTOL', image = 'weapon_kayslimeswitchb.png', unique = true, useable = false, description = 'A handheld light weight machine gun' },
     weapon_kayslimeswitchbl              = { name = 'weapon_kayslimeswitchbl', label = 'KaySlimeSwitch Blue', weight = 1000, type = 'weapon', ammotype = 'AMMO_PISTOL', image = 'weapon_kayslimeswitchbl.png', unique = true, useable = false, description = 'A handheld light weight machine gun' },
     weapon_kayslimeswitchlg              = { name = 'weapon_kayslimeswitchlg', label = 'KaySlimeSwitch Lime Green', weight = 1000, type = 'weapon', ammotype = 'AMMO_PISTOL', image = 'weapon_kayslimeswitchlg.png', unique = true, useable = false, description = 'A handheld light weight machine gun' },
     weapon_kayslimeswitchp              = { name = 'weapon_kayslimeswitchp', label = 'KaySlimeSwitch Purple', weight = 1000, type = 'weapon', ammotype = 'AMMO_PISTOL', image = 'weapon_kayslimeswitchp.png', unique = true, useable = false, description = 'A handheld light weight machine gun' },
     weapon_kayslimeswitchr              = { name = 'weapon_kayslimeswitchr', label = 'KaySlimeSwitch Red', weight = 1000, type = 'weapon', ammotype = 'AMMO_PISTOL', image = 'weapon_kayslimeswitchr.png', unique = true, useable = false, description = 'A handheld light weight machine gun' },
     weapon_kayslimeswitchy              = { name = 'weapon_kayslimeswitchy', label = 'KaySlimeSwitch Yellow', weight = 1000, type = 'weapon', ammotype = 'AMMO_PISTOL', image = 'weapon_kayslimeswitchy.png', unique = true, useable = false, description = 'A handheld light weight machine gun' },
-
+    weapon_fn42          = { name = 'weapon_fn42', label = 'FN42', weight = 1000, type = 'weapon', ammotype = 'AMMO_RIFLE', image = 'weapon_fn42.png', unique = true, useable = false, description = 'A rapid-fire, magazine-fed automatic rifle designed for infantry use' },
+    weapon_casr         = { name = 'weapon_casr', label = 'CASR', weight = 1000, type = 'weapon', ammotype = 'AMMO_RIFLE', image = 'weapon_casr.png', unique = true, useable = false, description = 'A rapid-fire, magazine-fed automatic rifle designed for infantry use' },
+    weapon_grau         = { name = 'weapon_grau', label = 'Grau', weight = 1000, type = 'weapon', ammotype = 'AMMO_RIFLE', image = 'weapon_grau.png', unique = true, useable = false, description = 'A rapid-fire, magazine-fed automatic rifle designed for infantry use' },
 
 
     weapon_kayslimeswitch         = { name = 'weapon_kayslimeswitch', label = '101 Switch', weight = 1000, type = 'weapon', ammotype = 'AMMO_PISTOL', image = '101_switch.png', unique = true, useable = false, description = 'A rapid-fire, magazine-fed automatic rifle designed for infantry use' },
@@ -331,6 +334,30 @@ QBShared.Items = {
 	['planb'] 			 = {['name'] = 'planb', 				['label'] = 'Plan B', 				['weight'] = 100, 		['type'] = 'item', 		['image'] = 'planb.png', 		['unique'] = false, 		['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = ''},
 
 
+    ['4play'] 					 	 = {['name'] = '4play', 				 		['label'] = '4Play Fantasia', 			['weight'] = 500, 		['type'] = 'item', 		['image'] = '4play.png', 				['unique'] = false, 	['useable'] = true,  	['shouldClose'] = true,    ['combinable'] = nil,   ['description'] = 'Your description here'},
+	['2005_blueberry'] 				 = {['name'] = '2005_blueberry', 			 	['label'] = '2005 Blueberry Tangiers', 	['weight'] = 500, 		['type'] = 'item', 		['image'] = '2005_blueberry.png', 		['unique'] = false, 	['useable'] = true,  	['shouldClose'] = true,    ['combinable'] = nil,   ['description'] = 'Your description here'},
+	['50_below'] 				 	 = {['name'] = '50_below', 			 			['label'] = '50 Below Nirvana Dokha', 	['weight'] = 500, 		['type'] = 'item', 		['image'] = '50_below.png', 			['unique'] = false, 	['useable'] = true,  	['shouldClose'] = true,    ['combinable'] = nil,   ['description'] = 'Your description here'},
+	['social_smoke'] 				 = {['name'] = 'social_smoke', 			 		['label'] = 'Social Smoke Absolute Zero', ['weight'] = 500, 	['type'] = 'item', 		['image'] = 'social_smoke.png', 		['unique'] = false, 	['useable'] = true,  	['shouldClose'] = true,    ['combinable'] = nil,   ['description'] = 'Your description here'},
+	['zomo_cream'] 					 = {['name'] = 'zomo_cream', 				 	['label'] = 'Acai Cream Zomo', 			['weight'] = 500, 		['type'] = 'item', 		['image'] = 'zomo_cream.png', 			['unique'] = false, 	['useable'] = true,  	['shouldClose'] = true,    ['combinable'] = nil,   ['description'] = 'Your description here'},
+	['spades_fantasia'] 			 = {['name'] = 'spades_fantasia', 			 	['label'] = 'Ace of Spades Fantasia', 	['weight'] = 500, 		['type'] = 'item', 		['image'] = 'spades_fantasia.png', 		['unique'] = false, 	['useable'] = true,  	['shouldClose'] = true,    ['combinable'] = nil,   ['description'] = 'Your description here'},
+	['mofo_fantasia'] 				 = {['name'] = 'mofo_fantasia', 				['label'] = 'Adios Mofo Fantasia', 		['weight'] = 500, 		['type'] = 'item', 		['image'] = 'mofo_fantasia.png', 		['unique'] = false, 	['useable'] = true,  	['shouldClose'] = true,    ['combinable'] = nil,   ['description'] = 'Your description here'},
+	['adalya_love'] 				 = {['name'] = 'adalya_love', 			 	 	['label'] = 'Adalya Love 66', 			['weight'] = 500, 		['type'] = 'item', 		['image'] = 'adalya_love.png', 			['unique'] = false, 	['useable'] = true,  	['shouldClose'] = true,    ['combinable'] = nil,   ['description'] = 'Your description here'},
+	['zomo_lemon'] 				 	 = {['name'] = 'zomo_lemon', 			 		['label'] = 'Zomo Lemon Mint', 			['weight'] = 500, 		['type'] = 'item', 		['image'] = 'zomo_lemon.png', 			['unique'] = false, 	['useable'] = true,  	['shouldClose'] = true,    ['combinable'] = nil,   ['description'] = 'Your description here'},
+	['cane_mint'] 				 	 = {['name'] = 'cane_mint', 			 		['label'] = 'Tangiers Cane Mint', 		['weight'] = 500, 		['type'] = 'item', 		['image'] = 'cane_mint.png', 			['unique'] = false, 	['useable'] = true,  	['shouldClose'] = true,    ['combinable'] = nil,   ['description'] = 'Your description here'},
+	['blue_mist'] 			 		 = {['name'] = 'blue_mist',  	 				['label'] = 'Starbuzz Blue Mist', 		['weight'] = 500, 		['type'] = 'item', 		['image'] = 'blue_mist.png', 			['unique'] = false, 	['useable'] = true,  	['shouldClose'] = true,    ['combinable'] = nil,   ['description'] = 'Your description here'},
+	['double_apple'] 			 	 = {['name'] = 'double_apple', 		 			['label'] = 'Nakhla Double Apple', 		['weight'] = 500, 		['type'] = 'item', 		['image'] = 'double_apple.png', 		['unique'] = false, 	['useable'] = true,  	['shouldClose'] = true,    ['combinable'] = nil,   ['description'] = 'Your description here'},
+	['gummi_bear'] 					 = {['name'] = 'gummi_bear', 				 	['label'] = 'Fumari White Gummi Bear', 	['weight'] = 10,  		['type'] = 'item', 		['image'] = 'gummi_bear.png', 			['unique'] = false, 	['useable'] = false, 	['shouldClose'] = false,   ['combinable'] = nil,   ['description'] = 'Your description here'},
+	['peppermint_shake'] 			 = {['name'] = 'peppermint_shake', 				['label'] = 'Trifecta Blonde Peppermint Shake', ['weight'] = 10,['type'] = 'item', 		['image'] = 'peppermint_shake.png', 	['unique'] = false, 	['useable'] = false, 	['shouldClose'] = false,   ['combinable'] = nil,   ['description'] = 'Your description here'},
+	['al_fakher'] 			 		 = {['name'] = 'al_fakher', 		 			['label'] = 'Al Fakher Two Apples', 	['weight'] = 250, 		['type'] = 'item', 		['image'] = 'al_fakher.png', 			['unique'] = false, 	['useable'] = false, 	['shouldClose'] = false,   ['combinable'] = nil,   ['description'] = 'Your description here'},
+	['el_patron'] 					 = {['name'] = 'el_patron', 				 	['label'] = 'Chaos El Patron', 			['weight'] = 10,  		['type'] = 'item', 		['image'] = 'el_patron.png', 			['unique'] = false, 	['useable'] = false, 	['shouldClose'] = false,   ['combinable'] = nil,   ['description'] = 'Your description here'},
+	['coals'] 					 	 = {['name'] = 'coals', 				 		['label'] = 'Shisha Coals', 			['weight'] = 300, 		['type'] = 'item', 		['image'] = 'coals.png', 				['unique'] = false, 	['useable'] = false, 	['shouldClose'] = false,   ['combinable'] = nil,   ['description'] = 'Your description here'},
+	['hot_coals'] 					 = {['name'] = 'hot_coals', 			 		['label'] = 'Hot Coals', 				['weight'] = 300, 		['type'] = 'item', 		['image'] = 'hot_coals.png', 			['unique'] = false, 	['useable'] = false, 	['shouldClose'] = false,   ['combinable'] = nil,   ['description'] = 'Your description here'},
+	['hose'] 					 	 = {['name'] = 'hose', 				 			['label'] = 'Shisha Hose', 				['weight'] = 250, 		['type'] = 'item', 		['image'] = 'hose.png', 				['unique'] = false, 	['useable'] = false, 	['shouldClose'] = false,   ['combinable'] = nil,   ['description'] = 'Your description here'},
+	['foil'] 				 		 = {['name'] = 'foil', 			 				['label'] = 'Foil Paper', 				['weight'] = 150, 		['type'] = 'item', 		['image'] = 'foil.png', 				['unique'] = false, 	['useable'] = false, 	['shouldClose'] = false,   ['combinable'] = nil,   ['description'] = 'Your description here'},
+	['foil_poker'] 	 				 = {['name'] = 'foil_poker', 					['label'] = 'Foil Poker', 				['weight'] = 500, 		['type'] = 'item', 		['image'] = 'foil_poker.png', 			['unique'] = false, 	['useable'] = true, 	['shouldClose'] = true,    ['combinable'] = nil,   ['description'] = 'Your description here'},
+	['foil_poked'] 			 		 = {['name'] = 'foil_poked', 		 			['label'] = 'Foil Poked', 				['weight'] = 500, 		['type'] = 'item', 		['image'] = 'foil_poked.png', 			['unique'] = false, 	['useable'] = false, 	['shouldClose'] = false,   ['combinable'] = nil,   ['description'] = 'Your description here'},
+	['water'] 			 			 = {['name'] = 'water', 		 				['label'] = 'Water', 					['weight'] = 500, 		['type'] = 'item', 		['image'] = 'water.png', 				['unique'] = false, 	['useable'] = false, 	['shouldClose'] = false,   ['combinable'] = nil,   ['description'] = 'Your description here'},
+
 
     -- Weapon Attachments
     clip_attachment              = { name = 'clip_attachment', label = 'Clip', weight = 1000, type = 'item', image = 'clip_attachment.png', unique = false, useable = true, shouldClose = true, combinable = nil, description = 'A clip for a weapon' },
@@ -498,6 +525,252 @@ chop_lockpick = { name = 'chop_lockpick', label = 'Lockpick', weight = 150, type
 chop_torch = { name = 'chop_torch', label = 'Torch', weight = 275, type = 'item', image = 'chop_torch.png', unique = false, useable = false, shouldClose = true, combinable = nil, description = nil },
 chop_lugwrench = { name = 'chop_lugwrench', label = 'Lug Wrench', weight = 225, type = 'item', image = 'chop_lugwrench.png', unique = false, useable = false, shouldClose = true, combinable = nil, description = nil },
 
+
+    -- ================ Keep-companion ================
+    ["keepcompanionhusky"] = {
+        ["name"] = "keepcompanionhusky",
+        ["label"] = "Husky",
+        ["weight"] = 500,
+        ["type"] = "item",
+        ["image"] = "A_C_Husky.png",
+        ["unique"] = true,
+        ["useable"] = true,
+        ["shouldClose"] = true,
+        ["combinable"] = nil,
+        ["description"] = "Husky is your royal companion!"
+    },
+    ["keepcompanionpoodle"] = {
+        ["name"] = "keepcompanionpoodle",
+        ["label"] = "Poodle",
+        ["weight"] = 500,
+        ["type"] = "item",
+        ["image"] = "A_C_Poodle.png",
+        ["unique"] = true,
+        ["useable"] = true,
+        ["shouldClose"] = true,
+        ["combinable"] = nil,
+        ["description"] = "Poodle is your royal companion!"
+    },
+    ["keepcompanionrottweiler"] = {
+        ["name"] = "keepcompanionrottweiler",
+        ["label"] = "Rottweiler",
+        ["weight"] = 500,
+        ["type"] = "item",
+        ["image"] = "A_Rottweiler.png",
+        ["unique"] = true,
+        ["useable"] = true,
+        ["shouldClose"] = true,
+        ["combinable"] = nil,
+        ["description"] = "Rottweiler is your royal companion!"
+    },
+    ["keepcompanionwesty"] = {
+        ["name"] = "keepcompanionwesty",
+        ["label"] = "Westy",
+        ["weight"] = 500,
+        ["type"] = "item",
+        ["image"] = "A_C_Westy.png",
+        ["unique"] = true,
+        ["useable"] = true,
+        ["shouldClose"] = true,
+        ["combinable"] = nil,
+        ["description"] = "Westy is your royal companion!"
+    },
+    ["keepcompanionmtlion"] = {
+        ["name"] = "keepcompanionmtlion",
+        ["label"] = "MtLion",
+        ["weight"] = 500,
+        ["type"] = "item",
+        ["image"] = "A_C_MtLion.png",
+        ["unique"] = true,
+        ["useable"] = true,
+        ["shouldClose"] = true,
+        ["combinable"] = nil,
+        ["description"] = "MtLion is your royal companion!"
+    },
+    ["keepcompanionmtlion2"] = {
+        ["name"] = "keepcompanionmtlion2",
+        ["label"] = "Panter",
+        ["weight"] = 500,
+        ["type"] = "item",
+        ["image"] = "A_C_MtLion.png",
+        ["unique"] = true,
+        ["useable"] = true,
+        ["shouldClose"] = true,
+        ["combinable"] = nil,
+        ["description"] = "Panter is your royal companion!"
+    },
+    ["keepcompanioncat"] = {
+        ["name"] = "keepcompanioncat",
+        ["label"] = "Cat",
+        ["weight"] = 500,
+        ["type"] = "item",
+        ["image"] = "A_C_Cat_01.png",
+        ["unique"] = true,
+        ["useable"] = true,
+        ["shouldClose"] = true,
+        ["combinable"] = nil,
+        ["description"] = "Cat is your royal companion!"
+    },
+    ["keepcompanionpug"] = {
+        ["name"] = "keepcompanionpug",
+        ["label"] = "Pug",
+        ["weight"] = 500,
+        ["type"] = "item",
+        ["image"] = "A_C_Pug.png",
+        ["unique"] = true,
+        ["useable"] = true,
+        ["shouldClose"] = true,
+        ["combinable"] = nil,
+        ["description"] = "Pug is your royal companion!"
+    },
+    ["keepcompanionretriever"] = {
+        ["name"] = "keepcompanionretriever",
+        ["label"] = "Retriever",
+        ["weight"] = 500,
+        ["type"] = "item",
+        ["image"] = "A_C_Retriever.png",
+        ["unique"] = true,
+        ["useable"] = true,
+        ["shouldClose"] = true,
+        ["combinable"] = nil,
+        ["description"] = "Retriever is your royal companion!"
+    },
+    ["keepcompanionshepherd"] = {
+        ["name"] = "keepcompanionshepherd",
+        ["label"] = "Shepherd",
+        ["weight"] = 500,
+        ["type"] = "item",
+        ["image"] = "A_C_shepherd.png",
+        ["unique"] = true,
+        ["useable"] = true,
+        ["shouldClose"] = true,
+        ["combinable"] = nil,
+        ["description"] = "Shepherd is your royal companion!"
+    },
+    -- new pets
+    ["keepcompanioncoyote"]     = {
+		["name"] = "keepcompanioncoyote",
+		["label"] = "Coyote",
+		["weight"] = 500,
+		["type"] = "item",
+		["image"] = "A_C_Coyote.png",
+		["unique"] = true,
+		["useable"] = true,
+		["shouldClose"] = true,
+		["combinable"] = nil,
+		["description"] = "Coyote is your royal companion!"
+	},
+	["keepcompanionrabbit"]     = {
+		["name"] = "keepcompanionrabbit",
+		["label"] = "Rabbit",
+		["weight"] = 500,
+		["type"] = "item",
+		["image"] = "A_C_Rabbit_01.png",
+		["unique"] = true,
+		["useable"] = true,
+		["shouldClose"] = true,
+		["combinable"] = nil,
+		["description"] = "Rabbit is your royal companion!"
+	},
+	["keepcompanionhen"]        = {
+		["name"] = "keepcompanionhen",
+		["label"] = "Hen",
+		["weight"] = 500,
+		["type"] = "item",
+		["image"] = "A_C_Hen.png",
+		["unique"] = true,
+		["useable"] = true,
+		["shouldClose"] = true,
+		["combinable"] = nil,
+		["description"] = "Hen is your royal companion!"
+	},
+    ["keepcompanionrat"] = {
+        ["name"] = "keepcompanionrat",
+        ["label"] = "Rat",
+        ["weight"] = 500,
+        ["type"] = "item",
+        ["image"] = "A_C_Rat.png",
+        ["unique"] = true,
+        ["useable"] = true,
+        ["shouldClose"] = true,
+        ["combinable"] = nil,
+        ["description"] = "Your royal companion!"
+    },
+    ---
+    ["petfood"] = {
+        ["name"] = "petfood",
+        ["label"] = "pet food",
+        ["weight"] = 500,
+        ["type"] = "item",
+        ["image"] = "petfood.png",
+        ["unique"] = false,
+        ["useable"] = true,
+        ["shouldClose"] = true,
+        ["combinable"] = nil,
+        ["description"] = "food for your companion!"
+    },
+    ["collarpet"] = {
+        ["name"] = "collarpet",
+        ["label"] = "Pet collar",
+        ["weight"] = 500,
+        ["type"] = "item",
+        ["image"] = "collarpet.png",
+        ["unique"] = false,
+        ["useable"] = true,
+        ["shouldClose"] = true,
+        ["combinable"] = true,
+        ["description"] = "Rename your pets!"
+    },
+    ["firstaidforpet"] = {
+        ["name"] = "firstaidforpet",
+        ["label"] = "First aid for pet",
+        ["weight"] = 500,
+        ["type"] = "item",
+        ["image"] = "firstaidforpet.png",
+        ["unique"] = false,
+        ["useable"] = true,
+        ["shouldClose"] = true,
+        ["combinable"] = nil,
+        ["description"] = "Revive your pet!"
+    },
+	["petnametag"]              = {
+		["name"] = "petnametag",
+		["label"] = "Name tag",
+		["weight"] = 500,
+		["type"] = "item",
+		["image"] = "petnametag.png",
+		["unique"] = false,
+		["useable"] = true,
+		["shouldClose"] = true,
+		["combinable"] = nil,
+		["description"] = "Rename your pet"
+	},
+    ["petwaterbottleportable"]  = {
+		["name"] = "petwaterbottleportable",
+		["label"] = "Portable water bottle",
+		["weight"] = 1000,
+		["type"] = "item",
+		["image"] = "petwaterbottleportable.png",
+		["unique"] = true,
+		["useable"] = true,
+		["shouldClose"] = true,
+		["combinable"] = nil,
+		["description"] = "Flask to store water for your pets"
+	},
+    ["petgroomingkit"]  = {
+		["name"] = "petgroomingkit",
+		["label"] = "Pet Grooming Kit",
+		["weight"] = 1000,
+		["type"] = "item",
+		["image"] = "petgroomingkit.png",
+		["unique"] = true,
+		["useable"] = true,
+		["shouldClose"] = true,
+		["combinable"] = nil,
+		["description"] = "Pet Grooming Kit"
+	},
+
+    
     -- PISTOL ATTACHMENTS
     ['pistol_defaultclip']              = {['name'] = 'pistol_defaultclip',                ['label'] = 'Pistol Clip',               ['weight'] = 1000,         ['type'] = 'item',         ['image'] = 'pistol_extendedclip.png',     ['unique'] = false,         ['useable'] = true,     ['shouldClose'] = true,       ['combinable'] = nil,   ['description'] = 'Pistol Default Clip'},
     ['pistol_extendedclip']             = {['name'] = 'pistol_extendedclip',               ['label'] = 'Pistol EXT Clip',           ['weight'] = 1000,         ['type'] = 'item',         ['image'] = 'pistol_extendedclip.png',     ['unique'] = false,         ['useable'] = true,     ['shouldClose'] = true,       ['combinable'] = nil,   ['description'] = 'Pistol Extended Clip'},
@@ -678,6 +951,9 @@ chop_lugwrench = { name = 'chop_lugwrench', label = 'Lug Wrench', weight = 225, 
 ['spray_remover'] = {['name'] = 'spray_remover', ['label'] = 'Spray Remover', ['weight'] = 10, ['type'] = 'item', ['image'] = 'spray_remover.png', ['unique'] = false, ['useable'] = true, ['shouldClose'] = true, ['combinable'] = nil, ['description'] = 'Removes graffiti'},
 
 
+
+['condom']                       = {['name'] = 'condom',                             ['label'] = 'Condom',                 ['weight'] = 100,         ['type'] = 'item',         ['image'] = 'condom.png',             ['unique'] = false,     ['useable'] = true,     ['shouldClose'] = true,       ['combinable'] = nil,   ['description'] = 'Condom'},
+
 ['levonorgestrel']                       = {['name'] = 'levonorgestrel',                             ['label'] = 'Levonorgestrel',                 ['weight'] = 100,         ['type'] = 'item',         ['image'] = 'levonorgestrel.png',             ['unique'] = false,     ['useable'] = true,     ['shouldClose'] = true,       ['combinable'] = nil,   ['description'] = 'Levonorgestrel'},
 
 ['mifepristone']                       = {['name'] = 'mifepristone',                             ['label'] = 'Mifepristone',                 ['weight'] = 100,         ['type'] = 'item',         ['image'] = 'mifepristone.png',             ['unique'] = false,     ['useable'] = true,     ['shouldClose'] = true,       ['combinable'] = nil,   ['description'] = 'Mifepristone'},
@@ -695,6 +971,7 @@ chop_lugwrench = { name = 'chop_lugwrench', label = 'Lug Wrench', weight = 225, 
 ['gonore_cured']                       = {['name'] = 'gonore_cured',                             ['label'] = 'gonore_cured',                 ['weight'] = 100,         ['type'] = 'item',         ['image'] = 'gonore_cured.png',             ['unique'] = false,     ['useable'] = true,     ['shouldClose'] = true,       ['combinable'] = nil,   ['description'] = 'gonore_cured'},
 
 ['klamidia_cured']                       = {['name'] = 'klamidia_cured',                             ['label'] = 'klamidia_cured',                 ['weight'] = 100,         ['type'] = 'item',         ['image'] = 'klamidia_cured.png',             ['unique'] = false,     ['useable'] = true,     ['shouldClose'] = true,       ['combinable'] = nil,   ['description'] = 'klamidia_cured'},
+
 
 
     -- Drugs
@@ -1071,7 +1348,12 @@ lab_access_card = { name = 'lab_access_card', label = 'Access Card', weight = 10
  ['fmdfuhennyg']                     = {['name'] = 'fmdfuhennyg',                       ['label'] = 'Henny Gold',                    			['weight'] = 2,          ['type'] = 'item',         ['image'] = 'fmdfuhennyg.png',           ['unique'] = false,         ['useable'] = true,     ['shouldClose'] = true,       ['combinable'] = nil,   ['description'] = 'Henny Gold'},
 
 
-
+ ['fixkit'] = {['name'] = 'fixkit', ['label'] = 'Fixkit', ['weight'] = 500, ['type'] = 'item', ['image'] = 'your_image.png', ['unique'] = false, ['useable'] = false, ['shouldClose'] = false, ['combinable'] = nil},
+ ['medikit'] = {['name'] = 'medikit', ['label'] = 'Medikit', ['weight'] = 500, ['type'] = 'item', ['image'] = 'your_image.png', ['unique'] = false, ['useable'] = false, ['shouldClose'] = false, ['combinable'] = nil},
+ ['sponge'] = {['name'] = 'sponge', ['label'] = 'Sponge', ['weight'] = 500, ['type'] = 'item', ['image'] = 'your_image.png', ['unique'] = false, ['useable'] = false, ['shouldClose'] = false, ['combinable'] = nil},
+ ['handcuffs'] = {['name'] = 'handcuffs', ['label'] = 'Handcuffs', ['weight'] = 500, ['type'] = 'item', ['image'] = 'your_image.png', ['unique'] = false, ['useable'] = false, ['shouldClose'] = false, ['combinable'] = nil},
+ ['lockpick'] = {['name'] = 'lockpick', ['label'] = 'Lockpick', ['weight'] = 500, ['type'] = 'item', ['image'] = 'your_image.png', ['unique'] = false, ['useable'] = false, ['shouldClose'] = false, ['combinable'] = nil},
+ ['bandage'] = {['name'] = 'bandage', ['label'] = 'Bandage', ['weight'] = 500, ['type'] = 'item', ['image'] = 'your_image.png', ['unique'] = false, ['useable'] = false, ['shouldClose'] = false, ['combinable'] = nil},
  
  mechanic_tools              = { name = "mechanic_tools", label = "Mechanic tools", weight = 0, type = "item", image = "mechanic_tools.png", unique = true, useable = true, shouldClose = true, description = "Needed for vehicle repairs"},
  toolbox                     = { name = "toolbox", label = "Toolbox", weight = 0, type = "item", image = "toolbox.png", unique = true, useable = true, shouldClose = true, description = "Needed for Performance part removal"},
@@ -2864,4 +3146,147 @@ briefcaselockpicker          = { name = "briefcaselockpicker", label = "Briefcas
     
     ['laundrycard'] = {['name'] = 'laundrycard', ['label'] = 'Laundry Card', ['weight'] = 100, ['type'] = 'item', ['image'] = 'laundrycard.png', ['unique'] = false, ['useable'] = false, ['shouldClose'] = true, ['combinable'] = nil, ['description'] = 'Your description here'},
 
+
+
+    ['wheeltoken']                   = {['name'] = 'wheeltoken',                    ['label'] = 'Casino Token',             ['weight'] = 100,       ['type'] = 'item',      ['image'] = 'token.png',                ['unique'] = false,     ['useable'] = false,    ['shouldClose'] = false,   ['combinable'] = nil,   ['description'] = 'Token for spinning the wheel in a casino'},
+
+    ['pocketbook_leather']                           = {['name'] = 'pocketbook_leather',                             ['label'] = 'Leather Material',              ['weight'] = 1,         ['type'] = 'item',         ['image'] = 'pocketbook_leather.png',                   ['unique'] = false,         ['useable'] = false,     ['shouldClose'] = true,      ['combinable'] = nil,   ['description'] = 'Pocketbook Crafting Material'},
+    ['pocketbook_cotton']                           = {['name'] = 'pocketbook_cotton',                             ['label'] = 'Cotton Material',              ['weight'] = 1,         ['type'] = 'item',         ['image'] = 'pocketbook_cotton.png',                   ['unique'] = false,         ['useable'] = false,     ['shouldClose'] = true,      ['combinable'] = nil,   ['description'] = 'Pocketbook Crafting Material'},
+    ['pocketbook_suede']                           = {['name'] = 'pocketbook_suede',                             ['label'] = 'Suede Material',              ['weight'] = 1,         ['type'] = 'item',         ['image'] = 'pocketbook_suede.png',                   ['unique'] = false,         ['useable'] = false,     ['shouldClose'] = true,      ['combinable'] = nil,   ['description'] = 'Pocketbook Crafting Material'},
+    ['pocketbook_givenchy']                           = {['name'] = 'pocketbook_givenchy',                             ['label'] = 'Givenchy Bag',              ['weight'] = 1000,         ['type'] = 'item',         ['image'] = 'pocketbook_givenchy.png',                   ['unique'] = true,         ['useable'] = true,     ['shouldClose'] = true,      ['combinable'] = nil,   ['description'] = 'An upper class PocketBook for the Ladies'},
+    ['pocketbook_gucci']                           = {['name'] = 'pocketbook_gucci',                             ['label'] = 'Gucci Bag',              ['weight'] = 1000,         ['type'] = 'item',         ['image'] = 'pocketbook_gucci.png',                   ['unique'] = true,         ['useable'] = true,     ['shouldClose'] = true,      ['combinable'] = nil,   ['description'] = 'An upper class PocketBook for the Ladies'},
+    ['pocketbook_teflar']                           = {['name'] = 'pocketbook_teflar',                             ['label'] = 'Teflar Bag',              ['weight'] = 1000,         ['type'] = 'item',         ['image'] = 'pocketbook_teflar.png',                   ['unique'] = true,         ['useable'] = true,     ['shouldClose'] = true,      ['combinable'] = nil,   ['description'] = 'An upper class PocketBook for the Ladies'},
+
+    ["casino_beer"] = {
+        ["name"] = "casino_beer",
+        ["label"] = "Casino Beer",
+        ["weight"] = 0,
+        ["type"] = "item",
+        ['image'] = 'casino_beer.png',
+        ["unique"] = false,
+        ["useable"] = false,
+        ["shouldClose"] = false,
+        ["combinable"] = nil,
+        ["description"] = "Casino Beer"
+    },
+    ["casino_burger"] = {
+        ["name"] = "casino_burger",
+        ["label"] = "Casino Burger",
+        ["weight"] = 0,
+        ["type"] = "item",
+        ['image'] = 'casino_burger.png',
+        ["unique"] = false,
+        ["useable"] = false,
+        ["shouldClose"] = false,
+        ["combinable"] = nil,
+        ["description"] = "Casino Burger"
+    },
+    ["casino_chips"] = {
+        ["name"] = "casino_chips",
+        ["label"] = "Casino Chips",
+        ["weight"] = 0,
+        ["type"] = "item",
+        ['image'] = 'casino_chips.png',
+        ["unique"] = false,
+        ["useable"] = false,
+        ["shouldClose"] = false,
+        ["combinable"] = nil,
+        ["description"] = "Casino Chips"
+    },
+    ["casino_coffee"] = {
+        ["name"] = "casino_coffee",
+        ["label"] = "Casino Coffee",
+        ["weight"] = 0,
+        ["type"] = "item",
+        ['image'] = 'casino_coffee.png',
+        ["unique"] = false,
+        ["useable"] = false,
+        ["shouldClose"] = false,
+        ["combinable"] = nil,
+        ["description"] = "Casino Coffee"
+    },
+    ["casino_coke"] = {
+        ["name"] = "casino_coke",
+        ["label"] = "Casino Kofola",
+        ["weight"] = 0,
+        ["type"] = "item",
+        ['image'] = 'casino_coke.png',
+        ["unique"] = false,
+        ["useable"] = false,
+        ["shouldClose"] = false,
+        ["combinable"] = nil,
+        ["description"] = "Casino Kofola"
+    },
+    ["casino_donut"] = {
+        ["name"] = "casino_donut",
+        ["label"] = "Casino Donut",
+        ["weight"] = 0,
+        ["type"] = "item",
+        ["image"] = "casino_donut.png",
+        ["unique"] = false,
+        ["useable"] = false,
+        ["shouldClose"] = false,
+        ["combinable"] = nil,
+        ["description"] = "Casino Donut"
+    },
+    ["casino_ego_chaser"] = {
+        ["name"] = "casino_ego_chaser",
+        ["label"] = "Casino Ego Chaser",
+        ["weight"] = 0,
+        ["type"] = "item",
+        ["image"] = "casino_ego_chaser.png",
+        ["unique"] = false,
+        ["useable"] = false,
+        ["shouldClose"] = false,
+        ["combinable"] = nil,
+        ["description"] = "Casino Ego Chaser"
+    },
+    ["casino_luckypotion"] = {
+        ["name"] = "casino_luckypotion",
+        ["label"] = "Casino Lucky Potion",
+        ["weight"] = 0,
+        ["type"] = "item",
+        ["image"] = "casino_luckypotion.png",
+        ["unique"] = false,
+        ["useable"] = false,
+        ["shouldClose"] = false,
+        ["combinable"] = nil,
+        ["description"] = "Casino Lucky Potion"
+    },
+    ["casino_psqs"] = {
+        ["name"] = "casino_psqs",
+        ["label"] = "Casino Ps & Qs",
+        ["weight"] = 0,
+        ["type"] = "item",
+        ["image"] = "casino_psqs.png",
+        ["unique"] = false,
+        ["useable"] = false,
+        ["shouldClose"] = false,
+        ["combinable"] = nil,
+        ["description"] = "Casino Ps & Qs"
+    },
+    ["casino_sandwitch"] = {
+        ["name"] = "casino_sandwitch",
+        ["label"] = "Casino Sandwitch",
+        ["weight"] = 0,
+        ["type"] = "item",
+        ["image"] = "casino_sandwitch.png",
+        ["unique"] = false,
+        ["useable"] = false,
+        ["shouldClose"] = false,
+        ["combinable"] = nil,
+        ["description"] = "Casino Sandwitch"
+    },
+    ["casino_sprite"] = {
+        ["name"] = "casino_sprite",
+        ["label"] = "Casino Sprite",
+        ["weight"] = 0,
+        ["type"] = "item",
+        ["image"] = "casino_sprite.png",
+        ["unique"] = false,
+        ["useable"] = false,
+        ["shouldClose"] = false,
+        ["combinable"] = nil,
+        ["description"] = "Casino Sprite"
+    },
 }

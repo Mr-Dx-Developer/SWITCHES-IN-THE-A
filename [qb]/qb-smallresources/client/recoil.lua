@@ -1,6 +1,12 @@
 local recoils = {
     [`weapon_scarsc`] = 0.1,
     [`weapon_sb181`] = 0.1,
+    [`weapon_sb4s`] = 0.5,
+    [`weapon_slr15`] = 0.5,
+    [`weapon_fn42`] = 0.5,
+    [`weapon_casr`] = 0.5,
+    [`weapon_grau`] = 0.5,
+
     -- Handguns
     [`weapon_pistol`] = 0.1,
     [`weapon_pistol_mk2`] = 0.1,

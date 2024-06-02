@@ -1,0 +1,108 @@
+:root {
+  --bg-color: #232833;
+  --box-shadow-data: 0px 0px 40px 0px rgba(92, 92, 92, 0);
+}
+
+.menu {
+  position: absolute;
+  min-width: 360px;
+  font-family: "Roboto Condensed", sans-serif;
+  color: #fff;
+  text-transform: capitalize;
+  right: 10%;
+  top: 20%;
+  transform: translate(0, -20%);
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+}
+
+.menu .head {
+  padding: 0.75rem 1rem;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.8);
+  background-color: var(--bg-color);
+  box-shadow: var(--box-shadow-data);
+  border-radius: 5px;
+}
+
+.head__title {
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+.head__description {
+  font-size: 0.875rem;
+  font-style: italic;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.menu .menu-items {
+  max-height: 60vh;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5vh;
+}
+
+.menu .menu-items::-webkit-scrollbar {
+  display: none;
+}
+
+.menu .menu-items .menu-item {
+  display: block;
+  padding: 1.3vh;
+  font-size: 1rem;
+  color: #fff;
+  border-radius: 5px;
+  background: var(--bg-color);
+  box-shadow: var(--box-shadow-data);
+  max-width: 60vh;
+  white-space: pre-wrap;
+  flex-direction: column;
+  line-height: 2.4vh;
+}
+
+.menu .menu-items .menu-item.selected {
+  background: linear-gradient(90deg, #2e547d 0%, #2b5583 100%);
+}
+
+.menu .menu-items .menu-item:hover {
+  cursor: pointer;
+}
+
+.menu .menu-items .menu-item.menu-return:hover {
+  cursor: pointer;
+  background: linear-gradient(90deg, #7d2e32 0%, #832b2b 100%);
+}
+
+.menu__icon {
+  position: relative;
+  height: 2.5rem;
+  background-color: #1e2734;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='https://www.w3.org/2000/svg' viewBox='0 0 4 5'%3e%3cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 0.75rem 1rem;
+}
+
+ul {
+  margin: 0px;
+  padding-inline-start: 1vh;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2vh;
+  font-size: 1.4vh;
+  line-height: 1.8vh;
+}
+
+li {
+  display: list-item;
+  list-style-type: circle;
+  list-style-position: inside;
+}
+
+li::marker {
+  content: "•" " ";
+}

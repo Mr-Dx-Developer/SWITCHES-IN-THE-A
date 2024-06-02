@@ -279,3 +279,12 @@ QBCore.Functions.CreateCallback('qb-bossmenu:getplayers', function(source, cb)
 		end)
 	cb(players)
 end)
+
+
+            -- Jobs Creator (jobs_creator) integrations
+            exports("getAccounts", function() 
+                return Accounts
+            end)
+            exports("addMoney", AddMoney)
+            exports("removeMoney", RemoveMoney)
+        

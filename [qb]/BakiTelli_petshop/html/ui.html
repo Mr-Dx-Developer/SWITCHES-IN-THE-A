@@ -1,0 +1,107 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700,900&display=swap" id="font">
+    <script src="https://kit.fontawesome.com/cb27a9ac19.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+
+    <link rel="stylesheet" type="text/css" href="main.css">
+
+    <title>UI</title>
+</head>
+<body>
+<div class="bg">
+    <div class="shadow"></div>
+    <div class="bottom-menu">
+			<div class="close-button"><t>CLOSE</t></div>
+        <div class="bottom-text">LOS SANTOS <span>PET SHOP</span></div>
+        <div class="bottom-name-bg">
+            <div class="name">BRENDEN <span>RANDALL</span></div>
+        </div>
+        <div class="bottom-wallet"><i id="wallet" class="fa-solid fa-wallet"></i></div>
+        <div class="bottom-wallet-money">$<span>5000</span></div>
+    </div>
+    <div class="box-1">
+        <div class="box-main-text">PET <span>DOG</span></div>
+        <div class="box-s-text">They are sweet creatures that are loyal to you and love you in all circumstances, always better than a human.</div>
+        <div class="box-app" onclick="box1()"><t>OPEN MENU</t></div>
+        <div class="box-avaible"><t>STOCK AVAIBLE</t></div>
+        <div class="box-1-img"></div>
+    </div>
+    <div class="box-2">
+        <div class="box-main-text-2">PET</div>
+        <div class="box-main-text-2-span">CAT</div>
+        <div class="box-s-text-2">With cute cats, you forget all your troubles and problems, moreover, they will give you unconditional love and are more educated than a human.</div>
+        <div class="box-app" onclick="box2()"><t>OPEN MENU</t></div>
+        <div class="box-avaible"><t>STOCK AVAIBLE</t></div>
+        <div class="box-2-img"></div>
+    </div>
+    <div class="box-3">
+            <div class="box-3-img"></div>
+    </div>
+</div>
+    <div class="bg-2">
+    <div class="shadow"></div>
+        <div class="bottom-menu">
+			<div class="close-button2" onclick="back()"><t style="margin-left: 0.6vw;">BACK</t></div>
+        <div class="bottom-text">LOS SANTOS <span>PET SHOP</span></div>
+        <div class="bottom-name-bg">
+            <div class="name">BRENDEN <span>RANDALL</span></div>
+        </div>
+        <div class="bottom-wallet"><i id="wallet" class="fa-solid fa-wallet"></i></div>
+        <div class="bottom-wallet-money">$<span>5000</span></div>
+    </div>
+    <div class="items">
+        <div id="kutucuk"></div>
+    </div>
+    </div>
+    <div class="bg-3">
+        <div class="shadow-2"></div>
+        <div class="shadow-3"></div>
+        <div class="bg-3-center">
+            <div class="enter-name">Pet Shop</div>
+            <div class="buy-button">BUY</div>
+
+            <div class="price-category">
+                <div class="price-text">PRICE</div>
+                <div class="price-2">$5000</div>
+            </div>
+
+            <div class="name-category">
+                <div class="name-text">PET NAME</div>
+                <div class="name-2">CAT MODEL 1</div>
+            </div>
+        </div>
+        <div class="bg3-close">CLOSE MENU</div>
+    </div>
+    <div class="bg-4">
+        <div id="container">
+     <div id="main">
+    <div id="hover"></div>
+    <div id="hover2"></div>
+    <div id="image"></div>
+    <div id="close"><h2>X</h2></div>
+    <div id="imagehover"></div>
+    <div id="maintext">PET MENU</div>
+    <div id="smalltext">Transactions related to your pets.</div>
+    </div>
+    <div class="bg-4-items">
+        <div class="bg-4-item" onclick="spawnpet()">SPAWN PET / DELETE PED</div>
+        <div class="bg-4-item" onclick="vehicle()">GET İN / GET OUT OF VEHİCLE</div>
+        <div class="bg-4-item" onclick="sit()">SİT PET / GET UP PET</div>
+        <div class="bg-4-item" onclick="sleep()">SLEEP PET / WAKE PET</div>
+        <div class="bg-4-item" style="color: red; font-weight: 600;" onclick="deletela()">Delete Animal Permanently</div>
+    </div>
+    </div>
+</div>
+
+	<script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/gh/cferdinandi/saferInnerHTML@1/dist/saferInnerHTML.polyfills.min.js"></script>
+    <script src="js.js"></script>
+</body>
+
+</html>

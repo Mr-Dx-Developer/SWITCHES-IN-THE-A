@@ -165,7 +165,13 @@ Config.Consumables = {
     ["cooked_bacon"] = math.random(35, 50),
     ["cooked_sausage"] = math.random(35, 50),
     ["cooked_pork"] = math.random(35, 50),
-    ["cooked_ham"] = math.random(35, 50)
+    ["cooked_ham"] = math.random(35, 50),
+    -- Casino Bar Snacks
+    ["casino_burger"] = math.random(25, 40),
+    ["casino_psqs"] = math.random(25, 40),
+    ["casino_ego_chaser"] = math.random(25, 40),
+    ["casino_sandwitch"] = math.random(25, 40),
+    ["casino_donut"] = math.random(25, 40)
 
 
 
@@ -195,7 +201,13 @@ Config.Consumables = {
 
     ["apple_juice"] = math.random(25, 45),
     ["grapejuice"] = math.random(25, 45),
-    ["hotsauce"] = math.random(10, 15)
+    ["hotsauce"] = math.random(10, 15),
+    -- Casino Bar Drinks
+    ["casino_beer"] = math.random(25, 40),
+    ["casino_coke"] = math.random(25, 40),
+    ["casino_sprite"] = math.random(25, 40),
+    ["casino_luckypotion"] = math.random(25, 40),
+    ["casino_coffee"] = math.random(25, 40)
 
 
 

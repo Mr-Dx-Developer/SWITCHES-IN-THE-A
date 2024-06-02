@@ -1,0 +1,552 @@
+<div class="card draggable" style="top: 44vh; left: 57vw">
+    <div class="card-body">
+        <div class="card-backtext"><span class="dynamic-island-name"></span></div>
+        <div class="card-header">
+            <span class="dynamic-island-name"></span>
+            <img src="img/tiny-logo.png" alt="..." class="tiny-logo">
+        </div>
+        <div class="card-main">
+            <div class="card-main-content">
+                <div id="main-screen" class="main-screen">
+                    <div id="renovate" class="management-tab">
+                        <div class="renovate-body">
+                            <h2 style="margin-top: 0;" class="underline">Mansion</h2>
+                            <button class="renovate-option btn-primary btn-small" type="repaint" screen="repaint-screen" repaint-type="shell">
+                                <span>Repaint mansion exterior</span>
+                            </button>
+                            <button class="renovate-option btn-primary btn-small" type="repaint" screen="repaint-screen" repaint-type="interior">
+                                <span>Repaint mansion interior</span>
+                            </button>
+                            <button class="renovate-option btn-primary btn-small" type="optional" optional="mansion_roofing">
+                                <span>Roof extension</span>
+                            </button>
+                            <button class="renovate-option btn-primary btn-small" type="optional" optional="mansion_front">
+                                <span>Mansion front</span>
+                            </button>
+                            <h2 class="underline">Land facilities</h2>
+                            <button class="renovate-option btn-primary btn-small" type="optional" optional="flag">
+                                <span>Flag</span>
+                            </button>
+                            <button class="renovate-option btn-primary btn-small" type="optional" optional="land_slot_a">
+                                <span>Slot A</span>
+                            </button>
+                            <button class="renovate-option btn-primary btn-small" type="optional" optional="land_slot_b">
+                                <span>Slot B</span>
+                            </button>
+                            <h2 class="underline">Water facilities</h2>
+                            <button class="renovate-option btn-primary btn-small" type="optional" optional="water_slot_a">
+                                <span>Slot A</span>
+                            </button>
+                            <button class="renovate-option btn-primary btn-small" type="optional" optional="water_slot_b">
+                                <span>Slot B</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div id="mansion" class="management-tab">
+                        <h2 style="margin-top: 0;" class="primary underline">Doors</h2>
+                        <button class="toggle-doors btn-primary btn-small">
+                            <span>Toggle doors</span>
+                        </button>
+                        <h2 style="margin-top: 2vh;" class="primary underline">Lights</h2>
+                        <div class="color-picker-body">
+                            <div class="colorpicker" id="lights-colorpicker"></div>
+                            <form class="hidden"><input type="text" id="lights-color" name="color" value="#444444"/></form>
+                        </div>
+                        <button id="lights-color-button" class="btn-primary btn-medium mt-4">
+                            <span>Set color</span>
+                        </button>
+                        <button class="btn-primary btn-medium custom-color-button" r="1000" g="1000" b="1000">
+                            <span>Party lights</span>
+                        </button>
+                        <button class="btn-primary btn-medium custom-color-button" r="2000" g="2000" b="2000">
+                            <span>RGB lights</span>
+                        </button>
+                        <button class="btn-primary btn-medium custom-color-button" r="0" g="0" b="0">
+                            <span>Lights off</span>
+                        </button>
+                    </div>
+                    <div id="furniture" class="management-tab">
+                        <div class="furniture-search-container">
+                            <h2 style="margin-top: 0;" class="primary underline">Furniture</h2>
+                            <div>
+                                <input id="furniture-search" type="text" placeholder="Search...">
+                            </div>
+                            <button id="furniture-removal">
+                                <img class="button-icon" src="img/icons/demolition.png">
+                                <span for="furniture-removal">Demolition mode</span>
+                            </button>
+                        </div>
+                        <div id="furniture-container" class="furniture-container"></div>
+                    </div>
+                </div>
+                <div id="repaint-screen" class="repaint-screen extra-screen hidden">
+                    <div class="color-picker-body">
+                        <div class="colorpicker" id="colorpicker"></div>
+                        <form class="hidden"><input type="text" id="color" name="color" value="#444444"/></form>
+                    </div>
+                    <button id="repaint-preview-button" class="btn-primary btn-medium mt-4">
+                        <span>Preview</span>
+                    </button>
+                    <button id="repaint-button" class="btn-primary btn-medium">
+                        <span>Confirm repaint</span>
+                    </button>
+                </div>
+                <div id="optional-screen" class="optional-screen extra-screen hidden">
+
+                </div>
+            </div>
+            <div class="card-menu">
+                <div>
+                    <button class="menu-option active" tab="renovate">
+                        <img class="menu-option-icon" src="img/icons/renovate.png">
+                        <p class="menu-option-label">RENOVATE</p>
+                    </button>
+                </div>
+                <div>
+                    <button class="menu-option" tab="mansion">
+                        <img class="menu-option-icon" src="img/icons/mansion.png">
+                        <p class="menu-option-label">MANSION</p>
+                    </button>
+                </div>
+                <div>
+                    <button class="menu-option" tab="furniture">
+                        <img class="menu-option-icon" src="img/icons/furniture.png">
+                        <p class="menu-option-label">FURNITURE</p>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card popup hidden" id="purchase-modal">
+    <div class="card-body">
+        <div class="card-header">
+            <span>ARE YOU SURE?</span>
+            <img src="img/tiny-logo.png" alt="..." class="tiny-logo">
+        </div>
+        <div class="card-main">
+            <div style="position: relative;width: 100%;display: flex;flex-direction: column;justify-content: space-between;">
+                <div>
+                    <span id="confirm-content" class="popup-desc"></span>
+                </div>
+                <div style="display: flex; justify-content: space-between; width: 100%;">
+                    <button type="button" id="cancel-upgrade-purchase" class="btn-primary">
+                        CANCEL
+                    </button>
+                    <button type="button" id="confirm-upgrade-purchase" class="btn-primary">
+                        PURCHASE
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    $(document).ready(function () {
+        let CONFIRM_ACTION = 'repaint';
+
+        let CONFIRM_OPTIONAL_SLOT = '';
+        let CONFIRM_OPTIONAL_ITEM = '';
+
+        $('#colorpicker').farbtastic('#color');
+        $('#lights-colorpicker').farbtastic('#lights-color');
+
+        $('#renovate').show();
+
+
+        //// GENERAL LOGIC ////
+        $(document).on('click', '.menu-option', function () {
+            $('.extra-screen').hide();
+            $('#main-screen').show();
+            $('.management-tab').hide();
+            $('.menu-option').removeClass('active');
+            $(this).addClass('active');
+            $('#' + $(this).attr('tab')).fadeIn(200);
+
+            fetch(`https://${GetParentResourceName()}/PageChanged`, {
+                method: 'POST',
+            });
+        });
+
+        $(document).on('click', '.renovate-option', function () {
+            const screen = $(this).attr('screen');
+            const type = $(this).attr('type');
+
+            $('#main-screen').hide();
+            $('.extra-screen').hide();
+            $('#' + screen).fadeIn(200);
+
+            if (type === 'repaint') {
+                PAINT_TYPE = $(this).attr('repaint-type');
+            }
+
+            if (type === 'optional') {
+                const optionalKey = $(this).attr('optional');
+                startOptionalCam(optionalKey);
+                displayOptionalItems(optionalKey)
+            }
+        });
+
+
+
+
+        //// CONFIRMATION POPUP ////
+        $(document).on('click', '#cancel-upgrade-purchase', function () {
+            $('#purchase-modal').fadeOut(100);
+        });
+
+        $(document).on('click', '#confirm-upgrade-purchase', function () {
+            $('#purchase-modal').fadeOut(100);
+
+            if (CONFIRM_ACTION === 'repaint') {
+                confirmRepaint();
+            }
+            if (CONFIRM_ACTION === 'optional') {
+                confirmOptional();
+            }
+        });
+
+        function confirmRepaint() {
+            const color = $('#color').val();
+            const rgb = hexToRgb(color);
+
+            fetch(`https://${GetParentResourceName()}/RepaintMansion`, {
+                method: 'POST',
+                body: JSON.stringify({...rgb, ...{paintType: PAINT_TYPE}})
+            });
+        }
+
+
+
+        //// REPAINTING ////
+        let PAINT_TYPE = 'shell';
+
+        $(document).on('click', '#repaint-button', function () {
+            CONFIRM_ACTION = 'repaint'
+
+            $('#confirm-content').html(locale('ARE YOU SURE YOU WANT TO REPAINT YOUR MANSION FOR $') + numberWithCommas(10000));
+            $('#purchase-modal').fadeIn(300);
+        });
+
+        $(document).on('click', '#repaint-preview-button', function () {
+            const color = $('#color').val();
+            const rgb = hexToRgb(color);
+
+            fetch(`https://${GetParentResourceName()}/PreviewRepaint`, {
+                method: 'POST',
+                body: JSON.stringify({...rgb, ...{paintType: PAINT_TYPE}})
+            });
+        });
+
+        function hexToRgb(hex) {
+            var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+            return result ? {
+                r: parseInt(result[1], 16),
+                g: parseInt(result[2], 16),
+                b: parseInt(result[3], 16)
+            } : null;
+        }
+
+
+
+        //// LIGHTS ////
+        $(document).on('click', '#lights-color-button', function () {
+            const color = $('#lights-color').val();
+            const rgb = hexToRgb(color);
+
+            fetch(`https://${GetParentResourceName()}/RepaintMansion`, {
+                method: 'POST',
+                body: JSON.stringify({...rgb, ...{paintType: 'lights'}})
+            });
+        });
+
+        $(document).on('click', '.custom-color-button', function () {
+            const r = $(this).attr('r');
+            const g = $(this).attr('g');
+            const b = $(this).attr('b');
+
+            fetch(`https://${GetParentResourceName()}/RepaintMansion`, {
+                method: 'POST',
+                body: JSON.stringify({...{r, g, b}, ...{paintType: 'lights'}})
+            });
+        });
+
+        //// OPTIONAL ITEMS ////
+        let OPTIONAL_KEY = '';
+
+        function displayOptionalItems(optionalKey) {
+            OPTIONAL_KEY = optionalKey
+            $('#optional-screen').fadeIn(300);
+
+            let html = '';
+
+            for (const [key, item] of Object.entries(OPTIONAL[optionalKey]).sort()) {
+                html += '' +
+                    '<div class="optional-item">' +
+                    '    <h2>' + item.label + '</h2>' +
+                    '    <p class="optional-price">$' + numberWithCommas(item.price) + '</p>' +
+                    '    <p>' + item.description + '</p>' + (!item.active ?
+                   ('    <button class="btn-primary btn-small preview-optional" option="' + item.key + '">' +
+                    '        <span>PREVIEW</span>' +
+                    '    </button>') : '') +
+                    '    <button class="btn-primary btn-small purchase-optional" ' + (item.active ? 'disabled' : '') + ' option="' + item.key + '">' +
+                    '        <span>' + (item.active ? 'ACTIVE' : 'PURCHASE') + '</span>' +
+                    '    </button>' +
+                    '</div>';
+            }
+
+            $('#optional-screen').html(html);
+        }
+
+        $(document).on('click', '.purchase-optional', function () {
+            CONFIRM_ACTION = 'optional';
+
+            const itemKey = $(this).attr('option');
+            const item = OPTIONAL[OPTIONAL_KEY][itemKey];
+
+            CONFIRM_OPTIONAL_SLOT = OPTIONAL_KEY
+            CONFIRM_OPTIONAL_ITEM = itemKey
+
+            $('#confirm-content').html((locale('ARE YOU SURE YOU WANT TO PURCHASE THE "{ITEM}" FOR ${PRICE}')).replace('{ITEM}', item.label).replace('{PRICE}', numberWithCommas(item.price)));
+            $('#purchase-modal').fadeIn(300);
+        });
+
+        $(document).on('click', '.preview-optional', function () {
+            const itemKey = $(this).attr('option');
+            const item = OPTIONAL[OPTIONAL_KEY][itemKey];
+
+            fetch(`https://${GetParentResourceName()}/PreviewOptional`, {
+                method: 'POST',
+                body: JSON.stringify({slot: OPTIONAL_KEY, item: itemKey})
+            });
+        });
+
+        function confirmOptional() {
+            for (const [key, item] of Object.entries(OPTIONAL[CONFIRM_OPTIONAL_SLOT])) {
+                item.active = (item.key === CONFIRM_OPTIONAL_ITEM);
+            }
+            displayOptionalItems(CONFIRM_OPTIONAL_SLOT)
+
+            fetch(`https://${GetParentResourceName()}/PurchaseOptional`, {
+                method: 'POST',
+                body: JSON.stringify({slot: CONFIRM_OPTIONAL_SLOT, item: CONFIRM_OPTIONAL_ITEM})
+            });
+        }
+
+        function startOptionalCam(optionalKey) {
+            fetch(`https://${GetParentResourceName()}/StartCameraOptional`, {
+                method: 'POST',
+                body: JSON.stringify({
+                    optionalKey,
+                })
+            });
+        }
+
+
+        //* DOORS *//
+
+
+        $(document).on('click', '.toggle-doors', function () {
+            fetch(`https://${GetParentResourceName()}/ToggleDoors`, {
+                method: 'POST',
+            });
+        });
+
+
+        //* FURNITURE *//
+
+        function renderFurniture(search) {
+            let html = '';
+
+            let furniture = Object.entries(FURNITURE);
+            if (search) {
+                furniture = furniture.filter(f => (f[1].name.toUpperCase().includes(search.toUpperCase()) || f[1].model.toUpperCase().includes(search.toUpperCase())));
+            }
+
+            if (furniture.length) {
+                furniture.sort((a, b) => (a[1].name > b[1].name) ? 1 : -1)
+
+                for (const [key, item] of furniture) {
+                    html += `
+                    <div class="furniture-item">
+                        <h2 class="primary m-0">` + item.name + `</h2>
+                        <img class="furniture-image" src="../props_icons/` + item.image + `">
+                        <button class="furniture-btn btn-primary btn-small" furniture="` + key + `">
+                            <span>Place</span> <span class="price">$` + numberWithCommas(item.price) + `</span>
+                        </button>
+                    </div>
+                `;
+                }
+            } else {
+                html += `<span>Nothing found</span>`;
+            }
+
+            $('#furniture-container').html(html);
+        }
+        renderFurniture();
+
+        $(document).on('input', '#furniture-search', function() {
+            renderFurniture($(this).val());
+        })
+
+        $(document).on('click', '.furniture-btn', function () {
+            const itemKey = $(this).attr('furniture');
+
+            fetch(`https://${GetParentResourceName()}/StartPlacingFurniture`, {
+                method: 'POST',
+                body: JSON.stringify({item: itemKey})
+            });
+        });
+
+        $(document).on('click', '#furniture-removal', function () {
+            fetch(`https://${GetParentResourceName()}/ToggleDemolitionMode`, {
+                method: 'POST',
+            });
+        });
+
+    });
+</script>
+
+<style>
+    .furniture-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1vh;
+
+        overflow-y: auto;
+        max-height: 37vh;
+    }
+
+    .furniture-item {
+        width: calc(50% - 5vh);
+        height: auto;
+        border: var(--primary-lighter) solid 1px;
+        /*border-radius: 0.5vh;*/
+        padding: 1vh 2vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 1vh;
+    }
+
+    .furniture-item:hover {
+        background-color: var(--primary-lightestst);
+    }
+
+    .furniture-item img {
+        height: 14vh;
+        width: 14vh;
+        border-radius: 0.25vh;
+    }
+
+    .furniture-item .price {
+        color: var(--primary-darker);
+        font-size: 1.2rem;
+        font-weight: 300;
+        margin-left: 1vh;
+    }
+
+    #furniture-removal {
+        background-color: transparent;
+        outline: none;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        transition-duration: 100ms;
+    }
+
+    #furniture-removal img {
+        z-index: -1;
+    }
+
+    #furniture-removal:hover {
+        transform: scale(0.9) rotate(5deg);
+        transition: ease-in-out 0.1s;
+    }
+
+    #furniture-removal span {
+        font-size: 1rem;
+        color: var(--primary);
+        font-weight: 300;
+        cursor: pointer;
+        font-family: 'BebasNeue', sans-serif !important;
+    }
+
+    .furniture-search-container {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 1vh;
+        margin-bottom: 1vh;
+        color: var(--primary);
+        font-size: 1.4rem;
+    }
+
+    #furniture-search {
+        outline: none;
+        padding: 6px 10px;
+        border: var(--primary) solid 1px;
+        margin-right: 1vh;
+        color: var(--primary-dark);
+        font-size: 1.2rem;
+        background-color: var(--primary-lightestst);
+        font-family: 'BebasNeue', sans-serif !important;
+    }
+
+    .management-tab {
+        display: none;
+    }
+    .renovate-body {
+        display: flex;
+        flex-flow: column;
+    }
+    .renovate-body h2, h2.primary {
+        color: var(--primary);
+        font-size: 1.7rem;
+        font-weight: 300;
+        margin: 2vh 0 0;
+    }
+
+    h2.m-0 {
+        margin: 0 !important;
+    }
+
+    h2.underline {
+        text-decoration: underline;
+    }
+    .renovate-option {
+        width: 90%;
+        display: flex !important;
+        justify-content: space-between;
+    }
+    .color-picker-body {
+        width: 100%;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+    }
+    .optional-item {
+        border: solid 1px var(--primary-lighter);
+        margin: 1vh;
+        padding: 1vh;
+        /*border-radius: 0.5vh;*/
+    }
+    .optional-item h2 {
+        margin: 0;
+        color: var(--primary);
+        font-size: 1.5rem;
+    }
+    .optional-item .optional-price {
+        font-size: 1.2rem;
+        color: var(--primary);
+    }
+    .optional-item p {
+        margin: 0;
+        font-size: 0.9rem;
+    }
+</style>

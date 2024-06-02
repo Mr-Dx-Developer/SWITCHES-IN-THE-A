@@ -1,0 +1,153 @@
+<div class="card full">
+    <div class="card-body">
+        <div class="card-backtext"><span>DON'T CHASE YOUR DREAMS.<br>BUY THEM INSTEAD</span></div>
+        <div class="card-header">
+            <span>PRIVATE ISLANDS</span>
+            <img src="img/tiny-logo.png" alt="..." class="tiny-logo">
+        </div>
+        <div class="card-main big">
+            <div id="islands-container" class="card-main-purchase">
+                <div class="island">
+                            <span class="title">
+                                ISLA DEL TORRO
+                            </span>
+                    <div class="details">
+                        <span>LARGE ISLAND</span>
+                        <span>WEST COAST</span>
+                    </div>
+                    <img src="img/icons/palm.png" class="palm">
+                </div>
+                <div class="island">
+                            <span class="title">
+                                ISLA DE ENCANTO
+                            </span>
+                    <div class="details">
+                        <span>SMALL ISLAND</span>
+                        <span>EAST COAST</span>
+                    </div>
+                    <img src="img/icons/palm.png" class="palm">
+                </div>
+            </div>
+            <div id="pdp" class="card-purchase-details">
+                <div class="product-overview">
+                    <span class="title">
+                        ISLA DE ENCANTO
+                    </span>
+                    <p class="description">
+                        Isla de encanto is a small, private island located near the west coast of Los Santos. It is a tropical paradise, with crystal clear waters and lush vegetation.<br><br>
+                        Isla de encanto is being offered for sale at a price of $5,000,000. This is a unique opportunity to own a piece of paradise, and it is sure to be a wonderful investment for those looking to escape the hustle and bustle of city life. So, if you're interested in owning your own private island, Isla de encanto may be the perfect opportunity for you.
+                    </p>
+                </div>
+                <div class="buttons">
+                    <button type="button" class="btn-primary" id="set-gps">
+                        SET GPS
+                    </button>
+                    <button type="button" class="btn-primary" id="purchase-island" style="margin-top: 1vh;">
+                        PURCHASE
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card popup hidden" id="purchase-modal">
+    <div class="card-body">
+        <div class="card-header">
+            <span>ARE YOU SURE?</span>
+            <img src="img/tiny-logo.png" alt="..." class="tiny-logo">
+        </div>
+        <div class="card-main">
+            <div style="position: relative;width: 100%;display: flex;flex-direction: column;justify-content: space-between;">
+                <div>
+                    <span class="confirm-price">
+                        YOU'RE PURCASHING "<span id="active-island-title">ISLA DE ENCANTO</span>" FOR $<span id="active-island-price">5,000,000</span>
+                    </span>
+                </div>
+                <div style="display: flex; justify-content: space-between; width: 100%;">
+                    <button type="button" id="cancel-purchase" class="btn-primary">
+                        CANCEL
+                    </button>
+                    <button type="button" id="confirm-purchase" class="btn-primary">
+                        PURCHASE
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        let islandsData = [];
+        let activeIsland = {};
+
+        window.addEventListener('message', ({data}) => {
+            if (data.event === 'insert-islands') {
+                islandsData = JSON.parse(data.islands);
+                updateIslands()
+            }
+        });
+
+        function updateIslands() {
+            let htmlContent = '';
+
+            islandsData.forEach((island) => {
+                htmlContent += '' +
+                    '<div island="'+ island.key +'" class="island">' +
+                    '    <span class="title">' +
+                    island.title +
+                    '    </span>\n' +
+                    '    <div class="details">' +
+                    '        <span>' + island.size + '</span>' +
+                    '        <span>' + island.coast + '</span>' +
+                    '    </div>' +
+                    '    <img src="img/icons/palm.png" class="palm">' +
+                    '</div>'
+
+            });
+            $('#islands-container').html(htmlContent);
+        }
+
+        $(document).on('click', '.island', function () {
+            const data = islandsData.filter((island) => {
+                return island.key === $(this).attr('island');
+            })[0];
+            if (!data) {
+                $('#pdp .description').html('Something went wrong while retrieving island data...');
+            }
+            activeIsland = data;
+
+            $('#pdp .description').html(data.description)
+            $('#pdp .title').html(data.title)
+        });
+
+        $(document).on('click', '#set-gps', function () {
+            const coords = activeIsland.coords;
+            fetch(`https://${GetParentResourceName()}/SetWaypoint`, {
+                method: 'POST',
+                body: JSON.stringify(coords)
+            });
+        });
+
+        $(document).on('click', '#purchase-island', function () {
+            $('#active-island-price').html(numberWithCommas(activeIsland.price));
+            $('#active-island-title').html(activeIsland.title);
+            $('#purchase-modal').fadeIn(300);
+        });
+
+        $(document).on('click', '#cancel-purchase', function () {
+            $('#purchase-modal').fadeOut(100);
+        });
+
+        $(document).on('click', '#confirm-purchase', function () {
+            $('#purchase-modal').fadeOut(100);
+            fetch(`https://${GetParentResourceName()}/PurchaseIsland`, {
+                method: 'POST',
+                body: JSON.stringify({
+                    key: activeIsland.key,
+                }),
+            });
+        });
+    });
+</script>

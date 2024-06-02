@@ -1,0 +1,44 @@
+section.progressbar-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    text-align: center;
+}
+
+h1.progressbar-text {
+    font-size: 24px;
+    color: #fff;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 1.0);
+}
+
+ul.loader {
+    width: 40%;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+ul.loader li {
+    width: 0;
+    height: 2px;
+    background-color: rgba(255,255,255,0); 
+}
+
+ul.loader li.background-bar {
+    width: 100%;
+    height: 2px;
+    position: absolute;
+}
+
+ul.loader li.empty {
+    box-shadow: none;
+}
+
+ul.loader li.filled {
+    width: 100%;
+    transition: width 0.5s linear;
+}

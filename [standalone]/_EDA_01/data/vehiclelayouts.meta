@@ -1,0 +1,3356 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CVehicleMetadataMgr>
+  <AnimRateSets />
+  <ClipSetMaps />
+  <VehicleCoverBoundOffsetInfos />
+  <BicycleInfos />
+  <POVTuningInfos />
+  <EntryAnimVariations />
+  <VehicleExtraPointsInfos />
+  <DrivebyWeaponGroups>
+    <Item type="CDrivebyWeaponGroup">
+	  <Name>DRIVEBY_DELTA_ONE_HANDED</Name>
+	  <WeaponGroupNames>
+		<Item>GROUP_PISTOL</Item>
+	  </WeaponGroupNames>
+	  <WeaponTypeNames>
+		<Item>WEAPON_STUNGUN</Item>
+		<Item>WEAPON_SAWNOFFSHOTGUN</Item>
+		<Item>WEAPON_MICROSMG</Item>
+		<Item>WEAPON_MACHINEPISTOL</Item>
+		<Item>WEAPON_MINISMG</Item>
+		<Item>WEAPON_COMPACTRIFLE</Item>
+		<Item>WEAPON_DBSHOTGUN</Item>
+		<Item>WEAPON_AUTOSHOTGUN</Item>
+	  </WeaponTypeNames>
+	</Item>
+  </DrivebyWeaponGroups>
+  <VehicleDriveByAnimInfos>
+
+	<!-- STD -->
+    <Item type="CVehicleDriveByAnimInfo">
+      <Name>ANIM_INFO_DELTA_STD_DS_1H</Name>
+      <WeaponGroup ref="DRIVEBY_DELTA_ONE_HANDED" />
+      <DriveByClipSet>drive_by@std_ds</DriveByClipSet>
+      <FirstPersonDriveByClipSet>driveby@first_person@driver@1h</FirstPersonDriveByClipSet>
+      <AltFirstPersonDriveByClipSets />
+      <RestrictedDriveByClipSet />
+      <Network>STD_CAR_DRIVEBY</Network>
+      <UseOverrideAngles value="false" />
+      <OverrideMinAimAngle value="0.000000" />
+      <OverrideMaxAimAngle value="0.000000" />
+      <OverrideMinRestrictedAimAngle value="0.000000" />
+      <OverrideMaxRestrictedAimAngle value="0.000000" />
+    </Item>
+    <Item type="CVehicleDriveByAnimInfo">
+      <Name>ANIM_INFO_DELTA_STD_PS_1H</Name>
+      <WeaponGroup ref="DRIVEBY_DELTA_ONE_HANDED" />
+      <DriveByClipSet>delta@drive_by@std_ps_1h</DriveByClipSet>
+      <FirstPersonDriveByClipSet>delta@drive_by@std_ps_1h</FirstPersonDriveByClipSet>
+      <AltFirstPersonDriveByClipSets />
+      <RestrictedDriveByClipSet />
+      <Network>STD_CAR_DRIVEBY</Network>
+      <UseOverrideAngles value="false" />
+      <OverrideMinAimAngle value="-190.000000" />
+      <OverrideMaxAimAngle value="190.000000" />
+      <OverrideMinRestrictedAimAngle value="-190.000000" />
+      <OverrideMaxRestrictedAimAngle value="190.000000" />
+    </Item>
+    <Item type="CVehicleDriveByAnimInfo">
+      <Name>ANIM_INFO_DELTA_STD_RDS_1H</Name>
+      <WeaponGroup ref="DRIVEBY_DELTA_ONE_HANDED" />
+      <DriveByClipSet>delta@drive_by@std_rds_1h</DriveByClipSet>
+      <FirstPersonDriveByClipSet>delta@drive_by@std_rds_1h</FirstPersonDriveByClipSet>
+      <AltFirstPersonDriveByClipSets />
+      <RestrictedDriveByClipSet />
+      <Network>STD_CAR_DRIVEBY</Network>
+      <UseOverrideAngles value="false" />
+      <OverrideMinAimAngle value="0.000000" />
+      <OverrideMaxAimAngle value="0.000000" />
+      <OverrideMinRestrictedAimAngle value="0.000000" />
+      <OverrideMaxRestrictedAimAngle value="0.000000" />
+    </Item>
+    <Item type="CVehicleDriveByAnimInfo">
+      <Name>ANIM_INFO_DELTA_STD_RPS_1H</Name>
+      <WeaponGroup ref="DRIVEBY_DELTA_ONE_HANDED" />
+      <DriveByClipSet>delta@drive_by@std_rps_1h</DriveByClipSet>
+      <FirstPersonDriveByClipSet>delta@drive_by@std_rps_1h</FirstPersonDriveByClipSet>
+      <AltFirstPersonDriveByClipSets />
+      <RestrictedDriveByClipSet />
+      <Network>STD_CAR_DRIVEBY</Network>
+      <UseOverrideAngles value="false" />
+      <OverrideMinAimAngle value="0.000000" />
+      <OverrideMaxAimAngle value="0.000000" />
+      <OverrideMinRestrictedAimAngle value="0.000000" />
+      <OverrideMaxRestrictedAimAngle value="0.000000" />
+    </Item>
+	
+	<!-- Low -->
+	<Item type="CVehicleDriveByAnimInfo">
+      <Name>ANIM_INFO_DELTA_LOW_PS_1H</Name>
+      <WeaponGroup ref="DRIVEBY_DELTA_ONE_HANDED" />
+      <DriveByClipSet>delta@drive_by@low_ps_1h</DriveByClipSet>
+      <FirstPersonDriveByClipSet>delta@drive_by@low_ps_1h</FirstPersonDriveByClipSet>
+      <AltFirstPersonDriveByClipSets />
+      <RestrictedDriveByClipSet />
+      <Network>STD_CAR_DRIVEBY</Network>
+    </Item>
+	<Item type="CVehicleDriveByAnimInfo">
+      <Name>ANIM_INFO_DELTA_LOW_RDS_1H</Name>
+      <WeaponGroup ref="DRIVEBY_DELTA_ONE_HANDED" />
+      <DriveByClipSet>delta@drive_by@low_rds_1h</DriveByClipSet>
+      <FirstPersonDriveByClipSet>delta@drive_by@low_rds_1h</FirstPersonDriveByClipSet>
+      <AltFirstPersonDriveByClipSets />
+      <RestrictedDriveByClipSet />
+      <Network>STD_CAR_DRIVEBY</Network>
+      <UseOverrideAngles value="false" />
+      <OverrideMinAimAngle value="0.000000" />
+      <OverrideMaxAimAngle value="0.000000" />
+      <OverrideMinRestrictedAimAngle value="0.000000" />
+      <OverrideMaxRestrictedAimAngle value="0.000000" />
+    </Item>
+	<Item type="CVehicleDriveByAnimInfo">
+      <Name>ANIM_INFO_DELTA_LOW_RPS_1H</Name>
+      <WeaponGroup ref="DRIVEBY_DELTA_ONE_HANDED" />
+      <DriveByClipSet>delta@drive_by@low_rps_1h</DriveByClipSet>
+      <FirstPersonDriveByClipSet>delta@drive_by@low_rps_1h</FirstPersonDriveByClipSet>
+      <AltFirstPersonDriveByClipSets />
+      <RestrictedDriveByClipSet />
+      <Network>STD_CAR_DRIVEBY</Network>
+      <UseOverrideAngles value="false" />
+      <OverrideMinAimAngle value="0.000000" />
+      <OverrideMaxAimAngle value="0.000000" />
+      <OverrideMinRestrictedAimAngle value="0.000000" />
+      <OverrideMaxRestrictedAimAngle value="0.000000" />
+    </Item>
+	
+	<!-- Sport -->
+	<Item type="CVehicleDriveByAnimInfo">
+      <Name>ANIM_INFO_DELTA_SPORT_PS_1H</Name>
+      <WeaponGroup ref="DRIVEBY_DELTA_ONE_HANDED" />
+      <DriveByClipSet>delta@drive_by@sport_ps_1h</DriveByClipSet>
+      <FirstPersonDriveByClipSet>delta@drive_by@sport_ps_1h</FirstPersonDriveByClipSet>
+      <AltFirstPersonDriveByClipSets />
+      <RestrictedDriveByClipSet />
+      <Network>STD_CAR_DRIVEBY</Network>
+    </Item>
+	
+	<!-- Super -->
+	<Item type="CVehicleDriveByAnimInfo">
+      <Name>ANIM_INFO_DELTA_SUPER_PS_1H</Name>
+      <WeaponGroup ref="DRIVEBY_DELTA_ONE_HANDED" />
+      <DriveByClipSet>delta@drive_by@super_ps_1h</DriveByClipSet>
+      <FirstPersonDriveByClipSet>delta@drive_by@super_ps_1h</FirstPersonDriveByClipSet>
+      <AltFirstPersonDriveByClipSets />
+      <RestrictedDriveByClipSet />
+      <Network>STD_CAR_DRIVEBY</Network>
+    </Item>
+	
+	<!-- SUV -->
+	<Item type="CVehicleDriveByAnimInfo">
+      <Name>ANIM_INFO_DELTA_SUV_PS_1H</Name>
+      <WeaponGroup ref="DRIVEBY_DELTA_ONE_HANDED" />
+      <DriveByClipSet>delta@drive_by@suv_ps_1h</DriveByClipSet>
+      <FirstPersonDriveByClipSet>delta@drive_by@suv_ps_1h</FirstPersonDriveByClipSet>
+      <AltFirstPersonDriveByClipSets />
+      <RestrictedDriveByClipSet />
+      <Network>STD_CAR_DRIVEBY</Network>
+    </Item>
+	<Item type="CVehicleDriveByAnimInfo">
+      <Name>ANIM_INFO_DELTA_SUV_RDS_1H</Name>
+      <WeaponGroup ref="DRIVEBY_DELTA_ONE_HANDED" />
+      <DriveByClipSet>delta@drive_by@suv_rds_1h</DriveByClipSet>
+      <FirstPersonDriveByClipSet>delta@drive_by@suv_rds_1h</FirstPersonDriveByClipSet>
+      <AltFirstPersonDriveByClipSets />
+      <RestrictedDriveByClipSet />
+      <Network>STD_CAR_DRIVEBY</Network>
+      <UseOverrideAngles value="false" />
+      <OverrideMinAimAngle value="0.000000" />
+      <OverrideMaxAimAngle value="0.000000" />
+      <OverrideMinRestrictedAimAngle value="0.000000" />
+      <OverrideMaxRestrictedAimAngle value="0.000000" />
+    </Item>
+	<Item type="CVehicleDriveByAnimInfo">
+      <Name>ANIM_INFO_DELTA_SUV_RPS_1H</Name>
+      <WeaponGroup ref="DRIVEBY_DELTA_ONE_HANDED" />
+      <DriveByClipSet>delta@drive_by@suv_rps_1h</DriveByClipSet>
+      <FirstPersonDriveByClipSet>delta@drive_by@suv_rps_1h</FirstPersonDriveByClipSet>
+      <AltFirstPersonDriveByClipSets />
+      <RestrictedDriveByClipSet />
+      <Network>STD_CAR_DRIVEBY</Network>
+      <UseOverrideAngles value="false" />
+      <OverrideMinAimAngle value="0.000000" />
+      <OverrideMaxAimAngle value="0.000000" />
+      <OverrideMinRestrictedAimAngle value="0.000000" />
+      <OverrideMaxRestrictedAimAngle value="0.000000" />
+    </Item>
+	<Item type="CVehicleDriveByAnimInfo">
+      <Name>ANIM_INFO_DELTA_SUV_HIGH_PS_1H</Name>
+      <WeaponGroup ref="DRIVEBY_DELTA_ONE_HANDED" />
+      <DriveByClipSet>delta@drive_by@suv_high_ps_1h</DriveByClipSet>
+      <FirstPersonDriveByClipSet>delta@drive_by@suv_high_ps_1h</FirstPersonDriveByClipSet>
+      <AltFirstPersonDriveByClipSets />
+      <RestrictedDriveByClipSet />
+      <Network>STD_CAR_DRIVEBY</Network>
+    </Item>
+	<Item type="CVehicleDriveByAnimInfo">
+      <Name>ANIM_INFO_DELTA_SUV_LOW_PS_1H</Name>
+      <WeaponGroup ref="DRIVEBY_DELTA_ONE_HANDED" />
+      <DriveByClipSet>delta@drive_by@suv_low_ps_1h</DriveByClipSet>
+      <FirstPersonDriveByClipSet>delta@drive_by@suv_low_ps_1h</FirstPersonDriveByClipSet>
+      <AltFirstPersonDriveByClipSets />
+      <RestrictedDriveByClipSet />
+      <Network>STD_CAR_DRIVEBY</Network>
+    </Item>
+	<Item type="CVehicleDriveByAnimInfo">
+      <Name>ANIM_INFO_DELTA_SUV_LOW_RDS_1H</Name>
+      <WeaponGroup ref="DRIVEBY_DELTA_ONE_HANDED" />
+      <DriveByClipSet>delta@drive_by@suv_low_rds_1h</DriveByClipSet>
+      <FirstPersonDriveByClipSet>delta@drive_by@suv_low_rds_1h</FirstPersonDriveByClipSet>
+      <AltFirstPersonDriveByClipSets />
+      <RestrictedDriveByClipSet />
+      <Network>STD_CAR_DRIVEBY</Network>
+      <UseOverrideAngles value="false" />
+      <OverrideMinAimAngle value="0.000000" />
+      <OverrideMaxAimAngle value="0.000000" />
+      <OverrideMinRestrictedAimAngle value="0.000000" />
+      <OverrideMaxRestrictedAimAngle value="0.000000" />
+    </Item>
+	<Item type="CVehicleDriveByAnimInfo">
+      <Name>ANIM_INFO_DELTA_SUV_LOW_RPS_1H</Name>
+      <WeaponGroup ref="DRIVEBY_DELTA_ONE_HANDED" />
+      <DriveByClipSet>delta@drive_by@suv_low_rps_1h</DriveByClipSet>
+      <FirstPersonDriveByClipSet>delta@drive_by@suv_low_rps_1h</FirstPersonDriveByClipSet>
+      <AltFirstPersonDriveByClipSets />
+      <RestrictedDriveByClipSet />
+      <Network>STD_CAR_DRIVEBY</Network>
+      <UseOverrideAngles value="false" />
+      <OverrideMinAimAngle value="0.000000" />
+      <OverrideMaxAimAngle value="0.000000" />
+      <OverrideMinRestrictedAimAngle value="0.000000" />
+      <OverrideMaxRestrictedAimAngle value="0.000000" />
+    </Item>
+	
+	<!-- Ranger -->
+	<Item type="CVehicleDriveByAnimInfo">
+      <Name>ANIM_INFO_DELTA_RANGER_PS_1H</Name>
+      <WeaponGroup ref="DRIVEBY_DELTA_ONE_HANDED" />
+      <DriveByClipSet>delta@drive_by@ranger_ps_1h</DriveByClipSet>
+      <FirstPersonDriveByClipSet>delta@drive_by@ranger_ps_1h</FirstPersonDriveByClipSet>
+      <AltFirstPersonDriveByClipSets />
+      <RestrictedDriveByClipSet />
+      <Network>STD_CAR_DRIVEBY</Network>
+    </Item>
+	<Item type="CVehicleDriveByAnimInfo">
+      <Name>ANIM_INFO_DELTA_RANGER_RDS_1H</Name>
+      <WeaponGroup ref="DRIVEBY_DELTA_ONE_HANDED" />
+      <DriveByClipSet>delta@drive_by@ranger_rds_1h</DriveByClipSet>
+      <FirstPersonDriveByClipSet>delta@drive_by@ranger_rds_1h</FirstPersonDriveByClipSet>
+      <AltFirstPersonDriveByClipSets />
+      <RestrictedDriveByClipSet />
+      <Network>STD_CAR_DRIVEBY</Network>
+      <UseOverrideAngles value="false" />
+      <OverrideMinAimAngle value="0.000000" />
+      <OverrideMaxAimAngle value="0.000000" />
+      <OverrideMinRestrictedAimAngle value="0.000000" />
+      <OverrideMaxRestrictedAimAngle value="0.000000" />
+    </Item>
+	<Item type="CVehicleDriveByAnimInfo">
+      <Name>ANIM_INFO_DELTA_RANGER_RPS_1H</Name>
+      <WeaponGroup ref="DRIVEBY_DELTA_ONE_HANDED" />
+      <DriveByClipSet>delta@drive_by@ranger_rps_1h</DriveByClipSet>
+      <FirstPersonDriveByClipSet>delta@drive_by@ranger_rps_1h</FirstPersonDriveByClipSet>
+      <AltFirstPersonDriveByClipSets />
+      <RestrictedDriveByClipSet />
+      <Network>STD_CAR_DRIVEBY</Network>
+      <UseOverrideAngles value="false" />
+      <OverrideMinAimAngle value="0.000000" />
+      <OverrideMaxAimAngle value="0.000000" />
+      <OverrideMinRestrictedAimAngle value="0.000000" />
+      <OverrideMaxRestrictedAimAngle value="0.000000" />
+    </Item>
+	
+	<!-- Van -->
+	<Item type="CVehicleDriveByAnimInfo">
+      <Name>ANIM_INFO_DELTA_VAN_PS_1H</Name>
+      <WeaponGroup ref="DRIVEBY_DELTA_ONE_HANDED" />
+      <DriveByClipSet>delta@drive_by@van_ps_1h</DriveByClipSet>
+      <FirstPersonDriveByClipSet>delta@drive_by@van_ps_1h</FirstPersonDriveByClipSet>
+      <AltFirstPersonDriveByClipSets />
+      <RestrictedDriveByClipSet />
+      <Network>STD_CAR_DRIVEBY</Network>
+    </Item>
+	
+	<Item type="CVehicleDriveByAnimInfo">
+      <Name>ANIM_INFO_DELTA_VAN_MULE_PS_1H</Name>
+      <WeaponGroup ref="DRIVEBY_DELTA_ONE_HANDED" />
+      <DriveByClipSet>delta@drive_by@mule_ps_1h</DriveByClipSet>
+      <FirstPersonDriveByClipSet>delta@drive_by@mule_ps_1h</FirstPersonDriveByClipSet>
+      <AltFirstPersonDriveByClipSets />
+      <RestrictedDriveByClipSet />
+      <Network>STD_CAR_DRIVEBY</Network>
+    </Item>
+	
+
+  </VehicleDriveByAnimInfos>
+  <VehicleDriveByInfos>
+	<Item type="CVehicleDriveByInfo">
+      <Name>DRIVEBY_DELTA_STD_FRONT_LEFT</Name>
+      <MinAimSweepHeadingAngleDegs value="-190.000000" />
+      <MaxAimSweepHeadingAngleDegs value="190.000000" />
+      <FirstPersonMinAimSweepHeadingAngleDegs value="-190.000000" />
+      <FirstPersonMaxAimSweepHeadingAngleDegs value="190.000000" />
+      <FirstPersonUnarmedMinAimSweepHeadingAngleDegs value="-190.000000" />
+      <FirstPersonUnarmedMaxAimSweepHeadingAngleDegs value="190.000000" />
+      <MinRestrictedAimSweepHeadingAngleDegs value="-190.000000" />
+      <MaxRestrictedAimSweepHeadingAngleDegs value="190.000000" />
+      <MinSmashWindowAngleDegs value="0.000000" />
+      <MaxSmashWindowAngleDegs value="0.000000" />
+      <MinSmashWindowAngleFirstPersonDegs value="0.000000" />
+      <MaxSmashWindowAngleFirstPersonDegs value="0.000000" />
+      <MaxSpeedParam value="0.500000" />
+      <MaxLongitudinalLeanBlendWeightDelta value="0.250000" />
+      <MaxLateralLeanBlendWeightDelta value="0.250000" />
+      <ApproachSpeedToWithinMaxBlendDelta value="1.000000" />
+      <SpineAdditiveBlendInDelay value="0.050000" />
+      <SpineAdditiveBlendInDurationStill value="0.150000" />
+      <SpineAdditiveBlendInDuration value="0.750000" />
+      <SpineAdditiveBlendOutDelay value="0.000000" />
+      <SpineAdditiveBlendOutDuration value="0.500000" />
+      <MinUnarmedDrivebyYawIfWindowRolledUp value="-0.175000" />
+      <MaxUnarmedDrivebyYawIfWindowRolledUp value="3.140000" />
+      <DriveByAnimInfos>
+        <Item ref="STD_DB_ANIM_INFO_UNARMED_DS" />
+        <Item ref="ANIM_INFO_DELTA_STD_DS_1H" />
+        <Item ref="STD_DB_ANIM_INFO_THROW_DS" />
+      </DriveByAnimInfos>
+      <DriveByCamera />
+      <DriveByFlags>UsePedAsCamEntity UseMountedProjectileTask UseThreeAnimIntroOutro</DriveByFlags>
+    </Item>
+    <Item type="CVehicleDriveByInfo">
+      <Name>DRIVEBY_DELTA_STD_FRONT_RIGHT</Name>
+      <MinAimSweepHeadingAngleDegs value="-190.000000" />
+      <MaxAimSweepHeadingAngleDegs value="190.000000" />
+      <FirstPersonMinAimSweepHeadingAngleDegs value="-190.000000" />
+      <FirstPersonMaxAimSweepHeadingAngleDegs value="190.000000" />
+      <FirstPersonUnarmedMinAimSweepHeadingAngleDegs value="-190.000000" />
+      <FirstPersonUnarmedMaxAimSweepHeadingAngleDegs value="190.000000" />
+      <MinRestrictedAimSweepHeadingAngleDegs value="-190.000000" />
+      <MaxRestrictedAimSweepHeadingAngleDegs value="190.000000" />
+      <MinSmashWindowAngleDegs value="0.000000" />
+      <MaxSmashWindowAngleDegs value="0.000000" />
+      <MinSmashWindowAngleFirstPersonDegs value="0.000000" />
+      <MaxSmashWindowAngleFirstPersonDegs value="0.000000" />
+      <MaxSpeedParam value="0.500000" />
+      <MaxLongitudinalLeanBlendWeightDelta value="0.250000" />
+      <MaxLateralLeanBlendWeightDelta value="0.250000" />
+      <ApproachSpeedToWithinMaxBlendDelta value="1.000000" />
+      <SpineAdditiveBlendInDelay value="0.050000" />
+      <SpineAdditiveBlendInDurationStill value="0.150000" />
+      <SpineAdditiveBlendInDuration value="0.750000" />
+      <SpineAdditiveBlendOutDelay value="0.000000" />
+      <SpineAdditiveBlendOutDuration value="0.500000" />
+      <MinUnarmedDrivebyYawIfWindowRolledUp value="-3.140000" />
+      <MaxUnarmedDrivebyYawIfWindowRolledUp value="0.925000" />
+      <DriveByAnimInfos>
+        <Item ref="STD_DB_ANIM_INFO_UNARMED_PS" />
+        <Item ref="ANIM_INFO_DELTA_STD_PS_1H" />
+        <Item ref="STD_DB_ANIM_INFO_THROW_PS" />
+      </DriveByAnimInfos>
+      <DriveByCamera />
+      <DriveByFlags>UsePedAsCamEntity UseMountedProjectileTask UseThreeAnimIntroOutro</DriveByFlags>
+    </Item>
+    <Item type="CVehicleDriveByInfo">
+      <Name>DRIVEBY_DELTA_STD_REAR_LEFT</Name>
+      <MinAimSweepHeadingAngleDegs value="-190.000000" />
+      <MaxAimSweepHeadingAngleDegs value="190.000000" />
+      <FirstPersonMinAimSweepHeadingAngleDegs value="-190.000000" />
+      <FirstPersonMaxAimSweepHeadingAngleDegs value="190.000000" />
+      <FirstPersonUnarmedMinAimSweepHeadingAngleDegs value="-190.000000" />
+      <FirstPersonUnarmedMaxAimSweepHeadingAngleDegs value="190.000000" />
+      <MinRestrictedAimSweepHeadingAngleDegs value="-190.000000" />
+      <MaxRestrictedAimSweepHeadingAngleDegs value="190.000000" />
+      <MinSmashWindowAngleDegs value="0.000000" />
+      <MaxSmashWindowAngleDegs value="0.000000" />
+      <MinSmashWindowAngleFirstPersonDegs value="0.000000" />
+      <MaxSmashWindowAngleFirstPersonDegs value="0.000000" />
+      <MaxSpeedParam value="0.500000" />
+      <MaxLongitudinalLeanBlendWeightDelta value="0.250000" />
+      <MaxLateralLeanBlendWeightDelta value="0.250000" />
+      <ApproachSpeedToWithinMaxBlendDelta value="1.000000" />
+      <SpineAdditiveBlendInDelay value="0.050000" />
+      <SpineAdditiveBlendInDurationStill value="0.150000" />
+      <SpineAdditiveBlendInDuration value="0.750000" />
+      <SpineAdditiveBlendOutDelay value="0.000000" />
+      <SpineAdditiveBlendOutDuration value="0.500000" />
+      <MinUnarmedDrivebyYawIfWindowRolledUp value="-0.450000" />
+      <MaxUnarmedDrivebyYawIfWindowRolledUp value="3.140000" />
+      <DriveByAnimInfos>
+        <Item ref="STD_DB_ANIM_INFO_UNARMED_RDS" />
+        <Item ref="ANIM_INFO_DELTA_STD_RDS_1H" />
+        <Item ref="STD_DB_ANIM_INFO_THROW_RDS" />
+      </DriveByAnimInfos>
+      <DriveByCamera />
+      <DriveByFlags>UsePedAsCamEntity UseMountedProjectileTask UseThreeAnimIntroOutro</DriveByFlags>
+    </Item>
+    <Item type="CVehicleDriveByInfo">
+      <Name>DRIVEBY_DELTA_STD_REAR_RIGHT</Name>
+      <MinAimSweepHeadingAngleDegs value="-190.000000" />
+      <MaxAimSweepHeadingAngleDegs value="190.000000" />
+      <FirstPersonMinAimSweepHeadingAngleDegs value="-190.000000" />
+      <FirstPersonMaxAimSweepHeadingAngleDegs value="190.000000" />
+      <FirstPersonUnarmedMinAimSweepHeadingAngleDegs value="-190.000000" />
+      <FirstPersonUnarmedMaxAimSweepHeadingAngleDegs value="190.000000" />
+      <MinRestrictedAimSweepHeadingAngleDegs value="-190.000000" />
+      <MaxRestrictedAimSweepHeadingAngleDegs value="190.000000" />
+      <MinSmashWindowAngleDegs value="0.000000" />
+      <MaxSmashWindowAngleDegs value="0.000000" />
+      <MinSmashWindowAngleFirstPersonDegs value="0.000000" />
+      <MaxSmashWindowAngleFirstPersonDegs value="0.000000" />
+      <MaxSpeedParam value="0.500000" />
+      <MaxLongitudinalLeanBlendWeightDelta value="0.250000" />
+      <MaxLateralLeanBlendWeightDelta value="0.250000" />
+      <ApproachSpeedToWithinMaxBlendDelta value="1.000000" />
+      <SpineAdditiveBlendInDelay value="0.050000" />
+      <SpineAdditiveBlendInDurationStill value="0.150000" />
+      <SpineAdditiveBlendInDuration value="0.750000" />
+      <SpineAdditiveBlendOutDelay value="0.000000" />
+      <SpineAdditiveBlendOutDuration value="0.500000" />
+      <MinUnarmedDrivebyYawIfWindowRolledUp value="-3.140000" />
+      <MaxUnarmedDrivebyYawIfWindowRolledUp value="0.450000" />
+      <DriveByAnimInfos>
+        <Item ref="STD_DB_ANIM_INFO_UNARMED_RPS" />
+        <Item ref="ANIM_INFO_DELTA_STD_RPS_1H" />
+        <Item ref="STD_DB_ANIM_INFO_THROW_RPS" />
+      </DriveByAnimInfos>
+      <DriveByCamera />
+      <DriveByFlags>UsePedAsCamEntity UseMountedProjectileTask UseThreeAnimIntroOutro</DriveByFlags>
+    </Item>
+	<Item type="CVehicleDriveByInfo">
+      <Name>DRIVEBY_DELTA_LOW_FRONT_RIGHT</Name>
+      <MinAimSweepHeadingAngleDegs value="-190.000000" />
+      <MaxAimSweepHeadingAngleDegs value="190.000000" />
+      <FirstPersonMinAimSweepHeadingAngleDegs value="-190.000000" />
+      <FirstPersonMaxAimSweepHeadingAngleDegs value="190.000000" />
+      <FirstPersonUnarmedMinAimSweepHeadingAngleDegs value="-190.000000" />
+      <FirstPersonUnarmedMaxAimSweepHeadingAngleDegs value="190.000000" />
+      <MinRestrictedAimSweepHeadingAngleDegs value="-190.000000" />
+      <MaxRestrictedAimSweepHeadingAngleDegs value="190.000000" />
+      <MinSmashWindowAngleDegs value="0.000000" />
+      <MaxSmashWindowAngleDegs value="0.000000" />
+      <MinSmashWindowAngleFirstPersonDegs value="0.000000" />
+      <MaxSmashWindowAngleFirstPersonDegs value="0.000000" />
+      <MaxSpeedParam value="0.500000" />
+      <MaxLongitudinalLeanBlendWeightDelta value="0.250000" />
+      <MaxLateralLeanBlendWeightDelta value="0.250000" />
+      <ApproachSpeedToWithinMaxBlendDelta value="1.000000" />
+      <SpineAdditiveBlendInDelay value="0.050000" />
+      <SpineAdditiveBlendInDurationStill value="0.150000" />
+      <SpineAdditiveBlendInDuration value="0.750000" />
+      <SpineAdditiveBlendOutDelay value="0.000000" />
+      <SpineAdditiveBlendOutDuration value="0.500000" />
+      <MinUnarmedDrivebyYawIfWindowRolledUp value="-3.140000" />
+      <MaxUnarmedDrivebyYawIfWindowRolledUp value="0.800000" />
+      <DriveByAnimInfos>
+        <Item ref="LOW_DB_ANIM_INFO_UNARMED_PS" />
+        <Item ref="ANIM_INFO_DELTA_LOW_PS_1H" />
+        <Item ref="LOW_DB_ANIM_INFO_THROW_PS" />
+      </DriveByAnimInfos>
+      <DriveByCamera />
+      <DriveByFlags>UsePedAsCamEntity UseMountedProjectileTask UseThreeAnimIntroOutro</DriveByFlags>
+    </Item>
+	<Item type="CVehicleDriveByInfo">
+      <Name>DRIVEBY_DELTA_LOW_REAR_LEFT</Name>
+      <MinAimSweepHeadingAngleDegs value="-190.000000" />
+      <MaxAimSweepHeadingAngleDegs value="190.000000" />
+      <FirstPersonMinAimSweepHeadingAngleDegs value="-190.000000" />
+      <FirstPersonMaxAimSweepHeadingAngleDegs value="190.000000" />
+      <FirstPersonUnarmedMinAimSweepHeadingAngleDegs value="-190.000000" />
+      <FirstPersonUnarmedMaxAimSweepHeadingAngleDegs value="190.000000" />
+      <MinRestrictedAimSweepHeadingAngleDegs value="-190.000000" />
+      <MaxRestrictedAimSweepHeadingAngleDegs value="190.000000" />
+      <MinSmashWindowAngleDegs value="0.000000" />
+      <MaxSmashWindowAngleDegs value="0.000000" />
+      <MinSmashWindowAngleFirstPersonDegs value="0.000000" />
+      <MaxSmashWindowAngleFirstPersonDegs value="0.000000" />
+      <MaxSpeedParam value="0.500000" />
+      <MaxLongitudinalLeanBlendWeightDelta value="0.250000" />
+      <MaxLateralLeanBlendWeightDelta value="0.250000" />
+      <ApproachSpeedToWithinMaxBlendDelta value="1.000000" />
+      <SpineAdditiveBlendInDelay value="0.050000" />
+      <SpineAdditiveBlendInDurationStill value="0.150000" />
+      <SpineAdditiveBlendInDuration value="0.750000" />
+      <SpineAdditiveBlendOutDelay value="0.000000" />
+      <SpineAdditiveBlendOutDuration value="0.500000" />
+      <MinUnarmedDrivebyYawIfWindowRolledUp value="-0.450000" />
+      <MaxUnarmedDrivebyYawIfWindowRolledUp value="3.140000" />
+      <DriveByAnimInfos>
+        <Item ref="STD_DB_ANIM_INFO_UNARMED_RDS" />
+        <Item ref="ANIM_INFO_DELTA_LOW_RDS_1H" />
+        <Item ref="STD_DB_ANIM_INFO_THROW_RDS" />
+      </DriveByAnimInfos>
+      <DriveByCamera />
+      <DriveByFlags>UsePedAsCamEntity UseMountedProjectileTask UseThreeAnimIntroOutro</DriveByFlags>
+    </Item>
+    <Item type="CVehicleDriveByInfo">
+      <Name>DRIVEBY_DELTA_LOW_REAR_RIGHT</Name>
+      <MinAimSweepHeadingAngleDegs value="-190.000000" />
+      <MaxAimSweepHeadingAngleDegs value="190.000000" />
+      <FirstPersonMinAimSweepHeadingAngleDegs value="-190.000000" />
+      <FirstPersonMaxAimSweepHeadingAngleDegs value="190.000000" />
+      <FirstPersonUnarmedMinAimSweepHeadingAngleDegs value="-190.000000" />
+      <FirstPersonUnarmedMaxAimSweepHeadingAngleDegs value="190.000000" />
+      <MinRestrictedAimSweepHeadingAngleDegs value="-190.000000" />
+      <MaxRestrictedAimSweepHeadingAngleDegs value="190.000000" />
+      <MinSmashWindowAngleDegs value="0.000000" />
+      <MaxSmashWindowAngleDegs value="0.000000" />
+      <MinSmashWindowAngleFirstPersonDegs value="0.000000" />
+      <MaxSmashWindowAngleFirstPersonDegs value="0.000000" />
+      <MaxSpeedParam value="0.500000" />
+      <MaxLongitudinalLeanBlendWeightDelta value="0.250000" />
+      <MaxLateralLeanBlendWeightDelta value="0.250000" />
+      <ApproachSpeedToWithinMaxBlendDelta value="1.000000" />
+      <SpineAdditiveBlendInDelay value="0.050000" />
+      <SpineAdditiveBlendInDurationStill value="0.150000" />
+      <SpineAdditiveBlendInDuration value="0.750000" />
+      <SpineAdditiveBlendOutDelay value="0.000000" />
+      <SpineAdditiveBlendOutDuration value="0.500000" />
+      <MinUnarmedDrivebyYawIfWindowRolledUp value="-3.140000" />
+      <MaxUnarmedDrivebyYawIfWindowRolledUp value="0.450000" />
+      <DriveByAnimInfos>
+        <Item ref="STD_DB_ANIM_INFO_UNARMED_RPS" />
+        <Item ref="ANIM_INFO_DELTA_LOW_RPS_1H" />
+        <Item ref="STD_DB_ANIM_INFO_THROW_RPS" />
+      </DriveByAnimInfos>
+      <DriveByCamera />
+      <DriveByFlags>UsePedAsCamEntity UseMountedProjectileTask UseThreeAnimIntroOutro</DriveByFlags>
+    </Item>
+	<Item type="CVehicleDriveByInfo">
+      <Name>DRIVEBY_DELTA_SPORT_FRONT_RIGHT</Name>
+      <MinAimSweepHeadingAngleDegs value="-190.000000" />
+      <MaxAimSweepHeadingAngleDegs value="190.000000" />
+      <FirstPersonMinAimSweepHeadingAngleDegs value="-190.000000" />
+      <FirstPersonMaxAimSweepHeadingAngleDegs value="190.000000" />
+      <FirstPersonUnarmedMinAimSweepHeadingAngleDegs value="-190.000000" />
+      <FirstPersonUnarmedMaxAimSweepHeadingAngleDegs value="190.000000" />
+      <MinRestrictedAimSweepHeadingAngleDegs value="-190.000000" />
+      <MaxRestrictedAimSweepHeadingAngleDegs value="190.000000" />
+      <MinSmashWindowAngleDegs value="0.000000" />
+      <MaxSmashWindowAngleDegs value="0.000000" />
+      <MinSmashWindowAngleFirstPersonDegs value="0.000000" />
+      <MaxSmashWindowAngleFirstPersonDegs value="0.000000" />
+      <MaxSpeedParam value="0.500000" />
+      <MaxLongitudinalLeanBlendWeightDelta value="0.250000" />
+      <MaxLateralLeanBlendWeightDelta value="0.250000" />
+      <ApproachSpeedToWithinMaxBlendDelta value="1.000000" />
+      <SpineAdditiveBlendInDelay value="0.050000" />
+      <SpineAdditiveBlendInDurationStill value="0.150000" />
+      <SpineAdditiveBlendInDuration value="0.750000" />
+      <SpineAdditiveBlendOutDelay value="0.000000" />
+      <SpineAdditiveBlendOutDuration value="0.500000" />
+      <MinUnarmedDrivebyYawIfWindowRolledUp value="-3.140000" />
+      <MaxUnarmedDrivebyYawIfWindowRolledUp value="0.800000" />
+      <DriveByAnimInfos>
+        <Item ref="LOW_DB_ANIM_INFO_UNARMED_PS" />
+        <Item ref="ANIM_INFO_DELTA_SPORT_PS_1H" />
+        <Item ref="LOW_DB_ANIM_INFO_THROW_PS" />
+      </DriveByAnimInfos>
+      <DriveByCamera />
+      <DriveByFlags>UsePedAsCamEntity UseMountedProjectileTask UseThreeAnimIntroOutro</DriveByFlags>
+    </Item>
+	<Item type="CVehicleDriveByInfo">
+      <Name>DRIVEBY_DELTA_SUPER_FRONT_RIGHT</Name>
+      <MinAimSweepHeadingAngleDegs value="-190.000000" />
+      <MaxAimSweepHeadingAngleDegs value="190.000000" />
+      <FirstPersonMinAimSweepHeadingAngleDegs value="-190.000000" />
+      <FirstPersonMaxAimSweepHeadingAngleDegs value="190.000000" />
+      <FirstPersonUnarmedMinAimSweepHeadingAngleDegs value="-190.000000" />
+      <FirstPersonUnarmedMaxAimSweepHeadingAngleDegs value="190.000000" />
+      <MinRestrictedAimSweepHeadingAngleDegs value="-190.000000" />
+      <MaxRestrictedAimSweepHeadingAngleDegs value="190.000000" />
+      <MinSmashWindowAngleDegs value="0.000000" />
+      <MaxSmashWindowAngleDegs value="0.000000" />
+      <MinSmashWindowAngleFirstPersonDegs value="0.000000" />
+      <MaxSmashWindowAngleFirstPersonDegs value="0.000000" />
+      <MaxSpeedParam value="0.500000" />
+      <MaxLongitudinalLeanBlendWeightDelta value="0.250000" />
+      <MaxLateralLeanBlendWeightDelta value="0.250000" />
+      <ApproachSpeedToWithinMaxBlendDelta value="1.000000" />
+      <SpineAdditiveBlendInDelay value="0.050000" />
+      <SpineAdditiveBlendInDurationStill value="0.150000" />
+      <SpineAdditiveBlendInDuration value="0.750000" />
+      <SpineAdditiveBlendOutDelay value="0.000000" />
+      <SpineAdditiveBlendOutDuration value="0.500000" />
+      <MinUnarmedDrivebyYawIfWindowRolledUp value="-3.140000" />
+      <MaxUnarmedDrivebyYawIfWindowRolledUp value="0.800000" />
+      <DriveByAnimInfos>
+        <Item ref="LOW_DB_ANIM_INFO_UNARMED_PS" />
+        <Item ref="ANIM_INFO_DELTA_SUPER_PS_1H" />
+        <Item ref="LOW_DB_ANIM_INFO_THROW_PS" />
+      </DriveByAnimInfos>
+      <DriveByCamera />
+      <DriveByFlags>UsePedAsCamEntity UseMountedProjectileTask UseThreeAnimIntroOutro</DriveByFlags>
+    </Item>
+	<Item type="CVehicleDriveByInfo">
+      <Name>DRIVEBY_DELTA_SUV_FRONT_RIGHT</Name>
+      <MinAimSweepHeadingAngleDegs value="-190.000000" />
+      <MaxAimSweepHeadingAngleDegs value="190.000000" />
+      <FirstPersonMinAimSweepHeadingAngleDegs value="-180.000000" />
+      <FirstPersonMaxAimSweepHeadingAngleDegs value="180.000000" />
+      <FirstPersonUnarmedMinAimSweepHeadingAngleDegs value="-180.000000" />
+      <FirstPersonUnarmedMaxAimSweepHeadingAngleDegs value="180.000000" />
+      <MinRestrictedAimSweepHeadingAngleDegs value="-190.000000" />
+      <MaxRestrictedAimSweepHeadingAngleDegs value="190.000000" />
+      <MinSmashWindowAngleDegs value="0.000000" />
+      <MaxSmashWindowAngleDegs value="0.000000" />
+      <MinSmashWindowAngleFirstPersonDegs value="0.000000" />
+      <MaxSmashWindowAngleFirstPersonDegs value="0.000000" />
+      <MaxSpeedParam value="0.500000" />
+      <MaxLongitudinalLeanBlendWeightDelta value="0.250000" />
+      <MaxLateralLeanBlendWeightDelta value="0.250000" />
+      <ApproachSpeedToWithinMaxBlendDelta value="1.000000" />
+      <SpineAdditiveBlendInDelay value="0.050000" />
+      <SpineAdditiveBlendInDurationStill value="0.150000" />
+      <SpineAdditiveBlendInDuration value="0.750000" />
+      <SpineAdditiveBlendOutDelay value="0.000000" />
+      <SpineAdditiveBlendOutDuration value="0.500000" />
+      <MinUnarmedDrivebyYawIfWindowRolledUp value="-3.140000" />
+      <MaxUnarmedDrivebyYawIfWindowRolledUp value="0.400000" />
+      <DriveByAnimInfos>
+        <Item ref="VAN_DB_ANIM_INFO_UNARMED_PS" />
+        <Item ref="ANIM_INFO_DELTA_SUV_PS_1H" />
+        <Item ref="VAN_DB_ANIM_INFO_THROW_PS" />
+      </DriveByAnimInfos>
+      <DriveByCamera />
+      <DriveByFlags>UsePedAsCamEntity UseMountedProjectileTask UseThreeAnimIntroOutro</DriveByFlags>
+    </Item>
+	<Item type="CVehicleDriveByInfo">
+      <Name>DRIVEBY_DELTA_SUV_REAR_LEFT</Name>
+      <MinAimSweepHeadingAngleDegs value="-190.000000" />
+      <MaxAimSweepHeadingAngleDegs value="190.000000" />
+      <FirstPersonMinAimSweepHeadingAngleDegs value="-180.000000" />
+      <FirstPersonMaxAimSweepHeadingAngleDegs value="180.000000" />
+      <FirstPersonUnarmedMinAimSweepHeadingAngleDegs value="-180.000000" />
+      <FirstPersonUnarmedMaxAimSweepHeadingAngleDegs value="180.000000" />
+      <MinRestrictedAimSweepHeadingAngleDegs value="-190.000000" />
+      <MaxRestrictedAimSweepHeadingAngleDegs value="190.000000" />
+      <MinSmashWindowAngleDegs value="0.000000" />
+      <MaxSmashWindowAngleDegs value="0.000000" />
+      <MinSmashWindowAngleFirstPersonDegs value="0.000000" />
+      <MaxSmashWindowAngleFirstPersonDegs value="0.000000" />
+      <MaxSpeedParam value="0.500000" />
+      <MaxLongitudinalLeanBlendWeightDelta value="0.250000" />
+      <MaxLateralLeanBlendWeightDelta value="0.250000" />
+      <ApproachSpeedToWithinMaxBlendDelta value="1.000000" />
+      <SpineAdditiveBlendInDelay value="0.050000" />
+      <SpineAdditiveBlendInDurationStill value="0.150000" />
+      <SpineAdditiveBlendInDuration value="0.750000" />
+      <SpineAdditiveBlendOutDelay value="0.000000" />
+      <SpineAdditiveBlendOutDuration value="0.500000" />
+      <MinUnarmedDrivebyYawIfWindowRolledUp value="-0.450000" />
+      <MaxUnarmedDrivebyYawIfWindowRolledUp value="3.140000" />
+      <DriveByAnimInfos>
+        <Item ref="RANGER_DB_ANIM_INFO_UNARMED_RDS" />
+        <Item ref="ANIM_INFO_DELTA_SUV_RDS_1H" />
+        <Item ref="RANGER_DB_ANIM_INFO_THROW_RDS" />
+      </DriveByAnimInfos>
+      <DriveByCamera />
+      <DriveByFlags>UsePedAsCamEntity UseMountedProjectileTask UseThreeAnimIntroOutro</DriveByFlags>
+    </Item>
+    <Item type="CVehicleDriveByInfo">
+      <Name>DRIVEBY_DELTA_SUV_REAR_RIGHT</Name>
+      <MinAimSweepHeadingAngleDegs value="-190.000000" />
+      <MaxAimSweepHeadingAngleDegs value="190.000000" />
+      <FirstPersonMinAimSweepHeadingAngleDegs value="-180.000000" />
+      <FirstPersonMaxAimSweepHeadingAngleDegs value="180.000000" />
+      <FirstPersonUnarmedMinAimSweepHeadingAngleDegs value="-180.000000" />
+      <FirstPersonUnarmedMaxAimSweepHeadingAngleDegs value="180.000000" />
+      <MinRestrictedAimSweepHeadingAngleDegs value="-190.000000" />
+      <MaxRestrictedAimSweepHeadingAngleDegs value="190.000000" />
+      <MinSmashWindowAngleDegs value="0.000000" />
+      <MaxSmashWindowAngleDegs value="0.000000" />
+      <MinSmashWindowAngleFirstPersonDegs value="0.000000" />
+      <MaxSmashWindowAngleFirstPersonDegs value="0.000000" />
+      <MaxSpeedParam value="0.500000" />
+      <MaxLongitudinalLeanBlendWeightDelta value="0.250000" />
+      <MaxLateralLeanBlendWeightDelta value="0.250000" />
+      <ApproachSpeedToWithinMaxBlendDelta value="1.000000" />
+      <SpineAdditiveBlendInDelay value="0.050000" />
+      <SpineAdditiveBlendInDurationStill value="0.150000" />
+      <SpineAdditiveBlendInDuration value="0.750000" />
+      <SpineAdditiveBlendOutDelay value="0.000000" />
+      <SpineAdditiveBlendOutDuration value="0.500000" />
+      <MinUnarmedDrivebyYawIfWindowRolledUp value="-3.140000" />
+      <MaxUnarmedDrivebyYawIfWindowRolledUp value="0.450000" />
+      <DriveByAnimInfos>
+        <Item ref="RANGER_DB_ANIM_INFO_UNARMED_RPS" />
+        <Item ref="ANIM_INFO_DELTA_SUV_RPS_1H" />
+        <Item ref="RANGER_DB_ANIM_INFO_THROW_RPS" />
+      </DriveByAnimInfos>
+      <DriveByCamera />
+      <DriveByFlags>UsePedAsCamEntity UseMountedProjectileTask UseThreeAnimIntroOutro</DriveByFlags>
+    </Item>
+	<Item type="CVehicleDriveByInfo">
+      <Name>DRIVEBY_DELTA_SUV_HIGH_FRONT_RIGHT</Name>
+      <MinAimSweepHeadingAngleDegs value="-190.000000" />
+      <MaxAimSweepHeadingAngleDegs value="190.000000" />
+      <FirstPersonMinAimSweepHeadingAngleDegs value="-180.000000" />
+      <FirstPersonMaxAimSweepHeadingAngleDegs value="180.000000" />
+      <FirstPersonUnarmedMinAimSweepHeadingAngleDegs value="-180.000000" />
+      <FirstPersonUnarmedMaxAimSweepHeadingAngleDegs value="180.000000" />
+      <MinRestrictedAimSweepHeadingAngleDegs value="-190.000000" />
+      <MaxRestrictedAimSweepHeadingAngleDegs value="190.000000" />
+      <MinSmashWindowAngleDegs value="0.000000" />
+      <MaxSmashWindowAngleDegs value="0.000000" />
+      <MinSmashWindowAngleFirstPersonDegs value="0.000000" />
+      <MaxSmashWindowAngleFirstPersonDegs value="0.000000" />
+      <MaxSpeedParam value="0.500000" />
+      <MaxLongitudinalLeanBlendWeightDelta value="0.250000" />
+      <MaxLateralLeanBlendWeightDelta value="0.250000" />
+      <ApproachSpeedToWithinMaxBlendDelta value="1.000000" />
+      <SpineAdditiveBlendInDelay value="0.050000" />
+      <SpineAdditiveBlendInDurationStill value="0.150000" />
+      <SpineAdditiveBlendInDuration value="0.750000" />
+      <SpineAdditiveBlendOutDelay value="0.000000" />
+      <SpineAdditiveBlendOutDuration value="0.500000" />
+      <MinUnarmedDrivebyYawIfWindowRolledUp value="-3.140000" />
+      <MaxUnarmedDrivebyYawIfWindowRolledUp value="0.400000" />
+      <DriveByAnimInfos>
+        <Item ref="VAN_DB_ANIM_INFO_UNARMED_PS" />
+        <Item ref="ANIM_INFO_DELTA_SUV_HIGH_PS_1H" />
+        <Item ref="VAN_DB_ANIM_INFO_THROW_PS" />
+      </DriveByAnimInfos>
+      <DriveByCamera />
+      <DriveByFlags>UsePedAsCamEntity UseMountedProjectileTask UseThreeAnimIntroOutro</DriveByFlags>
+    </Item>
+	<Item type="CVehicleDriveByInfo">
+      <Name>DRIVEBY_DELTA_SUV_LOW_FRONT_RIGHT</Name>
+      <MinAimSweepHeadingAngleDegs value="-190.000000" />
+      <MaxAimSweepHeadingAngleDegs value="190.000000" />
+      <FirstPersonMinAimSweepHeadingAngleDegs value="-180.000000" />
+      <FirstPersonMaxAimSweepHeadingAngleDegs value="180.000000" />
+      <FirstPersonUnarmedMinAimSweepHeadingAngleDegs value="-180.000000" />
+      <FirstPersonUnarmedMaxAimSweepHeadingAngleDegs value="180.000000" />
+      <MinRestrictedAimSweepHeadingAngleDegs value="-190.000000" />
+      <MaxRestrictedAimSweepHeadingAngleDegs value="190.000000" />
+      <MinSmashWindowAngleDegs value="0.000000" />
+      <MaxSmashWindowAngleDegs value="0.000000" />
+      <MinSmashWindowAngleFirstPersonDegs value="0.000000" />
+      <MaxSmashWindowAngleFirstPersonDegs value="0.000000" />
+      <MaxSpeedParam value="0.500000" />
+      <MaxLongitudinalLeanBlendWeightDelta value="0.250000" />
+      <MaxLateralLeanBlendWeightDelta value="0.250000" />
+      <ApproachSpeedToWithinMaxBlendDelta value="1.000000" />
+      <SpineAdditiveBlendInDelay value="0.050000" />
+      <SpineAdditiveBlendInDurationStill value="0.150000" />
+      <SpineAdditiveBlendInDuration value="0.750000" />
+      <SpineAdditiveBlendOutDelay value="0.000000" />
+      <SpineAdditiveBlendOutDuration value="0.500000" />
+      <MinUnarmedDrivebyYawIfWindowRolledUp value="-3.140000" />
+      <MaxUnarmedDrivebyYawIfWindowRolledUp value="0.400000" />
+      <DriveByAnimInfos>
+        <Item ref="VAN_DB_ANIM_INFO_UNARMED_PS" />
+        <Item ref="ANIM_INFO_DELTA_SUV_LOW_PS_1H" />
+        <Item ref="VAN_DB_ANIM_INFO_THROW_PS" />
+      </DriveByAnimInfos>
+      <DriveByCamera />
+      <DriveByFlags>UsePedAsCamEntity UseMountedProjectileTask UseThreeAnimIntroOutro</DriveByFlags>
+    </Item>
+	<Item type="CVehicleDriveByInfo">
+      <Name>DRIVEBY_DELTA_SUV_LOW_REAR_LEFT</Name>
+      <MinAimSweepHeadingAngleDegs value="-190.000000" />
+      <MaxAimSweepHeadingAngleDegs value="190.000000" />
+      <FirstPersonMinAimSweepHeadingAngleDegs value="-180.000000" />
+      <FirstPersonMaxAimSweepHeadingAngleDegs value="180.000000" />
+      <FirstPersonUnarmedMinAimSweepHeadingAngleDegs value="-180.000000" />
+      <FirstPersonUnarmedMaxAimSweepHeadingAngleDegs value="180.000000" />
+      <MinRestrictedAimSweepHeadingAngleDegs value="-190.000000" />
+      <MaxRestrictedAimSweepHeadingAngleDegs value="190.000000" />
+      <MinSmashWindowAngleDegs value="0.000000" />
+      <MaxSmashWindowAngleDegs value="0.000000" />
+      <MinSmashWindowAngleFirstPersonDegs value="0.000000" />
+      <MaxSmashWindowAngleFirstPersonDegs value="0.000000" />
+      <MaxSpeedParam value="0.500000" />
+      <MaxLongitudinalLeanBlendWeightDelta value="0.250000" />
+      <MaxLateralLeanBlendWeightDelta value="0.250000" />
+      <ApproachSpeedToWithinMaxBlendDelta value="1.000000" />
+      <SpineAdditiveBlendInDelay value="0.050000" />
+      <SpineAdditiveBlendInDurationStill value="0.150000" />
+      <SpineAdditiveBlendInDuration value="0.750000" />
+      <SpineAdditiveBlendOutDelay value="0.000000" />
+      <SpineAdditiveBlendOutDuration value="0.500000" />
+      <MinUnarmedDrivebyYawIfWindowRolledUp value="-0.450000" />
+      <MaxUnarmedDrivebyYawIfWindowRolledUp value="3.140000" />
+      <DriveByAnimInfos>
+        <Item ref="RANGER_DB_ANIM_INFO_UNARMED_RDS" />
+        <Item ref="ANIM_INFO_DELTA_SUV_LOW_RDS_1H" />
+        <Item ref="RANGER_DB_ANIM_INFO_THROW_RDS" />
+      </DriveByAnimInfos>
+      <DriveByCamera />
+      <DriveByFlags>UsePedAsCamEntity UseMountedProjectileTask UseThreeAnimIntroOutro</DriveByFlags>
+    </Item>
+	<Item type="CVehicleDriveByInfo">
+      <Name>DRIVEBY_DELTA_SUV_LOW_REAR_RIGHT</Name>
+      <MinAimSweepHeadingAngleDegs value="-190.000000" />
+      <MaxAimSweepHeadingAngleDegs value="190.000000" />
+      <FirstPersonMinAimSweepHeadingAngleDegs value="-180.000000" />
+      <FirstPersonMaxAimSweepHeadingAngleDegs value="180.000000" />
+      <FirstPersonUnarmedMinAimSweepHeadingAngleDegs value="-180.000000" />
+      <FirstPersonUnarmedMaxAimSweepHeadingAngleDegs value="180.000000" />
+      <MinRestrictedAimSweepHeadingAngleDegs value="-190.000000" />
+      <MaxRestrictedAimSweepHeadingAngleDegs value="190.000000" />
+      <MinSmashWindowAngleDegs value="0.000000" />
+      <MaxSmashWindowAngleDegs value="0.000000" />
+      <MinSmashWindowAngleFirstPersonDegs value="0.000000" />
+      <MaxSmashWindowAngleFirstPersonDegs value="0.000000" />
+      <MaxSpeedParam value="0.500000" />
+      <MaxLongitudinalLeanBlendWeightDelta value="0.250000" />
+      <MaxLateralLeanBlendWeightDelta value="0.250000" />
+      <ApproachSpeedToWithinMaxBlendDelta value="1.000000" />
+      <SpineAdditiveBlendInDelay value="0.050000" />
+      <SpineAdditiveBlendInDurationStill value="0.150000" />
+      <SpineAdditiveBlendInDuration value="0.750000" />
+      <SpineAdditiveBlendOutDelay value="0.000000" />
+      <SpineAdditiveBlendOutDuration value="0.500000" />
+      <MinUnarmedDrivebyYawIfWindowRolledUp value="-3.140000" />
+      <MaxUnarmedDrivebyYawIfWindowRolledUp value="0.450000" />
+      <DriveByAnimInfos>
+        <Item ref="RANGER_DB_ANIM_INFO_UNARMED_RPS" />
+        <Item ref="ANIM_INFO_DELTA_SUV_LOW_RPS_1H" />
+        <Item ref="RANGER_DB_ANIM_INFO_THROW_RPS" />
+      </DriveByAnimInfos>
+      <DriveByCamera />
+      <DriveByFlags>UsePedAsCamEntity UseMountedProjectileTask UseThreeAnimIntroOutro</DriveByFlags>
+    </Item>
+	
+	<Item type="CVehicleDriveByInfo">
+      <Name>DRIVEBY_DELTA_RANGER_FRONT_RIGHT</Name>
+      <MinAimSweepHeadingAngleDegs value="-190.000000" />
+      <MaxAimSweepHeadingAngleDegs value="190.000000" />
+      <FirstPersonMinAimSweepHeadingAngleDegs value="-180.000000" />
+      <FirstPersonMaxAimSweepHeadingAngleDegs value="180.000000" />
+      <FirstPersonUnarmedMinAimSweepHeadingAngleDegs value="-180.000000" />
+      <FirstPersonUnarmedMaxAimSweepHeadingAngleDegs value="180.000000" />
+      <MinRestrictedAimSweepHeadingAngleDegs value="-190.000000" />
+      <MaxRestrictedAimSweepHeadingAngleDegs value="190.000000" />
+      <MinSmashWindowAngleDegs value="0.000000" />
+      <MaxSmashWindowAngleDegs value="0.000000" />
+      <MinSmashWindowAngleFirstPersonDegs value="0.000000" />
+      <MaxSmashWindowAngleFirstPersonDegs value="0.000000" />
+      <MaxSpeedParam value="0.500000" />
+      <MaxLongitudinalLeanBlendWeightDelta value="0.250000" />
+      <MaxLateralLeanBlendWeightDelta value="0.250000" />
+      <ApproachSpeedToWithinMaxBlendDelta value="1.000000" />
+      <SpineAdditiveBlendInDelay value="0.050000" />
+      <SpineAdditiveBlendInDurationStill value="0.150000" />
+      <SpineAdditiveBlendInDuration value="0.750000" />
+      <SpineAdditiveBlendOutDelay value="0.000000" />
+      <SpineAdditiveBlendOutDuration value="0.500000" />
+      <MinUnarmedDrivebyYawIfWindowRolledUp value="-3.140000" />
+      <MaxUnarmedDrivebyYawIfWindowRolledUp value="0.400000" />
+      <DriveByAnimInfos>
+        <Item ref="VAN_DB_ANIM_INFO_UNARMED_PS" />
+        <Item ref="ANIM_INFO_DELTA_RANGER_PS_1H" />
+        <Item ref="VAN_DB_ANIM_INFO_THROW_PS" />
+      </DriveByAnimInfos>
+      <DriveByCamera />
+      <DriveByFlags>UsePedAsCamEntity UseMountedProjectileTask UseThreeAnimIntroOutro</DriveByFlags>
+    </Item>
+	<Item type="CVehicleDriveByInfo">
+      <Name>DRIVEBY_DELTA_RANGER_REAR_LEFT</Name>
+      <MinAimSweepHeadingAngleDegs value="-190.000000" />
+      <MaxAimSweepHeadingAngleDegs value="190.000000" />
+      <FirstPersonMinAimSweepHeadingAngleDegs value="-180.000000" />
+      <FirstPersonMaxAimSweepHeadingAngleDegs value="180.000000" />
+      <FirstPersonUnarmedMinAimSweepHeadingAngleDegs value="-180.000000" />
+      <FirstPersonUnarmedMaxAimSweepHeadingAngleDegs value="180.000000" />
+      <MinRestrictedAimSweepHeadingAngleDegs value="-190.000000" />
+      <MaxRestrictedAimSweepHeadingAngleDegs value="190.000000" />
+      <MinSmashWindowAngleDegs value="0.000000" />
+      <MaxSmashWindowAngleDegs value="0.000000" />
+      <MinSmashWindowAngleFirstPersonDegs value="0.000000" />
+      <MaxSmashWindowAngleFirstPersonDegs value="0.000000" />
+      <MaxSpeedParam value="0.500000" />
+      <MaxLongitudinalLeanBlendWeightDelta value="0.250000" />
+      <MaxLateralLeanBlendWeightDelta value="0.250000" />
+      <ApproachSpeedToWithinMaxBlendDelta value="1.000000" />
+      <SpineAdditiveBlendInDelay value="0.050000" />
+      <SpineAdditiveBlendInDurationStill value="0.150000" />
+      <SpineAdditiveBlendInDuration value="0.750000" />
+      <SpineAdditiveBlendOutDelay value="0.000000" />
+      <SpineAdditiveBlendOutDuration value="0.500000" />
+      <MinUnarmedDrivebyYawIfWindowRolledUp value="-0.450000" />
+      <MaxUnarmedDrivebyYawIfWindowRolledUp value="3.140000" />
+      <DriveByAnimInfos>
+        <Item ref="RANGER_DB_ANIM_INFO_UNARMED_RDS" />
+        <Item ref="ANIM_INFO_DELTA_RANGER_RDS_1H" />
+        <Item ref="RANGER_DB_ANIM_INFO_THROW_RDS" />
+      </DriveByAnimInfos>
+      <DriveByCamera />
+      <DriveByFlags>UsePedAsCamEntity UseMountedProjectileTask UseThreeAnimIntroOutro</DriveByFlags>
+    </Item>
+    <Item type="CVehicleDriveByInfo">
+      <Name>DRIVEBY_DELTA_RANGER_REAR_RIGHT</Name>
+      <MinAimSweepHeadingAngleDegs value="-190.000000" />
+      <MaxAimSweepHeadingAngleDegs value="190.000000" />
+      <FirstPersonMinAimSweepHeadingAngleDegs value="-180.000000" />
+      <FirstPersonMaxAimSweepHeadingAngleDegs value="180.000000" />
+      <FirstPersonUnarmedMinAimSweepHeadingAngleDegs value="-180.000000" />
+      <FirstPersonUnarmedMaxAimSweepHeadingAngleDegs value="180.000000" />
+      <MinRestrictedAimSweepHeadingAngleDegs value="-190.000000" />
+      <MaxRestrictedAimSweepHeadingAngleDegs value="190.000000" />
+      <MinSmashWindowAngleDegs value="0.000000" />
+      <MaxSmashWindowAngleDegs value="0.000000" />
+      <MinSmashWindowAngleFirstPersonDegs value="0.000000" />
+      <MaxSmashWindowAngleFirstPersonDegs value="0.000000" />
+      <MaxSpeedParam value="0.500000" />
+      <MaxLongitudinalLeanBlendWeightDelta value="0.250000" />
+      <MaxLateralLeanBlendWeightDelta value="0.250000" />
+      <ApproachSpeedToWithinMaxBlendDelta value="1.000000" />
+      <SpineAdditiveBlendInDelay value="0.050000" />
+      <SpineAdditiveBlendInDurationStill value="0.150000" />
+      <SpineAdditiveBlendInDuration value="0.750000" />
+      <SpineAdditiveBlendOutDelay value="0.000000" />
+      <SpineAdditiveBlendOutDuration value="0.500000" />
+      <MinUnarmedDrivebyYawIfWindowRolledUp value="-3.140000" />
+      <MaxUnarmedDrivebyYawIfWindowRolledUp value="0.450000" />
+      <DriveByAnimInfos>
+        <Item ref="RANGER_DB_ANIM_INFO_UNARMED_RPS" />
+        <Item ref="ANIM_INFO_DELTA_RANGER_RPS_1H" />
+        <Item ref="RANGER_DB_ANIM_INFO_THROW_RPS" />
+      </DriveByAnimInfos>
+      <DriveByCamera />
+      <DriveByFlags>UsePedAsCamEntity UseMountedProjectileTask UseThreeAnimIntroOutro</DriveByFlags>
+    </Item>
+	<Item type="CVehicleDriveByInfo">
+      <Name>DRIVEBY_DELTA_VAN_FRONT_RIGHT</Name>
+      <MinAimSweepHeadingAngleDegs value="-190.000000" />
+      <MaxAimSweepHeadingAngleDegs value="190.000000" />
+      <FirstPersonMinAimSweepHeadingAngleDegs value="-190.000000" />
+      <FirstPersonMaxAimSweepHeadingAngleDegs value="190.000000" />
+      <FirstPersonUnarmedMinAimSweepHeadingAngleDegs value="-190.000000" />
+      <FirstPersonUnarmedMaxAimSweepHeadingAngleDegs value="190.000000" />
+      <MinRestrictedAimSweepHeadingAngleDegs value="-190.000000" />
+      <MaxRestrictedAimSweepHeadingAngleDegs value="190.000000" />
+      <MinSmashWindowAngleDegs value="0.000000" />
+      <MaxSmashWindowAngleDegs value="0.000000" />
+      <MinSmashWindowAngleFirstPersonDegs value="0.000000" />
+      <MaxSmashWindowAngleFirstPersonDegs value="0.000000" />
+      <MaxSpeedParam value="0.500000" />
+      <MaxLongitudinalLeanBlendWeightDelta value="0.250000" />
+      <MaxLateralLeanBlendWeightDelta value="0.250000" />
+      <ApproachSpeedToWithinMaxBlendDelta value="1.000000" />
+      <SpineAdditiveBlendInDelay value="0.050000" />
+      <SpineAdditiveBlendInDurationStill value="0.150000" />
+      <SpineAdditiveBlendInDuration value="0.750000" />
+      <SpineAdditiveBlendOutDelay value="0.000000" />
+      <SpineAdditiveBlendOutDuration value="0.500000" />
+      <MinUnarmedDrivebyYawIfWindowRolledUp value="-3.140000" />
+      <MaxUnarmedDrivebyYawIfWindowRolledUp value="0.400000" />
+      <DriveByAnimInfos>
+        <Item ref="VAN_DB_ANIM_INFO_UNARMED_PS" />
+        <Item ref="ANIM_INFO_DELTA_VAN_PS_1H" />
+        <Item ref="VAN_DB_ANIM_INFO_THROW_PS" />
+      </DriveByAnimInfos>
+      <DriveByCamera />
+      <DriveByFlags>UsePedAsCamEntity UseMountedProjectileTask UseThreeAnimIntroOutro</DriveByFlags>
+    </Item>
+	
+	<Item type="CVehicleDriveByInfo">
+      <Name>DRIVEBY_DELTA_BISON_REAR_LEFT</Name>
+      <MinAimSweepHeadingAngleDegs value="-190.000000" />
+      <MaxAimSweepHeadingAngleDegs value="190.000000" />
+      <FirstPersonMinAimSweepHeadingAngleDegs value="-180.000000" />
+      <FirstPersonMaxAimSweepHeadingAngleDegs value="180.000000" />
+      <FirstPersonUnarmedMinAimSweepHeadingAngleDegs value="-180.000000" />
+      <FirstPersonUnarmedMaxAimSweepHeadingAngleDegs value="180.000000" />
+      <MinRestrictedAimSweepHeadingAngleDegs value="-190.000000" />
+      <MaxRestrictedAimSweepHeadingAngleDegs value="190.000000" />
+      <MinSmashWindowAngleDegs value="-180.000000" />
+      <MaxSmashWindowAngleDegs value="-32.500000" />
+      <MinSmashWindowAngleFirstPersonDegs value="-180.000000" />
+      <MaxSmashWindowAngleFirstPersonDegs value="-32.500000" />
+      <MaxSpeedParam value="0.500000" />
+      <MaxLongitudinalLeanBlendWeightDelta value="0.250000" />
+      <MaxLateralLeanBlendWeightDelta value="0.250000" />
+      <ApproachSpeedToWithinMaxBlendDelta value="1.000000" />
+      <SpineAdditiveBlendInDelay value="0.050000" />
+      <SpineAdditiveBlendInDurationStill value="0.150000" />
+      <SpineAdditiveBlendInDuration value="0.750000" />
+      <SpineAdditiveBlendOutDelay value="0.000000" />
+      <SpineAdditiveBlendOutDuration value="0.500000" />
+      <MinUnarmedDrivebyYawIfWindowRolledUp value="-0.800000" />
+      <MaxUnarmedDrivebyYawIfWindowRolledUp value="3.140000" />
+      <DriveByAnimInfos>
+        <Item ref="BISON_DB_ANIM_INFO_UNARMED_RDS" />
+        <Item ref="ANIM_INFO_DELTA_STD_RDS_1H" />
+        <Item ref="BISON_DB_ANIM_INFO_THROW_RDS" />
+      </DriveByAnimInfos>
+      <DriveByCamera />
+      <DriveByFlags>UsePedAsCamEntity UseMountedProjectileTask UseThreeAnimIntroOutro</DriveByFlags>
+    </Item>
+    <Item type="CVehicleDriveByInfo">
+      <Name>DRIVEBY_DELTA_BISON_REAR_RIGHT</Name>
+      <MinAimSweepHeadingAngleDegs value="-190.000000" />
+      <MaxAimSweepHeadingAngleDegs value="190.000000" />
+      <FirstPersonMinAimSweepHeadingAngleDegs value="-180.000000" />
+      <FirstPersonMaxAimSweepHeadingAngleDegs value="180.000000" />
+      <FirstPersonUnarmedMinAimSweepHeadingAngleDegs value="-180.000000" />
+      <FirstPersonUnarmedMaxAimSweepHeadingAngleDegs value="180.000000" />
+      <MinRestrictedAimSweepHeadingAngleDegs value="-190.000000" />
+      <MaxRestrictedAimSweepHeadingAngleDegs value="190.000000" />
+      <MinSmashWindowAngleDegs value="32.500000" />
+      <MaxSmashWindowAngleDegs value="180.000000" />
+      <MinSmashWindowAngleFirstPersonDegs value="32.500000" />
+      <MaxSmashWindowAngleFirstPersonDegs value="180.000000" />
+      <MaxSpeedParam value="0.500000" />
+      <MaxLongitudinalLeanBlendWeightDelta value="0.250000" />
+      <MaxLateralLeanBlendWeightDelta value="0.250000" />
+      <ApproachSpeedToWithinMaxBlendDelta value="1.000000" />
+      <SpineAdditiveBlendInDelay value="0.050000" />
+      <SpineAdditiveBlendInDurationStill value="0.150000" />
+      <SpineAdditiveBlendInDuration value="0.750000" />
+      <SpineAdditiveBlendOutDelay value="0.000000" />
+      <SpineAdditiveBlendOutDuration value="0.500000" />
+      <MinUnarmedDrivebyYawIfWindowRolledUp value="-3.140000" />
+      <MaxUnarmedDrivebyYawIfWindowRolledUp value="0.800000" />
+      <DriveByAnimInfos>
+        <Item ref="BISON_DB_ANIM_INFO_UNARMED_RPS" />
+        <Item ref="ANIM_INFO_DELTA_STD_RPS_1H" />
+        <Item ref="BISON_DB_ANIM_INFO_THROW_RPS" />
+      </DriveByAnimInfos>
+      <DriveByCamera />
+      <DriveByFlags>UsePedAsCamEntity UseMountedProjectileTask UseThreeAnimIntroOutro</DriveByFlags>
+    </Item>
+	<Item type="CVehicleDriveByInfo">
+      <Name>DRIVEBY_DELTA_BUS_REAR_LEFT</Name>
+      <MinAimSweepHeadingAngleDegs value="-225.000000" />
+      <MaxAimSweepHeadingAngleDegs value="225.000000" />
+	  <FirstPersonMinAimSweepHeadingAngleDegs value="-180.000000" />
+	  <FirstPersonMaxAimSweepHeadingAngleDegs value="180.000000" />
+	  <FirstPersonUnarmedMinAimSweepHeadingAngleDegs value="-180.000000" />
+	  <FirstPersonUnarmedMaxAimSweepHeadingAngleDegs value="180.000000" />
+      <MinRestrictedAimSweepHeadingAngleDegs value="-225.000000" />
+      <MaxRestrictedAimSweepHeadingAngleDegs value="225.000000" />
+      <MinSmashWindowAngleDegs value="-180.000000" />
+      <MaxSmashWindowAngleDegs value="-17.500000" />
+	  <MinSmashWindowAngleFirstPersonDegs value="-180.000000" />
+      <MaxSmashWindowAngleFirstPersonDegs value="-17.500000" />
+      <MaxSpeedParam value="0.500000" />
+      <MaxLongitudinalLeanBlendWeightDelta value="0.250000" />
+      <MaxLateralLeanBlendWeightDelta value="0.250000" />
+      <ApproachSpeedToWithinMaxBlendDelta value="1.000000" />
+      <SpineAdditiveBlendInDelay value="0.050000" />
+      <SpineAdditiveBlendInDurationStill value="0.150000" />
+      <SpineAdditiveBlendInDuration value="0.750000" />
+      <SpineAdditiveBlendOutDelay value="0.000000" />
+      <SpineAdditiveBlendOutDuration value="0.500000" />
+      <MinUnarmedDrivebyYawIfWindowRolledUp value="-0.500000" />
+	  <MaxUnarmedDrivebyYawIfWindowRolledUp value="3.140000" />
+      <DriveByAnimInfos>
+        <Item ref="BUS_DB_ANIM_INFO_UNARMED_RDS" />
+        <Item ref="ANIM_INFO_DELTA_STD_RDS_1H" />
+      </DriveByAnimInfos>
+      <DriveByCamera />
+      <DriveByFlags />
+    </Item>
+    <Item type="CVehicleDriveByInfo">
+      <Name>DRIVEBY_DELTA_BUS_REAR_RIGHT</Name>
+      <MinAimSweepHeadingAngleDegs value="-225.000000" />
+      <MaxAimSweepHeadingAngleDegs value="225.000000" />
+	  <FirstPersonMinAimSweepHeadingAngleDegs value="-180.000000" />
+	  <FirstPersonMaxAimSweepHeadingAngleDegs value="180.000000" />
+	  <FirstPersonUnarmedMinAimSweepHeadingAngleDegs value="-180.000000" />
+	  <FirstPersonUnarmedMaxAimSweepHeadingAngleDegs value="180.000000" />
+      <MinRestrictedAimSweepHeadingAngleDegs value="-225.000000" />
+      <MaxRestrictedAimSweepHeadingAngleDegs value="225.000000" />
+      <MinSmashWindowAngleDegs value="17.500000" />
+      <MaxSmashWindowAngleDegs value="180.000000" />
+	  <MinSmashWindowAngleFirstPersonDegs value="17.500000" />
+      <MaxSmashWindowAngleFirstPersonDegs value="180.000000" />
+      <MaxSpeedParam value="0.500000" />
+      <MaxLongitudinalLeanBlendWeightDelta value="0.250000" />
+      <MaxLateralLeanBlendWeightDelta value="0.250000" />
+      <ApproachSpeedToWithinMaxBlendDelta value="1.000000" />
+      <SpineAdditiveBlendInDelay value="0.050000" />
+      <SpineAdditiveBlendInDurationStill value="0.150000" />
+      <SpineAdditiveBlendInDuration value="0.750000" />
+      <SpineAdditiveBlendOutDelay value="0.000000" />
+      <SpineAdditiveBlendOutDuration value="0.500000" />
+      <MinUnarmedDrivebyYawIfWindowRolledUp value="-3.140000" />
+	  <MaxUnarmedDrivebyYawIfWindowRolledUp value="0.500000" />
+      <DriveByAnimInfos>
+        <Item ref="BUS_DB_ANIM_INFO_UNARMED_RPS" />
+        <Item ref="ANIM_INFO_DELTA_STD_RPS_1H" />
+      </DriveByAnimInfos>
+      <DriveByCamera />
+      <DriveByFlags>LeftHandedFirstPersonAnims LeftHandedUnarmedFirstPersonAnims</DriveByFlags>
+    </Item>
+  </VehicleDriveByInfos>
+  <VehicleSeatInfos> 
+	<Item type="CVehicleSeatInfo">
+	  <Name>SEAT_LOW_RHD_FRONT_LEFT</Name>
+	  <SeatBoneName>seat_dside_f</SeatBoneName>
+	  <ShuffleLink>SEAT_LOW_FRONT_RIGHT</ShuffleLink>
+	  <RearSeatLink>SEAT_LOW_REAR_LEFT</RearSeatLink>
+	  <DefaultCarTask>TASK_DRIVE_WANDER</DefaultCarTask>
+	  <SeatFlags>IsFrontSeat</SeatFlags>
+	  <HairScale value="-0.2750000" />
+	</Item>
+	<Item type="CVehicleSeatInfo">
+	  <Name>SEAT_LOW_RHD_FRONT_RIGHT</Name>
+	  <SeatBoneName>seat_pside_f</SeatBoneName>
+	  <ShuffleLink>SEAT_LOW_FRONT_LEFT</ShuffleLink>
+	  <RearSeatLink>SEAT_LOW_REAR_RIGHT</RearSeatLink>
+	  <DefaultCarTask>TASK_DRIVE_WANDER</DefaultCarTask>
+	  <SeatFlags>IsFrontSeat</SeatFlags>
+	  <HairScale value="-0.2750000" />
+	</Item>
+  </VehicleSeatInfos>
+  <VehicleSeatAnimInfos>
+	<!-- Standard -->
+    <Item type="CVehicleSeatAnimInfo">
+      <Name>SEAT_ANIM_DELTA_STD_FRONT_LEFT</Name>
+      <DriveByInfo ref="DRIVEBY_DELTA_STD_FRONT_LEFT" />
+      <InsideClipSetMap ref="INSIDE_CLIPSET_MAP_STD_FRONT_LEFT" />
+      <PanicClipSet>clipset@veh@std@ds@idle_panic</PanicClipSet>
+      <AgitatedClipSet>clipset@veh@std@ds@idle_agitated</AgitatedClipSet>
+      <DuckedClipSet>clipset@veh@std@ds@idle_duck</DuckedClipSet>
+      <FemaleClipSet />
+      <LowLODIdleAnim>STD_CAR_FRONT_DS_IDLE</LowLODIdleAnim>
+      <SeatAmbientContext>IN_CAR_STANDARD</SeatAmbientContext>
+      <InVehicleMoveNetwork>VEHICLE_DEFAULT</InVehicleMoveNetwork>
+      <SeatAnimFlags>UseStandardInVehicleAnims NoShunts NoIK PreventShuffleJack</SeatAnimFlags>
+      <SteeringSmoothing value="0.040000" />
+      <ExitToAimInfoName>STANDARD</ExitToAimInfoName>
+      <MaleGestureClipSetId>ANIM_GROUP_GESTURE_M_CAR_STD_DS</MaleGestureClipSetId>
+      <FemaleGestureClipSetId>ANIM_GROUP_GESTURE_F_CAR_STD_DS</FemaleGestureClipSetId>
+    </Item>
+    <Item type="CVehicleSeatAnimInfo">
+      <Name>SEAT_ANIM_DELTA_STD_FRONT_RIGHT</Name>
+      <DriveByInfo ref="DRIVEBY_DELTA_STD_FRONT_RIGHT" />
+      <InsideClipSetMap ref="INSIDE_CLIPSET_MAP_STD_FRONT_RIGHT" />
+      <PanicClipSet>clipset@veh@std@ps@idle_panic</PanicClipSet>
+      <AgitatedClipSet />
+      <DuckedClipSet>clipset@veh@std@ps@idle_duck</DuckedClipSet>
+      <FemaleClipSet />
+      <LowLODIdleAnim>STD_CAR_FRONT_PS_IDLE</LowLODIdleAnim>
+      <SeatAmbientContext>IN_CAR_STANDARD</SeatAmbientContext>
+      <InVehicleMoveNetwork>VEHICLE_DEFAULT</InVehicleMoveNetwork>
+      <SeatAnimFlags>UseCloseDoorBlendAnims UseBasicAnims NoShunts NoIK PreventShuffleJack</SeatAnimFlags>
+      <SteeringSmoothing value="0.100000" />
+      <ExitToAimInfoName>STANDARD</ExitToAimInfoName>
+      <MaleGestureClipSetId>ANIM_GROUP_GESTURE_M_CAR_STD_PS</MaleGestureClipSetId>
+      <FemaleGestureClipSetId>ANIM_GROUP_GESTURE_F_CAR_STD_PS</FemaleGestureClipSetId>
+    </Item>
+    <Item type="CVehicleSeatAnimInfo">
+      <Name>SEAT_ANIM_DELTA_STD_REAR_LEFT</Name>
+      <DriveByInfo ref="DRIVEBY_DELTA_STD_REAR_LEFT" />
+      <InsideClipSetMap ref="INSIDE_CLIPSET_MAP_STD_REAR_LEFT" />
+      <PanicClipSet>clipset@veh@std@rds@idle_panic</PanicClipSet>
+      <AgitatedClipSet />
+      <DuckedClipSet>clipset@veh@std@rds@idle_duck</DuckedClipSet>
+      <FemaleClipSet />
+      <LowLODIdleAnim>STD_CAR_REAR_DS_IDLE</LowLODIdleAnim>
+      <SeatAmbientContext>IN_CAR_STANDARD</SeatAmbientContext>
+      <InVehicleMoveNetwork>VEHICLE_DEFAULT</InVehicleMoveNetwork>
+      <SeatAnimFlags>>UseCloseDoorBlendAnims UseBasicAnims NoShunts NoIK PreventShuffleJack</SeatAnimFlags>
+      <SteeringSmoothing value="0.100000" />
+      <ExitToAimInfoName>STANDARD</ExitToAimInfoName>
+      <MaleGestureClipSetId>ANIM_GROUP_GESTURE_M_CAR_STD_PS</MaleGestureClipSetId>
+      <FemaleGestureClipSetId>ANIM_GROUP_GESTURE_F_CAR_STD_PS</FemaleGestureClipSetId>
+    </Item>
+    <Item type="CVehicleSeatAnimInfo">
+      <Name>SEAT_ANIM_DELTA_STD_REAR_RIGHT</Name>
+      <DriveByInfo ref="DRIVEBY_DELTA_STD_REAR_RIGHT" />
+      <InsideClipSetMap ref="INSIDE_CLIPSET_MAP_STD_REAR_RIGHT" />
+      <PanicClipSet>clipset@veh@std@rps@idle_panic</PanicClipSet>
+      <AgitatedClipSet />
+      <DuckedClipSet>clipset@veh@std@rps@idle_duck</DuckedClipSet>
+      <FemaleClipSet />
+      <LowLODIdleAnim>STD_CAR_REAR_PS_IDLE</LowLODIdleAnim>
+      <SeatAmbientContext>IN_CAR_STANDARD</SeatAmbientContext>
+      <InVehicleMoveNetwork>VEHICLE_DEFAULT</InVehicleMoveNetwork>
+      <SeatAnimFlags>UseCloseDoorBlendAnims UseBasicAnims NoShunts NoIK PreventShuffleJack</SeatAnimFlags>
+      <SteeringSmoothing value="0.100000" />
+      <ExitToAimInfoName>STANDARD</ExitToAimInfoName>
+      <MaleGestureClipSetId>ANIM_GROUP_GESTURE_M_CAR_STD_PS</MaleGestureClipSetId>
+      <FemaleGestureClipSetId>ANIM_GROUP_GESTURE_F_CAR_STD_PS</FemaleGestureClipSetId>
+    </Item>
+	
+	<!-- Low -->
+	<Item type="CVehicleSeatAnimInfo">
+      <Name>SEAT_ANIM_DELTA_LOW_FRONT_RIGHT</Name>
+      <DriveByInfo ref="DRIVEBY_DELTA_LOW_FRONT_RIGHT" />
+      <InsideClipSetMap ref="INSIDE_CLIPSET_MAP_LOW_FRONT_RIGHT" />
+      <PanicClipSet>clipset@veh@low@ps@idle_panic</PanicClipSet>
+      <AgitatedClipSet />
+      <DuckedClipSet>clipset@veh@low@ps@idle_duck</DuckedClipSet>
+      <FemaleClipSet />
+      <LowLODIdleAnim>LOW_CAR_FRONT_PS_IDLE</LowLODIdleAnim>
+      <SeatAmbientContext>IN_CAR_LOW</SeatAmbientContext>
+      <InVehicleMoveNetwork>VEHICLE_DEFAULT</InVehicleMoveNetwork>
+      <SeatAnimFlags>UseCloseDoorBlendAnims UseBasicAnims NoShunts NoIK PreventShuffleJack</SeatAnimFlags>
+      <SteeringSmoothing value="0.100000" />
+      <ExitToAimInfoName>LOW</ExitToAimInfoName>
+      <MaleGestureClipSetId>ANIM_GROUP_GESTURE_M_CAR_LOW_PS</MaleGestureClipSetId>
+      <FemaleGestureClipSetId>ANIM_GROUP_GESTURE_F_CAR_LOW_PS</FemaleGestureClipSetId>
+    </Item>
+	<Item type="CVehicleSeatAnimInfo">
+      <Name>SEAT_ANIM_DELTA_LOW_REAR_LEFT</Name>
+      <DriveByInfo ref="DRIVEBY_DELTA_LOW_REAR_LEFT" />
+      <InsideClipSetMap ref="INSIDE_CLIPSET_MAP_STD_REAR_LEFT" />
+      <PanicClipSet>clipset@veh@std@rds@idle_panic</PanicClipSet>
+      <AgitatedClipSet />
+      <DuckedClipSet>clipset@veh@std@rds@idle_duck</DuckedClipSet>
+      <FemaleClipSet />
+      <LowLODIdleAnim>STD_CAR_REAR_DS_IDLE</LowLODIdleAnim>
+      <SeatAmbientContext>IN_CAR_STANDARD</SeatAmbientContext>
+      <InVehicleMoveNetwork>VEHICLE_DEFAULT</InVehicleMoveNetwork>
+      <SeatAnimFlags>>UseCloseDoorBlendAnims UseBasicAnims NoShunts NoIK PreventShuffleJack</SeatAnimFlags>
+      <SteeringSmoothing value="0.100000" />
+      <ExitToAimInfoName>STANDARD</ExitToAimInfoName>
+      <MaleGestureClipSetId>ANIM_GROUP_GESTURE_M_CAR_STD_PS</MaleGestureClipSetId>
+      <FemaleGestureClipSetId>ANIM_GROUP_GESTURE_F_CAR_STD_PS</FemaleGestureClipSetId>
+    </Item>
+    <Item type="CVehicleSeatAnimInfo">
+      <Name>SEAT_ANIM_DELTA_LOW_REAR_RIGHT</Name>
+      <DriveByInfo ref="DRIVEBY_DELTA_LOW_REAR_RIGHT" />
+      <InsideClipSetMap ref="INSIDE_CLIPSET_MAP_STD_REAR_RIGHT" />
+      <PanicClipSet>clipset@veh@std@rps@idle_panic</PanicClipSet>
+      <AgitatedClipSet />
+      <DuckedClipSet>clipset@veh@std@rps@idle_duck</DuckedClipSet>
+      <FemaleClipSet />
+      <LowLODIdleAnim>STD_CAR_REAR_PS_IDLE</LowLODIdleAnim>
+      <SeatAmbientContext>IN_CAR_STANDARD</SeatAmbientContext>
+      <InVehicleMoveNetwork>VEHICLE_DEFAULT</InVehicleMoveNetwork>
+      <SeatAnimFlags>UseCloseDoorBlendAnims UseBasicAnims NoShunts NoIK PreventShuffleJack</SeatAnimFlags>
+      <SteeringSmoothing value="0.100000" />
+      <ExitToAimInfoName>STANDARD</ExitToAimInfoName>
+      <MaleGestureClipSetId>ANIM_GROUP_GESTURE_M_CAR_STD_PS</MaleGestureClipSetId>
+      <FemaleGestureClipSetId>ANIM_GROUP_GESTURE_F_CAR_STD_PS</FemaleGestureClipSetId>
+    </Item>
+	
+	<!-- Sport and Super -->
+	<Item type="CVehicleSeatAnimInfo">
+      <Name>SEAT_ANIM_DELTA_SPORT_FRONT_RIGHT</Name>
+      <DriveByInfo ref="DRIVEBY_DELTA_SPORT_FRONT_RIGHT" />
+      <InsideClipSetMap ref="INSIDE_CLIPSET_MAP_LOW_FRONT_RIGHT" />
+      <PanicClipSet>clipset@veh@low@ps@idle_panic</PanicClipSet>
+      <AgitatedClipSet />
+      <DuckedClipSet>clipset@veh@low@ps@idle_duck</DuckedClipSet>
+      <FemaleClipSet />
+      <LowLODIdleAnim>LOW_CAR_FRONT_PS_IDLE</LowLODIdleAnim>
+      <SeatAmbientContext>IN_CAR_LOW</SeatAmbientContext>
+      <InVehicleMoveNetwork>VEHICLE_DEFAULT</InVehicleMoveNetwork>
+      <SeatAnimFlags>UseCloseDoorBlendAnims UseBasicAnims NoShunts NoIK PreventShuffleJack</SeatAnimFlags>
+      <SteeringSmoothing value="0.100000" />
+      <ExitToAimInfoName>LOW</ExitToAimInfoName>
+      <MaleGestureClipSetId>ANIM_GROUP_GESTURE_M_CAR_LOW_PS</MaleGestureClipSetId>
+      <FemaleGestureClipSetId>ANIM_GROUP_GESTURE_F_CAR_LOW_PS</FemaleGestureClipSetId>
+    </Item>
+	
+	<Item type="CVehicleSeatAnimInfo">
+      <Name>SEAT_ANIM_DELTA_SUPER_FRONT_RIGHT</Name>
+      <DriveByInfo ref="DRIVEBY_DELTA_SUPER_FRONT_RIGHT" />
+      <InsideClipSetMap ref="INSIDE_CLIPSET_MAP_LOW_FRONT_RIGHT" />
+      <PanicClipSet>clipset@veh@low@ps@idle_panic</PanicClipSet>
+      <AgitatedClipSet />
+      <DuckedClipSet>clipset@veh@low@ps@idle_duck</DuckedClipSet>
+      <FemaleClipSet />
+      <LowLODIdleAnim>LOW_CAR_FRONT_PS_IDLE</LowLODIdleAnim>
+      <SeatAmbientContext>IN_CAR_LOW</SeatAmbientContext>
+      <InVehicleMoveNetwork>VEHICLE_DEFAULT</InVehicleMoveNetwork>
+      <SeatAnimFlags>UseCloseDoorBlendAnims UseBasicAnims NoShunts NoIK PreventShuffleJack</SeatAnimFlags>
+      <SteeringSmoothing value="0.100000" />
+      <ExitToAimInfoName>LOW</ExitToAimInfoName>
+      <MaleGestureClipSetId>ANIM_GROUP_GESTURE_M_CAR_LOW_PS</MaleGestureClipSetId>
+      <FemaleGestureClipSetId>ANIM_GROUP_GESTURE_F_CAR_LOW_PS</FemaleGestureClipSetId>
+    </Item>
+	
+	<!-- SUV -->
+	<Item type="CVehicleSeatAnimInfo">
+      <Name>SEAT_ANIM_DELTA_SUV_FRONT_RIGHT</Name>
+      <DriveByInfo ref="DRIVEBY_DELTA_SUV_FRONT_RIGHT" />
+      <InsideClipSetMap ref="INSIDE_CLIPSET_MAP_VAN_FRONT_RIGHT" />
+      <PanicClipSet>clipset@veh@van@ps@idle_panic</PanicClipSet>
+      <AgitatedClipSet />
+      <DuckedClipSet>clipset@veh@van@ps@idle_duck</DuckedClipSet>
+      <FemaleClipSet />
+      <LowLODIdleAnim>VAN_FRONT_PS_IDLE</LowLODIdleAnim>
+      <SeatAmbientContext>IN_VAN</SeatAmbientContext>
+      <InVehicleMoveNetwork>VEHICLE_DEFAULT</InVehicleMoveNetwork>
+      <SeatAnimFlags>UseCloseDoorBlendAnims UseBasicAnims NoShunts NoIK PreventShuffleJack</SeatAnimFlags>
+      <SteeringSmoothing value="0.100000" />
+      <ExitToAimInfoName>MESA</ExitToAimInfoName>
+      <MaleGestureClipSetId>ANIM_GROUP_GESTURE_M_CAR_VAN_PS</MaleGestureClipSetId>
+      <FemaleGestureClipSetId>ANIM_GROUP_GESTURE_F_CAR_VAN_PS</FemaleGestureClipSetId>
+    </Item>
+    <Item type="CVehicleSeatAnimInfo">
+      <Name>SEAT_ANIM_DELTA_SUV_REAR_LEFT</Name>
+      <DriveByInfo ref="DRIVEBY_DELTA_SUV_REAR_LEFT" />
+      <InsideClipSetMap ref="INSIDE_CLIPSET_MAP_VAN_FRONT_RIGHT" />
+      <PanicClipSet>clipset@veh@van@ps@idle_panic</PanicClipSet>
+      <AgitatedClipSet />
+      <DuckedClipSet>clipset@veh@van@ps@idle_duck</DuckedClipSet>
+      <FemaleClipSet />
+      <LowLODIdleAnim>VAN_FRONT_PS_IDLE</LowLODIdleAnim>
+      <SeatAmbientContext>IN_VAN</SeatAmbientContext>
+      <InVehicleMoveNetwork>VEHICLE_DEFAULT</InVehicleMoveNetwork>
+      <SeatAnimFlags>UseCloseDoorBlendAnims UseBasicAnims NoShunts NoIK PreventShuffleJack</SeatAnimFlags>
+      <SteeringSmoothing value="0.100000" />
+      <ExitToAimInfoName>STANDARD</ExitToAimInfoName>
+      <MaleGestureClipSetId>ANIM_GROUP_GESTURE_M_CAR_VAN_PS</MaleGestureClipSetId>
+      <FemaleGestureClipSetId>ANIM_GROUP_GESTURE_F_CAR_VAN_PS</FemaleGestureClipSetId>
+    </Item>
+    <Item type="CVehicleSeatAnimInfo">
+      <Name>SEAT_ANIM_DELTA_SUV_REAR_RIGHT</Name>
+      <DriveByInfo ref="DRIVEBY_DELTA_SUV_REAR_RIGHT" />
+      <InsideClipSetMap ref="INSIDE_CLIPSET_MAP_VAN_FRONT_RIGHT" />
+      <PanicClipSet>clipset@veh@van@ps@idle_panic</PanicClipSet>
+      <AgitatedClipSet />
+      <DuckedClipSet>clipset@veh@van@ps@idle_duck</DuckedClipSet>
+      <FemaleClipSet />
+      <LowLODIdleAnim>VAN_FRONT_PS_IDLE</LowLODIdleAnim>
+      <SeatAmbientContext>IN_VAN</SeatAmbientContext>
+      <InVehicleMoveNetwork>VEHICLE_DEFAULT</InVehicleMoveNetwork>
+      <SeatAnimFlags>UseCloseDoorBlendAnims UseBasicAnims NoShunts NoIK PreventShuffleJack</SeatAnimFlags>
+      <SteeringSmoothing value="0.100000" />
+      <ExitToAimInfoName>STANDARD</ExitToAimInfoName>
+      <MaleGestureClipSetId>ANIM_GROUP_GESTURE_M_CAR_VAN_PS</MaleGestureClipSetId>
+      <FemaleGestureClipSetId>ANIM_GROUP_GESTURE_F_CAR_VAN_PS</FemaleGestureClipSetId>
+    </Item>
+	<Item type="CVehicleSeatAnimInfo">
+      <Name>SEAT_ANIM_DELTA_SUV_HIGH_FRONT_RIGHT</Name>
+      <DriveByInfo ref="DRIVEBY_DELTA_SUV_HIGH_FRONT_RIGHT" />
+      <InsideClipSetMap ref="INSIDE_CLIPSET_MAP_VAN_FRONT_RIGHT" />
+      <PanicClipSet>clipset@veh@van@ps@idle_panic</PanicClipSet>
+      <AgitatedClipSet />
+      <DuckedClipSet>clipset@veh@van@ps@idle_duck</DuckedClipSet>
+      <FemaleClipSet />
+      <LowLODIdleAnim>VAN_FRONT_PS_IDLE</LowLODIdleAnim>
+      <SeatAmbientContext>IN_VAN</SeatAmbientContext>
+      <InVehicleMoveNetwork>VEHICLE_DEFAULT</InVehicleMoveNetwork>
+      <SeatAnimFlags>UseCloseDoorBlendAnims UseBasicAnims NoShunts NoIK PreventShuffleJack</SeatAnimFlags>
+      <SteeringSmoothing value="0.100000" />
+      <ExitToAimInfoName>MESA</ExitToAimInfoName>
+      <MaleGestureClipSetId>ANIM_GROUP_GESTURE_M_CAR_VAN_PS</MaleGestureClipSetId>
+      <FemaleGestureClipSetId>ANIM_GROUP_GESTURE_F_CAR_VAN_PS</FemaleGestureClipSetId>
+    </Item>
+	<Item type="CVehicleSeatAnimInfo">
+      <Name>SEAT_ANIM_DELTA_SUV_LOW_FRONT_RIGHT</Name>
+      <DriveByInfo ref="DRIVEBY_DELTA_SUV_LOW_FRONT_RIGHT" />
+      <InsideClipSetMap ref="INSIDE_CLIPSET_MAP_VAN_FRONT_RIGHT" />
+      <PanicClipSet>clipset@veh@van@ps@idle_panic</PanicClipSet>
+      <AgitatedClipSet />
+      <DuckedClipSet>clipset@veh@van@ps@idle_duck</DuckedClipSet>
+      <FemaleClipSet />
+      <LowLODIdleAnim>VAN_FRONT_PS_IDLE</LowLODIdleAnim>
+      <SeatAmbientContext>IN_VAN</SeatAmbientContext>
+      <InVehicleMoveNetwork>VEHICLE_DEFAULT</InVehicleMoveNetwork>
+      <SeatAnimFlags>UseCloseDoorBlendAnims UseBasicAnims NoShunts NoIK PreventShuffleJack</SeatAnimFlags>
+      <SteeringSmoothing value="0.100000" />
+      <ExitToAimInfoName>MESA</ExitToAimInfoName>
+      <MaleGestureClipSetId>ANIM_GROUP_GESTURE_M_CAR_VAN_PS</MaleGestureClipSetId>
+      <FemaleGestureClipSetId>ANIM_GROUP_GESTURE_F_CAR_VAN_PS</FemaleGestureClipSetId>
+    </Item>
+	<Item type="CVehicleSeatAnimInfo">
+      <Name>SEAT_ANIM_DELTA_SUV_LOW_REAR_LEFT</Name>
+      <DriveByInfo ref="DRIVEBY_DELTA_SUV_LOW_REAR_LEFT" />
+      <InsideClipSetMap ref="INSIDE_CLIPSET_MAP_VAN_FRONT_RIGHT" />
+      <PanicClipSet>clipset@veh@van@ps@idle_panic</PanicClipSet>
+      <AgitatedClipSet />
+      <DuckedClipSet>clipset@veh@van@ps@idle_duck</DuckedClipSet>
+      <FemaleClipSet />
+      <LowLODIdleAnim>VAN_FRONT_PS_IDLE</LowLODIdleAnim>
+      <SeatAmbientContext>IN_VAN</SeatAmbientContext>
+      <InVehicleMoveNetwork>VEHICLE_DEFAULT</InVehicleMoveNetwork>
+      <SeatAnimFlags>UseCloseDoorBlendAnims UseBasicAnims NoShunts NoIK PreventShuffleJack</SeatAnimFlags>
+      <SteeringSmoothing value="0.100000" />
+      <ExitToAimInfoName>STANDARD</ExitToAimInfoName>
+      <MaleGestureClipSetId>ANIM_GROUP_GESTURE_M_CAR_VAN_PS</MaleGestureClipSetId>
+      <FemaleGestureClipSetId>ANIM_GROUP_GESTURE_F_CAR_VAN_PS</FemaleGestureClipSetId>
+    </Item>
+	<Item type="CVehicleSeatAnimInfo">
+      <Name>SEAT_ANIM_DELTA_SUV_LOW_REAR_RIGHT</Name>
+      <DriveByInfo ref="DRIVEBY_DELTA_SUV_LOW_REAR_RIGHT" />
+      <InsideClipSetMap ref="INSIDE_CLIPSET_MAP_VAN_FRONT_RIGHT" />
+      <PanicClipSet>clipset@veh@van@ps@idle_panic</PanicClipSet>
+      <AgitatedClipSet />
+      <DuckedClipSet>clipset@veh@van@ps@idle_duck</DuckedClipSet>
+      <FemaleClipSet />
+      <LowLODIdleAnim>VAN_FRONT_PS_IDLE</LowLODIdleAnim>
+      <SeatAmbientContext>IN_VAN</SeatAmbientContext>
+      <InVehicleMoveNetwork>VEHICLE_DEFAULT</InVehicleMoveNetwork>
+      <SeatAnimFlags>UseCloseDoorBlendAnims UseBasicAnims NoShunts NoIK PreventShuffleJack</SeatAnimFlags>
+      <SteeringSmoothing value="0.100000" />
+      <ExitToAimInfoName>STANDARD</ExitToAimInfoName>
+      <MaleGestureClipSetId>ANIM_GROUP_GESTURE_M_CAR_VAN_PS</MaleGestureClipSetId>
+      <FemaleGestureClipSetId>ANIM_GROUP_GESTURE_F_CAR_VAN_PS</FemaleGestureClipSetId>
+    </Item>
+	
+	<!-- Ranger -->
+	<Item type="CVehicleSeatAnimInfo">
+      <Name>SEAT_ANIM_DELTA_RANGER_FRONT_RIGHT</Name>
+      <DriveByInfo ref="DRIVEBY_DELTA_RANGER_FRONT_RIGHT" />
+      <InsideClipSetMap ref="INSIDE_CLIPSET_MAP_VAN_FRONT_RIGHT" />
+      <PanicClipSet>clipset@veh@van@ps@idle_panic</PanicClipSet>
+      <AgitatedClipSet />
+      <DuckedClipSet>clipset@veh@van@ps@idle_duck</DuckedClipSet>
+      <FemaleClipSet />
+      <LowLODIdleAnim>VAN_FRONT_PS_IDLE</LowLODIdleAnim>
+      <SeatAmbientContext>IN_VAN</SeatAmbientContext>
+      <InVehicleMoveNetwork>VEHICLE_DEFAULT</InVehicleMoveNetwork>
+      <SeatAnimFlags>UseCloseDoorBlendAnims UseBasicAnims NoShunts NoIK PreventShuffleJack</SeatAnimFlags>
+      <SteeringSmoothing value="0.100000" />
+      <ExitToAimInfoName>STANDARD</ExitToAimInfoName>
+      <MaleGestureClipSetId>ANIM_GROUP_GESTURE_M_CAR_VAN_PS</MaleGestureClipSetId>
+      <FemaleGestureClipSetId>ANIM_GROUP_GESTURE_F_CAR_VAN_PS</FemaleGestureClipSetId>
+    </Item>
+    <Item type="CVehicleSeatAnimInfo">
+      <Name>SEAT_ANIM_DELTA_RANGER_REAR_LEFT</Name>
+      <DriveByInfo ref="DRIVEBY_DELTA_RANGER_REAR_LEFT" />
+      <InsideClipSetMap ref="INSIDE_CLIPSET_MAP_VAN_FRONT_RIGHT" />
+      <PanicClipSet>clipset@veh@van@ps@idle_panic</PanicClipSet>
+      <AgitatedClipSet />
+      <DuckedClipSet>clipset@veh@van@ps@idle_duck</DuckedClipSet>
+      <FemaleClipSet />
+      <LowLODIdleAnim>VAN_FRONT_PS_IDLE</LowLODIdleAnim>
+      <SeatAmbientContext>IN_VAN</SeatAmbientContext>
+      <InVehicleMoveNetwork>VEHICLE_DEFAULT</InVehicleMoveNetwork>
+      <SeatAnimFlags>UseCloseDoorBlendAnims UseBasicAnims NoShunts NoIK PreventShuffleJack</SeatAnimFlags>
+      <SteeringSmoothing value="0.100000" />
+      <ExitToAimInfoName>STANDARD</ExitToAimInfoName>
+      <MaleGestureClipSetId>ANIM_GROUP_GESTURE_M_CAR_VAN_PS</MaleGestureClipSetId>
+      <FemaleGestureClipSetId>ANIM_GROUP_GESTURE_F_CAR_VAN_PS</FemaleGestureClipSetId>
+    </Item>
+    <Item type="CVehicleSeatAnimInfo">
+      <Name>SEAT_ANIM_DELTA_RANGER_REAR_RIGHT</Name>
+      <DriveByInfo ref="DRIVEBY_DELTA_RANGER_REAR_RIGHT" />
+      <InsideClipSetMap ref="INSIDE_CLIPSET_MAP_VAN_FRONT_RIGHT" />
+      <PanicClipSet>clipset@veh@van@ps@idle_panic</PanicClipSet>
+      <AgitatedClipSet />
+      <DuckedClipSet>clipset@veh@van@ps@idle_duck</DuckedClipSet>
+      <FemaleClipSet />
+      <LowLODIdleAnim>VAN_FRONT_PS_IDLE</LowLODIdleAnim>
+      <SeatAmbientContext>IN_VAN</SeatAmbientContext>
+      <InVehicleMoveNetwork>VEHICLE_DEFAULT</InVehicleMoveNetwork>
+      <SeatAnimFlags>UseCloseDoorBlendAnims UseBasicAnims NoShunts NoIK PreventShuffleJack</SeatAnimFlags>
+      <SteeringSmoothing value="0.100000" />
+      <ExitToAimInfoName>STANDARD</ExitToAimInfoName>
+      <MaleGestureClipSetId>ANIM_GROUP_GESTURE_M_CAR_VAN_PS</MaleGestureClipSetId>
+      <FemaleGestureClipSetId>ANIM_GROUP_GESTURE_F_CAR_VAN_PS</FemaleGestureClipSetId>
+    </Item>
+	
+	<!-- Van and Pickup Truck -->
+	<Item type="CVehicleSeatAnimInfo">
+      <Name>SEAT_ANIM_DELTA_VAN_FRONT_RIGHT</Name>
+      <DriveByInfo ref="DRIVEBY_DELTA_VAN_FRONT_RIGHT" />
+      <InsideClipSetMap ref="INSIDE_CLIPSET_MAP_VAN_FRONT_RIGHT" />
+      <PanicClipSet>clipset@veh@van@ps@idle_panic</PanicClipSet>
+      <AgitatedClipSet />
+      <DuckedClipSet>clipset@veh@van@ps@idle_duck</DuckedClipSet>
+      <FemaleClipSet />
+      <LowLODIdleAnim>VAN_FRONT_PS_IDLE</LowLODIdleAnim>
+      <SeatAmbientContext>IN_VAN</SeatAmbientContext>
+      <InVehicleMoveNetwork>VEHICLE_DEFAULT</InVehicleMoveNetwork>
+      <SeatAnimFlags>UseCloseDoorBlendAnims UseBasicAnims NoShunts NoIK PreventShuffleJack</SeatAnimFlags>
+      <SteeringSmoothing value="0.100000" />
+      <ExitToAimInfoName>MESA</ExitToAimInfoName>
+      <MaleGestureClipSetId>ANIM_GROUP_GESTURE_M_CAR_VAN_PS</MaleGestureClipSetId>
+      <FemaleGestureClipSetId>ANIM_GROUP_GESTURE_F_CAR_VAN_PS</FemaleGestureClipSetId>
+    </Item>
+	<Item type="CVehicleSeatAnimInfo">
+      <Name>SEAT_ANIM_DELTA_VAN_REAR_LEFT</Name>
+      <DriveByInfo ref="DRIVEBY_VAN_REAR_LEFT" />
+      <InsideClipSetMap ref="INSIDE_CLIPSET_MAP_VAN_REAR_LEFT" />
+      <PanicClipSet>clipset@veh@van@rds_rear@idle_panic</PanicClipSet>
+      <AgitatedClipSet>clipset@veh@van@rds_rear@idle_agitated</AgitatedClipSet>
+      <DuckedClipSet />
+      <FemaleClipSet />
+      <LowLODIdleAnim>VAN_REAR_DS_IDLE</LowLODIdleAnim>
+      <SeatAmbientContext />
+      <InVehicleMoveNetwork>VEHICLE_DEFAULT</InVehicleMoveNetwork>
+      <SeatAnimFlags>UseCloseDoorBlendAnims UseBasicAnims NoShunts NoIK PreventShuffleJack</SeatAnimFlags>
+      <SteeringSmoothing value="0.100000" />
+      <ExitToAimInfoName />
+      <MaleGestureClipSetId />
+      <FemaleGestureClipSetId />
+    </Item>
+    <Item type="CVehicleSeatAnimInfo">
+      <Name>SEAT_ANIM_DELTA_VAN_REAR_RIGHT</Name>
+      <DriveByInfo ref="DRIVEBY_VAN_REAR_RIGHT" />
+      <InsideClipSetMap ref="INSIDE_CLIPSET_MAP_VAN_REAR_RIGHT" />
+      <PanicClipSet>clipset@veh@van@rps_rear@idle_panic</PanicClipSet>
+      <AgitatedClipSet>clipset@veh@van@rps_rear@idle_agitated</AgitatedClipSet>
+      <DuckedClipSet />
+      <FemaleClipSet />
+      <LowLODIdleAnim>VAN_REAR_PS_IDLE</LowLODIdleAnim>
+      <SeatAmbientContext />
+      <InVehicleMoveNetwork>VEHICLE_DEFAULT</InVehicleMoveNetwork>
+      <SeatAnimFlags>UseCloseDoorBlendAnims UseBasicAnims NoShunts NoIK PreventShuffleJack</SeatAnimFlags>
+      <SteeringSmoothing value="0.100000" />
+      <ExitToAimInfoName />
+      <MaleGestureClipSetId />
+      <FemaleGestureClipSetId />
+    </Item>
+	<Item type="CVehicleSeatAnimInfo">
+      <Name>SEAT_ANIM_DELTA_BISON_REAR_LEFT</Name>
+      <DriveByInfo ref="DRIVEBY_DELTA_SUV_LOW_REAR_LEFT" />
+      <InsideClipSetMap ref="INSIDE_CLIPSET_MAP_STD_REAR_LEFT" />
+      <PanicClipSet />
+      <AgitatedClipSet />
+      <DuckedClipSet>clipset@veh@std@rds@idle_duck</DuckedClipSet>
+      <FemaleClipSet />
+      <LowLODIdleAnim>STD_CAR_REAR_DS_IDLE</LowLODIdleAnim>
+      <SeatAmbientContext />
+      <InVehicleMoveNetwork>VEHICLE_DEFAULT</InVehicleMoveNetwork>
+      <SeatAnimFlags>UseCloseDoorBlendAnims UseBasicAnims NoShunts NoIK PreventShuffleJack</SeatAnimFlags>
+      <SteeringSmoothing value="0.100000" />
+      <ExitToAimInfoName>MESA</ExitToAimInfoName>
+      <MaleGestureClipSetId>ANIM_GROUP_GESTURE_M_CAR_STD_PS</MaleGestureClipSetId>
+      <FemaleGestureClipSetId>ANIM_GROUP_GESTURE_F_CAR_STD_PS</FemaleGestureClipSetId>
+    </Item>
+    <Item type="CVehicleSeatAnimInfo">
+      <Name>SEAT_ANIM_DELTA_BISON_REAR_RIGHT</Name>
+      <DriveByInfo ref="DRIVEBY_DELTA_SUV_LOW_REAR_RIGHT" />
+      <InsideClipSetMap ref="INSIDE_CLIPSET_MAP_STD_REAR_RIGHT" />
+      <PanicClipSet>clipset@veh@std@rps@idle_panic</PanicClipSet>
+      <AgitatedClipSet />
+      <DuckedClipSet>clipset@veh@std@rps@idle_duck</DuckedClipSet>
+      <FemaleClipSet />
+      <LowLODIdleAnim>STD_CAR_REAR_PS_IDLE</LowLODIdleAnim>
+      <SeatAmbientContext />
+      <InVehicleMoveNetwork>VEHICLE_DEFAULT</InVehicleMoveNetwork>
+      <SeatAnimFlags>UseCloseDoorBlendAnims UseBasicAnims NoShunts NoIK PreventShuffleJack</SeatAnimFlags>
+      <SteeringSmoothing value="0.100000" />
+      <ExitToAimInfoName>MESA</ExitToAimInfoName>
+      <MaleGestureClipSetId>ANIM_GROUP_GESTURE_M_CAR_STD_PS</MaleGestureClipSetId>
+      <FemaleGestureClipSetId>ANIM_GROUP_GESTURE_F_CAR_STD_PS</FemaleGestureClipSetId>
+    </Item>
+	<Item type="CVehicleSeatAnimInfo">
+      <Name>SEAT_ANIM_BODHI_REAR_LEFT</Name>
+      <DriveByInfo ref="DRIVEBY_BODHI_BODHI_REAR_LEFT" />
+      <InsideClipSetMap ref="INSIDE_CLIPSET_MAP_BODHI_REAR_LEFT" />
+      <PanicClipSet />
+      <AgitatedClipSet />
+      <DuckedClipSet />
+      <FemaleClipSet />
+      <LowLODIdleAnim>BODHI_RDS_IDLE</LowLODIdleAnim>
+      <SeatAmbientContext />
+      <InVehicleMoveNetwork>VEHICLE_DEFAULT</InVehicleMoveNetwork>
+      <SeatAnimFlags>CanDetachViaRagdoll UseStandardInVehicleAnims PreventShuffleJack RagdollWhenVehicleUpsideDown SimulateBumpiness RagdollAtExtremeVehicleOrientation</SeatAnimFlags>
+      <SteeringSmoothing value="0.100000" />
+      <ExitToAimInfoName />
+      <MaleGestureClipSetId />
+      <FemaleGestureClipSetId />
+    </Item>
+    <Item type="CVehicleSeatAnimInfo">
+      <Name>SEAT_ANIM_BODHI_REAR_RIGHT</Name>
+      <DriveByInfo ref="DRIVEBY_BODHI_BODHI_REAR_RIGHT" />
+      <InsideClipSetMap ref="INSIDE_CLIPSET_MAP_BODHI_REAR_RIGHT" />
+      <PanicClipSet />
+      <AgitatedClipSet />
+      <DuckedClipSet />
+      <FemaleClipSet />
+      <LowLODIdleAnim>BODHI_RPS_IDLE</LowLODIdleAnim>
+      <SeatAmbientContext />
+      <InVehicleMoveNetwork>VEHICLE_DEFAULT</InVehicleMoveNetwork>
+      <SeatAnimFlags>CanDetachViaRagdoll UseStandardInVehicleAnims PreventShuffleJack RagdollWhenVehicleUpsideDown SimulateBumpiness RagdollAtExtremeVehicleOrientation</SeatAnimFlags>
+      <SteeringSmoothing value="0.100000" />
+      <ExitToAimInfoName />
+      <MaleGestureClipSetId />
+      <FemaleGestureClipSetId />
+    </Item>
+	
+	<!-- RHD STD Anim Data -->
+	<Item type="CVehicleSeatAnimInfo">
+      <Name>SEAT_ANIM_DELTA_DUH_RHD_FRONT_LEFT</Name>
+      <DriveByInfo ref="DRIVEBY_DELTA_STD_REAR_LEFT" />
+      <InsideClipSetMap ref="INSIDE_CLIPSET_MAP_LOW_FRONT_RIGHT" />
+      <PanicClipSet>clipset@veh@std@ds@idle_panic</PanicClipSet>
+      <AgitatedClipSet>clipset@veh@std@ds@idle_agitated</AgitatedClipSet>
+	  <DuckedClipSet>clipset@veh@std@ds@idle_duck</DuckedClipSet>
+      <LowLODIdleAnim>LOW_CAR_FRONT_DS_IDLE</LowLODIdleAnim>
+      <SeatAmbientContext>IN_CAR_LOW</SeatAmbientContext>
+      <InVehicleMoveNetwork>VEHICLE_DEFAULT</InVehicleMoveNetwork>
+      <SeatAnimFlags>UseCloseDoorBlendAnims UseBasicAnims NoShunts NoIK</SeatAnimFlags>
+      <SteeringSmoothing value="0.040000" />
+      <ExitToAimInfoName>LOW</ExitToAimInfoName>
+      <MaleGestureClipSetId>ANIM_GROUP_GESTURE_M_CAR_LOW_DS</MaleGestureClipSetId>
+      <FemaleGestureClipSetId>ANIM_GROUP_GESTURE_F_CAR_LOW_DS</FemaleGestureClipSetId>
+    </Item>
+    <Item type="CVehicleSeatAnimInfo">
+      <Name>SEAT_ANIM_DELTA_DUH_RHD_FRONT_RIGHT</Name>
+      <DriveByInfo ref="DRIVEBY_DELTA_STD_FRONT_LEFT" />
+      <InsideClipSetMap ref="INSIDE_CLIPSET_MAP_STD_FRONT_LEFT" />
+      <PanicClipSet>clipset@veh@std@ps@idle_panic</PanicClipSet>
+      <AgitatedClipSet>clipset@veh@std@ps@idle_agitated</AgitatedClipSet>
+      <DuckedClipSet>clipset@veh@std@ps@idle_duck</DuckedClipSet>
+      <LowLODIdleAnim>STD_CAR_FRONT_PS_IDLE</LowLODIdleAnim>
+      <SeatAmbientContext>IN_CAR_STANDARD</SeatAmbientContext>
+      <InVehicleMoveNetwork>VEHICLE_DEFAULT</InVehicleMoveNetwork>
+      <SeatAnimFlags>UseCloseDoorBlendAnims UseBasicAnims NoShunts NoIK PreventShuffleJack</SeatAnimFlags>
+      <SteeringSmoothing value="0.040000" />
+      <ExitToAimInfoName>STANDARD</ExitToAimInfoName>
+      <MaleGestureClipSetId>ANIM_GROUP_GESTURE_M_CAR_STD_DS</MaleGestureClipSetId>
+      <FemaleGestureClipSetId>ANIM_GROUP_GESTURE_F_CAR_STD_DS</FemaleGestureClipSetId>
+    </Item>
+	<!-- RHD STD Anim Data -->
+	<Item type="CVehicleSeatAnimInfo">
+      <Name>SEAT_ANIM_DELTA_STD_RHD_FRONT_LEFT</Name>
+      <DriveByInfo ref="DRIVEBY_DELTA_LOW_REAR_LEFT" />
+      <InsideClipSetMap ref="INSIDE_CLIPSET_MAP_LOW_FRONT_RIGHT" />
+      <PanicClipSet>clipset@veh@low@ds@idle_panic</PanicClipSet>
+      <AgitatedClipSet>clipset@veh@low@ds@idle_agitated</AgitatedClipSet>
+	  <DuckedClipSet>clipset@veh@low@ds@idle_duck</DuckedClipSet>
+      <LowLODIdleAnim>LOW_CAR_FRONT_DS_IDLE</LowLODIdleAnim>
+      <SeatAmbientContext>IN_CAR_LOW</SeatAmbientContext>
+      <InVehicleMoveNetwork>VEHICLE_DEFAULT</InVehicleMoveNetwork>
+      <SeatAnimFlags>UseCloseDoorBlendAnims UseBasicAnims NoShunts NoIK</SeatAnimFlags>
+      <SteeringSmoothing value="0.040000" />
+      <ExitToAimInfoName>LOW</ExitToAimInfoName>
+      <MaleGestureClipSetId>ANIM_GROUP_GESTURE_M_CAR_LOW_DS</MaleGestureClipSetId>
+      <FemaleGestureClipSetId>ANIM_GROUP_GESTURE_F_CAR_LOW_DS</FemaleGestureClipSetId>
+    </Item>
+    <Item type="CVehicleSeatAnimInfo">
+      <Name>SEAT_ANIM_DELTA_STD_RHD_FRONT_RIGHT</Name>
+      <DriveByInfo ref="DRIVEBY_LOW_FRONT_RIGHT" />
+      <InsideClipSetMap ref="INSIDE_CLIPSET_MAP_LOW_FRONT_LEFT" />
+      <PanicClipSet>clipset@veh@low@ps@idle_panic</PanicClipSet>
+      <AgitatedClipSet />
+	  <DuckedClipSet>clipset@veh@low@ps@idle_duck</DuckedClipSet>
+      <LowLODIdleAnim>LOW_CAR_FRONT_PS_IDLE</LowLODIdleAnim>
+      <SeatAmbientContext>IN_CAR_LOW</SeatAmbientContext>
+      <InVehicleMoveNetwork>VEHICLE_DEFAULT</InVehicleMoveNetwork>
+      <SeatAnimFlags>UseCloseDoorBlendAnims UseBasicAnims NoShunts NoIK PreventShuffleJack</SeatAnimFlags>
+      <SteeringSmoothing value="0.100000" />
+      <ExitToAimInfoName>LOW</ExitToAimInfoName>
+      <MaleGestureClipSetId>ANIM_GROUP_GESTURE_M_CAR_LOW_PS</MaleGestureClipSetId>
+      <FemaleGestureClipSetId>ANIM_GROUP_GESTURE_F_CAR_LOW_PS</FemaleGestureClipSetId>
+    </Item>
+	<!-- RHD Low Anim Data -->
+	<Item type="CVehicleSeatAnimInfo">
+      <Name>SEAT_ANIM_DELTA_LOW_RHD_FRONT_LEFT</Name>
+      <DriveByInfo ref="DRIVEBY_DELTA_LOW_REAR_LEFT" />
+      <InsideClipSetMap ref="INSIDE_CLIPSET_MAP_LOW_FRONT_RIGHT" />
+      <PanicClipSet>clipset@veh@low@ds@idle_panic</PanicClipSet>
+      <AgitatedClipSet>clipset@veh@low@ds@idle_agitated</AgitatedClipSet>
+	  <DuckedClipSet>clipset@veh@low@ds@idle_duck</DuckedClipSet>
+      <LowLODIdleAnim>LOW_CAR_FRONT_DS_IDLE</LowLODIdleAnim>
+      <SeatAmbientContext>IN_CAR_LOW</SeatAmbientContext>
+      <InVehicleMoveNetwork>VEHICLE_DEFAULT</InVehicleMoveNetwork>
+      <SeatAnimFlags>UseCloseDoorBlendAnims UseBasicAnims NoShunts NoIK</SeatAnimFlags>
+      <SteeringSmoothing value="0.040000" />
+      <ExitToAimInfoName>LOW</ExitToAimInfoName>
+      <MaleGestureClipSetId>ANIM_GROUP_GESTURE_M_CAR_LOW_DS</MaleGestureClipSetId>
+      <FemaleGestureClipSetId>ANIM_GROUP_GESTURE_F_CAR_LOW_DS</FemaleGestureClipSetId>
+    </Item>
+    <Item type="CVehicleSeatAnimInfo">
+      <Name>SEAT_ANIM_DELTA_LOW_RHD_FRONT_RIGHT</Name>
+      <DriveByInfo ref="DRIVEBY_LOW_FRONT_RIGHT" />
+      <InsideClipSetMap ref="INSIDE_CLIPSET_MAP_LOW_FRONT_LEFT" />
+      <PanicClipSet>clipset@veh@low@ps@idle_panic</PanicClipSet>
+      <AgitatedClipSet />
+	  <DuckedClipSet>clipset@veh@low@ps@idle_duck</DuckedClipSet>
+      <LowLODIdleAnim>LOW_CAR_FRONT_PS_IDLE</LowLODIdleAnim>
+      <SeatAmbientContext>IN_CAR_LOW</SeatAmbientContext>
+      <InVehicleMoveNetwork>VEHICLE_DEFAULT</InVehicleMoveNetwork>
+      <SeatAnimFlags>UseCloseDoorBlendAnims UseBasicAnims NoShunts NoIK PreventShuffleJack</SeatAnimFlags>
+      <SteeringSmoothing value="0.100000" />
+      <ExitToAimInfoName>LOW</ExitToAimInfoName>
+      <MaleGestureClipSetId>ANIM_GROUP_GESTURE_M_CAR_LOW_PS</MaleGestureClipSetId>
+      <FemaleGestureClipSetId>ANIM_GROUP_GESTURE_F_CAR_LOW_PS</FemaleGestureClipSetId>
+    </Item>
+	<!-- RHD SUV Anim Data -->
+	<Item type="CVehicleSeatAnimInfo">
+      <Name>SEAT_ANIM_DELTA_SUV_RHD_FRONT_LEFT</Name>
+      <DriveByInfo ref="DRIVEBY_DELTA_SUV_REAR_LEFT" />
+      <InsideClipSetMap ref="INSIDE_CLIPSET_MAP_STD_FRONT_RIGHT" />
+      <PanicClipSet>clipset@veh@std@ds@idle_panic</PanicClipSet>
+      <AgitatedClipSet>clipset@veh@std@ds@idle_agitated</AgitatedClipSet>
+	  <DuckedClipSet>clipset@veh@std@ds@idle_duck</DuckedClipSet>
+      <FemaleClipSet />
+      <LowLODIdleAnim>STD_CAR_FRONT_DS_IDLE</LowLODIdleAnim>
+      <SeatAmbientContext>IN_CAR_STANDARD</SeatAmbientContext>
+      <InVehicleMoveNetwork>VEHICLE_DEFAULT</InVehicleMoveNetwork>
+      <SeatAnimFlags>UseCloseDoorBlendAnims UseBasicAnims NoShunts NoIK</SeatAnimFlags>
+      <SteeringSmoothing value="0.040000" />
+      <ExitToAimInfoName>MESA</ExitToAimInfoName>
+      <MaleGestureClipSetId>ANIM_GROUP_GESTURE_M_CAR_STD_DS</MaleGestureClipSetId>
+      <FemaleGestureClipSetId>ANIM_GROUP_GESTURE_F_CAR_STD_DS</FemaleGestureClipSetId>
+    </Item>
+	<Item type="CVehicleSeatAnimInfo">
+      <Name>SEAT_ANIM_DELTA_SUV_RHD_FRONT_RIGHT</Name>
+      <DriveByInfo ref="DRIVEBY_STANDARD_FRONT_RIGHT" />
+      <InsideClipSetMap ref="INSIDE_CLIPSET_MAP_STD_FRONT_LEFT" />
+      <PanicClipSet>clipset@veh@van@ps@idle_panic</PanicClipSet>
+      <AgitatedClipSet />
+      <DuckedClipSet>clipset@veh@van@ps@idle_duck</DuckedClipSet>
+      <FemaleClipSet />
+      <LowLODIdleAnim>VAN_FRONT_PS_IDLE</LowLODIdleAnim>
+      <SeatAmbientContext>IN_VAN</SeatAmbientContext>
+      <InVehicleMoveNetwork>VEHICLE_DEFAULT</InVehicleMoveNetwork>
+      <SeatAnimFlags>UseCloseDoorBlendAnims UseBasicAnims NoShunts NoIK PreventShuffleJack</SeatAnimFlags>
+      <SteeringSmoothing value="0.100000" />
+      <ExitToAimInfoName>MESA</ExitToAimInfoName>
+      <MaleGestureClipSetId>ANIM_GROUP_GESTURE_M_CAR_VAN_PS</MaleGestureClipSetId>
+      <FemaleGestureClipSetId>ANIM_GROUP_GESTURE_F_CAR_VAN_PS</FemaleGestureClipSetId>
+    </Item>
+	<!-- RHD Van Anim Data -->
+	<Item type="CVehicleSeatAnimInfo">
+      <Name>SEAT_ANIM_DELTA_VAN_RHD_FRONT_LEFT</Name>
+      <DriveByInfo ref="DRIVEBY_DELTA_SUV_REAR_LEFT" />
+      <InsideClipSetMap ref="INSIDE_CLIPSET_MAP_VAN_FRONT_RIGHT" />
+      <PanicClipSet>clipset@veh@van@ds@idle_panic</PanicClipSet>
+      <AgitatedClipSet>clipset@veh@van@ds@idle_agitated</AgitatedClipSet>
+	  <DuckedClipSet>clipset@veh@van@ds@idle_duck</DuckedClipSet>
+      <FemaleClipSet />
+      <LowLODIdleAnim>VAN_FRONT_DS_IDLE</LowLODIdleAnim>
+      <SeatAmbientContext>IN_VAN</SeatAmbientContext>
+      <InVehicleMoveNetwork>VEHICLE_DEFAULT</InVehicleMoveNetwork>
+      <SeatAnimFlags>UseStandardInVehicleAnims UseCloseDoorBlendAnims</SeatAnimFlags>
+      <SteeringSmoothing value="0.100000" />
+      <ExitToAimInfoName>MESA</ExitToAimInfoName>
+      <MaleGestureClipSetId>ANIM_GROUP_GESTURE_M_CAR_VAN_DS</MaleGestureClipSetId>
+      <FemaleGestureClipSetId>ANIM_GROUP_GESTURE_F_CAR_VAN_DS</FemaleGestureClipSetId>
+    </Item>
+	<Item type="CVehicleSeatAnimInfo">
+      <Name>SEAT_ANIM_DELTA_VAN_RHD_FRONT_RIGHT</Name>
+      <DriveByInfo ref="DRIVEBY_VAN_FRONT_RIGHT" />
+      <InsideClipSetMap ref="INSIDE_CLIPSET_MAP_VAN_FRONT_LEFT" />
+      <PanicClipSet>clipset@veh@van@ps@idle_panic</PanicClipSet>
+      <AgitatedClipSet />
+      <DuckedClipSet>clipset@veh@van@ps@idle_duck</DuckedClipSet>
+      <FemaleClipSet />
+      <LowLODIdleAnim>VAN_FRONT_PS_IDLE</LowLODIdleAnim>
+      <SeatAmbientContext>IN_VAN</SeatAmbientContext>
+      <InVehicleMoveNetwork>VEHICLE_DEFAULT</InVehicleMoveNetwork>
+      <SeatAnimFlags>UseCloseDoorBlendAnims UseBasicAnims NoShunts NoIK PreventShuffleJack</SeatAnimFlags>
+      <SteeringSmoothing value="0.100000" />
+      <ExitToAimInfoName>MESA</ExitToAimInfoName>
+      <MaleGestureClipSetId>ANIM_GROUP_GESTURE_M_CAR_VAN_PS</MaleGestureClipSetId>
+      <FemaleGestureClipSetId>ANIM_GROUP_GESTURE_F_CAR_VAN_PS</FemaleGestureClipSetId>
+    </Item>
+	
+	<!-- Additional Anim Data (4x4, Tourbus) -->
+	<Item type="CVehicleSeatAnimInfo">
+      <Name>SEAT_ANIM_DELTA_4X4_FRONT_RIGHT</Name>
+      <DriveByInfo ref="DRIVEBY_DELTA_RANGER_FRONT_RIGHT" />
+      <InsideClipSetMap ref="INSIDE_CLIPSET_MAP_VAN_FRONT_RIGHT" />
+      <PanicClipSet>clipset@veh@van@ps@idle_panic</PanicClipSet>
+      <AgitatedClipSet />
+      <DuckedClipSet>clipset@veh@van@ps@idle_duck</DuckedClipSet>
+	  <FemaleClipSet />
+      <LowLODIdleAnim>VAN_FRONT_PS_IDLE</LowLODIdleAnim>
+      <SeatAmbientContext>IN_VAN</SeatAmbientContext>
+      <InVehicleMoveNetwork>VEHICLE_DEFAULT</InVehicleMoveNetwork>
+      <SeatAnimFlags>UseCloseDoorBlendAnims UseBasicAnims NoShunts NoIK PreventShuffleJack</SeatAnimFlags>
+      <SteeringSmoothing value="0.100000" />
+      <ExitToAimInfoName>MESA</ExitToAimInfoName>
+      <MaleGestureClipSetId>ANIM_GROUP_GESTURE_M_CAR_VAN_PS</MaleGestureClipSetId>
+      <FemaleGestureClipSetId>ANIM_GROUP_GESTURE_F_CAR_VAN_PS</FemaleGestureClipSetId>
+    </Item>
+    <Item type="CVehicleSeatAnimInfo">
+      <Name>SEAT_ANIM_DELTA_4X4_REAR_LEFT</Name>
+      <DriveByInfo ref="DRIVEBY_DELTA_STD_REAR_LEFT" />
+      <InsideClipSetMap ref="INSIDE_CLIPSET_MAP_STD_REAR_LEFT" />
+      <PanicClipSet>clipset@veh@std@rds@idle_panic</PanicClipSet>
+      <AgitatedClipSet />
+      <DuckedClipSet>clipset@veh@std@rds@idle_duck</DuckedClipSet>
+	  <FemaleClipSet />
+      <LowLODIdleAnim>STD_CAR_REAR_DS_IDLE</LowLODIdleAnim>
+      <SeatAmbientContext />
+      <InVehicleMoveNetwork>VEHICLE_DEFAULT</InVehicleMoveNetwork>
+      <SeatAnimFlags>HasPanicAnims UseCloseDoorBlendAnims UseBasicAnims NoShunts NoIK</SeatAnimFlags>
+      <SteeringSmoothing value="0.100000" />
+      <ExitToAimInfoName>MESA</ExitToAimInfoName>
+      <MaleGestureClipSetId>ANIM_GROUP_GESTURE_M_CAR_STD_PS</MaleGestureClipSetId>
+      <FemaleGestureClipSetId>ANIM_GROUP_GESTURE_F_CAR_STD_PS</FemaleGestureClipSetId>
+    </Item>
+    <Item type="CVehicleSeatAnimInfo">
+      <Name>SEAT_ANIM_DELTA_4X4_REAR_RIGHT</Name>
+      <DriveByInfo ref="DRIVEBY_DELTA_STD_REAR_RIGHT" />
+      <InsideClipSetMap ref="INSIDE_CLIPSET_MAP_STD_REAR_RIGHT" />
+      <PanicClipSet>clipset@veh@std@rps@idle_panic</PanicClipSet>
+      <AgitatedClipSet />
+      <DuckedClipSet>clipset@veh@std@rps@idle_duck</DuckedClipSet>
+	  <FemaleClipSet />
+      <LowLODIdleAnim>STD_CAR_REAR_PS_IDLE</LowLODIdleAnim>
+      <SeatAmbientContext />
+      <InVehicleMoveNetwork>VEHICLE_DEFAULT</InVehicleMoveNetwork>
+      <SeatAnimFlags>HasPanicAnims UseCloseDoorBlendAnims UseBasicAnims NoShunts NoIK PreventShuffleJack</SeatAnimFlags>
+      <SteeringSmoothing value="0.100000" />
+      <ExitToAimInfoName>MESA</ExitToAimInfoName>
+      <MaleGestureClipSetId>ANIM_GROUP_GESTURE_M_CAR_STD_PS</MaleGestureClipSetId>
+      <FemaleGestureClipSetId>ANIM_GROUP_GESTURE_F_CAR_STD_PS</FemaleGestureClipSetId>
+    </Item>
+	
+	<Item type="CVehicleSeatAnimInfo">
+      <Name>SEAT_ANIM_DELTA_TOURBUS_REAR_LEFT</Name>
+      <DriveByInfo ref="DRIVEBY_DELTA_BUS_REAR_LEFT" />
+      <InsideClipSetMap ref="INSIDE_CLIPSET_MAP_BUS_PASSENGER" />
+      <PanicClipSet>clipset@veh@bus@passenger@rds@idle_panic</PanicClipSet>
+      <AgitatedClipSet />
+	  <DuckedClipSet>clipset@veh@bus@passenger@common@idle_duck</DuckedClipSet>
+      <FemaleClipSet />
+      <LowLODIdleAnim>BUS_PASSENGER</LowLODIdleAnim>
+      <SeatAmbientContext>IN_TOURBUS</SeatAmbientContext>
+      <InVehicleMoveNetwork>VEHICLE_DEFAULT</InVehicleMoveNetwork>
+      <SeatAnimFlags>CannotBeJacked UseBasicAnims NoShunts NoIK HasPanicAnims DisableAbnormalExits</SeatAnimFlags>
+      <SteeringSmoothing value="0.100000" />
+      <ExitToAimInfoName />
+      <MaleGestureClipSetId />
+      <FemaleGestureClipSetId />
+    </Item>
+	<Item type="CVehicleSeatAnimInfo">
+      <Name>SEAT_ANIM_DELTA_TOURBUS_REAR_RIGHT</Name>
+      <DriveByInfo ref="DRIVEBY_DELTA_BUS_REAR_RIGHT" />
+      <InsideClipSetMap ref="INSIDE_CLIPSET_MAP_BUS_PASSENGER" />
+      <PanicClipSet>clipset@veh@bus@passenger@rps@idle_panic</PanicClipSet>
+      <AgitatedClipSet />
+	  <DuckedClipSet>clipset@veh@bus@passenger@common@idle_duck</DuckedClipSet>
+      <FemaleClipSet />
+      <LowLODIdleAnim>BUS_PASSENGER</LowLODIdleAnim>
+      <SeatAmbientContext>IN_TOURBUS</SeatAmbientContext>
+      <InVehicleMoveNetwork>VEHICLE_DEFAULT</InVehicleMoveNetwork>
+      <SeatAnimFlags>CannotBeJacked UseBasicAnims NoShunts NoIK HasPanicAnims PreventShuffleJack DisableAbnormalExits</SeatAnimFlags>
+      <SteeringSmoothing value="0.100000" />
+      <ExitToAimInfoName />
+      <MaleGestureClipSetId />
+      <FemaleGestureClipSetId />
+    </Item>
+	
+  </VehicleSeatAnimInfos>
+  <VehicleEntryPointInfos>
+	<Item type="CVehicleEntryPointInfo">
+      <Name>ENTRY_POINT_STD_RHD_FRONT_LEFT</Name>
+      <DoorBoneName>door_pside_f</DoorBoneName>
+      <SecondDoorBoneName />
+      <DoorHandleBoneName>handle_pside_f</DoorHandleBoneName>
+      <WindowId>FRONT_RIGHT</WindowId>
+      <VehicleSide>SIDE_LEFT</VehicleSide>
+      <AccessableSeats>
+        <Item ref="SEAT_STANDARD_FRONT_LEFT" />
+      </AccessableSeats>
+      <VehicleExtraPointsInfo ref="EXTRA_VEHICLE_POINTS_STD_LEFT" />
+      <Flags>BlockJackReactionUntilJackerIsReady</Flags>
+      <BlockJackReactionSides>
+        <Item>SIDE_RIGHT</Item>
+      </BlockJackReactionSides>
+    </Item>
+    <Item type="CVehicleEntryPointInfo">
+      <Name>ENTRY_POINT_STD_RHD_FRONT_RIGHT</Name>
+      <DoorBoneName>door_dside_f</DoorBoneName>
+      <SecondDoorBoneName />
+      <DoorHandleBoneName>handle_dside_f</DoorHandleBoneName>
+      <WindowId>FRONT_LEFT</WindowId>
+      <VehicleSide>SIDE_RIGHT</VehicleSide>
+      <AccessableSeats>
+        <Item ref="SEAT_STANDARD_FRONT_RIGHT" />
+      </AccessableSeats>
+      <VehicleExtraPointsInfo ref="EXTRA_VEHICLE_POINTS_STD_RIGHT" />
+      <Flags>BlockJackReactionUntilJackerIsReady</Flags>
+      <BlockJackReactionSides>
+        <Item>SIDE_LEFT</Item>
+      </BlockJackReactionSides>
+    </Item>
+    <Item type="CVehicleEntryPointInfo">
+      <Name>ENTRY_POINT_LOW_RHD_FRONT_LEFT</Name>
+      <DoorBoneName>door_pside_f</DoorBoneName>
+      <SecondDoorBoneName />
+      <DoorHandleBoneName>handle_pside_f</DoorHandleBoneName>
+      <WindowId>FRONT_RIGHT</WindowId>
+      <VehicleSide>SIDE_LEFT</VehicleSide>
+      <AccessableSeats>
+        <Item ref="SEAT_LOW_FRONT_LEFT" />
+      </AccessableSeats>
+      <VehicleExtraPointsInfo ref="EXTRA_VEHICLE_POINTS_STD_LEFT" />
+      <Flags>BlockJackReactionUntilJackerIsReady</Flags>
+      <BlockJackReactionSides>
+        <Item>SIDE_RIGHT</Item>
+      </BlockJackReactionSides>
+    </Item>
+    <Item type="CVehicleEntryPointInfo">
+      <Name>ENTRY_POINT_LOW_RHD_FRONT_RIGHT</Name>
+      <DoorBoneName>door_dside_f</DoorBoneName>
+      <SecondDoorBoneName />
+      <DoorHandleBoneName>handle_dside_f</DoorHandleBoneName>
+      <WindowId>FRONT_LEFT</WindowId>
+      <VehicleSide>SIDE_RIGHT</VehicleSide>
+      <AccessableSeats>
+        <Item ref="SEAT_LOW_FRONT_RIGHT" />
+      </AccessableSeats>
+      <VehicleExtraPointsInfo ref="EXTRA_VEHICLE_POINTS_STD_RIGHT" />
+      <Flags>BlockJackReactionUntilJackerIsReady</Flags>
+      <BlockJackReactionSides>
+        <Item>SIDE_LEFT</Item>
+      </BlockJackReactionSides>
+    </Item>
+  </VehicleEntryPointInfos>
+  <VehicleEntryPointAnimInfos>
+	<Item type="CVehicleEntryPointAnimInfo">
+      <Name>ENTRY_POINT_ANIM_STD_RHD_FRONT_LEFT</Name>
+      <CommonClipSetMap ref="COMMON_CLIPSET_MAP_AUTOMOBILE_LEFT" />
+      <EntryClipSetMap ref="ENTRY_CLIPSET_MAP_STD_FRONT_LEFT" />
+      <ExitClipSetMap ref="EXIT_CLIPSET_MAP_STD_FRONT_LEFT" />
+      <AlternateTryLockedDoorClipId>STD_Locked_DS</AlternateTryLockedDoorClipId>
+      <AlternateForcedEntryClipId>STD_Force_Entry_DS</AlternateForcedEntryClipId>
+      <AlternateJackFromOutSideClipId>std_perp_ds_a</AlternateJackFromOutSideClipId>
+      <AlternateBeJackedFromOutSideClipId>std_victim_ds_a</AlternateBeJackedFromOutSideClipId>
+      <AlternateEntryPointClipSetId>clipset@veh@std@ds@female@enter_exit</AlternateEntryPointClipSetId>
+      <EnterVehicleMoveNetwork>ENTER_VEHICLE_STD</EnterVehicleMoveNetwork>
+      <EntryTranslation x="-0.842000" y="-0.551000" z="0.500000" />
+      <OpenDoorTranslation x="-0.050000" y="0.150000" />
+      <OpenDoorHeadingChange value="1.570000" />
+      <EntryHeadingChange value="-1.570000" />
+      <ExtraZForWaterEntry value="0.000000" />
+      <EntryPointFlags>JackIncludesGetIn UsesNoDoorTransitionForExit UseOpenDoorBlendAnims FixUpMoverToEntryPointOnExit UseGetUpAfterJack JackVariationsIncludeGetIn HasCombatEntry</EntryPointFlags>
+      <EntryAnimVariations ref="ENTRY_ANIM_VARIATIONS_STANDARD_FRONT_LEFT" />
+      <NMJumpFromVehicleTuningSet>Standard</NMJumpFromVehicleTuningSet>
+    </Item>
+    <Item type="CVehicleEntryPointAnimInfo">
+      <Name>ENTRY_POINT_ANIM_STD_RHD_FRONT_RIGHT</Name>
+      <CommonClipSetMap ref="COMMON_CLIPSET_MAP_AUTOMOBILE_RIGHT" />
+      <EntryClipSetMap ref="ENTRY_CLIPSET_MAP_STD_FRONT_RIGHT" />
+      <ExitClipSetMap ref="EXIT_CLIPSET_MAP_STD_FRONT_RIGHT" />
+      <AlternateTryLockedDoorClipId>STD_Locked_PS</AlternateTryLockedDoorClipId>
+      <AlternateForcedEntryClipId>STD_Force_Entry_PS</AlternateForcedEntryClipId>
+      <AlternateJackFromOutSideClipId>std_perp_ps</AlternateJackFromOutSideClipId>
+      <AlternateBeJackedFromOutSideClipId>std_victim_ps</AlternateBeJackedFromOutSideClipId>
+      <AlternateEntryPointClipSetId>clipset@veh@std@ps@female@enter_exit</AlternateEntryPointClipSetId>
+      <EnterVehicleMoveNetwork>ENTER_VEHICLE_STD</EnterVehicleMoveNetwork>
+      <EntryTranslation x="0.822600" y="-0.551700" z="0.500000" />
+      <OpenDoorTranslation x="0.050000" y="0.150000" />
+      <OpenDoorHeadingChange value="-1.570000" />
+      <EntryHeadingChange value="1.570000" />
+      <ExtraZForWaterEntry value="0.000000" />
+      <EntryPointFlags>JackIncludesGetIn UsesNoDoorTransitionForExit UseOpenDoorBlendAnims UseGetUpAfterJack JackVariationsIncludeGetIn HasCombatEntry</EntryPointFlags>
+      <EntryAnimVariations ref="ENTRY_ANIM_VARIATIONS_STANDARD_FRONT_RIGHT" />
+    </Item>
+	
+	<Item type="CVehicleEntryPointAnimInfo">
+      <Name>ENTRY_POINT_ANIM_LOW_RHD_FRONT_LEFT</Name>
+      <CommonClipSetMap ref="COMMON_CLIPSET_MAP_AUTOMOBILE_LEFT" />
+      <EntryClipSetMap ref="ENTRY_CLIPSET_MAP_LOW_FRONT_LEFT" />
+      <ExitClipSetMap ref="EXIT_CLIPSET_MAP_LOW_FRONT_LEFT" />
+      <AlternateTryLockedDoorClipId>LOW_Locked_DS</AlternateTryLockedDoorClipId>
+      <AlternateForcedEntryClipId>LOW_Force_Entry_DS</AlternateForcedEntryClipId>
+      <AlternateJackFromOutSideClipId>low_perp_ds_a</AlternateJackFromOutSideClipId>
+      <AlternateBeJackedFromOutSideClipId>low_victim_ds_a</AlternateBeJackedFromOutSideClipId>
+      <AlternateEntryPointClipSetId>clipset@veh@low@ds@female@enter_exit</AlternateEntryPointClipSetId>
+      <EnterVehicleMoveNetwork>ENTER_VEHICLE_STD</EnterVehicleMoveNetwork>
+      <EntryTranslation x="-0.980600" y="-0.753300" z="0.610300" />
+      <OpenDoorTranslation x="0.000000" y="0.000000" />
+      <OpenDoorHeadingChange value="1.570000" />
+      <EntryHeadingChange value="-1.570000" />
+      <ExtraZForWaterEntry value="0.000000" />
+      <EntryPointFlags>JackIncludesGetIn UsesNoDoorTransitionForExit UseOpenDoorBlendAnims FixUpMoverToEntryPointOnExit UseGetUpAfterJack JackVariationsIncludeGetIn HasCombatEntry</EntryPointFlags>
+      <EntryAnimVariations ref="ENTRY_ANIM_VARIATIONS_LOW_FRONT_LEFT" />
+      <NMJumpFromVehicleTuningSet>LOWCAR</NMJumpFromVehicleTuningSet>
+    </Item>
+    <Item type="CVehicleEntryPointAnimInfo">
+      <Name>ENTRY_POINT_ANIM_LOW_RHD_FRONT_RIGHT</Name>
+      <CommonClipSetMap ref="COMMON_CLIPSET_MAP_AUTOMOBILE_RIGHT" />
+      <EntryClipSetMap ref="ENTRY_CLIPSET_MAP_LOW_FRONT_RIGHT" />
+      <ExitClipSetMap ref="EXIT_CLIPSET_MAP_LOW_FRONT_RIGHT" />
+      <AlternateTryLockedDoorClipId>LOW_Locked_PS</AlternateTryLockedDoorClipId>
+      <AlternateForcedEntryClipId>LOW_Force_Entry_PS</AlternateForcedEntryClipId>
+      <AlternateJackFromOutSideClipId>low_perp_ps_a</AlternateJackFromOutSideClipId>
+      <AlternateBeJackedFromOutSideClipId>low_victim_ps_a</AlternateBeJackedFromOutSideClipId>
+      <AlternateEntryPointClipSetId>clipset@veh@low@ps@female@enter_exit</AlternateEntryPointClipSetId>
+      <EnterVehicleMoveNetwork>ENTER_VEHICLE_STD</EnterVehicleMoveNetwork>
+      <EntryTranslation x="0.875000" y="-0.740000" z="0.610000" />
+      <OpenDoorTranslation x="0.000000" y="0.000000" />
+      <OpenDoorHeadingChange value="-1.570000" />
+      <EntryHeadingChange value="1.570000" />
+      <ExtraZForWaterEntry value="0.000000" />
+      <EntryPointFlags>JackIncludesGetIn UsesNoDoorTransitionForExit UseOpenDoorBlendAnims FixUpMoverToEntryPointOnExit UseGetUpAfterJack JackVariationsIncludeGetIn HasCombatEntry</EntryPointFlags>
+      <EntryAnimVariations ref="ENTRY_ANIM_VARIATIONS_LOW_FRONT_RIGHT" />
+    </Item>
+  </VehicleEntryPointAnimInfos>
+  <VehicleExplosionInfos />
+  <VehicleLayoutInfos>
+	<!-- Standard -->
+    <Item type="CVehicleLayoutInfo">
+      <Name>LAYOUT_DELTA_STD</Name>
+      <Seats>
+        <Item>
+          <SeatInfo ref="SEAT_STANDARD_FRONT_LEFT" />
+          <SeatAnimInfo ref="SEAT_ANIM_DELTA_STD_FRONT_LEFT" />
+        </Item>
+        <Item>
+          <SeatInfo ref="SEAT_STANDARD_FRONT_RIGHT" />
+          <SeatAnimInfo ref="SEAT_ANIM_DELTA_STD_FRONT_RIGHT" />
+        </Item>
+        <Item>
+          <SeatInfo ref="SEAT_STANDARD_REAR_LEFT" />
+          <SeatAnimInfo ref="SEAT_ANIM_DELTA_STD_REAR_LEFT" />
+        </Item>
+        <Item>
+          <SeatInfo ref="SEAT_STANDARD_REAR_RIGHT" />
+          <SeatAnimInfo ref="SEAT_ANIM_DELTA_STD_REAR_RIGHT" />
+        </Item>
+      </Seats>
+      <EntryPoints>
+        <Item>
+          <EntryPointInfo ref="ENTRY_POINT_STANDARD_FRONT_LEFT" />
+          <EntryPointAnimInfo ref="ENTRY_POINT_ANIM_STANDARD_FRONT_LEFT" />
+        </Item>
+        <Item>
+          <EntryPointInfo ref="ENTRY_POINT_STANDARD_FRONT_RIGHT" />
+          <EntryPointAnimInfo ref="ENTRY_POINT_ANIM_STANDARD_FRONT_RIGHT" />
+        </Item>
+        <Item>
+          <EntryPointInfo ref="ENTRY_POINT_STANDARD_REAR_LEFT" />
+          <EntryPointAnimInfo ref="ENTRY_POINT_ANIM_STANDARD_REAR_LEFT" />
+        </Item>
+        <Item>
+          <EntryPointInfo ref="ENTRY_POINT_STANDARD_REAR_RIGHT" />
+          <EntryPointAnimInfo ref="ENTRY_POINT_ANIM_STANDARD_REAR_RIGHT" />
+        </Item>
+      </EntryPoints>
+      <LayoutFlags>StreamAnims UseDoorOscillation UseLeanSteerAnims</LayoutFlags>
+      <BicycleInfo ref="NULL" />
+      <AnimRateSet ref="STD_LOW_ANIM_RATE_SET" />
+      <HandsUpClipSetId>busted_vehicle_std</HandsUpClipSetId>
+      <SteeringWheelOffset x="0.000000" y="0.350000" z="0.320000" />
+      <MaxXAcceleration value="4.00000" />
+      <BodyLeanXApproachSpeed value="5.00000" />
+      <BodyLeanXSmallDelta value="0.30000" />
+      <LookBackApproachSpeedScale value="1.00000" />
+      <FirstPersonAdditiveIdleClipSets>
+        <Item>clipset@veh@std@ds@idle_a</Item>
+        <Item>clipset@veh@std@ds@idle_b</Item>
+        <Item>clipset@veh@std@ds@idle_c</Item>
+        <Item>clipset@veh@std@ds@idle_d</Item>
+        <Item>clipset@veh@std@ds@idle_e</Item>
+      </FirstPersonAdditiveIdleClipSets>
+      <FirstPersonRoadRageClipSets>
+        <Item>clipset@veh@std@ds@hit_wheel@idle_a</Item>
+        <Item>clipset@veh@std@ds@hit_wheel@idle_b</Item>
+        <Item>clipset@veh@std@ds@hit_wheel@idle_c</Item>
+       </FirstPersonRoadRageClipSets>
+    </Item>
+	
+	<!-- Low -->
+	<Item type="CVehicleLayoutInfo">
+      <Name>LAYOUT_DELTA_LOW</Name>
+      <Seats>
+        <Item>
+          <SeatInfo ref="SEAT_LOW_FRONT_LEFT" />
+          <SeatAnimInfo ref="SEAT_ANIM_LOW_FRONT_LEFT" />
+        </Item>
+        <Item>
+          <SeatInfo ref="SEAT_LOW_FRONT_RIGHT" />
+          <SeatAnimInfo ref="SEAT_ANIM_DELTA_LOW_FRONT_RIGHT" />
+        </Item>
+		<Item>
+          <SeatInfo ref="SEAT_STANDARD_REAR_LEFT" />
+          <SeatAnimInfo ref="SEAT_ANIM_DELTA_LOW_REAR_LEFT" />
+        </Item>
+        <Item>
+          <SeatInfo ref="SEAT_STANDARD_REAR_RIGHT" />
+          <SeatAnimInfo ref="SEAT_ANIM_DELTA_LOW_REAR_RIGHT" />
+        </Item>
+      </Seats>
+      <EntryPoints>
+        <Item>
+          <EntryPointInfo ref="ENTRY_POINT_LOW_FRONT_LEFT" />
+          <EntryPointAnimInfo ref="ENTRY_POINT_ANIM_LOW_FRONT_LEFT" />
+        </Item>
+        <Item>
+          <EntryPointInfo ref="ENTRY_POINT_LOW_FRONT_RIGHT" />
+          <EntryPointAnimInfo ref="ENTRY_POINT_ANIM_LOW_FRONT_RIGHT" />
+        </Item>
+		<Item>
+          <EntryPointInfo ref="ENTRY_POINT_STANDARD_REAR_LEFT" />
+          <EntryPointAnimInfo ref="ENTRY_POINT_ANIM_STANDARD_REAR_LEFT" />
+        </Item>
+        <Item>
+          <EntryPointInfo ref="ENTRY_POINT_STANDARD_REAR_RIGHT" />
+          <EntryPointAnimInfo ref="ENTRY_POINT_ANIM_STANDARD_REAR_RIGHT" />
+        </Item>
+      </EntryPoints>
+      <LayoutFlags>StreamAnims UseDoorOscillation UseLeanSteerAnims UseSteeringWheelIk</LayoutFlags>
+      <BicycleInfo ref="NULL" />
+      <AnimRateSet ref="STD_LOW_ANIM_RATE_SET" />
+      <HandsUpClipSetId>busted_vehicle_low</HandsUpClipSetId>
+      <SteeringWheelOffset x="0.000000" y="0.350000" z="0.320000" />
+      <MaxXAcceleration value="15.00000" />
+      <BodyLeanXApproachSpeed value="10.00000" />
+      <BodyLeanXSmallDelta value="0.40000" />
+      <LookBackApproachSpeedScale value="0.5" />
+      <FirstPersonAdditiveIdleClipSets>
+        <Item>clipset@veh@low@ds@idle_a</Item>
+        <Item>clipset@veh@low@ds@idle_b</Item>
+        <Item>clipset@veh@low@ds@idle_c</Item>
+        <Item>clipset@veh@low@ds@idle_d</Item>
+        <Item>clipset@veh@low@ds@idle_e</Item>
+      </FirstPersonAdditiveIdleClipSets>
+      <FirstPersonRoadRageClipSets>
+        <Item>clipset@veh@low@ds@hit_wheel@idle_a</Item>
+        <Item>clipset@veh@low@ds@hit_wheel@idle_b</Item>
+        <Item>clipset@veh@low@ds@hit_wheel@idle_c</Item>
+      </FirstPersonRoadRageClipSets>
+    </Item>
+	
+	<!-- Sport -->
+	<Item type="CVehicleLayoutInfo">
+      <Name>LAYOUT_DELTA_SPORT</Name>
+      <Seats>
+        <Item>
+          <SeatInfo ref="SEAT_LOW_FRONT_LEFT" />
+          <SeatAnimInfo ref="SEAT_ANIM_LOW_FRONT_LEFT" />
+        </Item>
+        <Item>
+          <SeatInfo ref="SEAT_LOW_FRONT_RIGHT" />
+          <SeatAnimInfo ref="SEAT_ANIM_DELTA_SPORT_FRONT_RIGHT" />
+        </Item>
+      </Seats>
+      <EntryPoints>
+        <Item>
+          <EntryPointInfo ref="ENTRY_POINT_LOW_FRONT_LEFT" />
+          <EntryPointAnimInfo ref="ENTRY_POINT_ANIM_LOW_FRONT_LEFT" />
+        </Item>
+        <Item>
+          <EntryPointInfo ref="ENTRY_POINT_LOW_FRONT_RIGHT" />
+          <EntryPointAnimInfo ref="ENTRY_POINT_ANIM_LOW_FRONT_RIGHT" />
+        </Item>
+      </EntryPoints>
+      <LayoutFlags>StreamAnims UseDoorOscillation UseLeanSteerAnims UseSteeringWheelIk</LayoutFlags>
+      <BicycleInfo ref="NULL" />
+      <AnimRateSet ref="STD_LOW_ANIM_RATE_SET" />
+      <HandsUpClipSetId>busted_vehicle_low</HandsUpClipSetId>
+      <SteeringWheelOffset x="0.000000" y="0.350000" z="0.320000" />
+      <MaxXAcceleration value="15.00000" />
+      <BodyLeanXApproachSpeed value="10.00000" />
+      <BodyLeanXSmallDelta value="0.40000" />
+      <LookBackApproachSpeedScale value="0.5" />
+      <FirstPersonAdditiveIdleClipSets>
+        <Item>clipset@veh@low@ds@idle_a</Item>
+        <Item>clipset@veh@low@ds@idle_b</Item>
+        <Item>clipset@veh@low@ds@idle_c</Item>
+        <Item>clipset@veh@low@ds@idle_d</Item>
+        <Item>clipset@veh@low@ds@idle_e</Item>
+      </FirstPersonAdditiveIdleClipSets>
+      <FirstPersonRoadRageClipSets>
+        <Item>clipset@veh@low@ds@hit_wheel@idle_a</Item>
+        <Item>clipset@veh@low@ds@hit_wheel@idle_b</Item>
+        <Item>clipset@veh@low@ds@hit_wheel@idle_c</Item>
+      </FirstPersonRoadRageClipSets>
+    </Item>
+	
+	<!-- Super -->
+	<Item type="CVehicleLayoutInfo">
+      <Name>LAYOUT_DELTA_SUPER</Name>
+      <Seats>
+        <Item>
+          <SeatInfo ref="SEAT_LOW_FRONT_LEFT" />
+          <SeatAnimInfo ref="SEAT_ANIM_LOW_FRONT_LEFT" />
+        </Item>
+        <Item>
+          <SeatInfo ref="SEAT_LOW_FRONT_RIGHT" />
+          <SeatAnimInfo ref="SEAT_ANIM_DELTA_SUPER_FRONT_RIGHT" />
+        </Item>
+      </Seats>
+      <EntryPoints>
+        <Item>
+          <EntryPointInfo ref="ENTRY_POINT_LOW_FRONT_LEFT" />
+          <EntryPointAnimInfo ref="ENTRY_POINT_ANIM_LOW_FRONT_LEFT" />
+        </Item>
+        <Item>
+          <EntryPointInfo ref="ENTRY_POINT_LOW_FRONT_RIGHT" />
+          <EntryPointAnimInfo ref="ENTRY_POINT_ANIM_LOW_FRONT_RIGHT" />
+        </Item>
+      </EntryPoints>
+      <LayoutFlags>StreamAnims UseDoorOscillation UseLeanSteerAnims UseSteeringWheelIk</LayoutFlags>
+      <BicycleInfo ref="NULL" />
+      <AnimRateSet ref="STD_LOW_ANIM_RATE_SET" />
+      <HandsUpClipSetId>busted_vehicle_low</HandsUpClipSetId>
+      <SteeringWheelOffset x="0.000000" y="0.350000" z="0.320000" />
+      <MaxXAcceleration value="15.00000" />
+      <BodyLeanXApproachSpeed value="10.00000" />
+      <BodyLeanXSmallDelta value="0.40000" />
+      <LookBackApproachSpeedScale value="0.5" />
+      <FirstPersonAdditiveIdleClipSets>
+        <Item>clipset@veh@low@ds@idle_a</Item>
+        <Item>clipset@veh@low@ds@idle_b</Item>
+        <Item>clipset@veh@low@ds@idle_c</Item>
+        <Item>clipset@veh@low@ds@idle_d</Item>
+        <Item>clipset@veh@low@ds@idle_e</Item>
+      </FirstPersonAdditiveIdleClipSets>
+      <FirstPersonRoadRageClipSets>
+        <Item>clipset@veh@low@ds@hit_wheel@idle_a</Item>
+        <Item>clipset@veh@low@ds@hit_wheel@idle_b</Item>
+        <Item>clipset@veh@low@ds@hit_wheel@idle_c</Item>
+      </FirstPersonRoadRageClipSets>
+    </Item>
+	
+	<!-- SUV -->
+	<Item type="CVehicleLayoutInfo">
+      <Name>LAYOUT_DELTA_SUV</Name>
+      <Seats>
+        <Item>
+          <SeatInfo ref="SEAT_STANDARD_FRONT_LEFT" />
+          <SeatAnimInfo ref="SEAT_ANIM_RANGER_FRONT_LEFT" />
+        </Item>
+        <Item>
+          <SeatInfo ref="SEAT_STANDARD_FRONT_RIGHT" />
+          <SeatAnimInfo ref="SEAT_ANIM_DELTA_SUV_FRONT_RIGHT" />
+        </Item>
+        <Item>
+          <SeatInfo ref="SEAT_STANDARD_REAR_LEFT" />
+          <SeatAnimInfo ref="SEAT_ANIM_DELTA_SUV_REAR_LEFT" />
+        </Item>
+        <Item>
+          <SeatInfo ref="SEAT_STANDARD_REAR_RIGHT" />
+          <SeatAnimInfo ref="SEAT_ANIM_DELTA_SUV_REAR_RIGHT" />
+        </Item>
+      </Seats>
+      <EntryPoints>
+        <Item>
+          <EntryPointInfo ref="ENTRY_POINT_STANDARD_FRONT_LEFT" />
+          <EntryPointAnimInfo ref="ENTRY_POINT_ANIM_RANGER_FRONT_LEFT" />
+        </Item>
+        <Item>
+          <EntryPointInfo ref="ENTRY_POINT_STANDARD_FRONT_RIGHT" />
+          <EntryPointAnimInfo ref="ENTRY_POINT_ANIM_RANGER_FRONT_RIGHT" />
+        </Item>
+        <Item>
+          <EntryPointInfo ref="ENTRY_POINT_STANDARD_REAR_LEFT" />
+          <EntryPointAnimInfo ref="ENTRY_POINT_ANIM_RANGER_REAR_LEFT" />
+        </Item>
+        <Item>
+          <EntryPointInfo ref="ENTRY_POINT_STANDARD_REAR_RIGHT" />
+          <EntryPointAnimInfo ref="ENTRY_POINT_ANIM_RANGER_REAR_RIGHT" />
+        </Item>
+      </EntryPoints>
+      <LayoutFlags>StreamAnims UseLeanSteerAnims UseVanOpenDoorBlendParams UseDoorOscillation UseLowerDoorBlockTest</LayoutFlags>
+      <BicycleInfo ref="NULL" />
+      <HandsUpClipSetId>busted_vehicle_std</HandsUpClipSetId>
+      <SteeringWheelOffset x="0.000000" y="0.350000" z="0.320000" />
+      <MaxXAcceleration value="4.00000" />
+      <BodyLeanXApproachSpeed value="5.00000" />
+      <BodyLeanXSmallDelta value="0.30000" />
+      <FirstPersonAdditiveIdleClipSets>
+        <Item>clipset@veh@van@ds@idle_a</Item>
+        <Item>clipset@veh@van@ds@idle_b</Item>
+        <Item>clipset@veh@van@ds@idle_c</Item>
+        <Item>clipset@veh@van@ds@idle_d</Item>
+        <Item>clipset@veh@van@ds@idle_e</Item>
+      </FirstPersonAdditiveIdleClipSets>
+      <FirstPersonRoadRageClipSets>
+        <Item>clipset@veh@van@ds@hit_wheel@idle_a</Item>
+        <Item>clipset@veh@van@ds@hit_wheel@idle_b</Item>
+        <Item>clipset@veh@van@ds@hit_wheel@idle_c</Item>
+      </FirstPersonRoadRageClipSets>
+    </Item>
+	
+	<Item type="CVehicleLayoutInfo">
+      <Name>LAYOUT_DELTA_SUV_HIGH</Name>
+      <Seats>
+        <Item>
+          <SeatInfo ref="SEAT_STANDARD_FRONT_LEFT" />
+          <SeatAnimInfo ref="SEAT_ANIM_RANGER_FRONT_LEFT" />
+        </Item>
+        <Item>
+          <SeatInfo ref="SEAT_STANDARD_FRONT_RIGHT" />
+          <SeatAnimInfo ref="SEAT_ANIM_DELTA_SUV_HIGH_FRONT_RIGHT" />
+        </Item>
+        <Item>
+          <SeatInfo ref="SEAT_STANDARD_REAR_LEFT" />
+          <SeatAnimInfo ref="SEAT_ANIM_DELTA_SUV_REAR_LEFT" />
+        </Item>
+        <Item>
+          <SeatInfo ref="SEAT_STANDARD_REAR_RIGHT" />
+          <SeatAnimInfo ref="SEAT_ANIM_DELTA_SUV_REAR_RIGHT" />
+        </Item>
+      </Seats>
+      <EntryPoints>
+        <Item>
+          <EntryPointInfo ref="ENTRY_POINT_STANDARD_FRONT_LEFT" />
+          <EntryPointAnimInfo ref="ENTRY_POINT_ANIM_RANGER_FRONT_LEFT" />
+        </Item>
+        <Item>
+          <EntryPointInfo ref="ENTRY_POINT_STANDARD_FRONT_RIGHT" />
+          <EntryPointAnimInfo ref="ENTRY_POINT_ANIM_RANGER_FRONT_RIGHT" />
+        </Item>
+        <Item>
+          <EntryPointInfo ref="ENTRY_POINT_STANDARD_REAR_LEFT" />
+          <EntryPointAnimInfo ref="ENTRY_POINT_ANIM_RANGER_REAR_LEFT" />
+        </Item>
+        <Item>
+          <EntryPointInfo ref="ENTRY_POINT_STANDARD_REAR_RIGHT" />
+          <EntryPointAnimInfo ref="ENTRY_POINT_ANIM_RANGER_REAR_RIGHT" />
+        </Item>
+      </EntryPoints>
+      <LayoutFlags>StreamAnims UseLeanSteerAnims UseVanOpenDoorBlendParams UseDoorOscillation UseLowerDoorBlockTest</LayoutFlags>
+      <BicycleInfo ref="NULL" />
+      <HandsUpClipSetId>busted_vehicle_std</HandsUpClipSetId>
+      <SteeringWheelOffset x="0.000000" y="0.350000" z="0.320000" />
+      <MaxXAcceleration value="4.00000" />
+      <BodyLeanXApproachSpeed value="5.00000" />
+      <BodyLeanXSmallDelta value="0.30000" />
+      <FirstPersonAdditiveIdleClipSets>
+        <Item>clipset@veh@van@ds@idle_a</Item>
+        <Item>clipset@veh@van@ds@idle_b</Item>
+        <Item>clipset@veh@van@ds@idle_c</Item>
+        <Item>clipset@veh@van@ds@idle_d</Item>
+        <Item>clipset@veh@van@ds@idle_e</Item>
+      </FirstPersonAdditiveIdleClipSets>
+      <FirstPersonRoadRageClipSets>
+        <Item>clipset@veh@van@ds@hit_wheel@idle_a</Item>
+        <Item>clipset@veh@van@ds@hit_wheel@idle_b</Item>
+        <Item>clipset@veh@van@ds@hit_wheel@idle_c</Item>
+      </FirstPersonRoadRageClipSets>
+    </Item>
+	
+	<Item type="CVehicleLayoutInfo">
+      <Name>LAYOUT_DELTA_SUV_LOW</Name>
+      <Seats>
+        <Item>
+          <SeatInfo ref="SEAT_STANDARD_FRONT_LEFT" />
+          <SeatAnimInfo ref="SEAT_ANIM_RANGER_FRONT_LEFT" />
+        </Item>
+        <Item>
+          <SeatInfo ref="SEAT_STANDARD_FRONT_RIGHT" />
+          <SeatAnimInfo ref="SEAT_ANIM_DELTA_SUV_LOW_FRONT_RIGHT" />
+        </Item>
+        <Item>
+          <SeatInfo ref="SEAT_STANDARD_REAR_LEFT" />
+          <SeatAnimInfo ref="SEAT_ANIM_DELTA_SUV_LOW_REAR_LEFT" />
+        </Item>
+        <Item>
+          <SeatInfo ref="SEAT_STANDARD_REAR_RIGHT" />
+          <SeatAnimInfo ref="SEAT_ANIM_DELTA_SUV_LOW_REAR_RIGHT" />
+        </Item>
+      </Seats>
+      <EntryPoints>
+        <Item>
+          <EntryPointInfo ref="ENTRY_POINT_STANDARD_FRONT_LEFT" />
+          <EntryPointAnimInfo ref="ENTRY_POINT_ANIM_RANGER_FRONT_LEFT" />
+        </Item>
+        <Item>
+          <EntryPointInfo ref="ENTRY_POINT_STANDARD_FRONT_RIGHT" />
+          <EntryPointAnimInfo ref="ENTRY_POINT_ANIM_RANGER_FRONT_RIGHT" />
+        </Item>
+        <Item>
+          <EntryPointInfo ref="ENTRY_POINT_STANDARD_REAR_LEFT" />
+          <EntryPointAnimInfo ref="ENTRY_POINT_ANIM_RANGER_REAR_LEFT" />
+        </Item>
+        <Item>
+          <EntryPointInfo ref="ENTRY_POINT_STANDARD_REAR_RIGHT" />
+          <EntryPointAnimInfo ref="ENTRY_POINT_ANIM_RANGER_REAR_RIGHT" />
+        </Item>
+      </EntryPoints>
+      <LayoutFlags>StreamAnims UseLeanSteerAnims UseVanOpenDoorBlendParams UseDoorOscillation UseLowerDoorBlockTest</LayoutFlags>
+      <BicycleInfo ref="NULL" />
+      <HandsUpClipSetId>busted_vehicle_std</HandsUpClipSetId>
+      <SteeringWheelOffset x="0.000000" y="0.350000" z="0.320000" />
+      <MaxXAcceleration value="4.00000" />
+      <BodyLeanXApproachSpeed value="5.00000" />
+      <BodyLeanXSmallDelta value="0.30000" />
+      <FirstPersonAdditiveIdleClipSets>
+        <Item>clipset@veh@van@ds@idle_a</Item>
+        <Item>clipset@veh@van@ds@idle_b</Item>
+        <Item>clipset@veh@van@ds@idle_c</Item>
+        <Item>clipset@veh@van@ds@idle_d</Item>
+        <Item>clipset@veh@van@ds@idle_e</Item>
+      </FirstPersonAdditiveIdleClipSets>
+      <FirstPersonRoadRageClipSets>
+        <Item>clipset@veh@van@ds@hit_wheel@idle_a</Item>
+        <Item>clipset@veh@van@ds@hit_wheel@idle_b</Item>
+        <Item>clipset@veh@van@ds@hit_wheel@idle_c</Item>
+      </FirstPersonRoadRageClipSets>
+    </Item>
+	
+	<Item type="CVehicleLayoutInfo">
+      <Name>LAYOUT_DELTA_SUV_HIGH_LOWREAR</Name>
+      <Seats>
+        <Item>
+          <SeatInfo ref="SEAT_STANDARD_FRONT_LEFT" />
+          <SeatAnimInfo ref="SEAT_ANIM_RANGER_FRONT_LEFT" />
+        </Item>
+        <Item>
+          <SeatInfo ref="SEAT_STANDARD_FRONT_RIGHT" />
+          <SeatAnimInfo ref="SEAT_ANIM_DELTA_SUV_HIGH_FRONT_RIGHT" />
+        </Item>
+        <Item>
+          <SeatInfo ref="SEAT_STANDARD_REAR_LEFT" />
+          <SeatAnimInfo ref="SEAT_ANIM_DELTA_SUV_LOW_REAR_LEFT" />
+        </Item>
+        <Item>
+          <SeatInfo ref="SEAT_STANDARD_REAR_RIGHT" />
+          <SeatAnimInfo ref="SEAT_ANIM_DELTA_SUV_LOW_REAR_RIGHT" />
+        </Item>
+      </Seats>
+      <EntryPoints>
+        <Item>
+          <EntryPointInfo ref="ENTRY_POINT_STANDARD_FRONT_LEFT" />
+          <EntryPointAnimInfo ref="ENTRY_POINT_ANIM_RANGER_FRONT_LEFT" />
+        </Item>
+        <Item>
+          <EntryPointInfo ref="ENTRY_POINT_STANDARD_FRONT_RIGHT" />
+          <EntryPointAnimInfo ref="ENTRY_POINT_ANIM_RANGER_FRONT_RIGHT" />
+        </Item>
+        <Item>
+          <EntryPointInfo ref="ENTRY_POINT_STANDARD_REAR_LEFT" />
+          <EntryPointAnimInfo ref="ENTRY_POINT_ANIM_RANGER_REAR_LEFT" />
+        </Item>
+        <Item>
+          <EntryPointInfo ref="ENTRY_POINT_STANDARD_REAR_RIGHT" />
+          <EntryPointAnimInfo ref="ENTRY_POINT_ANIM_RANGER_REAR_RIGHT" />
+        </Item>
+      </EntryPoints>
+      <LayoutFlags>StreamAnims UseLeanSteerAnims UseVanOpenDoorBlendParams UseDoorOscillation UseLowerDoorBlockTest</LayoutFlags>
+      <BicycleInfo ref="NULL" />
+      <HandsUpClipSetId>busted_vehicle_std</HandsUpClipSetId>
+      <SteeringWheelOffset x="0.000000" y="0.350000" z="0.320000" />
+      <MaxXAcceleration value="4.00000" />
+      <BodyLeanXApproachSpeed value="5.00000" />
+      <BodyLeanXSmallDelta value="0.30000" />
+      <FirstPersonAdditiveIdleClipSets>
+        <Item>clipset@veh@van@ds@idle_a</Item>
+        <Item>clipset@veh@van@ds@idle_b</Item>
+        <Item>clipset@veh@van@ds@idle_c</Item>
+        <Item>clipset@veh@van@ds@idle_d</Item>
+        <Item>clipset@veh@van@ds@idle_e</Item>
+      </FirstPersonAdditiveIdleClipSets>
+      <FirstPersonRoadRageClipSets>
+        <Item>clipset@veh@van@ds@hit_wheel@idle_a</Item>
+        <Item>clipset@veh@van@ds@hit_wheel@idle_b</Item>
+        <Item>clipset@veh@van@ds@hit_wheel@idle_c</Item>
+      </FirstPersonRoadRageClipSets>
+    </Item>
+	
+	<!-- Ranger -->
+	<Item type="CVehicleLayoutInfo">
+      <Name>LAYOUT_DELTA_RANGER</Name>
+      <Seats>
+        <Item>
+          <SeatInfo ref="SEAT_STANDARD_FRONT_LEFT" />
+          <SeatAnimInfo ref="SEAT_ANIM_RANGER_FRONT_LEFT" />
+        </Item>
+        <Item>
+          <SeatInfo ref="SEAT_STANDARD_FRONT_RIGHT" />
+          <SeatAnimInfo ref="SEAT_ANIM_DELTA_RANGER_FRONT_RIGHT" />
+        </Item>
+        <Item>
+          <SeatInfo ref="SEAT_STANDARD_REAR_LEFT" />
+          <SeatAnimInfo ref="SEAT_ANIM_DELTA_RANGER_REAR_LEFT" />
+        </Item>
+        <Item>
+          <SeatInfo ref="SEAT_STANDARD_REAR_RIGHT" />
+          <SeatAnimInfo ref="SEAT_ANIM_DELTA_RANGER_REAR_RIGHT" />
+        </Item>
+      </Seats>
+      <EntryPoints>
+        <Item>
+          <EntryPointInfo ref="ENTRY_POINT_STANDARD_FRONT_LEFT" />
+          <EntryPointAnimInfo ref="ENTRY_POINT_ANIM_RANGER_FRONT_LEFT" />
+        </Item>
+        <Item>
+          <EntryPointInfo ref="ENTRY_POINT_STANDARD_FRONT_RIGHT" />
+          <EntryPointAnimInfo ref="ENTRY_POINT_ANIM_RANGER_FRONT_RIGHT" />
+        </Item>
+        <Item>
+          <EntryPointInfo ref="ENTRY_POINT_STANDARD_REAR_LEFT" />
+          <EntryPointAnimInfo ref="ENTRY_POINT_ANIM_RANGER_REAR_LEFT" />
+        </Item>
+        <Item>
+          <EntryPointInfo ref="ENTRY_POINT_STANDARD_REAR_RIGHT" />
+          <EntryPointAnimInfo ref="ENTRY_POINT_ANIM_RANGER_REAR_RIGHT" />
+        </Item>
+      </EntryPoints>
+      <LayoutFlags>StreamAnims UseLeanSteerAnims UseVanOpenDoorBlendParams UseDoorOscillation UseLowerDoorBlockTest</LayoutFlags>
+      <BicycleInfo ref="NULL" />
+      <HandsUpClipSetId>busted_vehicle_std</HandsUpClipSetId>
+      <SteeringWheelOffset x="0.000000" y="0.350000" z="0.320000" />
+      <MaxXAcceleration value="4.00000" />
+      <BodyLeanXApproachSpeed value="5.00000" />
+      <BodyLeanXSmallDelta value="0.30000" />
+      <FirstPersonAdditiveIdleClipSets>
+        <Item>clipset@veh@van@ds@idle_a</Item>
+        <Item>clipset@veh@van@ds@idle_b</Item>
+        <Item>clipset@veh@van@ds@idle_c</Item>
+        <Item>clipset@veh@van@ds@idle_d</Item>
+        <Item>clipset@veh@van@ds@idle_e</Item>
+      </FirstPersonAdditiveIdleClipSets>
+      <FirstPersonRoadRageClipSets>
+        <Item>clipset@veh@van@ds@hit_wheel@idle_a</Item>
+        <Item>clipset@veh@van@ds@hit_wheel@idle_b</Item>
+        <Item>clipset@veh@van@ds@hit_wheel@idle_c</Item>
+      </FirstPersonRoadRageClipSets>
+    </Item>
+	
+	<!-- Van -->
+	<Item type="CVehicleLayoutInfo">
+      <Name>LAYOUT_DELTA_VAN</Name>
+      <Seats>
+        <Item>
+          <SeatInfo ref="SEAT_VAN_FRONT_LEFT" />
+          <SeatAnimInfo ref="SEAT_ANIM_VAN_FRONT_LEFT" />
+        </Item>
+        <Item>
+          <SeatInfo ref="SEAT_VAN_FRONT_RIGHT" />
+          <SeatAnimInfo ref="SEAT_ANIM_DELTA_SUV_FRONT_RIGHT" />
+        </Item>
+        <Item>
+          <SeatInfo ref="SEAT_VAN_REAR_LEFT" />
+          <SeatAnimInfo ref="SEAT_ANIM_DELTA_VAN_REAR_LEFT" />
+        </Item>
+        <Item>
+          <SeatInfo ref="SEAT_VAN_REAR_RIGHT" />
+          <SeatAnimInfo ref="SEAT_ANIM_DELTA_VAN_REAR_RIGHT" />
+        </Item>
+      </Seats>
+      <EntryPoints>
+        <Item>
+          <EntryPointInfo ref="ENTRY_POINT_VAN_FRONT_LEFT" />
+          <EntryPointAnimInfo ref="ENTRY_POINT_ANIM_VAN_FRONT_LEFT" />
+        </Item>
+        <Item>
+          <EntryPointInfo ref="ENTRY_POINT_VAN_FRONT_RIGHT" />
+          <EntryPointAnimInfo ref="ENTRY_POINT_ANIM_VAN_FRONT_RIGHT" />
+        </Item>
+        <Item>
+          <EntryPointInfo ref="ENTRY_POINT_VAN_REAR_LEFT" />
+          <EntryPointAnimInfo ref="ENTRY_POINT_ANIM_VAN_REAR_LEFT" />
+        </Item>
+        <Item>
+          <EntryPointInfo ref="ENTRY_POINT_VAN_REAR_RIGHT" />
+          <EntryPointAnimInfo ref="ENTRY_POINT_ANIM_VAN_REAR_RIGHT" />
+        </Item>
+      </EntryPoints>
+      <LayoutFlags>StreamAnims UseVanOpenDoorBlendParams UseDoorOscillation UseLeanSteerAnims UseLowerDoorBlockTest</LayoutFlags>
+      <BicycleInfo ref="NULL" />
+      <HandsUpClipSetId>busted_vehicle_van</HandsUpClipSetId>
+      <SteeringWheelOffset x="0.006700" y="0.330000" z="0.270000" />
+      <MaxXAcceleration value="4.00000" />
+      <BodyLeanXApproachSpeed value="5.00000" />
+      <BodyLeanXSmallDelta value="0.30000" />
+      <FirstPersonAdditiveIdleClipSets>
+        <Item>clipset@veh@van@ds@idle_a</Item>
+        <Item>clipset@veh@van@ds@idle_b</Item>
+        <Item>clipset@veh@van@ds@idle_c</Item>
+        <Item>clipset@veh@van@ds@idle_d</Item>
+        <Item>clipset@veh@van@ds@idle_e</Item>
+      </FirstPersonAdditiveIdleClipSets>
+      <FirstPersonRoadRageClipSets>
+        <Item>clipset@veh@van@ds@hit_wheel@idle_a</Item>
+        <Item>clipset@veh@van@ds@hit_wheel@idle_b</Item>
+        <Item>clipset@veh@van@ds@hit_wheel@idle_c</Item>
+      </FirstPersonRoadRageClipSets>
+    </Item>
+	
+	<Item type="CVehicleLayoutInfo">
+      <Name>LAYOUT_DELTA_VAN_LOW</Name>
+      <Seats>
+        <Item>
+          <SeatInfo ref="SEAT_VAN_FRONT_LEFT" />
+          <SeatAnimInfo ref="SEAT_ANIM_VAN_FRONT_LEFT" />
+        </Item>
+        <Item>
+          <SeatInfo ref="SEAT_VAN_FRONT_RIGHT" />
+          <SeatAnimInfo ref="SEAT_ANIM_DELTA_SUV_LOW_FRONT_RIGHT" />
+        </Item>
+        <Item>
+          <SeatInfo ref="SEAT_VAN_REAR_LEFT" />
+          <SeatAnimInfo ref="SEAT_ANIM_DELTA_VAN_REAR_LEFT" />
+        </Item>
+        <Item>
+          <SeatInfo ref="SEAT_VAN_REAR_RIGHT" />
+          <SeatAnimInfo ref="SEAT_ANIM_DELTA_VAN_REAR_RIGHT" />
+        </Item>
+      </Seats>
+      <EntryPoints>
+        <Item>
+          <EntryPointInfo ref="ENTRY_POINT_VAN_FRONT_LEFT" />
+          <EntryPointAnimInfo ref="ENTRY_POINT_ANIM_VAN_FRONT_LEFT" />
+        </Item>
+        <Item>
+          <EntryPointInfo ref="ENTRY_POINT_VAN_FRONT_RIGHT" />
+          <EntryPointAnimInfo ref="ENTRY_POINT_ANIM_VAN_FRONT_RIGHT" />
+        </Item>
+        <Item>
+          <EntryPointInfo ref="ENTRY_POINT_VAN_REAR_LEFT" />
+          <EntryPointAnimInfo ref="ENTRY_POINT_ANIM_VAN_REAR_LEFT" />
+        </Item>
+        <Item>
+          <EntryPointInfo ref="ENTRY_POINT_VAN_REAR_RIGHT" />
+          <EntryPointAnimInfo ref="ENTRY_POINT_ANIM_VAN_REAR_RIGHT" />
+        </Item>
+      </EntryPoints>
+      <LayoutFlags>StreamAnims UseVanOpenDoorBlendParams UseDoorOscillation UseLeanSteerAnims UseLowerDoorBlockTest</LayoutFlags>
+      <BicycleInfo ref="NULL" />
+      <HandsUpClipSetId>busted_vehicle_van</HandsUpClipSetId>
+      <SteeringWheelOffset x="0.006700" y="0.330000" z="0.270000" />
+      <MaxXAcceleration value="4.00000" />
+      <BodyLeanXApproachSpeed value="5.00000" />
+      <BodyLeanXSmallDelta value="0.30000" />
+      <FirstPersonAdditiveIdleClipSets>
+        <Item>clipset@veh@van@ds@idle_a</Item>
+        <Item>clipset@veh@van@ds@idle_b</Item>
+        <Item>clipset@veh@van@ds@idle_c</Item>
+        <Item>clipset@veh@van@ds@idle_d</Item>
+        <Item>clipset@veh@van@ds@idle_e</Item>
+      </FirstPersonAdditiveIdleClipSets>
+      <FirstPersonRoadRageClipSets>
+        <Item>clipset@veh@van@ds@hit_wheel@idle_a</Item>
+        <Item>clipset@veh@van@ds@hit_wheel@idle_b</Item>
+        <Item>clipset@veh@van@ds@hit_wheel@idle_c</Item>
+      </FirstPersonRoadRageClipSets>
+    </Item>
+	
+	<!-- Pickup -->
+	<Item type="CVehicleLayoutInfo">
+      <Name>LAYOUT_DELTA_PICKUP</Name>
+      <Seats>
+        <Item>
+          <SeatInfo ref="SEAT_STANDARD_FRONT_LEFT" />
+          <SeatAnimInfo ref="SEAT_ANIM_DELTA_STD_FRONT_LEFT" />
+        </Item>
+        <Item>
+          <SeatInfo ref="SEAT_STANDARD_FRONT_RIGHT" />
+          <SeatAnimInfo ref="SEAT_ANIM_DELTA_STD_FRONT_RIGHT" />
+        </Item>
+        <Item>
+          <SeatInfo ref="SEAT_STANDARD_REAR_LEFT" />
+          <SeatAnimInfo ref="SEAT_ANIM_DELTA_BISON_REAR_LEFT" />
+        </Item>
+        <Item>
+          <SeatInfo ref="SEAT_STANDARD_REAR_RIGHT" />
+          <SeatAnimInfo ref="SEAT_ANIM_DELTA_BISON_REAR_RIGHT" />
+        </Item>
+        <Item>
+          <SeatInfo ref="SEAT_VAN_EXTRA_LEFT_2" />
+          <SeatAnimInfo ref="SEAT_ANIM_BODHI_REAR_LEFT" />
+        </Item>
+        <Item>
+          <SeatInfo ref="SEAT_VAN_EXTRA_RIGHT_2" />
+          <SeatAnimInfo ref="SEAT_ANIM_BODHI_REAR_RIGHT" />
+        </Item>
+      </Seats>
+      <EntryPoints>
+        <Item>
+          <EntryPointInfo ref="ENTRY_POINT_STANDARD_FRONT_LEFT" />
+          <EntryPointAnimInfo ref="ENTRY_POINT_ANIM_STD_BOBCAT_FRONT_LEFT" />
+        </Item>
+        <Item>
+          <EntryPointInfo ref="ENTRY_POINT_STANDARD_FRONT_RIGHT" />
+          <EntryPointAnimInfo ref="ENTRY_POINT_ANIM_STD_BOBCAT_FRONT_RIGHT" />
+        </Item>
+        <Item>
+          <EntryPointInfo ref="ENTRY_POINT_STANDARD_REAR_LEFT" />
+          <EntryPointAnimInfo ref="ENTRY_POINT_ANIM_STANDARD_REAR_LEFT" />
+        </Item>
+        <Item>
+          <EntryPointInfo ref="ENTRY_POINT_STANDARD_REAR_RIGHT" />
+          <EntryPointAnimInfo ref="ENTRY_POINT_ANIM_STANDARD_REAR_RIGHT" />
+        </Item>
+        <Item>
+          <EntryPointInfo ref="ENTRY_POINT_VAN_EXTRA_LEFT_2" />
+          <EntryPointAnimInfo ref="ENTRY_POINT_ANIM_BISON_REAR_LEFT" />
+        </Item>
+        <Item>
+          <EntryPointInfo ref="ENTRY_POINT_VAN_EXTRA_RIGHT_2" />
+          <EntryPointAnimInfo ref="ENTRY_POINT_ANIM_BISON_REAR_RIGHT" />
+        </Item>
+        <Item>
+          <EntryPointInfo ref="ENTRY_POINT_VAN_EXTRA_LEFT_2" />
+          <EntryPointAnimInfo ref="ENTRY_POINT_ANIM_BODHI_REAR_LEFT_BED" />
+        </Item>
+        <Item>
+          <EntryPointInfo ref="ENTRY_POINT_VAN_EXTRA_RIGHT_2" />
+          <EntryPointAnimInfo ref="ENTRY_POINT_ANIM_BODHI_REAR_RIGHT_BED" />
+        </Item>
+      </EntryPoints>
+      <LayoutFlags>StreamAnims UseLeanSteerAnims UseDoorOscillation</LayoutFlags>
+      <BicycleInfo ref="NULL" />
+      <HandsUpClipSetId>busted_vehicle_std</HandsUpClipSetId>
+      <SteeringWheelOffset x="0.000000" y="0.350000" z="0.320000" />
+      <MaxXAcceleration value="4.00000" />
+      <BodyLeanXApproachSpeed value="5.00000" />
+      <BodyLeanXSmallDelta value="0.30000" />
+      <FirstPersonAdditiveIdleClipSets>
+        <Item>clipset@veh@std@ds@idle_a</Item>
+        <Item>clipset@veh@std@ds@idle_b</Item>
+        <Item>clipset@veh@std@ds@idle_c</Item>
+        <Item>clipset@veh@std@ds@idle_d</Item>
+        <Item>clipset@veh@std@ds@idle_e</Item>
+      </FirstPersonAdditiveIdleClipSets>
+      <FirstPersonRoadRageClipSets>
+        <Item>clipset@veh@std@ds@hit_wheel@idle_a</Item>
+        <Item>clipset@veh@std@ds@hit_wheel@idle_b</Item>
+        <Item>clipset@veh@std@ds@hit_wheel@idle_c</Item>
+      </FirstPersonRoadRageClipSets>
+    </Item>
+	
+	<!-- Standard - Right Hand Drive -->
+    <Item type="CVehicleLayoutInfo">
+      <Name>LAYOUT_DELTA_STD_RHD</Name>
+      <Seats>
+        <Item>
+          <SeatInfo ref="SEAT_STANDARD_FRONT_LEFT" />
+          <SeatAnimInfo ref="SEAT_ANIM_DELTA_STD_RHD_FRONT_RIGHT" />
+        </Item>
+        <Item>
+          <SeatInfo ref="SEAT_STANDARD_FRONT_RIGHT" />
+          <SeatAnimInfo ref="SEAT_ANIM_DELTA_STD_RHD_FRONT_LEFT" />
+        </Item>
+        <Item>
+          <SeatInfo ref="SEAT_STANDARD_REAR_LEFT" />
+          <SeatAnimInfo ref="SEAT_ANIM_DELTA_STD_REAR_LEFT" />
+        </Item>
+        <Item>
+          <SeatInfo ref="SEAT_STANDARD_REAR_RIGHT" />
+          <SeatAnimInfo ref="SEAT_ANIM_DELTA_STD_REAR_RIGHT" />
+        </Item>
+      </Seats>
+      <EntryPoints>
+        <Item>
+          <EntryPointInfo ref="ENTRY_POINT_STD_RHD_FRONT_LEFT" />
+          <EntryPointAnimInfo ref="ENTRY_POINT_ANIM_STD_RHD_FRONT_RIGHT" />
+        </Item>
+        <Item>
+          <EntryPointInfo ref="ENTRY_POINT_STD_RHD_FRONT_RIGHT" />
+          <EntryPointAnimInfo ref="ENTRY_POINT_ANIM_STD_RHD_FRONT_LEFT" />
+        </Item>
+        <Item>
+          <EntryPointInfo ref="ENTRY_POINT_STANDARD_REAR_LEFT" />
+          <EntryPointAnimInfo ref="ENTRY_POINT_ANIM_STANDARD_REAR_LEFT" />
+        </Item>
+        <Item>
+          <EntryPointInfo ref="ENTRY_POINT_STANDARD_REAR_RIGHT" />
+          <EntryPointAnimInfo ref="ENTRY_POINT_ANIM_STANDARD_REAR_RIGHT" />
+        </Item>
+      </EntryPoints>
+      <LayoutFlags>StreamAnims UseDoorOscillation UseLeanSteerAnims</LayoutFlags>
+      <BicycleInfo ref="NULL" />
+      <AnimRateSet ref="STD_LOW_ANIM_RATE_SET" />
+      <HandsUpClipSetId>busted_vehicle_std</HandsUpClipSetId>
+      <SteeringWheelOffset x="0.000000" y="0.350000" z="0.320000" />
+      <MaxXAcceleration value="4.00000" />
+      <BodyLeanXApproachSpeed value="5.00000" />
+      <BodyLeanXSmallDelta value="0.30000" />
+      <LookBackApproachSpeedScale value="1.00000" />
+      <FirstPersonAdditiveIdleClipSets>
+        <Item>clipset@veh@std@ds@idle_a</Item>
+        <Item>clipset@veh@std@ds@idle_b</Item>
+        <Item>clipset@veh@std@ds@idle_c</Item>
+        <Item>clipset@veh@std@ds@idle_d</Item>
+        <Item>clipset@veh@std@ds@idle_e</Item>
+      </FirstPersonAdditiveIdleClipSets>
+      <FirstPersonRoadRageClipSets>
+        <Item>clipset@veh@std@ds@hit_wheel@idle_a</Item>
+        <Item>clipset@veh@std@ds@hit_wheel@idle_b</Item>
+        <Item>clipset@veh@std@ds@hit_wheel@idle_c</Item>
+       </FirstPersonRoadRageClipSets>
+    </Item>
+	
+	<!-- Low - Right Hand Drive -->
+	<Item type="CVehicleLayoutInfo">
+      <Name>LAYOUT_DELTA_LOW_RHD</Name>
+      <Seats>
+        <Item>
+          <SeatInfo ref="SEAT_LOW_FRONT_LEFT" />
+          <SeatAnimInfo ref="SEAT_ANIM_DELTA_LOW_RHD_FRONT_RIGHT" />
+        </Item>
+        <Item>
+          <SeatInfo ref="SEAT_LOW_FRONT_RIGHT" />
+          <SeatAnimInfo ref="SEAT_ANIM_DELTA_LOW_RHD_FRONT_LEFT" />
+        </Item>
+        <Item>
+          <SeatInfo ref="SEAT_STANDARD_REAR_LEFT" />
+          <SeatAnimInfo ref="SEAT_ANIM_DELTA_LOW_REAR_LEFT" />
+        </Item>
+        <Item>
+          <SeatInfo ref="SEAT_STANDARD_REAR_RIGHT" />
+          <SeatAnimInfo ref="SEAT_ANIM_DELTA_LOW_REAR_RIGHT" />
+        </Item>
+      </Seats>
+      <EntryPoints>
+        <Item>
+          <EntryPointInfo ref="ENTRY_POINT_LOW_RHD_FRONT_LEFT" />
+          <EntryPointAnimInfo ref="ENTRY_POINT_ANIM_LOW_RHD_FRONT_RIGHT" />
+        </Item>
+        <Item>
+          <EntryPointInfo ref="ENTRY_POINT_LOW_RHD_FRONT_RIGHT" />
+          <EntryPointAnimInfo ref="ENTRY_POINT_ANIM_LOW_RHD_FRONT_LEFT" />
+        </Item>
+        <Item>
+          <EntryPointInfo ref="ENTRY_POINT_STANDARD_REAR_LEFT" />
+          <EntryPointAnimInfo ref="ENTRY_POINT_ANIM_STANDARD_REAR_LEFT" />
+        </Item>
+        <Item>
+          <EntryPointInfo ref="ENTRY_POINT_STANDARD_REAR_RIGHT" />
+          <EntryPointAnimInfo ref="ENTRY_POINT_ANIM_STANDARD_REAR_RIGHT" />
+        </Item>
+      </EntryPoints>
+      <LayoutFlags>StreamAnims UseDoorOscillation UseLeanSteerAnims UseSteeringWheelIk</LayoutFlags>
+      <BicycleInfo ref="NULL" />
+	  <AnimRateSet ref="STD_LOW_ANIM_RATE_SET" />
+      <HandsUpClipSetId>busted_vehicle_low</HandsUpClipSetId>
+      <SteeringWheelOffset x="0.000000" y="0.350000" z="0.320000" />
+	  <MaxXAcceleration value="4.00000" />
+	  <BodyLeanXApproachSpeed value="5.00000" />
+	  <BodyLeanXSmallDelta value="0.30000" />
+	  <LookBackApproachSpeedScale value="1.00000" />
+	  <FirstPersonAdditiveIdleClipSets>
+		<Item>clipset@veh@low@ds@idle_a</Item>
+		<Item>clipset@veh@low@ds@idle_b</Item>
+		<Item>clipset@veh@low@ds@idle_c</Item>
+		<Item>clipset@veh@low@ds@idle_d</Item>
+		<Item>clipset@veh@low@ds@idle_e</Item>
+	  </FirstPersonAdditiveIdleClipSets>
+	  <FirstPersonRoadRageClipSets>
+		<Item>clipset@veh@low@ds@hit_wheel@idle_a</Item>
+		<Item>clipset@veh@low@ds@hit_wheel@idle_b</Item>
+		<Item>clipset@veh@low@ds@hit_wheel@idle_c</Item>
+	  </FirstPersonRoadRageClipSets>
+    </Item>
+	
+	<!-- SUV - Right Hand Drive -->
+	<Item type="CVehicleLayoutInfo">
+      <Name>LAYOUT_DELTA_SUV_RHD</Name>
+      <Seats>
+        <Item>
+          <SeatInfo ref="SEAT_STANDARD_FRONT_LEFT" />
+          <SeatAnimInfo ref="SEAT_ANIM_DELTA_SUV_RHD_FRONT_RIGHT" />
+        </Item>
+        <Item>
+          <SeatInfo ref="SEAT_STANDARD_FRONT_RIGHT" />
+          <SeatAnimInfo ref="SEAT_ANIM_DELTA_SUV_RHD_FRONT_LEFT" />
+        </Item>
+        <Item>
+          <SeatInfo ref="SEAT_STANDARD_REAR_LEFT" />
+          <SeatAnimInfo ref="SEAT_ANIM_DELTA_SUV_REAR_LEFT" />
+        </Item>
+        <Item>
+          <SeatInfo ref="SEAT_STANDARD_REAR_RIGHT" />
+          <SeatAnimInfo ref="SEAT_ANIM_DELTA_SUV_REAR_RIGHT" />
+        </Item>
+      </Seats>
+      <EntryPoints>
+        <Item>
+          <EntryPointInfo ref="ENTRY_POINT_STD_RHD_FRONT_LEFT" />
+          <EntryPointAnimInfo ref="ENTRY_POINT_ANIM_STD_RHD_FRONT_LEFT" />
+        </Item>
+        <Item>
+          <EntryPointInfo ref="ENTRY_POINT_STD_RHD_FRONT_RIGHT" />
+          <EntryPointAnimInfo ref="ENTRY_POINT_ANIM_STD_RHD_FRONT_LEFT" />
+        </Item>
+        <Item>
+          <EntryPointInfo ref="ENTRY_POINT_STANDARD_REAR_LEFT" />
+          <EntryPointAnimInfo ref="ENTRY_POINT_ANIM_RANGER_REAR_LEFT" />
+        </Item>
+        <Item>
+          <EntryPointInfo ref="ENTRY_POINT_STANDARD_REAR_RIGHT" />
+          <EntryPointAnimInfo ref="ENTRY_POINT_ANIM_RANGER_REAR_RIGHT" />
+        </Item>
+      </EntryPoints>
+      <LayoutFlags>StreamAnims UseLeanSteerAnims UseVanOpenDoorBlendParams UseDoorOscillation UseLowerDoorBlockTest</LayoutFlags>
+      <BicycleInfo ref="NULL" />
+      <HandsUpClipSetId>busted_vehicle_std</HandsUpClipSetId>
+      <SteeringWheelOffset x="0.000000" y="0.350000" z="0.320000" />
+      <MaxXAcceleration value="4.00000" />
+      <BodyLeanXApproachSpeed value="5.00000" />
+      <BodyLeanXSmallDelta value="0.30000" />
+      <FirstPersonAdditiveIdleClipSets>
+        <Item>clipset@veh@van@ds@idle_a</Item>
+        <Item>clipset@veh@van@ds@idle_b</Item>
+        <Item>clipset@veh@van@ds@idle_c</Item>
+        <Item>clipset@veh@van@ds@idle_d</Item>
+        <Item>clipset@veh@van@ds@idle_e</Item>
+      </FirstPersonAdditiveIdleClipSets>
+      <FirstPersonRoadRageClipSets>
+        <Item>clipset@veh@van@ds@hit_wheel@idle_a</Item>
+        <Item>clipset@veh@van@ds@hit_wheel@idle_b</Item>
+        <Item>clipset@veh@van@ds@hit_wheel@idle_c</Item>
+      </FirstPersonRoadRageClipSets>
+    </Item>
+	
+	<!-- 4x4 (Dubsta, Mesa, Crusade) -->
+	<Item type="CVehicleLayoutInfo">
+      <Name>LAYOUT_DELTA_4X4</Name>
+      <Seats>
+        <Item>
+          <SeatInfo ref="SEAT_STANDARD_FRONT_LEFT" />
+          <SeatAnimInfo ref="SEAT_ANIM_4X4_FRONT_LEFT" />
+        </Item>
+        <Item>
+          <SeatInfo ref="SEAT_STANDARD_FRONT_RIGHT" />
+          <SeatAnimInfo ref="SEAT_ANIM_DELTA_SUV_FRONT_RIGHT" />
+        </Item>
+        <Item>
+          <SeatInfo ref="SEAT_STANDARD_REAR_LEFT" />
+          <SeatAnimInfo ref="SEAT_ANIM_DELTA_SUV_REAR_LEFT" />
+        </Item>
+        <Item>
+          <SeatInfo ref="SEAT_STANDARD_REAR_RIGHT" />
+          <SeatAnimInfo ref="SEAT_ANIM_DELTA_SUV_REAR_RIGHT" />
+        </Item>
+      </Seats>
+      <EntryPoints>
+        <Item>
+          <EntryPointInfo ref="ENTRY_POINT_STANDARD_FRONT_LEFT" />
+          <EntryPointAnimInfo ref="ENTRY_POINT_ANIM_4X4_FRONT_LEFT" />
+        </Item>
+        <Item>
+          <EntryPointInfo ref="ENTRY_POINT_STANDARD_FRONT_RIGHT" />
+          <EntryPointAnimInfo ref="ENTRY_POINT_ANIM_4X4_FRONT_RIGHT" />
+        </Item>
+        <Item>
+          <EntryPointInfo ref="ENTRY_POINT_STANDARD_REAR_LEFT" />
+          <EntryPointAnimInfo ref="ENTRY_POINT_ANIM_4X4_REAR_LEFT" />
+        </Item>
+        <Item>
+          <EntryPointInfo ref="ENTRY_POINT_STANDARD_REAR_RIGHT" />
+          <EntryPointAnimInfo ref="ENTRY_POINT_ANIM_4X4_REAR_RIGHT" />
+        </Item>
+      </EntryPoints>
+      <LayoutFlags>StreamAnims UseVanOpenDoorBlendParams UseLeanSteerAnims UseDoorOscillation UseFinerAlignTolerance</LayoutFlags>
+      <BicycleInfo ref="NULL" />
+      <HandsUpClipSetId>busted_vehicle_std</HandsUpClipSetId>
+      <SteeringWheelOffset x="0.000000" y="0.350000" z="0.320000" />
+	  <MaxXAcceleration value="4.00000" />
+	  <BodyLeanXApproachSpeed value="5.00000" />
+	  <BodyLeanXSmallDelta value="0.30000" />
+	  <FirstPersonAdditiveIdleClipSets>
+        <Item>clipset@veh@van@ds@idle_a</Item>
+		<Item>clipset@veh@van@ds@idle_b</Item>
+		<Item>clipset@veh@van@ds@idle_c</Item>
+		<Item>clipset@veh@van@ds@idle_d</Item>
+		<Item>clipset@veh@van@ds@idle_e</Item>
+	  </FirstPersonAdditiveIdleClipSets>
+	  <FirstPersonRoadRageClipSets>
+        <Item>clipset@veh@van@ds@hit_wheel@idle_a</Item>
+		<Item>clipset@veh@van@ds@hit_wheel@idle_b</Item>
+		<Item>clipset@veh@van@ds@hit_wheel@idle_c</Item>
+	  </FirstPersonRoadRageClipSets>
+    </Item>
+	
+	<!-- 4x4 (Dubsta3) -->
+    <Item type="CVehicleLayoutInfo">
+      <Name>LAYOUT_DELTA_4X4_DUBSTA</Name>
+      <Seats>
+        <Item>
+          <SeatInfo ref="SEAT_STANDARD_FRONT_LEFT" />
+          <SeatAnimInfo ref="SEAT_ANIM_4X4_FRONT_LEFT" />
+        </Item>
+        <Item>
+          <SeatInfo ref="SEAT_STANDARD_FRONT_RIGHT" />
+          <SeatAnimInfo ref="SEAT_ANIM_DELTA_SUV_FRONT_RIGHT" />
+        </Item>
+        <Item>
+          <SeatInfo ref="SEAT_STANDARD_REAR_LEFT" />
+          <SeatAnimInfo ref="SEAT_ANIM_DELTA_SUV_REAR_LEFT" />
+        </Item>
+        <Item>
+          <SeatInfo ref="SEAT_STANDARD_REAR_RIGHT" />
+          <SeatAnimInfo ref="SEAT_ANIM_DELTA_SUV_REAR_RIGHT" />
+        </Item>
+		<Item>
+          <SeatInfo ref="SEAT_EXTRA_LEFT_2" />
+          <SeatAnimInfo ref="SEAT_ANIM_BODHI_REAR_LEFT" />
+        </Item>
+        <Item>
+          <SeatInfo ref="SEAT_EXTRA_RIGHT_2" />
+          <SeatAnimInfo ref="SEAT_ANIM_BODHI_REAR_RIGHT" />
+        </Item>
+      </Seats>
+      <EntryPoints>
+        <Item>
+          <EntryPointInfo ref="ENTRY_POINT_STANDARD_FRONT_LEFT" />
+          <EntryPointAnimInfo ref="ENTRY_POINT_ANIM_RANGER_FRONT_LEFT" />
+        </Item>
+        <Item>
+          <EntryPointInfo ref="ENTRY_POINT_STANDARD_FRONT_RIGHT" />
+          <EntryPointAnimInfo ref="ENTRY_POINT_ANIM_RANGER_FRONT_RIGHT" />
+        </Item>
+        <Item>
+          <EntryPointInfo ref="ENTRY_POINT_STANDARD_REAR_LEFT" />
+          <EntryPointAnimInfo ref="ENTRY_POINT_ANIM_STD_DUBSTA3_REAR_LEFT" />
+        </Item>
+        <Item>
+          <EntryPointInfo ref="ENTRY_POINT_STANDARD_REAR_RIGHT" />
+          <EntryPointAnimInfo ref="ENTRY_POINT_ANIM_STD_DUBSTA3_REAR_RIGHT" />
+        </Item>
+        <Item>
+          <EntryPointInfo ref="ENTRY_POINT_EXTRA_LEFT_2" />
+          <EntryPointAnimInfo ref="ENTRY_POINT_ANIM_BISON_REAR_LEFT" />
+        </Item>
+        <Item>
+          <EntryPointInfo ref="ENTRY_POINT_EXTRA_RIGHT_2" />
+          <EntryPointAnimInfo ref="ENTRY_POINT_ANIM_BISON_REAR_RIGHT" />
+        </Item>
+      </EntryPoints>
+      <LayoutFlags>StreamAnims UseVanOpenDoorBlendParams UseLeanSteerAnims UseDoorOscillation UseFinerAlignTolerance</LayoutFlags>
+      <BicycleInfo ref="NULL" />
+      <HandsUpClipSetId>busted_vehicle_van</HandsUpClipSetId>
+      <SteeringWheelOffset x="0.000000" y="0.350000" z="0.320000" />
+	  <MaxXAcceleration value="4.00000" />
+	  <BodyLeanXApproachSpeed value="5.00000" />
+	  <BodyLeanXSmallDelta value="0.30000" />
+    </Item>
+	
+	<!-- Sandking -->
+	<Item type="CVehicleLayoutInfo">
+      <Name>LAYOUT_DELTA_SANDKING</Name>
+      <Seats>
+        <Item>
+          <SeatInfo ref="SEAT_STANDARD_FRONT_LEFT" />
+          <SeatAnimInfo ref="SEAT_ANIM_RANGER_SANDKING_FRONT_LEFT" />
+        </Item>
+        <Item>
+          <SeatInfo ref="SEAT_STANDARD_FRONT_RIGHT" />
+          <SeatAnimInfo ref="SEAT_ANIM_DELTA_SUV_FRONT_RIGHT" />
+        </Item>
+        <Item>
+          <SeatInfo ref="SEAT_STANDARD_REAR_LEFT" />
+          <SeatAnimInfo ref="SEAT_ANIM_DELTA_SUV_REAR_LEFT" />
+        </Item>
+        <Item>
+          <SeatInfo ref="SEAT_STANDARD_REAR_RIGHT" />
+          <SeatAnimInfo ref="SEAT_ANIM_DELTA_SUV_REAR_RIGHT" />
+        </Item>
+      </Seats>
+      <EntryPoints>
+        <Item>
+          <EntryPointInfo ref="ENTRY_POINT_STANDARD_FRONT_LEFT" />
+          <EntryPointAnimInfo ref="ENTRY_POINT_ANIM_TRUCK_SANDKING_FRONT_LEFT" />
+        </Item>
+        <Item>
+          <EntryPointInfo ref="ENTRY_POINT_STANDARD_FRONT_RIGHT" />
+          <EntryPointAnimInfo ref="ENTRY_POINT_ANIM_TRUCK_SANDKING_FRONT_RIGHT" />
+        </Item>
+        <Item>
+          <EntryPointInfo ref="ENTRY_POINT_STANDARD_REAR_LEFT" />
+          <EntryPointAnimInfo ref="ENTRY_POINT_ANIM_TRUCK_SANDKING_REAR_LEFT" />
+        </Item>
+        <Item>
+          <EntryPointInfo ref="ENTRY_POINT_STANDARD_REAR_RIGHT" />
+          <EntryPointAnimInfo ref="ENTRY_POINT_ANIM_TRUCK_SANDKING_FRONT_RIGHT" />
+        </Item>
+      </EntryPoints>
+      <LayoutFlags>StreamAnims UseLeanSteerAnims UseFinerAlignTolerance UseLowerDoorBlockTest DisableTargetRearDoorOpenRatio</LayoutFlags>
+      <BicycleInfo ref="NULL" />
+      <HandsUpClipSetId>busted_vehicle_std</HandsUpClipSetId>
+      <SteeringWheelOffset x="0.000000" y="0.350000" z="0.320000" />
+	  <MaxXAcceleration value="4.00000" />
+	  <BodyLeanXApproachSpeed value="5.00000" />
+	  <BodyLeanXSmallDelta value="0.30000" />
+	  <FirstPersonAdditiveIdleClipSets>
+        <Item>clipset@veh@van@ds@idle_a</Item>
+		<Item>clipset@veh@van@ds@idle_b</Item>
+		<Item>clipset@veh@van@ds@idle_c</Item>
+		<Item>clipset@veh@van@ds@idle_d</Item>
+		<Item>clipset@veh@van@ds@idle_e</Item>
+	  </FirstPersonAdditiveIdleClipSets>
+	  <FirstPersonRoadRageClipSets>
+        <Item>clipset@veh@van@ds@hit_wheel@idle_a</Item>
+		<Item>clipset@veh@van@ds@hit_wheel@idle_b</Item>
+		<Item>clipset@veh@van@ds@hit_wheel@idle_c</Item>
+	  </FirstPersonRoadRageClipSets>
+    </Item>
+
+	<!-- Stretch Limo -->
+	<Item type="CVehicleLayoutInfo">
+      <Name>LAYOUT_DELTA_STRETCH</Name>
+      <Seats>
+        <Item>
+          <SeatInfo ref="SEAT_STANDARD_FRONT_LEFT" />
+          <SeatAnimInfo ref="SEAT_ANIM_STANDARD_FRONT_LEFT" />
+        </Item>
+        <Item>
+          <SeatInfo ref="SEAT_STANDARD_FRONT_RIGHT" />
+          <SeatAnimInfo ref="SEAT_ANIM_DELTA_STD_FRONT_RIGHT" />
+        </Item>
+        <Item>
+          <SeatInfo ref="SEAT_STANDARD_REAR_LEFT" />
+          <SeatAnimInfo ref="SEAT_ANIM_DELTA_STD_REAR_LEFT" />
+        </Item>
+        <Item>
+          <SeatInfo ref="SEAT_STANDARD_REAR_RIGHT" />
+          <SeatAnimInfo ref="SEAT_ANIM_DELTA_STD_REAR_RIGHT" />
+        </Item>
+        <Item>
+          <SeatInfo ref="SEAT_EXTRA_LEFT_2" />
+          <SeatAnimInfo ref="SEAT_ANIM_STD_STRETCH_EXTRA_LEFT" />
+        </Item>
+        <Item>
+          <SeatInfo ref="SEAT_EXTRA_LEFT_3" />
+          <SeatAnimInfo ref="SEAT_ANIM_STD_STRETCH_EXTRA_RIGHT" />
+        </Item>
+      </Seats>
+      <EntryPoints>
+        <Item>
+          <EntryPointInfo ref="ENTRY_POINT_STANDARD_FRONT_LEFT" />
+          <EntryPointAnimInfo ref="ENTRY_POINT_ANIM_STANDARD_FRONT_LEFT" />
+        </Item>
+        <Item>
+          <EntryPointInfo ref="ENTRY_POINT_STANDARD_FRONT_RIGHT" />
+          <EntryPointAnimInfo ref="ENTRY_POINT_ANIM_STANDARD_FRONT_RIGHT" />
+        </Item>
+        <Item>
+          <EntryPointInfo ref="ENTRY_POINT_STANDARD_REAR_LEFT" />
+          <EntryPointAnimInfo ref="ENTRY_POINT_ANIM_STANDARD_REAR_LEFT" />
+        </Item>
+        <Item>
+          <EntryPointInfo ref="ENTRY_POINT_STANDARD_REAR_RIGHT" />
+          <EntryPointAnimInfo ref="ENTRY_POINT_ANIM_STANDARD_REAR_RIGHT" />
+        </Item>
+        <Item>
+          <EntryPointInfo ref="ENTRY_POINT_STD_STRETCH_MP_WARP_LEFT" />
+          <EntryPointAnimInfo ref="ENTRY_POINT_ANIM_STD_STRETCH_MP_WARP_LEFT" />
+        </Item>
+        <Item>
+          <EntryPointInfo ref="ENTRY_POINT_STD_STRETCH_MP_WARP_RIGHT" />
+          <EntryPointAnimInfo ref="ENTRY_POINT_ANIM_STD_STRETCH_MP_WARP_RIGHT" />
+        </Item>
+      </EntryPoints>
+      <LayoutFlags>StreamAnims UseDoorOscillation UseLeanSteerAnims UseSteeringWheelIk</LayoutFlags>
+      <BicycleInfo ref="NULL" />
+	  <AnimRateSet ref="STD_LOW_ANIM_RATE_SET" />
+      <HandsUpClipSetId>busted_vehicle_std</HandsUpClipSetId>
+      <SteeringWheelOffset x="0.000000" y="0.350000" z="0.320000" />
+	  <MaxXAcceleration value="4.00000" />
+	  <BodyLeanXApproachSpeed value="5.00000" />
+	  <BodyLeanXSmallDelta value="0.30000" />
+	  <FirstPersonAdditiveIdleClipSets>
+        <Item>clipset@veh@std@ds@idle_a</Item>
+		<Item>clipset@veh@std@ds@idle_b</Item>
+		<Item>clipset@veh@std@ds@idle_c</Item>
+		<Item>clipset@veh@std@ds@idle_d</Item>
+		<Item>clipset@veh@std@ds@idle_e</Item>
+	  </FirstPersonAdditiveIdleClipSets>
+	  <FirstPersonRoadRageClipSets>
+        <Item>clipset@veh@std@ds@hit_wheel@idle_a</Item>
+		<Item>clipset@veh@std@ds@hit_wheel@idle_b</Item>
+		<Item>clipset@veh@std@ds@hit_wheel@idle_c</Item>
+	   </FirstPersonRoadRageClipSets>
+    </Item>
+	
+	<!-- Tourbus -->
+	<Item type="CVehicleLayoutInfo">
+      <Name>LAYOUT_DELTA_TOURBUS</Name>
+      <Seats>
+        <Item>
+          <SeatInfo ref="SEAT_STANDARD_FRONT_LEFT" />
+          <SeatAnimInfo ref="SEAT_ANIM_VAN_FRONT_LEFT" />
+        </Item>
+        <Item>
+          <SeatInfo ref="SEAT_STANDARD_FRONT_RIGHT" />
+          <SeatAnimInfo ref="SEAT_ANIM_DELTA_SUV_FRONT_RIGHT" />
+        </Item>
+        <Item>
+          <SeatInfo ref="SEAT_EXTRA_NO_SHUFFLE_LEFT_1" />
+          <SeatAnimInfo ref="SEAT_ANIM_DELTA_TOURBUS_REAR_LEFT" />
+        </Item>
+        <Item>
+          <SeatInfo ref="SEAT_STANDARD_NO_SHUFFLE_REAR_RIGHT" />
+          <SeatAnimInfo ref="SEAT_ANIM_DELTA_TOURBUS_REAR_RIGHT" />
+        </Item>
+        <Item>
+          <SeatInfo ref="SEAT_STANDARD_NO_SHUFFLE_REAR_LEFT" />
+          <SeatAnimInfo ref="SEAT_ANIM_DELTA_TOURBUS_REAR_LEFT" />
+        </Item>
+        <Item>
+          <SeatInfo ref="SEAT_EXTRA_NO_SHUFFLE_RIGHT_1" />
+          <SeatAnimInfo ref="SEAT_ANIM_DELTA_TOURBUS_REAR_RIGHT" />
+        </Item>
+        <Item>
+          <SeatInfo ref="SEAT_EXTRA_NO_SHUFFLE_LEFT_2" />
+          <SeatAnimInfo ref="SEAT_ANIM_DELTA_TOURBUS_REAR_LEFT" />
+        </Item>
+        <Item>
+          <SeatInfo ref="SEAT_EXTRA_NO_SHUFFLE_RIGHT_2" />
+          <SeatAnimInfo ref="SEAT_ANIM_DELTA_TOURBUS_REAR_RIGHT" />
+        </Item>
+        <Item>
+          <SeatInfo ref="SEAT_EXTRA_NO_SHUFFLE_LEFT_3" />
+          <SeatAnimInfo ref="SEAT_ANIM_DELTA_TOURBUS_REAR_LEFT" />
+        </Item>
+        <Item>
+          <SeatInfo ref="SEAT_EXTRA_NO_SHUFFLE_RIGHT_3" />
+          <SeatAnimInfo ref="SEAT_ANIM_DELTA_TOURBUS_REAR_RIGHT" />
+        </Item>
+      </Seats>
+      <EntryPoints>
+        <Item>
+          <EntryPointInfo ref="ENTRY_POINT_STANDARD_FRONT_LEFT" />
+          <EntryPointAnimInfo ref="ENTRY_POINT_ANIM_VAN_FRONT_LEFT" />
+        </Item>
+        <Item>
+          <EntryPointInfo ref="ENTRY_POINT_STANDARD_FRONT_RIGHT" />
+          <EntryPointAnimInfo ref="ENTRY_POINT_ANIM_VAN_FRONT_RIGHT" />
+        </Item>
+        <Item>
+          <EntryPointInfo ref="ENTRY_POINT_NO_SHUFFLE_SPMP_WARP_REAR_LEFT_1" />
+          <EntryPointAnimInfo ref="ENTRY_POINT_ANIM_TOURBUS_REAR_LEFT" />
+        </Item>
+        <Item>
+          <EntryPointInfo ref="ENTRY_POINT_NO_SHUFFLE_SPMP_WARP_REAR_RIGHT" />
+          <EntryPointAnimInfo ref="ENTRY_POINT_ANIM_TOURBUS_REAR_RIGHT" />
+        </Item>
+        <Item>
+          <EntryPointInfo ref="ENTRY_POINT_TOURBUS_MP_WARP_LEFT" />
+          <EntryPointAnimInfo ref="ENTRY_POINT_ANIM_TOURBUS_MP_WARP_LEFT" />
+        </Item>
+        <Item>
+          <EntryPointInfo ref="ENTRY_POINT_TOURBUS_MP_WARP_RIGHT" />
+          <EntryPointAnimInfo ref="ENTRY_POINT_ANIM_TOURBUS_MP_WARP_RIGHT" />
+        </Item>
+      </EntryPoints>
+      <LayoutFlags>StreamAnims UseLeanSteerAnims WaitForRerservationInGroup</LayoutFlags>
+      <BicycleInfo ref="NULL" />
+      <HandsUpClipSetId>busted_vehicle_std</HandsUpClipSetId>
+      <SteeringWheelOffset x="0.000000" y="0.350000" z="0.320000" />
+	  <MaxXAcceleration value="4.00000" />
+	  <BodyLeanXApproachSpeed value="5.00000" />
+	  <BodyLeanXSmallDelta value="0.30000" />
+    </Item>
+	
+	<!-- Custom - Bearcat Variation -->
+	<Item type="CVehicleLayoutInfo">
+		<Name>LAYOUT_DELTA_BEARCAT</Name>
+		<Seats>
+			<Item>
+				<SeatInfo ref="SEAT_VAN_FRONT_LEFT" />
+				<SeatAnimInfo ref="SEAT_ANIM_VAN_ARMORED_FRONT_LEFT" />
+			</Item>
+			<Item>
+				<SeatInfo ref="SEAT_VAN_FRONT_RIGHT" />
+				<SeatAnimInfo ref="SEAT_ANIM_DELTA_SUV_FRONT_RIGHT" />
+			</Item>
+			<Item>
+				<SeatInfo ref="SEAT_VAN_REAR_LEFT" />
+				<SeatAnimInfo ref="SEAT_ANIM_VAN_REAR_LEFT" />
+			</Item>
+			<Item>
+				<SeatInfo ref="SEAT_VAN_REAR_RIGHT" />
+				<SeatAnimInfo ref="SEAT_ANIM_VAN_REAR_RIGHT" />
+			</Item>
+			<Item>
+				<SeatInfo ref="SEAT_SWAT_VAN_EXTRA_LEFT_1" />
+				<SeatAnimInfo ref="SEAT_ANIM_SWAT_VAN_SIDE_LEFT" />
+			</Item>
+			<Item>
+				<SeatInfo ref="SEAT_SWAT_VAN_EXTRA_RIGHT_1" />
+				<SeatAnimInfo ref="SEAT_ANIM_SWAT_VAN_SIDE_RIGHT" />
+			</Item>
+			<Item>
+				<SeatInfo ref="SEAT_EXTRA_NO_SHUFFLE_LEFT_2" />
+				<SeatAnimInfo ref="SEAT_ANIM_VAN_REAR_LEFT" />
+			</Item>
+			<Item>
+				<SeatInfo ref="SEAT_EXTRA_NO_SHUFFLE_RIGHT_2" />
+				<SeatAnimInfo ref="SEAT_ANIM_VAN_REAR_RIGHT" />
+			</Item>
+			<Item>
+				<SeatInfo ref="SEAT_EXTRA_NO_SHUFFLE_LEFT_6" />
+				<SeatAnimInfo ref="SEAT_ANIM_VAN_REAR_LEFT" />
+			</Item>
+			<Item>
+				<SeatInfo ref="SEAT_EXTRA_NO_SHUFFLE_RIGHT_6" />
+				<SeatAnimInfo ref="SEAT_ANIM_VAN_REAR_RIGHT" />
+			</Item>
+			<Item>
+				<SeatInfo ref="SEAT_EXTRA_NO_SHUFFLE_LEFT_5" />
+				<SeatAnimInfo ref="SEAT_ANIM_VAN_REAR_LEFT" />
+			</Item>
+			<Item>
+				<SeatInfo ref="SEAT_EXTRA_NO_SHUFFLE_RIGHT_5" />
+				<SeatAnimInfo ref="SEAT_ANIM_VAN_REAR_RIGHT" />
+			</Item>
+			<Item>
+				<SeatInfo ref="SEAT_VAN_ARMORED_SIDE_LEFT" />
+				<SeatAnimInfo ref="SEAT_ANIM_FIRETRUCK_STANDING_LEFT" />
+			</Item>
+			<Item>
+				<SeatInfo ref="SEAT_VAN_ARMORED_SIDE_RIGHT" />
+				<SeatAnimInfo ref="SEAT_ANIM_FIRETRUCK_STANDING_RIGHT" />
+			</Item>
+			<Item>
+				<SeatInfo ref="SEAT_VAN_ARMORED_REAR_TURRET" />
+				<SeatAnimInfo ref="SEAT_ANIM_VAN_ARMORED_TURRET" />
+			</Item>
+		</Seats>
+		<EntryPoints>
+			<Item>
+				<EntryPointInfo ref="ENTRY_POINT_VAN_FRONT_LEFT" />
+				<EntryPointAnimInfo ref="ENTRY_POINT_ANIM_TRUCK_SANDKING_FRONT_LEFT" />
+			</Item>
+			<Item>
+				<EntryPointInfo ref="ENTRY_POINT_VAN_FRONT_RIGHT" />
+				<EntryPointAnimInfo ref="ENTRY_POINT_ANIM_TRUCK_SANDKING_FRONT_RIGHT" />
+			</Item>
+			<Item>
+				<EntryPointInfo ref="ENTRY_POINT_VAN_REAR_LEFT" />
+				<EntryPointAnimInfo ref="ENTRY_POINT_ANIM_TRUCK_SANDKING_REAR_LEFT" />
+			</Item>
+			<Item>
+				<EntryPointInfo ref="ENTRY_POINT_VAN_REAR_RIGHT" />
+				<EntryPointAnimInfo ref="ENTRY_POINT_ANIM_TRUCK_SANDKING_FRONT_RIGHT" />
+			</Item>
+			<Item>
+				<EntryPointInfo ref="ENTRY_POINT_VAN_SIDE_LEFT_1" />
+				<EntryPointAnimInfo ref="ENTRY_POINT_ANIM_VAN_SIDE_LEFT" />
+			</Item>
+			<Item>
+				<EntryPointInfo ref="ENTRY_POINT_VAN_SIDE_RIGHT_1" />
+				<EntryPointAnimInfo ref="ENTRY_POINT_ANIM_VAN_SIDE_RIGHT" />
+			</Item>
+			<Item>
+				<EntryPointInfo ref="ENTRY_POINT_VAN_ARMORED_SIDE_LEFT" />
+				<EntryPointAnimInfo ref="ENTRY_POINT_ANIM_FIRETRUCK_STANDING_LEFT" />
+			</Item>
+			<Item>
+				<EntryPointInfo ref="ENTRY_POINT_VAN_ARMORED_SIDE_RIGHT" />
+				<EntryPointAnimInfo ref="ENTRY_POINT_ANIM_FIRETRUCK_STANDING_RIGHT" />
+			</Item>
+			<Item>
+				<EntryPointInfo ref="ENTRY_POINT_VAN_EXTRA_LEFT_2" />
+				<EntryPointAnimInfo ref="ENTRY_POINT_ANIM_VAN_ARMORED_BACK_LEFT" />
+			</Item>
+			<Item>
+				<EntryPointInfo ref="ENTRY_POINT_VAN_EXTRA_RIGHT_2" />
+				<EntryPointAnimInfo ref="ENTRY_POINT_ANIM_VAN_ARMORED_BACK_RIGHT" />
+			</Item>
+			<Item>
+				<EntryPointInfo ref="ENTRY_POINT_VAN_ARMORED_TURRET_TOP_LEFT" />
+				<EntryPointAnimInfo ref="ENTRY_POINT_ANIM_VAN_ARMORED_TURRET_TOP_LEFT" />
+			</Item>
+			<Item>
+				<EntryPointInfo ref="ENTRY_POINT_VAN_ARMORED_TURRET_TOP_RIGHT" />
+				<EntryPointAnimInfo ref="ENTRY_POINT_ANIM_VAN_ARMORED_TURRET_TOP_RIGHT" />
+			</Item>
+		</EntryPoints>
+		<LayoutFlags>StreamAnims UseLeanSteerAnims UseFinerAlignTolerance UseLowerDoorBlockTest</LayoutFlags>
+		<BicycleInfo ref="NULL" />
+		<HandsUpClipSetId>busted_vehicle_van</HandsUpClipSetId>
+		<SteeringWheelOffset x="0.000000" y="0.350000" z="0.320000" />
+		<MaxXAcceleration value="4.00000" />
+		<BodyLeanXApproachSpeed value="5.00000" />
+		<BodyLeanXSmallDelta value="0.30000" />
+		<FirstPersonAdditiveIdleClipSets>
+			<Item>clipset@veh@van@ds@idle_a</Item>
+			<Item>clipset@veh@van@ds@idle_b</Item>
+			<Item>clipset@veh@van@ds@idle_c</Item>
+			<Item>clipset@veh@van@ds@idle_d</Item>
+			<Item>clipset@veh@van@ds@idle_e</Item>
+		</FirstPersonAdditiveIdleClipSets>
+		<FirstPersonRoadRageClipSets>
+			<Item>clipset@veh@van@ds@hit_wheel@idle_a</Item>
+			<Item>clipset@veh@van@ds@hit_wheel@idle_b</Item>
+			<Item>clipset@veh@van@ds@hit_wheel@idle_c</Item>
+		</FirstPersonRoadRageClipSets>
+	</Item>
+  </VehicleLayoutInfos>
+  <VehicleScenarioLayoutInfos />
+  <SeatOverrideAnimInfos />
+  <InVehicleOverrideInfos />
+  <FirstPersonDriveByLookAroundData />
+</CVehicleMetadataMgr>

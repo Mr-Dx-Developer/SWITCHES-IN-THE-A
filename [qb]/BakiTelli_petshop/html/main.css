@@ -1,0 +1,862 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+
+    .bg {
+        position: absolute;
+        display: none;
+        left: 0%;
+        right: 0%;
+        top: 0%;
+        bottom: 0%;  
+        background-image: url('./img/bg.png');
+        overflow: hidden;
+    }
+
+    .shadow {
+        position: absolute;
+        background: radial-gradient(29.72% 49.14% at 5.7% 98.19%, rgba(255, 255, 255, 0.11) 0%, rgba(255, 255, 255, 0) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */, radial-gradient(30.6% 30.6% at 58.1% 0%, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */, radial-gradient(63.52% 111.77% at 16.82% 80.23%, rgba(78, 152, 194, 0.168) 0%, rgba(78, 152, 194, 0) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+
+        height: 90vw;
+        width: 90vw;
+    }
+
+    .bottom-menu {
+        box-sizing: border-box;
+        position: absolute;
+        width: 63.4375vw;
+        height: 4.635416666666667vw;
+        left: 17.708333333333332vw;
+        top: 11.887852702056433vh;
+        overflow:hidden;
+        background: radial-gradient(100% 100% at 50% 0%, rgba(255, 255, 255, 0.08) 2.55%, rgba(255, 255, 255, 0) 100%), rgba(0, 0, 0, 0.55);
+        border: 1px solid rgba(255, 255, 255, 0.31);
+    }
+
+    .bottom-text {
+        font-family: 'Oswald';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 2.0833333333333335vw;
+        margin-left: 1vw;
+        margin-top: 1.683787661406026vh;
+        line-height: 122.2%;
+        color: rgba(255, 255, 255, 0.62);
+    }
+
+    
+    .bottom-text span{
+        font-family: 'Oswald';
+        font-style: normal;
+        font-weight: 300;
+        font-size: 1.5625vw;
+        line-height: 122.2%;
+        text-align: center;
+        color: rgba(255, 255, 255, 0.62);
+    }
+
+    .bottom-name-bg {
+        position: absolute;
+        width: 9.21875vw;
+        overflow: hidden;
+        height: 2.2395833333333335vw;
+        left: 44.827083333333336vw;
+        top:2.1437111429937827vh;
+        background: rgba(255, 255, 255, 0.17);
+        border-radius: 0.3645833333333333vw;
+    }
+
+    .bottom-name-bg .name{
+        font-family: 'Oswald';
+        font-style: normal;
+        margin-top: 0.972855093256815vh;
+        font-weight: 500;
+        font-size: 0.9375vw;
+        line-height: 122.2%;
+        text-align: center;
+        color: rgba(255, 255, 255, 0.62);
+    }
+
+    .bottom-name-bg .name span{
+        font-family: 'Oswald';
+        font-style: normal;
+        font-weight: 300;
+        font-size: 0.9375vw;
+        line-height: 122.2%;
+        text-align: center;
+        color: rgba(255, 255, 255, 0.62);
+    }
+
+    #wallet {
+        position:absolute;
+        color:#7FF3AD;
+        text-shadow: 1px 1px 12px rgba(127,243,173,0.91);
+        font-size:1.8vw;
+        height: 10vw;
+        width: 10vw;
+        margin-left: 54.827083333333336vw;
+        margin-top:-3.850884744141559vh;
+    }
+
+    .bottom-wallet-money {
+        font-family: 'Oswald';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 1.1458333333333333vw;
+        line-height: 122.2%;
+        text-align: center;
+        color: #FFFFFF;
+        margin-top:-3.4767097082735523vh;
+        margin-left: 54vw;
+    }
+
+    .bottom-wallet-money span{
+        font-family: 'Oswald';
+        font-style: normal;
+        font-weight: 300;
+        font-size: 1.1458333333333333vw;
+        line-height: 122.2%;
+        text-align: center;
+        color: #FFFFFF;
+    }
+
+    .box-1 {
+        box-sizing: border-box;
+        position: absolute;
+        width: 30.9375vw;
+        height: 18.28125vw;
+        left: 17.708333333333332vw;
+        top: 21.02175992348159vh;
+        background: radial-gradient(124.78% 211.82% at 128.62% 213.11%, rgba(117, 221, 165, 0.55) 0%, rgba(117, 221, 165, 0) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */, rgba(0, 0, 0, 0.42);
+        border: 2px solid rgba(255, 255, 255, 0.28);
+    }
+
+    .box-main-text {
+        font-family: 'Oswald';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 2.6041666666666665vw;
+        margin-top: 1.8708751793400287vh;
+        margin-left: 1.8vw;
+        color: #B4FFDB;
+    }
+
+    .box-main-text span{
+        font-family: 'Oswald';
+        font-style: normal;
+        font-weight: 300;
+        font-size: 2.6041666666666665vw;
+        line-height: 3.8541666666666665vw;
+        color: #73DDAA
+    }
+
+    .box-s-text {
+        margin-left: 2vw;
+        width: 12.7vw;
+
+        font-family: 'Oswald';
+        font-style: normal;
+        font-weight: 300;
+        font-size: 0.7291666666666666vw;
+        line-height: 1.09375vw;
+        color: #FFFFFF;
+        opacity: 0.5; 
+    }
+
+    .box-app {
+        box-sizing: border-box;
+        position: absolute;
+        width: 8.59375vw;
+        height: 2.1354166666666665vw;
+        left: 18.854166666666668vw;
+        top: 3.702773792443807vh;
+        border: 1px solid #39DF85;
+        transition:1s;
+        box-shadow: 0px 0px 19px 1px rgba(0, 255, 117, 0.51);
+        border-radius: 0.78125vw;
+    }
+
+    .box-app t{
+        font-family: 'Oswald';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 0.78125vw;
+        text-transform: uppercase;
+        color: #FFFFFF;
+        opacity: 0.7;
+        margin-left: 2.4vw;
+        line-height: 1.9vw;
+    }
+
+    .box-1-img {
+        background-image: url(./img/box-1.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 12.4vw;
+        width:14.5vw;
+        margin-left: 14.2vw;
+        margin-top: -4.639770444763271vh;
+    }
+
+    .box-app-price {
+        position: absolute;
+        font-family: 'Oswald';
+        font-style: normal;
+        font-weight: 300;
+        font-size: 0.78125vw;
+        margin-left: 21.2vw;
+        margin-top: -4.677187948350071vh;
+        line-height: 122.2%;
+        text-align: center;
+        color: rgba(255, 255, 255, 0.71);
+    }
+
+    .box-avaible {
+        box-sizing: border-box;
+        position: absolute;
+        width: 6.666666666666667vw;
+        height: 1.71875vw;
+        left: 2.0833333333333335vw;
+        top: 27.28359636537542vh;
+        border: 2px solid rgba(255, 255, 255, 0.22);
+        border-radius: 0.5208333333333334vw;
+    }
+
+    .box-avaible t{
+        font-family: 'Oswald';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 0.625vw;
+        line-height: 1.5104166666666667vw;
+        color: #FFFFFF;
+        margin-left: 1.5vw;
+    }
+
+    .box-2 {
+        box-sizing: border-box;
+        position: absolute;
+        width: 30.9375vw;
+        height: 18.28125vw;
+        left: 50.298333333333332vw;
+        top: 21.14162436548222vh;
+        background: radial-gradient(124.78% 211.82% at 128.62% 213.11%, rgba(237, 121, 121, 0.55) 0%, rgba(237, 121, 121, 0) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */, rgba(0, 0, 0, 0.42);
+        border: 2px solid rgba(255, 255, 255, 0.28);
+    }
+
+    .box-main-text-2 {
+        font-family: 'Oswald';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 2.6041666666666665vw;
+        margin-top: 1.9492385786802031vh;
+        margin-left: 1.8vw;
+        color: #FFB4B4;
+    }
+
+    .box-main-text-2-span{
+          font-family: 'Oswald';
+        font-style: normal;
+        font-weight: 300;
+        font-size: 2.6041666666666665vw;
+        margin-top:-6.997106598984771vh;
+        margin-left:6vw;
+        color: #FFB4B4;
+    }
+
+    .box-s-text-2 {
+        margin-left: 2vw;
+        width: 12.7vw;
+        margin-top: -0.3898477157360406vh;
+        position: absolute;
+        font-family: 'Oswald';
+        font-style: normal;
+        font-weight: 300;
+        font-size: 0.7291666666666666vw;
+        line-height: 1.09375vw;
+        color: #FFFFFF;
+        opacity: 0.5; 
+    }
+
+    .box-app-price-2 {
+        position: absolute;
+        font-family: 'Oswald';
+        font-style: normal;
+        font-weight: 300;
+        font-size: 0.78125vw;
+        margin-left: 21vw;
+        margin-top: -0.584771573604061vh;
+        line-height: 122.2%;
+        text-align: center;
+        color: rgba(255, 255, 255, 0.71);
+    }
+
+    .box-2-img {
+        background-image: url(./img/mot.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 13.8vw;
+        width:14.1vw;
+        margin-left: 14.8vw;
+        margin-top: -1.169543147208122vh;
+    }
+
+
+    .box-3 {
+        box-sizing: border-box;
+        position: absolute;
+        width: 63.4375vw;
+        height: 18.28125vw;
+        left: 17.708333333333332vw;
+        overflow:hidden;
+        top: 55.3243654822335vh;
+        background: radial-gradient(124.78% 211.82% at 128.62% 213.11%, rgba(235, 237, 121, 0.55) 0%, rgba(235, 237, 121, 0) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */, rgba(0, 0, 0, 0.42);
+        border: 2px solid rgba(255, 255, 255, 0.28);
+    }
+
+    .box-main-text-3 {
+        font-family: 'Oswald';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 2.6041666666666665vw;
+        margin-top: 1.9492385786802031vh;
+        margin-left: 1.8vw;
+        color: #FFF3B4;
+    }
+
+    .box-main-text-3 span{
+        font-family: 'Oswald';
+        font-style: normal;
+        font-weight: 300;
+        font-size: 2.6041666666666665vw;
+        line-height: 3.8541666666666665vw;
+        color: #CCC185;
+    }
+
+    .box-app-2 {
+        box-sizing: border-box;
+        position: absolute;
+        width: 11.197916666666666vw;
+        height: 2.7822916666666666vw;
+        left: 48.854166666666668vw;
+        top: 3.8578680203045685vh;
+        border: 1px solid #39DF85;
+        box-shadow: 0px 0px 19px 1px rgba(0, 255, 117, 0.51);
+        border-radius: 0.78125vw;
+    }
+
+    .box-app-2 t{
+        font-family: 'Oswald';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1.0179947916666667vw;
+        text-transform: uppercase;
+        color: #FFFFFF;
+        opacity: 0.7;
+        margin-left: 3.14vw;
+        line-height: 2.5vw;
+    }
+
+    .box-app-price-3 {
+        position: absolute;
+        font-family: 'Oswald';
+        font-style: normal;
+        font-weight: 300;
+        font-size: 1.0179947916666667vw;
+        margin-left: 51.9vw;
+        margin-top: -3.5086294416243655vh;
+        line-height: 122.2%;
+        text-align: center;
+        color: rgba(255, 255, 255, 0.71);
+    }
+
+    .box-3-img {
+        background-image: url(./img/box-3.png);
+        background-repeat: no-repeat;
+        height: 18.4vw;
+        width:84.71vw;
+        background-size: cover;
+        margin-left: -16.11vw;
+        margin-top:-0.584771573604061vh;
+    }
+
+    .close-button {
+        position:absolute;
+        font-family: 'Oswald';
+        font-style: normal;
+        border-radius:0.2vw;
+        color:rgb(220, 70, 70);
+        margin-left:60.2vw;
+        font-size:0.9vw;
+        transition:0.3s;
+        margin-top:0.584771573604061vh;
+    }
+    
+    .close-button:hover {
+        font-size:1.0vw;
+        cursor:pointer;
+        color:white;
+        font-family: 'Oswald';
+        font-style: normal;
+    }
+
+    .close-button2 {
+        position:absolute;
+        font-family: 'Oswald';
+        font-style: normal;
+        border-radius:0.2vw;
+        color:rgb(220, 70, 70);
+        margin-left:60.2vw;
+        font-size:0.9vw;
+        transition:0.3s;
+        margin-top:0.584771573604061vh;
+    }
+    
+    .close-button2:hover {
+        font-size:1.0vw;
+        cursor:pointer;
+        color:white;
+        font-family: 'Oswald';
+        font-style: normal;
+    }
+    
+    .bg-2 {
+        position: absolute;
+        display: none;
+        left: 0%;
+        right: 0%;
+        top: 0%;
+        bottom: 0%;  
+        background-image: url('./img/bg.png');
+        overflow: hidden;
+    }
+
+    .items {
+        position: relative;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        width: 63.2375vw;
+        height: 37vw;
+        margin-top:22.221319796954315vh;
+        background: radial-gradient(124.78% 211.82% at 128.62% 213.11%, rgba(117, 221, 165, 0.55) 0%, rgba(117, 221, 165, 0) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */, rgba(0, 0, 0, 0.42);
+        border: 2px solid rgba(255, 255, 255, 0.28);
+        margin-left:17.74vw;
+        border-radius: 0.1vw;
+    }
+
+    .item {
+        box-sizing: border-box;
+        float: left;
+        margin-left: 2.1vw;
+        margin-top: 1.9492385786802031vh;
+        width: 18vw;
+        height: 17vw;
+        background: radial-gradient(124.78% 211.82% at 128.62% 213.11%, rgba(117, 221, 165, 0.55) 0%, rgba(117, 221, 165, 0) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */, rgba(0, 0, 0, 0.42);
+        border: 2px solid rgba(255, 255, 255, 0.28);
+    }
+
+    ::-webkit-scrollbar-track
+{
+    background-color: rgba(0, 0, 0, 0.42);
+    border-radius: 0.7668711656441718vw;
+}
+
+::-webkit-scrollbar
+{
+    z-index:1;
+    width: 0.7668711656441718vw;
+    background-color: rgba(0, 0, 0, 0.42);
+}
+
+::-webkit-scrollbar-thumb
+{
+    background-color:rgba(117, 221, 165, 0.55)
+}
+
+*{
+    moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+ }
+
+ .item-text {
+    text-align: center;
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 2vw;
+    line-height: 122.2%;
+    letter-spacing: 0.02em;
+    margin-top: 0.9746192893401016vh;
+    color: #94A5A5;
+ }
+
+ .item-img {
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 10vw;
+    min-width: 10vw;
+     
+    max-height: 10vw;
+    max-width: 10vw;
+    margin-left: 3.8vw;
+    margin-top: 0.3898477157360406vh;
+}
+
+.prew-but {
+    border: 1px solid #39DF85;
+    height: 2.6vw;
+    width: 9vw;
+    transition:1s;
+    margin-left: 4vw;
+    margin-top: 0.584771573604061vh;
+    box-shadow: 0px 0px 19px 1px rgba(0, 255, 117, 0.51);
+    border-radius: 1.1503067484662577vw;
+}
+
+.prew-but t{
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 400;
+    font-size:1.3vw;
+    line-height: 2.5vw;
+    margin-left: 2vw;
+    text-transform: uppercase;
+    text-align: center;
+    color: #FFFFFF;
+    opacity: 0.7;
+}
+
+.bg-3 {
+    position: absolute;
+    display: none;
+    left: 0%;
+    right: 0%;
+    top: 0%;
+    bottom: 0%;  
+    overflow: hidden;
+}
+
+.buy-button {
+    position:absolute;
+    border: 1px solid #39DF85;
+    height: 3.6vw;
+    width: 18vw;
+    margin-top: 94.73299492385787vh;
+    box-shadow: 0px 0px 19px 1px rgba(0, 255, 117, 0.51);
+    background-color: rgba(51, 0, 0, 0.178);
+    border-radius: 1.1503067484662577vw;
+    transition:1s;
+    text-align: center;
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2.684049079754601vw;
+    text-shadow: 0px 0px 4px white;
+    line-height: 3.38036809815951vw;
+    letter-spacing: 0.16em;
+    margin-left: 37.9vw;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.enter-name {
+    position: absolute;
+    height: 2.6vw;
+    width: 14vw;
+    margin-top: 89.97005076142132vh;
+    background-color: rgba(0, 255, 117, 0.51);
+    border: 1px solid #39DF85;
+    opacity: 0.8;
+    border-radius: 2px;
+    text-align: center;
+    margin-left: 39.9vw;
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.1503067484662577vw;
+    line-height: 2.604294478527607vw;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: white;
+}
+
+.price-category {
+    position: absolute;
+    height:3vw;
+    text-align: center;
+    width: 10vw;
+    margin-top: 93.95329949238578vh;
+    font-family: 'Oswald';
+    font-style: normal;
+    margin-left: 25vw;
+}
+
+.price-text {
+    color: white;
+    border-radius: 0.2vw;
+    border-bottom: 0.2vw white solid;
+    font-size: 1.7vw;
+}
+
+.price-2 {
+    color: white;
+    opacity: 0.9;
+    font-size: 1.2vw;
+}
+
+.name-category {
+    position: absolute;
+    height:3vw;
+    text-align: center;
+    width: 10vw;
+    margin-top: 93.95329949238578vh;
+    font-family: 'Oswald';
+    font-style: normal;
+    margin-left: 59vw;
+}
+
+.name-text {
+    color: white;
+    border-radius: 0.2vw;
+    border-bottom: 0.2vw white solid;
+    font-size: 1.7vw;
+}
+
+.name-2 {
+    color: white;
+    opacity: 0.9;
+    font-size: 1.2vw;
+}
+
+.bg-3-center {
+    margin-left: 2vw;
+    margin-top:-2vw;
+  
+}
+
+.bg3-close{
+    position: absolute;
+    height: 2.6vw;
+    width: 10vw;
+    margin-top: 6.9680203045685275vh;
+    background-color: rgba(51, 0, 0, 0.178);
+    border: 1px solid #df3939;
+    opacity: 0.8;
+    border-radius: 1.1503067484662577vw;
+    text-align: center;
+    margin-left: 87.9vw;
+    font-family: 'Oswald';
+    transition:1s;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.1503067484662577vw;
+    line-height: 2.604294478527607vw;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: white;
+}
+
+    .shadow-2 {
+     position: absolute;
+    width: 50.80061349693251vw;
+    height: 7.668711656441718vw;
+    left: 23.877300613496935vw;
+    top: 97.30272596843615vh;
+    background: #39DF85;
+    filter: blur(70px);
+    }
+
+    .shadow-3 {
+     position: absolute;
+      opacity:0.6;
+    width: 14.95398773006135vw;
+    height: 7.736196319018404vw;
+    left: 91.7361963190184vw;
+    background: #FF5A5A;
+      margin-top:-4vh;
+    filter: blur(1.7115905754827053vw);
+    }
+
+    
+.bg-4 {
+    position: absolute;
+    display: none;
+    left: 0%;
+    right: 0%;
+    top: 0%;
+    bottom: 0%;  
+    overflow: hidden;
+}
+
+
+#container {
+    position: absolute;
+    width: 21.37116564417178vw;
+    display: block;
+    height: 35.3159509202454vw;
+    left: 141vh;
+    top: 24vh;
+    overflow: hidden;
+    background: #141414;
+    border-radius: 5px;
+  }
+  
+  #close:hover {
+    opacity: 0.6;
+    cursor: pointer;
+  }
+  
+  #main {
+    position: absolute;
+    width: 29.37116564417178vw;
+    height: 47.3159509202454vw;
+       border: 1px solid rgba(255, 255, 255, 0.31);
+    
+  left: 0px;
+  top: 0px;
+  border-radius: 5px;
+  }
+  
+  #hover {
+    position: absolute;
+  width: 18.788343558282207vw;
+  height: 18.404907975460123vw;
+  left: -3.834355828220859vw;
+  top: 78.02933574164616vh;
+  z-index: 2;
+  
+  background: #39DF85;
+  filter: blur(200px);
+  }
+  
+  #hover2 {
+    position: absolute;
+  width: 23.38957055214724vw;
+  height: 22.929447852760735vw;
+  left: 11.196319018404909vw;
+  top: -12.257481859798823vh;
+  background: #5A6BFF;
+  filter: blur(300px);
+  }
+  
+  #image {
+    position: absolute;
+    width: 22.37116564417178vw;
+    height: 10.5187116564417177vw;
+    left: 0px;
+    opacity:0.4;
+    top: 0px;
+      background: #0f9a4d;
+
+  }
+  
+  #imagehover {
+    position: absolute;
+  width: 29.37116564417178vw;
+  height: 14.263803680981596vw;
+  left: 0px;
+  top: 0px;
+  
+  background: linear-gradient(30deg, rgba(39, 39, 39, 0) 0%, #272727 100%);
+  }
+  
+  #maintext {
+    position: absolute;
+  left: 4.43558282208589vw;
+  top: 6.565226869297125vh;
+  
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 800;
+  font-size: 3.067484662576687vw;
+  line-height: 3.067484662576687vw;
+   color: #FFFFFF;
+  text-shadow: 0px 4px 13px rgba(255, 255, 255, 0.47);
+  }
+  
+  #smalltext {
+    position: absolute;
+  width: 19.55521472392638vw;
+  height: 1.3803680981595092vw;
+  left: 1.94846625766871vw;
+  top: 13.79893494441157vh;
+  
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.1503067484662577vw;
+  /* identical to box height */
+  
+  text-transform: uppercase;
+  
+  color: rgba(255, 255, 255, 0.6);
+  
+  }
+  
+
+  #close {
+    position: absolute;
+  width: 1.9115905754827053vw;
+  height: 1.9115905754827053vw;
+  left: 18.52331288343558vw;
+  top: 1.5927408053315064vh;
+  z-index: 1;
+  font-family: 'Oswald';
+  font-style: normal;
+  z-index: 2;
+  background: #FF5959;
+  border-radius: 2px;
+  }
+  
+  #close h2{
+    font-size: 18px;
+    margin-left: 0.7403067484662577vw;
+    margin-top: 0.4091370558375635vh;
+    color: #FFFFFF;
+  }
+
+
+  .bg-4-items {
+    height:20.8vw;
+    border-radius:0.2vw;
+    width:20.8vw;
+      margin-left:0.3vw;
+    margin-top:23.390862944162436vh;
+    overflow-y:scroll;
+    overflow-x:hidden;
+    
+  }
+
+  .bg-4-item {
+    height:3vw;
+    width:19.0vw;
+    margin-left:0.38vw;
+    margin-top:1.169543147208122vh;
+    opacity:0.9;
+    background:#0f9a4e9f;
+    border: 1px solid rgba(255, 255, 255, 0.31);
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 1.2625vw;
+    line-height: 232.2%;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.62);
+    transition:0.5s;
+    border-radius:0.2vw;
+  }
+
+.box-app:hover,.prew-but:hover, .buy-button:hover  {
+  background: #39DF85;
+  cursor:pointer;
+}
+
+.bg3-close:hover  {
+  background: #df3939;
+  cursor:pointer;
+}
+
+.bg-4-item:hover {
+  opacity:0.4;
+  cursor:pointer;
+}

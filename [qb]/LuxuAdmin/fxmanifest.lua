@@ -4,7 +4,7 @@ lua54 'yes'
 
 author 'Luxu#0001 <luxu@luxu.gg>'
 description 'Admin Menu by Luxu.gg'
-version '2.2.8'
+version '2.2.9'
 
 ui_page 'nui/index.html'
 files { 'nui/index.html', 'nui/**/*', 'nui/*', 'nui/addon_vehicles_imgs/*', 'nui/addon_ped_imgs/*', 'database/*' }

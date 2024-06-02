@@ -1,0 +1,412 @@
+locales['hu'] = {
+    -- [[ Generic ]]
+    ["interact"] = "Nyomd meg a ~INPUT_CONTEXT~ gombot hogy interakcióba lépj.",
+    ["billing_reason"] = "Számla indokja",
+    ["billing_amount"] = "Számla ára",
+    ["no_players_nearby"] = "Nincsen játékos a közlelben",
+    ["no_vehicles_nearby"] = "Nincsen jármü a közelben",
+    ["invoice_sent"] = "~g~$%s~s~ számla kiállitva",
+    ["too_far"] = "Túl messze",
+    ["yes"] = "Igen",
+    ["no"] = "Nem",
+    ["you_need_minimum_account_money"] = "Szükséged van legalább  $~y~%d~s~ ebbe ~b~%s~s~",
+    ["bill"] = "Számla",
+    ["bill_received"] = "Kaptál egy számlát <br>Ára: $%s<br>Indokja: %s<br><br>",
+    ["bill_paid"] = "Befizetted a számlát $%s",
+
+    -- [[ Actions menu ]]
+    ['open_actions_menu'] = "Menü megnyitása",
+    ['actions_menu'] = "Tevékenység Menü",
+    ['actions_billing'] = "Számlázás",
+    ['actions_search'] = "Keresés",
+    ['actions_start_dragging'] = "Vezető Szár",
+    ['actions_put_in_car'] = "Kocsiba rakás",
+    ['actions_take_from_car'] = "Kocsiból kivétel",
+    ['actions_menu_search'] = "Átkutatás",
+    ['actions_lockpick_car'] = "Autó zárfeltörés",
+    ['no_car_found'] = "Nincs a közeledben autó",
+    ['not_locked_vehicle'] = "Az autó nincs bezárva",
+    ['you_need_lockpick'] = "Szükséged van egy ~r~zárfeltörö~s~-re",
+    ['lockpick_used'] = "Elhasználtad a ~r~zárfeltörö~s~-t",
+    ['actions:lockpick:lockpickingVehicle'] = "Jármü Feltörése",
+    ['actions_menu_search_took'] = "Éppen ~g~Átkutatod~s~ ~y~x%d %s~s~",
+    ['actions_menu_search_stolen'] = "~y~x%d %s~s~ ezt ~r~elvették~s~ töled",
+    ['actions_menu_search_took_money'] = "Te ~g~Elvettél tőle ~s~ ~y~$%s %s~s~",
+    ['actions_menu_search_stolen_money'] = "~y~$%s %s~s~ ennyit ~r~elvett~s~ töled",
+    ['actions_menu_search_doesnt_have_weapon'] = "A Játékosnak ~r~nincsen~s~ ilyen fegyvere",
+    ['actions_menu_search_took_weapon'] = "Te ~g~elvettél~s~ ~y~%s~s~ ennyi ~y~%d lőszerrel~s~",
+    ['actions_menu_search_stolen_weapon'] = "~y~%s~s~ ennyi ~y~%d lőszerrel~s~ el lett ~r~véve~s~ tőled",
+    ['you_need_handcuffs'] = "Szükséged van ~r~bilincsre~s~",
+    ['not_handcuffed'] = "Nincsen ~r~megbilincselve~s~",
+    ['cant_while_dragging'] = "Vezetö száron ezt nem teheted meg",
+    ['search_inventory_empty'] = "A Játékosnál nincs semmi",
+    ['actions_menu_being_searched'] = "Jelenleg átkutatnak",
+    ['actions:wash_vehicle'] = "Jármü mosás",
+    ['actions:washing_vehicle'] = "Jármü mosása",
+    ['actions:repair_vehicle'] = "Jármü javitás",
+    ['actions:repairing_vehicle'] = "Jármü javitása",
+    ['actions:no_vehicles_close'] = "Nincs közelben jármü",
+    ['actions:impound_vehicle'] = "Jármü lefoglalás",
+    ['actions:impounding_vehicle'] = "Jármü lefoglalása",
+    ['actions:you_need'] = "Szükséged van ~y~%s~s~",
+    ['actions:check_identity'] = "Személyazonosság ellenörzése",
+    ['actions:check_vehicle_owner'] = "Jármü Tulajdonosa",
+    ['actions:checkVehicleOwner:owner'] = "Ez a jármü az ö tulajdona: ~y~%s~s~",
+    ['actions:checkVehicleOwner:owner_not_found'] = "Ennek a jármünek nincs tulajdonosa",
+    ['actions:checkVehicleOwner:car_not_found'] = "Nincs jármü a közelben",
+    ['actions:no_player_found'] = "Nics játékos a kzelben",
+    ['actions:checkIdentity:player_found'] = "Neve: ~y~%s~s~",
+    ['actions:checkIdentity:somebody_checked_your_id'] = "~y~Valaki~s~ megnézte a személyazonosságod",
+    ['actions:license'] = "<span style='color: green'>%s</span>",
+    ['actions:licenses'] = "Engedélyek",
+    ['actions:no_license_found'] = "Nincsenek engedélyei",
+    ['actions:check_licenses'] = "Engedélyek megnézése",
+    ['actions:driving_license'] = "Vezetöi Engedély",
+    ['actions:weapon_license'] = "Fegyver Engedély",
+    ['actions:license:give_remove'] = "<span style='color:green'>Adott</span>/<span style='color:orange'>Elvett</span> engedélyt",
+    ['actions:gave_license'] = "Te ~g~kaptál~s~ ~y~%s~s~",
+    ['actions:removed_license'] = "Töled ~r~elvettek~s~ ~y~%s~s~",
+    ['actions:heal_small'] = "Kisebb sebek gyógyitása",
+    ['actions:heal_big'] = "Nagyobb sebek gyógyitása",
+    ['actions:you_need_bandage'] = "Szükséged van ~r~kötszerre~s~",
+    ['actions:revive'] = "Újraélesztés",
+    ['actions:revive:not_dead'] = "A játékos nincs meghalva",
+    ['actions:you_need_medikit'] = "Szükséged van ~r~elsösegélycsomagra~s~",
+    ['actions:the_player_must_be_handcuffed'] = "Megkell bilicselned vagy fel kell tennie a kezét",
+
+    -- [[ Stash stuff ]]
+    ["open_stash"] = "Nyomd meg a  ~INPUT_CONTEXT~ gombot hogy megnyisd a tárolót.",
+    ["deposited"] = "Betettél ~b~x%d~s~ ~y~%s~s~",
+    ["not_enough"] = "Nincs elég ~y~%s~s~",
+    ["no_space"] = "Nincs elég helyed",
+    ["took"] = "Kivettél ~b~x%d~s~ ~y~%s~s~",
+    ["impossible_take"] = "Nem lehet kivenni x%d %s",
+    ["empty_inventory"] = "Nincs semmi nálad",
+    ["empty_stash"] = "Nincs semmi a tárolóba",
+    ['stash'] = "Tároló",
+    ['stash_take'] = "Tárolóból - Kivétel",
+    ['stash_deposit'] = "Tárolóból - Betétel",
+    ['quantity'] = "Mennyiség",
+    ['invalid_quantity'] = "Érvénytelen mennyiség",
+    ['deposit'] = "Berakás",
+    ['take'] = "Kivétel",
+
+    -- [[ Wardrobe stuff ]]
+    ["open_wardrobe"] = "Nyomd meg a ~INPUT_CONTEXT~ hogy megnyisd a wardrobe-ot",
+    ['player_clothes'] = "Saját Ruhák",
+    ['remove_cloth'] = "Ruha Törlés",
+    ['save_cloth'] = "Jelenlegi ruha mentése",
+    ['you_saved_outfit'] = "Ruha elmentve",
+    ['delete_outfit'] = "Ruha Törölve",
+    ['clothes'] = "Ruhák",
+    ['outfit_label_empty'] = "Ruha neve üres!",
+    ['outfit_name'] = "Ruha neve",
+    ["wardrobe:empty"] = "Wardrobe üres!",
+    ["wardrobe:delete"] = "%s - <span style='color:orange'>Törlés</span>",
+
+    -- [[ Boss Stuff ]]
+    ["open_boss"] = "Nyomd meg a ~INPUT_CONTEXT~ hogy megnyisd a Fönöki menüt!",
+    ["not_boss"] = "Nem vagy Fönök!",
+    ["boss_menu"] = "Fönök Menü",
+    ["boss:society_money"] = "Frakció Pénz: $%s",
+    ["boss:withdraw"] = "Pénz Kivétel",
+    ["boss:deposit"] = "Pénz Betétel",
+    ["boss:wash_money"] = "Pénz Mosás",
+    ["boss:grades"] = "Fizetések kezelése",
+    ["boss:employees"] = "Tagok Kezelése",
+    ["boss:withdraw_amount"] = "Kivétel Mennyiség",
+    ["boss:deposit_amount"] = "Betétel Mennyiség",
+    ["boss:you_dont_have_enough_money"] = "Nincs elég pénzed",
+    ["boss:invalid_amount"] = "Érvénytelen mennyiség",
+    ["boss:withdrew_money"] = "Kivettél ~g~$%s~s~",
+    ["boss:deposited_money"] = "Betettél ~g~$%s~s~",
+    ["boss:rank_salary"] = "%s - <span style='color:green'>$%s</span>",
+    ["boss:new_salary"] = "Új fizetés",
+    ["boss:grade_salary_updated"] = "~y~Rang Fizetése~s~ ~g~frissitve~s~",
+    ["boss:grade_salary_not_updated"] = "~r~Nembirod Frissiteni~s~ ~y~a fizetést~s~",
+    ["boss:employees_list"] = "Tagok listája",
+    ["boss:recruit"] = "Új Tag felvétele",
+    ["boss:employee"] = "%s %s - <span style='color:blue'>%s</span>",
+    ["boss:fire"] = "<span style='color:orange'>Kirugás</span>",
+    ["boss:change_grade"] = "<span style='color:blue'>Rang Megváltoztatás</span>",
+    ["boss:are_you_sure"] = "Biztos vagy benne?",
+    ["boss:cancel"] = "Mégse",
+    ["boss:employee_fired"] = "Tag ~r~Kirugva~s~",
+    ["boss:you_got_hired"] = "Kilettél ~g~rúgva~s~ innen ~b~%s~s~",
+    ["boss:you_hired"] = "Fel  ~g~lettél véve~s~ %s",
+    ["boss:nobody_close"] = "Senki sincs közel",
+    ["boss:grade"] = "%d. %s - Fizetés <span style='color:green'>$%s</span>",
+    ["boss:changed_grade_successfully"] = "Sikeres rangváltoztatás",
+    ["boss:your_grade_changed_to"] = "Rangod módositva lett ~b~%s~s~",
+    ["boss:how_much_to_wash"] = "Mennyi pénzt szeretnél kimosni?",
+    ["boss:you_washed_money"] = "Mostál ennyit ~r~$%s~s~ és ennyit kaptál ~g~$%s~s~",
+    ["boss:not_enough_dirty_money"] = "Nincs elég ~r~Piszkos pénzed~s~",
+    ["boss:couldnt_wash_money"] = "Nem tudsz pénz mosni!",
+
+    -- [[ Garage Stuff ]]
+    ["open_garage"] = "Nyomd meg a ~INPUT_CONTEXT~ to open garage",
+    ["garage"] = "Garázs",
+    ["take_vehicle"] = "Jármü Kivétel",
+    ["park_vehicle"] = "Jármü Tárolása",
+    ["no_vehicle"] = "Nincs jármü a garázsodba!",
+
+    -- [[ Shop Stuff ]]
+    ["open_shop"] = "Nyomd meg a ~INPUT_CONTEXT~ hogy megnyisd a boltot",
+    ["job_shop"] = "Munka Bolt",
+    ['shop:item'] = "%s - <span style='color:%s;'>$%d</span>",
+    ['not_enough_money'] = "Nincs elég pénzed",
+    ['you_bought'] = "Vettél ~b~x%d~s~ ~y~%s~s~ ennyiért ~%s~$%s~s~",
+    ['shop_empty'] = "Ez a bolt üres!",
+    ['shop:you_already_have_that_weapon'] = "Neked már van ilyened ~y~%s~s~",
+
+    -- [[ Garage Buyable stuff ]]
+    ['buy_vehicle'] = "Jármü Vétel",
+    ['buyable_vehicle'] = "%s - <span style='color:green;'>$%s</span>",
+    ['bought_vehicle'] = "~g~Vettél~s~ egy kocsit",
+    ['are_you_sure'] = "Biztos megveszed ezt %s ennyiért $%s?",
+    ['no_vehicles_in_garage'] = "Nincs jármüved a garázsban",
+    ['vehicle_outside'] = "Nincs a jármü a garázsban!",
+    ['buyable_vehicle:outside'] = "<span style='color:orange'>%s</span>",
+    ['permanent_garage:no_vehicle_to_buy'] = "Nincs semmi amit megtudnál venni.",
+
+    -- [[ Garage Owned stuff ]]
+    ['garage_owned:press_to_open'] = "Nyomd meg a ~INPUT_CONTEXT~ hogy megnyisd a garázst.",
+	
+    -- [[ Crafting Table Stuff ]]
+    ['open_crafting_table'] = "Nyomd meg a ~INPUT_CONTEXT~ gombot hogy megnyisd a craft asztalt",
+    ['crafting_table'] = "Craft Asztal",
+    ['dont_have_ingredients'] = "Nincsen meg az összes ~r~szükséges~s~ tárgy",
+    ['crafting'] = "Craftolás %s",
+    ['you_crafted'] = "Craftoltál ~b~x%d~s~ ~g~%s~s~",
+    ['already_have'] = "Neked már van ~g~%s~s~",
+    ['ingredient'] = "%s - <span style='color: %s'>%d/%d</span>",
+    ['craft_item_label'] = "<span style='color: %s'>%s</span>",
+    ['press_to_stop'] = "Nyomd meg a  ~INPUT_CONTEXT~ gombot hogy megállisd",
+    ['you_stopped'] = "Megszakitottad a craftolást",
+    ['crafting_table:nothing_to_craft'] = "Nincs semmid a craftoláshoz",
+    ["craft_amount"] = "Craft mennyiség",
+
+    -- [[ Armory stuff ]]
+    ['open_armory'] = "Nyomd meg a ~INPUT_CONTEXT~ hogy megnyisd a fegyver raktárat.",
+    ['not_have_any_weapon'] = "Nincsen fegyvered",
+    ['armory'] = "Fegyver Raktár",
+    ['armory_take'] = "Fegyver Raktár - Kivétel",
+    ['armory_deposit'] = "Fegyver raktár - Betétel",
+    ['take_weapon'] = "Fegyver kivétele",
+    ['deposit_weapon'] = "Fegyver betétele",
+    ['you_dont_have_weapon'] = "Neked ~r~nincs~s~ ilyen fegyvered",
+    ['no_weapons_in_armory'] = "Nincs bent fegyver.",
+    ['you_deposited_weapon'] = "Te ~g~leraktad~s~ %s",
+    ['you_took_weapon'] = "Te ~r~felvetted~s~ %s",
+    ['you_already_have_that_weapon'] = "Neked már van egy  ~g~%s~s~",
+    ['weapon_ammo'] = "Fegyver löszer",
+    ['weapon'] = "%s - x%d löszer",
+
+    -- [[ Job outfit stuff ]]
+    ['open_job_outfit'] = "Nyomd meg a ~INPUT_CONTEXT~ megnyisd a öltözöt",
+    ['job_outfit'] = "Munka ruhák",
+    ['no_outfits'] = "Nincsen semmilyen ruha",
+    ['civilian_outfit'] = "Civil Öltözet",
+
+    -- [[ Teleport Stuff ]]
+    ['teleport'] = "Nyomd meg a ~INPUT_CONTEXT~ gombot a teleportáláshoz",
+    ['teleport_to'] = "Nyomd meg a ~INPUT_CONTEXT~ gombot hogy teleportálj ide %s",
+
+    -- [[ Safe Stuff ]]
+    ['open_safe'] = "Nyomd meg a ~INPUT_CONTEXT~ gombot hogy megnyisd a széfet",
+    ['account'] = "%s - <span style='color:%s;'>$%s</span>",
+    ['safe'] = "Széf",
+    ['empty_safe'] = "Üres a széf",
+    ['nothing_to_deposit'] = "Nincs semmi amit betehetnél ide",
+    ['withdrawn_safe'] = "Kivettél ennyit %s$%s %s~s~",
+    ['deposited_safe'] = "Betettél ennyit %s$%s %s~s~",
+    ['cash'] = "Készpénz",
+    ['withdraw'] = "Kivétel",
+
+    -- [[ Market Stuff ]]
+    ['open_market'] = "Nyomd meg a ~INPUT_CONTEXT~ to open market",
+    ['market_item'] = "%s - <span style='color:%s;'>$%s - $%s</span>",
+    ['market'] = "Piac",
+    ['not_enough_item'] = "Nincsen neked elég ebből %s",
+    ['you_sold'] = "Eladtál ~b~x%d~s~ ~y~%s~s~ ennyiért %s$%s",
+    ['nothing_can_be_sold_yet'] = "Nincs semmi amit elbirnál adni",
+    ['market:how_many_to_sell'] = "Mennyit szeretnél eladni",
+    ['market:you_are_already_selling'] = "Jelenleg eladsz",
+    ['market:selling'] = "Eladás x%d - %s",
+
+    -- [[ Harvest Stuff ]]
+
+    ['harvest'] = "Nyomd meg a ~INPUT_CONTEXT~ gombot az aratáshoz",
+    ['harvest:harvesting'] = "Aratás %s",
+    ['harvest:press_to_stop'] = "Nyomd meg a ~INPUT_CONTEXT~ gombot hogy befejezd",
+    ['harvest:you_will_stop_on_finish'] = "Sikeresen befejezted",
+    ['harvest:you_need_tool_count'] = "Szükséged van erre ~b~x%d~s~ ~y~%s~s~",
+    ['harvest:you_need_tool'] = "Szükséged van erre ~y~%s~s~",
+
+    -- [[ Weapon upgrader ]]
+    ['open_weapon_upgrader'] = "Nyomd meg a ~INPUT_CONTEXT~ hogy megnyisd a fegyver upgradet",
+    ['weapon_upgrader'] = "Fegyver Upgrader",
+    ['owned_component'] = "%s - <span style='color:green;'>Saját</span>",
+    ['buy_component'] = "%s - <span style='color:green;'>$%s</span>",
+    ['tint_default'] = "Alap",
+    ['tint_green'] = "Zöld",
+    ['tint_gold'] = "Arany",
+    ['tint_pink'] = "Rózsaszin",
+    ['tint_army'] = "Army",
+    ['tint_lspd'] = "LSPD",
+    ['tint_orange'] = "Narancssárga",
+    ['tint_platinum'] = "Platinum",
+    ['components'] = "Alkatrészek",
+    ['tints'] = "Árnyalatok",
+    ['already_have_tint'] = "Neked már van ilyen árnyalatod",
+    ['bought_tint'] = "Vettél ilyen ~y~%s~s~ árnyalatod ennyiért ~g~%s~s~",
+    ['bought_component'] = "Vettél ~y~%s~s~ ennyiért ~g~%s~s~",
+    ['removed_component'] = "Eltávolitottad ezt ~y~%s~s~ erröl ~g~%s~s~",
+
+    -- [[ Duty Stuff]]
+    ['go_on_duty'] = "Nyomd meg a ~INPUT_CONTEXT~ gombot hogy ~g~felvedd a szolgálatot~s~",
+    ['go_off_duty'] = "Nyomd meg a ~INPUT_CONTEXT~ gombot hogy ~r~leadd a szolgálatot~s~",
+
+    -- [[ Job Shop Stuff ]]
+    ['open_job_shop'] = "Nyomd meg a ~INPUT_CONTEXT~ gombot hogy megnyisd a boltot",
+    ['job_owned_shop'] = "Munka Bolt",
+    ['shop'] = "Bolt",
+    ['put_on_sale'] = "Eladásra kinálás",
+    ['remove_from_sale'] = "Eladásról eltávolitás",
+    ['item_price'] = "Tárgy Ára",
+    ['invalid_price'] = "Érvénytelen ár",
+    ['job_shop_item'] = "%s - x%d - <span style='color: green'>$%s</span>",
+    ['job_shop_empty'] = "Üres a bolt",
+    ['job_shop_quantity'] = "Mennyiség - x%d -> <span style='color: green'>$%s</span>",
+    ['job_shop_cant_afford'] = "Nem ~r~teheted meg~s~ ezt",
+    ['job_shop:bought_item'] = "~g~Vettél~s~ x%d ~y~%s~s~ ennyiért ~g~$%s~s~",
+    ['job_shop:add_supplies'] = "Kellékek hozzáadása",
+    ['job_shop:what_to_put_on_sale'] = "Mit szeretnél eladni?",
+    ['job_shop:what_to_remove_from_sale'] = "Mit szeretnél kivenni?",
+    ['job_shop:what_to_restock'] = "Mit szeretnél utánpotlásba rakni?",
+    ['job_shop:how_many_to_restock'] = "Mennyit szeretnél eladásra kinálni?",
+    ['job_shop:added_to_supplies'] = "Hozzáadva ~b~x%d~s~ ~y~%s~s~ a utánpotláshoz",
+    ['job_shop:you_put_on_sale'] = "Eladásra kináltál ~b~x%d~s~ ~y~%s~s~ ennyiért ~g~$%s~s~",
+    ['job_shop:you_removed_from_sale'] = "Eladásból eltávolitottad ~b~x%d~s~ ~y~%s~s~",
+    ['job_shop:item'] = "<span style='color: blue'>x%d</span> - %s",
+    ['job_shop:you_already_have_that_weapon'] = "Már van ilyened ~y~%s~s~",
+    ['job_shop:nothing_to_sell'] = "Nincs semmi amit elbirnál adni",
+
+    -- [[ Process stuff ]]
+    ['process:press_to_process'] = "Nyomd meg a ~INPUT_CONTEXT~ gombot a folyamathoz",
+    ['process:you_need'] = "Neked szükséged van ~b~x%d~s~ ~y~%s~s~",
+    ['process:processing'] = "Folyamat %s",
+    ['process:press_to_stop'] = "Nyomd meg a ~INPUT_CONTEXT~ gombot hogy megszakisd",
+    ['process:you_will_stop_on_finish'] = "Sikeresen megszakitottad",
+    ['process:no_space'] = "Nem tudod cipelni ezt ~b~x%d~s~ ~y~%s~s~",
+
+    -- [[ Logs stuff ]]
+    ['log:generic'] = "Nickname: %s\nIdentifier: %s\n\n%s",
+
+    ['log_deposited_stash'] = "Berakott Tárgy",
+    ['log_deposited_stash_description'] = "Berakott x**%d** **%s** (**%s**) in marker ID **%d**",
+
+    ['log_took_stash'] = "Vett tárgy",
+    ['log_took_stash_description'] = "Vett x**%d** **%s** (**%s**) from marker ID **%d**",
+
+    ['log_deposited_weapon'] = "Berakott fegyver",
+    ['log_deposited_weapon_description'] = "Berakott **%s** (**%s**) with x**%d** ammo in marker ID **%d**",
+
+    ['log_took_weapon'] = "Vett Fegyver",
+    ['log_took_weapon_description'] = "Vett **%s** (**%s**) with x**%d** ammo in marker ID **%d**",
+
+    ['log_deposited_money'] = "Berakott pénz",
+    ['log_deposited_money_description'] = "Berakott $**%d** in society '**%s**'",
+
+    ['log_withdrew_money'] = "Kivett pénz",
+    ['log_withdrew_money_description'] = "Kivett $**%d** from society '**%s**'",
+
+    ['log_updated_salary'] = "Fizetés Szerkesztve",
+    ['log_updated_salary_description'] = "Fizetés szerkesztve ebbe a rendfokozatba **%d** to **$%s**",
+
+    ['log_fired_employee'] = "Ember kirugás",
+    ['log_fired_employee_description'] = "Kirugott egy embert azonositója **%s**",
+
+    ['log_recruited_employee'] = "Ember felvétele",
+    ['log_recruited_employee_description'] = "Felvett **%s** azonositója **%s**",
+
+    ['log_changed_grade_employee'] = "Rangja megváltoztatva",
+    ['log_changed_grade_employee_description'] = "Megváltoztatta a rangját neki **%s** to **%d**",
+
+    ['log_washed_money'] = "Pénz Mosás",
+    ['log_washed_money_description'] = "Mosott $**%s**",
+
+    ['log_sold_item'] = "Eladott tárgy",
+    ['log_sold_item_description'] = "Eladott **x%d** **%s** for **$%s**",
+
+    ['log_bought_item'] = "Vett tárgy",
+    ['log_bought_item_description'] = "Vett x%d **%s** (**%s**) marker ID **%d**",
+
+    ['log_not_existing_item'] = "Nem megfelő item",
+    ['log_not_existing_item_description'] = "Megprobált venni '**%s**' from marker ID **%d**, ami nincs a boltba",
+
+    ['log_bought_vehicle'] = "Vett autót",
+    ['log_bought_vehicle_description'] = "Vett '**%s**' for $**%d** from marker ID **%d**",
+
+    ['log_not_existing_vehicle'] = "Nem megfelelő autó",
+    ['log_not_existing_vehicle_description'] = "Megprobált venni '**%s**' from marker ID **%d**, ami nincs a garázsban",
+
+    ['log_crafted_item'] = "Craftolt Tárgy",
+    ['log_crafted_item_description'] = "Craftolt **x%d** **%s** (**%s**) in marker ID **%d**",
+
+    ['log_deposited_safe'] = "Berakott a széfbe",
+    ['log_deposited_safe_description'] = "Berakott $**%s** **%s** in marker ID **%d**",
+
+    ['log_withdrew_safe'] = "Kivett a széfből",
+    ['log_withdrew_safe_description'] = "Kivett $**%s** **%s** from marker ID **%d**",
+
+    ['log_harvested'] = "Aratott",
+    ['log_harvested_description'] = "Aratott x**%d** **%s** from marker ID **%d**",
+
+    ['log_bought_tint'] = "Vásárolt árnyalatot",
+    ['log_bought_tint_description'] = "Megvette a  **%s** '**%s**' árnyalatot erre $**%d** from marker ID **%d**",
+
+    ['log_removed_component'] = "Alkatrész eltávolitva",
+    ['log_removed_component_description'] = "Eltávolitott **%s** erről **%s** from marker ID **%d**",
+
+    ['log_bought_component'] = "Alkatrészt vett",
+    ['log_bought_component_description'] = "Vett **%s** for **%s** from marker ID **%d**",
+
+    ['log_not_allowed_marker'] = "Nincs hozzá joga hogy használja",
+    ['log_not_allowed_marker_description'] = "Használni probálta a CP-t ID %d amihez nincs joga",
+
+    ['logs:process:title'] = "Feldolgozott",
+    ['logs:process:description'] = "Feldolgozott **x%d** **%s** erre **x%d** **%s**",
+
+    ['logs:job_shop:put_on_sale'] = "Eladásra kinálta",
+    ['logs:job_shop:put_on_sale:description'] = "Eladásra kinált **x%d** **%s** enyiért **$%s** in marker ID **%d**",
+
+    ['logs:job_shop:remove_from_sale'] = "Kivette az eladásból",
+    ['logs:job_shop:remove_from_sale:description'] = "Eltávolitotta **x%d** **%s** ennyiért **$%s** from marker ID **%d**",
+
+    ['logs:job_shop:bought_item'] = "Vett tárgyat",
+    ['logs:job_shop:bought_item:description'] = "Vett **x%d** **%s** Ennyiért **$%s** in marker ID **%d**",
+
+    ['logs:job_shop:add_to_supplies'] = "Hozzáadva a kellékekhez",
+    ['logs:job_shop:add_to_supplies:description'] = "Hozzáadta **x%d** **%s** ennyiért **$%s** to supplies in marker ID **%d**",
+
+    -- Steal action
+    ['logs:actions:stolen_item'] = "Elvett tárgy",
+    ['logs:actions:stolen_item:description'] = "Elvett **x%d** **%s** tőle **%s** (%s)",
+
+    ['logs:actions:stolen_account'] = "Elvett felhasználó",
+    ['logs:actions:stolen_account:description'] = "Elvett $**%d** **%s** tőle **%s** (%s)",
+
+    ['logs:actions:stolen_weapon'] = "Elvett fegyver",
+    ['logs:actions:stolen_weapon:description'] = "Elvett **%s** ennyi **x%s** lőszerrel tőle **%s** (%s)",
+
+    -- Other
+    ["you_cant_do_this_in_a_vehicle"] = "Ezt nem csinálhatod jármüben",
+    ["society_received_money_from_your_sale"] = "Munkáltatód elküldte a fizetésedet: ~g~$%s~s~",
+    ["actions_put_soft_handcuffs"] = "Megbilincselés",
+    ["actions_put__hard_handcuffs"] = "Eloldozás",
+    ["now_you_are_on_duty"] = "Szolgálatba léptél",
+    ["now_you_are_off_duty"] = "Kiléptél a szolgálatból",
+
+    ["item_received"] = "Kaptál ~b~x%d~s~ ~y~%s~s~"
+}

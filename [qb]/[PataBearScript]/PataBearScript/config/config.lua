@@ -26,13 +26,13 @@ AnswerTimeout = 10              --second max for answering when give baby
 -- Targetting = "ox_target"     -- put ox_target if you are using ox target or qb_target if you are using qb target
 Targetting = "qb_target"
 
-UseWhitelistSystem = false      -- If you want to use the built in whitelist system, go to config/server/server.lua if you want to add your own whitelist system
+UseWhitelistSystem = true      -- If you want to use the built in whitelist system, go to config/server/server.lua if you want to add your own whitelist system
 
 WhitelistId = {                 -- Put here the ID of the player that you want to be able to use the script, only one ID is necessary per player
-	"fivem:XXX",
-	"steam:XXX",
-	"discord:XXX",
-	"license:XXX",
-	"license2:XXX",
-	"license:12f31aee89ba397bce9ebcfaffac4b43d840f948",
+	"fivem:7207701", --bloody
+	"fivem:10609279",--vroy
+	"fivem:12775132",--quis
+	"fivem:13805337",--marzb
+	"fivem:10813044",--hailey
+	"license:license:1387c9bde6ce689543a62984d9f6504421b445b2",--celeb
 }

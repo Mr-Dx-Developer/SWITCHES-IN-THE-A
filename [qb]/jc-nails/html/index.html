@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<meta charset="UTF-8">
+	<head>
+        <script src="js/jquery.min.js"></script>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+
+	<body style="background-color: transparent;">
+
+        <div class="content" style="float: right;">
+            <div class="row" style="float: left;">
+                <div class="col">
+                    <button id="cancel" style="margin-top: 10px; margin-left: 10px;" type="button" class="btn-close" aria-label="Close"></button>
+                </div>
+            </div>
+            
+            <div class="row align-items-center">
+                <div class="col">
+                    <img src="img/icon.png" alt="">
+                </div>
+            </div>
+
+            <div class="row align-items-center">
+                <div class="col">
+                    <button id="nails-1-desc" type="button" class="btn btn-secondary">-</button>
+                </div>
+                <div class="col-9">
+                    <label id="label-nails-1" for="nails-1" class="form-label">Uña 0/50</label>
+                    <input type="range" class="form-range" value="1" min="1" max="50" step="1" id="nails-1">
+                </div>
+                <div class="col">
+                    <button id="nails-1-asc" type="button" class="btn btn-secondary">+</button>
+                </div>
+            </div>
+
+            <div class="row align-items-center">
+                <div class="col">
+                    <button id="nails-2-desc" type="button" class="btn btn-secondary">-</button>
+                </div>
+                <div class="col-9">
+                    <label id="label-nails-2" for="nails-2" class="form-label">Color 0/20</label>
+                    <input type="range" class="form-range" value="1" min="1" max="20" step="1" id="nails-2">
+                </div>
+                <div class="col">
+                    <button id="nails-2-asc" type="button" class="btn btn-secondary">+</button>
+                </div>
+            </div>
+
+            <div class="row align-items-end" style="margin-top: 40px;">
+                <div class="col">
+                    <button id="confirm" type="button" class="btn btn-outline-success">Confirmar</button>
+                </div>
+            </div>
+        </div>
+
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script type="text/javascript" src="js/script.js"></script>
+  	</body>
+</html>

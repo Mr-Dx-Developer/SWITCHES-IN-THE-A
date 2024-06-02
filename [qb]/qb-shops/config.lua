@@ -3,11 +3,6 @@ Config.UseTruckerJob = false -- true = The shops stock is based on when truckers
 Config.UseTarget = GetConvar('UseTarget', 'false') == 'true' -- Use qb-target interactions (don't change this, go to your server.cfg and add `setr UseTarget true` to use this and just that from true to false or the other way around)
 Config.FirearmsLicenseCheck = false -- Whether a arms dealer checks for a firearms license
 Config.ShopsInvJsonFile = './json/shops-inventory.json' -- json file location
-Config.SellCasinoChips = {
-    coords = vector4(950.37, 34.72, 71.87, 33.82),
-    radius = 1.5,
-    ped = 's_m_y_casino_01'
-}
 Config.Products = {
  --[[    ["fishing"] = {
         [1] = {
@@ -27,6 +22,8 @@ Config.Products = {
             slot = 2,
         }
     }, ]]
+    
+
     ["racetrack"] = {
         [1] = {
             name = "fmdfurainfrappe",
@@ -2200,6 +2197,38 @@ Config.Products = {
             info = {},
             type = "item",
             slot = 145,
+        },
+        [146] = {
+            name = "levonorgestrel",
+            price = 25, 
+            amount = 10,
+            info = {},
+            type = "item",
+            slot = 146,
+        },
+        [147] = {
+            name = "mifepristone",
+            price = 25, 
+            amount = 10,
+            info = {},
+            type = "item",
+            slot = 147,
+        },
+        [148] = {
+            name = "testpack",
+            price = 25, 
+            amount = 10,
+            info = {},
+            type = "item",
+            slot = 148,
+        },
+        [149] = {
+            name = "viagra",
+            price = 25, 
+            amount = 10,
+            info = {},
+            type = "item",
+            slot = 149,
         },
 
 
@@ -4522,7 +4551,7 @@ Config.Products = {
         },
     },
 }
-    Config.Locations = {
+    Config.Locations = {    
     ["blackmarket1"] = {
         ["label"] = "weapon",
         ["coords"] = vector4(-597.31, 223.69, 74.15, 267.74),
@@ -4801,9 +4830,9 @@ Config.Products = {
         ["delivery"] = vector4(1251.7978515625,-699.2175903320312,64.93408203125,277.7952880859375)
     },
 
-    ["FMDFOODw"] = {
+    ["FMDFOODhook"] = {
         ["label"] = "Food Shop",
-        ["coords"] = vector4(vector4(-1350.3956298828125, -1064.4923095703125, 11.4527587890625, 212.59841918945312)),
+        ["coords"] = vector4(-435.1516418457031,-31.819778442382812,40.87255859375,14.17322826385498),
         ["ped"] = 'a_m_y_beach_01',
         ["scenario"] = "WORLD_HUMAN_STAND_MOBILE_CLUBHOUSE",
         ["radius"] = 3.5,
@@ -4814,7 +4843,52 @@ Config.Products = {
         ["blipsprite"] = 52,
         ["blipscale"] = 0.6,
         ["blipcolor"] = 0,
-        ["delivery"] = vector4(vector4(-1350.3956298828125, -1064.4923095703125, 11.4527587890625, 212.59841918945312))
+        ["delivery"] = vector4(-435.1516418457031,-31.819778442382812,40.87255859375,14.17322826385498)
+    },
+    ["FMDFOODsw"] = {
+        ["label"] = "Food Shop",
+        ["coords"] = vector4(-441.032958984375,-33.96923065185547,46.18017578125,249.44882202148438),
+        ["ped"] = 'a_m_y_beach_01',
+        ["scenario"] = "WORLD_HUMAN_STAND_MOBILE_CLUBHOUSE",
+        ["radius"] = 3.5,
+        ["targetIcon"] = "fas fa-leaf",
+        ["targetLabel"] = "Open Menu",
+        ["products"] = Config.Products["FMDFOOD"],
+        ["showblip"] = false,
+        ["blipsprite"] = 52,
+        ["blipscale"] = 0.6,
+        ["blipcolor"] = 0,
+        ["delivery"] = vector4(-441.032958984375,-33.96923065185547,46.18017578125,249.44882202148438)
+    },
+    ["FMDFOODsww"] = {
+        ["label"] = "Food Shop",
+        ["coords"] = vector4(-1380.2769775390625,-596.00439453125,30.20654296875,130.39370727539062),
+        ["ped"] = 'a_m_y_beach_01',
+        ["scenario"] = "WORLD_HUMAN_STAND_MOBILE_CLUBHOUSE",
+        ["radius"] = 3.5,
+        ["targetIcon"] = "fas fa-leaf",
+        ["targetLabel"] = "Open Menu",
+        ["products"] = Config.Products["FMDFOOD"],
+        ["showblip"] = false,
+        ["blipsprite"] = 52,
+        ["blipscale"] = 0.6,
+        ["blipcolor"] = 0,
+        ["delivery"] = vector4(-1380.2769775390625,-596.00439453125,30.20654296875,130.39370727539062)
+    },
+    ["FMDFOODw"] = {
+        ["label"] = "Food Shop",
+        ["coords"] = vector4(-1350.3956298828125, -1064.4923095703125, 11.4527587890625, 212.59841918945312),
+        ["ped"] = 'a_m_y_beach_01',
+        ["scenario"] = "WORLD_HUMAN_STAND_MOBILE_CLUBHOUSE",
+        ["radius"] = 3.5,
+        ["targetIcon"] = "fas fa-leaf",
+        ["targetLabel"] = "Open Menu",
+        ["products"] = Config.Products["FMDFOOD"],
+        ["showblip"] = false,
+        ["blipsprite"] = 52,
+        ["blipscale"] = 0.6,
+        ["blipcolor"] = 0,
+        ["delivery"] = vector4(-1350.3956298828125, -1064.4923095703125, 11.4527587890625, 212.59841918945312)
     },
     ["FMDFOOD3"] = {
         ["label"] = "Food Shop",
@@ -5313,7 +5387,7 @@ Config.Products = {
     },
 
     -- Ammunation Locations
-    ["ammunation"] = {
+    --[[ ["ammunation"] = {
         ["label"] = "Ammunation",
         ["type"] = "weapon",
         ["coords"] = vector4(-661.96, -933.53, 21.83, 177.05),
@@ -5328,7 +5402,7 @@ Config.Products = {
         ["blipscale"] = 0.6,
         ["blipcolor"] = 0,
         ["delivery"] = vector4(-660.61, -938.14, 21.83, 167.22)
-    },
+    }, ]]
     ["ammunation2"] = {
         ["label"] = "Ammunation",
         ["type"] = "weapon",
@@ -5489,40 +5563,6 @@ Config.Products = {
         ["blipcolor"] = 0,
         ["delivery"] = vector4(-3183.6, 1084.35, 20.84, 68.13)
     },
-
-    -- Casino Locations
-    ["casino"] = {
-        ["label"] = "Diamond Casino",
-        ["coords"] = vector4(978.46, 39.07, 74.88, 64.0),
-        ["ped"] = 'csb_tomcasino',
-        ["scenario"] = "WORLD_HUMAN_STAND_MOBILE",
-        ["radius"] = 1.5,
-        ["targetIcon"] = "fas fa-coins",
-        ["targetLabel"] = "Buy Chips",
-        ["products"] = Config.Products["casino"],
-        ["showblip"] = false,
-        ["blipsprite"] = 617,
-        ["blipscale"] = 0.8,
-        ["blipcolor"] = 0,
-        ["delivery"] = vector4(972.6, 9.22, 81.04, 233.38)
-    },
-
-    ["casinobar"] = {
-        ["label"] = "Casino Bar",
-        ["coords"] = vector4(968.13, 29.85, 74.88, 208.86),
-        ["ped"] = 'a_m_y_smartcaspat_01',
-        ["scenario"] = "WORLD_HUMAN_VALET",
-        ["radius"] = 1.5,
-        ["targetIcon"] = "fas fa-wine-bottle",
-        ["targetLabel"] = "Open Casino Bar",
-        ["products"] = Config.Products["liquor"],
-        ["showblip"] = false,
-        ["blipsprite"] = 52,
-        ["blipscale"] = 0.8,
-        ["blipcolor"] = 0,
-        ["delivery"] = vector4(937.16, 1.0, 78.76, 152.4)
-    },
-
     -- Weedshop Locations
     ["weedshop"] = {
         ["label"] = "Smoke On The Water",

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <link rel="stylesheet" href="style/main.css">
+    <script type="text/javascript" src="farbtastic/farbtastic.js"></script>
+    <link rel="stylesheet" href="farbtastic/farbtastic.css" type="text/css"/>
+</head>
+<body>
+<div class="UI-CONTAINER">
+    <div id="purchase">
+
+    </div>
+    <div id="normal">
+
+    </div>
+    <div id="popups">
+
+    </div>
+</div>
+</body>
+</html>
+
+<script>
+    const LOCALES = {
+        '': '',
+    };
+    let OPTIONAL = [];
+    let FURNITURE = [];
+
+    $(document).ready(function () {
+        const UI_PAGES = [
+            'purchase',
+            'normal',
+        ];
+
+        let CURRENT_PAGE = null;
+
+        window.addEventListener('message', ({data}) => {
+            if (data.event === 'show') {
+                openPage(data)
+                toggleUI(true);
+
+                if (data.optional) {
+                    OPTIONAL = JSON.parse(data.optional);
+                }
+
+                if (data.furniture) {
+                    FURNITURE = JSON.parse(data.furniture);
+                }
+            }
+            if (data.event === 'hide') {
+                toggleUI(false);
+            }
+            if (data.event === 'popup') {
+                toggleUI(true);
+                openPopup(data.title, data.message, data.buttonText);
+            }
+        });
+
+        function unloadAll() {
+            UI_PAGES.forEach((page) => {
+               $('#' + page).html('');
+            });
+            CURRENT_PAGE = null;
+        }
+
+        function openPage(data) {
+            const page = data.page
+            if (CURRENT_PAGE !== page) {
+                unloadAll();
+                $('#' + page).load(page + '.html', () => {
+                    $('.draggable').draggable({
+                        preventCollision: true,
+                        containment: 'body',
+                        cancel: 'button,input',
+                    });
+
+                    fetch(`https://${GetParentResourceName()}/PageLoaded`, {
+                        method: 'POST',
+                        body: JSON.stringify({
+                            page,
+                        })
+                    });
+
+                    if (data.islandName) {
+                        $('.dynamic-island-name').html(data.islandName);
+                    }
+                });
+
+                CURRENT_PAGE = page;
+            }
+        }
+
+        toggleUI(true)
+
+        function toggleUI(state) {
+            if (state) {
+                $('.UI-CONTAINER').fadeIn(500);
+            } else {
+                $('.hidden').hide();
+                $('.UI-CONTAINER').fadeOut(500);
+            }
+        }
+
+        document.addEventListener('keyup', logKey);
+        function logKey(e) {
+            if (e.key === 'Escape') {
+                fetch(`https://${GetParentResourceName()}/UIClosed`, {
+                    method: 'POST',
+                });
+            }
+        }
+
+        function openPopup(title, message, buttonText) {
+            const html = '<div class="card popup">' +
+                '            <div class="card-body">' +
+                '                <div class="card-header">' +
+                '                    <span>' + title + '</span>' +
+                '                    <img src="img/tiny-logo.png" alt="..." class="tiny-logo">' +
+                '                </div>' +
+                '                <div class="card-main">' +
+                '                    <div style="position: relative;width: 100%;display: flex;flex-direction: column;justify-content: space-between;"><div>' +
+                '                    <span class="popup-desc">' + message + '</span>' +
+                '                        </div>' +
+                '                        <div style="display: flex; justify-content: end; width: 100%;">' +
+                '                            <button type="button" class="btn-primary close-popup-button">' +
+                '                                ' + (buttonText || 'OKAY') +
+                '                            </button>' +
+                '                        </div>' +
+                '                    </div>' +
+                '                </div>' +
+                '            </div>' +
+                '        </div>';
+
+
+            $('#popups').append(html);
+        }
+
+        $(document).on('click', '.close-popup-button', function () {
+           $(this).closest('.popup').remove();
+
+           if (CURRENT_PAGE === null) {
+               fetch(`https://${GetParentResourceName()}/UIClosed`, {
+                   method: 'POST',
+               });
+           }
+        });
+
+
+        fetch(`https://${GetParentResourceName()}/NUILoaded`, {
+            method: 'POST',
+        });
+    });
+
+    function locale(message) {
+        if (LOCALES[message]) {
+            return LOCALES[message];
+        }
+        return message;
+    }
+
+    function numberWithCommas(x) {
+        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+</script>

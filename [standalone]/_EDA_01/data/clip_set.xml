@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fwClipSetManager>
+  <clipSets>
+	<!-- Standard -->
+	<Item type="fwClipSet" key="delta@drive_by@std_ps_1h">
+      <fallbackId>drive_by@std_ps</fallbackId>
+      <clipDictionaryName>delta@driveby@std_ps_1h</clipDictionaryName>
+      <clipItems />
+      <moveNetworkFlags />
+    </Item>
+    <Item type="fwClipSet" key="delta@drive_by@std_rds_1h">
+      <fallbackId>drive_by@std_rds</fallbackId>
+      <clipDictionaryName>delta@driveby@std_rds_1h</clipDictionaryName>
+      <clipItems />
+      <moveNetworkFlags />
+    </Item>
+	<Item type="fwClipSet" key="delta@drive_by@std_rps_1h">
+      <fallbackId>drive_by@std_rps</fallbackId>
+      <clipDictionaryName>delta@driveby@std_rps_1h</clipDictionaryName>
+      <clipItems />
+      <moveNetworkFlags />
+    </Item>
+	
+	<!-- Low	-->
+	<Item type="fwClipSet" key="delta@drive_by@low_ps_1h">
+      <fallbackId>drive_by@std_ps</fallbackId>
+      <clipDictionaryName>delta@driveby@low_ps_1h</clipDictionaryName>
+      <clipItems />
+      <moveNetworkFlags />
+    </Item>
+	<Item type="fwClipSet" key="delta@drive_by@low_rds_1h">
+      <fallbackId>drive_by@std_rds</fallbackId>
+      <clipDictionaryName>delta@driveby@low_rds_1h</clipDictionaryName>
+      <clipItems />
+      <moveNetworkFlags />
+    </Item>
+	<Item type="fwClipSet" key="delta@drive_by@low_rps_1h">
+      <fallbackId>drive_by@std_rps</fallbackId>
+      <clipDictionaryName>delta@driveby@low_rps_1h</clipDictionaryName>
+      <clipItems />
+      <moveNetworkFlags />
+    </Item>
+	
+	<!-- Sport -->
+	<Item type="fwClipSet" key="delta@drive_by@sport_ps_1h">
+      <fallbackId>drive_by@std_ps</fallbackId>
+      <clipDictionaryName>delta@driveby@sport_ps_1h</clipDictionaryName>
+      <clipItems />
+      <moveNetworkFlags />
+    </Item>
+	
+	<!-- Super -->
+	<Item type="fwClipSet" key="delta@drive_by@super_ps_1h">
+      <fallbackId>drive_by@std_ps</fallbackId>
+      <clipDictionaryName>delta@driveby@super_ps_1h</clipDictionaryName>
+      <clipItems />
+      <moveNetworkFlags />
+    </Item>
+	
+	<!-- SUV -->
+	<Item type="fwClipSet" key="delta@drive_by@suv_ps_1h">
+      <fallbackId>drive_by@std_ps</fallbackId>
+      <clipDictionaryName>delta@driveby@suv_ps_1h</clipDictionaryName>
+      <clipItems />
+      <moveNetworkFlags />
+    </Item>
+	<Item type="fwClipSet" key="delta@drive_by@suv_rds_1h">
+      <fallbackId>drive_by@std_rds</fallbackId>
+      <clipDictionaryName>delta@driveby@suv_rds_1h</clipDictionaryName>
+      <clipItems />
+      <moveNetworkFlags />
+    </Item>
+	<Item type="fwClipSet" key="delta@drive_by@suv_rps_1h">
+      <fallbackId>drive_by@std_rps</fallbackId>
+      <clipDictionaryName>delta@driveby@suv_rps_1h</clipDictionaryName>
+      <clipItems />
+      <moveNetworkFlags />
+    </Item>
+	
+	<Item type="fwClipSet" key="delta@drive_by@suv_high_ps_1h">
+      <fallbackId>drive_by@std_ps</fallbackId>
+      <clipDictionaryName>delta@driveby@suv_high_ps_1h</clipDictionaryName>
+      <clipItems />
+      <moveNetworkFlags />
+    </Item>
+	<Item type="fwClipSet" key="delta@drive_by@suv_low_ps_1h">
+      <fallbackId>drive_by@std_ps</fallbackId>
+      <clipDictionaryName>delta@driveby@suv_low_ps_1h</clipDictionaryName>
+      <clipItems />
+      <moveNetworkFlags />
+    </Item>
+	<Item type="fwClipSet" key="delta@drive_by@suv_low_rds_1h">
+      <fallbackId>drive_by@std_rds</fallbackId>
+      <clipDictionaryName>delta@driveby@suv_low_rds_1h</clipDictionaryName>
+      <clipItems />
+      <moveNetworkFlags />
+    </Item>
+	<Item type="fwClipSet" key="delta@drive_by@suv_low_rps_1h">
+      <fallbackId>drive_by@std_rps</fallbackId>
+      <clipDictionaryName>delta@driveby@suv_low_rps_1h</clipDictionaryName>
+      <clipItems />
+      <moveNetworkFlags />
+    </Item>
+	
+	<!-- Ranger -->
+	<Item type="fwClipSet" key="delta@drive_by@ranger_ps_1h">
+      <fallbackId>drive_by@std_ps</fallbackId>
+      <clipDictionaryName>delta@driveby@ranger_ps_1h</clipDictionaryName>
+      <clipItems />
+      <moveNetworkFlags />
+    </Item>
+	<Item type="fwClipSet" key="delta@drive_by@ranger_rds_1h">
+      <fallbackId>drive_by@std_rds</fallbackId>
+      <clipDictionaryName>delta@driveby@ranger_rds_1h</clipDictionaryName>
+      <clipItems />
+      <moveNetworkFlags />
+    </Item>
+	<Item type="fwClipSet" key="delta@drive_by@ranger_rps_1h">
+      <fallbackId>drive_by@std_rps</fallbackId>
+      <clipDictionaryName>delta@driveby@ranger_rps_1h</clipDictionaryName>
+      <clipItems />
+      <moveNetworkFlags />
+    </Item>
+	
+  </clipSets>
+  <clipDictionaryMetadatas>
+	<Item key="delta@driveby@std_ps_1h">
+      <streamingPolicy>SP_STREAMING</streamingPolicy>
+      <memoryGroup>MG_Vehicle</memoryGroup>
+      <streamingPriority>SP_Medium</streamingPriority>
+    </Item>
+    <Item key="delta@driveby@std_rds_1h">
+      <streamingPolicy>SP_STREAMING</streamingPolicy>
+      <memoryGroup>MG_Vehicle</memoryGroup>
+      <streamingPriority>SP_Medium</streamingPriority>
+    </Item>
+	<Item key="delta@driveby@std_rps_1h">
+      <streamingPolicy>SP_STREAMING</streamingPolicy>
+      <memoryGroup>MG_Vehicle</memoryGroup>
+      <streamingPriority>SP_Medium</streamingPriority>
+    </Item>
+	<Item key="delta@driveby@low_ps_1h">
+      <streamingPolicy>SP_STREAMING</streamingPolicy>
+      <memoryGroup>MG_Vehicle</memoryGroup>
+      <streamingPriority>SP_Medium</streamingPriority>
+    </Item>
+	<Item key="delta@driveby@low_rds_1h">
+      <streamingPolicy>SP_STREAMING</streamingPolicy>
+      <memoryGroup>MG_Vehicle</memoryGroup>
+      <streamingPriority>SP_Medium</streamingPriority>
+    </Item>
+	<Item key="delta@driveby@low_rps_1h">
+      <streamingPolicy>SP_STREAMING</streamingPolicy>
+      <memoryGroup>MG_Vehicle</memoryGroup>
+      <streamingPriority>SP_Medium</streamingPriority>
+    </Item>
+	<Item key="delta@driveby@sport_ps_1h">
+      <streamingPolicy>SP_STREAMING</streamingPolicy>
+      <memoryGroup>MG_Vehicle</memoryGroup>
+      <streamingPriority>SP_Medium</streamingPriority>
+    </Item>
+	<Item key="delta@driveby@super_ps_1h">
+      <streamingPolicy>SP_STREAMING</streamingPolicy>
+      <memoryGroup>MG_Vehicle</memoryGroup>
+      <streamingPriority>SP_Medium</streamingPriority>
+    </Item>
+	<Item key="delta@driveby@suv_ps_1h">
+      <streamingPolicy>SP_STREAMING</streamingPolicy>
+      <memoryGroup>MG_Vehicle</memoryGroup>
+      <streamingPriority>SP_Medium</streamingPriority>
+    </Item>
+	<Item key="delta@driveby@suv_rds_1h">
+      <streamingPolicy>SP_STREAMING</streamingPolicy>
+      <memoryGroup>MG_Vehicle</memoryGroup>
+      <streamingPriority>SP_Medium</streamingPriority>
+    </Item>
+	<Item key="delta@driveby@suv_rps_1h">
+      <streamingPolicy>SP_STREAMING</streamingPolicy>
+      <memoryGroup>MG_Vehicle</memoryGroup>
+      <streamingPriority>SP_Medium</streamingPriority>
+    </Item>
+	<Item key="delta@driveby@suv_high_ps_1h">
+      <streamingPolicy>SP_STREAMING</streamingPolicy>
+      <memoryGroup>MG_Vehicle</memoryGroup>
+      <streamingPriority>SP_Medium</streamingPriority>
+    </Item>
+	<Item key="delta@driveby@suv_low_ps_1h">
+      <streamingPolicy>SP_STREAMING</streamingPolicy>
+      <memoryGroup>MG_Vehicle</memoryGroup>
+      <streamingPriority>SP_Medium</streamingPriority>
+    </Item>
+	<Item key="delta@driveby@suv_low_rds_1h">
+      <streamingPolicy>SP_STREAMING</streamingPolicy>
+      <memoryGroup>MG_Vehicle</memoryGroup>
+      <streamingPriority>SP_Medium</streamingPriority>
+    </Item>
+	<Item key="delta@driveby@suv_low_rps_1h">
+      <streamingPolicy>SP_STREAMING</streamingPolicy>
+      <memoryGroup>MG_Vehicle</memoryGroup>
+      <streamingPriority>SP_Medium</streamingPriority>
+    </Item>
+	<Item key="delta@driveby@ranger_ps_1h">
+      <streamingPolicy>SP_STREAMING</streamingPolicy>
+      <memoryGroup>MG_Vehicle</memoryGroup>
+      <streamingPriority>SP_Medium</streamingPriority>
+    </Item>
+	<Item key="delta@driveby@ranger_rds_1h">
+      <streamingPolicy>SP_STREAMING</streamingPolicy>
+      <memoryGroup>MG_Vehicle</memoryGroup>
+      <streamingPriority>SP_Medium</streamingPriority>
+    </Item>
+	<Item key="delta@driveby@ranger_rps_1h">
+      <streamingPolicy>SP_STREAMING</streamingPolicy>
+      <memoryGroup>MG_Vehicle</memoryGroup>
+      <streamingPriority>SP_Medium</streamingPriority>
+    </Item>
+  </clipDictionaryMetadatas>
+</fwClipSetManager>
+

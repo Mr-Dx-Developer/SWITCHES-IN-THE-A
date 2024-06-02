@@ -72,7 +72,7 @@ Crafting = {
 			-- Support to limit items to certain job roles --
 			{ ["cleaningkit"] = { ["rubber"] = 5, ["engine2"] = 1, ["plastic"] = 2 },
 					["amount"] = 2,
-					["job"] = { ["mechanic"] = 4, ["tuner"] = 4, ["ricocustom"] = 4, ["famgooncustoms"] = 4, ["bigvroycustoms"] = 4, ["slatlanta"] = 4, }
+					["job"] = { ["mechanic"] = 4, ["tuner"] = 4, ["ricocustom"] = 4, ["famgooncustoms"] = 4, ["bigvroycustoms"] = 4, ["slatlanta"] = 4, ["eastcustom"] = 4, ["vroyhouse"] = 4, }
 				},
 					-- Example : Delete me --
 		},

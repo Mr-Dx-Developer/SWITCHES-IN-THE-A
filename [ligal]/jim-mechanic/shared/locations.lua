@@ -568,3 +568,66 @@ Config.Locations[#Config.Locations+1] = {
 		color = 2571775,
 	}
 }
+
+Config.Locations[#Config.Locations+1] = { 
+	Enabled = true,
+	job = "vroyhouse",
+	zones = {
+		vec2(-2319.336181640625, -39.89011001586914),
+		vec2(-2311.84619140625, -20.967029571533203),
+		vec2(-2354.848388671875, 0.03956044465303421),
+		vec2(-2356.971435546875, -7.819774627685547),
+		vec2(-2335.58251953125,-33.03296661376953)
+		
+	},
+	autoClock = { enter = true, exit = true, },
+	stash = {
+		{ coords = vec4(-2333.55, -34.32, 115.39, 65.0), w = 2.0, d = 4.0 },
+		--{ coords = vec4(901.32, -986.89, 50.34, 0.0), w = 2.0, d = 4.0 },
+	},
+	store = {
+		{ coords = vec4(-2335.02, -29.14, 115.39, 335.0), w = 5.6, d = 5.5 },
+		---{ coords = vec4(-575.74, -920.25, 27.5, 0.0), w = 5.6, d = 5.5 },
+		
+	},
+	crafting = {
+		{ coords = vec4(0.0, 0.0, 0.0, 0.0), w = 3.2, d = 1.0 },
+	},
+	clockin = {
+		{ coords = vec4(-2314.97, -31.58, 115.39, 335.0), prop = false, },
+	},
+	manualRepair = {
+		{ coords = vec4(0.0, 0.0, 0.0, 0.0), prop = false, },
+	},
+	carLift = {
+		{ coords = vec4(0.0, 0.0, 0.0, 0.0), },
+		{ coords = vec4(0.0, 0.0, 0.0, 0.0) },
+	},
+	garage = {
+		spawn = vec4(0.0, 0.0, 0.0, 0.0),
+		out = vec4(0.0, 0.0, 0.0, 0.0),
+		list = { "towtruck", "panto", "slamtruck", "cheburek", "utillitruck3" },
+		prop = true
+	},
+	payments = {
+		img = "https://static.wikia.nocookie.net/gtawiki/images/b/be/BennysOriginalMotorWorks-GTAO-Logo.png",
+		{ coords = vec4(0.0, 0.0, 0.0, 0.0), prop = false },
+	},
+	Restrictions = {
+		Vehicle = { "Compacts", "Sedans", "SUVs", "Coupes", "Muscle", "Sports Classics", "Sports", "Super", "Motorcycles", "Off-road", "Industrial", "Utility", "Vans", "Cycles", "Service", "Emergency", "Commercial", },
+		Allow = { "tools", "cosmetics", "repairs", "nos", "perform" },
+	},
+	blip = {
+		coords = vec3(-2314.97, -31.58, 115.39),
+		label = "Vroyhouse Customs",
+		color = 81,
+		sprite = 446,
+		disp = 6,
+		scale = 0.1,
+		cat = nil,
+	},
+	discord = {
+		link = "",
+		color = 2571775,
+	}
+}
