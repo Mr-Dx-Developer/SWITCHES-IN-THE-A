@@ -1,0 +1,225 @@
+[
+  {
+    "name": "Strip Club DJ Booth",
+    "value": { "x": 126.135, "y": -1278.583, "z": 29.27 }
+  },
+  {
+    "name": "Blaine Countz Savings Bank",
+    "value": { "x": -109.299, "y": 6464.035, "z": 31.627 }
+  },
+  {
+    "name": "Police Station",
+    "value": { "x": 436.491, "y": -982.172, "z": 30.699 }
+  },
+  {
+    "name": "Humane Labs Tunnel",
+    "value": { "x": 3525.495, "y": 3705.301, "z": 20.992 }
+  },
+  {
+    "name": "Ammunation Office",
+    "value": { "x": 12.494, "y": -1110.13, "z": 29.797 }
+  },
+  {
+    "name": "Ammunation Gun Range",
+    "value": { "x": 22.153, "y": -1072.854, "z": 29.797 }
+  },
+  {
+    "name": "Trevor's Meth Lab",
+    "value": { "x": 1391.773, "y": 3608.716, "z": 38.942 }
+  },
+  {
+    "name": "Lester's House",
+    "value": { "x": 1273.898, "y": -1719.304, "z": 54.771 }
+  },
+  {
+    "name": "FIB Burnt Building",
+    "value": { "x": 159.04, "y": -739.22, "z": 246.25 }
+  },
+  {
+    "name": "IAA Office",
+    "value": { "x": 117.22, "y": -620.938, "z": 206.047 }
+  },
+  {
+    "name": "Pacific Standard Bank",
+    "value": { "x": 235.046, "y": 216.434, "z": 106.287 }
+  },
+  {
+    "name": "Pacific Standard Bank Vault",
+    "value": { "x": 255.851, "y": 217.03, "z": 101.683 }
+  },
+  {
+    "name": "Damaged Hospital",
+    "value": { "x": 356.822, "y": -590.151, "z": 43.315 }
+  },
+  {
+    "name": "Slaughterhouse",
+    "value": { "x": -80.557, "y": 6220.006, "z": 31.09 }
+  },
+  {
+    "name": "Los Santos Countz Coroner",
+    "value": { "x": 243.351, "y": -1376.014, "z": 39.534 }
+  },
+  {
+    "name": "Torture Room",
+    "value": { "x": 147.17, "y": -2201.804, "z": 4.688 }
+  },
+  {
+    "name": "O'neil Ranchv",
+    "value": { "x": 2441.216, "y": 4968.585, "z": 51.707 }
+  },
+  { "name": "Michael", "value": { "x": -802.311, "y": 175.056, "z": 72.8446 } },
+  { "name": "Simeon", "value": { "x": -47.1617, "y": -1115.3327, "z": 26.5 } },
+  {
+    "name": "Franklin's aunt",
+    "value": { "x": -9.96562, "y": -1438.54, "z": 31.1015 }
+  },
+  { "name": "Franklin", "value": { "x": 7.69, "y": 536.02, "z": 176.39 } },
+  { "name": "Flozd", "value": { "x": -1150.703, "y": -1520.713, "z": 10.633 } },
+  {
+    "name": "Trevor",
+    "value": { "x": 1985.48132, "y": 3828.76757, "z": 32.5 }
+  },
+  {
+    "name": "Bahama Mamas",
+    "value": { "x": -1388.0013, "y": -618.41967, "z": 30.819599 }
+  },
+  {
+    "name": "Pillbox hospital",
+    "value": { "x": 307.168, "y": -590.807, "z": 43.28 }
+  },
+  {
+    "name": "Zancudo entrance",
+    "value": { "x": -2344.373, "y": 3267.498, "z": 32.811 }
+  },
+  {
+    "name": "Zancudo top floor",
+    "value": { "x": -2358.132, "y": 3249.754, "z": 101.451 }
+  },
+  {
+    "name": "North zankton Bank",
+    "value": { "x": 5309.519, "y": -5212.375, "z": 83.522 }
+  },
+  {
+    "name": "ApartHigh1",
+    "value": { "x": -35.31277, "y": -580.4199, "z": 88.71221 }
+  },
+  {
+    "name": "ApartHigh2",
+    "value": { "x": -1477.14, "y": -538.7499, "z": 55.5264 }
+  },
+  {
+    "name": "HouseHigh1",
+    "value": { "x": -169.286, "y": 486.4938, "z": 137.4436 }
+  },
+  {
+    "name": "HouseHigh2",
+    "value": { "x": 340.9412, "y": 437.1798, "z": 149.3925 }
+  },
+  {
+    "name": "HouseHigh3",
+    "value": { "x": 373.023, "y": 416.105, "z": 145.7006 }
+  },
+  {
+    "name": "HouseHigh4",
+    "value": { "x": -676.127, "y": 588.612, "z": 145.1698 }
+  },
+  {
+    "name": "HouseHigh5",
+    "value": { "x": -763.107, "y": 615.906, "z": 144.1401 }
+  },
+  {
+    "name": "HouseHigh6",
+    "value": { "x": -857.798, "y": 682.563, "z": 152.6529 }
+  },
+  { "name": "HouseHigh7", "value": { "x": 120.5, "y": 549.952, "z": 184.097 } },
+  {
+    "name": "HouseHigh8",
+    "value": { "x": -1288, "y": 440.748, "z": 97.69459 }
+  },
+  {
+    "name": "HouseMid1",
+    "value": { "x": 347.2686, "y": -999.2955, "z": -99.19622 }
+  },
+  {
+    "name": "HouseLow1",
+    "value": { "x": 261.4586, "y": -998.8196, "z": -99.00863 }
+  },
+  {
+    "name": "HLApart1",
+    "value": { "x": -1468.14, "y": -541.815, "z": 73.4442 }
+  },
+  {
+    "name": "HLApart2",
+    "value": { "x": -915.811, "y": -379.432, "z": 113.6748 }
+  },
+  {
+    "name": "HLApart3",
+    "value": { "x": -614.86, "y": 40.6783, "z": 97.60007 }
+  },
+  {
+    "name": "HLApart4",
+    "value": { "x": -773.407, "y": 341.766, "z": 211.397 }
+  },
+  {
+    "name": "HLApart5",
+    "value": { "x": -18.07856, "y": -583.6725, "z": 79.46569 }
+  },
+  {
+    "name": "HLApart6",
+    "value": { "x": -609.5669, "y": 51.28212, "z": -183.9808 }
+  },
+  {
+    "name": "HeistCarrier",
+    "value": { "x": 3082.3117, "y": -4717.1191, "z": 15.2622 }
+  },
+  {
+    "name": "Heistzacht",
+    "value": { "x": -2043.974, "y": -1031.582, "z": 11.981 }
+  },
+  {
+    "name": "ExecApart1",
+    "value": { "x": -787.7805, "y": 334.9232, "z": 211.3384 }
+  },
+  {
+    "name": "ExecApart2",
+    "value": { "x": -773.2258, "y": 322.8252, "z": 177.8862 }
+  },
+  {
+    "name": "ExecApart3",
+    "value": { "x": -779.7805, "y": 337.9232, "z": 208.2134 }
+  },
+  { "name": "Cocaine", "value": { "x": 1093.6, "y": -3196.6, "z": -38.99841 } },
+  {
+    "name": "Conterfeit",
+    "value": { "x": 1121.897, "y": -3195.338, "z": -40.4025 }
+  },
+  {
+    "name": "DocumentForgery",
+    "value": { "x": 1165, "y": -3196.6, "z": -39.01306 }
+  },
+  { "name": "MethLab", "value": { "x": 1009.5, "y": -3196.6, "z": -38.99682 } },
+  {
+    "name": "WeedFarm",
+    "value": { "x": 1051.491, "y": -3196.536, "z": -39.14842 }
+  },
+  {
+    "name": "ClubHouse1",
+    "value": { "x": 1107.04, "y": -3157.399, "z": -37.51859 }
+  },
+  {
+    "name": "ClubHouse2",
+    "value": { "x": 998.4809, "y": -3164.711, "z": -38.90733 }
+  },
+  {
+    "name": "VehicleWarehouse",
+    "value": { "x": 994.5925, "y": -3002.594, "z": -39.64699 }
+  },
+  {
+    "name": "GunrunningBunker",
+    "value": { "x": 892.6384, "y": -3245.8664, "z": -98.2645 }
+  },
+  {
+    "name": "SmugglerHangar",
+    "value": { "x": -1267.0, "y": -3013.135, "z": -49.5 }
+  }
+]
