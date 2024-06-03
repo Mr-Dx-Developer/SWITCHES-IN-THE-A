@@ -97,7 +97,7 @@ Config.DealershipLocations = {
     societyPurchaseJobWhitelist = {},
     societyPurchaseGangWhitelist = {},
     disableShowroomPurchase = false,
-    job = "pdm", -- Owned dealerships only
+    job = "cardealer", -- Owned dealerships only
     directSaleDistance = 50,
   },
   ["luxury"] = {
