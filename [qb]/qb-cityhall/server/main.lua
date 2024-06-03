@@ -39,18 +39,31 @@ RegisterNetEvent('qb-cityhall:server:requestId', function(item, hall)
     local Player = QBCore.Functions.GetPlayer(src)
     if not Player then return end
     local itemInfo = Config.Cityhalls[hall].licenses[item]
-    if not Player.Functions.RemoveMoney("cash", itemInfo.cost) then return TriggerClientEvent('QBCore:Notify', src, ('You don\'t have enough money on you, you need %s cash'):format(itemInfo.cost), 'error') end
-    if item == "id_card" then
-        exports['um-idcard']:CreateMetaLicense(src, 'id_card')
-    elseif item == "driver_license" then
-        exports['um-idcard']:CreateMetaLicense(src, 'driver_license')
-    elseif item == "weaponlicense" then
-        exports['um-idcard']:CreateMetaLicense(src, 'weaponlicense')
+    if not Player.Functions.RemoveMoney('cash', itemInfo.cost, 'cityhall id') then return TriggerClientEvent('QBCore:Notify', src, ('You don\'t have enough money on you, you need %s cash'):format(itemInfo.cost), 'error') end
+    local info = {}
+    if item == 'id_card' then
+        info.citizenid = Player.PlayerData.citizenid
+        info.firstname = Player.PlayerData.charinfo.firstname
+        info.lastname = Player.PlayerData.charinfo.lastname
+        info.birthdate = Player.PlayerData.charinfo.birthdate
+        info.gender = Player.PlayerData.charinfo.gender
+        info.nationality = Player.PlayerData.charinfo.nationality
+    elseif item == 'driver_license' then
+        info.firstname = Player.PlayerData.charinfo.firstname
+        info.lastname = Player.PlayerData.charinfo.lastname
+        info.birthdate = Player.PlayerData.charinfo.birthdate
+        info.type = 'Class C Driver License'
+    elseif item == 'weaponlicense' then
+        info.firstname = Player.PlayerData.charinfo.firstname
+        info.lastname = Player.PlayerData.charinfo.lastname
+        info.birthdate = Player.PlayerData.charinfo.birthdate
     else
         return false -- DropPlayer(src, 'Attempted exploit abuse')
     end
-    TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items[item], 'add')
+    if not exports['qs-inventory']:AddItem(source, item, 1, false, info, 'qb-cityhall:server:requestId') then return end
+    TriggerClientEvent('qs-inventory:client:ItemBox', src, QBCore.Shared.Items[item], 'add')
 end)
+
 
 RegisterNetEvent('qb-cityhall:server:sendDriverTest', function(instructors)
     local src = source

@@ -18,7 +18,7 @@ Config.AvailableJobs = { -- Only used when not using qb-jobs.
 
 Config.Cityhalls = {
     { -- Cityhall 1
-        coords = vec3(-1291.9508, -572.3750, 29.5727),
+        coords = vec3(-1282.257, -567.452, 31.712),
         showBlip = true,
         blipData = {
             sprite = 176,
@@ -69,7 +69,7 @@ Config.Peds = {
     -- Cityhall Ped
     {
         model = 'a_m_m_hasjew_01',
-        coords = vec4(-1291.9508, -572.3750, 29.5727, 315.8414),
+        coords = vec4(-1282.257, -567.452, 31.712, 344.191),
         scenario = 'WORLD_HUMAN_STAND_MOBILE',
         cityhall = true,
         zoneOptions = { -- Used for when UseTarget is false
