@@ -5,16 +5,16 @@ Config.debug = false
 
 --- SETTINGS FOR ESX
 Config.esxSettings = {
-    enabled = true,
+    enabled = false,
     -- Whether or not to use the new ESX export method
-    useNewESXExport = true,
+    useNewESXExport = false,
     
     moneyAccount = 'bank',
 }
 
 --- SETTINGS FOR QBCORE
 Config.qbSettings = {
-    enabled = false,
+    enabled = frue,
     useNewQBExport = true, -- Make sure to uncomment the old export inside fxmanifest.lua if you're still using it
 
     moneyAccount = 'bank',
