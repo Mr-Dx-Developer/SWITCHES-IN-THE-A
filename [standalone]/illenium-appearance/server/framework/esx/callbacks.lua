@@ -16,3 +16,5 @@ end)
 lib.callback.register("illenium-appearance:server:esx:getGradesForJob", function(_, jobName)
     return Database.JobGrades.GetByJobName(jobName)
 end)
+
+

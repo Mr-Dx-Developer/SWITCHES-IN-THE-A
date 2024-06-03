@@ -2,17 +2,17 @@ Config = {}
 
 Config.Debug = false
 
-Config.ClothingCost = 100
-Config.BarberCost = 100
-Config.TattooCost = 100
-Config.SurgeonCost = 100
+Config.ClothingCost = 80
+Config.BarberCost = 40
+Config.TattooCost = 60
+Config.SurgeonCost = 3750
 
 Config.ChargePerTattoo = true -- Charge players per tattoo. Config.TattooCost will become the cost of 1 tattoo. The cost can be overridden by adding `cost` key in shared/tattoos.lua for specific tattoos
 
 -- Only set this to true if you're using rcore_tattoos
 Config.RCoreTattoosCompatibility = false
 
-Config.AsynchronousLoading = false -- Change this to false if you want the NUI data to load before displaying the appearance UI
+Config.AsynchronousLoading = true -- Change this to false if you want the NUI data to load before displaying the appearance UI
 
 Config.UseTarget = false
 
@@ -27,19 +27,19 @@ Config.NotifyOptions = {
 Config.OutfitCodeLength = 10
 
 Config.UseRadialMenu = false
-Config.UseOxRadial = false -- Set to true to use ox_lib radial menu, both this and UseRadialMenu must be true 
+Config.UseOxRadial = false -- Set to true to use ox_lib radial menu, both this and UseRadialMenu must be true
 
-Config.EnablePedsForShops = true
-Config.EnablePedsForClothingRooms = true
-Config.EnablePedsForPlayerOutfitRooms = true
+Config.EnablePedsForShops = false
+Config.EnablePedsForClothingRooms = false
+Config.EnablePedsForPlayerOutfitRooms = false
 
 Config.EnablePedMenu = true
 Config.PedMenuGroup = "group.admin"
 
-Config.EnableJobOutfitsCommand = false -- Enables /joboutfits and /gangoutfits commands
+Config.EnableJobOutfitsCommand = true -- Enables /joboutfits and /gangoutfits commands
 
 Config.ShowNearestShopOnly = false
-Config.HideRadar = false -- Hides the minimap while the appearance menu is open
+Config.HideRadar = true -- Hides the minimap while the appearance menu is open
 Config.NearestShopBlipUpdateDelay = 10000
 
 Config.InvincibleDuringCustomization = true
@@ -64,10 +64,10 @@ Config.GenderBasedOnPed = true
 
 Config.AlwaysKeepProps = false
 
-Config.PersistUniforms = false -- Keeps Job / Gang Outfits on player reconnects / logout
-Config.OnDutyOnlyClothingRooms = false -- Set to `true` to make the clothing rooms accessible only to players who are On Duty
+Config.PersistUniforms = true -- Keeps Job / Gang Outfits on player reconnects / logout
+Config.OnDutyOnlyClothingRooms = true -- Set to `true` to make the clothing rooms accessible only to players who are On Duty
 
-Config.BossManagedOutfits = false -- Allows Job / Gang bosses to manage their own job / gang outfits
+Config.BossManagedOutfits = true -- Allows Job / Gang bosses to manage their own job / gang outfits
 
 Config.ReloadSkinCooldown = 5000
 
@@ -102,8 +102,8 @@ Config.DisableProps = {
 Config.Blips = {
     ["clothing"] = {
         Show = true,
-        Sprite = 366,
-        Color = 47,
+        Sprite = 73,
+        Color = 0,
         Scale = 0.7,
         Name = "Clothing Store",
     },
@@ -179,7 +179,7 @@ Config.Stores = {
     {
         type = "clothing",
         coords = vector4(1693.2, 4828.11, 42.07, 188.66),
-        size = vector3(6, 6, 6),
+        size = vector3(4, 4, 4),
         rotation = 45,
         usePoly = false, -- false => uses the size + rotation to create the zone | true => uses points to create the zone
         showBlip = true, -- overrides the blip visibilty configured above for the group
@@ -194,21 +194,8 @@ Config.Stores = {
     },
     {
         type = "clothing",
-        coords = vector4(-754.6021728515625,-368.03076171875,39.962646484375,65.19685363769531),
-        size = vector3(6, 6, 6),
-        rotation = 45,
-        usePoly = false,
-        points = {
-            vector3(-758.6505737304688,-362.76922607421875,39.94580078125),
-            vector3(-764.8219604492188,-373.78021240234375,39.928955078125),
-            vector3(-755.4593505859375,-378.9230651855469,39.928955078125),
-            vector3(-749.4725341796875,-367.6351623535156,39.94580078125)
-        }
-    },
-    {
-        type = "clothing",
         coords = vector4(-705.5, -149.22, 37.42, 122),
-        size = vector3(6, 6, 6),
+        size = vector3(4, 4, 4),
         rotation = 45,
         usePoly = false,
         points = {
@@ -221,7 +208,7 @@ Config.Stores = {
     {
         type = "clothing",
         coords = vector4(-1192.61, -768.4, 17.32, 216.6),
-        size = vector3(6, 6, 6),
+        size = vector3(4, 4, 4),
         rotation = 45,
         usePoly = false,
         points = {
@@ -234,7 +221,7 @@ Config.Stores = {
     {
         type = "clothing",
         coords = vector4(425.91, -801.03, 29.49, 177.79),
-        size = vector3(6, 6, 6),
+        size = vector3(4, 4, 4),
         rotation = 45,
         usePoly = false,
         points = {
@@ -247,7 +234,7 @@ Config.Stores = {
     {
         type = "clothing",
         coords = vector4(-168.73, -301.41, 39.73, 238.67),
-        size = vector3(6, 6, 6),
+        size = vector3(4, 4, 4),
         rotation = 45,
         usePoly = false,
         points = {
@@ -257,23 +244,10 @@ Config.Stores = {
             vector3(-154.84906005859, -296.51647949219, 39.73)
         }
     },
-    {        ---- legion
-        type = "clothing",
-        coords = vector4(197.8153839111328,-876.1582641601562,30.7120361328125,192.75592041015625),
-        size = vector3(6, 6, 6),
-        rotation = 45,
-        usePoly = false,
-        points = {
-            vector3(191.44615173339844,-880.7077026367188,30.947998046875),
-            vector3(198.85714721679688,-883.4901123046875,30.7120361328125),
-            vector3(203.06373596191406,-871.6747436523438,30.7120361328125),
-            vector3(195.2967071533203,-869.1560668945312,30.7120361328125)
-        }
-    },  
     {
         type = "clothing",
         coords = vector4(75.39, -1398.28, 29.38, 6.73),
-        size = vector3(6, 6, 6),
+        size = vector3(4, 4, 4),
         rotation = 45,
         usePoly = false,
         points = {
@@ -286,7 +260,7 @@ Config.Stores = {
     {
         type = "clothing",
         coords = vector4(-827.39, -1075.93, 11.33, 294.31),
-        size = vector3(6, 6, 6),
+        size = vector3(4, 4, 4),
         rotation = 45,
         usePoly = false,
         points = {
@@ -299,7 +273,7 @@ Config.Stores = {
     {
         type = "clothing",
         coords = vector4(-1445.86, -240.78, 49.82, 36.17),
-        size = vector3(6, 6, 6),
+        size = vector3(4, 4, 4),
         rotation = 45,
         usePoly = false,
         points = {
@@ -312,7 +286,7 @@ Config.Stores = {
     {
         type = "clothing",
         coords = vector4(9.22, 6515.74, 31.88, 131.27),
-        size = vector3(6, 6, 6),
+        size = vector3(4, 4, 4),
         rotation = 45,
         usePoly = false,
         points = {
@@ -325,7 +299,7 @@ Config.Stores = {
     {
         type = "clothing",
         coords = vector4(615.35, 2762.72, 42.09, 170.51),
-        size = vector3(6, 6, 6),
+        size = vector3(4, 4, 4),
         rotation = 45,
         usePoly = false,
         points = {
@@ -338,7 +312,7 @@ Config.Stores = {
     {
         type = "clothing",
         coords = vector4(1191.61, 2710.91, 38.22, 269.96),
-        size = vector3(6, 6, 6),
+        size = vector3(4, 4, 4),
         rotation = 45,
         usePoly = false,
         points = {
@@ -351,7 +325,7 @@ Config.Stores = {
     {
         type = "clothing",
         coords = vector4(-3171.32, 1043.56, 20.86, 334.3),
-        size = vector3(6, 6, 6),
+        size = vector3(4, 4, 4),
         rotation = 45,
         usePoly = false,
         points = {
@@ -364,7 +338,7 @@ Config.Stores = {
     {
         type = "clothing",
         coords = vector4(-1105.52, 2707.79, 19.11, 317.19),
-        size = vector3(6, 6, 6),
+        size = vector3(4, 4, 4),
         rotation = 45,
         usePoly = false,
         points = {
@@ -377,7 +351,7 @@ Config.Stores = {
     {
         type = "clothing",
         coords = vector4(-1119.24, -1440.6, 5.23, 300.5),
-        size = vector3(6, 6, 6),
+        size = vector3(4, 4, 4),
         rotation = 45,
         usePoly = false,
         points = {
@@ -390,7 +364,7 @@ Config.Stores = {
     {
         type = "clothing",
         coords = vector4(124.82, -224.36, 54.56, 335.41),
-        size = vector3(6, 6, 6),
+        size = vector3(4, 4, 4),
         rotation = 45,
         usePoly = false,
         points = {
@@ -403,7 +377,7 @@ Config.Stores = {
     {
         type = "barber",
         coords = vector4(-814.22, -183.7, 37.57, 116.91),
-        size = vector3(6, 6, 6),
+        size = vector3(4, 4, 4),
         rotation = 45,
         usePoly = false,
         points = {
@@ -413,10 +387,10 @@ Config.Stores = {
             vector3(-819.77899169922, -191.81831359863, 37.57)
         }
     },
-    --[[ {
+    {
         type = "barber",
         coords = vector4(136.78, -1708.4, 29.29, 144.19),
-        size = vector3(6, 6, 6),
+        size = vector3(4, 4, 4),
         rotation = 45,
         usePoly = false,
         points = {
@@ -425,11 +399,11 @@ Config.Stores = {
             vector3(142.73052978516, -1705.6853027344, 29.29),
             vector3(135.49719238281, -1712.9750976562, 29.29)
         }
-    }, ]]
+    },
     {
         type = "barber",
         coords = vector4(-1282.57, -1116.84, 6.99, 89.25),
-        size = vector3(6, 6, 6),
+        size = vector3(4, 4, 4),
         rotation = 45,
         usePoly = false,
         points = {
@@ -442,7 +416,7 @@ Config.Stores = {
     {
         type = "barber",
         coords = vector4(1931.41, 3729.73, 32.84, 212.08),
-        size = vector3(6, 6, 6),
+        size = vector3(4, 4, 4),
         rotation = 45,
         usePoly = false,
         points = {
@@ -455,7 +429,7 @@ Config.Stores = {
     {
         type = "barber",
         coords = vector4(1212.8, -472.9, 65.2, 60.94),
-        size = vector3(6, 6, 6),
+        size = vector3(4, 4, 4),
         rotation = 45,
         usePoly = false,
         points = {
@@ -468,7 +442,7 @@ Config.Stores = {
     {
         type = "barber",
         coords = vector4(-32.9, -152.3, 56.1, 335.22),
-        size = vector3(6, 6, 6),
+        size = vector3(4, 4, 4),
         rotation = 45,
         usePoly = false,
         points = {
@@ -481,7 +455,7 @@ Config.Stores = {
     {
         type = "barber",
         coords = vector4(-278.1, 6228.5, 30.7, 49.32),
-        size = vector3(6, 6, 6),
+        size = vector3(4, 4, 4),
         rotation = 45,
         usePoly = false,
         points = {
@@ -494,7 +468,7 @@ Config.Stores = {
     {
         type = "tattoo",
         coords = vector4(1322.6, -1651.9, 51.2, 42.47),
-        size = vector3(6, 6, 6),
+        size = vector3(4, 4, 4),
         rotation = 45,
         usePoly = false,
         points = {
@@ -507,7 +481,7 @@ Config.Stores = {
     {
         type = "tattoo",
         coords = vector4(-1154.01, -1425.31, 4.95, 23.21),
-        size = vector3(6, 6, 6),
+        size = vector3(4, 4, 4),
         rotation = 45,
         usePoly = false,
         points = {
@@ -520,7 +494,7 @@ Config.Stores = {
     {
         type = "tattoo",
         coords = vector4(322.62, 180.34, 103.59, 156.2),
-        size = vector3(6, 6, 6),
+        size = vector3(4, 4, 4),
         rotation = 45,
         usePoly = false,
         points = {
@@ -533,7 +507,7 @@ Config.Stores = {
     {
         type = "tattoo",
         coords = vector4(-3169.52, 1074.86, 20.83, 253.29),
-        size = vector3(6, 6, 6),
+        size = vector3(4, 4, 4),
         rotation = 45,
         usePoly = false,
         points = {
@@ -546,7 +520,7 @@ Config.Stores = {
     {
         type = "tattoo",
         coords = vector4(1864.1, 3747.91, 33.03, 17.23),
-        size = vector3(6, 6, 6),
+        size = vector3(4, 4, 4),
         rotation = 45,
         usePoly = false,
         points = {
@@ -559,7 +533,7 @@ Config.Stores = {
     {
         type = "tattoo",
         coords = vector4(-294.24, 6200.12, 31.49, 195.72),
-        size = vector3(6, 6, 6),
+        size = vector3(4, 4, 4),
         rotation = 45,
         usePoly = false,
         points = {
@@ -571,15 +545,12 @@ Config.Stores = {
     },
     {
         type = "surgeon",
-        coords = vector4(316.3648376464844,-578.8746948242188,48.2021484375,133.22833251953125),
-        size = vector3(6, 6, 6),
+        coords = vector4(310.39, -587.6, 43.27, 161.29),
+        size = vector3(4, 4, 4),
         rotation = 45,
         usePoly = false,
         points = {
-            vector3(322.1011047363281,-576.052734375,48.2021484375),
-            vector3(319.9120788574219,-582.6329956054688,48.3370361328125),
-            vector3(316.24615478515625,-574.2066040039062,48.2021484375),
-            vector3(311.20880126953125,-579.6131591796875,48.2021484375)
+            vector3(310.39, -587.6, 43.27)
         }
     }
 }
@@ -587,22 +558,86 @@ Config.Stores = {
 
 Config.ClothingRooms = {
     {
-        job = "police",
-        coords = vector4(454.91, -990.89, 30.69, 193.4),
-        size = vector3(6, 6, 6),
+        job = "lspd",
+        coords = vector4(462.34, -999.65, 30.69, 185.59),
+        size = vector3(8, 8, 8),
         rotation = 45,
         usePoly = false,
         points = {
-            vector3(460.41918945312, -993.11444091797, 30.69),
-            vector3(449.39508056641, -993.60614013672, 30.69),
-            vector3(449.88696289062, -990.23779296875, 30.69),
-            vector3(450.97882080078, -989.71411132812, 30.69),
-            vector3(451.0325012207, -987.89904785156, 30.69),
-            vector3(453.47863769531, -987.76928710938, 30.69),
-            vector3(454.35513305664, -988.46459960938, 30.69),
-            vector3(460.4231262207, -987.94573974609, 30.69)
+            vector3(462.34, -999.65, 30.69),
+            vector3(467.54, -999.75, 30.69)
         }
-    }
+    },
+    {
+        job = "davispd",
+        coords = vector4(362.49, -1593.17, 25.45, 50.03),
+        size = vector3(4, 4, 4),
+        rotation = 45,
+        usePoly = false,
+        points = {
+            vector3(362.49, -1593.17, 25.45)
+        }
+    },
+    {
+        job = "rangerpd",
+        coords = vector4(384.65, 794.32, 187.68, 92.25),
+        size = vector3(3, 3, 3),
+        rotation = 45,
+        usePoly = false,
+        points = {
+            vector3(384.65, 794.32, 187.68)
+        }
+    },
+    {
+        job = "sandysheriff",
+        coords = vector4(1839.04, 3678.28, 38.93, 118.93),
+        size = vector3(3, 3, 3),
+        rotation = 45,
+        usePoly = false,
+        points = {
+            vector3(1839.04, 3678.28, 38.93)
+        }
+    },
+    {
+        job = "paletosheriff",
+        coords = vector4(-439.07, 6008.22, 37.0, 227.23),
+        size = vector3(3, 3, 3),
+        rotation = 45,
+        usePoly = false,
+        points = {
+            vector3(-439.07, 6008.22, 37.0)
+        }
+    },
+    {
+        job = "ambulance",
+        coords = vector4(306.81, -598.8, 43.27, 162.86),
+        size = vector3(3, 3, 3),
+        rotation = 45,
+        usePoly = false,
+        points = {
+            vector3(306.81, -598.8, 43.27)
+        }
+    },
+    {
+        job = "sandyems",
+        coords = vector4(1785.53, 3652.24, 34.85, 301.98),
+        size = vector3(3, 3, 3),
+        rotation = 45,
+        usePoly = false,
+        points = {
+            vector3(1785.53, 3652.24, 34.85)
+        }
+    },
+    {
+        job = "mechanic",
+        coords = vector4(883.21, -2101.11, 30.46, 354.91),
+        size = vector3(2, 2, 2),
+        rotation = 45,
+        usePoly = false,
+        points = {
+            vector3(883.21, -2101.11, 30.46)
+        }
+    },
 }
 
 
@@ -611,7 +646,7 @@ Config.PlayerOutfitRooms = {
 --[[    {
         job = "police",
         coords = vector4(287.28, -573.41, 43.16, 79.61),
-        size = vector3(6, 6, 6),
+        size = vector3(4, 4, 4),
         rotation = 45,
         usePoly = false,
         points = {

@@ -1,5 +1,5 @@
 Config.Theme = {
-    currentTheme = "not-heavily-inspired",
+    currentTheme = "project-sloth",
     themes = {
         {
             id = "default",

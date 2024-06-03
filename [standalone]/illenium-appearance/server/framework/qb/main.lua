@@ -41,3 +41,5 @@ function Framework.GetAppearance(citizenID, model)
         return json.decode(result)
     end
 end
+
+

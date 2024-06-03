@@ -34,3 +34,5 @@ end
 function Database.PlayerOutfits.DeleteByID(id)
     MySQL.query.await("DELETE FROM player_outfits WHERE id = ?", {id})
 end
+
+

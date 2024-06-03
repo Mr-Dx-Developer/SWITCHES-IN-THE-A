@@ -2,7 +2,6 @@ Config.Peds = {
     pedConfig = {
         {
             peds = {
-
                 "mp_m_freemode_01",
                 "mp_f_freemode_01",
                 "a_f_m_beach_01",
@@ -833,8 +832,7 @@ Config.Peds = {
                 "u_m_y_caleb",
                 "u_m_y_croupthief_01",
                 "u_m_y_gabriel",
-                "u_m_y_ushi",
-                "Omen1"
+                "u_m_y_ushi"
             }
         }
     }
